@@ -183,7 +183,7 @@ height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" borde
 
 <script>
     $('#gantEditorTemplates').tacalendar({
- calendarHeight:'600'
+ //calendarHeight:'600'
 });
 </script>
 </div>

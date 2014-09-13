@@ -438,14 +438,15 @@
                                     <ReportItems>
                                       <Rectangle Name="rctDesignDetail">
                                         <ReportItems>
-                                          <Textbox Name="ImageDescription">
+                                          <Textbox Name="Comments1">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!ImageDescription.Value</Value>
+                                                    <Value>=Fields!Comments.Value</Value>
+                                                    <MarkupType>HTML</MarkupType>
                                                     <Style>
                                                       <FontFamily>Arial Unicode MS</FontFamily>
                                                     </Style>
@@ -456,7 +457,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>ImageDescription</rd:DefaultName>
+                                            <rd:DefaultName>Comments1</rd:DefaultName>
                                             <Top>4.625in</Top>
                                             <Height>0.25in</Height>
                                             <Width>5.125in</Width>
@@ -520,7 +521,7 @@
                         </TablixMembers>
                       </TablixRowHierarchy>
                       <KeepTogether>true</KeepTogether>
-                      <DataSetName>dsMainData</DataSetName>
+                      <DataSetName>dsMainDataImage</DataSetName>
                       <PageBreak>
                         <BreakLocation>End</BreakLocation>
                       </PageBreak>
@@ -750,18 +751,18 @@
       <Fields>
         <Field Name="ColumnNumber">
           <DataField>ColumnNumber</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
         <Field Name="RowNumber">
           <DataField>RowNumber</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
         <Field Name="FilePath">
           <DataField>FilePath</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ImageDescription">
-          <DataField>ImageDescription</DataField>
+        <Field Name="Comments">
+          <DataField>Comments</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

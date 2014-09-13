@@ -3,7 +3,14 @@
 <TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
 	<TR height="100">
 		<TD class="font" >
-			<DIV align="center"><asp:Image id="imgStyle" runat="server" ImageAlign="Middle"></asp:Image></DIV>
+            <div class="imgContainer" align="center">
+                <div class="imgDesignBackContainer">
+                    <asp:Image class="imgDesignBack" ID="imgDesignBack" runat="server" ImageAlign="Middle"/>
+                </div>
+                <div class="imgDesignContainer">
+                    <asp:Image class="imgDesign" ID="imgDesign" runat="server" ImageAlign="Middle"/>
+                </div>
+            </div>
 		</TD>
 	</TR>
 	<TR>

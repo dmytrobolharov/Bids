@@ -50,7 +50,7 @@
 				
 			<table cellspacing="0" cellpadding="0" width="100%" border="0">
 				<tr>
-					<td valign="top" width="450">												
+					<td valign="top" width="600">												
 						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="AMLMeasPomID" EnableViewState="False" OnItemDataBound="ItemDataBoundEventHandler" BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px"
 							PageSize="100"  Width="300px">
 							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
@@ -74,7 +74,7 @@
 				                </asp:TemplateColumn>
                             </Columns>					
 						</asp:datagrid>
-						<table cellspacing="2" cellpadding="0" width="550" border="0">
+						<table cellspacing="2" cellpadding="0" width="600" border="0">
 							<tr class="fontHead">
 								<td width="10" style="height: 24px">&nbsp;</td>
 								<td noWrap width="85" style="height: 24px"><asp:Label id="lblNoofRows" runat="server">No. of Row(s)</asp:Label>:</td>
@@ -88,11 +88,12 @@
 										<asp:ListItem Value="15">15</asp:ListItem>
 										<asp:ListItem Value="20">20</asp:ListItem>
 									</asp:dropdownlist></td>
-								<td style="width: 400px; height: 24px">
+								<td style="width: 500px; height: 24px">
 								<cc1:confirmedimagebutton id="imgBtnAdd" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 								<cc1:confirmedimagebutton id="imgBtnRemove" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 								<cc1:confirmedimagebutton id="imgBtnLibrary" runat="server" Message="NONE"></cc1:confirmedimagebutton>
                                 <cc1:bwimagebutton id="btnPOMTemp"  runat="server"  WindowName="POMTemplate"></cc1:bwimagebutton>
+                                <cc1:bwimagebutton id="btnPOMSort" visible="true" runat="server"  WindowName="POMLibrary"></cc1:bwimagebutton>
 								</td>   
 							</tr>
 						</table>

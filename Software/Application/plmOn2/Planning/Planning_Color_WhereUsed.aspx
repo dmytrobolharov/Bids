@@ -305,7 +305,7 @@
                                 </asp:TemplateColumn>                    
                             </Columns>
                         </asp:DataGrid><asp:Label ID="SortOrder" runat="server" Visible="False"></asp:Label>                    
-                    <asp:DataList ID="dlStyles" runat="server" DataKeyField="PlanningItemID" RepeatDirection="Horizontal" RepeatLayout="Flow" RepeatColumns="0" ItemStyle-VerticalAlign="Top" ItemStyle-Width="300px">
+                    <asp:DataList ID="dlStyles" runat="server" DataKeyField="PlanningItemID" RepeatDirection="Horizontal" RepeatLayout="Table" RepeatColumns="<%#dlStylesColumnsCnt.ToString %>" ItemStyle-VerticalAlign="Top" ItemStyle-Width="<%#dlStylesColumnsWidth.ToString %>">
                         <ItemTemplate>
                             <table class="TableHeader" style="border: 1px solid #ccc;" cellspacing="0" cellpadding="0" width="100%">
                                     <tr>

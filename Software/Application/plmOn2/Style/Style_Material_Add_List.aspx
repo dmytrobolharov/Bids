@@ -8,6 +8,8 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
+	    <script type="text/javascript" src="../System/Jscript/jqueryZoom.js"></script>
 	</head>
 	<body MS_POSITIONING="GridLayout">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -16,7 +18,7 @@
 				runat="server">
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnSaveSearch" runat="server" Message="NONE" AutoPostBack="TRUE" ></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
 			<table cellSpacing="0" cellpadding="0" width="100%" bgColor="#ffffff" border="0">
@@ -92,6 +94,17 @@
 										<asp:CheckBox id="chkSelected" runat="server"></asp:CheckBox>
 									</ItemTemplate>							        
 							    </asp:TemplateColumn>
+
+                                <asp:TemplateColumn>
+							        <HeaderTemplate>
+							            <span><%#GetSystemText("Image")%></span>
+							        </HeaderTemplate>
+									<ItemTemplate>
+                                        <div class="zoom-left">										
+                                            <img id="elevateZoomImg" class="elevateZoomImg" runat="server" /> 
+                                        </div>
+									</ItemTemplate>							        
+							    </asp:TemplateColumn>                                
 							    							
                             </Columns>
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></td>
@@ -99,6 +112,13 @@
 			</table>
 		</form>
 		<SCRIPT language="javascript">
+		    $(document).ready(function () {
+		        $("img.elevateZoomImg").closest("td").css({"border-color":"Gainsboro","border-width":"1pt","border-style":"solid","height":"50px","width":"50px"});
+		        $("img.elevateZoomImg").elevateZoom({
+		            zoomWindowHeight: 400, zoomWindowWidth: 400, zoomWindowOffetx: 100
+		        });
+		    }); 
+
 			var frm = document.Form1 ;
 			function CheckAll( checkAllBox )
 			{

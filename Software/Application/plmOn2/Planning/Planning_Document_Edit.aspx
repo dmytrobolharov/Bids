@@ -17,6 +17,7 @@
 	</HEAD>
 	<body>
      <form id="Form1" method="post" runat="server">
+      <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
          <%--<wc1:Color_Wait ID="Color_Wait" runat="server" />--%>
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">

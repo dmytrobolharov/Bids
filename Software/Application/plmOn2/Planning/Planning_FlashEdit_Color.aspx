@@ -3,7 +3,7 @@
 <%@ Register TagPrefix="uc1" TagName="Planning_Header" Src="Planning_Header.ascx"%>
 <%@ Register TagPrefix="uc2" TagName="Planning_FlashEdit_Color_StyleDetails" Src="Planning_FlashEdit_Color_StyleDetails.ascx"%>
 <%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 	<head>
 		<title>Flash Edit Color</title>
@@ -364,9 +364,10 @@
                     confirmed = false;
 
                 window.onAjaxRequestStart = function(sender, eventArgs) {  
-                    // if confirmed request or nonconfirmable button or no pending changes then proceed as is                          
+                    // if confirmed request or nonconfirmable button or no pending changes then proceed as is                       
                     if (confirmed || _.indexOf(buttonsToConfirm, eventArgs.get_eventTarget()) == -1 || !hasPendingChanges()) {
                         confirmed = false;
+                        if (eventArgs.get_eventTarget() == "btnSave") { var busyBox = new BusyBox("busyBox", 12, "busy_Layer_", ".gif", 120); show_wait_text(); busyBox.Show(); }
                         return true;
                     }
 
@@ -413,7 +414,7 @@
                 // Clearing the EVENTTARGET and EVENTARGUMENT from ajax postback, so we can verify if the next postback was caused by button or by the same control
                 Form1.__EVENTTARGET.value = ''
                 Form1.__EVENTARGUMENT.value = ''
-
+                hide_wait_text();
             }
 
             function showHeader() {
@@ -425,8 +426,8 @@
                     autoOpen: false,
                     modal: true,
                     resizable: false,
-                    height: 350,
-                    width: 700,
+                    height: "auto",
+                    width: 875,
                     title: '<%= GetSystemText("Planning") %>'
 
                 });

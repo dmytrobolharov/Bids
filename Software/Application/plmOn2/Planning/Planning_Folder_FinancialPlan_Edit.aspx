@@ -402,6 +402,7 @@
             return er.test(value);
         }
         var recomputeExtended = function ($this) {
+            try {
             //this function created for recomputation extended fields and gross margin's group of fields
             //get all data for computation
             var $AverageCost = $this.closest("tr").find("[id*='txt10000000-0000-0000-0000-000000000006']"),
@@ -422,10 +423,10 @@
         $grossMargin = $this.parent().closest("tr").find("[id*='lbl10000000-0000-0000-0000-000000000028']"),
         totalProjectUnit = getFloatValue($this.closest("tr").find("[id*='10000000-0000-0000-0000-000000000022']").html());
             //Update Extended fields with recomputed values
-            var extendedCostValue = (totalProjectUnit * getFloatValue($AverageCost.val())).toFixed(2),
-        extendedWholeSaleValue = (getFloatValue(wholeSale) * getFloatValue($wholeSale.val())).toFixed(2),
-        extendedRetailValue = (getFloatValue(retailPrice) * getFloatValue($retailPrice.val())).toFixed(2),
-        extendedEcomValue = (getFloatValue(EcomPrice) * getFloatValue($EcomPrice.val())).toFixed(2);
+            var extendedCostValue = (totalProjectUnit * getFloatValue($AverageCost.val())),
+        extendedWholeSaleValue = (getFloatValue(wholeSale) * getFloatValue($wholeSale.val())),
+        extendedRetailValue = (getFloatValue(retailPrice) * getFloatValue($retailPrice.val())),
+        extendedEcomValue = (getFloatValue(EcomPrice) * getFloatValue($EcomPrice.val()));
 
             //compute Extended cost and recompute associated sum fields
             $extendedCost.text(getCurrencyValues(extendedCostValue));
@@ -440,7 +441,7 @@
             recomputeTopAndBottomValue($extendedRetail, $extendedRetail.parent().index(), 2);
 
             //compute extended Ecom and recompute associated sum fields
-            $extendedEcom.text(extendedEcomValue.toFixed(4));
+            $extendedEcom.text(getCurrencyValues(extendedEcomValue));
             recomputeTopAndBottomValue($extendedEcom, $extendedEcom.parent().index(), 2);
 
             //  update gross values
@@ -469,6 +470,10 @@
             //compute gross margin % and recompute associated sum fields
             $grossMargin.text(recomputePercentage(grossMargin));
             recomputeTopAndBottomValue($grossMargin, $grossMargin.parent().index(), 4, true);
+
+            }
+            catch(e) {
+            }
         };
         function recomputePercentage(value) {
             if (!isFinite(value)) {
@@ -484,16 +489,23 @@
                 info = getData($(this)),
                 total = 0,
                 position = $(this).parent().index();
-                    //if user update averageCost||EconPrice||WholeSale||retail fields
+            //if user update averageCost||EconPrice||WholeSale||retail fields
             if (this.id.indexOf("10000000-0000-0000-0000-000000000006") != -1
                 || this.id.indexOf("10000000-0000-0000-0000-000000000023") != -1
                 || this.id.indexOf("txt10000000-0000-0000-0000-000000000007") != -1
                 || this.id.indexOf("txt10000000-0000-0000-0000-000000000008") != -1) {
-                        recomputeExtended($this);
+                recomputeExtended($this);
             }
             //Update header for numeric fields
             var numberOfDigits = checkIfvalueIsInt(this.value) ? 0 : 2;
-            recomputeTopAndBottomValue($this, $this.parent().index(), numberOfDigits);
+            var bolMerchPlan = Boolean.parse('<%= IsMerchandisePlan %>');
+
+            if (bolMerchPlan && this.id.indexOf("10000000-0000-0000-0000-000000000006")) {
+                // for Merchandise Plan we don't call this function
+            }
+            else {
+                recomputeTopAndBottomValue($this, $this.parent().index(), numberOfDigits);
+            }
         });
         $(".PlanningValuesGrid input.value").change(function () {
             var $this = $(this),
@@ -558,14 +570,14 @@
                 recalculateValue(findTotal(info)[0]).call($(this).siblings(":text")[0]);
                 this.value = percentFormat(this.value);
                 var all = findTotal(info)[0];
-                $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq($(findTotal(info)[0]).parent().index()).text('Sum: ' + all.value)
+                $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq($(findTotal(info)[0]).parent().index()).text(' ' + all.value)
             } else {
                 try {
                     //if this field we can get with find total function
                     var total = findTotal(info)[0];
                     total.value = getSum(findBoxes(info).filter(":not(.percentbox)"));
                     findBoxes(info).filter(".percentbox").each(recalculatePercent(total));
-                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq($(findTotal(info)[0]).parent().index()).text('Sum: ' + getCurrencyValues(getSum(findBoxes(info).filter(":not(.percentbox)"))))
+                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq($(findTotal(info)[0]).parent().index()).text(' ' + getCurrencyValues(getSum(findBoxes(info).filter(":not(.percentbox)"))))
                 }
                 catch (err) {
                     //otherwise recompute manually
@@ -579,27 +591,151 @@
             $totalProjectUnitsTxt = $this.closest("tr").find("[id*='10000000-0000-0000-0000-000000000022']");
                 var totalProjectUnits = getFloatValue(wholeSale) + getFloatValue(ecomUnits) + getFloatValue(retailUnits);
 
-                $totalProjectUnitsTxt.text(getCurrencyValues(totalProjectUnits));
-                recomputeTopAndBottomValue($totalProjectUnitsTxt, $totalProjectUnitsTxt.parent().index());
+                $totalProjectUnitsTxt.text(getCurrencyValues(totalProjectUnits, 0));
+                recomputeTopAndBottomValue($totalProjectUnitsTxt, $totalProjectUnitsTxt.parent().index(), 0);
                 recomputeExtended($this);
             }
         });
 
         var recomputeTopAndBottomValue = function (elem, position, digits, isPercent, dontUpdate) {
             var total = 0,
-    info = getData($(elem));
+        info = getData($(elem));
             if (!$(elem).is('.percentbox')) {
                 //check if this field isn't a text field
                 if ($(elem).is('.font')) {
-                    //loop all td to get values and get sum of all fields
-                    $('#FinancialPlanGrid_GridData table tbody tr').each(function () {
-                        total += getFloatValue($(this).find('td').eq(position).find('span').html())
-                    });
-                    //find header and then find proper column, then update it
+                    var thisId = $(elem)[0].id;
+                    if (thisId.indexOf("10000000-0000-0000-0000-000000000012") != -1) { // Wholesale Gross Margin %
+                        var totalWholesaleCost = 0;
+                        var positionExtentedWholesale = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000009']").parent().index();
+                        var extentedWholesale = $('.rgHeader ').find('td').eq(positionExtentedWholesale).html();
+                        var positionWholesaleUnits = $(elem).closest('tr').find("input.value[id*='txt10000000-0000-0000-0000-000000000004']").parent().index();
+                        var positionAvgCostUnits = $(elem).closest('tr').find("input:text[id*='txt10000000-0000-0000-0000-000000000006']").parent().index();
+                        $('#FinancialPlanGrid_GridData table tbody tr').each(function () {
+                            var wholesaleUnitsByRow = getFloatValue($(this).find('td').eq(positionWholesaleUnits).find('input').not('.percentbox').val());
+                            var avgCostUnitByRow = getFloatValue($(this).find('td').eq(positionAvgCostUnits).find('input[type="text"]').val());
+                            totalWholesaleCost += wholesaleUnitsByRow * avgCostUnitByRow;
+                        });
+                        extentedWholesale = getFloatValue(extentedWholesale);
+                        if (extentedWholesale == 0) {
+                            total = 0.00;
+                        } else {
+                            total = (extentedWholesale - totalWholesaleCost) / extentedWholesale;
+                        }
+                        total *= 100;
+                    } else if (thisId.indexOf("10000000-0000-0000-0000-000000000013") != -1) { // Retail Gross Margin %
+                        var totalRetailCost = 0;
+                        var positionExtentedRetail = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000010']").parent().index();
+                        var extentedRetail = $('.rgHeader ').find('td').eq(positionExtentedRetail).html();
+                        var positionRetailUnits = $(elem).closest('tr').find("input.value[id*='txt10000000-0000-0000-0000-000000000005']").parent().index();
+                        var positionAvgCostUnits = $(elem).closest('tr').find("input:text[id*='txt10000000-0000-0000-0000-000000000006']").parent().index();
+                        $('#FinancialPlanGrid_GridData table tbody tr').each(function () {
+                            var retailUnitsByRow = getFloatValue($(this).find('td').eq(positionRetailUnits).find('input').not('.percentbox').val());
+                            var avgCostUnitByRow = getFloatValue($(this).find('td').eq(positionAvgCostUnits).find('input[type="text"]').val());
+                            totalRetailCost += retailUnitsByRow * avgCostUnitByRow;
+                        });
+                        extentedRetail = getFloatValue(extentedRetail);
+                        if (extentedRetail == 0) {
+                            total = 0.00;
+                        } else {
+                            total = (extentedRetail - totalRetailCost) / extentedRetail;
+                        }
+                        total *= 100;
+                    } else if (thisId.indexOf("10000000-0000-0000-0000-000000000027") != -1) { // Ecom Gross Margin %
+                        var totalEcomCost = 0;
+                        var positionExtentedEcom = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000025']").parent().index();
+                        var extentedEcom = $('.rgHeader ').find('td').eq(positionExtentedEcom).html();
+                        var positionEcomUnits = $(elem).closest('tr').find("input.value[id*='txt10000000-0000-0000-0000-000000000021']").parent().index();
+                        var positionAvgCostUnits = $(elem).closest('tr').find("input:text[id*='txt10000000-0000-0000-0000-000000000006']").parent().index();
+                        $('#FinancialPlanGrid_GridData table tbody tr').each(function () {
+                            var ecomUnitsByRow = getFloatValue($(this).find('td').eq(positionEcomUnits).find('input').not('.percentbox').val());
+                            var avgCostUnitByRow = getFloatValue($(this).find('td').eq(positionAvgCostUnits).find('input[type="text"]').val());
+                            totalEcomCost += ecomUnitsByRow * avgCostUnitByRow;
+                        });
+                        extentedEcom = getFloatValue(extentedEcom);
+                        if (extentedEcom == 0) {
+                            total = 0.00;
+                        } else {
+                            total = (extentedEcom - totalEcomCost) / extentedEcom;
+                        }
+                        total *= 100;
+                    } else if (thisId.indexOf("10000000-0000-0000-0000-000000000028") != -1) { // Gross Margin %
+                        var totalCost = 0;
+                        var positionExtentedWholesale = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000009']").parent().index();
+                        var extentedWholesale = $('.rgHeader ').find('td').eq(positionExtentedWholesale).html();
+                        var positionExtentedRetail = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000010']").parent().index();
+                        var extentedRetail = $('.rgHeader ').find('td').eq(positionExtentedRetail).html();
+                        var positionExtentedEcom = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000025']").parent().index();
+                        var extentedEcom = $('.rgHeader ').find('td').eq(positionExtentedEcom).html();
+
+                        var positionExtendedCost = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000011']").parent().index();
+                        var extendedCost = getFloatValue($('.rgHeader ').find('td').eq(positionExtendedCost).html());
+
+                        totalCost = getFloatValue(extentedWholesale) + getFloatValue(extentedRetail) + getFloatValue(extentedEcom);
+                        if (totalCost == 0) {
+                            total = 0.00;
+                        } else {
+                            total = (totalCost - extendedCost) / totalCost;
+                        }
+                        total *= 100;
+                    } else {
+                        //loop all td to get values and get sum of all fields
+                        $('#FinancialPlanGrid_GridData table tbody tr').each(function () {
+                            total += getFloatValue($(this).find('td').eq(position).find('span').html());
+                        });
+                        //find header and then find proper column, then update it
+                    }
+
                 } else {
-                    $('#FinancialPlanGrid_GridData table tbody tr').each(function () {
-                        total += getFloatValue($(this).find('td').eq(position).find('input').not('.percentbox').val())
-                    });
+                    var thisId = $(elem)[0].id;
+                    if (thisId.indexOf("10000000-0000-0000-0000-000000000006") != -1) { // Avg Cost / Unit
+                        var positionExtendedCost = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000011']").parent().index();
+                        var extendedCost = $('.rgHeader ').find('td').eq(positionExtendedCost).html();
+                        var positionTotalProjectedUnits = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000022']").parent().index();
+                        var totalProjectedUnits = $('.rgHeader ').find('td').eq(positionTotalProjectedUnits).find('span').html();
+                        if (getFloatValue(totalProjectedUnits) == 0) {
+                            total = 0.00;
+                        } else {
+                            total = getFloatValue(extendedCost) / getFloatValue(totalProjectedUnits);
+                        }
+                        digits = 2;
+                    } else if (thisId.indexOf("10000000-0000-0000-0000-000000000007") != -1) { // Avg Wholesale Price / Unit
+                        var positionExtentedWholesale = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000009']").parent().index();
+                        var extentedWholesale = $('.rgHeader ').find('td').eq(positionExtentedWholesale).html();
+                        var positionWholesaleUnits = $(elem).closest('tr').find("input.value[id*='txt10000000-0000-0000-0000-000000000004']").parent().index();
+                        var totalWholesaleUnits = $('.rgHeader ').find('td').eq(positionWholesaleUnits).find('input[type="text"]').not('.percentbox').val();
+                        if (getFloatValue(totalWholesaleUnits) == 0) {
+                            total = 0.00;
+                        } else {
+                            total = getFloatValue(extentedWholesale) / getFloatValue(totalWholesaleUnits);
+                        }
+                        digits = 2;
+                    } else if (thisId.indexOf("10000000-0000-0000-0000-000000000008") != -1) { // Avg Retail Price / Unit
+                        var positionExtentedRetail = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000010']").parent().index();
+                        var extentedRetail = $('.rgHeader ').find('td').eq(positionExtentedRetail).html();
+                        var positionRetailUnits = $(elem).closest('tr').find("input.value[id*='txt10000000-0000-0000-0000-000000000005']").parent().index();
+                        var totalRetailUnits = $('.rgHeader ').find('td').eq(positionRetailUnits).find('input[type="text"]').not('.percentbox').val();
+                        if (getFloatValue(totalRetailUnits) == 0) {
+                            total = 0.00;
+                        } else {
+                            total = getFloatValue(extentedRetail) / getFloatValue(totalRetailUnits);
+                        }
+                        digits = 2;
+                    } else if (thisId.indexOf("10000000-0000-0000-0000-000000000023") != -1) { // Avg Ecom Price / Unit
+                        var positionExtentedEcom = $(elem).closest('tr').find("[id*='lbl10000000-0000-0000-0000-000000000025']").parent().index();
+                        var extentedEcom = $('.rgHeader ').find('td').eq(positionExtentedEcom).html();
+                        var positionEcomUnits = $(elem).closest('tr').find("input.value[id*='txt10000000-0000-0000-0000-000000000021']").parent().index();
+                        var totalEcomUnits = $('.rgHeader ').find('td').eq(positionEcomUnits).find('input[type="text"]').not('.percentbox').val();
+                        if (getFloatValue(totalEcomUnits) == 0) {
+                            total = 0.00;
+                        } else {
+                            total = getFloatValue(extentedEcom) / getFloatValue(totalEcomUnits);
+                        }
+                        digits = 2;
+                    } else {
+                        $('#FinancialPlanGrid_GridData table tbody tr').each(function () {
+                            total += getFloatValue($(this).find('td').eq(position).find('input').not('.percentbox').val());
+                        });
+                    }
                 }
                 //find bottom row, then find column and update sum
                 if ($(elem).is('input.value')) {
@@ -610,7 +746,7 @@
                 if (dontUpdate) {
                     $('.rgHeader ').find('td').eq(position).text(getCurrencyValues(total, digits, isPercent));
                 }
-                $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text('Sum: ' + getCurrencyValues(total, digits, isPercent))
+                $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text(' ' + getCurrencyValues(total, digits, isPercent))
             } else {
                 if (!dontUpdate) {
                     var sum = getSum(findBoxes(info).filter('.percentbox')),
@@ -620,12 +756,12 @@
                     $(elem)[0].value = percentFormat($(elem)[0].value);
                 }
                 try {
-                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text('Sum: ' + findTotal(info)[0].value)
+                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text(' ' + findTotal(info)[0].value)
 
                 }
                 catch (err) {
                     $('.rgHeader ').find('td').eq(position).text(getCurrencyValues(getSum(findBoxes(info).filter(":not(.percentbox)"))));
-                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text('Sum: ' + getCurrencyValues(getSum(findBoxes(info).filter(":not(.percentbox)"))))
+                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text(' ' + getCurrencyValues(getSum(findBoxes(info).filter(":not(.percentbox)"))))
 
                 }
             }
@@ -637,14 +773,14 @@
             // @ n = number of digits after currency symbol
             // @ p = if value is percent - return it as a %
             if (!p) {
-                var numberOfDigits = n ? n : 2;
+                var numberOfDigits = (n || n == 0) ? n : 2;
                 if (i < 0) {
                     i = i * -1;
-                    return '-' + i.toFixed(n).replace(/./g, function (c, i, a) {
+                    return '-' + i.toFixed(numberOfDigits).replace(/./g, function (c, i, a) {
                         return i && c !== CurrencyDecimalSymbol && !((a.length - i) % 3) ? CurrencyDigitGroupingSymbol + c : c;
                     });
                 } else {
-                    return i.toFixed(n).replace(/./g, function (c, i, a) {
+                    return i.toFixed(numberOfDigits).replace(/./g, function (c, i, a) {
                         return i && c !== CurrencyDecimalSymbol && !((a.length - i) % 3) ? CurrencyDigitGroupingSymbol + c : c;
                     });
                 }
@@ -833,7 +969,7 @@
             window.radopen("Planning_Folder_FinancialPlan_SubCategory_Popup.aspx?PLID=" + strPlanningID + "&SYID=" + strSeasonYearID + "&BID=" + strBrandID + "&DVID=" + strDivisionID + "&STID=" + strStyleTypeID + "&SCID=" + strStyleCategoryID, "ConfigSubCategories");
         }
         $(window).load(function () {
-            $(".PlanningValuesGrid input:not(.value)[id*=10000000-0000-0000-0000-000000000006]").change();
+            $(".PlanningValuesGrid input[type='text']:not(.value)[id*=10000000-0000-0000-0000-000000000006]").change();
         });
   
         function ColumnHidden(sender, eventArgs) {

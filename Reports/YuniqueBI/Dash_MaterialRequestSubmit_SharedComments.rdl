@@ -122,7 +122,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Materail No:</Value>
+                                    <Value>Material No:</Value>
                                     <Style>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
@@ -1166,7 +1166,7 @@
             <FilterExpression>=Fields!MaterialTypeID.Value</FilterExpression>
             <Operator>In</Operator>
             <FilterValues>
-              <FilterValue>=Parameters!MaterailType.Value</FilterValue>
+              <FilterValue>=Parameters!MaterialType.Value</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
@@ -1358,7 +1358,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=iif(CountRows("dsMaterialType")=Parameters!MaterailType.Count,"All",System.String.Join(", ",Parameters!MaterailType.Label,0,iif(Parameters!MaterailType.Count&gt;1,2,1)) &amp; iif(Parameters!MaterailType.Count&gt;2,", etc",""))</Value>
+                  <Value>=iif(CountRows("dsMaterialType")=Parameters!MaterialType.Count,"All",System.String.Join(", ",Parameters!MaterialType.Label,0,iif(Parameters!MaterialType.Count&gt;1,2,1)) &amp; iif(Parameters!MaterialType.Count&gt;2,", etc",""))</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -1925,7 +1925,7 @@
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="MaterailType">
+    <ReportParameter Name="MaterialType">
       <DataType>Integer</DataType>
       <DefaultValue>
         <DataSetReference>
@@ -1933,7 +1933,7 @@
           <ValueField>ComponentTypeID</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Materail Type</Prompt>
+      <Prompt>Material Type</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>dsMaterialType</DataSetName>

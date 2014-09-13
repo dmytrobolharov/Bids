@@ -339,6 +339,9 @@
                                 <table>
                                     <tr>
                                         <td>
+                                        <cc1:BWImageButton ImageUrl='<%# GetImagePath("btn_goto.gif", Me.UserProperties.PrefLang) %>' NavigateUrl='<%# String.Format("../Material/Material_Frame.aspx?MTID={0}", Eval("MaterialID").ToString) %>'
+                                                WindowWidth='320' Resizable="false" ScrollBars="true" Status="true" WindowHeight='500' OnClientClick="return false;"
+                                                ID="btnGoToMaterial" runat="server" /> 
                                             <asp:Label CssClass="material-image" align="left" ID="lblMaterialData" runat="server" Width='<%#ImageWidth.Value%>' Height='<%#ImageWidth.Value%>'
                                                 Style='<%# String.Format("background-image:url({0});", GetImageStreamPath(ImageWidth.Value, Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString))%>'>
                                             </asp:Label>

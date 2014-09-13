@@ -47,6 +47,7 @@
         <node name="nDatabaseServerAlterScripts" text="" description="" plugin="DBAlterScripts" ensureVisible="true" />
       </node>
       <node name="nLastNode" text="Pass #3 (Optional and Long running tasks)" description="Run SQL Scripts" >
+        <node name="nCADDatabaseLinkedServer" text="Establish CAD Linked Server" description="" plugin="CADDatabaseLinkedServer" />
         <node name="nConfigureSchema" text="Import schema files for Toolkit Dictionary" description="" plugin="ConfigureSchemaFiles" />
       </node>
     </node>

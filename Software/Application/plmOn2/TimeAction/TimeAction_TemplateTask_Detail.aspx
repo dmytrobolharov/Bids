@@ -178,7 +178,9 @@
                                     </ItemTemplate>
                                 </asp:TemplateColumn>
                             </Columns>
-						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
+						</asp:datagrid>
+                            <asp:HiddenField id="SortOrder" runat="server"></asp:HiddenField>
+                        </TD>
 				</TR>
 			</TABLE>
 			<asp:HiddenField ID="hdnXmlFiles" runat="server" />

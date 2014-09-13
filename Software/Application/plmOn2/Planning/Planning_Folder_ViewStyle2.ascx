@@ -1,7 +1,6 @@
 <%@ Control Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_ViewStyle2.ascx.vb" Inherits="plmOnApp.Planning_Folder_ViewStyle2" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="ys001" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 
-
 <TABLE class="TableHeader" id="Table2" height="20" cellSpacing="0" cellPadding="0" width="100%"
 	border="0">
 	<TR class="fontHead">
@@ -58,7 +57,7 @@
 
 <table borderColor="gainsboro" cellSpacing="1" cellPadding="0" border="0">
 	<tr>
-		<td vAlign="top"><asp:datalist id="Datalist1" runat="server" DataKeyField="PlanningItemId" RepeatLayout="Flow"
+		<td vAlign="top"><asp:datalist id="Datalist1" runat="server" DataKeyField="PlanningItemId" RepeatLayout="Table" RepeatColumns="5"
 				RepeatDirection="Horizontal" EnableViewState="false">
 				<ItemStyle Wrap="true" HorizontalAlign="Left" BorderWidth="0px" BorderStyle="Solid" BorderColor="Gainsboro" VerticalAlign="Top" BackColor="White"></ItemStyle>
 				<ItemTemplate>
@@ -81,4 +80,8 @@
                 e.checked = actVar;
         }
     }
+
+    $(".imgContainer").closest("td").attr("align", "center")
+    //$(".imgContainer").closest("td").attr("width", "100%")
+    
 </script>

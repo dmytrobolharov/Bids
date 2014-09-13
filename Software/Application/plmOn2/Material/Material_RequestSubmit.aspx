@@ -14,8 +14,8 @@
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />		
     <link href="../System/CSS/Grid.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />    
-      <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-	<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script type="text/javascript">
 	    function userselect(sValueUsr, sValueDate) {
 	    
@@ -115,8 +115,7 @@
                                 </tr>
                             </table>
 
-                                    <table cellspacing="0" width="400" cellpadding="0" style="border: 1px solid #F0F0F0;
-                                        background-color: #FFFFFF;">
+                                    <table cellspacing="0" width="400" cellpadding="0" style="border: 1px solid #F0F0F0; background-color: #FFFFFF;">
                                         <tr>
                                             <td>
                                                 <table cellspacing="1" cellpadding="0" width="100%" border="0">
@@ -274,6 +273,23 @@
             </td>
         </tr>
     </table>
+    <table id="Table1" height="24" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
+        <tr valign="middle">
+            <td valign="middle" align="center" width="7">
+                <img src="../System/Images/table_bar_left.gif">
+            </td>
+            <td class="TableBar" valign="middle" align="center" width="20">
+                <img src="../System/icons/icon_changeobject.gif">
+            </td>
+            <td class="TableBar">
+                <asp:Label ID="lblCreatedBy" runat="server" CssClass="fontHead" ForeColor="Gray"></asp:Label>&nbsp;/
+                <asp:Label ID="lblModifiedBy" runat="server" CssClass="fontHead"></asp:Label>
+            </td>
+            <td valign="middle" align="center" width="7">
+                <img src="../System/Images/table_bar_right.gif">
+            </td>
+        </tr>
+    </table>
     <asp:HiddenField ID="hd_SessionName" runat="server" />
     <asp:HiddenField ID="hd_SessionDate" runat="server" />
     <asp:HiddenField ID="hdnXmlFiles" runat="server" />
@@ -291,6 +307,13 @@
     
     
     </form>
+    <script type="text/javascript">
+        for (var i = 0, len = Page_Validators.length; i < len; i++) {
+            Page_Validators[i].display = "Dynamic";
+            Page_Validators[i].style.visibility = "visible";
+        }
 
+        Page_ClientValidate();
+    </script>
 </body>
 </html>

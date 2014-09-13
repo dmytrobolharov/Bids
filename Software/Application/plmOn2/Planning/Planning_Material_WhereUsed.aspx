@@ -302,7 +302,7 @@
                             </Columns>
                         </asp:DataGrid><asp:Label ID="SortOrder" runat="server" Visible="False"></asp:Label>
                     </asp:Panel>
-                    <asp:DataList ID="dlStyles" runat="server" DataKeyField="PlanningItemID" RepeatDirection="Horizontal" RepeatLayout="Flow" RepeatColumns="0" ItemStyle-VerticalAlign="Top" ItemStyle-Width="300px">
+                    <asp:DataList ID="dlStyles" runat="server" DataKeyField="PlanningItemID" RepeatDirection="Horizontal" RepeatLayout="Table" RepeatColumns="<%#dlStylesColumnsCnt.ToString %>" ItemStyle-VerticalAlign="Top" ItemStyle-Width="<%#dlStylesColumnsWidth.ToString %>">
                         <ItemTemplate>
                             <table class="TableHeader" style="border: 1px solid #ccc;" cellspacing="0" cellpadding="0" width="100%">
                                     <tr>
@@ -351,8 +351,8 @@
                 <table style="background-color: #69F;" height="27" cellspacing="0" cellpadding="0" width="100%" border="0">
                     <tr>
                         <td class="fontHead" width="100%" style="color: #fff; padding: 0 10px;" align="right">
-                            <asp:Button ID="btnMaterialClearAndSelect" runat="server" />
-                            <asp:Button ID="btnMaterialSelect" runat="server" />
+                            <asp:Button ID="btnMaterialClearAndSelect" runat="server" OnClientClick="UncheckAllBox('chkSelected');"/>
+                            <asp:Button ID="btnMaterialSelect" runat="server" OnClientClick="UncheckAllBox('chkSelected');"/>
                         </td>
                     </tr>
                 </table>
@@ -417,7 +417,7 @@
                                         <Columns>
                                             <asp:TemplateColumn ItemStyle-BorderWidth="1" ItemStyle-BorderColor="Gainsboro" HeaderStyle-Width="20px">
                                                 <HeaderTemplate>
-                                                    <input type="checkbox" onclick="CheckAll(this, 'chkSelected')" id="chkSelectAll" />
+                                                    <input type="checkbox" onclick="CheckAll(this, 'chkSelected')" id="chkSelectAll" name="checkAll"/>
                                                 </HeaderTemplate>
                                                 <ItemTemplate>                                            
                                                     <asp:CheckBox runat="server" ID="chkSelected" />
@@ -461,7 +461,22 @@
                     e.checked = actVar;
             }
         }
-
+        function UncheckAllBox(name) {
+            var tm = setTimeout(function () {
+                var frm = document.forms['form1'];
+                for (i = 0; i < frm.length; i++) {
+                    e = frm.elements[i];
+                    if (e.type == 'checkbox' && e.name.indexOf(name) != -1) {
+                        e.checked = false;
+                    }
+                    if (e.type == 'checkbox') {
+                        if( e.name == 'checkAll')
+                            e.checked = false;
+                    }
+                }
+                clearTimeout(tm);
+            }, 2000);
+        }
         $(".slider-container").height($(document).height() - $(".slider-container").offset().top - 10);        
         $("#FloatDG, #FloatDGMain").height($(document).height() - $(".slider-container").offset().top - 10);
 

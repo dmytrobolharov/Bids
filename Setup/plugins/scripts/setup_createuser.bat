@@ -12,8 +12,16 @@ set pwd=%PLM.AppServer.ImpersonatePassword%
 
 echo setup_createuser.bat %usr% %grp% %pwd% >> cli.log
 
+echo "Check for user %usr%"
+net user %usr%
+IF %ERRORLEVEL% EQU 0 goto UserExists
+
+echo "Creating User...."
 net user %usr% %pwd% /add /PASSWORDCHG:NO /EXPIRES:NEVER
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
+
+:UserExists
+echo "User Exists..."
 
 net localgroup %grp% /add
 net localgroup %grpadmin% /add

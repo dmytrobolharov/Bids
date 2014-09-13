@@ -84,7 +84,7 @@
 			<table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<tbody>
                     <tr align="center">
-                        <td> <p style="color: #ffffff; background-color: #86BD1A">Toolkit v1.0 has been deprecated.&nbsp; <br />Please install <a href="./clientsetup/publish.htm"><strong>Toolkit v2.0</strong></a></p></td>
+                        <td> <p style="color: #ffffff; background-color: #86BD1A">Toolkit v1.0 has been deprecated.&nbsp; <br />Please install <a href="./ClientSetup/publish.htm"><strong>Toolkit v2.0</strong></a></p></td>
                     </tr>
 					<tr>
 						<td align="center">

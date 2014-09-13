@@ -37,6 +37,11 @@
 		AutoPostBack="false" Search="false">
 		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
 	</column>
+	<column Name="PlanningMaterialDrop" alias="Material Dr" Type="dropdownlist" datatype="string"
+	column="1" order="03" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="false" enabled="false"
+		AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
 	<column Name="Active" alias="Active" Type="dropdownlist" datatype="query" column="1" order="05"
 		GridVisible="true" cellwidth="70px" GridWidth="70" Visible="true" enabled="true" lookupquery="SELECT CustomKey, Custom FROM pActive"
 		select="true" textfield="Custom" ValueField="CustomKey" AutoPostBack="false">

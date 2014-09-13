@@ -218,9 +218,9 @@
 																<asp:ListItem Value="15">15</asp:ListItem>
 																<asp:ListItem Value="20">20</asp:ListItem>
 															</asp:dropdownlist></td>
-														<td><cc1:confirmedimagebutton id="imgBtnAdd" runat="server" ></cc1:confirmedimagebutton></td>
 													</tr>
 												</table>
+                                                <cc1:confirmedimagebutton id="imgBtnAdd" runat="server" ></cc1:confirmedimagebutton>
 												<cc1:bwimagebutton id="btnAddTreatment" runat="server" ></cc1:bwimagebutton></td>
 										</tr>
 									</table>

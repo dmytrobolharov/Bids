@@ -131,7 +131,16 @@
             </tr>
         </table>
 
-        <TABLE cellSpacing="1" cellPadding="1" width="" border="0">
+        <table cellSpacing="1" cellPadding="1" width="" border="0">
+			<tr>
+                <td><asp:label id="lblCalendar" runat="server" CssClass="fontHead"></asp:label>  &nbsp; &nbsp; &nbsp;</td>
+                <td>
+                    <asp:dropdownlist id="drlCalendar" runat="server" AutoPostBack="True" Width="180"></asp:dropdownlist>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+
 			<tr>
                 <td><asp:label id="lblTemplate" runat="server" CssClass="fontHead"></asp:label>  &nbsp; &nbsp; &nbsp;</td>
                 <td>
@@ -140,7 +149,7 @@
                 </td>
                 <td><asp:label id="lblStartdate" runat="server" CssClass="fontHead"></asp:label></td>
                 <td>
-                    <asp:textbox id="txtStartDate" runat="server" Width="75px"></asp:textbox><A id="aStartDate" runat="server"><IMG height="17" src="../System/Icons/icon_calendar.gif" width="18" border="0"></A>
+                    <asp:textbox id="txtStartDate" runat="server" Width="75px"></asp:textbox><a id="aStartDate" runat="server"><IMG height="17" src="../System/Icons/icon_calendar.gif" width="18" border="0" /></a>
                     <asp:RequiredFieldValidator runat="server" ID="valStartDate" ControlToValidate="txtStartDate" Text="<IMG height='17' src='../System/Icons/icon_warning.gif' border='0'>" ToolTip="Start Date is required!"></asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -150,7 +159,7 @@
                 <td width="220px"><asp:dropdownlist id="drlTechPack" runat="server" AutoPostBack="False" Width="180"></asp:dropdownlist><cc1:BWImageButton id="imgBtnTechPackAdd" runat="server"/></td>
                 <td><asp:label id="lblEndDate" runat="server" CssClass="fontHead"></asp:label></td>
                 <td>
-                    <asp:textbox id="txtEndDate" runat="server" Width="75px"></asp:textbox><A id="aEndDate" runat="server"><IMG height="17" src="../System/Icons/icon_calendar.gif" width="18" border="0"></A>
+                    <asp:textbox id="txtEndDate" runat="server" Width="75px"></asp:textbox><a id="aEndDate" runat="server"><IMG height="17" src="../System/Icons/icon_calendar.gif" width="18" border="0" /></a>
                     <asp:RequiredFieldValidator runat="server" ID="valEndDate" ControlToValidate="txtEndDate" Text="<IMG height='17' src='../System/Icons/icon_warning.gif' border='0'>" ToolTip="End Date is required!"></asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -187,35 +196,38 @@
                 <td></td>
             </tr>
             
-            
-		</TABLE>
+		</table>
 
 
         <TABLE cellSpacing="1" cellPadding="1" width="500" border="0" style="background-color:White">
 			<TR>
-				<TD class="fontHead" width="">
+				<TD class="fontHead" width="100">
                     <asp:Label ID="lblScheduleBy" runat="server" ></asp:Label>
 				</TD>
-				<TD><asp:radiobuttonlist id="rbSubmitType" runat="server" CssClass="fontHead" RepeatDirection="Horizontal">
+				<TD align="left">
+                    <asp:radiobuttonlist id="rbSubmitType" runat="server" CssClass="fontHead" RepeatDirection="Horizontal">
 				    </asp:radiobuttonlist>
                 </TD>
 			</TR>
 		</TABLE>
 
-        <asp:datagrid id="DataGrid1" runat="server" Width="600px" BorderStyle="Solid" AutoGenerateColumns="False"
+        <asp:datagrid id="DataGrid1" runat="server" Width="650" BorderStyle="Solid" AutoGenerateColumns="False"
 							PageSize="100" BorderWidth="1px" BorderColor="#E0E0E0">
 							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
 							<ItemStyle Height="20px" BackColor="White"></ItemStyle>
 							<Columns>
-							    <asp:TemplateColumn > 
+							    <asp:TemplateColumn> 
+                                    <HeaderStyle Height="20px" Width="25px" />
 							        <ItemTemplate>
-							            <asp:CheckBox runat ="server" ID="chkSelect"  />
+							            <asp:CheckBox runat="server" ID="chkSelect"  />
+                                        <asp:HiddenField runat="server" ID="hdnTACalTemplateTaskExists" Value='<%#Eval("TACalTemplateTaskExists") %>' />
+                                        <asp:HiddenField runat="server" ID="hdnTACalTaskPlanStart" Value='<%#Eval("TaskPlanStart")%>' />
 									</ItemTemplate>
 							    </asp:TemplateColumn>
 								<asp:TemplateColumn>
-									<HeaderStyle Height="20px" Width="200px" CssClass="TableHeader"></HeaderStyle>
+									<HeaderStyle Height="20px" Width="100px" CssClass="TableHeader"></HeaderStyle>
 									<HeaderTemplate>
-										<asp:Label ID="lblProcessH" runat="server"><%#GetSystemText("Process")%></asp:Label>
+										<asp:Label ID="lblProcessH" runat="server"><%#If(strEnableSampleRequestPages.ToUpper = "TRUE", GetSystemText("Pages"), GetSystemText("Process"))%></asp:Label>
 									</HeaderTemplate>
 									<ItemTemplate>
 										<asp:Label id="lblWorkflow" runat="server">
@@ -234,7 +246,7 @@
 									</ItemTemplate>
 								</asp:TemplateColumn>
 								<asp:TemplateColumn>
-									<HeaderStyle Height="20px" Width="75px" CssClass="TableHeader"></HeaderStyle>
+									<HeaderStyle Height="20px" Width="50px" CssClass="TableHeader"></HeaderStyle>
 									<HeaderTemplate>
 										<asp:Label ID="lblResubmitH" runat="server"><%#GetSystemText("Resubmit Days")%></asp:Label>
 									</HeaderTemplate>
@@ -245,28 +257,29 @@
 									</ItemTemplate>
 								</asp:TemplateColumn>
 								<asp:TemplateColumn>
-									<HeaderStyle Height="20px" Width="75px" CssClass="TableHeader"></HeaderStyle>
+									<HeaderStyle Height="20px" Width="175px" CssClass="TableHeader"></HeaderStyle>
 									<HeaderTemplate>
 										<asp:Label ID="lblAssignedToHL" runat="server"><%#GetSystemText("Assigned To")%></asp:Label>
 									</HeaderTemplate>
 									<ItemTemplate>
-										<asp:DropDownList id="dlAssignedTo" runat="server"></asp:DropDownList>
+										<asp:DropDownList id="dlAssignedTo" runat="server" Width="175"></asp:DropDownList>
 									</ItemTemplate>
 								</asp:TemplateColumn>
 
 								<asp:TemplateColumn>
-									<HeaderStyle Height="20px" Width="125px" CssClass="TableHeader"></HeaderStyle>
+									<HeaderStyle Height="20px" Width="100px" CssClass="TableHeader"></HeaderStyle>
 									<HeaderTemplate>
 										<asp:Label ID="lblDueDateHL" runat="server"><%#GetSystemText("Due Date")%></asp:Label>
 									</HeaderTemplate>
 									<ItemTemplate>
-										<asp:TextBox id="txtDueDate" runat="server" Width="75px" MaxLength="10" Enabled="false"></asp:TextBox>
+										<asp:TextBox id="txtDueDate" runat="server" Width="75px" MaxLength="10" Enabled="true" ReadOnly="true"></asp:TextBox>
+                                        <asp:Label ID="lblDueDateLink" runat="server"></asp:Label>
 									</ItemTemplate>
 								</asp:TemplateColumn>
 								
 
 								<asp:TemplateColumn>
-									<HeaderStyle Height="20px" Width="125px" CssClass="TableHeader"></HeaderStyle>
+									<HeaderStyle Height="20px" Width="100px" CssClass="TableHeader"></HeaderStyle>
 									<HeaderTemplate><asp:Label ID="lblFinalDateH" runat="server"><%#GetSystemText("Final Date")%></asp:Label></HeaderTemplate>
 									<ItemTemplate>
 										<asp:TextBox id="txtFinalDate" runat="server" Width="75px" MaxLength="10" Enabled="true" ReadOnly="true"></asp:TextBox><asp:Label ID="lblLink" runat="server" 
@@ -390,6 +403,7 @@
         <td>
             <asp:PlaceHolder ID="plhSearchControl" runat="server"></asp:PlaceHolder>
         </td>
+        
         <td>
             <cc1:ConfirmedImageButton ID="btnSearch" runat="server" Message="NONE" CausesValidation="false" />
         </td>

@@ -31,7 +31,7 @@ $.gridify = function (table, opt) {
     box.append(table);
 
     var head = table.clone();
-    head.css('display','none');
+//    head.css('display','none');
     head.addClass("fixHead");
     //remove non head
     head.find("tbody").remove();
@@ -51,50 +51,50 @@ $.gridify = function (table, opt) {
 
 
     //----------------------  header management start
-    head.find("th.gdfColHeader.gdfResizable:not(.gdfied)").mouseover(function () {
-        $(this).addClass("gdfColHeaderOver");
-
-    }).bind("mouseout.gdf",function () {
-            $(this).removeClass("gdfColHeaderOver");
-            if (!$.gridify.columInResize) {
-                $("body").removeClass("gdfHResizing");
-            }
-
-        }).bind("mousemove.gdf",function (e) {
-            if (!$.gridify.columInResize) {
-                var colHeader = $(this);
-                var mousePos = e.pageX - colHeader.offset().left;
-
-                if (colHeader.width() - mousePos < options.resizeZoneWidth) {
-                    $("body").addClass("gdfHResizing");
-                } else {
-                    $("body").removeClass("gdfHResizing");
-                }
-            }
-
-        }).bind("mousedown.gdf",function (e) {
-            var colHeader = $(this);
-            var mousePos = e.pageX - colHeader.offset().left;
-            if (colHeader.width() - mousePos < options.resizeZoneWidth) {
-                $("body").unselectable();
-                $.gridify.columInResize = $(this);
-                //bind event for start resizing
-                //console.debug("start resizing");
-                $(document).bind("mousemove.gdf",function (e) {
-                    //manage resizing
-                    $.gridify.columInResize.width(e.pageX - $.gridify.columInResize.offset().left);
-                    $.gridify.columInResize.data("fTh").width($.gridify.columInResize.outerWidth());
-
-
-                    //bind mouse up on body to stop resizing
-                }).bind("mouseup.gdf", function () {
-                        //console.debug("stop resizing");
-                        $(this).unbind("mousemove.gdf").unbind("mouseup.gdf").clearUnselectable();
-                        $("body").removeClass("gdfHResizing");
-                        delete $.gridify.columInResize;
-                    });
-            }
-        }).addClass("gdfied unselectable").attr("unselectable", "true");
+//    head.find("th.gdfColHeader.gdfResizable:not(.gdfied)").mouseover(function () {
+//        $(this).addClass("gdfColHeaderOver");
+//
+//    }).bind("mouseout.gdf",function () {
+//            $(this).removeClass("gdfColHeaderOver");
+//            if (!$.gridify.columInResize) {
+//                $("body").removeClass("gdfHResizing");
+//            }
+//
+//        }).bind("mousemove.gdf",function (e) {
+//            if (!$.gridify.columInResize) {
+//                var colHeader = $(this);
+//                var mousePos = e.pageX - colHeader.offset().left;
+//
+//                if (colHeader.width() - mousePos < options.resizeZoneWidth) {
+//                    $("body").addClass("gdfHResizing");
+//                } else {
+//                    $("body").removeClass("gdfHResizing");
+//                }
+//            }
+//
+//        }).bind("mousedown.gdf",function (e) {
+//            var colHeader = $(this);
+//            var mousePos = e.pageX - colHeader.offset().left;
+//            if (colHeader.width() - mousePos < options.resizeZoneWidth) {
+//                $("body").unselectable();
+//                $.gridify.columInResize = $(this);
+//                //bind event for start resizing
+//                //console.debug("start resizing");
+//                $(document).bind("mousemove.gdf",function (e) {
+//                    //manage resizing
+//                    $.gridify.columInResize.width(e.pageX - $.gridify.columInResize.offset().left);
+//                    $.gridify.columInResize.data("fTh").width($.gridify.columInResize.outerWidth());
+//
+//
+//                    //bind mouse up on body to stop resizing
+//                }).bind("mouseup.gdf", function () {
+//                        //console.debug("stop resizing");
+//                        $(this).unbind("mousemove.gdf").unbind("mouseup.gdf").clearUnselectable();
+//                        $("body").removeClass("gdfHResizing");
+//                        delete $.gridify.columInResize;
+//                    });
+//            }
+//        }).addClass("gdfied unselectable").attr("unselectable", "true");
 
 
     //----------------------  cell management start wrapping
@@ -3214,7 +3214,7 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
         }).then(function(resp) {
                 window.userLocalCulture = resp.YuniqueAPI['@ClientCulture'];
                 userLocalCultureEndpoint = '/l10n/translations/system/' + userLocalCulture + '/taCalendar';
-                 for (var apiResp = resp.YuniqueAPI.pTACalHoliday, tempArrayOfDates = [], tempArrayOfNames = [], i = 0, k = apiResp.length; k > i; i++) {
+                for (var apiResp = resp.YuniqueAPI.pTACalHoliday, tempArrayOfDates = [], tempArrayOfNames = [], i = 0, k = apiResp.length; k > i; i++) {
                     var holidayInternal = (new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).format("#yyyy_MM_dd#");
                     tempArrayOfDates.push((new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).getTime());
                     tempArrayOfNames.push({
@@ -3357,14 +3357,14 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 var workSpace = $("#workSpace");
 
                 workSpace.css({
-                    width: ganntWidth? ganntWidth: $(window).width() - 20,
-                    height: ganntHeight ?ganntHeight :$(window).height() - 20
+                    width: ganntWidth? ganntWidth: $(window).width() - 5,
+                    height: ganntHeight ?ganntHeight :$(window).height() - 235
                 });
                 ge.init(workSpace);
                 $(window).resize(function () {
                     workSpace.css({
-                        width: ganntWidth? ganntWidth: $(window).width() - 20,
-                        height: ganntHeight ?ganntHeight :$(window).height() - 20
+                        width: ganntWidth? ganntWidth: $(window).width() - 5,
+                        height: ganntHeight ?ganntHeight :$(window).height() - 235
                     });
                     workSpace.trigger("resize.gantt");
                 })
@@ -3434,19 +3434,19 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 value2:''
             });
             var groupNameForTasks = [];
-           /* for (var i = 0; i < taskWorkflow.length; i++) {
-                var obj = taskWorkflow[i].value2;
-                if($.inArray(obj,groupNameForTasks) === -1 && obj !==''){
-                    groupNameForTasks.push(obj);
-                    taskWorkflow.splice(i,0,{value:obj,key:'group'});
-                }
-            }*/
-                function checkTaskWorkflowId(value){
+            /* for (var i = 0; i < taskWorkflow.length; i++) {
+             var obj = taskWorkflow[i].value2;
+             if($.inArray(obj,groupNameForTasks) === -1 && obj !==''){
+             groupNameForTasks.push(obj);
+             taskWorkflow.splice(i,0,{value:obj,key:'group'});
+             }
+             }*/
+            function checkTaskWorkflowId(value){
                 for (var i = 0; i < calendarDatasource.length; i++) {
                     var element = calendarDatasource[i];
-                     if(element.TaskWorkflowId === value){
-                         return false;
-                     }
+                    if(element.TaskWorkflowId === value){
+                        return false;
+                    }
                 }
                 return true;
             }
@@ -3489,6 +3489,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                                     localStorageForIE = objectToCreate;
                                 }
                                 $($('.gdfTable')[1]).find('.gdfColHeader').eq(checkbox.val()).css('display', 'none');
+                                $($('.gdfTable')[0]).find('.gdfColHeader').eq(checkbox.val()).css('display', 'none');
 
                                 checkbox.parent().addClass("multiselect-on");
                             } else {
@@ -3505,6 +3506,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                                     $(this).find('td').eq(checkboxValue).css('display', 'table-cell')
                                 });
                                 $($('.gdfTable')[1]).find('.gdfColHeader').eq(checkbox.val()).css('display', 'table-cell');
+                                $($('.gdfTable')[0]).find('.gdfColHeader').eq(checkbox.val()).css('display', 'table-cell');
                                 checkbox.parent().removeClass("multiselect-on");
                             }
                         });
@@ -3586,6 +3588,8 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                         objectToPush.taskWorkfowIsChanged = tempDatasource[i].TaskWorkfowIsChanged ?tempDatasource[i].TaskWorkfowIsChanged:0;
                         objectToPush.new = tempDatasource[i].new;
                         objectToPush.CarryOver = tempDatasource[i].carryOver;
+                        objectToPush.carryoverChanged = tempDatasource[i].carryoverChanged?tempDatasource[i].carryoverChanged:0;
+                        objectToPush.newChanged = tempDatasource[i].newChanged?tempDatasource[i].newChanged:0;
                     }
                     objectToPush.TaskPlanEnd = createYuniqueISODate(tempDatasource[i].end);
                     objectToPush.TaskPlanStart = createYuniqueISODate(tempDatasource[i].start);
@@ -3596,7 +3600,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                         errorDuringProcess = true;
                         break;
                     }
-                    if(!tempDatasource[i].TaskWorkflowId && !tempDatasource[i].name && tempDatasource[i].type !== '0'){
+                    if(tempDatasource[i].TaskWorkflowId === '' && tempDatasource[i].type !== '0'){
                         errorDuringProcess = true;
                         break;
                     }
@@ -3687,8 +3691,9 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
         var factory = new TaskFactory();
 
         //console.debug("GridEditor.fillEmptyLines");
-        var rowsToAdd = datasourceLength + 10 - this.element.find(".taskEditRow").size();
-
+        var linesToAddAsEmpty = Math.round($(window).height()/39),
+            rowsCanBePresent = datasourceLength < linesToAddAsEmpty ? linesToAddAsEmpty : datasourceLength+1;
+        var rowsToAdd = rowsCanBePresent - this.element.find(".taskEditRow").size();
         //fill with empty lines
         for (var i = 0; i < rowsToAdd; i++) {
             var emptyRow = $.JST.createFromTemplate({}, "TASKEMPTYROW");
@@ -3803,6 +3808,8 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 for (var i = 0, k = columnsArray.length; i < k; i++) {
                     taskRow.each(function () {
                         $(this).find('td').eq(columnsArray[i]).css('display', 'none')
+                        $($('.gdfTable')[0]).find('.gdfColHeader').eq(columnsArray[i]).css('display', 'none');
+
                     });
                 }
             }
@@ -3811,6 +3818,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 for (var i = 0, k = localStorageForIE.length; i < k; i++) {
                     taskRow.each(function () {
                         $(this).find('td').eq(localStorageForIE[i]).css('display', 'none')
+                        $($('.gdfTable')[0]).find('.gdfColHeader').eq(localStorageForIE[i]).css('display', 'none');
                     });
                 }
             };
@@ -4040,10 +4048,20 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             }
 
             el.change(function (e) {
-                if ($(this).is(":checked")) {
-                    task.new = '1'
-                } else {
-                    task.new = '0'
+                if(task.newChanged){
+                    delete task.newChanged
+                    if ($(this).is(":checked")) {
+                        task.new = '1'
+                    } else {
+                        task.new = '0'
+                    }
+                }else{
+                    if ($(this).is(":checked")) {
+                        task.new = '1'
+                    } else {
+                        task.new = '0'
+                    }
+                    task.newChanged = 1
                 }
             })
         });
@@ -4055,11 +4073,21 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 task.carryOver = '0'
             }
             el.change(function (e) {
-                if ($(this).is(":checked")) {
-                    task.carryOver = '1'
-                } else {
-                    task.carryOver = '0'
+                if(task.carryoverChanged){
+                    delete task.carryoverChanged;
+                    if ($(this).is(":checked")) {
+                        task.carryOver = '1'
+                    } else {
+                        task.carryOver = '0'
+                    }
+                }else{
+                    if ($(this).is(":checked")) {
+                        task.carryOver = '1'
+                    } else {
+                        task.carryOver = '0'
+                    }
                 }
+                task.carryoverChanged = 1;
             })
         });
 
@@ -4331,7 +4359,13 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
         });
 
     };
+    function openEventPopup(task){
+        //1)check if we need to get data
+        //2)get data from API
+        //3)
+        console.log(task)
 
+    }
 
     GridEditor.prototype.openFullEditor = function (task, taskRow) {
 
@@ -4341,7 +4375,10 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
         var taskId = taskRow.attr("taskId");
         if (task.id !== '1' && task.type !== '0' && task.TACalTemplateTaskID !== '00000000-0000-0000-0000-000000000000') {
             showTaskDetails(task.TACalTemplateTaskID)
+        }else if(task.id !=='1' && task.type ==='0'){
+            openEventPopup(task)
         }
+
     };
 };
 Storage.prototype.getObject = function (key) {

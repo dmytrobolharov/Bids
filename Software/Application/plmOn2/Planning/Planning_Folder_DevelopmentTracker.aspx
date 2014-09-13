@@ -75,15 +75,16 @@
 		<form id="Form1" method="post" runat="server">
         <wc1:Color_Wait ID="Color_Wait" runat="server" />
 
-        <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
+        <telerik:radscriptmanager ID="RadScriptManager1" runat="server" 
+            EnablePageMethods="true">
         <Scripts>
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js"></asp:ScriptReference>
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js"></asp:ScriptReference>
         </Scripts>
         <CdnSettings TelerikCdn="Disabled" />
-        </telerik:RadScriptManager>
-        <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" Runat="server">
+        </telerik:radscriptmanager>
+        <telerik:radstylesheetmanager ID="RadStyleSheetManager1" Runat="server">
             <StyleSheets>
                 <telerik:StyleSheetReference Path="../System/CSS/RadCalendar.YPLM.css" />
                 <telerik:StyleSheetReference Path="../System/CSS/RadComboBox.YPLM.css" />
@@ -91,10 +92,10 @@
                 <telerik:StyleSheetReference Path="../System/CSS/RadInput.YPLM.css" />
             </StyleSheets>
             <CdnSettings TelerikCdn="Disabled" />
-        </telerik:RadStyleSheetManager>
-        <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />
-
-			<TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
+        </telerik:radstylesheetmanager>
+        <telerik:radajaxmanager runat="server" ID="RadAjaxManager1" />
+            
+            <TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
@@ -108,12 +109,13 @@
                         <cc1:BWImageButton id="btnSort" runat="server" Message="NONE" ></cc1:BWImageButton>
                         <cc1:confirmedimagebutton id="btnImageAllocation" runat="server" Message="NONE" OnClientClick="reloadParentPage(); return false;"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnBOMManger" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-                        <cc1:confirmedimagebutton id="btnAutoGenerate" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnAutoGenerate" runat="server"></cc1:confirmedimagebutton>
                         <cc1:BWImageButton id="btnConfigure" runat="server" Message="NONE" ></cc1:BWImageButton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
 					</td>
 				</TR>
 			</TABLE>
+
 			<table style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
 				height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
 				<tr>

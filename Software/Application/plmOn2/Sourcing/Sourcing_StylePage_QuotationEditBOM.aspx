@@ -424,7 +424,7 @@
                                                     <uc1:Style_DimensionalBOM ID="Style_DimensionalBOM1" runat="server" CTID='<%# Eval("ComponentTypeID") %>'
                                                         WFID='<%# _WorkflowID %>' SDID='<%# Request.Querystring("SDID") %>' DBID='<%# _StyleBOMDimensionId %>'
                                                         WFIID='<%# _WorkflowItemID %>' TB1='<%# Request.Querystring("TB1") %>' SID='<%# Request.Querystring("SID") %>'
-                                                        SN='<%# _StyleSet %>'>
+                                                        SN='<%# _StyleSet %>' IsSourcing='1' >
                                                     </uc1:Style_DimensionalBOM>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>

@@ -190,7 +190,7 @@
 
                 <td width="30%">
                 <!-- Right frame -->
-                <div style="overflow-y:scroll;width:100%;height:100%;" id="scrollDiv2">
+                <div style="overflow:scroll; width:100%;height:100%;" id="scrollDiv2">
                     <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelColor" ClientEvents-OnRequestStart="" ClientEvents-OnResponseEnd="" Width="100%">
                         <div style="width:100%; height:100%;" id="ColorList" class="inner">
 
@@ -365,6 +365,7 @@
                     // if confirmed request or nonconfirmable button or no pending changes then proceed as is                          
                     if (confirmed || _.indexOf(buttonsToConfirm, eventArgs.get_eventTarget()) == -1 || !hasPendingChanges()) {
                         confirmed = false;
+                        if (eventArgs.get_eventTarget() == "btnSave") { var busyBox = new BusyBox("busyBox", 12, "busy_Layer_", ".gif", 120); show_wait_text(); busyBox.Show(); }
                         return true;
                     }
 
@@ -411,7 +412,7 @@
                 // Clearing the EVENTTARGET and EVENTARGUMENT from ajax postback, so we can verify if the next postback was caused by button or by the same control
                 Form1.__EVENTTARGET.value = ''
                 Form1.__EVENTARGUMENT.value = ''
-
+                hide_wait_text();
             }
 
             function showHeader() {

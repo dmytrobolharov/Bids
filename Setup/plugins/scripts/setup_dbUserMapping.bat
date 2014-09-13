@@ -3,6 +3,8 @@
 call %0\..\environ.bat
 
 set datasource=%PLM.DBServer.ServerName%%PLM.DBServer.Instance%
+if NOT "%PLM.DBServer.Instance%" == "" set datasource=%PLM.DBServer.ServerName%\%PLM.DBServer.Instance%
+
 set catalog=%PLM.DBServer.Catalog%
 set sauser=%PLM.DBServer.SAName%
 set sapwd=%PLM.DBServer.SAPassword%

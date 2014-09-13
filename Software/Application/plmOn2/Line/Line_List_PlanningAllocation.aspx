@@ -14,7 +14,7 @@
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
     <style type="text/css">
         .StyleDiv {
-            width: 200px;
+            width: 210px;
         }
         
         .drag-helper {        	
@@ -303,10 +303,12 @@
         $(document).resize(setSize);
 
         function setSize() {            
-            $('*[id*="Datalist1"]').find('.TableHeader').hide();
+            //$('*[id*="Datalist1"]').find('.TableHeader').hide();
 
             $('.StyleDiv').each(function () {
-                $(this).find('#designImage').closest('td').append($(this).find('#gotobtn').closest('div'));
+//                $(this).find('#designImage').closest('td').append($(this).find('#gotobtn').closest('div'));
+                $(this).find('.TableHeader').after($(this).find("input[name$='cbSelect']"));
+                $(this).find("#removebtn").hide();
             });
 
             $('.StyleDiv').find('table').css('border-color', 'gray');
@@ -324,7 +326,7 @@
                 modal: true,
                 resizable: false,
                 height: 350,
-                width: 700,
+                width: 875,
                 title: '<%= GetSystemText("Line List") %>'
 
             });
@@ -471,8 +473,6 @@
                 removePlanningItem($(this).closest(".StyleDiv").find("[id*=hdnPlanningItemID]").val())
                 $(this).closest(".StyleDiv").remove();
             });
-
-            return false;
         }
 
         function WireEvents() {

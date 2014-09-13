@@ -295,13 +295,13 @@
         function setSize() {
 
             //$('*[id*="tbItem"]').parent().css('display', 'block');
-            $('*[id*="Datalist1"]').find('.TableHeader').hide();
+//            $('*[id*="Datalist1"]').find('.TableHeader').hide();
 
-            $('.StyleDiv').each(function () {
+//            $('.StyleDiv').each(function () {
 
-                $(this).find('#designImage').closest('td').append($(this).find('#removebtn').closest('div'));
-                $(this).find('#designImage').closest('td').append($(this).find('#gotobtn').closest('div'));
-            });
+//                $(this).find('#designImage').closest('td').append($(this).find('#removebtn').closest('div'));
+//                $(this).find('#designImage').closest('td').append($(this).find('#gotobtn').closest('div'));
+//            });
 
             $('.StyleDiv').find('table').css('border-color', 'gray');
             $('.StyleDiv').find('tbody').css('border-color', 'gainsboro');

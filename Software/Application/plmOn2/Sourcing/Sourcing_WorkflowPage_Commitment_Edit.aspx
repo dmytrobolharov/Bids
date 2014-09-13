@@ -57,7 +57,7 @@
 							<tr bordercolor="#cddeee" bgColor="#f2f2f9">
 								<td width="10" height="25">&nbsp;</td>
 								<td>&nbsp;
-									<asp:CheckBox id="cbAddToComment" runat="server" Visible="false" CssClass="fontHead" Text="Add to Comment Page"></asp:CheckBox></td>
+									<asp:CheckBox id="cbAddToComment" runat="server" CssClass="fontHead" Text="Add to Comment Page"></asp:CheckBox></td>
 							</tr>
 							<tr bgColor="#ffffff">
 								<td width="10" height="75">&nbsp;</td>

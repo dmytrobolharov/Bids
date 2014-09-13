@@ -65,14 +65,15 @@
                                     <ReportItems>
                                       <Rectangle Name="rctDesignDetail">
                                         <ReportItems>
-                                          <Textbox Name="ImageDescription">
+                                          <Textbox Name="Comments">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!ImageDescription.Value</Value>
+                                                    <Value>=Fields!Comments.Value</Value>
+                                                    <MarkupType>HTML</MarkupType>
                                                     <Style>
                                                       <FontFamily>Arial Unicode MS</FontFamily>
                                                     </Style>
@@ -83,7 +84,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>ImageDescription</rd:DefaultName>
+                                            <rd:DefaultName>Comments</rd:DefaultName>
                                             <Top>5.25in</Top>
                                             <Left>0.125in</Left>
                                             <Height>0.25in</Height>
@@ -347,8 +348,8 @@
           <DataField>FilePath</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ImageDescription">
-          <DataField>ImageDescription</DataField>
+        <Field Name="Comments">
+          <DataField>Comments</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

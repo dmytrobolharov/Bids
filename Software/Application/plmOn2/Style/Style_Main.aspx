@@ -8,6 +8,20 @@
 		<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">		
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <script src="../System/Jscript/jquery-1.6.2.min.js" type="text/javascript"></script>
+        <style type="text/css">
+             .imgContainer
+            {
+                position:relative;
+            }
+            .imgContainer div 
+            {
+                position:absolute;
+                left:0;
+                background-color: White;
+                visibility: hidden;
+            }
+        </style>
 	</head>
 	<BODY>
      <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -55,5 +69,74 @@
 				</tr>
 			</table>
 		</form>
+        <script type="text/javascript" language="javascript">
+            $(window).load(function () {
+                    var width = 0;
+                    var height = 0;
+
+                    var intervalHandlers = new Array();
+
+                    $(".imgContainer").each(function (index) {
+                        $(this).attr("id", index);
+
+                        var hasDesignBack = false;
+
+                        hasDesignBack = $(this).find(".imgDesignBack").attr("src").indexOf("00000000-0000-0000-0000-000000000000") == -1;
+
+                        if (hasDesignBack) {
+                            width = Math.max(width, Math.max($(this).find(".imgDesign").width(), $(this).find(".imgDesignBack").width()));
+                            height = Math.max(height, Math.max($(this).find(".imgDesign").height(), $(this).find(".imgDesignBack").height()));
+                        }
+
+                        else {
+                            width = Math.max(width, $(this).find(".imgDesign").width());
+                            height = Math.max(height, $(this).find(".imgDesign").height());
+                        }
+
+                        $(this)
+                        .mouseover(function () {
+                            if (hasDesignBack) {
+                                $(this).find(".imgDesignContainer").fadeOut();
+                                clearInterval(intervalHandlers[$(this).attr("id")]);
+                                var elementToToggle = $(this).find(".imgDesignContainer");
+                                intervalHandlers[$(this).attr("id")] = setInterval(function () {
+                                    elementToToggle.fadeToggle()
+                                }, 1200);
+                            }
+                        })
+                        .mouseleave(function () {
+                            if (hasDesignBack) {
+                                clearInterval(intervalHandlers[$(this).attr("id")]);
+                                $(this).find(".imgDesignContainer").fadeIn();
+                            }
+                        });
+
+                    });
+
+                    $(".imgContainer").css({
+                        "width": width,
+                        "height": height
+                    });
+
+                    $(".imgDesignBackContainer").css({
+                        "width": width,
+                        "height": height
+                    });
+
+                    $(".imgDesignContainer").css({
+                        "width": width,
+                        "height": height
+                    });
+
+                    $(".imgContainer").each(function (index) {
+                        $(this).find(".imgDesignContainer").css("visibility", "visible");
+
+                        if ($(this).find(".imgDesignBack").attr("src").indexOf("00000000-0000-0000-0000-000000000000") == -1) {
+                            $(this).find(".imgDesignBackContainer").css("visibility", "visible");
+                        }
+                    });
+            });
+
+        </script>
 	</BODY>
 </html>

@@ -15,7 +15,7 @@ set dashFolder=plmOn%PLM.AppServer.SiteID%Dashboards
 set biFolder=YuniqueBI%PLM.AppServer.SiteID%
 set reportFolder=plmOn%PLM.AppServer.SiteID%Reports
 
-set httpServer=%PLM.AppServer.ServerIPAddress%
+set httpServer=%PLM.AppServer.ServerName%
 
 echo *********************************************************************
 echo Updating the data in the empty database.....

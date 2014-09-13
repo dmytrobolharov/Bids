@@ -203,5 +203,14 @@
             
             					
     </form>
+
+    <script type="text/javascript">
+        for (var i = 0, len = Page_Validators.length; i < len; i++) {
+            Page_Validators[i].display = "Dynamic";
+            Page_Validators[i].style.visibility = "visible";
+        }
+
+        Page_ClientValidate();
+    </script>
 </body>
 </html>

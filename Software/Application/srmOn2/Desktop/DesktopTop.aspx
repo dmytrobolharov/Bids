@@ -17,7 +17,6 @@
 				<TR>
 					<td><cc1:confirmedimagebutton id="btnHome" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>
                     <td><cc1:confirmedimagebutton id="btnProfile" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>
-					<td><cc1:confirmedimagebutton id="btnImage" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>
 					<td><cc1:confirmedimagebutton id="btnMaterial" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>
 					<td><cc1:confirmedimagebutton id="btnStyle" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>
 					<td><cc1:confirmedimagebutton id="btnCompliance" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>

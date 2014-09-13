@@ -306,8 +306,42 @@
     <!-- End of Temporary Color Area -->
 
     <!-- Placeholder for RAD Grid. Filled from server-side -->
-
-    <asp:PlaceHolder ID="PlaceHolderColorMgmt" runat="server"></asp:PlaceHolder>
+    <table cellSpacing="0" cellPadding="0" width="100%" border="0">
+	<tr vAlign="top">
+		<td>
+			<table class='TableHeader' height="25" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff"
+                border="0">
+				<tr vAlign="middle">
+					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
+					<td width="16"><asp:checkbox id="cbThumbnail" AutoPostBack="true" runat="server"></asp:checkbox></td>
+					<td class="fontHead" width="100">
+                        <asp:Label ID="lblThumbnail" runat="server" ></asp:Label></td>
+					<td width="20"><asp:imagebutton id="btnImgFirst" style="visibility: hidden;;" runat="server"></asp:imagebutton></td>
+					<td width="20"><asp:imagebutton id="btnImgPrevious" style="visibility: hidden;" runat="server"></asp:imagebutton></td>
+					<td noWrap align="center" width="125"><asp:label id="lblPageCount" style="visibility: hidden;" runat="server" CssClass="fontHead"></asp:label></td>
+					<td width="20"><asp:imagebutton id="btnImgNext" style="visibility: hidden;" runat="server"></asp:imagebutton></td>
+					<td width="20"><asp:imagebutton id="btnImgLast" style="visibility: hidden;" runat="server" ToolTip="Last"></asp:imagebutton></td>
+					<td width="10">&nbsp;</td>
+					<td noWrap>
+                        <asp:label id="lblRecordCount" style="visibility: hidden;" runat="server" CssClass="font"></asp:label>
+                        <asp:HiddenField ID="hdnRecordCount" runat="server" Value='' />
+                    </td>
+					<td class="fontHead" align="right" width="110"><asp:Label ID="lblRecordsPerPage" runat="server" ></asp:Label></td>
+					<td width="25"><asp:dropdownlist id="ps" style="visibility: hidden;" runat="server" CssClass="fontHead">
+							<asp:ListItem Value="5">5</asp:ListItem>
+							<asp:ListItem Value="10">10</asp:ListItem>
+							<asp:ListItem Value="15">15</asp:ListItem>
+							<asp:ListItem Value="20">20</asp:ListItem>
+							<asp:ListItem Value="25">25</asp:ListItem>
+							<asp:ListItem Value="30">30</asp:ListItem>
+							<asp:ListItem Value="40">40</asp:ListItem>
+							<asp:ListItem Value="50" Selected="true">50</asp:ListItem>
+						</asp:dropdownlist></td>
+				</tr>
+			</table>    
+	</tr>
+</table>
+        <asp:PlaceHolder ID="PlaceHolderColorMgmt" runat="server"></asp:PlaceHolder>
 
     <!-- End of RAD Grid area -->
 

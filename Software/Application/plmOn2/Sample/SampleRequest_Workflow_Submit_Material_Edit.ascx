@@ -73,8 +73,8 @@
                         
                             <asp:datagrid id="dgSampleMaterial" runat="server" BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px"
 	                            PageSize="10000" AutoGenerateColumns="false" Width="375px" DataKeyField="SampleRequestMaterialID">
-                                <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-                                <ItemStyle Height="20px" CssClass="font" VerticalAlign="Top" BackColor="White"></ItemStyle>
+                                <AlternatingItemStyle Height="20px"></AlternatingItemStyle>
+                                <ItemStyle Height="20px" CssClass="font" VerticalAlign="Top"></ItemStyle>
                                 <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 	                            <Columns>
                                     <asp:TemplateColumn>

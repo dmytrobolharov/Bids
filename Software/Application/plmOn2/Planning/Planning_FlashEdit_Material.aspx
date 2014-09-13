@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_FlashEdit_Material.aspx.vb" Inherits="plmOnApp.Planning_FlashEdit_Material" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register TagPrefix="hc1" TagName="Header" src="Planning_Header.ascx"%>
+<%@ Register TagPrefix="uc1" TagName="Planning_Header" Src="Planning_Header.ascx"%>
 <%@ Register TagPrefix="uc1" TagName="Planning_FlashEdit_Material_StyleDetails" Src="Planning_FlashEdit_Material_StyleDetails.ascx"%>
 <%@ Register TagPrefix="uc2" TagName="Planning_FlashEdit_Material_MaterialList" Src="Planning_FlashEdit_Material_MaterialList.ascx"%>
 <%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
@@ -234,13 +234,9 @@
                 </td>
             </tr>
         </table>
-
         <div id="headerModal" style="display:none;">
-            <table cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
-				<tr>
-					<td width="100%"><hc1:Header id="LineHeader" runat="server"></hc1:Header></td>
-					<td>&nbsp;</td>
-				</tr>
+            <table cellSpacing="0" cellPadding="0" width="100%" border="0">
+                <tr><td width="100%"><uc1:Planning_Header ID="Planning_Header" runat="server" /></td></tr>
 			</table>
         </div>
         <div id="color-dialog" style="display:none;width:580px;"></div>
@@ -310,8 +306,8 @@
                             autoOpen: false,
                             modal: true,
                             resizable: false,
-                            height: 350,
-                            width: 700,
+                            height: "auto",
+                            width: 875,
                             title: '<%= GetSystemText("Planning") %>'
                 
                         });

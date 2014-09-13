@@ -71,11 +71,11 @@
         <!-- <node name="nDatabaseServerLanguagePack" text="" description="" plugin="InstallLanguagePack" enabled="false" ensureVisible="true"/> -->
       </node>
 
-      <!--
+      
 	<node name="nCADDatabaseServer" text="CAD Database Server" description="Install all CAD database linked server requirements">
         <node name="nCADDatabaseLinkedServer" text="Make Linked Server" description="" plugin="CADDatabaseLinkedServer" />
       </node>
-      -->
+      
 
       <node name="nReportingServer" text="Reporting Server" description="Install all reports into reporting server" >
         <node name="nReportingDash" text="" description="" plugin="ReportServerInstallDash" />
