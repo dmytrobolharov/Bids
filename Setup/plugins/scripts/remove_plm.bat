@@ -116,7 +116,7 @@ echo
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 echo       Remove Scheduled tasks
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-schtasks /DELETE /TN "YuniquePLM Maintenance %V%"
+schtasks /DELETE /TN "YuniquePLM Maintenance %V%" /F
 
 echo.
 echo.
@@ -144,4 +144,4 @@ EXIT /b 1
 echo Done!
 echo *****************************************************
 
-pause
+REM pause

@@ -55,6 +55,7 @@
                 <cc1:bwimagebutton id="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
                 <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return ConfirmClose();"></cc1:confirmedimagebutton>
                 <cc1:confirmedimagebutton id="btnCommit" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>
             </td>
             <td>
                 &nbsp;

@@ -79,7 +79,7 @@
                          }
                         </style>
                     </head>
-                    <body>
+                    <body onload="$('#frameset', window.parent.document).attr('cols', '0,*');">
                         <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
                         <form id="form1" runat="server">
                             <wc1:Color_Wait ID="Color_Wait" runat="server" />
@@ -120,8 +120,8 @@
                                     <td>
                                         <cc1:ConfirmedImageButton ID="btnImport" runat="server" Message="NONE" OnClientClick="return ShowSelectionDialog()"></cc1:ConfirmedImageButton>
                                         <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                                        <cc1:ConfirmedImageButton ID="btnSaveClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false">
+                                        <cc1:ConfirmedImageButton ID="btnSaveClose" runat="server" Message="NONE" OnClientClick="$('#frameset', window.parent.document).attr('cols', '250,*');"></cc1:ConfirmedImageButton>
+                                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="$('#frameset', window.parent.document).attr('cols', '250,*');">
                                         </cc1:ConfirmedImageButton>
                                         <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" Visible="false" OnClientClick="javascript:Page_ValidationActive = false;">
                                         </cc1:BWImageButton>
@@ -141,11 +141,17 @@
                                     <td valign="middle" align="center" width="10">
                                         <img height="15" src="../System/Images/bbTbSCnr.gif" width="3" alt="" />
                                     </td>
+                                    <td width="20">
+                                        <img id="imgBtnExp" onclick="return ShowPlanningHeaderContent(this)" style="cursor: pointer;" src="../System/Icons/icon_Next.gif" alt="" />
+                                        <img id="imgBtnCol" onclick="return HidePlanningHeaderContent(this)" style="cursor: pointer; display: none;"
+                                            src="../System/Icons/icon_Down.gif" alt="" />
+                                    </td>
                                     <td class="fontHead">
                                         <asp:Label ID="lblHeaderDetail" runat="server"></asp:Label>
                                     </td>
                                 </tr>
                             </table>
+                            <div id="divHeaderContent" style="display: none;">
                             <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
                                 <tr>
                                     <td width="900">
@@ -156,6 +162,7 @@
                                     </td>
                                 </tr>
                             </table>
+                            </div>
                             <table>
                                 <tr>
                                     <td>
@@ -854,6 +861,21 @@
 
         }
 
+
+        
+    function ShowPlanningHeaderContent(obj) {
+        obj.style.display = 'none';
+        document.getElementById('imgBtnCol').style.display = 'block';
+        document.getElementById('divHeaderContent').style.display = 'block';
+        return false;
+    }
+
+    function HidePlanningHeaderContent(obj) {
+        obj.style.display = 'none';
+        document.getElementById('imgBtnExp').style.display = 'block';
+        document.getElementById('divHeaderContent').style.display = 'none';
+        return false;
+    }
 
 
     </script>

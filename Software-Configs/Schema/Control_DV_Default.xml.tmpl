@@ -40,11 +40,11 @@
     <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
   </column>
   <column Name="Active" alias="Active" Type="dropdownlist" datatype="query" column="1" order="005"
-          GridVisible="true" cellwidth="150px" lookupquery="SELECT CustomKey, Custom FROM pActive ORDER BY CustomKey" Visible="true" defaultValue="" enabled="true"
-          textfield="Custom" ValueField="CustomKey" select="true" AutoPostBack="false" GridWidth="125"
+          GridVisible="true" cellwidth="150px" lookupquery="SELECT CustomKey, Custom FROM pActive ORDER BY CustomKey" Visible="true" defaultValue="1" enabled="true"
+          textfield="Custom" ValueField="CustomKey" select="true" AutoPostBack="false" GridWidth="125" AddNullField="false"
           ApiDataType="integer" ApiVisible="true" ApiOrder="005" ApiRequired="true" ApiSearch="true" ApiSearchRequired="False"
           muiSectionID="1" muiOrder="005" muiVisible="true">
-    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <Validator Class="required" Type="" Minimum="" Maximum="" Text="" />
     <LookupTable XMLFileName="Lookup_pActive.xml" ParentIDField="Active" ChildIDField="CustomKey" />
   </column>
   <column Name="CUser" PK="false" alias="Created By" Type="label" datatype="string" column="1" order="006"

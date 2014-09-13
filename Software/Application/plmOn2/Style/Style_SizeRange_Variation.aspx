@@ -224,26 +224,42 @@
                             </tr>
                             <tr id="trSizeList" runat="server" visible="false">
                                 <td colspan="3">
-                                    <asp:DataList ID="dlSizeCols" DataKeyField="SizeName" runat="server" RepeatDirection="Horizontal" CellPadding="0" CellSpacing="0">
-                                        <ItemTemplate>
-                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid gainsboro;">
-                                                <thead>
-                                                    <tr class="TableHeader" style="height: 20px;">
-                                                        <th>
-                                                            <asp:Label ID="lblSizeLabel" runat="server"><%# DataBinder.Eval(Container.DataItem, "Sizename").ToString() %></asp:Label>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="height: 20px;">
-                                                            <asp:CheckBox ID="chbSelectSize" runat="server" Width="100" />
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </ItemTemplate>
-                                    </asp:DataList>
+
+                                        <table cellspacing="1" cellpadding="1" width="100%">
+                                            <tr ID="selectAllPanell" visible = "false" runat="server">
+                                                <td>
+                                                    <div class="TableHeader">
+                                                        <asp:CheckBox runat="server" ID="chbSelectAllSR" Visible="true" Checked="false"
+                                                        onclick="SelectAllSizeRange(this)"/>
+                                                        <asp:Label runat="server" ID="lblDim1Name" class="fontHead"></asp:Label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:DataList ID="dlSizeCols" DataKeyField="SizeName" runat="server" RepeatDirection="Horizontal" CellPadding="0" CellSpacing="0">
+                                                        <ItemTemplate>
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid gainsboro;">
+                                                                <thead>
+                                                                    <tr class="TableHeader" style="height: 20px;">
+                                                                        <th>
+                                                                            <asp:Label ID="lblSizeLabel" runat="server"><%# DataBinder.Eval(Container.DataItem, "Sizename").ToString() %></asp:Label>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="height: 20px;">
+                                                                            <asp:CheckBox class="selectSize" ID="chbSelectSize" runat="server" Width="100" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </ItemTemplate>
+                                                    </asp:DataList>
+                                                </td>
+                                            </tr>
+                                        </table>
                                 </td>
                             </tr>
                         </table>
@@ -661,6 +677,15 @@
             ShowBOMSeasonYears($(this)[0]);
         });
     });
+
+    function SelectAllSizeRange(sender) {
+        var setChecked = sender.checked;
+        var base = $(sender).attr("id").split("_chbSelectAllSR")
+        var dlStyleSetsId = base[0] + "_trSizeList"
+        var dlSizeColsId = base[0] + "_dlSizeCols"
+        var allCheckBoxes = $("#" + dlStyleSetsId + " #" + dlSizeColsId + " input[type='checkbox']")
+        $(allCheckBoxes).attr("checked", setChecked)
+    }
 </script>
 
 </html>

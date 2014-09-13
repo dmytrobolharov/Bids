@@ -27,7 +27,7 @@
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton id="btnSaveMaterial" runat="server"  Message="NONE">
-                    </cc1:confirmedimagebutton><asp:imagebutton id="imgBtnCopy" runat="server" >
+                    </cc1:confirmedimagebutton><asp:imagebutton id="imgBtnCopy" runat="server" CausesValidation="False" >
                     </asp:imagebutton><cc1:confirmedimagebutton id="btnPDFView" runat="server"  Message="NONE">
                     </cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnNewTask" runat="server"  Message="NONE">
                     </cc1:confirmedimagebutton><cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>

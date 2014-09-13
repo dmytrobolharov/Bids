@@ -9,12 +9,9 @@
         <script src="../System/Jscript/jquery-1.6.2.min.js" type="text/javascript"></script>
         <script type="text/javascript">
 
-            $(document).ready(function () {
-
+            function MenuRefresh () {
                 $('a').each(function () {
-
                     if (($(this).attr('href')).indexOf("Style_List_Search") != -1) {
-
                         $(this).click(function () {
                             var hrefTB = parent.frames[1].window.location.href;
                             var oldHref = $(this).attr('href');
@@ -22,17 +19,9 @@
                                 $(this).attr('href', oldHref.replace(/\?TB=[A-z0-9]{1}/gi, hrefTB.substr(hrefTB.indexOf("?TB="), 5)));
                             }
                         });
-
                     }
-
                 });
-
-            });
-
-            function redirectRight() {
-            
-
-            }
+            };
         </script>
 	</head>
 	<body>

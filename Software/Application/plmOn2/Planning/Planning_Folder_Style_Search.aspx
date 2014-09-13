@@ -13,7 +13,7 @@
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />    
 		<script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>		
 	</head>
-	<body>
+	<body onload="document.getElementById('chkSelectAll').checked = false;">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server">
         <wc1:Color_Wait ID="Color_Wait" runat="server" />

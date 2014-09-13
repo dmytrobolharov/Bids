@@ -3214,12 +3214,14 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
         }).then(function(resp) {
                 window.userLocalCulture = resp.YuniqueAPI['@ClientCulture'];
                 userLocalCultureEndpoint = '/l10n/translations/system/' + userLocalCulture + '/taCalendar';
-                for (var apiResp = resp.YuniqueAPI.pTACalHoliday, tempArrayOfDates = [], tempArrayOfNames = [], i = 0, k = apiResp.length; k > i; i++) {
-                    var holidayInternal = new Date(apiResp[i].TACalHolidayDate).format("#yyyy_MM_dd#");
-                    tempArrayOfDates.push(new Date(apiResp[i].TACalHolidayDate).getTime()), tempArrayOfNames.push({
-                        key: new Date(apiResp[i].TACalHolidayDate).getTime(),
+                 for (var apiResp = resp.YuniqueAPI.pTACalHoliday, tempArrayOfDates = [], tempArrayOfNames = [], i = 0, k = apiResp.length; k > i; i++) {
+                    var holidayInternal = (new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).format("#yyyy_MM_dd#");
+                    tempArrayOfDates.push((new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).getTime());
+                    tempArrayOfNames.push({
+                        key: (new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).getTime(),
                         value: apiResp[i].TACalHolidayName
-                    }), holidayArrayForInternal.push(holidayInternal)
+                    });
+                    holidayArrayForInternal.push(holidayInternal)
                 }
                 holidayArrayData.dates = tempArrayOfDates, holidayArrayData.holNames = tempArrayOfNames
                 Yunique.Http.get(userLocalCultureEndpoint, {
@@ -3323,8 +3325,13 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
                         $(rowEdit).appendTo(self);
                         $(ganntButtons).appendTo(self);
 //createGannt('0fce0d27-2a7f-43d1-999f-e15190ebe32d', options.calendarHeight, options.calendarWidth);
-createGannt(location.href.split('TID=')[1],options.calendarHeight,options.calendarWidth);
+                        createGannt(location.href.split('TID=')[1],options.calendarHeight,options.calendarWidth);
                     });
+            },function(){
+                toastr.options.timeOut = 0;
+                hide_wait_text();
+                toastr.error('There was an error with getting data.');
+
             });
     };
 })(jQuery);
@@ -3427,11 +3434,32 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 value2:''
             });
             var groupNameForTasks = [];
-            for (var i = 0; i < taskWorkflow.length; i++) {
+           /* for (var i = 0; i < taskWorkflow.length; i++) {
                 var obj = taskWorkflow[i].value2;
                 if($.inArray(obj,groupNameForTasks) === -1 && obj !==''){
                     groupNameForTasks.push(obj);
                     taskWorkflow.splice(i,0,{value:obj,key:'group'});
+                }
+            }*/
+                function checkTaskWorkflowId(value){
+                for (var i = 0; i < calendarDatasource.length; i++) {
+                    var element = calendarDatasource[i];
+                     if(element.TaskWorkflowId === value){
+                         return false;
+                     }
+                }
+                return true;
+            }
+            for(var y= 0;y<taskWorkflow.length;y++){
+                var obj = taskWorkflow[y].value2;
+                if(taskWorkflow[y].value3 === '1' || !checkTaskWorkflowId(taskWorkflow[y].key)){
+                    if($.inArray(obj,groupNameForTasks) === -1 && obj !==''){
+                        groupNameForTasks.push(obj);
+                        taskWorkflow.splice(y,0,{value:obj,key:'group'});
+                    }
+                }else{
+                    taskWorkflow.splice(y,1);
+                    y--;
                 }
             }
             TaskAssignedToID = resp.YuniqueAPI.Lookups.TaskAssignedToID;
@@ -3612,7 +3640,10 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 saveFunc()
             });
         },
-        function(e){toastr.error(Yunique.Data.getTranslatedString(TranslationData,'There was an error during getting data.'));});
+        function(e){
+            hide_wait_text();
+            toastr.error('There was an error during getting data.');
+        });
 
 
     GridEditor.prototype.hideColumns = function () {
@@ -3706,7 +3737,6 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
         //var prof = new Profiler("editorAddTaskHtml");
         //remove extisting row
         this.element.find("[taskId=" + task.id + "]").remove();
-         console.log(task)
         var taskRow = $.JST.createFromTemplate(task, "TASKROW");
         //save row element on task
         task.rowElement = taskRow;

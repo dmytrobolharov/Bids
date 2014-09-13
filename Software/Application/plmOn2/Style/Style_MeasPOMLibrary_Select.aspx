@@ -89,8 +89,8 @@
             <asp:datagrid id="DataGrid1" runat="server" DataKeyField="POMAlternatesID" 
             		AutoGenerateColumns="false" Width="100%">
             		<PagerStyle Visible ="false"></PagerStyle>
-				    <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-				    <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+				    <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+				    <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 				    <headerStyle Height="25px" CssClass="TableHeaderRed"></headerStyle>
                        <Columns>
                         <asp:TemplateColumn HeaderStyle-Width="20" HeaderStyle-BorderWidth="0" ItemStyle-BorderWidth="0">

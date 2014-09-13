@@ -1,0 +1,55 @@
+<setup>
+
+  <!-- The Task Tree  
+    o Build a complete tree here
+    o Each plugin gets loaded exactly once, will only be bound to the LAST node it's 
+        name is found in
+    o Typical node looks like so:
+          <node name="nUsers" text="" description="" plugin="CreateUsersAndGroups" />
+      name: name of node in tree
+      text: visible text in tree (overrides plugin.text)
+      description: tooltip (overrides plugin.description)
+      plugin: the plugin to bind here 
+		This is also the DLL name without extension.
+		By convention the dll should expose the same name via its NAME property
+      
+    o Optional node attribute: ensureVisible (boolean)
+  -->
+  <TaskTree>
+    <node name="nInstallEverything" text="Complete Installation" description="Installs everything." >
+
+      <node name="nAppServer" text="Pass #1" description="" >
+        <node name="nUsers" text="" description="" plugin="CreateUsersAndGroups" />
+        <node name="nFileSystemPerms" text="" description="" plugin="FileSystemPerms" />
+        <node name="nFileSystemShares" text="" description="" plugin="FileSystemShares" />
+	<node name="nIISWebAppsPLM" text="Install PLM Web Applications" description="" plugin="IISWebApplications" args="--installPLM" />
+        <node name="nIISVirDirsPLM" text="Install PLM Virtual Dirs" description="" plugin="IISVirtualDirectories" args="--installPLM" />
+        <node name="nIISWebAppsSRM" text="Install SRM Web Applications" description="" plugin="IISWebApplications" args="--installSRM" />
+        <node name="nIISVirDirsSRM" text="Install SRM Virtual Dirs" description="" plugin="IISVirtualDirectories" args="--installSRM" />
+        <node name="nMarkupToolIIS" text="" description="" plugin="MarkupToolIIS" />
+        <node name="nCommonChilkat" text="" description="" plugin="CommonAppChilkat" />
+        <node name="nMaintenance" text="Install Maintenance Scripts" description="" plugin="InstallMaintenanceScripts" />
+        <node name="nCopySRMOnFiles" text="" description="" plugin="CopySRMOnFiles" />
+        <node name="nDesktopShortcuts" text="" description="" plugin="CreateDesktopShortcuts" ensureVisible="true" />
+        <node name="nInstallPlmOnServices" text="" description="" plugin="InstallPlmOnServices" />
+        <node name="nInstallServiceBusService" text="" description="" plugin="InstallServiceBusService" />
+        <node name="nDatabaseServerRestoreDB" text="Install OoTB DB" description="" plugin="IntegrateDB" />
+	<node name="nConfigureSQLSession" text="" description="" plugin="ConfigureSQLSession" ensureVisible="true" />
+        <node name="nConfigureFiles" text="" description="" plugin="ConfigureYPLMFiles"  ensureVisible="true" />
+	<node name="nMarkupToolConfigureFiles" text="" description="" plugin="MarkupToolConfigureFiles" />
+        <node name="nDatabaseServerSynchData" text="" description="" plugin="SynchDatabaseData" />
+        <node name="nReportingDash" text="" description="" plugin="ReportServerInstallDash"  ensureVisible="true" />
+        <node name="nReportingReport" text="" description="" plugin="ReportServerInstallReports"  ensureVisible="true" />
+        <node name="nReportingBI" text="" description="" plugin="ReportServerInstallBI" ensureVisible="true" />
+     </node>
+
+      <node name="nLastNode" text="Pass #2 (Restart Setup First)" description="Run SQL Scripts" >
+        <node name="nDatabaseServerAlterScripts" text="" description="" plugin="DBAlterScripts" ensureVisible="true" />
+      </node>
+      <node name="nLastNode" text="Pass #3 (Optional and Long running tasks)" description="Run SQL Scripts" >
+        <node name="nConfigureSchema" text="Import schema files for Toolkit Dictionary" description="" plugin="ConfigureSchemaFiles" />
+      </node>
+    </node>
+  </TaskTree>
+
+</setup>

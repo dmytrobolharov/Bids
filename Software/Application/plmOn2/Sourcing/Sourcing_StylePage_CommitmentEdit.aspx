@@ -54,6 +54,7 @@
                 </cc1:BWImageButton>
                 <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return ConfirmClose();"></cc1:confirmedimagebutton>
                 <cc1:confirmedimagebutton id="btnCommit" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>
             </td>
             <td>
                 &nbsp;

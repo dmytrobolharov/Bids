@@ -143,6 +143,24 @@
                 var strHiddenColumns = hiddenColumns.join();
                 PageMethods.SaveHiddenColumns('FinancialPlanGrid', '<%= aspxPageName & "?PLID=" & strPlanningId %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
             }
+
+            /** Resizing Grid to take all the free height on the screen **/
+            (function resizeGrid() {
+
+                var changeGrid = $("#FinancialPlanGrid");
+                var windowHeight = $(window).height();
+                var formHeight = $("#Form1").height();
+                var minHeight = 100;
+
+                // Calculating, how much free space we have on the window for grid area
+                var diff = windowHeight - (formHeight - changeGrid.height());
+
+                if (diff > minHeight) {
+                    changeGrid.height(diff - 40); // leave space for footer
+                } else {
+                    changeGrid.height(minHeight);
+                }
+            })();
         </script>
 	</body>
 </html>

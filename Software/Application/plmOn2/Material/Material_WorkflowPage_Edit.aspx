@@ -18,7 +18,7 @@
 					<td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3" alt="" /></td>
 					<td>
 						<asp:ImageButton ID="btnSave" runat="server" ></asp:ImageButton>
-						<asp:ImageButton ID="btnClose" runat="server" ></asp:ImageButton></td>
+						<asp:ImageButton ID="btnClose" runat="server" CausesValidation="False"></asp:ImageButton></td>
 				</tr>
 			</table>            
             <table style="border-bottom: orange thin solid; border-left-style: none; height: 24px; background-color: white"

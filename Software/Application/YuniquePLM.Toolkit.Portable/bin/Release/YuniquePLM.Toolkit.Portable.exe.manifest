@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly manifestVersion="1.0" xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
-  <asmv1:assemblyIdentity version="2.1.5154.1627" name="YuniquePLM.Toolkit.Portable.exe" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity version="2.1.5154.1628" name="YuniquePLM.Toolkit.Portable.exe" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.0.0.38859" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.0.0.39149" language="neutral" processorArchitecture="x86" />
     <commandLine file="YuniquePLM.Toolkit.Portable.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -211,14 +211,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="plmOnBizObj.dll" size="1188352">
-      <assemblyIdentity name="plmOnBizObj" version="6.0.0.38859" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="plmOnBizObj.dll" size="1190400">
+      <assemblyIdentity name="plmOnBizObj" version="6.0.0.39149" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>CG+uJFrF/KG2951NeK7l+HLEHTY=</dsig:DigestValue>
+        <dsig:DigestValue>xof16F8tE3AJua6Z6YbxeJBC+L8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -248,97 +248,97 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="YSWebControls.dll" size="86016">
-      <assemblyIdentity name="YSWebControls" version="6.0.0.38859" publicKeyToken="2091C8D306170FAC" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="YSWebControls" version="6.0.0.39149" publicKeyToken="2091C8D306170FAC" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>fcUm9cYLIetv+l0vDFULwNqsgq0=</dsig:DigestValue>
+        <dsig:DigestValue>eQ6X7szlPFe8uF2CxKKTMjgPTb0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.API.Common.dll" size="25088">
-      <assemblyIdentity name="Yunique.API.Common" version="6.0.0.38859" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.API.Common" version="6.0.0.39149" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>D+efplB8VsUZZE+xZxhN0DgT+ZQ=</dsig:DigestValue>
+        <dsig:DigestValue>omlQd/hDUvc4iybubtQbX43WHRI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.dll" size="1117696">
-      <assemblyIdentity name="Yunique.Core" version="6.0.0.38859" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.dll" size="1119744">
+      <assemblyIdentity name="Yunique.Core" version="6.0.0.39149" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6Mc/ex1rScRImllIS0kT4yTgLS4=</dsig:DigestValue>
+        <dsig:DigestValue>eGVSsTdXfZbI74awDPEnpzEdytQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.Extensions.dll" size="239616">
-      <assemblyIdentity name="Yunique.Core.Extensions" version="6.0.0.38859" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.Extensions" version="6.0.0.39149" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>/Dt4wE3IpAnt7KDNsZOPL78jBbs=</dsig:DigestValue>
+        <dsig:DigestValue>J3DwBenc+gl7DO7WxCeasOXTH9c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.License.dll" size="21504">
-      <assemblyIdentity name="Yunique.Core.License" version="6.0.0.38859" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.License" version="6.0.0.39149" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>WWsvod1e+yALFhbT4RB7CW83wzA=</dsig:DigestValue>
+        <dsig:DigestValue>ko2YizngNSJq9EBQXQt1r/FDN5g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.Utilities.dll" size="23552">
-      <assemblyIdentity name="Yunique.Core.Utilities" version="6.0.0.38859" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.Utilities" version="6.0.0.39149" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>1rU0DtLxvmNwrbw2JkydwawA6yk=</dsig:DigestValue>
+        <dsig:DigestValue>rEawqwEbK9KuOLSWZuO0fJVGL2Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Toolkit.API.DTO.dll" size="122880">
-      <assemblyIdentity name="Yunique.Toolkit.API.DTO" version="6.0.0.38859" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Toolkit.API.DTO" version="6.0.0.39149" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>r72EtYdVk8W5g2xY7i4Xda4m/GQ=</dsig:DigestValue>
+        <dsig:DigestValue>CbgP1hNnI5xRAOpvhr+DjrS4nQc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="YuniquePLM.Toolkit.Portable.exe" size="3273728">
-      <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.0.0.38859" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="YuniquePLM.Toolkit.Portable.exe" size="3276800">
+      <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.0.0.39149" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>4ZV0C5xsNR0A8JFPE+HpdQ4eBZg=</dsig:DigestValue>
+        <dsig:DigestValue>W/JAY/UJf/J57PX8fbwFSQpdB0g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

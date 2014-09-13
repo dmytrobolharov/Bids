@@ -44,11 +44,17 @@
                     var oWindow = GetRadWindow();
 
                     if (!oWindow.isClosed()) {
+                        var parentWidth = $(oWindow.BrowserWindow).width();
                         var docWidth = $(document).width();
                         var docHeight = $(document).height();
 
                         if (docWidth > oWindow.GetWidth()) {
-                            oWindow.SetWidth(docWidth + 35);
+                            if (docWidth > parentWidth) {
+                                oWindow.SetWidth(parentWidth);
+                            }
+                            else {
+                                oWindow.SetWidth(docWidth + 35);
+                            }
                         }
                         if (docHeight > oWindow.GetHeight()) {
                             oWindow.SetHeight(docHeight + 35);

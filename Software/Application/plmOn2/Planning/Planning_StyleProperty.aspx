@@ -6,7 +6,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 <head>
-    <title>Planning Item</title>
+    <title runat="server" id="title">Planning Item</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
@@ -142,7 +142,7 @@
                     <asp:Label ID="lblBOM" runat="server" CssClass="fontHead"></asp:Label>
                     <asp:DropDownList ID="drlStyleBOMDimensionId" runat="server" AutoPostBack="true" CssClass="font" Width="100">
                     </asp:DropDownList>
-                    <cc1:BWImageButton ID="imgBtnBOMAdd" runat="server" ImageUrl="../System/Icons/icon_add.gif" Enabled="false"></cc1:BWImageButton>
+                    <cc1:BWImageButton ID="imgBtnBOMAdd" runat="server" ImageUrl="../System/Icons/icon_add.gif" Enabled="true"></cc1:BWImageButton>
                 </div>
                 <asp:DataList ID="dlDimBoms" runat="server" RepeatDirection="Vertical" CssClass="font" DataKeyField="DimTypeID">
                     <ItemTemplate>

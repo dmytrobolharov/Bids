@@ -180,7 +180,8 @@
         window.onload = function () {
             document.getElementById('drlSizeRange').disabled = true;
             document.getElementById('drlSizeClass').disabled = true;
-
+            document.getElementById('drlCustomField3').value = "In Progress"
+            document.getElementById('drlCustomField3').disabled = true;
         }
 
         function ShowBOMColorways(sender) {

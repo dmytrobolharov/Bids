@@ -3,8 +3,9 @@
 call ../../Setup/plugins/scripts/environ.bat
 
 set svr=%PLM.RSServer.ServerName%
-set usr=%PLM.RSServer.UserName%
-set pwd=%PLM.RSServer.UserPassword%
+set usr=%PLM.RSServer.PublishUser%
+set dom=%PLM.RSServer.PublishDomain%
+set pwd=%PLM.RSServer.PublishPassword%
 set ins=%PLM.RSServer.ServerVDir%
 
 set con="%PLM.DBServer.ConnectionString%"
@@ -25,7 +26,7 @@ REM Edit These variables to suit your environment
 REM ==================================================================
 
 set report_server=http://%svr%/%ins%
-set username=%svr%\%usr%
+set username=%dom%\%usr%
 set password=%pwd%
 set reportFolder=plmOn%wsid%Reports
 set dashFolder=plmOn%wsid%Dashboards

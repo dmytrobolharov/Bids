@@ -29,7 +29,7 @@
                 <cc1:BWImageButton ID="btnUpload" runat="server" Message="NONE" />
                 <cc1:BWImageButton ID="btnSort" runat="server" Message="NONE" />
                 <cc1:ConfirmedImageButton ID="btnPreview" runat="server" Message="NONE" />
-                <cc1:ConfirmedImageButton ID="btnBurn" runat="server" Message="NONE" />
+                <cc1:ConfirmedImageButton ID="btnBurn" runat="server" Message="Are you sure you want to burn this folder?" />
                 <cc1:ConfirmedImageButton ID="btnRemove" runat="server" Message="NONE" />
                 <cc1:ConfirmedImageButton ID="btnDelete" runat="server" Message="NONE" />
                 <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;">
@@ -78,27 +78,29 @@
                 &nbsp;
             </td>
             <td>
-                <asp:DataList ID="Datalist1" runat="server" Width="100%" GridLines="Both" RepeatDirection="Horizontal"
+                <asp:DataList ID="Datalist1" runat="server" Width="100%" GridLines="Both" RepeatDirection="Horizontal" Style="table-layout:fixed;"
                     RepeatColumns="4" BackColor="White" BorderColor="Silver" BorderStyle="Solid"
                     BorderWidth="1px" DataKeyField="ImageCatalogItemID" CssClass="font">
                     <HeaderTemplate>
                     </HeaderTemplate>
-                    <ItemStyle Height='200' VerticalAlign="Top"></ItemStyle>
+                    <ItemStyle VerticalAlign="Top"></ItemStyle>
                     <ItemTemplate>
-                        <table width='<%# string.Concat(ImageWidth) %>'>
+                        <table width="100%">
                             <tr>
                                 <td valign="top">
                                     <table width="100%">
                                         <tr>
-                                        <td><asp:CheckBox ID="chbSelect" runat="server" /></td>
-                                            <td align="center">
+                                            <td align="left">
+                                                <asp:CheckBox ID="chbSelect" runat="server" />
+                                            </td>
+                                            <td align="left">
                                                 <%# ImageVersionChecker(Container.DataItem("ImageID").tostring, Container.DataItem("ImageVersion").tostring) %>
                                             </td>
                                         </tr>
                                     </table>
                                     <table width="100%">
                                         <tr>
-                                            <td>
+                                            <td align="center">
                                                 <cc1:BWImageButton ID="imgBtnEdit" runat="server" Message="NONE" CommandName="Link">
                                                 </cc1:BWImageButton>
                                             </td>

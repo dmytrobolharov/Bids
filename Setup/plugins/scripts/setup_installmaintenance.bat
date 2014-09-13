@@ -10,7 +10,7 @@ echo Installing maintenance scripts....
 echo setup_installmaintenance.bat %installPath% %scriptPath% >> cli.log
 
 REM at 23:00 /every:M,T,W,Th,F %scriptPath%
-schtasks /CREATE /SC DAILY /ST 23:00 /TN "YuniquePLM Maintenance %PLM.AppServer.SiteID%" /TR %scriptPath%
+schtasks /CREATE /SC DAILY /ST 23:00 /TN "YuniquePLM Maintenance %PLM.AppServer.SiteID%" /TR %scriptPath% /F
 
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 goto EndLabel

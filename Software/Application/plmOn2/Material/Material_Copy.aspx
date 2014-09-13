@@ -74,7 +74,7 @@
 								</asp:TemplateColumn>
 								<asp:TemplateColumn>
 									<HeaderTemplate>
-										<asp:Label ID="lblColorHeaderTemplate" runat="server" Text= "<%= GetSystemText(GetColorHeader) %>"/> 
+										<asp:Label ID="lblColorHeaderTemplate" runat="server" ><%= GetSystemText(GetColorHeader) %></asp:Label> 
 									</HeaderTemplate>
 									<ItemTemplate>
 										<table>
@@ -187,7 +187,7 @@
 			
 			<table cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<tr bgColor="#ffffff">
-					<td vAlign="top" Width="50%">
+					<td vAlign="top" Width="33%">
 						<table class="TableHeader" height="32" cellSpacing="0" cellPadding="0" width="100%" border="0">
 							<tr>
 								<td align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
@@ -196,11 +196,20 @@
 							</tr>
 						</table>
 				    </td>
-				    <td Width="50%">
+				    <td Width=33%">
 				        <table class="TableHeader" height="32" cellSpacing="0" cellPadding="0" width="100%" border="0">
 							<tr>
 								<td align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 								<td class="fontHead" width="200"><asp:Label ID="Label3" runat="server" Text="Attachments..."></asp:Label></td>
+								<td class="fontHead">&nbsp;</td>
+							</tr>
+						</table>
+				    </td>
+                    <td Width="33%">
+				        <table class="TableHeader" height="32" cellSpacing="0" cellPadding="0" width="100%" border="0">
+							<tr>
+								<td align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
+								<td class="fontHead" width="200"><asp:Label ID="Label4" runat="server" Text="3D Files..."></asp:Label></td>
 								<td class="fontHead">&nbsp;</td>
 							</tr>
 						</table>
@@ -237,6 +246,49 @@
 									</HeaderTemplate>
 									<ItemTemplate>
 										<asp:CheckBox id="DataGrid3_chkSelected" runat="server"></asp:CheckBox>
+									</ItemTemplate>
+								</asp:TemplateColumn>								
+								<asp:TemplateColumn>
+								    <HeaderTemplate>
+										<asp:Label ID="lblMatDocumentNameHead" runat="server" ><%=GetSystemText("File Name")%></asp:Label> 										
+									</HeaderTemplate>								    
+							        <ItemTemplate>
+									    <asp:Label ID="lblMatDocumentName" runat="server" ><%#Container.DataItem("MaterialDocumentName")%></asp:Label> 										
+									</ItemTemplate>
+								</asp:TemplateColumn>
+								<asp:TemplateColumn>
+								    <HeaderTemplate>
+										<asp:Label ID="lblMatDocumentFileDescHead" runat="server" ><%=GetSystemText("File Description")%></asp:Label> 										
+									</HeaderTemplate>	
+									<ItemTemplate>
+										<asp:Label ID="lblMatDocumentDesc" runat="server" ><%#Container.DataItem("MaterialDocumentDescription").Replace(vbCrLf, "<BR>").toString%></asp:Label>										
+									</ItemTemplate>
+								</asp:TemplateColumn>
+								<asp:TemplateColumn>	
+								    <HeaderTemplate>
+										<asp:Label ID="lblMatDocumentFileSizeHead" runat="server" ><%=GetSystemText("File Size")%></asp:Label> 										
+									</HeaderTemplate>	
+									<ItemTemplate>
+									    <asp:Label ID="lblMatDocumentSize" runat="server" ><%#Container.DataItem("MaterialDocumentSize")%></asp:Label>																				
+									</ItemTemplate>
+								</asp:TemplateColumn>
+							</Columns>
+						</asp:datagrid>
+				    </td>
+
+                    <td valign="top" >
+				        <asp:datagrid id="Datagrid4" runat="server" Width="300" AllowSorting="True" AutoGenerateColumns="false"  DataKeyField="MaterialDocumentID">
+							<AlternatingItemStyle Height="20px" CssClass="Font"></AlternatingItemStyle>
+							<ItemStyle Height="20px" CssClass="Font"></ItemStyle>
+							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
+							<PagerStyle Visible="False"></PagerStyle>				    
+							<Columns>
+							   	<asp:TemplateColumn>							   	
+									<HeaderTemplate>
+										<input type="checkbox" id="DataGrid4_checkAll" onclick="DataGrid4_CheckAll(this);" runat="server" NAME="checkAll">
+									</HeaderTemplate>
+									<ItemTemplate>
+										<asp:CheckBox id="DataGrid4_chkSelected" runat="server"></asp:CheckBox>
 									</ItemTemplate>
 								</asp:TemplateColumn>								
 								<asp:TemplateColumn>
@@ -339,7 +391,16 @@
                 if (e.type == 'checkbox' && e.name.indexOf("DataGrid3_chkSelected") != -1)
                     e.checked = actVar;
             }
-        }		
+        }
+
+        function DataGrid4_CheckAll(checkAllBox) {
+            var actVar = checkAllBox.checked;
+            for (i = 0; i < frm.length; i++) {
+                e = frm.elements[i];
+                if (e.type == 'checkbox' && e.name.indexOf("DataGrid4_chkSelected") != -1)
+                    e.checked = actVar;
+            }
+        }	
 		</script>
 	</body>
 </HTML>

@@ -146,6 +146,10 @@
                     </td>
                 </tr>
             </table>
+            <asp:HiddenField ID="hdnWSClientID" runat="server" />
+            <asp:HiddenField ID="hdnWSClientPassword" runat="server" />
+            <asp:HiddenField ID="hdnPLMUserName" runat="server" />
+            <asp:HiddenField ID="hdnPLMPassword" runat="server" />
 <%--            <TABLE  id="StylesExistAlert" cellSpacing="0" cellPadding="0" width="100%" border="1" borderColor="#0061fe"
 				runat="server">
 				<TR vAlign="middle" align="left">
@@ -272,6 +276,31 @@
 
                 return false;
             }
+
+            /*** data from local storage for Service Bus and REST API call ***/
+            function supportsStorage() {
+                try {
+                    return 'localStorage' in window && window['localStorage'] !== null;
+                } catch (e) {
+                    return false;
+                }
+            };
+
+            var userData;
+            if (supportsStorage()) {
+                userData = localStorage.getItem("Yunique.User");
+            }else{
+                userData = sessionStorage.getItem("Yunique.User");
+            }
+
+            if (userData) {
+                userData = $.parseJSON(userData);
+                $("#hdnPLMUserName").val(userData["UserName"]);
+                $("#hdnPLMPassword").val(userData["Password"]);
+                $("#hdnWSClientID").val(userData["WebServiceClientID"]);
+                $("#hdnWSClientPassword").val(userData["WebServiceClientPassword"]);
+            }
+            /******************************************************/
 
         </script>
         </form>

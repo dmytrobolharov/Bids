@@ -8,6 +8,8 @@ set qpath2="%PLM.Mail.QueueFolder%"
 set dosave=%PLM.Mail.SaveSentMessages%
 set threads=20
 
+IF EXIST %mspath%\ChilkatSmtpQ.exe goto skipMailInstall
+
 echo *****************************************
 echo Installing plmOnMS....
 echo setup_installmailservice.bat %mspath% %qpath% %qpath2% %dosave% >> cli.log
@@ -59,6 +61,7 @@ goto EndLabel
 echo %ERRORLEVEL%
 EXIT /b 1
  
+:skipMailInstall
 :EndLabel
 
 echo Done!

@@ -18,9 +18,12 @@
 			
 			if (self != top) top.location.replace(self.location);
 
+			var isFirstLoad = true;
+
 			function loadFirsOption() {
-			    if ('<%= strIsRedirect %>' == 1) {
+			    if ('<%= strIsRedirect %>' == 1 && isFirstLoad == true) {
 			        window.top.main.location.href = window.top.menu.document.getElementById('tv_1').href;
+                    isFirstLoad = false;
 			    }			    
 			}
 		//-->

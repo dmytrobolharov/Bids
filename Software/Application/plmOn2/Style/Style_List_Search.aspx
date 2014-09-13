@@ -175,7 +175,11 @@
                         }
                     });
                 }
+
+                parent.frames[0].MenuRefresh();
+
             });
+
         </script>
 
         <script type="text/javascript" language="javascript">

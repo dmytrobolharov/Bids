@@ -7,6 +7,8 @@
 		<title>Control Panel Folder</title>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -70,6 +72,15 @@
 				if (e.type == 'checkbox' && e.name.indexOf("chbControlPanelTypeID") != -1)
 				e.checked= actVar ;
 			}
+			}
+			$("input[id$=txtSort]").change(function () {
+			    var value = $(this).val();
+			    $(this).val(pad(value.replace(/\D/g, ''), 3));
+			});
+
+			function pad(str, max) {
+			    str = str.toString();
+			    return str.length < max ? pad("0" + str, max) : str;
 			}
 		</SCRIPT>
 		</form>

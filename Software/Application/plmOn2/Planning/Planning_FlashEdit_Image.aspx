@@ -46,7 +46,7 @@
         <CdnSettings TelerikCdn="Disabled" />
     </telerik:RadStyleSheetManager>
     <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1">
-        <ClientEvents OnRequestStart="onAjaxRequestStart" OnResponseEnd="onAjaxResponseEnd" />
+        <ClientEvents OnRequestStart="" OnResponseEnd="onAjaxResponseEnd" />
         <AjaxSettings>
                 <telerik:AjaxSetting AjaxControlID="btnSave">
                     <UpdatedControls>
@@ -400,9 +400,9 @@
             var imageVersion = 0
             var imageSrc = stylePanel.find("#designImage").attr("src")
             var imageIdPos = imageSrc.indexOf("&IID=") + 5;
-
+            
             imageSrc = imageSrc.replace(imageSrc.substring(imageIdPos, imageIdPos + 36), imageId);
-            imageSrc = imageSrc.replace("&S=200", "&S=100")
+            //imageSrc = imageSrc.replace("&S=200", "&S=100")
 
             // Changing style picture on the screen
              stylePanel.find("#designImage").attr("src", imageSrc);
@@ -412,6 +412,10 @@
 
             stylePanel.find('*[id*="lblAlias"]:first').css("color", "red");
             stylePanel.find('*[id*="lblStyleNo"]').css("color", "red");
+        }
+
+        function reloadImages() {
+            <%= ClientScript.GetPostBackEventReference(RadAjaxPanel2, "") %>;
         }
     </script>
     <script language="javascript" type="text/javascript">
