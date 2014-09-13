@@ -1,0 +1,49 @@
+<table Name="wCustom108" formcolumns="3" gridcolumns=""
+       FormSQL="SELECT * FROM wCustom108"
+       GridReadSQL="SELECT * FROM wCustom108"
+       GridSQL="SELECT * FROM wCustom108">
+  
+	<column Name="CustomID" PK="true" alias="CustomID" Type="label" datatype="string" enabled="false" 
+	        Visible="false" cellwidth="150px" Search="false" GridVisible="false" GridWidth="100" 
+	        column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  
+	<column Name="CustomKey" alias="Departments Code" Type="textbox" datatype="string" column="1" order="2"
+          GridVisible="false" cellwidth="150px" Visible="true" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  
+	<column Name="Custom" alias="Departments Name" Type="textbox" datatype="string" enabled="true"
+          Visible="true" cellwidth="150px" GridVisible="true" GridWidth="100" GridOrder="1" GridSearch="true"
+          column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  
+	<column Name="Active" alias="Active" Type="dropdownlist" datatype="string" column="1" order="3"
+          GridVisible="true" cellwidth="150px" Visible="true" enabled="true" lookupquery="SELECT CustomKey, Custom FROM pActive"
+          select="true" textfield="Custom" ValueField="CustomKey" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="3" order="1"
+          GridVisible="false" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="3" order="2"
+          GridVisible="false" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="1" order="21"
+          GridVisible="false" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="3" order="3"
+          GridVisible="false" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  
+</table>

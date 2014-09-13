@@ -1,0 +1,20 @@
+<Table Name="pStyleHeader" formcolumns="3" gridcolumns="" UseRadGrid="true"
+      FormSQL="StyleID, StyleNo, Description, CustomField14 FROM vwx_BatchQ_StyleOneSeasonal_SEL"
+      GridReadSQL="StyleID, StyleNo, Description, CustomField14 FROM vwx_BatchQ_StyleOneSeasonal_SEL" 
+      GridSQL="StyleID, StyleNo, Description, CustomField14 FROM vwx_BatchQ_StyleOneSeasonal_SEL">
+  <column Name="StyleID" PK="true" alias="Style ID" Type="label" datatype="string" enabled="false"
+      Visible="FALSE" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="StyleNo" alias="Design No." Type="label" datatype="string" column="3" order="5"
+		GridVisible="true" cellwidth="150px" GridWidth="75" Visible="false" enabled="false">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Description" alias="Description" Type="label" datatype="string" column="1" gridorder="4" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="false" enabled="false" Search="true" MaxLength="19">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <!--column Name="CustomField14" alias="Description" Type="label" datatype="string" column="1" gridorder="5" GridVisible="true" cellwidth="150px" GridWidth="200" Visible="false" enabled="false" Search="false" MaxLength="40">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column-->
+</Table>
+

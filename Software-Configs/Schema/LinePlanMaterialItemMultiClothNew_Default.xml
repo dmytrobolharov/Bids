@@ -1,0 +1,85 @@
+<Table Name="pLinePlanMultiClothColorTemp" formcolumns="3" gridcolumns="" FormSQL="spx_LinePlanItemColorNew_SELECT"
+       GridReadSQL="spx_LinePlanItemColorNew_SELECT" GridSQL="spx_LinePlanItemColorNew_SELECT">
+
+	<!--   Using spx_LinePlanStyleCarryColor_SELECT     -->
+
+	<column Name="ColorPaletteID" PK="true" alias="ColorPaletteID" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px"
+			GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="100">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="ColorUrl" alias="Color" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="20px"
+		  GridVisible="true" GridWidth="20" column="1" order="1" GridOrder="101">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="ColorCode" alias="Color Code" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px"
+		  GridVisible="true" GridWidth="100" column="1" order="1" GridOrder="102">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="ColorName" alias="Color Name" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px"
+		  GridVisible="true" GridWidth="100" column="1" order="1" GridOrder="103">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="Units" alias="Units" Type="textbox" datatype="string" column="1" order="5" GridVisible="true"
+			cellwidth="50px" GridWidth="50" Visible="false" enabled="true" GridOrder="104">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+	<column Name="StyleColorDelivery1" alias="D1&lt;input type='checkbox' name='Delivery1'
+          onclick=&quot;DelCheckAll(this, 'rdlStyleColorDelivery1' ,'Delivery');&quot; &gt;"
+			Type="radiolist" datatype="string" column="1" order="5" GridVisible="true" cellwidth="150px"
+			GridWidth="25" Visible="true" enabled="true" GridOrder="105" RadioListGroup="Delivery">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+	<column Name="StyleColorDelivery2" alias="D2&lt;input type='checkbox' name='Delivery2'
+          onclick=&quot;DelCheckAll(this, 'rdlStyleColorDelivery2' ,'Delivery');&quot; &gt;"
+			Type="radiolist" datatype="string" column="1" order="5" GridVisible="true" cellwidth="150px"
+			GridWidth="25" Visible="true" enabled="true" GridOrder="105" RadioListGroup="Delivery">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+	<column Name="StyleColorDelivery3" alias="D3&lt;input type='checkbox' name='Delivery3'
+          onclick=&quot;DelCheckAll(this, 'rdlStyleColorDelivery3' ,'Delivery');&quot; &gt;"
+			Type="radiolist" datatype="string" column="1" order="5" GridVisible="true" cellwidth="150px"
+			GridWidth="25" Visible="true" enabled="true" GridOrder="105" RadioListGroup="Delivery">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+	<column Name="StyleColorDelivery4" alias="Not Selected&lt;input type='checkbox' name='Delivery4'
+          onclick=&quot;DelCheckAll(this, 'rdlStyleColorDelivery4' ,'Delivery');&quot; &gt;"
+			Type="radiolist" datatype="string" column="1" order="5" GridVisible="true" cellwidth="150px"
+			GridWidth="25" Visible="true" enabled="true" GridOrder="105" RadioListGroup="Delivery">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+	<column Name="ColorType" alias="R/S/F" Type="dropdownlist" datatype="guid" column="1" order="7"
+			GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true" GridOrder="108"
+			lookupquery="select * from xCustom99"
+		  textfield="Custom" ValueField="CustomKey" FilterField="" AddNullField="FALSE" select="true" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+
+	<column Name="MUser"  alias="MUser" Type="label" datatype="string" enabled="true" Visible="false" cellwidth="150px"
+			GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="100">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="MDate"  alias="MDate" Type="label" datatype="string" enabled="true" Visible="false" cellwidth="150px"
+			GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="100">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+</Table>
+

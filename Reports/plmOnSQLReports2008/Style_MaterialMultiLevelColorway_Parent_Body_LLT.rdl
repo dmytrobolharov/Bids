@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="list1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.7in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="list1_Contents">
+                      <ReportItems>
+                        <Subreport Name="subreport1">
+                          <ReportName>Style_MaterialMultiLevelColorway_SubReport_Body_LLT</ReportName>
+                          <Parameters>
+                            <Parameter Name="SMID">
+                              <Value>=Fields!SMID.Value</Value>
+                            </Parameter>
+                          </Parameters>
+                          <KeepTogether>true</KeepTogether>
+                          <Height>0.5in</Height>
+                          <Width>1.2in</Width>
+                          <Style />
+                        </Subreport>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style />
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="list1_Details_Group">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SMID.Value</GroupExpression>
+                </GroupExpressions>
+                <PageBreak>
+                  <BreakLocation>Between</BreakLocation>
+                </PageBreak>
+              </Group>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
+        <Height>0.7in</Height>
+        <Width>2in</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>0.7in</Height>
+    <Style />
+  </Body>
+  <Width>10.8in</Width>
+  <Page>
+    <PageHeader>
+      <Height>2.5in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Multi-Level Material Colourway</Value>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>26pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.1in</Top>
+          <Height>0.5in</Height>
+          <Width>10.625in</Width>
+          <ToolTip>##label##</ToolTip>
+          <Style>
+            <VerticalAlign>Middle</VerticalAlign>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageHeader>
+    <PageFooter>
+      <Height>0.2in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style />
+    </PageFooter>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <InteractiveHeight>11in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.2in</LeftMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <DataSourceReference>plmOn</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>0215d1ee-1981-4bbe-a581-3785b24e3a27</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StyleID">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_Sourcing_MaterialColorway_Parent_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SMID">
+          <DataField>SMID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="SID">
+      <DataType>String</DataType>
+      <Prompt>StyleID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>fdc12ffa-44e3-414e-b0c6-41bf4feaa3b4</rd:ReportID>
+</Report>

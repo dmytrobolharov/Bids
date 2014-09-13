@@ -1,0 +1,8 @@
+<generator>
+   <table name="pBody" codecolumn="BodyNo" idcolumn="BodyID" spacecolumn="2"> 
+	  <column name="SizeClass" lookup="SELECT Custom, CustomKey FROM pSizeClass " lookupID="Custom" lookupSelect="CustomKey" lookupSpace="" lookupNull="?" order="1"/>     
+      <column name="Season" lookup="SELECT Custom, CustomKey FROM pSeason " lookupID="Custom" lookupSelect="CustomKey" lookupSpace="" lookupNull="?" order="2"/>     
+      <column name="Year" lookup="SELECT Custom, CustomKey FROM pYear " lookupID="Custom" lookupSelect="CustomKey" lookupSpace="" lookupNull="?" order="3"/>
+  	  <column name="AUTOID" lookupSpace="" lookupNull="" lookupNumber="3" order="5"/>  
+   </table>
+</generator>

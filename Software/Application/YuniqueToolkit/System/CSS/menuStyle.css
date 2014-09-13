@@ -1,0 +1,67 @@
+.TopMenuGroup
+{
+  border:1px;
+  border-style:outset;
+  border-color: #999999;
+}
+
+.MenuGroup
+{
+  background-color:white;
+  border:1px;
+  border-style:solid;
+  border-color: #999999;
+  /* filter:progid:DXImageTransform.Microsoft.Shadow(color='dimgray', Direction=135, Strength=3); */
+}
+
+.MenuItem 
+{
+  color:black; 
+  font-family:Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  font-size:11px; 
+  padding:3px;
+  padding-left:15px;
+  padding-right:10px;
+  cursor:default;
+}
+
+.MenuItemOver 
+{
+  color: White; 
+  background-color: #666699;
+  font-family:Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  font-size:11px; 
+  padding:3px;
+  padding-left:15px;
+  padding-right:10px;
+  cursor:default;
+}
+
+.DisabledMenuItem
+{
+  color:Gray; 
+  background-color:white; 
+  font-family:Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  font-size:11px; 
+  padding:3px;
+  padding-left:15px;
+  padding-right:10px;
+  cursor:default;
+}
+
+.DisabledMenuItemOver 
+{
+  color:Gray; 
+  background-color:silver; 
+  font-family:Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  font-size:11px; 
+  padding:3px;
+  padding-left:15px;
+  padding-right:10px;
+  cursor:default;
+}
+
+.MenuBreak
+{
+  padding:0px; 
+}

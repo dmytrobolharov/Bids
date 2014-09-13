@@ -1,0 +1,38 @@
+/*
+Comments:
+
+#01 - Ryan Cabanas - September 23, 2009
+	Replace the old image string with the new image string using function.
+Deleted old code.
+*/
+
+
+ALTER  procedure [dbo].[rpx_Style_PreCosting_SELECT]
+    @StyleType int = null,
+    @Season varchar(200) = null,
+    @Year varchar(10) = null,
+    @ProductCategory varchar(50) = null
+as
+
+
+SELECT     sh.StyleNo, sh.Description, sh.SizeClass, sh.SizeRange, sc.StyleCostingCustomField2 AS Weight, sc.StyleCostingCustomField1 AS TargetRetail, 
+                      sc.StyleCostingCustomField3 AS TargetMargin, sc.StyleCostingCustomField8 AS Royalty, sc.StyleCostingCustomField4 AS MiscCost, 
+                      sc.StyleCostingCustomField18 AS Units, sct.StyleCostingType AS CostingType, sc.StyleCostingCustomField14 AS TargetFirstCost, 
+                      sc.StyleCostingCustomField15 AS FirstCost, sc.StyleCostingCustomField11 AS DutyPct, scd.DutyCategory AS QuotaCategory, 
+                      sc.StyleCostingCustomField9 AS Commission, sh.StyleType, sc.StyleCostingTypeID, sh.CustomField5 AS StyleCategory,
+					  dbo.fnx_GetStreamingImagePath(i.ImageID, i.[Version]) AS FilePath	--Comment #01
+FROM         pStyleCostingDuty AS scd RIGHT OUTER JOIN
+                      pStyleCostingType AS sct INNER JOIN
+                      pStyleCosting AS sc ON sct.StyleCostingTypeID = sc.StyleCostingTypeID INNER JOIN
+                      pStyleHeader AS sh ON sc.StyleID = sh.StyleID ON scd.DutyId = sc.StyleQuotaDutyID LEFT OUTER JOIN
+                      hImage AS i ON sh.DesignSketchID = i.ImageID AND sh.DesignSketchVersion = i.Version
+where (@StyleType is null or sh.StyleType = @StyleType)
+and (@Season is null or sh.CustomField2 = @Season)
+and (@Year is null or sh.CustomField4 = @Year)
+and (@ProductCategory is null or sh.CustomField5 = @ProductCategory)
+ORDER BY sh.CustomField5
+GO
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES     ('DB_Version', '4.0.0000', '852', GetDate())
+GO

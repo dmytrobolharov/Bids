@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="plmOn">
+      <DataSourceReference>plmOn</DataSourceReference>
+      <rd:DataSourceID>8f3c0e74-4609-4eaf-b791-c16e1d675fc3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <PageWidth>11in</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="SID">
+      <DataType>String</DataType>
+      <Prompt>StyleID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SN">
+      <DataType>Integer</DataType>
+      <Prompt>StyleSet</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>5.375in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <Left>0.125in</Left>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>0.03125in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="Hidden_HeadingStr">
+                  <ZIndex>1</ZIndex>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <CanGrow>true</CanGrow>
+                  <Value />
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_RowGroup1">
+                <PageBreakAtEnd>true</PageBreakAtEnd>
+                <GroupExpressions>
+                  <GroupExpression>1</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="textbox24">
+                  <rd:DefaultName>textbox24</rd:DefaultName>
+                  <ZIndex>2</ZIndex>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Column.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_ColumnGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Column.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>0.05147in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <DataSetName>dsArtwork</DataSetName>
+        <Width>5.40625in</Width>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="text99">
+              <ZIndex>3</ZIndex>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <Value />
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <Height>5.92538in</Height>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>5.87391in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <List Name="list1">
+                    <KeepTogether>true</KeepTogether>
+                    <ReportItems>
+                      <Rectangle Name="rectangle_MainInsideMatrix">
+                        <Left>0.25in</Left>
+                        <ReportItems>
+                          <Image Name="image1">
+                            <Sizing>FitProportional</Sizing>
+                            <MIMEType>image/jpeg</MIMEType>
+                            <ZIndex>1</ZIndex>
+                            <Source>External</Source>
+                            <Style>
+                              <BorderStyle>
+                                <Default>Solid</Default>
+                              </BorderStyle>
+                            </Style>
+                            <Height>5.125in</Height>
+                            <Value>=Fields!FilePath.Value</Value>
+                          </Image>
+                          <Textbox Name="ParameterName">
+                            <Top>5.125in</Top>
+                            <rd:DefaultName>ParameterName</rd:DefaultName>
+                            <Style>
+                              <BorderStyle>
+                                <Default>Solid</Default>
+                              </BorderStyle>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingBottom>2pt</PaddingBottom>
+                              <FontFamily>Tahoma</FontFamily>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                            </Style>
+                            <CanGrow>true</CanGrow>
+                            <Value>=Fields!MaterialDescription.Value</Value>
+                          </Textbox>
+                        </ReportItems>
+                        <Top>0.125in</Top>
+                        <Width>4.875in</Width>
+                        <Style>
+                          <BorderStyle>
+                            <Default>Solid</Default>
+                          </BorderStyle>
+                        </Style>
+                        <Height>5.375in</Height>
+                      </Rectangle>
+                    </ReportItems>
+                    <DataSetName>dsArtwork</DataSetName>
+                    <PageBreakAtEnd>true</PageBreakAtEnd>
+                  </List>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>6in</Height>
+  </Body>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox5">
+        <Top>0.135in</Top>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>26pt</FontSize>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.5in</Height>
+        <Value>Artwork</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>2.5in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+  </PageHeader>
+  <rd:ReportID>cf5830a9-1cc4-4643-b76e-e87128d17186</rd:ReportID>
+  <DataSets>
+    <DataSet Name="dsArtwork">
+      <Query>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_MaterialArtwork_2_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@StyleID">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleSet">
+            <Value>=Parameters!SN.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>plmOn</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Column">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Column</DataField>
+        </Field>
+        <Field Name="MaterialDescription">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>MaterialDescription</DataField>
+        </Field>
+        <Field Name="FilePath">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>FilePath</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>11in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <PageHeight>8.5in</PageHeight>
+</Report>

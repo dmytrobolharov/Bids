@@ -1,0 +1,57 @@
+﻿<table Name="sSchemaFileTableColumnValidator" formcolumns="1" gridcolumns=""
+       DataKeyField="ValidatorID" SortOrder=""
+       PageSize="50" GridHeight="200" ViewMode="ByRow" SaveMode="ByPage" AutoSizeInReadMode="true"
+       AllowColumnReordering="false" AllowGrouping="false" ShowGroupFooter="false"
+       AllowSorting="false" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="true" AllowPaging="false" AllowFiltering="false"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false" 
+       AllowRowSelect="true" AllowMultiRowSelect="true" 
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="true" 
+       FormSQL="SELECT * FROM sSchemaFileTableColumnValidator"
+       GridReadSQL="SELECT * FROM sSchemaFileTableColumnValidator"
+       GridSQL="SELECT * FROM sSchemaFileTableColumnValidator">
+  <column Name="ValidatorID" PK="true" alias="Validator ID" Type="label" datatype="string" select="true" enabled="true" Visible="false" cellwidth="300px"
+          GridVisible="false" GridWidth="300" GridOrder="001" GridSearch="false" column="1" order="001">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="FileID" PK="false" alias="File ID" Type="label" datatype="string" select="true" enabled="true" Visible="false" cellwidth="300px"
+          GridVisible="false" GridWidth="300" GridOrder="002" GridSearch="false" column="1" order="002">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="TableID" PK="false" alias="Table ID" Type="label" datatype="string" select="true" enabled="true" Visible="false" cellwidth="300px"
+          GridVisible="false" GridWidth="300" GridOrder="003" GridSearch="false" column="1" order="003">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ColumnID" PK="false" alias="Column ID" Type="label" datatype="string" select="true" enabled="true" Visible="false" cellwidth="300px"
+          GridVisible="false" GridWidth="300" GridOrder="004" GridSearch="false" column="1" order="004">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Class" PK="false" alias="Class" Type="dropdownlist" datatype="query" select="true" enabled="true" Visible="true" cellwidth="100px"
+          GridVisible="true" GridWidth="100" GridOrder="005" column="1" order="005"
+          lookupquery="SELECT ItemValue AS ItemKey, ItemValue FROM dvtValidatorClass ORDER BY ItemValue"
+          textfield="ItemValue" ValueField="ItemKey" AutoPostBack="false" AddNullField="true" Search="false">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Type" PK="false" alias="Type" Type="dropdownlist" datatype="query" select="true" enabled="true" Visible="true" cellwidth="100px"
+          GridVisible="true" GridWidth="100" GridOrder="006" column="1" order="006"
+          lookupquery="SELECT ItemValue AS ItemKey, ItemValue FROM dvtValidatorType ORDER BY ItemValue"
+          textfield="ItemValue" ValueField="ItemKey" AutoPostBack="false" AddNullField="true" Search="false">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Minimum" PK="false" alias="Minimum" Type="textbox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="70px"
+          GridVisible="true" GridWidth="70" GridOrder="007" GridSearch="false" column="1" order="007">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Maximum" PK="false" alias="Maximum" Type="textbox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="70px"
+          GridVisible="true" GridWidth="70" GridOrder="008" GridSearch="false" column="1" order="008">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Text" PK="false" alias="Text" Type="textbox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="100px"
+          GridVisible="true" GridWidth="100" GridOrder="009" GridSearch="false" column="1" order="009">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Dataformat" PK="false" alias="Data Format" Type="textbox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="70px"
+          GridVisible="true" GridWidth="70" GridOrder="010" GridSearch="false" column="1" order="010">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+</table>

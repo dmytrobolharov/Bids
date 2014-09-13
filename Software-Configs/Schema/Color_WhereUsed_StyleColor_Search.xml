@@ -1,0 +1,67 @@
+<Table Name="vwx_ColorPalette_SEL" formcolumns="3" gridcolumns=""        
+       FormSQL="SELECT * FROM vwx_ColorPalette_SEL"
+       GridReadSQL="SELECT * FROM vwx_ColorPalette_SEL"
+       GridSQL="SELECT * FROM vwx_ColorPalette_SEL">
+	<column Name="ColorPaletteID" PK="true" alias="ColorPaletteID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="true" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ColorFolderID" PK="true" alias="ColorFolderID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="true" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ColorTypeID" alias="Palette Type" Type="dropdownlist" datatype="string" column="1"
+		order="2" GridVisible="false" cellwidth="150px" AutoPostBack="false" Search="true" 
+		lookupquery="SELECT ColorTypeID, ColorTypeDescription FROM pColorType WHERE Active = 1 ORDER BY ColorTypeDescription"
+		select="true" textfield="ColorTypeDescription" ValueField="ColorTypeID" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="ColorCode" alias="Color Code" Type="textbox" datatype="string"
+	column="2" order="6" GridVisible="true" cellwidth="120px" Visible="true" enabled="true"
+		AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ColorName" alias="Color Name" Type="textbox" datatype="string"
+	column="2" order="6" GridVisible="true" cellwidth="120px" Visible="true" enabled="true"
+		AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ColorSource" alias="Color Source" Type="textbox" datatype="string"
+	column="1" order="6" GridVisible="true" cellwidth="150px" Visible="false" enabled="false"
+		AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ColorNotes" alias="Color Notes" Type="textbox" datatype="string"
+	column="1" order="6" GridVisible="true" cellwidth="150px" Visible="false" enabled="false"
+		AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<!--column Name="UsedInBOM" alias="Style Colorway" Type="dropdownlist" datatype="string" column="3"
+		order="7" GridVisible="false" cellwidth="100px" AutoPostBack="false" Search="true" lookupquery="SELECT 0 as Value, 'No' as Text UNION SELECT 1 as Value, 'Yes' as Text ORDER BY Value DESC"
+		select="true" textfield="Text" ValueField="Value" Visible="true" enabled="true" AddNullField="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="UsedInBOMMaterial" alias="Material Color" Type="dropdownlist" datatype="string" column="3"
+		order="7" GridVisible="false" cellwidth="100px" AutoPostBack="false" Search="true" lookupquery="SELECT 0 as Value, 'No' as Text UNION SELECT 1 as Value, 'Yes' as Text ORDER BY Value DESC"
+		select="true" textfield="Text" ValueField="Value" Visible="true" enabled="true" AddNullField="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column-->
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="1" order="19"
+		GridVisible="false" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="1" order="20"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="1" order="21"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="1" order="22"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

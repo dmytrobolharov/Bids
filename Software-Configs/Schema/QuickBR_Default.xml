@@ -1,0 +1,22 @@
+<table Name="pQuickBatchReplaceType" formcolumns="3" gridcolumns="" FormSQL="SELECT * FROM pQuickBatchReplaceType"
+	GridReadSQL="SELECT * FROM pQuickBatchReplaceType" GridSQL="SELECT * FROM pQuickBatchReplaceType">
+	
+	<column Name="QuickBRTypeID" PK="true" alias="QuickBRTypeID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="false" column="1" order="1" AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="QuickBRTypeName" alias="Form Name" Type="textbox" datatype="string" column="1"
+		order="3" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" AutoPostBack="false"
+		Search="false" GridWidth="200" GridOrder="1">
+		<Validator Class="Required" Type="" Minimum="" Maximum="" Text="Form Name Required!" />
+	</column>
+
+  <column Name="QuickBRTypeDescription" alias="Description" Type="textbox" datatype="string" column="1"
+		order="3" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" AutoPostBack="false"
+		Search="false" GridWidth="200" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+ 
+</table>

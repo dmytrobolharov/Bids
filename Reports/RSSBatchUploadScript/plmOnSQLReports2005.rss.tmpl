@@ -1,0 +1,254 @@
+'=====================================================================
+'  File:      SQLReports.rss
+'  Author:    Ryan Cabanas
+'
+'  Summary:  Demonstrates a script that can be used with RS.exe to 
+'	     publish the sample reports that ship with Reporting Services.
+'
+'
+'
+'
+'---------------------------------------------------------------------
+'  This file is part of Microsoft SQL Server Code Samples.
+'
+'  Copyright (C) Microsoft Corporation.  All rights reserved.
+'
+' This source code is intended only as a supplement to Microsoft
+' Development Tools and/or on-line documentation.  See these other
+' materials for detailed information regarding Microsoft code samples.
+'
+' THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+' KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+' IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+' PARTICULAR PURPOSE.
+'=====================================================================*/
+
+Dim definition As [Byte]() = Nothing
+Dim warnings As Warning() = Nothing
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' NB: The following two variables are now created by a script
+'
+'These are the names of the new datasource on the Report Server,
+'but it will not overwire already existing datasources.
+' Dim datasourcename1 As String = "plmOn"
+'
+'These are the accompanying connection strings to the datasources.
+'Dim strconnection1 As String = "data source=KJOHANNSEN3;initial catalog=YuniquePLM"
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Public Sub Main()
+
+    rs.Credentials = System.Net.CredentialCache.DefaultCredentials
+    Dim name As String
+
+    'Create the parent Report folder
+    Try
+        rs.CreateFolder(parentFolder, "/", Nothing)
+        Console.WriteLine("Parent folder created: {0}", parentFolder)
+    Catch e As Exception
+        Console.WriteLine(e.Message)
+    End Try
+    'Create the parent Dashboard folder
+    Try
+        rs.CreateFolder(parentDashFolder, "/", Nothing)
+        Console.WriteLine("Parent folder created: {0}", parentDashFolder)
+    Catch e As Exception
+        Console.WriteLine(e.Message)
+    End Try
+    Try
+        rs.CreateFolder(parentBIFolder, "/", Nothing)
+        Console.WriteLine("Parent folder created: {0}", parentBIFolder)
+    Catch e As Exception
+        Console.WriteLine(e.Message)
+    End Try
+
+    'Create share data sources
+    CreateDatasources()
+ 
+    'Publish the reports
+    PublishReports()
+
+End Sub
+
+Public Sub CreateSampleDataSource(ByVal p As String, ByVal name As String, ByVal strconnection As String)
+
+    'Define the data source definition.
+
+    Dim definition As New DataSourceDefinition()
+    definition.CredentialRetrieval = CredentialRetrievalEnum.Integrated
+    definition.ConnectString = strconnection
+    definition.Enabled = True
+    definition.EnabledSpecified = True
+    definition.Extension = "SQL"
+    definition.ImpersonateUser = False
+    definition.ImpersonateUserSpecified = True
+
+   'Use the default prompt string.
+    definition.Prompt = Nothing
+    definition.WindowsCredentials = False
+
+'The third parameter below signifies whether, or not, to overwrite an existing datasource with the same name.
+Try
+    rs.CreateDataSource(name, p, False, definition, Nothing)
+
+Catch e As Exception
+    Console.WriteLine(e.Message)
+End Try
+    
+End Sub 
+
+Public Sub PublishReportImage(ByVal imageName As String, ByVal imageFile as String) 
+  Try 
+    Dim stream As FileStream = File.OpenRead(imageFile) 
+    definition = New [Byte](stream.Length) {} 
+    stream.Read(definition, 0, CInt(stream.Length)) 
+    stream.Close() 
+
+  Catch e As IOException 
+    Console.WriteLine(e.Message) 
+  End Try 
+
+  Try 
+    rs.CreateResource(imageName, parentPath, False, definition, "image/jpeg", Nothing) 
+
+    Console.WriteLine("Image: {0} published successfully", imageName) 
+
+  Catch e As Exception 
+    Console.WriteLine(e.Message) 
+  End Try 
+End Sub 
+
+Public Sub PublishDashboardImage(ByVal imageName As String, ByVal imageFile as String) 
+  Try 
+    Dim stream As FileStream = File.OpenRead(imageFile) 
+    definition = New [Byte](stream.Length) {} 
+    stream.Read(definition, 0, CInt(stream.Length)) 
+    stream.Close() 
+
+  Catch e As IOException 
+    Console.WriteLine(e.Message) 
+  End Try 
+
+  Try 
+    rs.CreateResource(imageName, parentDashPath, False, definition, "image/jpeg", Nothing) 
+
+    Console.WriteLine("Image: {0} published successfully", imageName) 
+
+  Catch e As Exception 
+    Console.WriteLine(e.Message) 
+  End Try 
+End Sub 
+
+Public Sub PublishBIImage(ByVal imageName As String, ByVal imageFile as String) 
+  Try 
+    Dim stream As FileStream = File.OpenRead(imageFile) 
+    definition = New [Byte](stream.Length) {} 
+    stream.Read(definition, 0, CInt(stream.Length)) 
+    stream.Close() 
+
+  Catch e As IOException 
+    Console.WriteLine(e.Message) 
+  End Try 
+
+  Try 
+    rs.CreateResource(imageName, parentBIPath, False, definition, "image/jpeg", Nothing) 
+
+    Console.WriteLine("Image: {0} published successfully", imageName) 
+
+  Catch e As Exception 
+    Console.WriteLine(e.Message) 
+  End Try 
+End Sub 
+
+Public Sub PublishReport(ByVal reportName As String, ByVal reportFile as string)
+    Try
+        Dim stream As FileStream = File.OpenRead(reportFile)
+        definition = New [Byte](stream.Length) {}
+        stream.Read(definition, 0, CInt(stream.Length))
+        stream.Close()
+
+    Catch e As IOException
+        Console.WriteLine(e.Message)
+    End Try
+
+    Try
+        warnings = rs.CreateReport(reportName, parentPath, True, definition, Nothing)
+
+        If Not (warnings Is Nothing) Then
+            Dim warning As Warning
+            For Each warning In warnings
+                Console.WriteLine(warning.Message)
+            Next warning
+
+        Else
+            Console.WriteLine("Report: {0} published successfully with no warnings", reportName)
+        End If
+
+    Catch e As Exception
+        Console.WriteLine(e.Message)
+    End Try
+End Sub 
+
+Public Sub PublishDashboard(ByVal reportName As String, ByVal reportFile as string)
+    Try
+        Dim stream As FileStream = File.OpenRead(reportFile)
+        definition = New [Byte](stream.Length) {}
+        stream.Read(definition, 0, CInt(stream.Length))
+        stream.Close()
+
+    Catch e As IOException
+        Console.WriteLine(e.Message)
+    End Try
+
+    Try
+        warnings = rs.CreateReport(reportName, parentDashPath, True, definition, Nothing)
+
+        If Not (warnings Is Nothing) Then
+            Dim warning As Warning
+            For Each warning In warnings
+                Console.WriteLine(warning.Message)
+            Next warning
+
+        Else
+            Console.WriteLine("Dashboard: {0} published successfully with no warnings", reportName)
+        End If
+
+    Catch e As Exception
+        Console.WriteLine(e.Message)
+    End Try
+End Sub 
+
+Public Sub PublishBI(ByVal reportName As String, ByVal reportFile as string)
+    Try
+        Dim stream As FileStream = File.OpenRead(reportFile)
+        definition = New [Byte](stream.Length) {}
+        stream.Read(definition, 0, CInt(stream.Length))
+        stream.Close()
+
+    Catch e As IOException
+        Console.WriteLine(e.Message)
+    End Try
+
+    Try
+        warnings = rs.CreateReport(reportName, parentBIPath, True, definition, Nothing)
+
+        If Not (warnings Is Nothing) Then
+            Dim warning As Warning
+            For Each warning In warnings
+                Console.WriteLine(warning.Message)
+            Next warning
+
+        Else
+            Console.WriteLine("YuniqueBI: {0} published successfully with no warnings", reportName)
+        End If
+
+    Catch e As Exception
+        Console.WriteLine(e.Message)
+    End Try
+End Sub 
+
+'
+' Publish the reports  (This procedure will be written by a script)
+'
+

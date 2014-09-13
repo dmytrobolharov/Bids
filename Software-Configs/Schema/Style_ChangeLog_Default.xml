@@ -1,0 +1,40 @@
+
+<Table Name="pStyleChange" formcolumns="3" gridcolumns="" FormSQL="spx_StyleChangeLog_SELECT"
+	GridReadSQL="spx_StyleChangeLog_SELECT" GridSQL="spx_StyleChangeLog_SELECT">
+	
+	<column Name="StyleChangeID" PK="true" alias="StyleChangeID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" Search="false" GridVisible="false"
+		GridWidth="100" column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="Icon" alias="" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="25px" Search="false" GridVisible="true" GridWidth="25"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="StyleChangeNo" alias="ID" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="40"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="StyleChangeType" alias="Status" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="80"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="StyleChangeDescription" alias="Notes" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="250"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="StyleChangeNotifyTo" alias="Sent To" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="250"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

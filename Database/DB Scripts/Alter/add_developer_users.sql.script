@@ -1,0 +1,196 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+print 'Checking for stored procs....'
+IF EXISTS (select * from sysobjects where id = object_id('spx_ZZZ_User_AddOne') and sysstat & 0xf = 4)
+    drop procedure spx_ZZZ_User_AddOne
+GO
+IF EXISTS (select * from sysobjects where id = object_id('spx_ZZZ_User_AddMany') and sysstat & 0xf = 4)
+    drop procedure spx_ZZZ_User_AddMany
+GO
+
+print 'Creat AddOne...'
+GO
+
+CREATE PROCEDURE [dbo].[spx_ZZZ_User_AddOne]  (
+@UserID INT,
+@TeamID UNIQUEIDENTIFIER , 
+@FirstName NVARCHAR(50),
+@UserName NVARCHAR(25) 
+)
+AS
+
+--
+-- Add a user
+--
+
+SET IDENTITY_INSERT [dbo].[Users] ON
+
+INSERT INTO [dbo].[Users] 
+	([UserId], [UserCode], [TeamID], [FirstName], [MiddleName], [LastName], 
+	[Title], [Birthday], [Company], [Street1], [Street2], [City], [State], [Zip], 
+	[Country], [Phone], [Fax], [Mobile], [UserName], [PassWord], [Email], 
+	[ContactName1], [ContactTitle1], [ContactEmail1], [ContactName2], 
+	[ContactTitle2], [ContactEmail2], [ContactName3], [ContactTitle3], [ContactEmail3], 
+	[ContactName4], [ContactTitle4], [ContactEmail4], [Admin], [Active], [PublicAccess], 
+	[TradePartner], [LastUpdate], [SESSION], [SESSIONDATE], [SESSIONOS], [SCREENWIDTH], 
+	[SCREENHEIGHT], [FULLNAME], [USERDIR], [MAILADDR], [MAXSIZE], [MAXMSGS], [FLAGS], 
+	[TYPE], [IP], [Picture], [A_CompanyFolder], [A_TeamFolder], [A_TradingFolder], 
+	[A_ColorFolder], [A_ImageFolder], [A_TemplateFolder], [A_DesignFolder], [A_CatalogFolder], 
+	[A_WorkflowFolder], [A_ExternalAccess], [A_StyleFolder], [A_StyleHeader], 
+	[A_StyleMaterial], [A_StyleArtwork], [A_StyleLicensee], [A_StyleColorway], [A_StyleDesignDetail], 
+	[A_StyleDevelopmentSpec], [A_StyleGradeMeasurment], [A_ProductionRequest], [D_Desktop], 
+	[CUser], [CDate], [MUser], [MDate], [CalendarTemplateID], [ActivationID], [ReadOnly], 
+	[SystemClientID], [ServerLocationID], [Division], [JobRole], [Location], [Floor], 
+	[MachineType], [ContractType], [ContractEnd], [Menswear], [Womenswear], [Accessories], 
+	[Divisionless], [Prorsum], [UnLockHeader], [PreferredLang]) 
+VALUES 
+	(@UserID, 
+		NULL, 
+	@TeamID, 
+	@FirstName, 
+		N'', N'', N'', 
+		NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, N'', NULL, N'', 
+	@UserName, 
+		N'CO6I80aLnwoHC9YeTGf4DQ==', N'', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+		NULL, NULL, NULL, NULL, NULL, 1, 1, 0, 0, NULL, 90181491, '20100810 04:45:27.413', 
+		N'WIN', 1024, 768, NULL, NULL, NULL, NULL, NULL, NULL, NULL, N'172.16.1.245', NULL, 
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+		NULL, N'Scripted', '20100805 17:52:25.000', 
+		N'Scripted', '20100805 17:54:43.000', NULL, NULL, 0, 
+		N'00000000-0000-0000-0000-000000000000', N'00000000-0000-0000-0000-000000000000', 
+		NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, N'EN-US')
+
+SET IDENTITY_INSERT [dbo].[Users] ON
+
+
+--
+-- Add them to groups
+--
+
+INSERT INTO [dbo].[uUserGroup]
+	([GroupID], [TeamID], [CUser], [CDate], [MUser], [MDate])
+VALUES
+		(N'CA39465E-0CBE-4D73-AFE2-9601660B6E0D', 
+	@TeamID,
+		N'Scripted', '20100805 17:52:25.000', N'Scripted', '20100805 17:52:25.000')
+
+INSERT INTO [dbo].[uUserGroup]
+	([GroupID], [TeamID], [CUser], [CDate], [MUser], [MDate])
+VALUES
+		(N'675CCE30-0AE6-414B-9FE6-A319A97DDA8B', 
+	@TeamID,
+		N'Scripted', '20100805 17:52:25.000', N'Scripted', '20100805 17:52:25.000')
+
+INSERT INTO [dbo].[uUserGroup]
+	([GroupID], [TeamID], [CUser], [CDate], [MUser], [MDate])
+VALUES
+		(N'9DD6B3E9-9E90-4B50-B87F-EE6D489297BE', 
+	@TeamID,
+		N'Scripted', '20100805 17:52:25.000', N'Scripted', '20100805 17:52:25.000')
+
+-- INSERT INTO [dbo].[uUserGroup]
+-- 	([GroupID], [TeamID], [CUser], [CDate], [MUser], [MDate])
+-- VALUES
+--		(N'AE248BD6-FFE6-44F9-B4C5-ACF2B6C9E42C', 
+--	@TeamID,
+--		N'Scripted', '20100805 17:52:25.000', N'Scripted', '20100805 17:52:25.000')
+
+
+GO
+
+
+---------------
+---------------
+---------------
+
+print 'Create Add Many...'
+GO
+
+CREATE PROCEDURE [dbo].[spx_ZZZ_User_AddMany] (
+	@FirstNameTemplate NVARCHAR(50),
+	@FirstID INT,
+	@LastID INT
+)
+AS
+
+DECLARE @start INT
+DECLARE @finish INT
+DECLARE @curr INT
+
+-- @start & @finish *must* be 4 digits or our uniqueid will be screwy
+set @start = @FirstID
+set @finish = @LastID
+
+DECLARE @u INT
+DECLARE @t UNIQUEIDENTIFIER
+DECLARE @f NVARCHAR(50)
+DECLARE @un NVARCHAR(25)
+
+set @curr = @start
+while @curr <= @finish
+begin
+
+	set @u = @curr
+	set @t = '993994d3-8073-4b17-9aab-2fa4f77d' + cast(@curr as char(4))
+	set @f = @FirstNameTemplate + cast(@curr as char(4))
+	set @un = @FirstNameTemplate + cast(@curr as char(4))
+
+	print 'Creating User: ' + @f
+	EXEC spx_ZZZ_User_AddOne
+			@UserID		= @u,
+			@TeamID		= @t,
+			@Firstname	= @f,
+			@UserName	= @un
+	print '         User Complete.'
+
+	set @curr = @curr + 1
+end
+
+
+--
+-- Resync all group perms
+--
+
+print 'Synchronizing all group permissions for new users'
+
+exec spx_Group_AccessUserPermissions_UPDATE 
+				@GroupID = 'CA39465E-0CBE-4D73-AFE2-9601660B6E0D',
+				@FullName = 'Scripted',
+				@CDate = '20100805 17:52:25.000'
+
+--exec spx_Group_AccessUserPermissions_UPDATE 
+--				@GroupID = '675CCE30-0AE6-414B-9FE6-A319A97DDA8B',
+--				@FullName = 'Scripted',
+--				@CDate = '20100805 17:52:25.000'
+
+--exec spx_Group_AccessUserPermissions_UPDATE 
+--				@GroupID = '9DD6B3E9-9E90-4B50-B87F-EE6D489297BE',
+--				@FullName = 'Scripted',
+--				@CDate = '20100805 17:52:25.000'
+
+-- exec spx_Group_AccessUserPermissions_UPDATE 
+-- 				@GroupID = 'AE248BD6-FFE6-44F9-B4C5-ACF2B6C9E42C',
+--				@FullName = 'Scripted',
+--				@CDate = '20100805 17:52:25.000'
+
+print 'Group permissions synchronized.'
+
+GO
+
+print 'Execute Add Many...'
+GO
+
+exec spx_ZZZ_User_AddMany
+	@FirstNameTemplate = "GerberDev",
+	@FirstID = 1001,
+	@LastID = 1050
+GO
+
+drop procedure spx_ZZZ_User_AddMany
+GO
+drop procedure spx_ZZZ_User_AddOne
+GO

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="lstArtwork">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>8.25in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>7.875in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="lstArtwork_Contents">
+                      <ReportItems>
+                        <Textbox Name="ParameterName">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!MaterialDescription.Value</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ParameterName</rd:DefaultName>
+                          <Top>7.625in</Top>
+                          <Height>0.25in</Height>
+                          <Width>8.25in</Width>
+                          <ToolTip>##data##</ToolTip>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Image Name="imgArtwork">
+                          <Source>External</Source>
+                          <Value>=Fields!FilePath.Value</Value>
+                          <MIMEType>image/jpeg</MIMEType>
+                          <Sizing>FitProportional</Sizing>
+                          <Height>7.625in</Height>
+                          <Width>8.25in</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </Image>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style />
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="lstArtwork_Details_Group">
+                <DataElementName>Item</DataElementName>
+              </Group>
+              <DataElementName>Item_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <KeepTogether>true</KeepTogether>
+        <DataSetName>dsArtwork</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
+        <Top>0.125in</Top>
+        <Left>0.0625in</Left>
+        <Height>7.875in</Height>
+        <Width>8.25in</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>8in</Height>
+    <Style />
+  </Body>
+  <Width>8.4in</Width>
+  <Page>
+    <PageHeader>
+      <Height>2.5in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Artwork</Value>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>26pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.135in</Top>
+          <Height>0.5in</Height>
+          <Width>8.2in</Width>
+          <ToolTip>##label##</ToolTip>
+          <Style>
+            <VerticalAlign>Middle</VerticalAlign>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageHeader>
+    <PageWidth>8.4in</PageWidth>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <DataSourceReference>plmOn</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>8f3c0e74-4609-4eaf-b791-c16e1d675fc3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsArtwork">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StyleID">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleSet">
+            <Value>=Parameters!SN.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_MaterialArtwork_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="MaterialDescription">
+          <DataField>MaterialDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FilePath">
+          <DataField>FilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="SID">
+      <DataType>String</DataType>
+      <Prompt>StyleID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SN">
+      <DataType>Integer</DataType>
+      <Prompt>StyleSet</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DataXmlId">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DataXmlId</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>cf5830a9-1cc4-4643-b76e-e87128d17186</rd:ReportID>
+</Report>

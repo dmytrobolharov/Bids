@@ -1,0 +1,10 @@
+<generator>
+   <table name="pStyleHeader" codecolumn="StyleNo" idcolumn="StyleID" spacecolumn="4">    
+      <column name="StyleType" lookup="SELECT StyleTypeID, StyleTypeCode FROM pStyleType" lookupID="StyleTypeID" lookupSelect="StyleTypeCode" 
+			  lookupSpace="" lookupNull="?" order="2"/>     
+      <column name="StyleCategory" lookup="SELECT StyleCategoryId, StyleCategoryCode FROM pStyleCategory" lookupID="StyleCategoryId" 
+			  lookupSelect="StyleCategoryCode" lookupSpace="" lookupNull="??" order="4"/>
+	  
+  	  <column name="AUTOID" lookupSpace="" lookupNull="" lookupNumber="4" order="5"/>  
+   </table>
+</generator>

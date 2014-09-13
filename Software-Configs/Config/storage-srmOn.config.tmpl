@@ -1,0 +1,62 @@
+<configuration>
+  <configSections>
+    <section name="STORAGE" type="System.Configuration.NameValueFileSectionHandler, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  </configSections>
+  <appSettings>
+    <add key="Encryption" value="FALSE" />
+
+    <add key="PCIMAGESHARE" value="file:///\\$plmOnHTTPServerIP$\\$plmOnShareShare$" />
+    <add key="MACIMAGESHARE" value="file:///Volumes/$plmOnHTTPServerIP$" />
+    <add key="MACSMBIMAGESHARE" value="smb://$plmOnHTTPServerIP$/$plmOnShareShare$" />
+
+    <add key="IMAGETEMPLATEPATH" value="$plmOnStore$\Images\Template" />
+    <add key="IMAGEEDITPATH" value="$plmOnShare$\Image" />
+
+    <add key="IMAGEPATH" value="$plmOnStore$\Images\Version" />
+    <add key="IMAGETHUMBPATH" value="$plmOnStore$\Images\Thumb" />
+    <add key="XMLCONFIG" value="$plmOnConfig$\Schema\srmOn" />
+
+    <add key="SpreadsheetPath" value="$plmOnConfig$\Spreadsheet" />
+    <add key="SpreadsheetEditPath" value="$plmOnShare$\Spreadsheet" />
+    <add key="PCSpreadsheetShare" value="file:\\$plmOnHTTPServerIP$\$plmOnShareRoot$\Spreadsheet" />
+    <add key="MACSpreadsheetShare" value="file:///Volumes/$plmOnHTTPServerIP$" />
+    <add key="MACSMBSpreadsheetShare" value="smb://$plmOnHTTPServerIP$/$plmOnShareRoot$/Spreadsheet" />
+
+    <add key="TEMPPATH" value="$plmOnTemp$" />
+    <add key="PDFPATH" value="$plmOnStore$\Pdf" />
+	<add key="VIPATH" value="$plmOnStore$\VendorInfrastructure" />
+    <add key="PROGRAMPATH" value="$plmOnStore$\sample" />
+    <add key="IMAGEPOMPATH" value="$plmOnStore$\Images\POM" />
+    <add key="IMAGECAREPATH" value="$plmOnStore$\Images\Care" />
+    <add key="COLORPATH" value="$plmOnStore$\Images\Color" />
+    <add key="IMAGECDPATH" value="$plmOnStore$\Images\ConstructionDetail" />
+    <add key="STYLEDOCUMENTPATH" value="$plmOnStore$\Attachment" />
+    <add key="COLORDOCUMENTPATH" value="$plmOnStore$\Color" />
+    <add key="IMAGEMSPATH" value="$plmOnStore$\Images\Measurements" />
+    <add key="MATERIALDOCUMENTPATH" value="$plmOnStore$\Attachment" />
+    <add key="COMPLIANCEDOCUMENTPATH" value="$plmOnStore$\Compliance" />
+    <add key="BODYPATH" value="$plmOnStore$\Images\CAD\Body" />
+    <add key="STYLEPATH" value="$plmOnStore$\Images\CAD\Style" />
+
+    <add key="MAILATTACHMENTPATH" value="C:\Inetpub\wwwroot\timOnApp\Store" />
+    <add key="MAILSTORAGEPATH" value="C:\Inetpub\wwwroot\timOnApp\Store" />
+    <add key="MAILCOMPOSEPATH" value="C:\Inetpub\wwwroot\timOnApp\Store\Compose" />
+    <add key="APPLICATIONPATH" value="C:\Inetpub\wwwroot\timOnApp" />
+    <add key="TASKDOCUMENTPATH" value="$plmOnConfig$\Config\TaskFolder" />
+    <add key="SRMDOWNLOADPATH" value="$plmOnStore$\Download\$plmOnVDsrmOnDownloadFolder$\" />
+
+    <add key="IMAGEPACKAGINGPATH" value="$plmOnShare$\Packaging" />
+    <add key="QUOTEDOCUMENTPATH" value="$plmOnShare$\Quote" />
+
+    <add key="StorageServerType" value="FILE" />
+    <!-- SQL, FILE, HTTP-->
+    <add key="DisabledFileExtensionTypes" value="aspx,asp,ashx,html,htm,mht,exe,dll,php,jsp" />
+
+    <add key="SPREADSHEETEDITPATH" value="$plmOnShare$\Spreadsheet" />
+
+	<add key="IMAGEMAMAGI" value="$plmOnStore$\Images\MAMAGI" />
+	<add key="IMAGE3DMAMAGI" value="$plmOnStore$\MAMAGI\3D" />
+    <add key="PointCarreInputPath" value="$plmOnConfig$\Template\Pointcarre" />
+	<add key="BATCHQPATH" value="$plmOnShare$\BatchQ" />
+  </appSettings>
+</configuration>

@@ -1,0 +1,9 @@
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pStyleTeam' AND COLUMN_NAME = 'SeasonYearID')
+BEGIN
+	ALTER TABLE pStyleTeam ADD SeasonYearID UNIQUEIDENTIFIER
+END
+GO
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES ('DB_Version', '0.5.0000', '06964', GetDate())
+GO

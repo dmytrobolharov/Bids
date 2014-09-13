@@ -1,0 +1,31 @@
+<Table Name="pStyleHeader" formcolumns="1" gridcolumns="" 
+	FormSQL="SELECT * FROM vwx_StyleDesignDetail_SEL" 
+	GridReadSQL=" SELECT * FROM vwx_StyleDesignDetail_SEL" 
+	GridSQL=" SELECT * FROM vwx_StyleDesignDetail_SEL"
+	ShowAlias = "true"
+	Border = "0" 
+	ColumnHeight = "20"
+	
+>
+	<column Name="StyleSeasonYearID" PK="true" alias="StyleSeasonYearID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="50px" Search="false" GridVisible="false" GridWidth="100" column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="Description" alias="Description:" Type="label" datatype="string" column="1" gridorder="4" GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="MainMaterial" alias="Composition:" Type="label" datatype="string" column="1" gridorder="4" 
+		GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="Hierarchy" alias="Hierarchy:" Type="label" datatype="string" column="1" gridorder="4" GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="Vendor" alias="Vendor:" Type="label" datatype="string" column="1" gridorder="4" GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+</Table>

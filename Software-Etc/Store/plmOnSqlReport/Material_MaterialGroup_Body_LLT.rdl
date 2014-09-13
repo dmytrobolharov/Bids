@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="plmOn">
+      <rd:DataSourceID>edbb8197-7164-43a1-860a-97ac4ab54fb3</rd:DataSourceID>
+      <DataSourceReference>plmOn</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="MaterialCoreID">
+      <DataType>String</DataType>
+      <Prompt>MaterialCoreID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.1in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <LeftMargin>0.1in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Height>2in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <rd:ReportID>1ccdf749-90a0-45c8-bb2c-459251c42d57</rd:ReportID>
+  <PageWidth>11in</PageWidth>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Row">
+          <DataField>Row</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Column">
+          <DataField>Column</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FolderName">
+          <DataField>FolderName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FolderDescription">
+          <DataField>FolderDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Active">
+          <DataField>Active</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaterialCoreItemID">
+          <DataField>MaterialCoreItemID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="ImageFilePath">
+          <DataField>ImageFilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RecordCode">
+          <DataField>RecordCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaterialName">
+          <DataField>MaterialName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaterialCode">
+          <DataField>MaterialCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TreatmentSizeGuage">
+          <DataField>TreatmentSizeGuage</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Qty">
+          <DataField>Qty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UOM">
+          <DataField>UOM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CLR">
+          <DataField>CLR</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="IMG">
+          <DataField>IMG</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Placement">
+          <DataField>Placement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaterialCoreColorID">
+          <DataField>MaterialCoreColorID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="ColorwayName">
+          <DataField>ColorwayName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaterialCoreColorItemID">
+          <DataField>MaterialCoreColorItemID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="ColorChipName">
+          <DataField>ColorChipName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Material_MaterialGroup_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@MaterialCoreID">
+            <Value>=Parameters!MaterialCoreID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>10.9in</Width>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>0.5in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <DataSetName>DataSet1</DataSetName>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>0.5in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Image Name="image1">
+                  <Sizing>FitProportional</Sizing>
+                  <MIMEType />
+                  <Source>External</Source>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                  </Style>
+                  <ZIndex>10</ZIndex>
+                  <Value>=Fields!ImageFilePath.Value</Value>
+                </Image>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.7in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="RecordCode">
+                  <rd:DefaultName>RecordCode</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>9</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=First(Fields!RecordCode.Value)</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.5in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup3">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="MaterialName">
+                  <rd:DefaultName>MaterialName</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>8</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=First(Fields!MaterialName.Value)</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.5in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup4">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="MaterialCode">
+                  <rd:DefaultName>MaterialCode</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>7</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=First(Fields!MaterialCode.Value)</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.7in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup5">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="TreatmentSizeGuage">
+                  <rd:DefaultName>TreatmentSizeGuage</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>6</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=First(Fields!TreatmentSizeGuage.Value)</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.3in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup6">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="Qty">
+                  <rd:DefaultName>Qty</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>5</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=First(Fields!Qty.Value)</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.6in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup7">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="UOM">
+                  <rd:DefaultName>UOM</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>4</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=First(Fields!UOM.Value)</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.3in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup8">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="CLR">
+                  <rd:DefaultName>CLR</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                  <ZIndex>3</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=IIF(First(Fields!CLR.Value) = 1, "Yes", "No")</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.3in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup9">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="IMG">
+                  <rd:DefaultName>IMG</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                  <ZIndex>2</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=IIF(First(Fields!IMG.Value) = 1, "Yes", "No")</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>1in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup10">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="Placement">
+                  <rd:DefaultName>Placement</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>1</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=First(Fields!Placement.Value)</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <Height>0.3in</Height>
+            <DynamicColumns>
+              <Grouping Name="matrix1_ColorwayName">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Column.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!Column.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="ColorwayName">
+                  <rd:DefaultName>ColorwayName</rd:DefaultName>
+                  <Style>
+                    <BackgroundColor>PaleGoldenrod</BackgroundColor>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderWidth>
+                      <Default>0.5pt</Default>
+                    </BorderWidth>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>11</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!ColorwayName.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Width>5.9in</Width>
+        <Corner>
+          <ReportItems>
+            <Table Name="table1">
+              <ZIndex>12</ZIndex>
+              <Style>
+                <BackgroundColor>LightGrey</BackgroundColor>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <BorderWidth>
+                  <Default>0.5pt</Default>
+                </BorderWidth>
+              </Style>
+              <Header>
+                <TableRows>
+                  <TableRow>
+                    <TableCells>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox1">
+                            <rd:DefaultName>textbox1</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <ZIndex>9</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Value>Image</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox10">
+                            <rd:DefaultName>textbox10</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <ZIndex>8</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Value>Record
+Code</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox9">
+                            <rd:DefaultName>textbox9</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <ZIndex>7</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Value>Material
+Name</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox8">
+                            <rd:DefaultName>textbox8</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <ZIndex>6</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Value>Material
+Code</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox7">
+                            <rd:DefaultName>textbox7</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <ZIndex>5</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Value>Treatment/
+Size/Guage</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox6">
+                            <rd:DefaultName>textbox6</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <ZIndex>4</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Value>Qty</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox5">
+                            <rd:DefaultName>textbox5</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <ZIndex>3</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Value>UOM</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox4">
+                            <rd:DefaultName>textbox4</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <ZIndex>2</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Value>CLR</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox2">
+                            <rd:DefaultName>textbox2</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <ZIndex>1</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Value>IMG</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                      <TableCell>
+                        <ReportItems>
+                          <Textbox Name="textbox3">
+                            <rd:DefaultName>textbox3</rd:DefaultName>
+                            <Style>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                              <FontSize>7pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                            </Style>
+                            <CanGrow>true</CanGrow>
+                            <Value>Placement</Value>
+                          </Textbox>
+                        </ReportItems>
+                      </TableCell>
+                    </TableCells>
+                    <Height>0.3in</Height>
+                  </TableRow>
+                </TableRows>
+              </Header>
+              <TableColumns>
+                <TableColumn>
+                  <Width>0.5in</Width>
+                </TableColumn>
+                <TableColumn>
+                  <Width>0.7in</Width>
+                </TableColumn>
+                <TableColumn>
+                  <Width>0.5in</Width>
+                </TableColumn>
+                <TableColumn>
+                  <Width>0.5in</Width>
+                </TableColumn>
+                <TableColumn>
+                  <Width>0.7in</Width>
+                </TableColumn>
+                <TableColumn>
+                  <Width>0.3in</Width>
+                </TableColumn>
+                <TableColumn>
+                  <Width>0.6in</Width>
+                </TableColumn>
+                <TableColumn>
+                  <Width>0.3in</Width>
+                </TableColumn>
+                <TableColumn>
+                  <Width>0.3in</Width>
+                </TableColumn>
+                <TableColumn>
+                  <Width>1in</Width>
+                </TableColumn>
+              </TableColumns>
+            </Table>
+          </ReportItems>
+        </Corner>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>0.2in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="ColorChipName">
+                    <rd:DefaultName>ColorChipName</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <BorderWidth>
+                        <Default>0.5pt</Default>
+                      </BorderWidth>
+                      <FontFamily>Arial Unicode MS</FontFamily>
+                      <FontSize>7pt</FontSize>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>=First(Fields!ColorChipName.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>0.5in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Height>0.2in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <PageHeight>8.5in</PageHeight>
+</Report>

@@ -1,0 +1,207 @@
+<Table Name="pImage" formcolumns="1" gridcolumns=""
+       FormSQL="SELECT * FROM pImage"
+       GridReadSQL="SELECT * FROM pImage"
+       GridSQL="SELECT * FROM pImage"
+       ApiSQL="SELECT * FROM pImage" ApiWhereClause="" ApiOrderBy="ORDER BY ImageDescription"
+       muiSections="Name;Misc Details;History">
+	<column Name="ImageID" PK="true" alias="ImageID" Type="label" datatype="string" enabled="false"
+		Visible="FALSE" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="1"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="001" ApiRequired="true" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="1" muiOrder="001" muiVisible="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ImageTypeID" alias="ImageTypeID" Type="textbox" datatype="string" column="1"
+		order="2" GridVisible="False" enabled="false" cellwidth="150px" Visible="FALSE"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="002" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="1" muiOrder="002" muiVisible="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ImageMultiPage" alias="Multi Page" Type="dropdownlist" select="true" cellwidth="150px"
+		datatype="string" column="1" order="6" GridVisible="false" Visible="false" enabled="true"
+		lookupquery="SELECT CustomKey, Custom FROM pActive" textfield="Custom"
+		ValueField="CustomKey" AutoPostBack="true" DefaultValue= "0"
+          ApiDataType="int" ApiVisible="true" ApiOrder="003" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="003" muiVisible="false">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Please select a status" />
+    <LookupTable XMLFileName="Lookup_pActive.xml" ParentIDField="ImageMultiPage" ChildIDField="CustomKey" />
+  </column>
+	<column Name="ImageSubFolder1" alias="Image Type" Type="dropdownlist" select="true" cellwidth="150px"
+		datatype="string" column="1" order="01" GridVisible="false" Visible="true" enabled="true"
+		lookupquery="SELECT ImageType, ImageType AS ImageTypeName FROM pImageType ORDER BY ImageType" textfield="ImageType"
+		ValueField="ImageType" AutoPostBack="true" DefaultValue= "Style"
+          ApiDataType="string" ApiVisible="true" ApiOrder="004" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="004" muiVisible="true">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Please select image type" />
+    <LookupTable XMLFileName="Lookup_pImageType.xml" ParentIDField="ImageSubFolder1" ChildIDField="ImageType" />
+  </column>
+	<column Name="ImageDescription" alias="Description" Type="textbox" datatype="string" column="1"
+		order="02" GridVisible="true" cellwidth="150px" GridWidth="125" Visible="true" enabled="true"
+          ApiDataType="string" ApiVisible="true" ApiOrder="005" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="1" muiOrder="005" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ImageFileType" alias="File Type" Type="dropdownlist" select="true" cellwidth="150px"
+		datatype="query" column="1" order="02" GridVisible="true" Visible="true" enabled="true"
+		lookupquery="SELECT ImageFileTypeID, ImageFileType FROM pImageFileType ORDER BY ImageFileType"
+		textfield="ImageFileType" ValueField="ImageFileTypeID" AutoPostBack="true"
+          ApiDataType="string" ApiVisible="true" ApiOrder="006" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="006" muiVisible="true">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Please select file type" />
+    <LookupTable XMLFileName="Lookup_pImageFileType.xml" ParentIDField="ImageFileType" ChildIDField="ImageFileTypeID" />
+  </column>
+	<column Name="ImageSubFolder2" alias="Division" Type="dropdownlist" select="true" cellwidth="150px"
+		datatype="query" column="1" order="03" GridVisible="false" Visible="false" enabled="true"
+		lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom1 WHERE Active = 1 ORDER BY CustomKey" textfield="Custom" ValueField="Custom" 
+			AutoPostBack="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="007" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="007" muiVisible="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_iCustom1.xml" ParentIDField="ImageSubFolder2" ChildIDField="Custom" />
+  </column>
+	<column Name="ImageSubFolder3" alias="Season" Type="dropdownlist" select="true" cellwidth="150px"
+		datatype="query" column="1" order="04" GridVisible="false" Visible="false" enabled="true"
+		lookupquery="SELECT CustomKey, Custom FROM pSeason Where Active = 1 Order BY Custom" textfield="Custom" ValueField="CustomKey"
+			AutoPostBack="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="008" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="008" muiVisible="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_pSeason.xml" ParentIDField="ImageSubFolder3" ChildIDField="CustomKey" />
+  </column>
+	<column Name="ImageSubFolder4" alias="Delivery" Type="dropdownlist" select="true" cellwidth="150px"
+		datatype="query" column="1" order="05" GridVisible="false" Visible="false" enabled="true"
+		lookupquery="SELECT * FROM iCustom3 ORDER BY CustomKey" textfield="Custom" ValueField="Custom"
+		AutoPostBack="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="009" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="009" muiVisible="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_iCustom3.xml" ParentIDField="ImageSubFolder4" ChildIDField="Custom" />
+  </column>
+	<column Name="ImageSubFolder5" alias="Year" Type="dropdownlist" select="true" cellwidth="150px"
+		datatype="query" column="1" order="06" GridVisible="false" Visible="false" enabled="true"
+		lookupquery="SELECT CustomKey, Custom FROM pYear Where Active = 1 Order BY Custom" textfield="Custom" ValueField="CustomKey"
+			AutoPostBack="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="010" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="010" muiVisible="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_pYear.xml" ParentIDField="ImageSubFolder5" ChildIDField="CustomKey" />
+  </column>
+	<column Name="ImageSubFolder6" alias="Style Category" Type="dropdownlist" select="true" cellwidth="150px"
+		datatype="query" column="1" order="11" GridVisible="true" Visible="true" enabled="true"
+		lookupquery="SELECT StyleCategoryId, StyleCategory FROM pStyleCategory WHERE Active = 1 ORDER BY StyleCategory" textfield="StyleCategory" ValueField="StyleCategoryId"
+		AutoPostBack="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="011" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="011" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_pStyleCategory.xml" ParentIDField="ImageSubFolder6" ChildIDField="StyleCategoryId" />
+  </column>
+	<column Name="ImageSubFolder7" alias="Image Category" Type="dropdownlist" select="true"
+		cellwidth="150px" datatype="string" column="1" order="12" GridVisible="true" Visible="true"
+		enabled="true" lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom5 ORDER BY Custom"
+		textfield="Custom" ValueField="Custom" AutoPostBack="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="012" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="012" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_iCustom5.xml" ParentIDField="ImageSubFolder7" ChildIDField="Custom" />
+  </column>
+	<column Name="ImageSubFolder8" alias="ImageSubFolder8" Type="dropdownlist" select="true"
+		cellwidth="150px" datatype="string" column="1" order="13" GridVisible="false" Visible="FALSE"
+		enabled="true" lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom8 ORDER BY CustomKey"
+		textfield="Custom" ValueField="Custom" AutoPostBack="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="013" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="013" muiVisible="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_iCustom8.xml" ParentIDField="ImageSubFolder8" ChildIDField="Custom" />
+  </column>
+	<column Name="ImageSubFolder9" alias="Status" Type="dropdownlist" select="true"
+		cellwidth="150px" datatype="string" column="1" order="14" GridVisible="false" Visible="FALSE"
+		enabled="true" lookupquery="SELECT Custom, Custom AS CustomName FROM xCustom8 Where Active = 1 ORDER BY CustomKey"
+		textfield="Custom" ValueField="Custom" AutoPostBack="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="014" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="014" muiVisible="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_xCustom8_ByValue.xml" ParentIDField="ImageSubFolder9" ChildIDField="CustomKey" />
+  </column>
+	<column Name="ImageKeywords" alias="Keywords" Type="memobox" datatype="string" column="1"
+		order="15" GridVisible="true" cellwidth="150px" GridWidth="125" Visible="true" enabled="true"
+		DefaultValue=""
+          ApiDataType="string" ApiVisible="true" ApiOrder="015" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="015" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ImageNo" alias="Image No" Type="label" datatype="string" column="2" order="01"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="016" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="1" muiOrder="016" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ImageLocation" alias="Location" Type="label" datatype="string" column="2"
+		order="01" GridVisible="true" cellwidth="150px" GridWidth="150" Visible="true" enabled="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="017" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="017" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ImageWorkflowTemplateID" alias="Image Workflow" Type="dropdownlist" datatype="query" column="1"
+		order="010" GridVisible="true" cellwidth="150px" GridWidth="150" Visible="true" enabled="true"
+		lookupquery="SELECT '00000000-0000-0000-0000-000000000000' AS ImageWorkflowTemplateID, '' AS ImageWorkflowTemplateName UNION SELECT ImageWorkflowTemplateID, ImageWorkflowTemplateName FROM pImageWorkflowTemplate WHERE Active = 1 ORDER BY ImageWorkflowTemplateName"
+		textfield="ImageWorkflowTemplateName" ValueField="ImageWorkflowTemplateID" AutoPostBack="false" AddNullField="false"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="018" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="018" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_pImageWorkflowTemplate.xml" ParentIDField="ImageWorkflowTemplateID" ChildIDField="ImageWorkflowTemplateID" />
+  </column>
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="2" order="02"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="019" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="3" muiOrder="019" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="2" order="03"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="false"
+          ApiDataType="datetime" ApiVisible="true" ApiOrder="020" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="3" muiOrder="020" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="2" order="04"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="021" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="3" muiOrder="021" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="2" order="05"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="false"
+          ApiDataType="datetime" ApiVisible="true" ApiOrder="022" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="3" muiOrder="022" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Version" alias="Version" Type="label" datatype="string" column="2" order="06"
+		GridVisible="false" Visible="true" enabled="false" cellwidth="150px"
+          ApiDataType="int" ApiVisible="true" ApiOrder="023" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="3" muiOrder="023" muiVisible="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ImageSize" alias="Size" Type="label" datatype="string" column="3" order="01"
+			GridVisible="false" Visible="false" enabled="false" cellwidth="150px" 
+			ApiDataType="string" ApiVisible="true" ApiOrder="024" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="024" muiVisible="false">
+	</column>
+	<column Name="ImageFile" alias="File" Type="label" datatype="string" column="3" order="02"
+			GridVisible="false" Visible="false" enabled="false" cellwidth="250px" 
+			ApiDataType="string" ApiVisible="true" ApiOrder="025" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="025" muiVisible="false">
+	</column>
+	<column Name="ImageType" alias="Type" Type="label" datatype="string" column="3" order="03"
+			GridVisible="false" Visible="false" enabled="false" cellwidth="250px" 
+			ApiDataType="string" ApiVisible="true" ApiOrder="026" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="2" muiOrder="026" muiVisible="false">
+	</column>
+	<column Name="ImageDateLastAccessed" alias="Last Accessed" Type="label" datatype="string" column="3" order="04"
+			GridVisible="false" Visible="false" enabled="false" cellwidth="250px" 
+			ApiDataType="string" ApiVisible="true" ApiOrder="027" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="3" muiOrder="027" muiVisible="false">
+	</column>
+	<column Name="ImageDateLastModified" alias="Last Modified" Type="label" datatype="string" column="3" order="05"
+			GridVisible="false" Visible="false" enabled="false" cellwidth="250px" 
+			ApiDataType="string" ApiVisible="true" ApiOrder="028" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL"
+          muiSectionID="3" muiOrder="028" muiVisible="false">
+	</column>
+</Table>

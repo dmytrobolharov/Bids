@@ -1,0 +1,1 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="SampleRequest_Workflow_Submit_Sample_Final.ascx.vb" Inherits="plmOnApp.SampleRequest_Workflow_Submit_Sample_Final1" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>

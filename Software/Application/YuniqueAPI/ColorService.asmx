@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="VB" CodeBehind="ColorService.asmx.vb" Class="YuniqueAPI.ColorService" %>

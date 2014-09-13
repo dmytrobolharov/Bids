@@ -1,0 +1,12 @@
+<Table Name="pSampleRequestSubmitFitPhotosComments" formcolumns="3" gridcolumns="" 
+		FormSQL="SELECT * FROM pSampleRequestSubmitFitPhotosComments" 
+        GridReadSQL="SELECT * FROM pSampleRequestSubmitFitPhotosComments" GridSQL="SELECT * FROM pSampleRequestSubmitFitPhotosComments"
+>
+	<column Name="FitPhotoId" PK="true" alias="FitPhotoId" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px" GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="sImage" alias="Markup Photo" Type="label" datatype="String" column="1" order="01" GridVisible="true" cellwidth="200px" 
+		GridWidth="150" Visible="true" enabled="true" GridOrder="01" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>	

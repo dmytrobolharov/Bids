@@ -1,0 +1,13 @@
+
+Run it..
+
+
+To Install Service:
+C:\Windows\Microsoft.NET\Framework\v2.0.50727\installutil.exe C:\Windows\plmOnServices\plmOnServices.exe
+
+
+To Remove Service:
+C:\Windows\Microsoft.NET\Framework\v2.0.50727\installutil.exe -u C:\Windows\plmOnServices\plmOnServices.exe
+
+ServiceInstaller -k plmOnImageService
+ServiceInstaller -u plmOnImageService

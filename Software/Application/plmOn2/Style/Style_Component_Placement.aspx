@@ -1,0 +1,30 @@
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Style_Component_Placement.aspx.vb" Inherits="plmOnApp.Style.Material.Style_Component_Placement" %>
+<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Placement</title>
+    <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+    			<table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0"
+				runat="server">
+				<tr valign="middle">
+					<td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3" /></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE">
+					</cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" 
+					></cc1:confirmedimagebutton></td>
+				</tr>
+			</table>
+
+    
+    </div>
+        <asp:TextBox ID="txtPlacement" runat="server" Height="519px" TextMode="MultiLine" Width="786px"></asp:TextBox>
+    </form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+@echo off
+
+set V=_SITE_ID_HERE_
+
+echo
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo       Remove Shares
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo Removing Shares......
+
+net share plmOn%V%ShareRoot /DELETE
+net share plmOn%V%Share /DELETE
+net share plmOn%V%Store /DELETE
+
+echo
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo       Remove Virtual Dirs
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo Removing IIS Virtual Directories.....
+
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE W3SVC/1/ROOT/plmOn%V%Download
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE W3SVC/1/ROOT/srmOn%V%Download
+
+echo
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo       Remove Web Applications
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo Removing IIS Web Applications.....
+
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/plmOn%V%
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/plmOn%V%Report
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/srmOn%V%
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/YuniqueBI%V%
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/plmOn%V%Dashboard
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/plmOn%V%WebServices
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/plmOn%V%ImageServer
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/plmOn%V%FileServices
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/YuniqueToolkit%V%
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/Yunique.Toolkit%V%.API
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/YuniqueAPI%V%
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/YuniqueAPI%V%.SOAP
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/YuniqueAPI%V%.REST
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/YuniqueAppManager%V%
+cscript %SYSTEMDRIVE%\Inetpub\AdminScripts\adsutil.vbs DELETE w3svc/1/root/plmOn%V%CodrawMarkup
+
+echo
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo       Remove Application Pools
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo Removing IIS Application Pools.....
+
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/plmOn%V%
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/plmOn%V%Report
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/srmOn%V%
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/YuniqueBI%V%
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/plmOn%V%Dashboard
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/plmOn%V%WebServices
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/plmOn%V%ImageServices
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/plmOn%V%FileServices
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/YuniqueToolkit%V%
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/Yunique.Toolkit%V%.API
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/YuniqueAPI%V%
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/YuniqueAPI%V%.SOAP
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/YuniqueAPI%V%.REST
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/YuniqueAppManager%V%
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS DELETE w3svc/AppPools/plmOn%V%CodrawMarkup
+
+echo
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo       Remove Windows Service
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo Windows Services.....
+
+sc STOP plmOn%V%Services
+sc DELETE plmOn%V%Services
+
+echo.
+echo.
+echo Complete!
+echo.
+echo Please note:  The following steps are left for you...
+echo                   1) Remove reports from the report server. For Example.
+echo                        http://server/Reports_MSSQL2008R2
+echo                                  - or -
+echo                        http://server/Reports
+echo                   2) Drop your PLM Database
+echo                        'drop database plmonDBName' on sql server
+echo                   3) Delete the entire PLM Installation folder
+echo                   4) Delete your PLM User (Optional)
+echo                   5) Delete your PLM User's Group (Optional)  
+
+echo.
+
+goto EndLabel
+ 
+:ErrorLabel
+EXIT /b 1
+ 
+:EndLabel
+echo Done!
+echo *****************************************************
+
+pause

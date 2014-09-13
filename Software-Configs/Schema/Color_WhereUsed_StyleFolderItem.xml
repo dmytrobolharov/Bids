@@ -1,0 +1,25 @@
+<table Name="pStyleHeader" Table="pStyleHeader" formcolumns="1" gridcolumns="" UseRadGrid="true"
+       DataKeyField="StyleID" SortOrder="Active DESC, MDate DESC"
+       PageSize="10" GridHeight="540" ViewMode="ByList" SaveMode="ByPage" AutoSizeInReadMode="true"
+       AllowColumnReordering="false" AllowGrouping="false" ShowGroupFooter="false"
+       AllowSorting="true" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="false" AllowPaging="true" AllowFiltering="false"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false" 
+       AllowRowSelect="false" AllowMultiRowSelect="false" 
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="false" 
+       FormSQL="SELECT * FROM vwx_StyleHeader_StyleDevelopmentItem_SEL"
+	   GridReadSQL="SELECT * FROM vwx_StyleHeader_StyleDevelopmentItem_SEL" 
+       GridSQL="SELECT * FROM vwx_StyleHeader_StyleDevelopmentItem_SEL"
+       selectsql="SELECT * FROM vwx_StyleHeader_StyleDevelopmentItem_SEL"
+       RepeatColumns="5" RepeatDirection="h">
+	<column Name="StyleID" PK="true" alias="Style ID" Type="label" datatype="string" enabled="false"
+			Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+    <column Name="StyleNo" PK="" alias="Style No." Type="label" datatype="string" enabled="TRUE" 
+            Visible="TRUE" cellwidth="200" GridVisible="True" GridWidth="100" column="1" order="1" gridorder="1">
+    </column>
+    <column Name="Description" PK="" alias="Description" Type="label" datatype="string" enabled="TRUE"
+            Visible="TRUE" cellwidth="200" GridVisible="True" GridWidth="100" column="1" order="2" gridorder="2">
+    </column>    
+</table>

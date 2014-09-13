@@ -1,0 +1,21 @@
+Dim i, fso, f, f1, sf, BasePath, CalcResult, fNameArray()
+Dim dDay
+
+dDay = 14
+BasePath = "$plmOnTemp$"
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set f = fso.GetFolder(BasePath)
+Set sf = f.SubFolders
+For Each f1 in sf
+     CalcResult = DateDiff("d",f1.DateCreated,Now)
+          if CalcResult > dDay then
+                ReDim preserve fNameArray(i)
+                fNameArray(i) = f1.Name
+                i = i + 1
+        end if
+Next
+
+For Each fName in fNameArray
+    FSO.DeleteFolder(BasePath & "\" & fName)
+Next
+

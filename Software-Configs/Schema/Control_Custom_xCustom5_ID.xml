@@ -1,0 +1,5 @@
+<generator>
+	<table name="xCustom5" codecolumn="CustomID" idcolumn="CustomKey" spacecolumn="3">
+		<column name="autoid" lookupSpace="" lookupNull="XXX"  order="2"/>
+	</table>
+</generator>

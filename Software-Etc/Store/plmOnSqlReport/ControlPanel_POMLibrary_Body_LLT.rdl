@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="plmOn">
+      <rd:DataSourceID>c93ea6d6-65b2-40ea-a938-f0f65146761d</rd:DataSourceID>
+      <DataSourceReference>plmOn</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox5">
+        <Top>0.125in</Top>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>26pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.5in</Height>
+        <Value>POM Library</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.15in</BottomMargin>
+  <rd:ReportID>19e3af84-88bd-4e35-abb4-cfa4c7ddab5f</rd:ReportID>
+  <EmbeddedImages>
+    <EmbeddedImage Name="icon_warning">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODdhEAAQAPf/AEk7PQAAAEk7TlVPV2Zfa1FNVGZfbVFNVmReblxWb19acJSRnl5ZcV5ZcF5acSIUcg8Aaj8vq05JbUVDZQQAVQMAOjEwYUhHcgAAPQAAEwAACAAAB3N0tUZNlv/8AP//AOzpAv//A//9Bf//Bf//Bt7bBv//Cf/+EP/+Ev//EvXzFP//Hf//LWFhRpeXj//4AP/5AP/6AOrjALKvAf/5AvryAv/3A//7BurkB//2DP/wAP/0AP/1APLlAP/0Cv/0Db63E//qAP/sAP/tAMS3APvrBP/rBf/tDt7ODqmgGf/kAP/nAP/oAP/pAOnSAOfTAOrSAv/nA//kB/jjCv/lDP/eAP/fAP/gAP/fAezOA+jMBfPWBvzfDtW9DoJ3JP/ZANO3EMKqHP/TAP/VAP/XAPfLAOjDAOzGAs6uEu7QNf/OAP/RAP7MAPjGAO6/AOvGHq2SG+/KMvzHAPnGAPjFAPfEAEU9H1pWTCAZEWNTRFpPTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAEALAAAAAAQABAABwjFAAMIHEiwoMEAPT64OFiwhwoWIDgwHCjDxIoPLSYitFFihgkcEhn2MKGhgp4Pd0QWIZGBgoAQSEIWdJLjgx0IeVJ8KGCwBxQfH7w88HJjRBeZArVMMeIhCQAgNU54OECwR5YjVoJsgRNjxw8SYGSa4SLli5AnRIbwgIECxgCBPc5QIVOFyQYMYXS8oCECjcQ3ZbB8udIET4Q0TL4oibJkQoA4buq0mbOGDBsxctrQUTPGgsAFEhIwcICAgAIGDBoYuNAhQEAAOw==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <PageWidth>11in</PageWidth>
+  <DataSets>
+    <DataSet Name="dsHowToMeasure">
+      <Fields>
+        <Field Name="Columns">
+          <DataField>Columns</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="POM">
+          <DataField>POM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PointMeasur">
+          <DataField>PointMeasur</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HowToMeasurText">
+          <DataField>HowToMeasurText</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FilePath">
+          <DataField>FilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_ControlPanel_POMLibrary_SmallImage_SELECT</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>11in</Width>
+  <Body>
+    <ReportItems>
+      <Table Name="table4">
+        <DataSetName>dsHowToMeasure</DataSetName>
+        <Width>10.75in</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="POM">
+                      <rd:DefaultName>POM</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!POM.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PointMeasur">
+                      <rd:DefaultName>PointMeasur</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PointMeasur.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="HowToMeasurText">
+                      <rd:DefaultName>HowToMeasurText</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!HowToMeasurText.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Rectangle Name="Rectangle_Image">
+                      <ReportItems>
+                        <Image Name="image1">
+                          <Sizing>FitProportional</Sizing>
+                          <Source>External</Source>
+                          <Style />
+                          <Value>=Fields!FilePath.Value</Value>
+                        </Image>
+                      </ReportItems>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Rectangle>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.875in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Code</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox21">
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Point of Measure</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox22">
+                      <rd:DefaultName>textbox22</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>How To Measure</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox26">
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>How To Image</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.15in</Height>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.375in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>5.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1.025in</Height>
+        <Left>0.125in</Left>
+      </Table>
+    </ReportItems>
+    <Height>7.25in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Height>0.25in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <PageHeight>8.5in</PageHeight>
+</Report>

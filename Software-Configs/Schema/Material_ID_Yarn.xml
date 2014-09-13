@@ -1,0 +1,7 @@
+<generator>
+   <table name="pMaterial" codecolumn="MaterialNo" idcolumn="MaterialID" spacecolumn="5"> 
+	  <column name="" lookupSpace="YRN" lookupNull="??"  order="1"/> 
+	   <column name="A" lookup="SELECT Custom, CustomKey FROM iCustom1" lookupID="Custom" lookupSelect="CustomKey" lookupSpace="" lookupNull="?" order="3"/>
+  	  <column name="autoid" lookupSpace="" lookupNull="??"  order="2"/>  
+   </table>
+</generator>

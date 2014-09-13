@@ -1,0 +1,55 @@
+/****** Object:  StoredProcedure [dbo].[spx_NPMSampleRequestSubmitItemSummary_SEL]    Script Date: 01/14/2013 13:56:37 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[spx_NPMSampleRequestSubmitItemSummary_SEL]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[spx_NPMSampleRequestSubmitItemSummary_SEL]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spx_NPMSampleRequestSubmitItemSummary_SEL]    Script Date: 01/14/2013 13:56:37 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[spx_NPMSampleRequestSubmitItemSummary_SEL] (
+@StyleID UNIQUEIDENTIFIER, 
+@StyleSet INT, 
+@TradePartnerID UNIQUEIDENTIFIER,
+@SampleRequestWorkflowID UNIQUEIDENTIFIER,
+@SampleWorkflowID NVARCHAR(10),
+@TeamID UNIQUEIDENTIFIER
+)
+AS
+
+
+SELECT a.Status,
+CASE a.Submit 
+	WHEN 1 THEN '1st Submit (' + c.Status + ')'
+	WHEN 2 THEN '2nd Submit (' + c.Status + ')'
+	WHEN 3 THEN '3rd Submit (' + c.Status + ')'
+	ELSE CAST(a.Submit AS NVARCHAR(10)) + 'th Submit (' + c.Status + ')'
+END AS SubmitHeader,
+a.DueDate,
+a.RecDate,
+a.VendorDate, 
+a.EndDate, 
+a.Submit, a.StyleID, a.StyleSet, a.TradePartnerID, a.SampleWorkflowID, a.SampleRequestWorkflowID,
+a.SampleRequestSubmitID, b.SummaryXML, b.EditXML
+FROM pSampleRequestSubmit  a
+INNER JOIN  pSampleRequestSubmitStatus c ON a.Status = c.StatusID
+LEFT OUTER JOIN pSampleRequestWorkflowStatusSchema b ON (b.SampleWorkflowID = a.SampleWorkflowID AND b.StatusID =  a.Status)
+WHERE a.StyleID = @StyleID 
+AND a.StyleSet = @StyleSet 
+AND a.TradePartnerID  = @TradePartnerID 
+AND a.SampleRequestWorkflowID  = @SampleRequestWorkflowID 
+AND a.SampleWorkflowID = @SampleWorkflowID 
+ORDER BY a.Submit DESC
+
+
+GO
+
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES ('DB_Version', '5.0.0000', '04770', GetDate())
+GO
+

@@ -1,0 +1,48 @@
+<Table Name="pStyleBOMItem" formcolumns="3" gridcolumns="" FormSQL="spx_StyleBOMMaterialItems_Select" 
+       GridReadSQL="spx_StyleBOMMaterialItems_Select" GridSQL="spx_StyleBOMMaterialItems_Select"
+       LockFieldName="HeaderLocked" 
+       LockSQL ="spx_StyleBOMMaterialItems_Select"
+       >
+  <column Name="StyleBOMItemID" PK="true" alias="StyleBOMItemID" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px" GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="StyleBOMDimensionItemID" PK="true" alias="StyleBOMDimensionItemID" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px" GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="StyleMaterialID" PK="true" alias="StyleMaterialID" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px" GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="MaterialNo" alias="Material Code" Type="label" datatype="string" column="1" order="5" GridVisible="true" cellwidth="150px" GridWidth="75" Visible="false" enabled="false" GridOrder="100">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialName" alias="Material Name" Type="label" datatype="string" column="1" order="6" GridVisible="true" cellwidth="150px" GridWidth="125" Visible="false" enabled="false" GridOrder="100">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  <column Name="UOM" alias="UOM" Type="label" datatype="string" column="1" order="6" GridVisible="true" cellwidth="150px" GridWidth="125" Visible="false" enabled="false" GridOrder="100">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ItemDim1Name" alias="Dim1" Type="label" datatype="string" column="1" order="5" GridVisible="true" cellwidth="150px" GridWidth="75" Visible="false" enabled="false" GridOrder="101">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ItemDim2Name" alias="Dim2" Type="label" datatype="string" column="1" order="6" GridVisible="true" cellwidth="150px" GridWidth="125" Visible="false" enabled="false" GridOrder="101">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ItemDim3Name" alias="Dim3" Type="label" datatype="string" column="1" order="6" GridVisible="true" cellwidth="150px" GridWidth="125" Visible="false" enabled="false" GridOrder="101">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <!--<column Name="MaterialQuantity" alias="Qty" Type="currencybox" datatype="money" dataformat="0.0000" column="1" order="7" 
+          GridVisible="true" cellwidth="150px" GridWidth="35" Visible="true" enabled="true" GridOrder="102" GridHeaderCss="TableHeaderGreen" GridRowCss="TableHeaderGreen">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>-->
+  <column Name="MaterialQuantity" alias="Qty" Type="textbox" datatype="string"  column="1" order="7"
+          GridVisible="true" cellwidth="150px" GridWidth="35" Visible="true" enabled="true" GridOrder="102">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="MaterialSizeID" alias="TSG" Type="label" datatype="string" column="1" order="7" GridVisible="true" cellwidth="150px" GridWidth="125" Visible="false" enabled="false" GridOrder="102">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>    	
+	<column Name="MaterialPrice" alias="Price" Type="currencybox" datatype="money" column="2" order="7" GridVisible="false" cellwidth="150px" Visible="true" enabled="true" GridWidth="50" GridOrder="102">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+</Table>
+

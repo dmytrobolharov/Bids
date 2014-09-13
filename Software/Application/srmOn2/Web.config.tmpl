@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="srmOnApp.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+    </sectionGroup>
+  </configSections>
+  <system.web>
+	<httpRuntime maxRequestLength="2097151" appRequestQueueLimit="100" executionTimeout="60000"></httpRuntime>
+    <compilation debug="true" strict="false" explicit="true" targetFramework="4.0">
+      <buildProviders>
+        <add extension=".rdlc" type="Microsoft.Reporting.RdlBuildProvider, Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+      </buildProviders>
+      <assemblies>
+        <add assembly="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+      </assemblies>
+    </compilation>
+    <pages enableEventValidation="false" controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID">
+      <namespaces>
+        <clear/>
+        <add namespace="System"/>
+        <add namespace="System.Collections"/>
+        <add namespace="System.Collections.Generic"/>
+        <add namespace="System.Collections.Specialized"/>
+        <add namespace="System.Configuration"/>
+        <add namespace="System.Text"/>
+        <add namespace="System.Text.RegularExpressions"/>
+        <add namespace="System.Linq"/>
+        <add namespace="System.Xml.Linq"/>
+        <add namespace="System.Web"/>
+        <add namespace="System.Web.Caching"/>
+        <add namespace="System.Web.SessionState"/>
+        <add namespace="System.Web.Security"/>
+        <add namespace="System.Web.Profile"/>
+        <add namespace="System.Web.UI"/>
+        <add namespace="System.Web.UI.WebControls"/>
+        <add namespace="System.Web.UI.WebControls.WebParts"/>
+        <add namespace="System.Web.UI.HtmlControls"/>
+      </namespaces>
+      <controls>
+        <add namespace="CuteWebUI" assembly="CuteWebUI.AjaxUploader" tagPrefix="CuteWebUI"/>
+		<add tagPrefix="telerik" namespace="Telerik.Web.UI" assembly="Telerik.Web.UI"/>
+      </controls>
+    </pages>
+    <identity impersonate="true" userName="$plmOnUser$" password="$plmOnUserPassword$"/>
+    <trace enabled="false" mostRecent="true" requestLimit="100" pageOutput="false" traceMode="SortByTime" localOnly="false"/>
+    <authentication mode="Forms">
+      <forms name=".YSSRM" loginUrl="Default.aspx" protection="All" path="/" timeout="600"/>
+    </authentication>
+    <authorization>
+      <deny users="?"/>
+      <allow users="*"/>
+    </authorization>
+    <httpHandlers>
+      <add path="Reserved.ReportViewerWebControl.axd" verb="*" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" validate="false"/>
+      <add path="Telerik.Web.UI.WebResource.axd" type="Telerik.Web.UI.WebResource, Telerik.Web.UI" verb="*" validate="false"/>
+    </httpHandlers>
+    <httpModules>
+      <add name="CuteWebUI.UploadModule" type="CuteWebUI.UploadModule,CuteWebUI.AjaxUploader"/>
+    </httpModules>
+    <caching>
+      <sqlCacheDependency enabled="true" pollTime="6000">
+        <databases>
+          <add name="plmOnDB" connectionStringName="SQLCACHECONNECTION"/>
+        </databases>
+      </sqlCacheDependency>
+    </caching>
+	<sessionState mode="$SessionStateMode$" stateConnectionString="tcpip=127.0.0.1:42424" sqlConnectionString="$SessionStateSqlConnectionString$" cookieless="false" timeout="20"/>
+  </system.web>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false"/>
+    <modules>
+      <remove name="CuteWebUI.UploadModule"/>
+      <add name="CuteWebUI.UploadModule" type="CuteWebUI.UploadModule,CuteWebUI.AjaxUploader"/>
+    </modules>
+    <handlers>
+      <remove name="Telerik.Web.UI.WebResource.axd_*"/>
+      <add name="ReportViewerWebControl" path="Reserved.ReportViewerWebControl.axd" verb="*" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+      <add name="Telerik.Web.UI.WebResource.axd_*" path="Telerik.Web.UI.WebResource.axd" verb="*" type="Telerik.Web.UI.WebResource, Telerik.Web.UI" preCondition="integratedMode"/>
+    </handlers>
+	<security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="100000000"/>
+      </requestFiltering>
+    </security>
+    <httpProtocol>
+      <customHeaders>
+        <clear/>
+        <add name="X-UA-Compatible" value="IE=EmulateIE7"/>
+      </customHeaders>
+    </httpProtocol>
+  </system.webServer>
+  <applicationSettings>
+    <srmOnApp.My.MySettings>
+      <setting name="srmOnApp_SRMFileServices_SRMFileServices" serializeAs="String">
+        <value>http://$plmOnHTTPServer$/$plmOnVDFileServices$/srmFileServices.asmx</value>
+      </setting>
+      <setting name="srmOnApp_ReportService2005_ReportingService2005" serializeAs="String">
+        <value>http://$plmOnRSServer$/$plmOnRSVDir$/ReportService2005.asmx</value>
+      </setting>
+      <setting name="srmOnApp_ReportExecution2005_ReportExecutionService" serializeAs="String">
+        <value>http://$plmOnRSServer$/$plmOnRSVDir$/ReportExecution2005.asmx</value>
+      </setting>
+    </srmOnApp.My.MySettings>
+  </applicationSettings>
+  <connectionStrings>
+    <add name="SQLCACHECONNECTION" connectionString="$plmOnDBConnectionString$" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  <location path="default.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="error.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="password.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <appSettings>
+    <add key="AppSettingGroupID" value="00000000-0000-0000-0000-000000000000"/>
+    <add key="SERVERID" value="BCF91C31-53A1-48a6-B5B2-AC4DD152349B"/>
+    <add key="SERVER" value="$plmOnConfig$\Config\server.config"/>
+    <add key="MAIL" value="$plmOnConfig$\Config\mail.config"/>
+    <add key="IMAGE" value="$plmOnConfig$\Config\image.config"/>
+    <add key="COLOR" value="$plmOnConfig$\Config\color.config"/>
+    <add key="STORAGE" value="$plmOnConfig$\Config\storage-srmOn.config"/>
+    <add key="LICENSE" value="$plmOnConfig$\Config\license.config"/>
+    <add key="MATERIAL" value="$plmOnConfig$\Config\material.config"/>
+    <add key="STYLE" value="$plmOnConfig$\Config\style.config"/>
+    <add key="REPORT" value="$plmOnConfig$\Config\report.config"/>
+    <add key="TRADEPARTNER" value="$plmOnConfig$\Config\tradepartner.config"/>
+    <add key="COMPLIANCE" value="$plmOnConfig$\Config\compliance.config"/>
+    <add key="REPORTSERVER" value="http://$plmOnHTTPServer$/$plmOnVDplmOnReport$"/>
+    <add key="SYSTEM" value="$plmOnConfig$\Config\system.config"/>
+    <add key="ERRORMESSAGE" value="True"/>
+    <add key="Telerik.Web.UI.StyleSheetFolders" value="~/System/CSS/"/>
+  </appSettings>
+</configuration>

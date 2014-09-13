@@ -1,0 +1,23 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.panel-width-start
+{
+	left: 0.32em;
+}
+#divGoogleMap {
+  height: 100%;
+}
+
+@media print {
+  html, body {
+    height: auto;
+  }
+
+  #divGoogleMap {
+    height: 650px;
+  }
+}

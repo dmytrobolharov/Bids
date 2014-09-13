@@ -1,0 +1,6 @@
+
+
+<table Name="pColorLibraryTPX" Table="pColorLibraryTPX" formcolumns="" gridcolumns="" selectsql="SELECT * FROM pColorLibraryTPX" RepeatColumns="7" RepeatDirection="h">
+    <column Name="PANTONEColor" PK="" Alias="PANTONE Color" type="label" datatype="string" enabled="TRUE" visible="TRUE" cellwidth="200" column="" order="" gridorder="" gridvisible="" gridwidth=""  SortField="true" />
+    <column Name="PANTONEName" PK="" Alias="PANTONE Name" type="label" datatype="string" enabled="TRUE" visible="TRUE" cellwidth="200" column="" order="" gridorder="" gridvisible="" gridwidth=""  SortField="true" />
+</table>

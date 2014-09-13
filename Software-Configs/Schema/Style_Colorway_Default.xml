@@ -1,0 +1,26 @@
+<Table Name="pStyleColorway" formcolumns="3" gridcolumns="" FormSQL="SELECT * FROM vwx_StyleColorwaySummary" 
+       GridReadSQL="SELECT * FROM vwx_StyleColorwaySummary" GridSQL="SELECT * FROM vwx_StyleColorwaySummary"
+> 
+	
+	<column Name="MaterialName" PK="false" alias="Material" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px" 
+          GridVisible="false" GridWidth="150" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="Placement" alias="Placement" Type="label" datatype="string" column="1" order="5" GridVisible="true"
+	   cellwidth="150px" GridWidth="150" Visible="true" enabled="false" GridOrder="101">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="SubComponentName" alias="Components" Type="label" datatype="string" column="1" order="5" GridVisible="true"
+	   cellwidth="150px" GridWidth="150" Visible="true" enabled="false" GridOrder="101">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="Position" alias="Position" Type="label" datatype="string" column="1" order="5" GridVisible="true"
+	   cellwidth="150px" GridWidth="150" Visible="true" enabled="false" GridOrder="101">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  
+</Table>
+

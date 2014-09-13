@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="matrix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="text99">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <ZIndex>3</ZIndex>
+                    <Visibility>
+                      <Hidden>true</Hidden>
+                    </Visibility>
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>3in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Tablix Name="list1">
+                      <TablixBody>
+                        <TablixColumns>
+                          <TablixColumn>
+                            <Width>2in</Width>
+                          </TablixColumn>
+                        </TablixColumns>
+                        <TablixRows>
+                          <TablixRow>
+                            <Height>3in</Height>
+                            <TablixCells>
+                              <TablixCell>
+                                <CellContents>
+                                  <Rectangle Name="list1_Contents">
+                                    <ReportItems>
+                                      <Rectangle Name="rectangle_MainInsideMatrix">
+                                        <ReportItems>
+                                          <Image Name="image2">
+                                            <Source>External</Source>
+                                            <Value>=Fields!FilePath.Value</Value>
+                                            <MIMEType>image/png</MIMEType>
+                                            <Sizing>FitProportional</Sizing>
+                                            <Top>0.125in</Top>
+                                            <Height>1.875in</Height>
+                                            <Width>1.875in</Width>
+                                            <Style />
+                                          </Image>
+                                          <Textbox Name="textbox_DroppedInfo_SpaceHolder">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>6pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Height>0.125in</Height>
+                                            <Width>1.875in</Width>
+                                            <ZIndex>1</ZIndex>
+                                            <Style />
+                                          </Textbox>
+                                          <Textbox Name="textbox_DroppedInfo">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=First(Fields!DroppedInfo.Value)</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>6pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Height>0.125in</Height>
+                                            <Width>1.875in</Width>
+                                            <ZIndex>2</ZIndex>
+                                            <Visibility>
+                                              <Hidden>=IIF( Fields!LineFolderItemDrop.Value = "Yes", False, True)</Hidden>
+                                            </Visibility>
+                                            <ToolTip>##data##</ToolTip>
+                                            <DataElementOutput>NoOutput</DataElementOutput>
+                                            <Style>
+                                              <Border>
+                                                <Color>Orange</Color>
+                                                <Style>Solid</Style>
+                                                <Width>2pt</Width>
+                                              </Border>
+                                              <BackgroundColor>PaleGoldenrod</BackgroundColor>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>1pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Rectangle Name="rectangle2">
+                                            <ReportItems>
+                                              <Textbox Name="textbox27">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value>Style No:</Value>
+                                                        <Style>
+                                                          <FontFamily>Tahoma</FontFamily>
+                                                          <FontSize>6pt</FontSize>
+                                                          <FontWeight>Bold</FontWeight>
+                                                        </Style>
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style>
+                                                      <TextAlign>Left</TextAlign>
+                                                    </Style>
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <rd:DefaultName>textbox27</rd:DefaultName>
+                                                <Height>0.125in</Height>
+                                                <Width>0.625in</Width>
+                                                <ToolTip>##label##</ToolTip>
+                                                <Style>
+                                                  <PaddingLeft>1pt</PaddingLeft>
+                                                  <PaddingRight>1pt</PaddingRight>
+                                                  <PaddingTop>3pt</PaddingTop>
+                                                  <PaddingBottom>1pt</PaddingBottom>
+                                                </Style>
+                                              </Textbox>
+                                              <Textbox Name="textbox28">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value>=First(Fields!StyleNo.Value)</Value>
+                                                        <Style>
+                                                          <FontFamily>Tahoma</FontFamily>
+                                                          <FontSize>6pt</FontSize>
+                                                        </Style>
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style />
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <Left>0.625in</Left>
+                                                <Height>0.125in</Height>
+                                                <Width>1.25in</Width>
+                                                <ZIndex>1</ZIndex>
+                                                <Style>
+                                                  <PaddingLeft>1pt</PaddingLeft>
+                                                  <PaddingRight>1pt</PaddingRight>
+                                                  <PaddingTop>3pt</PaddingTop>
+                                                  <PaddingBottom>1pt</PaddingBottom>
+                                                </Style>
+                                              </Textbox>
+                                              <Textbox Name="textbox29">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value>Description:</Value>
+                                                        <Style>
+                                                          <FontFamily>Tahoma</FontFamily>
+                                                          <FontSize>6pt</FontSize>
+                                                          <FontWeight>Bold</FontWeight>
+                                                        </Style>
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style>
+                                                      <TextAlign>Left</TextAlign>
+                                                    </Style>
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <Top>0.125in</Top>
+                                                <Height>0.125in</Height>
+                                                <Width>0.625in</Width>
+                                                <ZIndex>2</ZIndex>
+                                                <ToolTip>##label##</ToolTip>
+                                                <Style>
+                                                  <PaddingLeft>1pt</PaddingLeft>
+                                                  <PaddingRight>1pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
+                                                  <PaddingBottom>1pt</PaddingBottom>
+                                                </Style>
+                                              </Textbox>
+                                              <Textbox Name="textbox31">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value>=First(Fields!Description.Value)</Value>
+                                                        <Style>
+                                                          <FontFamily>Tahoma</FontFamily>
+                                                          <FontSize>6pt</FontSize>
+                                                        </Style>
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style />
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <Top>0.125in</Top>
+                                                <Left>0.625in</Left>
+                                                <Height>0.125in</Height>
+                                                <Width>1.25in</Width>
+                                                <ZIndex>3</ZIndex>
+                                                <ToolTip>##data##</ToolTip>
+                                                <Style>
+                                                  <PaddingLeft>1pt</PaddingLeft>
+                                                  <PaddingRight>1pt</PaddingRight>
+                                                  <PaddingTop>1pt</PaddingTop>
+                                                  <PaddingBottom>1pt</PaddingBottom>
+                                                </Style>
+                                              </Textbox>
+                                            </ReportItems>
+                                            <DataElementOutput>ContentsOnly</DataElementOutput>
+                                            <Top>2.25in</Top>
+                                            <Height>0.25in</Height>
+                                            <Width>1.875in</Width>
+                                            <ZIndex>3</ZIndex>
+                                            <Style />
+                                          </Rectangle>
+                                        </ReportItems>
+                                        <DataElementOutput>ContentsOnly</DataElementOutput>
+                                        <Top>0.125in</Top>
+                                        <Height>2.875in</Height>
+                                        <Width>1.875in</Width>
+                                        <Style>
+                                          <Border>
+                                            <Color>DarkGray</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                        </Style>
+                                      </Rectangle>
+                                    </ReportItems>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Style />
+                                  </Rectangle>
+                                </CellContents>
+                              </TablixCell>
+                            </TablixCells>
+                          </TablixRow>
+                        </TablixRows>
+                      </TablixBody>
+                      <TablixColumnHierarchy>
+                        <TablixMembers>
+                          <TablixMember />
+                        </TablixMembers>
+                      </TablixColumnHierarchy>
+                      <TablixRowHierarchy>
+                        <TablixMembers>
+                          <TablixMember>
+                            <Group Name="list1_Details_Group">
+                              <GroupExpressions>
+                                <GroupExpression>=Fields!StyleID.Value</GroupExpression>
+                              </GroupExpressions>
+                            </Group>
+                            <DataElementOutput>Output</DataElementOutput>
+                            <KeepTogether>true</KeepTogether>
+                          </TablixMember>
+                        </TablixMembers>
+                      </TablixRowHierarchy>
+                      <KeepTogether>true</KeepTogether>
+                      <Style />
+                    </Tablix>
+                  </CellContents>
+                  <DataElementOutput>Output</DataElementOutput>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_ColumnGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Column.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Column.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>0.05257in</Size>
+                <CellContents>
+                  <Textbox Name="textbox24">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>textbox24</rd:DefaultName>
+                    <ZIndex>2</ZIndex>
+                    <Visibility>
+                      <Hidden>true</Hidden>
+                    </Visibility>
+                    <Style />
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_RowGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Row.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>0.03125in</Size>
+                <CellContents>
+                  <Textbox Name="Hidden_HeadingStr">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <ZIndex>1</ZIndex>
+                    <Visibility>
+                      <Hidden>true</Hidden>
+                    </Visibility>
+                    <Style />
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <DataSetName>dsStyleInfo</DataSetName>
+        <Height>3.05257in</Height>
+        <Width>2.03125in</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>3.05257in</Height>
+    <Style />
+  </Body>
+  <Width>17in</Width>
+  <Page>
+    <PageHeader>
+      <Height>1.5in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox22">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Line List Report</Value>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>26pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>textbox22</rd:DefaultName>
+          <Top>0.125in</Top>
+          <Height>0.5in</Height>
+          <Width>11in</Width>
+          <ToolTip>##label##</ToolTip>
+          <Style>
+            <VerticalAlign>Middle</VerticalAlign>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageHeader>
+    <PageFooter>
+      <Height>0.25in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style />
+    </PageFooter>
+    <PageWidth>17in</PageWidth>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <DataSourceReference>plmOn</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>381bba7a-d92e-4119-8897-6b6b3f8ab378</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsStyleInfo">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@LineFolderID">
+            <Value>=Parameters!LFID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_LineFolder_Image_8x3_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Row">
+          <DataField>Row</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Column">
+          <DataField>Column</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StyleID">
+          <DataField>StyleID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleNo">
+          <DataField>StyleNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FilePath">
+          <DataField>FilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LineFolderID">
+          <DataField>LineFolderID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LineFolderItemDrop">
+          <DataField>LineFolderItemDrop</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DroppedInfo">
+          <DataField>DroppedInfo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SizeClass">
+          <DataField>SizeClass</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SizeRange">
+          <DataField>SizeRange</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaterialName">
+          <DataField>MaterialName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaterialNo">
+          <DataField>MaterialNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="LFID">
+      <DataType>String</DataType>
+      <Prompt>LineFolderID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>16796566-3a89-4388-ad02-b45951f328fb</rd:ReportID>
+</Report>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox22">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>24pt</FontSize>
+          <VerticalAlign>Middle</VerticalAlign>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <rd:DefaultName>textbox22</rd:DefaultName>
+        <Height>0.5in</Height>
+        <Top>0.125in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>=ReportItems!txtHiddenTitle.Value</Value>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>2.5in</Height>
+  </PageHeader>
+  <Body>
+    <ReportItems>
+      <Textbox Name="txtHiddenTitle">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Height>0.125in</Height>
+        <Width>0.125in</Width>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <CanGrow>true</CanGrow>
+        <Value>=Fields!StyleDetailTitle2.Value</Value>
+        <Left>0.125in</Left>
+      </Textbox>
+      <Textbox Name="StyleDetail1">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <rd:DefaultName>StyleDetail1</rd:DefaultName>
+        <Height>5.625in</Height>
+        <Width>10.75in</Width>
+        <Top>0.125in</Top>
+        <CanGrow>true</CanGrow>
+        <Value>=First(Fields!StyleDetail2.Value)</Value>
+        <Left>0.125in</Left>
+      </Textbox>
+    </ReportItems>
+    <Style />
+    <Height>6in</Height>
+  </Body>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <rd:DataSourceID>25a58d4a-2b5e-4f02-a71d-3bf00af9c0cb</rd:DataSourceID>
+      <DataSourceReference>plmOn</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code />
+  <Width>11in</Width>
+  <DataSets>
+    <DataSet Name="dsTeckPackStyleDetail">
+      <Fields>
+        <Field Name="StyleDetail">
+          <DataField>StyleDetail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleDetail1">
+          <DataField>StyleDetail1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleDetail2">
+          <DataField>StyleDetail2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleDetailBlank">
+          <DataField>StyleDetailBlank</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StyleDetail1Blank">
+          <DataField>StyleDetail1Blank</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StyleDetail2Blank">
+          <DataField>StyleDetail2Blank</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StyleDetailTitle">
+          <DataField>StyleDetailTitle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleDetailTitle1">
+          <DataField>StyleDetailTitle1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleDetailTitle2">
+          <DataField>StyleDetailTitle2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_StyleDetailTab_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@StyleID">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeight>8.5in</PageHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <PageWidth>11in</PageWidth>
+  <rd:ReportID>656daed2-3f57-4266-88a3-f57a828d84be</rd:ReportID>
+  <ReportParameters>
+    <ReportParameter Name="SID">
+      <DataType>String</DataType>
+      <Prompt>StyleID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+</Report>

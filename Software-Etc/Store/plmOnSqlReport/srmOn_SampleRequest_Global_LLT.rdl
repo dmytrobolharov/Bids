@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="plmOn">
+      <rd:DataSourceID>3ff6e075-6928-4ecc-b585-c9730e0ca080</rd:DataSourceID>
+      <DataSourceReference>plmOn</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="Season">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Season</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Year">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Year</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Category">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Category</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TradePartnerID">
+      <DataType>String</DataType>
+      <Prompt>TradePartnerID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox17">
+        <Top>0.625in</Top>
+        <Width>1.25in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.375in</Left>
+        <Height>0.25in</Height>
+        <Value>=IIF(IsNothing(Parameters!Category.Value),"All",Parameters!Category.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox16">
+        <Top>0.625in</Top>
+        <Width>0.625in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2in</Left>
+        <Height>0.25in</Height>
+        <Value>=IIF(IsNothing(Parameters!Year.Value),"All",Parameters!Year.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox15">
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <Top>0.625in</Top>
+        <Width>0.875in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.625in</Left>
+        <Height>0.25in</Height>
+        <Value>=IIF(IsNothing(Parameters!Season.Value),"All", Parameters!Season.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox14">
+        <Top>0.625in</Top>
+        <Width>0.625in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.75in</Left>
+        <Height>0.25in</Height>
+        <Value>Category:</Value>
+      </Textbox>
+      <Textbox Name="textbox11">
+        <Top>0.625in</Top>
+        <Width>0.375in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.625in</Left>
+        <Height>0.25in</Height>
+        <Value>Year:</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <Top>0.625in</Top>
+        <Width>0.5in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>Season:</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.125in</Top>
+        <Width>4.5in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>18pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.375in</Height>
+        <Value>Sample Request Report</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <rd:ReportID>31fbe5aa-66fc-436e-8b25-3f1498b37533</rd:ReportID>
+  <PageWidth>11in</PageWidth>
+  <DataSets>
+    <DataSet Name="dsSampleRequest">
+      <Fields>
+        <Field Name="TradePartnerName">
+          <DataField>TradePartnerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleID">
+          <DataField>StyleID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleNo">
+          <DataField>StyleNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleSet">
+          <DataField>StyleSet</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SizeClass">
+          <DataField>SizeClass</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SizeRange">
+          <DataField>SizeRange</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Color">
+          <DataField>Color</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tech_Pack">
+          <DataField>Tech Pack</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SampleWorkflowID">
+          <DataField>SampleWorkflowID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SampleWorkflow">
+          <DataField>SampleWorkflow</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="FilePath">
+          <DataField>FilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_srmOn_SampleRequest_Global_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@TradePartnerID">
+            <Value>=Parameters!TradePartnerID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Season">
+            <Value>=Parameters!Season.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Year">
+            <Value>=Parameters!Year.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Category">
+            <Value>=Parameters!Category.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>14.4375in</Width>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>0.71875in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <DataSetName>dsSampleRequest</DataSetName>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>0.125in</Width>
+            <DynamicRows>
+              <Grouping Name="StyleID">
+                <GroupExpressions>
+                  <GroupExpression>=CStr(Fields!StyleID.Value)</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!StyleNo.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="StyleID">
+                  <rd:DefaultName>StyleID</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                      <Right>None</Right>
+                    </BorderStyle>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>9</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value />
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>1.5in</Width>
+            <DynamicRows>
+              <Grouping Name="Image">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!FilePath.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Rectangle Name="rectangle3">
+                  <ZIndex>8</ZIndex>
+                  <ReportItems>
+                    <Image Name="image1">
+                      <Sizing>FitProportional</Sizing>
+                      <MIMEType />
+                      <Source>External</Source>
+                      <Style />
+                      <Value>=Fields!FilePath.Value</Value>
+                    </Image>
+                  </ReportItems>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                      <Left>None</Left>
+                    </BorderStyle>
+                  </Style>
+                </Rectangle>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>1in</Width>
+            <DynamicRows>
+              <Grouping Name="StyleNo">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!StyleNo.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Rectangle Name="rectangle1">
+                  <ZIndex>7</ZIndex>
+                  <ReportItems>
+                    <Textbox Name="Description">
+                      <rd:DefaultName>Description</rd:DefaultName>
+                      <Top>0.25in</Top>
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.25in</Height>
+                      <Value>=First(Fields!Description.Value)</Value>
+                    </Textbox>
+                    <Textbox Name="StyleNo">
+                      <rd:DefaultName>StyleNo</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.25in</Height>
+                      <Value>=Fields!StyleNo.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </Rectangle>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.375in</Width>
+            <DynamicRows>
+              <Grouping Name="StyleSet">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!StyleSet.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox26">
+                  <rd:DefaultName>textbox26</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>6</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!StyleSet.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.875in</Width>
+            <DynamicRows>
+              <Grouping Name="SizeClass">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SizeClass.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox25">
+                  <rd:DefaultName>textbox25</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>5</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!SizeClass.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>1.375in</Width>
+            <DynamicRows>
+              <Grouping Name="TradePartner">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!TradePartnerName.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox3">
+                  <rd:DefaultName>textbox3</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>4</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!TradePartnerName.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>1.375in</Width>
+            <DynamicRows>
+              <Grouping Name="Vendor">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!VendorName.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox4">
+                  <rd:DefaultName>textbox4</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>3</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!VendorName.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.875in</Width>
+            <DynamicRows>
+              <Grouping Name="Color">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Color.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox27">
+                  <rd:DefaultName>textbox27</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>2</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Color.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.75in</Width>
+            <DynamicRows>
+              <Grouping Name="TechPack">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Tech_Pack.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox28">
+                  <rd:DefaultName>textbox28</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>1</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Format(Fields!Tech_Pack.Value, "M/d/yyyy")</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <Top>0.125in</Top>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <Height>0.5in</Height>
+            <DynamicColumns>
+              <Grouping Name="matrix1_ColumnGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SampleWorkflow.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!SampleWorkflowID.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="SampleWorkflow">
+                  <rd:DefaultName>SampleWorkflow</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>10</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!SampleWorkflow.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Width>8.96875in</Width>
+        <Corner>
+          <ReportItems>
+            <Rectangle Name="rectangle2">
+              <ZIndex>11</ZIndex>
+              <ReportItems>
+                <Textbox Name="textbox13">
+                  <Style>
+                    <BorderStyle>
+                      <Left>Solid</Left>
+                      <Right>None</Right>
+                      <Top>None</Top>
+                      <Bottom>None</Bottom>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>7</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Left>7.5in</Left>
+                  <Value>Tech
+Pack</Value>
+                </Textbox>
+                <Textbox Name="textbox12">
+                  <Width>0.875in</Width>
+                  <Style>
+                    <BorderStyle>
+                      <Left>Solid</Left>
+                      <Right>None</Right>
+                      <Top>None</Top>
+                      <Bottom>None</Bottom>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>6</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Left>6.625in</Left>
+                  <Value>Color</Value>
+                </Textbox>
+                <Textbox Name="textbox10">
+                  <Width>1.375in</Width>
+                  <Style>
+                    <BorderStyle>
+                      <Left>Solid</Left>
+                      <Right>None</Right>
+                      <Top>None</Top>
+                      <Bottom>None</Bottom>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>5</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Left>5.25in</Left>
+                  <Value>Vendor</Value>
+                </Textbox>
+                <Textbox Name="textbox9">
+                  <Width>1.375in</Width>
+                  <Style>
+                    <BorderStyle>
+                      <Left>Solid</Left>
+                      <Right>None</Right>
+                      <Top>None</Top>
+                      <Bottom>None</Bottom>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>4</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Left>3.875in</Left>
+                  <Value>Agent</Value>
+                </Textbox>
+                <Textbox Name="textbox7">
+                  <Width>0.875in</Width>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                      <Left>Solid</Left>
+                      <Right>None</Right>
+                      <Top>None</Top>
+                      <Bottom>None</Bottom>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>3</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Left>3in</Left>
+                  <Value>Size Class</Value>
+                </Textbox>
+                <Textbox Name="textbox6">
+                  <Width>0.375in</Width>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                      <Left>Solid</Left>
+                      <Right>None</Right>
+                      <Top>None</Top>
+                      <Bottom>None</Bottom>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>2</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Left>2.625in</Left>
+                  <Value>Style
+Set</Value>
+                </Textbox>
+                <Textbox Name="textbox5">
+                  <Top>0.25in</Top>
+                  <Width>1in</Width>
+                  <Style>
+                    <BorderStyle>
+                      <Left>Solid</Left>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>1</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Left>1.625in</Left>
+                  <Value>Description</Value>
+                </Textbox>
+                <Textbox Name="textbox2">
+                  <rd:DefaultName>textbox2</rd:DefaultName>
+                  <Width>1in</Width>
+                  <Style>
+                    <BorderStyle>
+                      <Left>Solid</Left>
+                    </BorderStyle>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Left>1.625in</Left>
+                  <Height>0.25in</Height>
+                  <Value>Style Number</Value>
+                </Textbox>
+              </ReportItems>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </Rectangle>
+          </ReportItems>
+        </Corner>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>1in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="EndDate">
+                    <rd:DefaultName>EndDate</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Format(First(Fields!DueDate.Value), "M/d/yyyy")</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+        <Height>1.5in</Height>
+        <Left>0.125in</Left>
+      </Matrix>
+    </ReportItems>
+    <Height>1.875in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageHeight>8.5in</PageHeight>
+</Report>

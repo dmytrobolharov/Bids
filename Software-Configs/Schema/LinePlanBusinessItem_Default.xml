@@ -1,0 +1,37 @@
+<Table Name="pLinePlanBusinessItem" formcolumns="1" gridcolumns="" FormSQL="SELECT * FROM vwx_LineFolderBusinessItem_SEL" GridReadSQL="SELECT * FROM vwx_LineFolderBusinessItem_SEL" GridSQL="SELECT * FROM vwx_LineFolderBusinessItem_SEL">
+	<column Name="LinePlanID" PK="true" alias="LinePlanID" Type="label" datatype="string" enabled="false" Visible="FALSE" cellwidth="100px" GridVisible="False" GridWidth="0" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="LinePlanBusinessID" PK="true" alias="LinePlanBusinessID" Type="label" datatype="string" enabled="false" Visible="FALSE" cellwidth="100px" GridVisible="False" GridWidth="0" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="LinePlanFinancialID" PK="true" alias="LinePlanID" Type="label" datatype="string" enabled="false" Visible="FALSE" cellwidth="100px" GridVisible="False" GridWidth="0" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="LinePlanAttributeItemID3" PK="true" alias="LinePlanAttributeItemID3" Type="label" datatype="string" enabled="false" Visible="FALSE" cellwidth="100px" GridVisible="False" GridWidth="0" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<!--
+	<column Name="LinePlanAttributeText1" alias="Division" Type="label" select="true" cellwidth="50px" datatype="string" column="1" order="1" GridVisible="true" Visible="true" enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="12" GridWidth="50">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="LinePlanAttributeText2" alias="Gender" Type="label" select="true" cellwidth="50px" datatype="string" column="1" order="1" GridVisible="true" Visible="true" enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="12" GridWidth="50">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="LinePlanAttributeText3" alias="Category" Type="label" select="true" cellwidth="50px" datatype="string" column="1" order="1" GridVisible="true" Visible="true" enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="12" GridWidth="50">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	-->
+	<column Name="LinePlanFinancialText" alias="&lt;div style='text-align: right'&gt;Channel:&#160; &lt;/div&gt;" Type="label" select="true" cellwidth="250px" datatype="string" column="1" order="1" GridVisible="true" Visible="true" enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="12" GridWidth="200">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="LinePlanBusLyCh1" alias="WHS" Type="textbox" select="true" cellwidth="70px" datatype="string" column="1" order="1" GridVisible="true" Visible="true" enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="12" GridWidth="70">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="LinePlanBusPnCh1" alias="WHS" Type="textbox" select="true" cellwidth="70px" datatype="string" column="1" order="1" GridVisible="true" Visible="true" enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="12" GridWidth="70">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="LinePlanBusCuCh1" alias="WHS" Type="label" select="true" cellwidth="70px" datatype="string" column="1" order="1" GridVisible="true" Visible="true" enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="12" GridWidth="70">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

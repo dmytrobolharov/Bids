@@ -1,0 +1,98 @@
+-- exec sp_changedbowner @loginame = 'sa' 
+-- ******************************************************************************************** */
+-- * GERBER TECHNOLOGY                                                                          */
+-- *                                                                                            */
+-- * YuniquePLM                                                                                 */
+-- * Alter Script                                                                               */
+-- * Database:                                                                                  */
+-- * 11 June 2010                                                                               */
+-- *                                                                                            */
+-- * Copyright (c) 2002-2010 Gerber Technology, Inc.  All rights reserved.                      */
+-- * This information is confidential and proprietary.  You may not disseminate it              */
+-- * to any other party without the express written consent of Gerber Technology, Inc.          */
+-- *                                                                                            */
+-- ******************************************************************************************** */
+-- ******************************************************************************************** */
+-- COMMENTS
+--
+-- Script will add a uniqueidentifier column called RepKey1 to each table that does NOT
+-- have a primary key , fill it in with default values and then set column to not null
+-- and then create a Primary Key for the table using Repkey1 
+--
+
+BEGIN
+        DECLARE @vTableName        varchar(100),
+                @vSQL              varchar(2000)
+
+         DECLARE Table2Process INSENSITIVE CURSOR
+                 FOR SELECT table_name
+                       FROM information_schema.tables
+                      WHERE table_type <> 'VIEW'
+                        AND table_name NOT IN ( SELECT TABLE_NAME
+                                                  FROM information_schema.table_constraints
+                                                 WHERE constraint_type ='Primary Key'
+                                                   AND table_name IS NOT null )
+                     ORDER BY 1
+             FOR READ ONLY
+
+           OPEN Table2Process 
+
+           FETCH NEXT FROM Table2Process INTO @vTableName
+
+           WHILE @@FETCH_STATUS = 0
+            BEGIN
+
+                  SET @vSQL = null
+                  SET @vSQL = 'ALTER TABLE ' + @vTableName + ' ADD RepKey1 uniqueidentifier DEFAULT newid()'
+                  EXEC (@vSQL)
+                  -- PRINT 'Statment: ' + @vSQL
+
+                  IF @@error <> 0
+                     BEGIN
+                           PRINT 'Statment Failed: ' + @vSQL
+                           goto error
+                     END
+
+                  SET @vSQL = null
+                  SET @vSQL = 'UPDATE ' + @vTableName + ' SET RepKey1 = newid()'
+                  EXEC (@vSQL)
+                  -- PRINT 'Statment: ' + @vSQL
+
+                  IF @@error <> 0
+                     BEGIN
+                           PRINT 'Statment Failed: ' + @vSQL
+                           goto error
+                     END
+
+
+                  SET @vSQL = null
+                  SET @vSQL = 'ALTER TABLE ' + @vTableName + ' ALTER COLUMN RepKey1 uniqueidentifier not null'
+                  EXEC (@vSQL)
+                  --PRINT 'Statment: ' + @vSQL
+
+                  IF @@error <> 0
+                     BEGIN
+                           PRINT 'Statment Failed: ' + @vSQL
+                           goto error
+                     END
+
+
+                  SET @vSQL = null
+                  SET @vSQL = 'ALTER TABLE ' + @vTableName + ' ADD CONSTRAINT PK_' + @vTableName + ' PRIMARY KEY CLUSTERED (RepKey1)'
+                  EXEC (@vSQL)
+                  -- PRINT 'Statment: ' + @vSQL
+
+                  IF @@error <> 0
+                     BEGIN
+                           PRINT 'Statment Failed: ' + @vSQL
+                           goto error
+                     END
+
+              FETCH NEXT FROM Table2Process INTO @vTableName
+            END
+
+error:
+        CLOSE Table2Process
+	DEALLOCATE Table2Process
+END
+GO

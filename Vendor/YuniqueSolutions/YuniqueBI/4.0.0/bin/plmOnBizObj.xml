@@ -1,0 +1,138 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+plmOnBizObj
+</name>
+</assembly>
+<members>
+<member name="M:plmOnBizObj.MaterialHandler.MaterialDataSet(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Get material header dataset.
+ </summary>
+	<param name="connection">sql connection.</param>
+	<param name="materialID">materialID.</param>
+	<returns>dataset</returns>
+</member><member name="M:plmOnBizObj.MaterialHandler.MaterialRequestSubmitWorkflowTreeWithColors(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Load materials request submit workflow tree with colors.
+ </summary>
+	<param name="connection">Sql connection.</param>
+	<param name="materialTradePartnerColorID">materialtradepartnercolorID.</param>
+	<returns>dataset</returns>
+</member><member name="M:plmOnBizObj.MaterialHandler.MaterialRequestSubmitWorkflowTreeWithoutColors(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Load materials request submit workflow tree without colors.
+ </summary>
+	<param name="connection">Sql connection.</param>
+	<param name="materialTradePartnerColorID">materialtradepartnercolorID.</param>
+	<returns>dataset</returns>
+</member><member name="M:plmOnBizObj.MaterialHandler.MaterialRequestSubmitWorkflowColor(System.Data.SqlClient.SqlConnection,System.String,System.String,System.String,System.String)">
+	<summary>
+ Get material request submit workflow by submit.
+ </summary>
+	<param name="connection">sql connection.</param>
+	<param name="materialTradePartnerColorID">material trade partner color ID.</param>
+	<param name="materialTradePartnerID">material trade partner ID.</param>
+	<param name="materialRequestWorkflowID">material request workflow ID.</param>
+	<param name="materialsubmit">materialsubmit.</param>
+	<returns>dataset</returns>
+</member><member name="M:plmOnBizObj.MaterialHandler.MaterialRequestSchemaDataSetCache(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Materials request schema dataset (cache).
+ </summary>
+	<param name="connection">Sql connection.</param>
+	<param name="materialRequestWorkflowID">materialrequestworkflowID.</param>
+	<returns>dataset</returns>
+</member><member name="M:plmOnBizObj.MaterialHandler.GetMaterialRequestMessageCount(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Count material request message records by submit.
+ </summary>
+	<param name="connection">sql connection.</param>
+	<param name="materialRequestSubmitId">materialrequestsubmitid.</param>
+	<returns>dataset</returns>
+</member><member name="M:plmOnBizObj.MaterialHandler.GetMaterialRequestAttatchmentCount(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Count material request attachments records by submit.
+ </summary>
+	<param name="connection">sql connection.</param>
+	<param name="materialRequestSubmitId">materialrequestsubmitid.</param>
+	<returns>dataset</returns>
+</member><member name="M:plmOnBizObj.UserHandler.UserSessionDataSetCache(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Get Users session from dataset. It will cache dataset. 	
+ </summary>
+	<param name="connection">SQL Connection.</param>
+	<param name="sessionID">SessionID.</param>
+	<returns>DataSet</returns>
+	<remarks></remarks>
+</member><member name="M:plmOnBizObj.UserHandler.UserSessionLogInDataSet(System.Data.SqlClient.SqlConnection,System.String,System.String)">
+	<summary>
+ Check username and password at login page	
+ </summary>
+	<param name="connection">sql connection.</param>
+	<param name="userName">user name</param>
+	<param name="password">user password.</param>
+	<returns>dataset</returns>
+	<remarks></remarks>
+</member><member name="M:plmOnBizObj.UserHandler.UserSessionUpdate(System.Data.SqlClient.SqlConnection,System.String,System.String,System.String,System.DateTime,System.Int16,System.Int16,System.String)">
+	<summary>
+ Update client information to user session
+ </summary>
+	<param name="connection">sql connection.</param>
+	<param name="teamId">teamid.</param>
+	<param name="session">sessionid</param>
+	<param name="sessionOS">User OS.</param>
+	<param name="sessionDate">session date.</param>
+	<param name="sessionWidth">screen width</param>
+	<param name="sessionHeight">screen height</param>
+	<param name="sessionIP">user IP address</param>
+	<remarks></remarks>
+</member><member name="M:plmOnBizObj.UserHandler.UserDataSet(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Get User Dataset	
+ </summary>
+	<param name="connection">Sql connection.</param>
+	<param name="teamId">Team id.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:plmOnBizObj.UserHandler.UserSessionActivate(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Activate User Access
+ </summary>
+	<param name="connection">SQL connection.</param>
+	<param name="teamId">Team id.</param>
+	<returns>1</returns>
+	<remarks></remarks>
+</member><member name="M:plmOnBizObj.UserHandler.UserSessionDeactivate(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ It will deactivate user if exceed 5 times.	
+ </summary>
+	<param name="connection">Sql connection.</param>
+	<param name="userName">user name.</param>
+	<returns>1</returns>
+	<remarks></remarks>
+</member><member name="M:plmOnBizObj.UserHandler.UserAccessPermissionLogicUpdate(System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Users the access permission logic update.	
+ </summary>
+	<param name="connection">Sql connection.</param>
+	<param name="teamId">Team id.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:plmOnBizObj.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:plmOnBizObj.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:plmOnBizObj.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

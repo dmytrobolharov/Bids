@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="plmOn">
+      <rd:DataSourceID>2a005d8e-5d39-4fe0-b3c1-c49ec3868e99</rd:DataSourceID>
+      <DataSourceReference>plmOn</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="DateFrom">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>=""</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Date From</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DateTo">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>=""</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Date To</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShowStyleDevelWorkflow">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Show Style Development Workflow?</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Yes</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0</Value>
+            <Label>No</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ShowTechPackActivity">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Show Tech Pack Activity?</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Yes</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0</Value>
+            <Label>No</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ShowQuotationActivity">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Show Quotation Activity?</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Yes</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0</Value>
+            <Label>No</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ShowStyleWorkflowActivity">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Show Sample Workflow Activity?</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Yes</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0</Value>
+            <Label>No</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Year">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>="ALL"</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Year</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ds_information_year</DataSetName>
+          <ValueField>YearValue</ValueField>
+          <LabelField>YearLabel</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Season">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>="ALL"</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Season</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ds_information_season</DataSetName>
+          <ValueField>SeasonValue</ValueField>
+          <LabelField>SeasonLabel</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="StyleCategoryID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>="ALL"</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Item Category</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TradePartnerID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>="ALL"</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Agent</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TradePartnerVendorID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>="ALL"</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Vendor</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SortBy">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>=1</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Sort By</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Agent/Vendor</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>2</Value>
+            <Label>Style</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.25in</RightMargin>
+  <LeftMargin>1in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image1">
+        <Sizing>FitProportional</Sizing>
+        <Width>1.375in</Width>
+        <Source>External</Source>
+        <Style />
+        <ZIndex>2</ZIndex>
+        <Height>0.375in</Height>
+        <Value>logo.JPG</Value>
+      </Image>
+      <Textbox Name="DueDateFrom">
+        <rd:DefaultName>DueDateFrom</rd:DefaultName>
+        <Top>0.25in</Top>
+        <Width>3.125in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>9pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.125in</Left>
+        <Height>0.125in</Height>
+        <Value>=IIF(Parameters!DateFrom.Value = ""  and Parameters!DateTo.Value="", "",
+"Due Date ")  &amp; Format(Parameters!DateFrom.Value, "Short Date") &amp; 
+
+IIF(Parameters!DateFrom.Value = "", "",
+"  to ")
+
+ &amp; Format( Parameters!DateTo.Value, "Short Date") &amp; 
+
+IIF(Parameters!DateFrom.Value = "", "",
+ "")</Value>
+      </Textbox>
+      <Textbox Name="textbox11">
+        <rd:DefaultName>textbox11</rd:DefaultName>
+        <Width>5.75in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>11pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>1.375in</Left>
+        <Height>0.25in</Height>
+        <Value>Agent/Vendor/Client Change Activity Report	 -Tech Pack, Quote, Sample
+</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.5in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.25in</BottomMargin>
+  <rd:ReportID>61fb8c29-b138-4818-8ede-66e4457f911c</rd:ReportID>
+  <DataSets>
+    <DataSet Name="ds_information_catergory">
+      <Fields>
+        <Field Name="CategoryValue">
+          <DataField>CategoryValue</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="CategorySort">
+          <DataField>CategorySort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CategoryLabel">
+          <DataField>CategoryLabel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT     StyleCategoryID AS CategoryValue, StyleCategory AS CategorySort, StyleCategory AS CategoryLabel
+FROM         pStyleCategory
+WHERE     (StyleCategory IS NOT NULL)
+GROUP BY StyleCategoryID, StyleCategory
+UNION
+SELECT     NULL, NULL, 'ALL'
+ORDER BY CategorySort ASC</CommandText>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_season">
+      <Fields>
+        <Field Name="SeasonValue">
+          <DataField>SeasonValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SeanSortOrder">
+          <DataField>SeanSortOrder</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SeasonLabel">
+          <DataField>SeasonLabel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT DISTINCT CustomField2 AS SeasonValue, CustomField2 AS SeanSortOrder, CustomField2 AS SeasonLabel
+FROM         pStyleHeader
+WHERE     (CustomField2 IS NOT NULL) AND (CustomField2 &lt;&gt; '')
+UNION
+SELECT     'ALL', NULL, 'ALL'
+ORDER BY SeanSortOrder</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_tradePartner">
+      <Fields>
+        <Field Name="AgentValue">
+          <DataField>AgentValue</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="AgentSort">
+          <DataField>AgentSort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AgentLabel">
+          <DataField>AgentLabel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT DISTINCT 
+	TradePartnerID     AS   AgentValue
+               ,TradePartnerName      AS  AgentSort
+               ,TradepartnerName      AS  AgentLabel
+FROM    uTradePartner
+WHERE (TradePartnerID IS NOT NULL)  
+
+UNION
+
+SELECT   NULL
+	, NULL
+	, 'ALL' 
+
+ORDER BY  AgentSort</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_year">
+      <Fields>
+        <Field Name="YearValue">
+          <DataField>YearValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="YearSort">
+          <DataField>YearSort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="YearLabel">
+          <DataField>YearLabel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT DISTINCT 
+	  Custom AS YearValue
+	, Custom AS YearSort
+	, Custom AS YearLabel 
+FROM pYear 
+
+UNION 
+
+SELECT 'ALL', NULL,  'ALL'
+
+ORDER BY YearSort ASC</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_tradePartnerName">
+      <Fields>
+        <Field Name="TradePartnerName">
+          <DataField>TradePartnerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT     TradePartnerName
+FROM       uTradePartner
+WHERE     CAST(TradePartnerID AS nvarchar(40)) = @TradePartnerID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@TradePartnerID">
+            <Value>=Parameters!TradePartnerID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_styleDevelChange_sub_1">
+      <Fields>
+        <Field Name="TradePartnerName">
+          <DataField>TradePartnerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleNo">
+          <DataField>StyleNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Descrip">
+          <DataField>Descrip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SizeClass">
+          <DataField>SizeClass</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleSet">
+          <DataField>StyleSet</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Workflow">
+          <DataField>Workflow</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleChangeBy">
+          <DataField>StyleChangeBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleChangeDescription">
+          <DataField>StyleChangeDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleChangeNo">
+          <DataField>StyleChangeNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StyleChangeDate">
+          <DataField>StyleChangeDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="StyleChangeType">
+          <DataField>StyleChangeType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleYear">
+          <DataField>StyleYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Season">
+          <DataField>Season</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleSubCategory">
+          <DataField>StyleSubCategory</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="subReportNum">
+          <DataField>subReportNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_Style_AgentVendor_Change_ActivityTracking_SUB_1_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DateFrom">
+            <Value>=Parameters!DateFrom.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DateTo">
+            <Value>=Parameters!DateTo.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShowStyleDevelWorkflow">
+            <Value>=Parameters!ShowStyleDevelWorkflow.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Season">
+            <Value>=Parameters!Season.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Year">
+            <Value>=Parameters!Year.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerID">
+            <Value>=Parameters!TradePartnerID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_styleDevelChange_sub_2">
+      <Fields>
+        <Field Name="TradePartnerName">
+          <DataField>TradePartnerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleNo">
+          <DataField>StyleNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Descrip">
+          <DataField>Descrip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TechPackNo">
+          <DataField>TechPackNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TechPackName">
+          <DataField>TechPackName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TechPackDate">
+          <DataField>TechPackDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ActivityType">
+          <DataField>ActivityType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleYear">
+          <DataField>StyleYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Season">
+          <DataField>Season</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleSubCategory">
+          <DataField>StyleSubCategory</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DaysLate">
+          <DataField>DaysLate</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="subReportNum">
+          <DataField>subReportNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_Style_AgentVendor_Change_ActivityTracking_SUB_2_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DateFrom">
+            <Value>=Parameters!DateFrom.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DateTo">
+            <Value>=Parameters!DateTo.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShowTechPackActivity">
+            <Value>=Parameters!ShowTechPackActivity.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Season">
+            <Value>=Parameters!Season.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Year">
+            <Value>=Parameters!Year.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerID">
+            <Value>=Parameters!TradePartnerID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerVendorID">
+            <Value>=Parameters!TradePartnerVendorID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SortBy">
+            <Value>=Parameters!SortBy.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_styleDevelChange_sub_3">
+      <Fields>
+        <Field Name="TradePartnerID">
+          <DataField>TradePartnerID</DataField>
+        </Field>
+        <Field Name="TradePartnerName">
+          <DataField>TradePartnerName</DataField>
+        </Field>
+        <Field Name="TradePartnerVendorID">
+          <DataField>TradePartnerVendorID</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="StyleID">
+          <DataField>StyleID</DataField>
+        </Field>
+        <Field Name="StyleNo">
+          <DataField>StyleNo</DataField>
+        </Field>
+        <Field Name="Descrip">
+          <DataField>Descrip</DataField>
+        </Field>
+        <Field Name="StyleQuoteItemNo">
+          <DataField>StyleQuoteItemNo</DataField>
+        </Field>
+        <Field Name="StyleQuoteItemStatusId">
+          <DataField>StyleQuoteItemStatusId</DataField>
+        </Field>
+        <Field Name="StyleQuoteItemStatus">
+          <DataField>StyleQuoteItemStatus</DataField>
+        </Field>
+        <Field Name="StyleQuoteItemDueDate">
+          <DataField>StyleQuoteItemDueDate</DataField>
+        </Field>
+        <Field Name="daysLate">
+          <DataField>daysLate</DataField>
+        </Field>
+        <Field Name="StyleYear">
+          <DataField>StyleYear</DataField>
+        </Field>
+        <Field Name="Season">
+          <DataField>Season</DataField>
+        </Field>
+        <Field Name="StyleSubCategory">
+          <DataField>StyleSubCategory</DataField>
+        </Field>
+        <Field Name="subReportNum">
+          <DataField>subReportNum</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_Style_AgentVendor_Change_ActivityTracking_SUB_3_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DateFrom">
+            <Value>=Parameters!DateFrom.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DateTo">
+            <Value>=Parameters!DateTo.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShowQuotationActivity">
+            <Value>=Parameters!ShowQuotationActivity.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Year">
+            <Value>=Parameters!Year.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Season">
+            <Value>=Parameters!Season.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerID">
+            <Value>=Parameters!TradePartnerID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerVendorID">
+            <Value>=Parameters!TradePartnerVendorID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SortBy">
+            <Value>=Parameters!SortBy.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_styleDevelChange_sub_4">
+      <Fields>
+        <Field Name="StyleID">
+          <DataField>StyleID</DataField>
+        </Field>
+        <Field Name="StyleNo">
+          <DataField>StyleNo</DataField>
+        </Field>
+        <Field Name="Descrip">
+          <DataField>Descrip</DataField>
+        </Field>
+        <Field Name="StyleColorID">
+          <DataField>StyleColorID</DataField>
+        </Field>
+        <Field Name="StyleColorName">
+          <DataField>StyleColorName</DataField>
+        </Field>
+        <Field Name="TradePartnerID">
+          <DataField>TradePartnerID</DataField>
+        </Field>
+        <Field Name="TradePartnerName">
+          <DataField>TradePartnerName</DataField>
+        </Field>
+        <Field Name="TradePartnerVendorID">
+          <DataField>TradePartnerVendorID</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="SampleWorkflow">
+          <DataField>SampleWorkflow</DataField>
+        </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+        </Field>
+        <Field Name="DaysLate">
+          <DataField>DaysLate</DataField>
+        </Field>
+        <Field Name="StatusID">
+          <DataField>StatusID</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="smplWorkflowSortNum">
+          <DataField>smplWorkflowSortNum</DataField>
+        </Field>
+        <Field Name="StyleYear">
+          <DataField>StyleYear</DataField>
+        </Field>
+        <Field Name="Season">
+          <DataField>Season</DataField>
+        </Field>
+        <Field Name="StyleSubCategory">
+          <DataField>StyleSubCategory</DataField>
+        </Field>
+        <Field Name="subReportNum">
+          <DataField>subReportNum</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_Style_AgentVendor_Change_ActivityTracking_SUB_4_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DateFrom">
+            <Value>=Parameters!DateFrom.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DateTo">
+            <Value>=Parameters!DateTo.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShowStyleWorkflowActivity">
+            <Value>=Parameters!ShowStyleWorkflowActivity.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Year">
+            <Value>=Parameters!Year.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Season">
+            <Value>=Parameters!Season.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerID">
+            <Value>=Parameters!TradePartnerID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerVendorID">
+            <Value>=Parameters!TradePartnerVendorID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SortBy">
+            <Value>=Parameters!SortBy.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_TradePartnerVendorName">
+      <Fields>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT     VendorName
+FROM       uTradePartnerVendor
+WHERE     CAST(TradePartnerVendorID AS nvarchar(40)) = @TradePartnerVendorID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@TradePartnerVendorID">
+            <Value>=Parameters!TradePartnerVendorID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_SummaryActivityChange234">
+      <Fields>
+        <Field Name="TradePartnerName">
+          <DataField>TradePartnerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="subReportNum">
+          <DataField>subReportNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StyleYear">
+          <DataField>StyleYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Season">
+          <DataField>Season</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleSubCategory">
+          <DataField>StyleSubCategory</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_Style_AgentVendor_Change_ActivityTracking_Summary234_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DateFrom">
+            <Value>=Parameters!DateFrom.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DateTo">
+            <Value>=Parameters!DateTo.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShowTechPackActivity">
+            <Value>=Parameters!ShowTechPackActivity.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShowQuotationActivity">
+            <Value>=Parameters!ShowQuotationActivity.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShowStyleWorkflowActivity">
+            <Value>=Parameters!ShowStyleWorkflowActivity.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Year">
+            <Value>=Parameters!Year.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Season">
+            <Value>=Parameters!Season.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerID">
+            <Value>=Parameters!TradePartnerID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerVendorID">
+            <Value>=Parameters!TradePartnerVendorID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SortBy">
+            <Value>=Parameters!SortBy.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="ds_information_categoryName">
+      <Fields>
+        <Field Name="StyleCategory">
+          <DataField>StyleCategory</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT StyleCategory FROM pStyleCategory WHERE (LTRIM(RTRIM( CAST(StyleCategoryID AS nvarchar(40)) )) = LTRIM(RTRIM(@StyleCategoryID ))) OR (@StyleCategoryID = 'ALL')</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.25in</Width>
+  <Body>
+    <ReportItems>
+      <Chart Name="chart1">
+        <Legend>
+          <Visible>true</Visible>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+            <FontFamily>Tahoma</FontFamily>
+            <FontSize>7pt</FontSize>
+          </Style>
+          <Position>RightCenter</Position>
+        </Legend>
+        <CategoryAxis>
+          <Axis>
+            <Title />
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <ZIndex>1</ZIndex>
+        <DataSetName>ds_information_SummaryActivityChange234</DataSetName>
+        <PlotArea>
+          <Style>
+            <BackgroundColor>LightGrey</BackgroundColor>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+        </PlotArea>
+        <ThreeDProperties>
+          <Enabled>true</Enabled>
+          <Shading>Simple</Shading>
+          <DrawingStyle>Cylinder</DrawingStyle>
+        </ThreeDProperties>
+        <PointWidth>0</PointWidth>
+        <SeriesGroupings>
+          <SeriesGrouping>
+            <DynamicSeries>
+              <Grouping Name="chart1_SeriesGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!subReportNum.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!subReportNum.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <Label>=Fields!subReportNum.Value</Label>
+            </DynamicSeries>
+          </SeriesGrouping>
+          <SeriesGrouping>
+            <StaticSeries>
+              <StaticMember>
+                <Label>=IIF(Fields!subReportNum.Value  = 1,
+
+"Style Development",
+
+    IIF( Fields!subReportNum.Value =2, 
+
+    "Tech-Pack",
+
+             IIF( Fields!subReportNum.Value =3, 
+
+                "Quotation",
+                "Sample Workflow"
+                 )
+
+    )
+
+)</Label>
+              </StaticMember>
+            </StaticSeries>
+          </SeriesGrouping>
+        </SeriesGroupings>
+        <Top>0.375in</Top>
+        <Subtype>Plain</Subtype>
+        <ValueAxis>
+          <Axis>
+            <Title />
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <Min>0</Min>
+            <Visible>true</Visible>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+        <Type>Bar</Type>
+        <Width>7in</Width>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="chart1_CategoryGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!TradePartnerName.Value</GroupExpression>
+                  <GroupExpression>=Fields!VendorName.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!TradePartnerName.Value</SortExpression>
+                  <Direction>Descending</Direction>
+                </SortBy>
+                <SortBy>
+                  <SortExpression>=Fields!VendorName.Value</SortExpression>
+                  <Direction>Descending</Direction>
+                </SortBy>
+              </Sorting>
+              <Label>=  IIF( (Fields!TradePartnerName.Value = "") OR
+
+(Fields!TradePartnerName.Value  = Fields!VendorName.Value)
+
+, 
+
+Fields!VendorName.Value
+
+,
+
+Fields!TradePartnerName.Value  &amp;  ",  "  &amp; Fields!VendorName.Value
+
+)</Label>
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Palette>EarthTones</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Count( Fields!subReportNum.Value )</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+        </Style>
+        <Title />
+        <Height>8.625in</Height>
+        <Left>0.125in</Left>
+      </Chart>
+      <Textbox Name="textbox16">
+        <rd:DefaultName>textbox16</rd:DefaultName>
+        <Top>0.125in</Top>
+        <Width>6.125in</Width>
+        <Style>
+          <BorderColor>
+            <Bottom>Black</Bottom>
+          </BorderColor>
+          <BorderStyle>
+            <Bottom>Solid</Bottom>
+          </BorderStyle>
+          <BorderWidth>
+            <Bottom>1pt</Bottom>
+          </BorderWidth>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>0.625in</Left>
+        <Height>0.23in</Height>
+        <Value>= "Year: " &amp; Parameters!Year.Value &amp;  ","  &amp; "   Season: "  &amp;  Parameters!Season.Value &amp;  ","  &amp; "   Category: " &amp; IIF(  Parameters!StyleCategoryID.Value="ALL" or Parameters!StyleCategoryID.Value="",
+"ALL"
+,
+ First(Fields!StyleCategory.Value, "ds_information_categoryName") )  &amp;  ","  &amp;  "   Agent: "  &amp;  IIF(Parameters!TradePartnerID.Value =""  OR   Parameters!TradePartnerID.Value ="ALL",  "ALL", First(Fields!TradePartnerName.Value, "ds_information_tradePartnerName"))  &amp;  "," &amp;   " Vendor: "  &amp;   
+
+IIF(Parameters!TradePartnerVendorID.Value = "" OR Parameters!TradePartnerVendorID.Value = "ALL" , "ALL", First(Fields!VendorName.Value, "ds_information_TradePartnerVendorName")  )</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>9.25in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox47">
+        <Top>0.03125in</Top>
+        <Width>2.375in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.1875in</Height>
+        <Value>="Page " &amp; Globals!PageNumber &amp; "  of  " &amp;  Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="textbox49">
+        <Top>0.03125in</Top>
+        <Width>2.75in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>7pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>4.25in</Left>
+        <Height>0.1875in</Height>
+        <Value>="Printed By " &amp;   User!UserID &amp; " @ " &amp; Globals!ExecutionTime</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.25in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.5in</TopMargin>
+</Report>

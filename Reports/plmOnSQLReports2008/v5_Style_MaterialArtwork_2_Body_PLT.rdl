@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="matrix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="text99">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <ZIndex>3</ZIndex>
+                    <Visibility>
+                      <Hidden>true</Hidden>
+                    </Visibility>
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>4.125in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>5.88371in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Tablix Name="list1">
+                      <TablixBody>
+                        <TablixColumns>
+                          <TablixColumn>
+                            <Width>4.125in</Width>
+                          </TablixColumn>
+                        </TablixColumns>
+                        <TablixRows>
+                          <TablixRow>
+                            <Height>5.88371in</Height>
+                            <TablixCells>
+                              <TablixCell>
+                                <CellContents>
+                                  <Rectangle Name="rectangle_MainInsideMatrix">
+                                    <ReportItems>
+                                      <Textbox Name="ParameterName">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!MaterialDescription.Value</Value>
+                                                <Style>
+                                                  <FontFamily>Arial Unicode MS</FontFamily>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>ParameterName</rd:DefaultName>
+                                        <Top>5.1348in</Top>
+                                        <Height>0.25in</Height>
+                                        <Width>4.125in</Width>
+                                        <ToolTip>##data##</ToolTip>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                      <Image Name="image1">
+                                        <Source>External</Source>
+                                        <Value>=Fields!FilePath.Value</Value>
+                                        <MIMEType>image/jpeg</MIMEType>
+                                        <Sizing>FitProportional</Sizing>
+                                        <Height>5.125in</Height>
+                                        <Width>4.125in</Width>
+                                        <ZIndex>1</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                        </Style>
+                                      </Image>
+                                    </ReportItems>
+                                    <DataElementOutput>ContentsOnly</DataElementOutput>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                    </Style>
+                                  </Rectangle>
+                                </CellContents>
+                              </TablixCell>
+                            </TablixCells>
+                          </TablixRow>
+                        </TablixRows>
+                      </TablixBody>
+                      <TablixColumnHierarchy>
+                        <TablixMembers>
+                          <TablixMember />
+                        </TablixMembers>
+                      </TablixColumnHierarchy>
+                      <TablixRowHierarchy>
+                        <TablixMembers>
+                          <TablixMember>
+                            <Group Name="list1_Details_Group">
+                              <DataElementName>Item</DataElementName>
+                            </Group>
+                            <Visibility>
+                              <Hidden>=IIF(Fields!Row.Value = 0
+	AND Fields!Column.Value = 0
+	AND Fields!FilePath.Value = "", TRUE, FALSE)</Hidden>
+                            </Visibility>
+                            <DataElementName>Item_Collection</DataElementName>
+                            <DataElementOutput>Output</DataElementOutput>
+                            <KeepTogether>true</KeepTogether>
+                          </TablixMember>
+                        </TablixMembers>
+                      </TablixRowHierarchy>
+                      <KeepTogether>true</KeepTogether>
+                      <DataSetName>dsArtwork</DataSetName>
+                      <PageBreak>
+                        <BreakLocation>End</BreakLocation>
+                      </PageBreak>
+                      <DataElementOutput>NoOutput</DataElementOutput>
+                      <Style />
+                    </Tablix>
+                  </CellContents>
+                  <DataElementOutput>Output</DataElementOutput>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_ColumnGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Column.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>0.05147in</Size>
+                <CellContents>
+                  <Textbox Name="textbox24">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!Column.Value</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>textbox24</rd:DefaultName>
+                    <ZIndex>2</ZIndex>
+                    <Visibility>
+                      <Hidden>true</Hidden>
+                    </Visibility>
+                    <Style />
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_RowGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+                <PageBreak>
+                  <BreakLocation>Between</BreakLocation>
+                </PageBreak>
+              </Group>
+              <TablixHeader>
+                <Size>0.03125in</Size>
+                <CellContents>
+                  <Textbox Name="Hidden_HeadingStr">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <ZIndex>1</ZIndex>
+                    <Visibility>
+                      <Hidden>true</Hidden>
+                    </Visibility>
+                    <Style />
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <DataSetName>dsArtwork</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
+        <Left>0.125in</Left>
+        <Height>5.93518in</Height>
+        <Width>4.15625in</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>5.93518in</Height>
+    <Style />
+  </Body>
+  <Width>8.5in</Width>
+  <Page>
+    <PageHeader>
+      <Height>2.5in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
+                  <Style>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Color>Gray</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.05in</Top>
+          <Left>0.125in</Left>
+          <Height>0.5in</Height>
+          <Width>8.25in</Width>
+          <ToolTip>##label##</ToolTip>
+          <Style>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageHeader>
+    <InteractiveHeight>11in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <DataSourceReference>plmOn</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>8f3c0e74-4609-4eaf-b791-c16e1d675fc3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsArtwork">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StyleID">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleSet">
+            <Value>=Parameters!SN.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@FlagBOM">
+            <Value>=Parameters!FDIM.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SeasonYearID">
+            <Value>=Parameters!SYID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_MaterialArtwork_2_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Column">
+          <DataField>Column</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Row">
+          <DataField>Row</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MaterialDescription">
+          <DataField>MaterialDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FilePath">
+          <DataField>FilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="SID">
+      <DataType>String</DataType>
+      <Prompt>StyleID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SN">
+      <DataType>Integer</DataType>
+      <Prompt>StyleSet</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FDIM">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>DimensionalBOM</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SYID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Season Year ID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>cf5830a9-1cc4-4643-b76e-e87128d17186</rd:ReportID>
+</Report>

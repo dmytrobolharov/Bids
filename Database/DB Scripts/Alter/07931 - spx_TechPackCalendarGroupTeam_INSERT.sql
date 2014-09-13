@@ -1,0 +1,48 @@
+/****** Object:  StoredProcedure [dbo].[spx_TechPackCalendarGroupTeam_INSERT]    Script Date: 06/05/2014 11:54:40 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[spx_TechPackCalendarGroupTeam_INSERT]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[spx_TechPackCalendarGroupTeam_INSERT]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spx_TechPackCalendarGroupTeam_INSERT]    Script Date: 06/05/2014 11:54:40 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[spx_TechPackCalendarGroupTeam_INSERT] ( 
+@CalendarId nvarchar(50),
+@StartDate datetime,
+@EndDate datetime,
+@TeamID  uniqueidentifier 
+)
+AS 
+
+BEGIN
+	INSERT INTO pStyleCalendarTemp
+		(CalendarId, PKeyId, CalendarLinkId, CalendarLinkSubId, CalendarDate, CalendarType, CalendarStatus, CalendarDescription)
+	SELECT  @CalendarId AS CalendarId, StyleID, TechPackID, DevelopmentID, 
+		TechPackDate, 'TechPack' AS CalendarType, '1', StyleNo + ' (' + SizeClass + ') ' + Description AS CalendarDescription
+	FROM  pStyleHeader WITH (NOLOCK) 
+	INNER JOIN fnx_Permissions_GetIntProductTypePermissions(@TeamID, 2) access ON access.ProductTypeId = pStyleHeader.StyleType
+	WHERE (Active = 1) AND (TechPackDate BETWEEN @StartDate AND @EndDate) AND (TechPackID IS NOT NULL)
+	AND (access.PermissionRoleId = 3 OR access.PermissionView = 1)
+	
+END 
+
+BEGIN
+	INSERT INTO pStyleCalendarTemp
+		(CalendarId, PKeyId, CalendarLinkId, CalendarLinkSubId, CalendarDate, CalendarType, CalendarStatus, CalendarDescription)
+	SELECT  @CalendarId AS CalendarId, StyleID, '{00000000-0000-0000-0000-000000000000}', DevelopmentID, 
+		DueDate, 'TechPack' AS CalendarType, '1', StyleNo + ' (' + SizeClass + ') ' + Description AS CalendarDescription
+	FROM  pStyleHeader WITH (NOLOCK) 
+	INNER JOIN fnx_Permissions_GetIntProductTypePermissions(@TeamID, 2) access ON access.ProductTypeId = pStyleHeader.StyleType
+	WHERE (Active = 1) AND (DueDate BETWEEN @StartDate AND @EndDate) AND (TechPackID IS NULL)
+	AND (access.PermissionRoleId = 3 OR access.PermissionView = 1)
+END
+
+GO
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES ('DB_Version', '0.5.0000', '07931', GetDate())
+GO

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YuniquePLM ImageHandler Test Page</title>
+    </head>
+
+    <body bgcolor="white">
+
+        <p id="Instructions"> Press the 'No Auth' button at the bottom... </p>
+
+        <div id="theImages">
+            <p>If you see this... You've not yet pressed a button!  :)</p>
+        </div>
+
+	    <p>
+		    <button type="button" onclick="noAuth()">No Auth</button>
+		    <button type="button" onclick="addAuth()">Add Auth</button>
+            <button type="button" onclick="JStoJSONstring()">Use Stringify</button>            
+	    </p>
+
+<!-- </body> -->
+
+    <!-- 
+        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        =-= JavaScript Ensues....                                                     =-=
+        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    -->
+<script src="./CDN/yuniqueSDK/0.1.0/ysJavaScriptSDK.js"></script>
+<script src="./CDN/jquery/1.9.1/jquery.min.js"></script>
+<script src="./CDN/crypto-js/3.1.2/hmac-md5.js"></script>
+<script src="./CDN/crypto-js/3.1.2/enc-base64-min.js"></script>
+<script>
+
+    onload = function () {
+        yunique.Debug.Enabled = true;
+        yunique.Debug.Print("Debug Enabled; Console Created");
+        yunique.Debug.Print("onLoad Completed");
+    }
+    
+    var debug = yunique.Debug;
+    var auth = yunique.Authentication;    
+
+    function noAuth() {
+        debug.Print("NoAuth Button was pressed...");
+
+	    var myInnerHTML = new String();
+	    myInnerHTML =
+		    "<img id=\"img1x1\" src=\"" + debug.Print("http://localhost/yunique.api.rest/image/thumbnail/500/1/902d15c5-0af7-4e26-b0f7-8927cf03cf02.jpg?KeyID=xyzzy-OmitHMAC") + "\" alt=\"Some Fabulous Picture Here\"  > " +            
+		    "<br>";
+
+	    document.getElementById("theImages").innerHTML = myInnerHTML;
+        document.getElementById("Instructions").innerHTML = 'Press the \"Add Auth\" button at the bottom...'
+        debug.Print("InnerHTML applied");
+    }
+
+    function addAuth() {
+        debug.Print("<b>AddAuth Button was pressed...</b><br>");
+	    var myInnerHTML = new String();
+	    myInnerHTML =
+            "<table border=1>" +
+            "<tr><td>" +
+            "<img id=\"img1x1\" src=\"" + debug.Print(auth.AppendAuth2QString("http://localhost/yunique.api.rest/image/thumbnail/500/1/902d15c5-0af7-4e26-b0f7-8927cf03cf02.jpg")) + "\" alt=\"Tiger.jpg\"  > " +
+		    "</td><td>" +
+	        "<img id=\"img1x2\" src=\"" + debug.Print(auth.AppendAuth2QString("http://localhost/yunique.api.rest/image/thumbnail/500/1/adad4d75-1043-40ff-bb5d-42b307585b4f.jpg")) + "\" alt=\"Design.tif\"  > " +
+		    "</td></tr></table>";		                
+
+	    document.getElementById("theImages").innerHTML = myInnerHTML;
+	    document.getElementById("Instructions").innerHTML = 'Press the \"No Auth\" button at the bottom...'
+	    debug.Print("<br><i>InnerHTML applied</i>");
+
+	}
+
+//	function JStoJSONstring() {
+//	    var ColorFolderRquest = new Object();
+//	    ColorFolderRquest.Type = null;
+//	    ColorFolderRquest.ID = "00000000-0000-0000-0000-000000000000";
+//	    ColorFolderRquest.IDLIST = null;	  
+//	    ColorFolderRquest.WSClientName = "Tech Pack API";
+//	    ColorFolderRquest.WSClientPassword = "plmon1234@";
+//	    ColorFolderRquest.ServiceType = 1;
+//	    ColorFolderRquest.PageNumber = 1;
+//	    ColorFolderRquest.PageSize = 25;
+
+//	    var ParamsRecord = new Object();
+//	    ParamRecord.ImageID = "1234-34534-1231";
+//	    ParamRecord.ImageVersion = 2;
+//	    ParamRecord.ImageScale = 500;
+
+//	    ColorFolderRquest.Params = new_ParamsObject(ParamsRecord);
+
+//	    DebugPrint("The ColorFolderRequest (Params) is: " + JSON.stringify(ColorFolderRquest));
+//	}
+
+
+//	function new_ParamsObject(paramsRecord) {
+//	    var Params = new Object();
+//	    Params.Params = new Object();
+//	    Params.Params.ParamRecord = paramsRecord;
+
+//	    return JSON.stringify(Params);
+//	}
+
+</script>
+
+    <!-- 
+        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        =-= JavaScript Ends....                                                      =-=
+        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    -->
+
+    </body>
+
+</html>

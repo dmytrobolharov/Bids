@@ -1,0 +1,51 @@
+<Table Name="pPlanningSKUHeader" formcolumns="1" gridcolumns="" 
+       FormSQL="spx_Planning_SKUHeader_SELECT" 
+       GridReadSQL="spx_Planning_SKUHeader_SELECT" 
+       GridSQL="spx_Planning_SKUHeader_SELECT">
+	
+	<column Name="PlanningSKUHeaderID" PK="true" alias="PlanningSKUHeaderID" Type="textbox" datatype="string"
+          column="1" order="3" GridVisible="false" cellwidth="150px" GridWidth="150" Visible="false"
+          enabled="true" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+    <column Name="PlanningSKUHeaderName" alias="Name" Type="textbox" datatype="string"
+          column="1" order="3" GridVisible="true" cellwidth="150px" GridWidth="150" Visible="true"
+          enabled="true" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="TemplateName" alias="Template" Type="label" select="true"
+			cellwidth="100px" datatype="string" column="1" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="2">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="Dimensions" alias="Dimensions" Type="label" select="true"
+			cellwidth="100px" datatype="string" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="3">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="WorkflowStatus" alias="Status" Type="label" select="true"
+			cellwidth="100px" datatype="string" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="4">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CUser" alias="Created By" Type="label" select="true"
+			cellwidth="100px" datatype="string" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="5">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" select="true"
+			cellwidth="100px" datatype="datetime" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="6">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" select="true"
+			cellwidth="100px" datatype="string" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="7">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" select="true"
+			cellwidth="100px" datatype="datetime" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="8">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

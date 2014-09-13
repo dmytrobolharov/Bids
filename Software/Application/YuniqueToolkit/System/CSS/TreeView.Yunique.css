@@ -1,0 +1,27 @@
+            div.RadTreeView_Yunique,
+            div.RadTreeView_Yunique a.rtIn,
+            div.RadTreeView_Yunique .rtEdit .rtIn input
+            {
+                color: #000000;
+                font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+                font-size:8pt;
+                font-weight: bold;
+                }
+         
+            div.RadTreeView_Yunique .rtSelected .rtIn
+            {
+                color: #000000;
+                }
+             
+            div.RadTreeView_Yunique .rtHover .rtIn
+            {
+                Text-Decoration: underline; 
+                color: #CC0000; 
+                }
+	            
+            div.RadTreeView_Yunique .rtHover .rtIn,
+            div.RadTreeView_Yunique .rtSelected .rtIn {
+                background: none !important;
+                border: none !important;
+                padding: 4px 3px 3px !important;
+            }

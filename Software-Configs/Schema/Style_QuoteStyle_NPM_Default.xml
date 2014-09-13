@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table Name="pStyleQuoteItem" formcolumns="3" gridcolumns="" FormSQL="spx_NPMStyleQuoteItemAgent_SELECT" GridReadSQL="spx_NPMStyleQuoteItemAgent_SELECT" GridSQL="spx_NPMStyleQuoteItemAgent_SELECT">
+    <column Name="StyleQuoteItemID" PK="true" alias="StyleQuoteItemID" Type="label" datatype="string" enabled="false" Visible="FALSE" cellwidth="150px" GridVisible="False" GridWidth="100" GridOrder="" column="1" order="1">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="StyleDevelopmentID" alias="StyleDevelopmentID" Type="label" datatype="string" enabled="false" Visible="FALSE" cellwidth="150px" GridVisible="False" GridWidth="100" GridOrder="" column="1" order="1">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="StyleQuoteItemNo" alias="Quote No." Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridWidth="100" GridVisible="true" GridOrder="" column="1" order="1" select="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="StyleQuoteItemStatusId" alias="Status" Type="dropdownlist" datatype="query" enabled="true" Visible="true" cellwidth="150px" GridWidth="100" GridVisible="true" GridOrder="" column="1" order="1" select="true" lookupquery="SELECT CustomKey, Custom FROM pStyleQuoteItemStatus" textfield="Custom" ValueField="CustomKey" AutoPostBack="false">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="SeasonYearName" alias="Season/Year" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridWidth="100" GridVisible="true" GridOrder="" column="1" order="1" select="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="AgentName" alias="Agent" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px" GridVisible="true" GridWidth="150" GridOrder="" column="1" order="1" select="true" AutoPostBack="false">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="VendorName" alias="Vendor" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px" GridVisible="true" GridWidth="150" GridOrder="" column="1" order="1" select="true" AutoPostBack="false">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="FactoryName" alias="Factory" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px" GridVisible="true" GridWidth="150" GridOrder="" column="1" order="1" select="true" AutoPostBack="false">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+  </Table>
+</NewDataSet>

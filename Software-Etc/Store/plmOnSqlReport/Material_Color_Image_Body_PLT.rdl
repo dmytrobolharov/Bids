@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="plmOn">
+      <rd:DataSourceID>bb5e9de9-15ee-41f3-bf80-c86b83126d40</rd:DataSourceID>
+      <DataSourceReference>plmOn</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="MTID">
+      <DataType>String</DataType>
+      <Prompt>MaterialID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox5">
+        <Top>0.125in</Top>
+        <Width>8.25in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>26pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.5in</Height>
+        <Value>Material Folder</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>3in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <rd:ReportID>8c394251-276f-40e0-a270-8d367fbbb54a</rd:ReportID>
+  <DataSets>
+    <DataSet Name="dsMaterialImage">
+      <Fields>
+        <Field Name="FilePath">
+          <DataField>FilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Material_Image_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@MaterialID">
+            <Value>=Parameters!MTID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="dsMaterialColor">
+      <Fields>
+        <Field Name="Column">
+          <DataField>Column</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FilePath">
+          <DataField>FilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ColorName">
+          <DataField>ColorName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ColorCode">
+          <DataField>ColorCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sort">
+          <DataField>Sort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Material_Color_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@MaterialID">
+            <Value>=Parameters!MTID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>8.5in</Width>
+  <Body>
+    <ReportItems>
+      <Rectangle Name="rectangle2">
+        <Left>0.375in</Left>
+        <ZIndex>1</ZIndex>
+        <DataElementOutput>NoOutput</DataElementOutput>
+        <ReportItems>
+          <Matrix Name="mtxColors">
+            <MatrixColumns>
+              <MatrixColumn>
+                <Width>1.125in</Width>
+              </MatrixColumn>
+            </MatrixColumns>
+            <DataSetName>dsMaterialColor</DataSetName>
+            <RowGroupings>
+              <RowGrouping>
+                <Width>0.06489in</Width>
+                <DynamicRows>
+                  <Grouping Name="matrix1_RowGroup1">
+                    <GroupExpressions>
+                      <GroupExpression>1</GroupExpression>
+                    </GroupExpressions>
+                  </Grouping>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <rd:DefaultName>textbox19</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </DynamicRows>
+              </RowGrouping>
+            </RowGroupings>
+            <KeepTogether>true</KeepTogether>
+            <PageBreakAtEnd>true</PageBreakAtEnd>
+            <ColumnGroupings>
+              <ColumnGrouping>
+                <Height>0.03125in</Height>
+                <DynamicColumns>
+                  <Grouping Name="mtxColors_Row">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Column.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Grouping>
+                  <ReportItems>
+                    <Textbox Name="Row">
+                      <rd:DefaultName>Row</rd:DefaultName>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </DynamicColumns>
+              </ColumnGrouping>
+            </ColumnGroupings>
+            <Corner>
+              <ReportItems>
+                <Textbox Name="textbox17">
+                  <rd:DefaultName>textbox17</rd:DefaultName>
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>3</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value />
+                </Textbox>
+              </ReportItems>
+            </Corner>
+            <MatrixRows>
+              <MatrixRow>
+                <Height>1.75in</Height>
+                <MatrixCells>
+                  <MatrixCell>
+                    <ReportItems>
+                      <List Name="lstColor">
+                        <DataSetName>dsMaterialColor</DataSetName>
+                        <ReportItems>
+                          <Rectangle Name="rctColorList">
+                            <ReportItems>
+                              <Textbox Name="ColorName">
+                                <rd:DefaultName>ColorName</rd:DefaultName>
+                                <Top>1.125in</Top>
+                                <Width>1in</Width>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontSize>6pt</FontSize>
+                                  <PaddingLeft>1pt</PaddingLeft>
+                                  <PaddingRight>1pt</PaddingRight>
+                                  <PaddingTop>1pt</PaddingTop>
+                                  <PaddingBottom>1pt</PaddingBottom>
+                                </Style>
+                                <ZIndex>2</ZIndex>
+                                <CanGrow>true</CanGrow>
+                                <Height>0.125in</Height>
+                                <Value>=Fields!ColorName.Value</Value>
+                              </Textbox>
+                              <Textbox Name="ColorCode">
+                                <rd:DefaultName>ColorCode</rd:DefaultName>
+                                <Top>1in</Top>
+                                <Width>1in</Width>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontSize>6pt</FontSize>
+                                  <PaddingLeft>1pt</PaddingLeft>
+                                  <PaddingRight>1pt</PaddingRight>
+                                  <PaddingTop>1pt</PaddingTop>
+                                  <PaddingBottom>1pt</PaddingBottom>
+                                </Style>
+                                <ZIndex>1</ZIndex>
+                                <CanGrow>true</CanGrow>
+                                <Height>0.125in</Height>
+                                <Value>=Fields!ColorCode.Value</Value>
+                              </Textbox>
+                              <Rectangle Name="rctColor">
+                                <ReportItems>
+                                  <Image Name="image1">
+                                    <Sizing>FitProportional</Sizing>
+                                    <MIMEType>image/jpeg</MIMEType>
+                                    <Source>External</Source>
+                                    <Style />
+                                    <Value>=Fields!FilePath.Value</Value>
+                                  </Image>
+                                </ReportItems>
+                                <Width>1in</Width>
+                                <Height>1in</Height>
+                              </Rectangle>
+                            </ReportItems>
+                          </Rectangle>
+                        </ReportItems>
+                      </List>
+                    </ReportItems>
+                  </MatrixCell>
+                </MatrixCells>
+              </MatrixRow>
+            </MatrixRows>
+          </Matrix>
+        </ReportItems>
+        <Width>1.18989in</Width>
+        <Height>1.78125in</Height>
+      </Rectangle>
+      <Image Name="imgEngraving">
+        <Sizing>FitProportional</Sizing>
+        <Top>1.875in</Top>
+        <Width>8.25in</Width>
+        <MIMEType>image/jpeg</MIMEType>
+        <Source>External</Source>
+        <Style />
+        <Left>0.125in</Left>
+        <Height>5.75in</Height>
+        <Value>= First(Fields!FilePath.Value, "dsMaterialImage")</Value>
+      </Image>
+    </ReportItems>
+    <Height>7.75in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Height>0.25in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+</Report>

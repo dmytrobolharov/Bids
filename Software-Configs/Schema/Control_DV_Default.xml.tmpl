@@ -1,0 +1,74 @@
+﻿<Table Name="dvtTable" formcolumns="1" gridcolumns=""
+       FormSQL="SELECT * FROM dvtTable ORDER BY ItemSort, ItemValue"
+       GridReadSQL="SELECT * FROM dvtTable ORDER BY ItemSort, ItemValue"
+       GridSQL="SELECT * FROM dvtTable ORDER BY ItemSort, ItemValue"
+       ApiSQL="SELECT * FROM dvtTable"
+       ApiWhereClause=""
+       ApiOrderBy="ORDER BY ItemSort, ItemValue"
+       muiSections="Misc Details"
+       DataKeyField="ItemID" SortOrder="ItemValue ASC"
+       PageSize="50" GridHeight="400" ViewMode="ByRow" SaveMode="ByPage" AutoSizeInReadMode="true"
+       AllowColumnReordering="false" AllowGrouping="false" ShowGroupFooter="false"
+       AllowSorting="true" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="true" AllowPaging="true" AllowFiltering="false"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false"
+       AllowRowSelect="true" AllowMultiRowSelect="false"
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="false">
+  <column Name="ItemID" PK="true" alias="Item ID" Type="label" datatype="string" enabled="false"
+          Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" GridOrder="001" GridSearch="false"
+          column="1" order="001"
+          ApiDataType="string" ApiVisible="true" ApiOrder="001" ApiRequired="true" ApiSearch="true" ApiSearchRequired="False"
+          muiSectionID="1" muiOrder="001" muiVisible="false">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ItemValue" alias="Item Value" Type="textbox" datatype="string" column="1" order="002"
+          GridVisible="true" cellwidth="150px" Visible="true" enabled="true"
+          ApiDataType="string" ApiVisible="true" ApiOrder="002" ApiRequired="true" ApiSearch="true" ApiSearchRequired="False"
+          muiSectionID="1" muiOrder="002" muiVisible="true">
+    <Validator Class="required" Type="" Minimum="" Maximum="" Text="Item Value required!" />
+  </column>
+  <column Name="ItemKey" alias="Item Key" Type="textbox" datatype="string" column="1" order="003"
+          GridVisible="true" cellwidth="150px" Visible="true" enabled="true"
+          ApiDataType="string" ApiVisible="true" ApiOrder="003" ApiRequired="true" ApiSearch="true" ApiSearchRequired="False"
+          muiSectionID="1" muiOrder="003" muiVisible="true">
+    <Validator Class="required" Type="" Minimum="" Maximum="" Text="Item Key required!" />
+  </column>
+  <column Name="ItemSort" alias="Item Sort" Type="textbox" datatype="string" column="1" order="004"
+          GridVisible="true" cellwidth="150px" Visible="true" enabled="true"
+          ApiDataType="string" ApiVisible="true" ApiOrder="004" ApiRequired="true" ApiSearch="true" ApiSearchRequired="False"
+          muiSectionID="1" muiOrder="004" muiVisible="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Active" alias="Active" Type="dropdownlist" datatype="query" column="1" order="005"
+          GridVisible="true" cellwidth="150px" lookupquery="SELECT CustomKey, Custom FROM pActive ORDER BY CustomKey" Visible="true" defaultValue="" enabled="true"
+          textfield="Custom" ValueField="CustomKey" select="true" AutoPostBack="false" GridWidth="125"
+          ApiDataType="integer" ApiVisible="true" ApiOrder="005" ApiRequired="true" ApiSearch="true" ApiSearchRequired="False"
+          muiSectionID="1" muiOrder="005" muiVisible="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_pActive.xml" ParentIDField="Active" ChildIDField="CustomKey" />
+  </column>
+  <column Name="CUser" PK="false" alias="Created By" Type="label" datatype="string" column="1" order="006"
+        GridVisible="false" cellwidth="150px" Visible="false" enabled="true" GridOrder="006"
+        ApiDataType="string" ApiVisible="true" ApiOrder="006" ApiRequired="false" ApiSearch="true" ApiSearchRequired="False"
+        muiSectionID="1" muiOrder="006" muiVisible="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="CDate" PK="false" alias="Created Date" Type="label" datatype="datetime" column="1" order="007"
+      GridVisible="false" cellwidth="150px" Visible="false" enabled="true" GridOrder="007"
+      ApiDataType="datetime" ApiVisible="true" ApiOrder="007" ApiRequired="false" ApiSearch="true" ApiSearchRequired="False"
+      muiSectionID="1" muiOrder="007" muiVisible="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="MUser" PK="false" alias="Modified By" Type="label" datatype="string" column="1" order="008"
+        GridVisible="false" cellwidth="150px" Visible="false" enabled="true" GridOrder="008"
+        ApiDataType="string" ApiVisible="true" ApiOrder="008" ApiRequired="false" ApiSearch="true" ApiSearchRequired="False"
+        muiSectionID="1" muiOrder="008" muiVisible="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="MDate" PK="false" alias="Modified Date" Type="label" datatype="datetime" column="1" order="009"
+      GridVisible="false" cellwidth="150px" Visible="false" enabled="true" GridOrder="009"
+      ApiDataType="datetime" ApiVisible="true" ApiOrder="009" ApiRequired="false" ApiSearch="true" ApiSearchRequired="False"
+      muiSectionID="1" muiOrder="009" muiVisible="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+</Table>

@@ -1,0 +1,53 @@
+<Table Name="pMaterialTradePartnerLabDipSubmitItem" formcolumns="1" gridcolumns="" FormSQL="SELECT * FROM vwx_Material_AgentVendorLabDipSubmitItem_SELECT"
+	GridReadSQL="SELECT * FROM vwx_Material_AgentVendorLabDipSubmitItem_SELECT" GridSQL="SELECT  * FROM vwx_Material_AgentVendorLabDipSubmitItem_SELECT">
+	
+	<column Name="MaterialTradePartnerLabDipSubmitItemID" PK="true" alias="MaterialTradePartnerLabDipSubmitItemID"
+		Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false"
+		GridWidth="100" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="MaterialTradePartnerID" PK="true" alias="MaterialTradePartnerID"
+		Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false"
+		GridWidth="100" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	
+	<column Name="MaterialTradePartnerColorID" PK="true" alias="MaterialTradePartnerColorID"
+		Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false"
+		GridWidth="100" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+
+	<column Name="MaterialTradePartnerLabDipSubmit" alias="Submit#" Type="label" datatype="string" column="1" order="2"
+		GridVisible="true" cellwidth="150px" GridWidth="150" Visible="true" enabled="true" GridOrder="03">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+	
+	<column Name="MaterialSize" alias="Treatment" Type="label" datatype="string"
+		column="1" order="2" GridVisible="true" cellwidth="50px" GridWidth="80" Visible="true"
+		enabled="true" GridOrder="03">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="AssignedTo" alias="Assigned To" Type="dropdownlist" select="true" cellwidth="150px" datatype="query" column="1" gridorder="23" GridVisible="false" Visible="true" enabled="true" lookupquery="SELECT UserID, Firstname +'  ' + Lastname as fullname from users Where TradePartner = 0 order by firstname" textfield="fullname" ValueField="UserID" AutoPostBack="false" Search="false" DefaultValue="00410038-0033-0038-4600-380033003300">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	
+	<column Name="MaterialTradePartnerLabDipStatus" alias="Submit Status" Type="dropdownlist" datatype="query" column="1" order="1" 
+		GridVisible="false" cellwidth="150px" lookupquery="SELECT StatusID, Status FROM pMaterialTradePartnerLabDipStatus ORDER BY StatusID" 
+		Visible="true" enabled="true" textfield="Status" ValueField="StatusID" select="true" AutoPostBack="false"  GridOrder="3" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="RecDate" alias="Received Date" Type="calendarbox" datatype="datetime" column="1" order="2"
+		GridVisible="true" cellwidth="70" GridWidth="100" Visible="true" enabled="true" GridOrder="03">
+    <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+	</column>
+	<column Name="DueDate" alias="Due Date" Type="calendarbox" datatype="datetime" column="1" order="2"
+		GridVisible="true" cellwidth="70" GridWidth="100" Visible="true" enabled="true" GridOrder="03">
+    <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+	</column>
+</Table>

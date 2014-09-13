@@ -1,0 +1,6 @@
+<generator>
+   <table name="StitchType" codecolumn="CustomKey" idcolumn="CustomID" spacecolumn="3"> 
+	   <column name="StitchTypeID" lookupSpace="" lookupNull="XXX"  order="1"/> 
+  	  <column name="autoid" lookupSpace="X" lookupNull="XXX"  order="2"/>  
+   </table>
+</generator>

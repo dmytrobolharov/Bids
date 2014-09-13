@@ -1,0 +1,27 @@
+
+<Table Name="pQApom" formcolumns="2" gridcolumns="" FormSQL="spx_SampleRequest_MeasQASample_SELECT" 
+       GridReadSQL="spx_SampleRequest_MeasQASample_SELECT" GridSQL="spx_SampleRequest_MeasQASample_SELECT">  
+	<column Name="SamplePomId" PK="true" alias="SamplePomId" Type="label" datatype="string" enabled="false" 
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>  
+  <column Name="SampleRequestHeaderId"  alias="SampleRequestHeaderId" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>       
+  <column Name="Refcode" alias="POM" Type="label" datatype="string" GridHeaderCss="TableHeader" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="false" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="POMDescription" alias="Description" Type="label" datatype="string" GridHeaderCss="TableHeader" column="1" order="2" GridVisible="true" cellwidth="300px" GridWidth="150" Visible="true" enabled="false" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="SortId" alias="SortId" Type="label" datatype="string" column="1" order="2" GridVisible="false" cellwidth="100px" GridWidth="100" Visible="false" enabled="false" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="TolPlus" alias="+Tol" Type="label" datatype="decimal" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="false" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="TolMinus" alias="-Tol" Type="label" datatype="decimal" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="false" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>    
+</Table>

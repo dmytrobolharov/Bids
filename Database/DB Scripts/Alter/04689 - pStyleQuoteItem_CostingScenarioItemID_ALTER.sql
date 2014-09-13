@@ -1,0 +1,12 @@
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+				WHERE TABLE_NAME='pStyleQuoteItem'
+				AND COLUMN_NAME='StyleCostingScenarioItemID')
+BEGIN
+	ALTER TABLE pStyleQuoteItem ADD StyleCostingScenarioItemID UNIQUEIDENTIFIER DEFAULT '00000000-0000-0000-0000-000000000000'
+END
+
+GO
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES     ('DB_Version', '5.0.0000', '04689', GetDate())
+GO

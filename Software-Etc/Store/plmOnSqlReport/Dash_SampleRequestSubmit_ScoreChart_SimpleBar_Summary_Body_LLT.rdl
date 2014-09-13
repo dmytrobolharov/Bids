@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="plmOn">
+      <rd:DataSourceID>e5473de0-b72a-4538-9dd3-0569a3302120</rd:DataSourceID>
+      <DataSourceReference>plmOn</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="DateFrom">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>=FORMAT(DATEADD("d", - 365, TODAY()), "Short Date")</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Due Date From</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DateTo">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>= FORMAT(Globals!ExecutionTime, "Short Date")</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Due Date To</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Weight_Approved">
+      <DataType>Float</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>33.4</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Weight %,  Approval Rate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Weight_Average">
+      <DataType>Float</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>33.3</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Weight %, Average Submit Rate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Weight_Overdue">
+      <DataType>Float</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>33.3</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Weight %, Overdue Rate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SubstractPercentPerSubmit">
+      <DataType>Float</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>10</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Substraction Factor % / Ave. Submit Increase</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="MinNumSubmitsForReporting">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=0</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Min. Total # of Submits by Vendor</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SortBy">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Sort By</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Score(Best to Worst)</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>2</Value>
+            <Label>Score(Worst to Best)</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>3</Value>
+            <Label>Name(Ascending)</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>4</Value>
+            <Label>Name(Descending)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.0625in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.25in</RightMargin>
+  <LeftMargin>1in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image1">
+        <Sizing>FitProportional</Sizing>
+        <Width>2in</Width>
+        <Source>External</Source>
+        <Style />
+        <ZIndex>6</ZIndex>
+        <Height>0.375in</Height>
+        <Value>logo.JPG</Value>
+      </Image>
+      <Textbox Name="textbox5">
+        <Top>0.5625in</Top>
+        <Action>
+          <Drillthrough>
+            <ReportName>dash_SampleRequestSubmit_ScoreChart_StackedBar_Summary_Body_LLT</ReportName>
+            <Parameters>
+              <Parameter Name="DateFrom">
+                <Value>=Parameters!DateFrom.Value</Value>
+              </Parameter>
+              <Parameter Name="DateTo">
+                <Value>=Parameters!DateTo.Value</Value>
+              </Parameter>
+              <Parameter Name="Weight_Approved">
+                <Value>=Parameters!Weight_Approved.Value</Value>
+              </Parameter>
+              <Parameter Name="Weight_Average">
+                <Value>=Parameters!Weight_Average.Value</Value>
+              </Parameter>
+              <Parameter Name="Weight_Overdue">
+                <Value>=Parameters!Weight_Overdue.Value</Value>
+              </Parameter>
+              <Parameter Name="SubstractPercentPerSubmit">
+                <Value>=Parameters!SubstractPercentPerSubmit.Value</Value>
+              </Parameter>
+              <Parameter Name="MinNumSubmitsForReporting">
+                <Value>=Parameters!MinNumSubmitsForReporting.Value</Value>
+              </Parameter>
+              <Parameter Name="SortBy">
+                <Value>= Parameters!SortBy.Value</Value>
+              </Parameter>
+            </Parameters>
+          </Drillthrough>
+        </Action>
+        <Width>0.5in</Width>
+        <Style>
+          <Color>Blue</Color>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.6875in</Left>
+        <Height>0.25in</Height>
+        <Value>Chart2</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <Visibility>
+          <Hidden>=IIF(Parameters!MinNumSubmitsForReporting.Value = 0, true, false)</Hidden>
+        </Visibility>
+        <Top>0.5625in</Top>
+        <Width>1.625in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.25in</Left>
+        <Height>0.25in</Height>
+        <Value>=IIF( Parameters!SortBy.Value = 1, 
+
+    "Best Performer at the Top", 
+
+
+    IIF( Parameters!SortBy.Value = 2, 
+   
+     "Worst Performer at the Top",
+
+     ""
+
+    )
+
+)</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.5625in</Top>
+        <Action>
+          <Drillthrough>
+            <ReportName>dash_SampleRequestSubmit_Score_Summary_Body_LLT</ReportName>
+            <Parameters>
+              <Parameter Name="DateFrom">
+                <Value>=Parameters!DateFrom.Value</Value>
+              </Parameter>
+              <Parameter Name="DateTo">
+                <Value>=Parameters!DateTo.Value</Value>
+              </Parameter>
+              <Parameter Name="Weight_Approved">
+                <Value>=Parameters!Weight_Approved.Value</Value>
+              </Parameter>
+              <Parameter Name="Weight_Average">
+                <Value>=Parameters!Weight_Average.Value</Value>
+              </Parameter>
+              <Parameter Name="Weight_Overdue">
+                <Value>=Parameters!Weight_Overdue.Value</Value>
+              </Parameter>
+              <Parameter Name="SubstractPercentPerSubmit">
+                <Value>=Parameters!SubstractPercentPerSubmit.Value</Value>
+              </Parameter>
+              <Parameter Name="MinNumSubmitsForReporting">
+                <Value>=Parameters!MinNumSubmitsForReporting.Value</Value>
+              </Parameter>
+              <Parameter Name="SortBy">
+                <Value>=3</Value>
+              </Parameter>
+            </Parameters>
+          </Drillthrough>
+        </Action>
+        <Width>0.4375in</Width>
+        <Style>
+          <Color>Blue</Color>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>Table</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <Visibility>
+          <Hidden>=IIF(Parameters!MinNumSubmitsForReporting.Value = 0, true, false)</Hidden>
+        </Visibility>
+        <Top>0.375in</Top>
+        <Width>6.375in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.9375in</Left>
+        <Height>0.25in</Height>
+        <Value>= " Min. # of Total Submits to be Analyzed for a Vendor:  " &amp; Parameters!MinNumSubmitsForReporting.Value</Value>
+      </Textbox>
+      <Textbox Name="DueDateFrom">
+        <rd:DefaultName>DueDateFrom</rd:DefaultName>
+        <Top>0.25in</Top>
+        <Width>5.125in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.5in</Left>
+        <Height>0.125in</Height>
+        <Value>="Due Date From " &amp; Format(Parameters!DateFrom.Value, "Short Date") &amp; "  To  " &amp; Format( Parameters!DateTo.Value, "Short Date")</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <Width>6.375in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>14pt</FontSize>
+          <FontWeight>800</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>2.375in</Left>
+        <Height>0.25in</Height>
+        <Value>Sample Request Performance  Report by Agent/Vendor</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.875in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.25in</BottomMargin>
+  <rd:ReportID>d9e96476-733f-4f0c-b8e5-02b970d9cf87</rd:ReportID>
+  <PageWidth>11in</PageWidth>
+  <DataSets>
+    <DataSet Name="ds_Information_score">
+      <Fields>
+        <Field Name="TrdPartnerID">
+          <DataField>TrdPartnerID</DataField>
+        </Field>
+        <Field Name="TradePartnerName">
+          <DataField>TradePartnerName</DataField>
+        </Field>
+        <Field Name="TrdPrtVendorID">
+          <DataField>TrdPrtVendorID</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="SmplWrkFlowID">
+          <DataField>SmplWrkFlowID</DataField>
+        </Field>
+        <Field Name="SampleWorkflow">
+          <DataField>SampleWorkflow</DataField>
+        </Field>
+        <Field Name="tot_appcorr">
+          <DataField>tot_appcorr</DataField>
+        </Field>
+        <Field Name="tot_approv">
+          <DataField>tot_approv</DataField>
+        </Field>
+        <Field Name="tot_drop">
+          <DataField>tot_drop</DataField>
+        </Field>
+        <Field Name="tot_overdue">
+          <DataField>tot_overdue</DataField>
+        </Field>
+        <Field Name="tot_submit">
+          <DataField>tot_submit</DataField>
+        </Field>
+        <Field Name="tot_approv_request">
+          <DataField>tot_approv_request</DataField>
+        </Field>
+        <Field Name="tot_approv_submit">
+          <DataField>tot_approv_submit</DataField>
+        </Field>
+        <Field Name="tot_approv_average">
+          <DataField>tot_approv_average</DataField>
+        </Field>
+        <Field Name="tot_non_pending_submit">
+          <DataField>tot_non_pending_submit</DataField>
+        </Field>
+        <Field Name="tot_style">
+          <DataField>tot_style</DataField>
+        </Field>
+        <Field Name="SmplWrkFlowSortNum">
+          <DataField>smplWrkFlowSortNum</DataField>
+        </Field>
+        <Field Name="MaxSortNum">
+          <DataField>MaxSortNum</DataField>
+        </Field>
+        <Field Name="submitGroup15">
+          <Value>= Ceiling(Fields!SmplWrkFlowSortNum.Value/16)</Value>
+        </Field>
+        <Field Name="tot_score">
+          <Value>=Fields!tot_approv_submit.Value+ Fields!tot_approv_average.Value+ Fields!tot_overdue.Value</Value>
+        </Field>
+        <Field Name="tot_style_approv">
+          <DataField>tot_style_approv</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_SampleRequestSubmit_Score_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DateFrom">
+            <Value>=Parameters!DateFrom.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DateTo">
+            <Value>=Parameters!DateTo.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Weight_Approved">
+            <Value>=Parameters!Weight_Approved.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Weight_Average">
+            <Value>=Parameters!Weight_Average.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Weight_Overdue">
+            <Value>=Parameters!Weight_Overdue.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SubstractPercentPerSubmit">
+            <Value>=Parameters!SubstractPercentPerSubmit.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@MinNumSubmitsForReporting">
+            <Value>=Parameters!MinNumSubmitsForReporting.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SortBy">
+            <Value>=Parameters!SortBy.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Author>Paul Kim, Yunique Solutions</Author>
+  <Code>Public Function FormatDate(ByVal inputDate as Object) As String
+	If inputDate Is Nothing Then
+		Return String.Empty
+	ElseIf	IsDate(inputDate) Then
+		Return CDate(inputDate).ToShortDateString()
+	Else
+		Return String.Empty
+	End If
+End Function
+	</Code>
+  <Width>10.1in</Width>
+  <Body>
+    <ReportItems>
+      <Chart Name="chart1">
+        <Legend>
+          <Visible>true</Visible>
+          <Style>
+            <FontFamily>Tahoma</FontFamily>
+            <FontSize>8pt</FontSize>
+            <FontWeight>700</FontWeight>
+          </Style>
+          <Position>TopRight</Position>
+        </Legend>
+        <CategoryAxis>
+          <Axis>
+            <Title>
+              <Style>
+                <FontSize>12pt</FontSize>
+                <FontWeight>700</FontWeight>
+              </Style>
+            </Title>
+            <Style>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <Reverse>true</Reverse>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <DataSetName>ds_Information_score</DataSetName>
+        <PlotArea>
+          <Style>
+            <BackgroundColor>White</BackgroundColor>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+        </PlotArea>
+        <ThreeDProperties>
+          <Rotation>30</Rotation>
+          <Inclination>30</Inclination>
+          <Shading>Simple</Shading>
+          <WallThickness>50</WallThickness>
+        </ThreeDProperties>
+        <PointWidth>0</PointWidth>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!SmplWrkFlowSortNum.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>=(Fields!MaxSortNum.Value + 3)</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
+        <SeriesGroupings>
+          <SeriesGrouping>
+            <StaticSeries>
+              <StaticMember>
+                <Label>= "(a) Approval Rate Score (Out of " &amp;    Parameters!Weight_Approved.Value &amp; "%)"</Label>
+              </StaticMember>
+              <StaticMember>
+                <Label>= "(b) Average Submits Score to get an Approval (Out of " &amp; Parameters!Weight_Average.Value &amp; "%)"</Label>
+              </StaticMember>
+              <StaticMember>
+                <Label>= "(c) Over Due Score (Out of " &amp; Parameters!Weight_Overdue.Value &amp; "%)"</Label>
+              </StaticMember>
+            </StaticSeries>
+          </SeriesGrouping>
+        </SeriesGroupings>
+        <Subtype>Plain</Subtype>
+        <ValueAxis>
+          <Axis>
+            <Title>
+              <Caption>Score (%):  (a) , (b) , (c)  and  [Total, Out of 100%]</Caption>
+              <Style>
+                <FontFamily>Tahoma</FontFamily>
+                <FontWeight>700</FontWeight>
+              </Style>
+            </Title>
+            <Style>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>8pt</FontSize>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Dotted</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <MajorTickMarks>Outside</MajorTickMarks>
+            <MinorTickMarks>Outside</MinorTickMarks>
+            <Min>0</Min>
+            <Max>100</Max>
+            <MajorInterval>50</MajorInterval>
+            <MinorInterval>10</MinorInterval>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+        <Type>Bar</Type>
+        <Width>9.9375in</Width>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="chart1_CategoryGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!TrdPrtVendorID.Value</GroupExpression>
+                  <GroupExpression>=Fields!VendorName.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=IIF(Parameters!SortBy.Value = 1, 
+ 
+   Fields!tot_score.Value,
+
+
+  IIF(Parameters!SortBy.Value = 2,  
+ 
+        Parameters!SortBy.Value, 
+
+        IIF(Parameters!SortBy.Value = 4,
+           Fields!TradePartnerName.Value, 
+           Parameters!SortBy.Value)
+
+       )
+       
+
+   )</SortExpression>
+                  <Direction>Descending</Direction>
+                </SortBy>
+                <SortBy>
+                  <SortExpression>=IIF(Parameters!SortBy.Value = 1, 
+ 
+Fields!VendorName.Value ,
+
+
+  IIF(Parameters!SortBy.Value = 2,  
+        Fields!tot_score.Value, 
+
+       IIF(Parameters!SortBy.Value = 4,
+           Parameters!SortBy.Value, 
+           Fields!VendorName.Value ) 
+
+       )
+       
+
+   )</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <Label>=  IIF( (Fields!TradePartnerName.Value = "") OR
+
+(Fields!TradePartnerName.Value  = Fields!VendorName.Value)
+
+, 
+
+Fields!VendorName.Value
+
+,
+
+Fields!TradePartnerName.Value  &amp;  ",   "  &amp; Fields!VendorName.Value
+
+)</Label>
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Palette>GrayScale</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Fields!tot_approv_submit.Value</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <Value>= Fields!tot_approv_submit.Value 
+
+ &amp; IIF(Fields!tot_non_pending_submit.Value &lt; 1, "No Data", "")
+
+
+ &amp; IIF(
+
+   Fields!tot_overdue.Value &lt; 0.01 
+
+   AND
+
+    Fields!tot_approv_average.Value &lt; 0.01
+
+ ,
+
+    "           "  &amp;  "[" &amp; ROUND(Fields!tot_score.Value, 2) &amp; "]"
+
+,
+    ""
+)</Value>
+                  <Position>Bottom</Position>
+                  <Visible>true</Visible>
+                </DataLabel>
+                <Style>
+                  <BackgroundColor>#80ff80</BackgroundColor>
+                  <BackgroundGradientEndColor>Green</BackgroundGradientEndColor>
+                  <BorderStyle>
+                    <Default>Solid</Default>
+                  </BorderStyle>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Fields!tot_approv_average.Value </Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <Value>=Fields!tot_approv_average.Value 
+
+ &amp; IIF(Fields!tot_approv_request.Value &lt; 1, " - No Data", "")
+
+&amp; IIF(Fields!tot_overdue.Value &lt; 0.01, "           "  &amp; "[" &amp; ROUND(Fields!tot_score.Value,2) &amp; "]", "")</Value>
+                  <Position>Center</Position>
+                  <Visible>true</Visible>
+                </DataLabel>
+                <Style>
+                  <BackgroundColor>Gainsboro</BackgroundColor>
+                  <BorderStyle>
+                    <Default>Solid</Default>
+                  </BorderStyle>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>= Fields!tot_overdue.Value </Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <Value>=Fields!tot_overdue.Value  &amp; IIF(Fields!tot_submit.Value &lt; 1, " - No Data", "")
+
+&amp;   "          " &amp; "[" &amp;  ROUND( Fields!tot_score.Value, 2) &amp; "]"</Value>
+                  <Position>Top</Position>
+                  <Visible>true</Visible>
+                </DataLabel>
+                <Style>
+                  <BackgroundColor>#ffff80</BackgroundColor>
+                  <BorderStyle>
+                    <Default>Solid</Default>
+                  </BorderStyle>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <LineHeight>25pt</LineHeight>
+        </Style>
+        <Title>
+          <Style>
+            <FontFamily>Tahoma</FontFamily>
+            <FontSize>13pt</FontSize>
+            <FontWeight>700</FontWeight>
+          </Style>
+        </Title>
+        <Height>8.875in</Height>
+      </Chart>
+    </ReportItems>
+    <Height>12.5625in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox47">
+        <Width>2.375in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.1875in</Left>
+        <Height>0.1875in</Height>
+        <Value>="Page " &amp; Globals!PageNumber &amp; "  of  " &amp;  Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="textbox49">
+        <Top>0.03516in</Top>
+        <Width>2.75in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>7pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>6.6875in</Left>
+        <Height>0.1875in</Height>
+        <Value>="Printed By " &amp;   User!UserID &amp; " @ " &amp; Globals!ExecutionTime</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.25in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>1in</TopMargin>
+  <PageHeight>8.5in</PageHeight>
+</Report>

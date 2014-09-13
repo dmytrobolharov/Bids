@@ -1,0 +1,126 @@
+<setup>
+
+  <!-- The Task Tree  
+    o Build a complete tree here
+    o Each plugin gets loaded exactly once, will only be bound to the LAST node it's 
+        name is found in
+    o Typical node looks like so:
+          <node name="nUsers" text="" description="" plugin="CreateUsersAndGroups" />
+      name: name of node in tree
+      text: visible text in tree (overrides plugin.text)
+      description: tooltip (overrides plugin.description)
+      plugin: the plugin to bind here 
+		This is also the DLL name without extension.
+		By convention the dll should expose the same name via its NAME property
+      
+    o Optional node attribute: ensureVisible (boolean)
+  -->
+  <TaskTree>
+    <node name="nInstallEverything" text="Complete Installation" description="Installs everything." >
+
+      <node name="nAppServer" text="Application Server" description="Install all application server requirements." >
+        <node name="nUsers" text="" description="" plugin="CreateUsersAndGroups" />
+
+        <node name="nFileSystem" text="File System" description="Changes to file system." >
+          <node name="nFileSystemPerms" text="" description="" plugin="FileSystemPerms" />
+          <node name="nFileSystemShares" text="" description="" plugin="FileSystemShares" />
+        </node>
+
+        <node name="nIIS" text="Configure IIS" description="Configure application pools, web applications, and virtual directories." >
+          <node name="nIISWebApps" text="" description="" plugin="IISWebApplications" />
+          <node name="nIISVirDirs" text="" description="" plugin="IISVirtualDirectories" />
+        </node>
+		
+		<node name="nMarkupTool" text="Configure Markup Tool" description="Install application pool, web application for Markup Tool and generate config file.">
+			<node name="nMarkupToolIIS" text="" description="" plugin="MarkupToolIIS" />
+			<node name="nMarkupToolConfigureFiles" text="" description="" plugin="MarkupToolConfigureFiles" />
+		</node>
+
+        <node name="nCommon" text="Common Applications and Services" description="" >
+          <node name="nCommonChilkat" text="" description="" plugin="CommonAppChilkat" />
+	<!--
+          <node name="nCommonImageGlue" text="Install Image Glue" description="" plugin="CommonAppImageGlue" />
+          <node name="nCommonABC" text="" description="" plugin="CommonAppABCPDF" />
+	-->
+        </node>
+
+		<node name="nResetAdminPassword" text="" description="" plugin="ResetAdminPassword" />
+        <node name="nMaintenance" text="" description="" plugin="InstallMaintenanceScripts" />
+        <node name="nCopySRMOnFiles" text="" description="" plugin="CopySRMOnFiles" />
+        <node name="nConfigureFiles" text="" description="" plugin="ConfigureYPLMFiles" />
+        <node name="nConfigureSchema" text="" description="" plugin="ConfigureSchemaFiles" />
+        <node name="nDesktopShortcuts" text="" description="" plugin="CreateDesktopShortcuts" ensureVisible="true" />
+		<node name="nConfigureSQLSession" text="" description="" plugin="ConfigureSQLSession" ensureVisible="true" />
+      </node>
+
+      <!--
+      <node name="nFileServer" text="File Server" description="Install all file server requirements" >
+        <node name="nIIS" text="Configure IIS" description="Configure application pools, web applications, and virtual directories." />
+      </node>
+      -->
+
+      <node name="nDatabaseServer" text="Database Server" description="Install all database server requirements" >
+	<!--
+        <node name="nDatabaseServerRestoreDB" text="" description="" plugin="RestoreInitialDatabase" />
+	-->
+        <node name="nDatabaseServerAlterScripts" text="" description="" plugin="DBAlterScripts" />
+        <node name="nDatabaseServerSynchData" text="" description="" plugin="SynchDatabaseData" />
+        <node name="nInstallPlmOnServices" text="" description="" plugin="InstallPlmOnServices" />
+        <!-- <node name="nDatabaseServerLanguagePack" text="" description="" plugin="InstallLanguagePack" enabled="false" ensureVisible="true"/> -->
+      </node>
+
+      <!--
+	<node name="nCADDatabaseServer" text="CAD Database Server" description="Install all CAD database linked server requirements">
+        <node name="nCADDatabaseLinkedServer" text="Make Linked Server" description="" plugin="CADDatabaseLinkedServer" />
+      </node>
+      -->
+
+      <node name="nReportingServer" text="Reporting Server" description="Install all reports into reporting server" >
+        <node name="nReportingDash" text="" description="" plugin="ReportServerInstallDash" />
+
+        <node name="nReportingTranslateReports" text="Translate Reports" description="" >
+          <node name="nReportingRDLTranslation-Prepare-RS" text="Add plmOnRDLTranslator to Report Server (Report Server only)" description="Add the plmOnRDLTranslator DLL to the Report Server (Report Server only)" plugin="ReportServerInstallRDLTranslation" args="Prepare-RS" />
+          <node name="nReportingRDLTranslation-Prepare-Folders" text="[Reset reports folder for translation]" description="Reset the reports folder by removing any translated reports found" plugin="ReportServerInstallRDLTranslation" args="Prepare-Folders" />
+          <node name="nReportingRDLTranslation-zh-CHS" text="Chinese (Simplified)" description="Translate reports to Chinese (Simplified)" plugin="ReportServerInstallRDLTranslation" args="zh-CHS" />
+          <node name="nReportingRDLTranslation-zh-CHT" text="Chinese (Traditional)" description="Translate reports to Chinese (Traditional)" plugin="ReportServerInstallRDLTranslation" args="zh-CHT" />
+          <node name="nReportingRDLTranslation-da-DK" text="Danish (Denmark)" description="Translate reports to Danish (Denmark)" plugin="ReportServerInstallRDLTranslation" args="da-DK" />
+          <node name="nReportingRDLTranslation-nl_NL" text="Dutch (Netherlands)" description="Translate reports to Dutch (Netherlands)" plugin="ReportServerInstallRDLTranslation" args="nl_NL" />
+          <node name="nReportingRDLTranslation-en-CA" text="English (Canada)" description="Translate reports to English (Canada)" plugin="ReportServerInstallRDLTranslation" args="en-CA" />
+          <node name="nReportingRDLTranslation-en-GB" text="English (United Kingdom)" description="Translate reports to English (United Kingdom)" plugin="ReportServerInstallRDLTranslation" args="en-GB" />
+          <node name="nReportingRDLTranslation-en-US" text="English (United States)" description="Translate reports to English (United States)" plugin="ReportServerInstallRDLTranslation" args="en-US" />
+          <node name="nReportingRDLTranslation-fr-CA" text="French (Canada)" description="Translate reports to French (Canada)" plugin="ReportServerInstallRDLTranslation" args="fr-CA" />
+          <node name="nReportingRDLTranslation-fr-FR" text="French (France)" description="Translate reports to French (France)" plugin="ReportServerInstallRDLTranslation" args="fr-FR" />
+          <node name="nReportingRDLTranslation-de-DE" text="German (Germany)" description="Translate reports to German (Germany)" plugin="ReportServerInstallRDLTranslation" args="de-DE" />
+          <node name="nReportingRDLTranslation-el-GR" text="Greek (Greece)" description="Translate reports to Greek (Greece)" plugin="ReportServerInstallRDLTranslation" args="el-GR" />
+          <node name="nReportingRDLTranslation-hi-IN" text="Hindi (India)" description="Translate reports to Hindi (India)" plugin="ReportServerInstallRDLTranslation" args="hi-IN" />
+          <node name="nReportingRDLTranslation-it-IT" text="Italian (Italy)" description="Translate reports to Italian (Italy)" plugin="ReportServerInstallRDLTranslation" args="it-IT" />
+          <node name="nReportingRDLTranslation-ja-JA" text="Japanese (Japan)" description="Translate reports to Japanese (Japan)" plugin="ReportServerInstallRDLTranslation" args="ja-JA" />
+          <node name="nReportingRDLTranslation-ko-KR" text="Korean (Korea)" description="Translate reports to Korean (Korea)" plugin="ReportServerInstallRDLTranslation" args="ko-KR" />
+          <node name="nReportingRDLTranslation-pl_PL" text="Polish (Poland)" description="Translate reports to Polish (Poland)" plugin="ReportServerInstallRDLTranslation" args="pl_PL" />
+          <node name="nReportingRDLTranslation-pt-BR" text="Portuguese (Brazil)" description="Translate reports to Portuguese (Brazil)" plugin="ReportServerInstallRDLTranslation" args="pt-BR" />
+          <node name="nReportingRDLTranslation-pt-PT" text="Portuguese (Portugal)" description="Translate reports to Portuguese (Portugal)" plugin="ReportServerInstallRDLTranslation" args="pt-PT" />
+          <node name="nReportingRDLTranslation-ru-RU" text="Russian (Russia)" description="Translate reports to Russian (Russia)" plugin="ReportServerInstallRDLTranslation" args="ru-RU" />
+          <node name="nReportingRDLTranslation-es-MX" text="Spanish (Mexico)" description="Translate reports to Spanish (Mexico)" plugin="ReportServerInstallRDLTranslation" args="es-MX" />
+          <node name="nReportingRDLTranslation-es-ES" text="Spanish (Spain)" description="Translate reports to Spanish (Spain)" plugin="ReportServerInstallRDLTranslation" args="es-ES" />
+          <node name="nReportingRDLTranslation-sv-FI" text="Swedish (Finland)" description="Translate reports to Swedish (Finland)" plugin="ReportServerInstallRDLTranslation" args="sv-FI" />
+          <node name="nReportingRDLTranslation-sv-SE" text="Swedish (Sweden)" description="Translate reports to Swedish (Sweden)" plugin="ReportServerInstallRDLTranslation" args="sv-SE" />
+          <node name="nReportingRDLTranslation-tr-TR" text="Turkish (Turkey)" description="Translate reports to Turkish (Turkey)" plugin="ReportServerInstallRDLTranslation" args="tr-TR" />
+        </node>
+
+        <node name="nReportingReport" text="" description="" plugin="ReportServerInstallReports" />
+        <node name="nReportingBI" text="" description="" plugin="ReportServerInstallBI" ensureVisible="true" />
+      </node>
+
+      <!--
+      <node name="nFirewall" text="Firewall (localhost) **Experimental**" description="Configure the localhost's firewall." >
+        <node name="nFirewallHTTP" text="" description="" plugin="ConfigureFirewallHTTP" />
+        <node name="nFirewallSQL" text="" description="" plugin="ConfigureFirewallSQLServer" />
+        <node name="nFirewallRDP" text="" description="" plugin="ConfigureFirewallRemoteDesktop" />
+        <node name="nFirewallFileSharing" text="" description="" plugin="ConfigureFirewallFileSharing" />
+        <node name="nFirewallICMP" text="" description="" plugin="ConfigureFirewallICMPEcho" />
+      </node>
+      -->
+    </node>
+  </TaskTree>
+
+</setup>

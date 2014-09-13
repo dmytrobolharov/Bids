@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Image Name="imgStyleImage">
+        <ZIndex>2</ZIndex>
+        <Height>0.75in</Height>
+        <Width>0.75in</Width>
+        <Source>External</Source>
+        <Style />
+        <Value>= First(Fields!FilePath.Value, "dsStyleImage")</Value>
+        <Top>0.75in</Top>
+        <Left>10.125in</Left>
+        <Sizing>FitProportional</Sizing>
+      </Image>
+      <Rectangle Name="rctHeaderTables1">
+        <ZIndex>1</ZIndex>
+        <ReportItems>
+          <Rectangle Name="rctMainMaterialColorways">
+            <ZIndex>3</ZIndex>
+            <ReportItems>
+              <Table Name="table4">
+                <Height>0.2in</Height>
+                <ZIndex>1</ZIndex>
+                <Style />
+                <Details>
+                  <TableRows>
+                    <TableRow>
+                      <Height>0.2in</Height>
+                      <TableCells>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="textbox3">
+                              <Style>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <FontFamily>Tahoma</FontFamily>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <FontSize>8pt</FontSize>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingRight>2pt</PaddingRight>
+                                <FontWeight>700</FontWeight>
+                              </Style>
+                              <ZIndex>1</ZIndex>
+                              <CanGrow>true</CanGrow>
+                              <Value>Main Material</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="textbox13">
+                              <Style>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <FontFamily>tahoma</FontFamily>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <FontSize>8pt</FontSize>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                              <rd:DefaultName>textbox13</rd:DefaultName>
+                              <CanGrow>true</CanGrow>
+                              <Value>=First(Fields!MainMaterialCombo.Value, "dsMainMaterialColorway")</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                      </TableCells>
+                    </TableRow>
+                  </TableRows>
+                </Details>
+                <DataSetName>dsMainMaterialColorway</DataSetName>
+                <TableColumns>
+                  <TableColumn>
+                    <Width>1.125in</Width>
+                  </TableColumn>
+                  <TableColumn>
+                    <Width>1.625in</Width>
+                  </TableColumn>
+                </TableColumns>
+              </Table>
+              <Table Name="table7">
+                <Style />
+                <Details>
+                  <TableRows>
+                    <TableRow>
+                      <Height>0.2in</Height>
+                      <TableCells>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="textbox11">
+                              <Style>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <FontFamily>Tahoma</FontFamily>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <FontSize>8pt</FontSize>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingRight>2pt</PaddingRight>
+                                <FontWeight>700</FontWeight>
+                              </Style>
+                              <ZIndex>1</ZIndex>
+                              <CanGrow>true</CanGrow>
+                              <Value>Color Combo(s)</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                        <TableCell>
+                          <ReportItems>
+                            <Textbox Name="textbox12">
+                              <Style>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <FontFamily>tahoma</FontFamily>
+                                <BorderStyle>
+                                  <Default>Solid</Default>
+                                </BorderStyle>
+                                <FontSize>8pt</FontSize>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingRight>2pt</PaddingRight>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <Value>=First(Fields!ColorwayCombo.Value, "dsMainMaterialColorway")</Value>
+                            </Textbox>
+                          </ReportItems>
+                        </TableCell>
+                      </TableCells>
+                    </TableRow>
+                  </TableRows>
+                </Details>
+                <DataSetName>dsMainMaterialColorway</DataSetName>
+                <Top>0.2in</Top>
+                <TableColumns>
+                  <TableColumn>
+                    <Width>1.125in</Width>
+                  </TableColumn>
+                  <TableColumn>
+                    <Width>1.625in</Width>
+                  </TableColumn>
+                </TableColumns>
+              </Table>
+            </ReportItems>
+            <Height>0.4in</Height>
+            <Style />
+            <Top>0.125in</Top>
+            <Left>7.125in</Left>
+          </Rectangle>
+          <Table Name="table3">
+            <Height>0.2in</Height>
+            <ZIndex>2</ZIndex>
+            <Style />
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Height>0.2in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox46">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontFamily>tahoma</FontFamily>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!DataHeader.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox47">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontFamily>tahoma</FontFamily>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!DataValue.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <DataSetName>dsStyleHeader3</DataSetName>
+            <Top>0.125in</Top>
+            <Width>2.375in</Width>
+            <Left>4.75in</Left>
+            <TableColumns>
+              <TableColumn>
+                <Width>1.125in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25in</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+          <Table Name="table2">
+            <Height>0.2in</Height>
+            <ZIndex>1</ZIndex>
+            <Style />
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Height>0.2in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox42">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontFamily>Tahoma</FontFamily>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!DataHeader.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox43">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontFamily>tahoma</FontFamily>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!DataValue.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <DataSetName>dsStyleHeader2</DataSetName>
+            <Top>0.125in</Top>
+            <Width>2.375in</Width>
+            <Left>2.375in</Left>
+            <TableColumns>
+              <TableColumn>
+                <Width>1.125in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25in</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+          <Table Name="table1">
+            <Height>0.2in</Height>
+            <Style>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Height>0.2in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="DataHeader">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <FontFamily>Tahoma</FontFamily>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <rd:DefaultName>DataHeader</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!DataHeader.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="DataValue">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontSize>8pt</FontSize>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <rd:DefaultName>DataValue</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!DataValue.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <DataSetName>dsStyleHeader1</DataSetName>
+            <Top>0.125in</Top>
+            <Width>2.375in</Width>
+            <TableColumns>
+              <TableColumn>
+                <Width>1.125in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25in</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+        </ReportItems>
+        <Height>1.5in</Height>
+        <Width>9.875in</Width>
+        <Style />
+        <Top>0.625in</Top>
+        <Left>0.125in</Left>
+      </Rectangle>
+      <Rectangle Name="rctHeader">
+        <ReportItems>
+          <Textbox Name="SizeClass">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>14pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <rd:DefaultName>SizeClass</rd:DefaultName>
+            <Top>0.25in</Top>
+            <CanGrow>true</CanGrow>
+            <Value>=First(Fields!SizeClass.Value, "dsStyleImage")</Value>
+            <Left>9in</Left>
+          </Textbox>
+          <Textbox Name="StyleNo">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>14pt</FontSize>
+              <VerticalAlign>Bottom</VerticalAlign>
+              <TextAlign>Center</TextAlign>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <rd:DefaultName>StyleNo</rd:DefaultName>
+            <Height>0.25in</Height>
+            <CanGrow>true</CanGrow>
+            <Value>=First(Fields!StyleNo.Value, "dsStyleImage")</Value>
+            <Left>9in</Left>
+          </Textbox>
+          <Image Name="imgLogo">
+            <MIMEType />
+            <Height>0.45in</Height>
+            <Width>3.025in</Width>
+            <Source>External</Source>
+            <Style />
+            <Value>logo.jpg</Value>
+            <Left>0.1in</Left>
+            <Sizing>FitProportional</Sizing>
+          </Image>
+        </ReportItems>
+        <Height>0.5in</Height>
+        <Width>10.75in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Top>0.125in</Top>
+        <Left>0.125in</Left>
+      </Rectangle>
+    </ReportItems>
+    <Style />
+    <Height>2.5in</Height>
+  </Body>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <rd:DataSourceID>bb5e9de9-15ee-41f3-bf80-c86b83126d40</rd:DataSourceID>
+      <DataSourceReference>plmOn</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code />
+  <Width>11in</Width>
+  <DataSets>
+    <DataSet Name="dsStyleHeader1">
+      <Fields>
+        <Field Name="ReportTableId">
+          <DataField>ReportTableId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DataXmlId">
+          <DataField>DataXmlId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="DataColumnNumber">
+          <DataField>DataColumnNumber</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DataColumnName">
+          <DataField>DataColumnName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataHeader">
+          <DataField>DataHeader</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataValue">
+          <DataField>DataValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataSort">
+          <DataField>DataSort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_Header_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DataXmlId">
+            <Value>=Parameters!DataXmlId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DataColumnNumber">
+            <Value>1</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="dsStyleHeader2">
+      <Fields>
+        <Field Name="ReportTableId">
+          <DataField>ReportTableId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DataXmlId">
+          <DataField>DataXmlId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="DataColumnNumber">
+          <DataField>DataColumnNumber</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DataColumnName">
+          <DataField>DataColumnName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataHeader">
+          <DataField>DataHeader</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataValue">
+          <DataField>DataValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataSort">
+          <DataField>DataSort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_Header_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DataXmlId">
+            <Value>=Parameters!DataXmlId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DataColumnNumber">
+            <Value>2</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="dsStyleHeader3">
+      <Fields>
+        <Field Name="ReportTableId">
+          <DataField>ReportTableId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DataXmlId">
+          <DataField>DataXmlId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="DataColumnNumber">
+          <DataField>DataColumnNumber</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DataColumnName">
+          <DataField>DataColumnName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataHeader">
+          <DataField>DataHeader</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataValue">
+          <DataField>DataValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataSort">
+          <DataField>DataSort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_Header_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DataXmlId">
+            <Value>=Parameters!DataXmlId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DataColumnNumber">
+            <Value>3</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="dsStyleImage">
+      <Fields>
+        <Field Name="FilePath">
+          <DataField>FilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleNo">
+          <DataField>StyleNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SizeClass">
+          <DataField>SizeClass</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SizeRange">
+          <DataField>SizeRange</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_Header_Image_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@StyleID">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="dsMainMaterialColorway">
+      <Fields>
+        <Field Name="ColorwayCombo">
+          <DataField>ColorwayCombo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MainMaterialCombo">
+          <DataField>MainMaterialCombo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_Style_Header_MainMaterial_Colorway_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@StyleID">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeight>8.5in</PageHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <PageWidth>11in</PageWidth>
+  <rd:ReportID>8c394251-276f-40e0-a270-8d367fbbb54a</rd:ReportID>
+  <ReportParameters>
+    <ReportParameter Name="SID">
+      <DataType>String</DataType>
+      <Prompt>StyleID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DataXmlId">
+      <DataType>String</DataType>
+      <Prompt>DataXmlId</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+</Report>

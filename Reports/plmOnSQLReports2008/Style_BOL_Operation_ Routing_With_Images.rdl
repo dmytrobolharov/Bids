@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="Textbox5">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox5</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>White</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.67015in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>2.42292in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Tablix Name="Tablix2">
+                      <TablixBody>
+                        <TablixColumns>
+                          <TablixColumn>
+                            <Width>2.67015in</Width>
+                          </TablixColumn>
+                        </TablixColumns>
+                        <TablixRows>
+                          <TablixRow>
+                            <Height>2.42292in</Height>
+                            <TablixCells>
+                              <TablixCell>
+                                <CellContents>
+                                  <Rectangle Name="Rectangle1">
+                                    <ReportItems>
+                                      <Rectangle Name="Rectangle2">
+                                        <ReportItems>
+                                          <Textbox Name="textbox8">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>Machine      Code:</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>White</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Top>1.36389in</Top>
+                                            <Left>0.00001in</Left>
+                                            <Height>0.38264in</Height>
+                                            <Width>0.70834in</Width>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <BackgroundColor>DimGray</BackgroundColor>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>1pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Textbox Name="textbox9">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>Vendor Code :</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>White</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Top>0.99029in</Top>
+                                            <Height>0.3736in</Height>
+                                            <Width>0.70834in</Width>
+                                            <ZIndex>1</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <BackgroundColor>DimGray</BackgroundColor>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>1pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Textbox Name="textbox32">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>Operation   Description</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>White</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Top>0.42778in</Top>
+                                            <Height>0.56251in</Height>
+                                            <Width>0.70834in</Width>
+                                            <ZIndex>2</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <BackgroundColor>DimGray</BackgroundColor>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>1pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Textbox Name="textbox10">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>Comments:</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>White</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Top>1.74653in</Top>
+                                            <Height>0.625in</Height>
+                                            <Width>0.70834in</Width>
+                                            <ZIndex>3</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <BackgroundColor>DimGray</BackgroundColor>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>1pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Textbox Name="textbox11">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!VendorCode.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Top>0.99029in</Top>
+                                            <Left>0.70833in</Left>
+                                            <Height>0.3736in</Height>
+                                            <Width>1.02778in</Width>
+                                            <ZIndex>4</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>1pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Textbox Name="textbox12">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value xml:space="preserve"> </Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Value>=First(Fields!MachineCode.Value)</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Top>1.36389in</Top>
+                                            <Left>0.70834in</Left>
+                                            <Height>0.38264in</Height>
+                                            <Width>1.02778in</Width>
+                                            <ZIndex>5</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>1pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Textbox Name="textbox13">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value xml:space="preserve"> </Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Value>=Fields!Comments.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Top>1.74653in</Top>
+                                            <Left>0.70833in</Left>
+                                            <Height>0.625in</Height>
+                                            <Width>1.02778in</Width>
+                                            <ZIndex>6</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>1pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Textbox Name="textbox33">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value xml:space="preserve"> </Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Value>=First(Fields!Name.Value)</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Top>0.42778in</Top>
+                                            <Left>0.70833in</Left>
+                                            <Height>0.56251in</Height>
+                                            <Width>1.02778in</Width>
+                                            <ZIndex>7</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>1pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Textbox Name="textbox34">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value xml:space="preserve"> </Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Value>=First(Fields!Code.Value)</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>textbox27</rd:DefaultName>
+                                            <Top>0.07709in</Top>
+                                            <Left>0.70833in</Left>
+                                            <Height>0.35069in</Height>
+                                            <Width>1.83682in</Width>
+                                            <ZIndex>8</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>3pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Textbox Name="textbox31">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>Operation    Code:</Value>
+                                                    <Style>
+                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>White</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>textbox27</rd:DefaultName>
+                                            <Top>0.07709in</Top>
+                                            <Height>0.35069in</Height>
+                                            <Width>0.70834in</Width>
+                                            <ZIndex>9</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <BackgroundColor>DimGray</BackgroundColor>
+                                              <PaddingLeft>1pt</PaddingLeft>
+                                              <PaddingRight>1pt</PaddingRight>
+                                              <PaddingTop>3pt</PaddingTop>
+                                              <PaddingBottom>1pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <Image Name="Image1">
+                                            <Source>External</Source>
+                                            <Value>=Fields!Imagefilepath.Value</Value>
+                                            <Sizing>FitProportional</Sizing>
+                                            <Top>0.42778in</Top>
+                                            <Left>1.73611in</Left>
+                                            <Height>1.94375in</Height>
+                                            <Width>0.80904in</Width>
+                                            <ZIndex>10</ZIndex>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                            </Style>
+                                          </Image>
+                                        </ReportItems>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Height>2.38195in</Height>
+                                        <Width>2.67015in</Width>
+                                        <Style>
+                                          <Border>
+                                            <Style>None</Style>
+                                          </Border>
+                                        </Style>
+                                      </Rectangle>
+                                    </ReportItems>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Style>
+                                      <Border>
+                                        <Style>None</Style>
+                                      </Border>
+                                    </Style>
+                                  </Rectangle>
+                                </CellContents>
+                              </TablixCell>
+                            </TablixCells>
+                          </TablixRow>
+                        </TablixRows>
+                      </TablixBody>
+                      <TablixColumnHierarchy>
+                        <TablixMembers>
+                          <TablixMember />
+                        </TablixMembers>
+                      </TablixColumnHierarchy>
+                      <TablixRowHierarchy>
+                        <TablixMembers>
+                          <TablixMember>
+                            <Group Name="Details" />
+                          </TablixMember>
+                        </TablixMembers>
+                      </TablixRowHierarchy>
+                      <DataSetName>BOL</DataSetName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Tablix>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="ColumnGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!ColNumber.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>0.03125in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox3">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox3</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>White</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="RowGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!RowNumber.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>0.03125in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox2">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox2</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>White</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <KeepTogether>true</KeepTogether>
+        <DataSetName>BOL</DataSetName>
+        <Left>0.10417in</Left>
+        <Height>2.45417in</Height>
+        <Width>2.7014in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <TextAlign>Left</TextAlign>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>2.94409in</Height>
+    <Style>
+      <Border>
+        <Color>White</Color>
+        <Style>None</Style>
+      </Border>
+      <BottomBorder>
+        <Color>Black</Color>
+      </BottomBorder>
+    </Style>
+  </Body>
+  <Width>10.57945in</Width>
+  <Page>
+    <PageHeader>
+      <Height>2.47525in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Bill Of Labor</Value>
+                  <Style>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>20pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.125in</Top>
+          <Left>0.26695in</Left>
+          <Height>0.5in</Height>
+          <Width>10.3125in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>0.25in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <TopMargin>0.125in</TopMargin>
+    <BottomMargin>0.125in</BottomMargin>
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+      <BottomBorder>
+        <Width>1pt</Width>
+      </BottomBorder>
+    </Style>
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <DataSourceReference>plmOn</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>0210f0ed-7dc5-464c-8850-22b2cf3596e4</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="BOL">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StyleId">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleSet">
+            <Value>=Parameters!SN.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>spx_Style_BOL_OPERATIONS_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="PageOperationId">
+          <DataField>PageOperationId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="RowNumber">
+          <DataField>RowNumber</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ColNumber">
+          <DataField>ColNumber</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MachineCode">
+          <DataField>MachineCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Code">
+          <DataField>Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorCode">
+          <DataField>VendorCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleID">
+          <DataField>StyleID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="StyleSet">
+          <DataField>StyleSet</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="IsDutiable">
+          <DataField>IsDutiable</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Imagefilepath">
+          <DataField>Imagefilepath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Comments">
+          <DataField>Comments</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sort">
+          <DataField>Sort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsLink">
+          <DataField>IsLink</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="TotalTime">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StyleID">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleSet">
+            <Value>=Parameters!SN.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@IsException">
+            <Value>0</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>spx_StyleBOLGetBaseRateTime</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="RateCode">
+          <DataField>RateCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BaseRateId">
+          <DataField>BaseRateId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="TotalTime">
+          <DataField>TotalTime</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Sort">
+          <DataField>Sort</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="SID">
+      <DataType>String</DataType>
+      <Prompt>Style Id</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SN">
+      <DataType>String</DataType>
+      <Prompt>Style Set</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="ID1b8636eff5d34bf9a22a9e0fa487e3e3">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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
+RK5CYII=</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>db78cea7-e7ec-40d3-980a-a329b8256d86</rd:ReportID>
+</Report>

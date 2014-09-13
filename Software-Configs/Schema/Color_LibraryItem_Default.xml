@@ -1,0 +1,6 @@
+
+
+<table Name="pColorLibrary" Table="pColorLibrary" formcolumns="" gridcolumns="" selectsql="SELECT * FROM pColorLibrary" RepeatColumns="7" RepeatDirection="h">
+    <column Name="PantoneNumber" PK="" Alias="Color No." type="label" datatype="string" enabled="TRUE" visible="TRUE" cellwidth="200" column="" order="" gridorder="" gridvisible="" gridwidth=""  SortField="true" />
+    <column Name="PantoneName" PK="" Alias="Color Name" type="label" datatype="string" enabled="TRUE" visible="TRUE" cellwidth="200" column="" order="" gridorder="" gridvisible="" gridwidth=""  SortField="true" />
+</table>

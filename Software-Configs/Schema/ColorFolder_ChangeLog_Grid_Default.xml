@@ -1,0 +1,33 @@
+<Table Name="pColorFolderChange" formcolumns="3" gridcolumns="" FormSQL="spx_ColorFolderChangeLog_SELECT"
+	GridReadSQL="spx_ColorFolderChangeLog_SELECT" GridSQL="spx_ColorFolderChangeLog_SELECT">
+	
+	<column Name="ColorFolderChangeID" PK="true" alias="ColorFolderChangeID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" Search="false" GridVisible="false"
+		GridWidth="100" column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="ColorFolderChangeNo" alias="ID" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="40"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="ColorFolderChangeType" alias="Status" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="80"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="ColorFolderChangeDescription" alias="Notes" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="250"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="ColorFolderChangeNotifyTo" alias="Sent To" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="250"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

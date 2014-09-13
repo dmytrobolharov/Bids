@@ -1,0 +1,49 @@
+<Table Name="pStyleColorway" formcolumns="3" gridcolumns="" FormSQL="SELECT * FROM vwx_StyleColorwaySummary" 
+       GridReadSQL="SELECT * FROM vwx_StyleColorwaySummary" GridSQL="SELECT * FROM vwx_StyleColorwaySummary">
+ 
+	<!-- BEGIN- REQUIRED FIELDS DONT CHANGE IT 
+  Using spx_StyleColorway_Summary_SELECT       
+  -->
+  
+	<column Name="StyleColorID" PK="true" alias="StyleColorID" Type="label" datatype="string" enabled="false" Visible="true" cellwidth="150px" 
+          GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+<!--
+  <column Name="StyleColorID" alias="" Type="checkbox" datatype="string" column="1" order="5" GridVisible="true" cellwidth="150px"
+          GridWidth="25" Visible="true" enabled="false" GridOrder="100">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column> -->
+
+  <column Name="ColorName" alias="Combo Name" Type="label" datatype="string" column="1" order="5" GridVisible="true" 
+          cellwidth="150px" GridWidth="150" Visible="false" enabled="false" GridOrder="101">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+<!--
+  <column Name="SearchImage" alias="" Type="label" datatype="string" column="1" order="5" GridVisible="true"
+       cellwidth="150px" GridWidth="25" Visible="false" enabled="false" GridOrder="101">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  -->
+
+
+  <column Name="StyleColorNo" alias="Color No." Type="label" datatype="string" column="1" order="5" GridVisible="true"
+          cellwidth="150px" GridWidth="150" Visible="false" enabled="false" GridOrder="101">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+
+  <column Name="Sort" alias="Sort" Type="textbox" datatype="string" column="1" order="5" GridVisible="true"
+		 cellwidth="150px" GridWidth="70" Visible="false" enabled="true" GridOrder="101">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+  <!-- END- REQUIRED FIELDS DONT CHANGE IT -->
+  
+  <column Name="SAPCode" alias="SAP Code" Type="textbox" datatype="string" column="1" order="5" GridVisible="true"
+   cellwidth="150px" GridWidth="150" Visible="false" enabled="true" GridOrder="101">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+
+  
+</Table>
+

@@ -1,0 +1,45 @@
+﻿<table Name="sSchemaFileTable" formcolumns="1" gridcolumns="" 
+       FormSQL="SELECT * FROM sSchemaFileTable" 
+       GridReadSQL="SELECT * FROM sSchemaFileTable" 
+       GridSQL="SELECT * FROM sSchemaFileTable">
+  <column Name="TableID" PK="true" alias="Table ID"  Type="label" datatype="string" select="true" enabled="true" Visible="false" cellwidth="300px"
+          GridVisible="true" GridWidth="300" GridOrder="001" GridSearch="false" column="1" order="001">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Name" PK="false" alias="Table Name"  Type="textbox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="300px" 
+          GridVisible="true" GridWidth="300" GridOrder="001" GridSearch="false" column="1" order="001">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="formcolumns" PK="false" alias="Form Columns" Type="dropdownlist" datatype="query" select="true" enabled="true" Visible="true" cellwidth="300px"
+        GridVisible="true" GridWidth="300" GridOrder="002" column="1" order="002"
+        lookupquery="SELECT ItemKey, ItemValue FROM dvtFormColumns ORDER BY ItemSort"
+        textfield="ItemValue" ValueField="ItemKey" AutoPostBack="false" AddNullField="false" DefaultValue="3" Search="false">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="FormTableView" PK="false" alias="Form Table/View" Type="textbox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="300px"
+          GridVisible="true" GridWidth="300" GridOrder="003" GridSearch="false" column="1" order="003">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="gridcolumns" PK="false" alias="Grid Columns" Type="dropdownlist" datatype="query" select="true" enabled="true" Visible="true" cellwidth="300px"
+        GridVisible="true" GridWidth="300" GridOrder="004" column="1" order="004"
+        lookupquery="SELECT ItemKey, ItemValue FROM dvtFormColumns ORDER BY ItemSort"
+        textfield="ItemValue" ValueField="ItemKey" AutoPostBack="false" AddNullField="true" DefaultValue="" Search="false">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="GridTableView" PK="false" alias="Grid Table/View" Type="textbox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="300px"
+          GridVisible="true" GridWidth="300" GridOrder="005" GridSearch="false" column="1" order="005">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="FormSQL" PK="false" alias="Form SQL" Type="memobox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="300px"
+          GridVisible="true" GridWidth="300" GridOrder="006" GridSearch="false" column="1" order="006">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="GridReadSQL" PK="false" alias="Grid Read SQL" Type="memobox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="300px"
+          GridVisible="true" GridWidth="300" GridOrder="007" GridSearch="false" column="1" order="007">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="GridSQL" PK="false" alias="Grid SQL" Type="memobox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="300px"
+          GridVisible="true" GridWidth="300" GridOrder="008" GridSearch="false" column="1" order="008">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+</table>

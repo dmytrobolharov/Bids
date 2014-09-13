@@ -1,0 +1,69 @@
+<table Name="vwx_PlanningMaterial_SEL" formcolumns="3" gridcolumns="" 
+       FormSQL="SELECT * FROM vwx_PlanningMaterial_SEL"
+       GridReadSQL="SELECT * FROM vwx_PlanningMaterial_SEL"
+       GridSQL="SELECT * FROM vwx_PlanningMaterial_SEL">
+	<column Name="PlanningMaterialID" PK="true" alias="PlanningMaterialID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="true" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="PlanningID" PK="true" alias="PlanningID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="true" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="SeasonYearID" PK="true" alias="SeasonYearID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="true" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>		
+	<column Name="PlanningMaterialID" alias="" Type="radiobox" datatype="string" column="3" order="1" RadioListGroup="style"
+		GridVisible="true" cellwidth="150px" GridWidth="25" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="MaterialImagePath" alias="Image" Type="label" datatype="string"
+		column="1" order="6" GridVisible="true" cellwidth="30px" GridWidth="30" Visible="true" enabled="true"
+		AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="MaterialNo" alias="Material No" Type="label" datatype="string"
+		column="1" order="6" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true"
+		AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialName" alias="Material Name" Type="label" datatype="string"
+	column="1" order="6" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true"
+		AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ActiveLabel" alias="Active" Type="label" datatype="string" column="1" order="7"
+		GridVisible="true" cellwidth="70px" GridWidth="70" Visible="true" enabled="true" lookupquery=""
+		select="true" textfield="" ValueField="" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="DueDate" alias="Due Date" Type="label" datatype="datetime" column="1" order="20"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="1" order="19"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="1" order="20"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="1" order="21"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="1" order="22"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ComponentDescription" alias="Material Type" Type="label" datatype="string"
+		column="01" order="24" GridVisible="true" cellwidth="150px" GridWidth="150" Visible="true" enabled="true"
+		lookupquery="" select="" textfield="" ValueField="" AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+</table>

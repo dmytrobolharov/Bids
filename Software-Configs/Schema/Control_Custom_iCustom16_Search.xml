@@ -1,0 +1,30 @@
+<table Name="iCustom16" formcolumns="3" gridcolumns="" FormSQL="SELECT * FROM iCustom16"
+	GridReadSQL="SELECT * FROM iCustom16" GridSQL="SELECT * FROM iCustom16">
+	<column Name="CustomKey" PK="true" alias="ID"  Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" GridOrder="1" GridSearch="false"
+		column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomID" PK="true" alias="CustomID" Type="label" datatype="string" enabled="false"
+	        Visible="false" cellwidth="150px" Search="false" GridVisible="false" GridWidth="100"
+	        column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomKey" alias="Style Category Code"  Type="textbox" datatype="string" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="100" GridOrder="1" GridSearch="true"
+		column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="Division Code Required!" />
+	</column>
+	<column Name="Custom" alias="Style Category Name" Type="textbox" datatype="string" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="100" GridOrder="1" GridSearch="true"
+		column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="Division Name Required!" />
+	</column>
+	<column Name="Active" alias="Active" Type="dropdownlist" datatype="string" column="1" order="3"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="true" lookupquery="SELECT Active FROM pActive"
+		select="false" textfield="Active" ValueField="Active" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="Status Required!" />
+	</column>
+
+
+</table>

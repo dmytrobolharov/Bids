@@ -1,0 +1,70 @@
+﻿<root>
+	<tools name="Formatting" enabled="true" dockable="false">
+		<tool name="FontName" />
+		<tool name="RealFontSize"/>
+		<tool separator="true"/>
+		<tool name="Bold" />
+		<tool name="Italic" />
+		<tool name="Underline" />
+		<tool separator="true"/>
+		<tool name="ForeColor" />
+		<tool name="BackColor"/>
+		<tool separator="true"/>
+		<tool name="FormatBlock"/>
+		<tool separator="true"/>
+		<tool name="Indent" />
+		<tool name="Outdent" />
+		<tool name="JustifyLeft" />
+		<tool name="JustifyCenter" />
+		<tool name="JustifyRight" />
+		<tool name="JustifyFull" />
+		<tool separator="true"/>
+		<tool name="InsertUnorderedList" />
+		<tool name="InsertOrderedList" />
+		<tool name="InsertHorizontalRule" />
+	</tools>
+	
+	<fontNames>    
+		<item name="Tahoma" />
+		<item name="Geneva" />
+		<item name="Arial" />    
+		<item name="Helvetica" />
+		<item name="sans-serif" />
+	</fontNames>
+	
+	<paragraphs>
+	   <paragraph name="Normal" value="&lt;p&gt;" />
+	   <paragraph name="&lt;H1&gt;Heading 1&lt;/H1&gt;" value="&lt;H1&gt;" />
+	   <paragraph name="&lt;H2&gt;Heading 2&lt;/H2&gt;" value="&lt;H2&gt;" />
+	   <paragraph name="&lt;H3&gt;Heading 3&lt;/H3&gt;" value="&lt;H3&gt;" />
+	</paragraphs>
+	
+	<tools name="InsertToolbar" dockable="false" size="200">
+		<tool name="AjaxSpellCheck"/>
+		<tool name="ImageManager" shortcut="CTRL+M"/>
+		<tool separator="true"/>
+		<tool name="InsertTable" />
+	</tools>
+
+	<tools enabled="true" dockable="false">
+		<tool name="Undo" />
+		<tool name="Redo" />
+		<tool separator="true"/>
+		<tool name="Cut" />
+		<tool name="Copy" />
+		<tool name="Paste" shortcut="CTRL+!"/>
+		<tool separator="true"/>
+		<tool name="PasteFromWord" />
+		<tool name="PasteFromWordNoFontsNoSizes" />
+		<tool name="PastePlainText" />
+		<tool name="PasteAsHtml"  />
+		<tool separator="true"/>
+		<tool name="FindAndReplace" />
+		<tool name="SelectAll" />
+	</tools>
+  
+	<tools name="MainToolbar" dockable="false">
+		<tool name="InsertSymbol" />
+		<tool name="FormatStripper" />
+	</tools>
+</root>

@@ -1,0 +1,15 @@
+<table Name="pStyleColorwaySeasonYear" formcolumns="5" gridcolumns="1" FormSQL="spx_StyleColorwaySeasonYear_PIVOT" 
+	   GridReadSQL="spx_StyleColorwaySeasonYear_PIVOT" GridSQL="spx_StyleColorwaySeasonYear_PIVOT">
+	<!-- BEGIN- REQUIRED FIELDS DONT CHANGE IT -->
+	<column Name="StyleID" PK="true" alias="StyleID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<!-- END- REQUIRED FIELDS DONT CHANGE IT -->
+	<column Name="StyleColorNo" alias="Color Code" Type="label" datatype="string" column="1" order="6" GridVisible="true" cellwidth="100px" GridWidth="100" Visible="false" enabled="false" GridOrder="102">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="StyleColorName" alias="Color Name" Type="label" datatype="string" column="1" order="6" GridVisible="true" cellwidth="100px" GridWidth="100" Visible="false" enabled="false" GridOrder="102">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+</table>

@@ -1,0 +1,385 @@
+/* Default CSS Stylesheet for a new Web Application project */
+
+BODY
+{       
+	 /*BACKGROUND-COLOR: #D3D3D3;*/
+	 FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#D3D3D3", endColorStr='#FFFFFF', gradientType='0') 
+	 FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	 FONT-SIZE: 11px; 
+	 border : 0px none;
+	 margin : 0px 5px 0px 5px;
+
+}
+
+.ToolbarTop
+{
+	background-image: url(../Images/bbbkgd.gif);
+	background-repeat: repeat-x;
+}
+
+.ToolbarShort
+{
+	background-image: url(../Images/bbTbBg.gif);
+	background-repeat: repeat-x;
+}
+
+.TableHeaderTop
+{
+	background-image: url(../Icons/table_header_top.gif);
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	padding:2px;
+
+}
+
+.TableHeader
+{
+	background-image: url(../Icons/table_header.gif);
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding:2px;
+
+}
+
+.TableHeaderBlue
+{
+	background-image: url(../Icons/table_header_blue.gif);
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding:2px;
+
+}
+
+.TableHeaderGreen
+{
+	background-image: url(../Icons/table_header_green.gif);
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding:2px;
+
+}
+
+.TableHeaderRed
+{
+	background-image: url(../Icons/table_header_red.gif);
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding:2px;
+
+}
+
+.TableHeaderOver
+{
+	background-image: url(../Icons/table_header_over.gif);
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding:2px;
+
+}
+
+INPUT, SELECT, TEXTAREA
+{
+	BORDER2: tan 1px solid;
+	FONT-FAMILY: Verdana; FONT-SIZE: 8pt;
+	/*dpbehavior:url(_ScriptLibrary/dpDefHL.htc);*/
+}
+
+button {
+background-color: aliceblue;
+background-image:url(/images/TDN/btn-bk1.gif);
+border: #8496CE 1px solid;
+font-family: verdana;
+font-size: 8pt;
+color: #5A6DA5;
+height: 23px;
+cursor: hand;
+}
+
+TD.Header 
+{
+
+    PADDING-RIGHT: 12px;
+    BORDER-TOP: #ffffff 1px solid;
+    PADDING-LEFT: 12px;
+    BACKGROUND: url(../Icons/TD_header.gif);
+    PADDING-BOTTOM: 6px;
+    FONT: 23px tahoma,arial,helvetica;
+    BORDER-LEFT: #ffffff 1px solid;
+    COLOR: #333333;
+    PADDING-TOP: 6px;
+    BORDER-BOTTOM: #aaaaaa 1px solid;    
+	 POSITION: relative;
+}
+
+TD.Header_Small
+{
+
+    PADDING-RIGHT: 12px;
+    BORDER-TOP: #ffffff 1px solid;
+    PADDING-LEFT: 12px;
+    BACKGROUND: url(../Icons/TD_header_small.gif);
+    PADDING-BOTTOM: 6px;
+    FONT: 18px tahoma,arial,helvetica;
+    BORDER-LEFT: #ffffff 1px solid;
+    COLOR: #000000;
+    PADDING-TOP: 6px;
+    BORDER-BOTTOM: #aaaaaa 1px solid;
+    POSITION: relative
+
+}
+
+H1, H2, H3, H4, H5, TH, THEAD, TFOOT
+{
+    COLOR: #003366;
+}
+H1	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	2em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H2	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1.75em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H3	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1.58em;
+	font-weight:	500;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H4	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1.33em;
+	font-weight:	500;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H5, DT	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H6	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	.8em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+		
+
+A:link	{	
+	text-decoration:	none;
+	color: Black;
+	}	
+		
+A:visited	{	
+	text-decoration:	none;
+	color: Black;
+	}	
+		
+A:active	{	
+	text-decoration:	none;
+	color:	#333399;
+	}	
+		
+A:hover	{	
+	text-decoration:	underline;
+	color: Black;
+	}
+	
+.fontHead
+{
+    FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;  
+	 COLOR: Black;
+}
+.font
+{
+    FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px; 
+    COLOR: Black;
+}
+
+.fontInputBlue 
+{
+	background-color: #87CEFA;  
+	FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px; 
+    COLOR: Black;
+}
+
+
+.fontInputYellow 
+{
+	background-color: #FFFF99;  
+	FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px; 
+    COLOR: Black;
+}
+
+.fontInputRed 
+{
+	background-color: #AE2F2F;  
+	FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px; 
+    COLOR: White; 
+}
+
+.SideNote
+{
+	border-right: silver 1px solid;
+	border-top: #FF9900 4px solid;
+	font-size: 7pt;
+	background: #e9e9e9;
+	float: left;
+	border-left: silver 1px solid;
+	width: 120px;
+	border-bottom: silver 1px solid;
+	font-family: Verdana, Arial, Sans-Serif;
+	padding: 5px;
+	margin: 8px;
+}
+
+
+
+.CodeBlock
+{
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	color: navy;
+	font-size: 8pt;
+	font-family: 'Courier New';
+	background-color: WhiteSmoke;
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: show;
+	border-left: solid 10px silver;
+	border-right: solid 1px silver;
+	
+	scrollbar-3dlight-color: #9b9b9b;
+    scrollbar-arrow-color: #9b9b9b;
+    scrollbar-base-color: #f9f9f9;
+    scrollbar-darkshadow-color: #e6e6e6;
+    scrollbar-face-color: #FFFFFF;
+    scrollbar-highlight-color: #f9f9f9;
+    scrollbar-shadow-color #e6e6e6;
+    clear: both;
+}
+
+.CodeBlockRed
+{
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	color: navy;
+	font-size: 8pt;
+	font-family: 'Courier New';
+	background-color: WhiteSmoke;
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: show;
+	border-left: 10px solid #CC0000;
+	border-right: solid 1px silver;
+	
+	scrollbar-3dlight-color: #9b9b9b;
+    scrollbar-arrow-color: #9b9b9b;
+    scrollbar-base-color: #f9f9f9;
+    scrollbar-darkshadow-color: #e6e6e6;
+    scrollbar-face-color: #FFFFFF;
+    scrollbar-highlight-color: #f9f9f9;
+    scrollbar-shadow-color #e6e6e6;
+    clear: both;
+}
+
+.CodeBlockBlue
+{
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	color: navy;
+	font-size: 8pt;
+	font-family: 'Courier New';
+	background-color: WhiteSmoke;
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: show;
+	border-left: 10px solid #508fe2;
+	border-right: solid 1px silver;
+	
+	 scrollbar-3dlight-color: #9b9b9b;
+    scrollbar-arrow-color: #9b9b9b;
+    scrollbar-base-color: #f9f9f9;
+    scrollbar-darkshadow-color: #e6e6e6;
+    scrollbar-face-color: #FFFFFF;
+    scrollbar-highlight-color: #f9f9f9;
+    scrollbar-shadow-color #e6e6e6;
+    clear: both;
+}
+
+.CodeHeader
+{
+	border-left: 10px solid silver;
+	border-right: solid 1px silver;
+	border-top: 4px solid silver;
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	font-size: 7pt;
+	background: WhiteSmoke;
+	width: 100%;
+	height: 35px;
+	font-family: Verdana, Arial, Sans-Serif;
+}

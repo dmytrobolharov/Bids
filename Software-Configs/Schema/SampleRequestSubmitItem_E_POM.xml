@@ -1,0 +1,84 @@
+
+<Table Name="pMSEvalsampmeas" formcolumns="2" gridcolumns="" FormSQL="spx_SampleRequest_MeasSample_Select" 
+       GridReadSQL="spx_SampleRequest_MeasSample_Select" GridSQL="spx_SampleRequest_MeasSample_Select">  
+	<column Name="SampleMeasId" PK="true" alias="SampleMeasId" Type="label" datatype="string" enabled="false" 
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  <column Name="SamplePomId" alias="SamplePomId" Type="label" datatype="string" enabled="true"
+		Visible="true" cellwidth="0" GridVisible="true" GridHeaderCss="hiddencol" GridRowCss="hiddencol"
+    GridWidth="0" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="SampleRequestHeaderId"  alias="SampleRequestHeaderId" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="AMLMeasHdrId" alias="AMLMeasHdrId" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="AmlMeaspomid" alias="AmlMeaspomid" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="SampleLabelId"  alias="SampleLabelId" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="SampleIndex"  alias="SampleIndex" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="POMRow" alias="POMRow" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="ImageId" alias="H" Type="label" datatype="string" GridHeaderCss="TableHeader" column="1" order="2" GridVisible="true" cellwidth="50" GridWidth="15" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="Refcode" alias="POM" Type="label" datatype="string" GridHeaderCss="TableHeader" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="POMDescription" alias="Description" Type="label" datatype="string" GridHeaderCss="TableHeader" column="1" order="2" GridVisible="true" cellwidth="300px" GridWidth="150" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="SortId" alias="SortId" Type="label" datatype="string" column="1" order="2" GridVisible="false" cellwidth="100px" GridWidth="100" Visible="false" enabled="false" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="TolPlus" alias="+Tol" Type="label" datatype="decimal" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="TolMinus" alias="-Tol" Type="label" datatype="decimal" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>  
+  <column Name="WSRowId" alias="WSRowId" Type="label" datatype="string" enabled="false"
+     Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="2" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="EvalMeasValue" alias="Eval Size" Type="label" datatype="decimal" GridHeaderCss="TableHeader" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="VdrMeasValue" alias="Vendor Sample" Type="textbox" GridHeaderCss="TableHeaderYellow" datatype="decimal" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="VdrDelta" alias="Vendor Delta" Type="label" datatype="decimal" GridHeaderCss="TableHeaderRed" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="VdrOutTol" alias="Vendor OutofTol" Type="label" datatype="string" column="1" order="2" GridVisible="true" GridHeaderCss="hiddencol" GridRowCss="hiddencol" cellwidth="0px" GridWidth="0" Visible="true" enabled="false" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="SampMeasValue" alias='&lt;input type="checkbox" name="chkCpy2Spec" onmouseover="SpecPicker(this)" onclick="SpecPicker(this)" /&gt;Sample' Type="textbox" datatype="decimal" GridHeaderCss="TableHeaderBlue" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="SampDelta" alias="Delta" Type="label" datatype="decimal" GridHeaderCss="TableHeaderRed" column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true" enabled="true" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column TrackChange="True" Name="SampOutTol" alias="Sample OutofTol" Type="label" datatype="string" column="1" order="2" GridVisible="true" GridHeaderCss="hiddencol" GridRowCss="hiddencol" cellwidth="0px" GridWidth="0" Visible="true" enabled="false" GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>  
+  <column TrackChange="True" Name="RevisedSpec" alias='&lt;input type="checkbox" name="chkCpy2Rev" onmouseover="RevPicker(this)" onclick="RevPicker(this)" /&gt;Rev' Type="textbox" GridHeaderCss="TableHeaderGreen" datatype="decimal"
+		column="1" order="2" GridVisible="true" cellwidth="20px" Visible="true" enabled="true" 	GridOrder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>      
+</Table>

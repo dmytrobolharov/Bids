@@ -1,0 +1,274 @@
+<Table Name="pGRSizeRange" formcolumns="3" gridcolumns="" FormSQL="spx_pGRSizeRangeDetail_UPDATE"
+	GridReadSQL="spx_pGRSizeRangeDetail_UPDATE" 
+	GridSQL="spx_pGRSizeRangeDetail_UPDATE">
+	
+	<column Name="SizeRangeId" PK="true" alias="SizeRangeId" Type="label"
+		datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="False"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="SizeRange" alias="Size Range" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="250px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="Active" alias="Active" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="250px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="1" alias="Size 1" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="2" alias="Size 2" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	
+
+	<column Name="3" alias="Size 3" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="4" alias="Size 4" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="5" alias="Size 5" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="6" alias="Size 6" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="7" alias="Size 7" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="8" alias="Size 8" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="9" alias="Size 9" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	
+	
+
+	<column Name="10" alias="Size 10" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="11" alias="Size 11" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="12" alias="Size 12" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="13" alias="Size 13" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="14" alias="Size 14" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="15" alias="Size 15" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="16" alias="Size 16" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="17" alias="Size 17" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="18" alias="Size 18" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="19" alias="Size 19" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="20" alias="Size 20" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="21" alias="Size 21" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="22" alias="Size 22" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="23" alias="Size 23" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="24" alias="Size 24" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="25" alias="Size 25" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="26" alias="Size 26" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="27" alias="Size 27" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="28" alias="Size 28" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="29" alias="Size 29" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="30" alias="Size 30" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="31" alias="Size 31" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="32" alias="Size 32" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="33" alias="Size 33" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="34" alias="Size 34" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="35" alias="Size 35" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="36" alias="Size 36" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="37" alias="Size 37" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="38" alias="Size 38" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="39" alias="Size 39" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="40" alias="Size 40" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="41" alias="Size 41" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="42" alias="Size 42" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="43" alias="Size 43" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="44" alias="Size 44" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="45" alias="Size 45" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="46" alias="Size 46" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="47" alias="Size 47" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+	<column Name="48" alias="Size 48" Type="TextBox"
+		datatype="string" enabled="true" Visible="true" cellwidth="100px" GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="3" order="21"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="false" GridWidth="150">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="3" order="22"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="false" GridWidth="150" dataformat="#shortdate#">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

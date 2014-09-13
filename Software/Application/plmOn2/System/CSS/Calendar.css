@@ -1,0 +1,133 @@
+.CalendarHeader
+{
+	
+	background-image: url(../Icons/table_header_yellow.gif);
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding:2px; 
+	COLOR: black;
+	border-bottom:1px solid #dcdcdc;
+	border-top:1px solid #dcdcdc;
+	border-left:1px solid #dcdcdc;
+	border-right:1px solid #dcdcdc;
+	background-color: #FFFFFF;
+	height: 20px
+} 
+
+
+.CalendarTitleHeader
+{
+	
+	background-color: #FFFFC0;
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	padding:2px; 
+	COLOR: black;
+	border-width: 0px;
+	height: 35px;
+} 
+
+
+.CalendarBody
+{
+	FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 11px;  
+	COLOR: black;
+	border-bottom:1px solid #dcdcdc;
+	border-top:1px solid #dcdcdc;
+	border-left:1px solid #dcdcdc;
+	border-right:1px solid #dcdcdc;
+	background-color: #FFFFFF;
+	height: 100%;
+}
+
+.CalendarHeaderWeekend
+{
+	
+	background-image: url(../Icons/table_header.gif);
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding:2px; 
+	COLOR: black;
+	border-bottom:1px solid #dcdcdc;
+	border-top:1px solid #dcdcdc;
+	border-left:1px solid #dcdcdc;
+	border-right:1px solid #dcdcdc;
+	background-color: #FFFFFF;
+	height: 20px
+} 
+
+.CalendarBodyWeekend
+{
+	border-right: #dcdcdc 1px solid;
+	border-top: #dcdcdc 1px solid;
+	font-weight: normal;
+	font-size: 11px;
+	border-left: #dcdcdc 1px solid;
+	color: black;
+	border-bottom: #dcdcdc 1px solid;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	height: 100%;
+	background-color: whitesmoke;
+}
+
+.CalendarHeaderToday
+{
+	
+	background-image: url(../Icons/table_header_green.gif);
+	background-repeat: repeat-x;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding:2px; 
+	COLOR: black;
+	border-bottom:1px solid #dcdcdc;
+	border-top:1px solid #dcdcdc;
+	border-left:1px solid #dcdcdc;
+	border-right:1px solid #dcdcdc;
+	background-color: #FFFFFF;
+	height: 20px
+} 
+
+.CalendarBodyToday
+{
+	border-right: #dcdcdc 1px solid;
+	border-top: #dcdcdc 1px solid;
+	font-weight: normal;
+	font-size: 11px;
+	border-left: #dcdcdc 1px solid;
+	color: black;
+	border-bottom: #dcdcdc 1px solid;
+	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	height: 100%;
+	background-color: white;
+}
+
+.MainTable{border-bottom: 1px solid black;}
+.HourTable {border-left: 1px solid black;}
+.EventTable{border-left: 1px solid black;}
+.EventMouseOut{margin-top: 1px;display: block;background-color: #CCFFE6;border-left: 1px solid black;border-right: 1px solid black;overflow: hidden;}
+.EventMouseOver { margin-top: 1px; display: block; background-color: lightblue; border-left: 1px solid black; border-right: 1px solid black; overflow: hidden;}
+.EventBorder {	background-color: #CCE6FF;	}
+.EventColumn{	background-color: #667FFF;	}
+.CellNonBussinessColor{	background-color: #FFE6CC;}
+.CellColor{background-color: ##99CCFF;}
+.CellHoverColor {background-color: #FFED95;}
+
+.CellHalfBorder{ border-bottom: 1px solid #EAD098;}
+.CellHourBorder { border-bottom: 1px solid #FFED95;}
+.HourColor {	background-color: #AABBD8;	cursor: default;  }
+
+
+
+
+
+
+

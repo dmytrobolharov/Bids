@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Yunique</title>
+
+    <link rel=stylesheet href="jQueryGantt/css/platform.css" type="text/css">
+    <link rel=stylesheet href="jQueryGantt/css/yuniqueTA.css" type="text/css">
+    <link rel=stylesheet href="jQueryGantt/css/kendo.common.min.css" type="text/css">
+    <link rel=stylesheet href="jQueryGantt/css/kendo.default.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="jQueryGantt/css/notifIt.css">
+
+    <link rel=stylesheet href="jQueryGantt/css/gantt.css" type="text/css">
+    <link rel=stylesheet href="jQueryGantt/css/print.css" type="text/css" media="print">
+
+    <script src="libs/jquery1_8.js"></script>
+    <script src="libs/jqueryUI1_8.js"></script>
+
+    <script src="libs/jquery.livequery.min.js"></script>
+    <script src="libs/jquery.timers.js"></script>
+    <script src="libs/platform.js"></script>
+    <script src="libs/date.js"></script>
+    <script src="libs/dateField/jquery.dateField.js"></script>
+    <script src="libs/JST/jquery.JST.js"></script>
+    <script src="libs/colResizable-1.3.min.js"></script>
+    <script src="libs/hmac-md5.js"></script>
+    <script src="libs/enc-base64-min.js"></script>
+    <script src="libs/YuniquePLM.JS.SDK2.js"></script>
+    <script src="libs/kendo.all.min.js"></script>
+    <script type="text/javascript" src="libs/notifIt.js"></script>
+    <script src="libs/i18nJs.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="jQueryGantt/css/jquery.svg.css">
+    <script type="text/javascript" src="libs/jquery.svg.min.js"></script>
+    <script type="text/javascript" src="libs/jquery.svgdom.1.8.js"></script>
+
+
+    <script src="ganttUtilities.js"></script>
+    <script src="ganttTask.js"></script>
+    <script src="ganttDrawer.js"></script>
+    <script src="ganttDrawerSVG.js"></script>
+    <script src="ganttGridEditor.js"></script>
+    <script src="ganttMaster.js"></script>
+</head>
+<body style="background-color: #fff;">
+
+
+<div id="workSpace" style="padding:0px; overflow-y:auto; overflow-x:hidden;border:1px solid #e5e5e5;position:relative;"></div>
+
+
+<style>
+    .inputYu
+    {
+        padding:0;
+    }
+    .YuContainer input,
+    .YuContainer select
+    {
+        padding:0;
+        font-size: 16px;
+    }
+    .deleteTemplate{
+        width: 189px;
+    }
+    .resEdit {
+        padding: 15px;
+    }
+    span.k-dropdown{
+        width: 140px;
+    }
+    span.typeYunique.k-dropdown{
+        width: 90px;
+    }
+
+    .resLine {
+        width: 95%;
+        padding: 3px;
+        margin: 5px;
+        border: 1px solid #d0d0d0;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    .ganttButtonBar h1{
+        color: #000000;
+        font-weight: bold;
+        font-size: 28px;
+        margin-left: 10px;
+    }
+
+</style>
+<div id="gantEditorTemplates" style="display:none">
+<script>
+    $('#gantEditorTemplates').tacalendar({
+        calendarHeight:'600'
+    });
+</script>
+</div>
+</body>
+</html>

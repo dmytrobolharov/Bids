@@ -1,0 +1,38 @@
+<Table Name="sAppSetting" formcolumns="1" gridcolumns=""
+       DataKeyField="AppSettingID" SortOrder="AppSettingOrder ASC"
+       PageSize="10" GridHeight="400" ViewMode="ByRow" SaveMode="ByPage" AutoSizeInReadMode="true"
+       AllowColumnReordering="false" AllowGrouping="false" ShowGroupFooter="false"
+       AllowSorting="false" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="true" AllowPaging="false" AllowFiltering="true"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="true"
+       AllowRowSelect="true" AllowMultiRowSelect="true"
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="true"
+       FormSQL="spx_AppSetting_ByConfigFile_SELECT"
+	     GridReadSQL="spx_AppSetting_ByConfigFile_SELECT"
+       GridSQL="spx_AppSetting_ByConfigFile_SELECT">
+  <column Name="AppSettingID" PK="true" alias="AppSettingID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="100%" GridVisible="false" GridWidth="100"
+		GridOrder="01" GridSearch="false" column="1" order="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="AppSettingComment" alias="Comment" Type="textbox" datatype="string"
+		column="1" order="02" GridVisible="true" cellwidth="100px" GridWidth="80" Visible="true"
+    GridOrder="02" enabled="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="AppSettingKey" alias="Key" Type="textbox" datatype="string"
+		column="1" order="03" GridVisible="true" cellwidth="200px" GridWidth="120" Visible="true"
+    GridOrder="03" enabled="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="AppSettingValue" alias="Value" Type="textbox" datatype="string"
+		column="1" order="04" GridVisible="true" cellwidth="100%" GridWidth="200" Visible="true"
+    GridOrder="04" enabled="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="AppSettingNote" alias="Note" Type="textbox" datatype="string"
+		column="1" order="05" GridVisible="true" cellwidth="200px" GridWidth="120" Visible="true"
+    GridOrder="07" enabled="true">
+    <Validator C5ass="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+</Table>

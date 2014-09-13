@@ -1,0 +1,28 @@
+<Table Name="pStyleDesignDetailConstruction" formcolumns="1" gridcolumns="" 
+	FormSQL="SELECT * FROM vwx_StyleDesignDetailConstruction_SEL" 
+	GridReadSQL=" SELECT * FROM vwx_StyleDesignDetailConstruction_SEL" 
+	GridSQL=" SELECT * FROM vwx_StyleDesignDetailConstruction_SEL"
+	ShowAlias = "true"
+	Border = "0" 
+	Height = "20"
+>
+	<column Name="StyleSeasonYearID" PK="true" alias="StyleSeasonYearID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="50px" Search="false" GridVisible="false" GridWidth="100" column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="Labelling" alias="Labelling" Type="memobox" datatype="string" column="1" gridorder="4"  NumberOfRows="2"
+		GridVisible="true" cellwidth="350px" GridWidth="75" Visible="true" enabled="true" Search="true" MaxLength="10">
+		<Validator Class="length" Type="" Minimum="0" Maximum="10" Text="" />
+	</column>
+	
+	<column Name="Disclaimer" alias="Disclaimer" Type="memobox" datatype="string" column="1" gridorder="4"  NumberOfRows="2"
+		GridVisible="true" cellwidth="350px" GridWidth="75" Visible="true" enabled="true" Search="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Delivered" alias="Delivered" Type="memobox" datatype="string" column="1" gridorder="4"  NumberOfRows="2"
+		GridVisible="true" cellwidth="350px" GridWidth="75" Visible="true" enabled="true" Search="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+
+</Table>

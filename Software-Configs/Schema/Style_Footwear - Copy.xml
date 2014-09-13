@@ -1,0 +1,256 @@
+<NewDataSet>
+	<Table Name="pStyleHeader" formcolumns="3" gridcolumns=""
+		   FormSQL="SELECT * FROM vwx_StyleHeader_SEL"
+		   GridReadSQL="SELECT * FROM vwx_StyleHeader_SEL"
+		   GridSQL="SELECT * FROM vwx_StyleHeader_SEL"
+		   ApiSQL="SELECT * FROM vwx_StyleHeader_SEL"
+		   ApiWhereClause=""
+		   ApiOrderBy="ORDER BY Description">
+		<column Name="StyleID" PK="true" alias="StyleID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" Search="false" GridVisible="false" GridWidth="100" column="1" gridorder="1"
+				ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="001" ApiRequired="true" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+   <!-- <column Name="StyleType" alias="Style Type" Type="dropdownlist" lookupquery="SELECT StyleTypeID, StyleTypeDescription FROM pStyleType ORDER BY StyleTypeOrder "
+            select="true" datatype="string" column="1" gridorder="2" GridVisible="false" cellwidth="150px"
+            cssClass="fontRed" Visible="true" enabled="true" textfield="StyleTypeDescription" ValueField="StyleTypeID"
+            AutoPostBack="true" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="002" ApiRequired="true" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>-->
+	  <column Name="StyleType" alias="Style Type" Type="dropdownlist" lookupquery="SELECT StyleTypeID, StyleTypeDescription FROM pStyleType ORDER BY StyleTypeOrder "
+   select="true" datatype="query" column="01" order="01" GridVisible="true" cellwidth="150px"
+   Visible="true" enabled="true" textfield="StyleTypeDescription" ValueField="StyleTypeID"
+   AutoPostBack="true" Search="false"
+   ApiDataType="string" ApiVisible="true" ApiOrder="003" ApiRequired="true" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" AddNullField="False">
+		  <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+		  <LookupTable XMLFileName="Lookup_pStyleType_ForFiltering.xml" ParentIDField="StyleType" ChildIDField="StyleTypeID" />
+	  </column>
+    <column Name="stylestatus" alias="stylestatus" Type="label" datatype="string" column="1" order="00" GridVisible="false" cellwidth="150px" GridWidth="75" Visible="false" enabled="false" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="003" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="StyleSet" alias="No of Item(s)" Type="dropdownlist" datatype="string" enabled="true"
+            Visible="true" cellwidth="150px" Search="false" GridVisible="false" column="1" order="1" gridorder="3"
+            lookupquery="SELECT Custom, CustomKey FROM xCustom9 ORDER BY Custom" select="true" cssClass="inputBlue"
+            textfield="CustomKey" ValueField="Custom" AutoPostBack="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="004" ApiRequired="true" ApiSearch="false" ApiSearchRequired="false" 
+			ApiSearchType="ALL">
+      <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Please select an item" />
+      <LookupTable XMLFileName="Lookup_xCustom9.xml" ParentIDField="StyleSet" ChildIDField="Custom" />
+    </column>
+   <!-- <column Name="CustomField1" alias="Division" Type="dropdownlist" select="true" cellwidth="150px"
+            datatype="string" column="1" gridorder="4" GridVisible="false" Visible="true" enabled="true"
+            lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom1 ORDER BY CustomKey" textfield="Custom"
+            ValueField="Custom" AutoPostBack="false" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="005" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>-->
+    <column Name="DevelopmentNo" alias="Dev No" Type="textbox" datatype="string" column="1" order="1"
+            gridorder="5" GridVisible="false" cellwidth="150px" GridWidth="75" Visible="false" enabled="false" Search="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="006" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="StyleNo" alias="Style No" Type="textbox" datatype="string" column="1" order="1" gridorder="7"
+            GridVisible="true" cellwidth="150px" GridWidth="75" Visible="true" enabled="true" Search="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="007" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="Description" alias="Description" Type="textbox" datatype="string" column="1" order="1"
+            gridorder="6" GridVisible="true" cellwidth="150px" GridWidth="125" Visible="true" enabled="true" Search="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="008" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="StyleCategory" alias="Style Category" Type="dropdownlist" datatype="string"
+            enabled="true" Visible="true" cellwidth="150px" Search="false" GridVisible="false" column="1" order="1"
+            gridorder="8" lookupquery="SELECT StyleCategoryId, StyleCategory FROM pStyleCategory  Where Active = 1 ORDER BY StyleCategory"
+            select="true" textfield="StyleCategory" ValueField="StyleCategoryId" AutoPostBack="false"
+            ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="009" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+      <LookupTable XMLFileName="Lookup_pStyleCategory_ForFiltering.xml" ParentIDField="StyleCategory" ChildIDField="StyleCategoryId" />
+    </column>
+<!--	  <column Name="CustomField3" alias="Delivery" Type="dropdownlist" datatype="string" column="2" order="1"
+		  gridorder="12" GridVisible="false" cellwidth="150px" Visible="true" enabled="true" Search="false"
+		  lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom3 ORDER BY CustomKey" select="true" textfield="Custom"
+		  ValueField="Custom" AutoPostBack="false" cssClass="inputBlue"
+		  ApiDataType="string" ApiVisible="true" ApiOrder="013" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		  <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		  <LookupTable XMLFileName="Lookup_iCustom3.xml" ParentIDField="CustomField3" ChildIDField="Custom" />
+	  </column>-->
+	  <column Name="SizeRange" alias="Size Range" Type="dropdownlist" datatype="string" enabled="true"
+			  Visible="true" cellwidth="150px" Search="false" GridVisible="false" column="2" order="1" gridorder="9"
+			  lookupquery="SELECT SizeRangeCode, SizeRangeCode AS SizeRangeCodeName FROM pSizeRange  Where Active = 1 ORDER BY SizeRangeCode"
+			  select="true" textfield="SizeRangeCode" ValueField="SizeRangeCode" AutoPostBack="false"
+			  ApiDataType="string" ApiVisible="true" ApiOrder="010" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		  <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+		  <LookupTable XMLFileName="Lookup_pSizeRange.xml" ParentIDField="SizeRange" ChildIDField="SizeRangeCode" />
+	  </column>
+	  <column Name="SizeClass" alias="Size Class" Type="dropdownlist" select="false" cellwidth="150px"
+			  datatype="string" column="2" order="1" gridorder="10" GridVisible="false" Visible="true" enabled="true"
+			  lookupquery="SELECT Custom, Custom AS CustomName FROM pSizeClass  Where Active = 1 ORDER BY CustomKey" textfield="Custom"
+			  ValueField="Custom" AutoPostBack="false" Search="false"
+			  ApiDataType="string" ApiVisible="true" ApiOrder="011" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		  <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+		  <LookupTable XMLFileName="Lookup_pSizeClass.xml" ParentIDField="SizeClass" ChildIDField="CustomKey" />
+	  </column>
+		<column Name="IntroSeasonYearID" alias="Intro Season Year" Type="dropdownlist" select="true" cellwidth="150px"
+		 datatype="query" column="2" order="01" GridVisible="true" Visible="true" enabled="true"
+		 lookupquery="SELECT SeasonYearID, SeasonYear FROM vwx_SeasonYear_SEL WHERE Active = 1" textfield="SeasonYear"
+		 ValueField="SeasonYearID" AutoPostBack="false" Search="false" cssClass=""
+		 ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="010" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		  <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+		  <LookupTable XMLFileName="Lookup_SeasonYear.xml" ParentIDField="IntroSeasonYearID" ChildIDField="SeasonYearID" />
+	  </column>
+
+		
+<!--	ADDED TO SHOW SEASON YEAR ON GRID
+
+<column Name="Season" alias="Season" Type="label" select="true" cellwidth="100px" GridWidth="50" datatype="string" column="2" order="01" GridVisible="true"
+			 Visible="false" enabled="false" AutoPostBack="false" Search="false" cssClass=""
+			 ApiDataType="string" ApiVisible="true" ApiOrder="011" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		  <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	  </column>
+  
+	  <column Name="Year" alias="Year" Type="label" select="true" cellwidth="100px" GridWidth="50" datatype="string" column="2" order="01" GridVisible="true"
+			  Visible="false" enabled="false" AutoPostBack="false" Search="false" cssClass=""
+			  ApiDataType="string" ApiVisible="true" ApiOrder="012" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		  <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	  </column>-->
+		
+    <column Name="CustomField5" alias="Category" Type="dropdownlist" datatype="string" column="2"
+            gridorder="14" GridVisible="false" cellwidth="150px" lookupquery="SELECT Custom, Custom AS CustomName FROM xCustom1  Where Active = 1 ORDER BY CustomKey"
+            Visible="false" enabled="false" textfield="Custom" ValueField="Custom" select="true" AutoPostBack="false" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="015" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+      <LookupTable XMLFileName="Lookup_xCustom1.xml" ParentIDField="CustomField5" ChildIDField="Custom" />
+    </column>
+    <column Name="WashType" alias="Garment Wash/Treatment" Type="dropdownlist" datatype="string"
+            column="2" gridorder="15" GridVisible="false" cellwidth="150px" Visible="false" enabled="true"
+            Search="false" lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom14 ORDER BY CustomKey"
+            select="true" textfield="Custom" ValueField="Custom" AutoPostBack="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="016" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+      <LookupTable XMLFileName="Lookup_iCustom14.xml" ParentIDField="WashType" ChildIDField="Custom" />
+    </column>
+    <column Name="DueDate" alias="Tech-Pack Due" Type="calendarbox" datatype="datetime" column="2" order="1"
+            gridorder="16" GridVisible="false" cellwidth="133px" lookupquery="" Visible="true" enabled="true"
+            textfield="" ValueField="" select="" AutoPostBack="false" Search="false" cssClass="inputBlue"
+            ApiDataType="datetime" ApiVisible="true" ApiOrder="017" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+    </column>
+    <column Name="CustomField10" alias="Start Ship Date" Type="calendarbox" datatype="datetime"
+            column="2" order="1" gridorder="17" GridVisible="false" cellwidth="133px" lookupquery="" Visible="true"
+            enabled="true" textfield="" ValueField="" select="" AutoPostBack="false" Search="false" cssClass="inputBlue"
+            ApiDataType="string" ApiVisible="true" ApiOrder="018" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+    </column>
+
+    <column Name="CustomField8" alias="Gender" Type="dropdownlist" datatype="string" column="1"
+            gridorder="19" GridVisible="false" cellwidth="150px" Visible="false" enabled="false" Search="false"
+            lookupquery="SELECT * FROM xCustom5 ORDER BY CustomKey" select="true" textfield="Custom"
+            ValueField="Custom" AutoPostBack="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="020" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+      <LookupTable XMLFileName="Lookup_xCustom5.xml" ParentIDField="CustomField8" ChildIDField="Custom" />
+    </column>
+    <column Name="StyleAttribute" alias="Attribute" Type="attributebox" datatype="string" column="1"
+            gridorder="20" GridVisible="false" cellwidth="130px" cellRows="4" Visible="false" ReadOnly="true"
+            enabled="false" lookupquery="" select="true" textfield="" ValueField="" AutoPostBack="true"
+            WindowURL="StyleAttributePopup.aspx" WindowXML=""
+            ApiDataType="string" ApiVisible="true" ApiOrder="021" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+		<column Name="CustomField3" alias="Status" Type="dropdownlist" datatype="string" column="3" order="1"
+				gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false"
+				lookupquery="SELECT * FROM xCustom8  Where Active = 1 ORDER BY CustomKey" select="true" textfield="Custom"
+				ValueField="Custom" AutoPostBack="false"
+				ApiDataType="string" ApiVisible="true" ApiOrder="022" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+			<LookupTable XMLFileName="Lookup_xCustom8.xml" ParentIDField="CustomField9" ChildIDField="Custom" />
+		</column>
+    <column Name="CustomField11" alias="CustomField11" Type="checkbox" datatype="string" column="3"
+            gridorder="22" GridVisible="false" cellwidth="150px" Visible="false" enabled="false" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="023" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="Designer" alias="Design Contact" Type="dropdownlist" select="true" cellwidth="150px"
+            datatype="string" column="2" order="1" gridorder="23" GridVisible="false" Visible="true" enabled="true"
+            lookupquery="SELECT Firstname +'  ' +Lastname as name, Firstname +'  ' + Lastname as fullname from users Where TradePartner = 0 order by firstname"
+            textfield="name" ValueField="fullname" AutoPostBack="false" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="024" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+      <LookupTable XMLFileName="Lookup_Style_Designers.xml" ParentIDField="Designer" ChildIDField="FullNameKey" />
+    </column>
+	<column Name="DivisionID" alias="Division" Type="dropdownlist" datatype="query" column="3" order="01" GridVisible="true" cellwidth="150px" Visible="true"
+          enabled="true" lookupquery="SELECT CustomID, Custom FROM iCustom1" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="true"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="019" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" AddNullField="False">
+    <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+    <LookupTable XMLFileName="Lookup_iCustom1.xml" ParentIDField="DivisionID" ChildIDField="CustomID" />
+  </column>
+
+    <column Name="CUser" alias="Created By" Type="label" datatype="string" column="3" order="1" gridorder="1"
+            GridVisible="true" cellwidth="150px" Visible="true" enabled="false" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="025" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="3" order="1" gridorder="2"
+            GridVisible="true" cellwidth="150px" Visible="true" enabled="false" Search="false"
+            ApiDataType="datetime" ApiVisible="true" ApiOrder="026" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="usercid" alias="usercid" Type="label" datatype="string" column="1" order="00" GridVisible="false" cellwidth="150px" GridWidth="75" Visible="false" enabled="false" Search="false"
+            ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="027" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="MUser" alias="Modified By" Type="label" datatype="string" column="3" order="1" gridorder="1"
+            GridVisible="false" cellwidth="150px" Visible="true" enabled="false" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="028" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="3" order="1" gridorder="0"
+            GridVisible="true" cellwidth="150px" Visible="true" enabled="false" Search="false"
+            ApiDataType="datetime" ApiVisible="true" ApiOrder="029" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="usermid" alias="usermid" Type="label" datatype="string" column="1" order="00" GridVisible="false" cellwidth="150px" GridWidth="75" Visible="false" enabled="false" Search="false"
+            ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="030" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="Change" alias="Version" Type="label" datatype="string" column="3" order="1" gridorder="28"
+            GridVisible="false" Visible="true" enabled="false" cellwidth="150px" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="031" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+
+    <column Name="Active" alias="Active" Type="dropdownlist" datatype="query" column="3" order="3"
+            GridVisible="true" cellwidth="150px" Visible="true" enabled="true" lookupquery="SELECT CustomKey, Custom FROM pActive"
+            select="true" textfield="Custom" ValueField="CustomKey" AutoPostBack="false" GridOrder="3"
+            ApiDataType="integer" ApiVisible="true" ApiOrder="032" ApiRequired="true" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+      <LookupTable XMLFileName="Lookup_pActive.xml" ParentIDField="Active" ChildIDField="CustomKey" />
+    </column>
+    <column Name="DesignSketchID" alias="DesignSketchID" Type="label" datatype="string" column="3" order="07" GridVisible="false" Visible="false" enabled="false" cellwidth="150px" Search="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="033" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+	  <column Name="CustomField12" alias="Heel Height" Type="dropdownlist" datatype="query" column="1" order="1" GridVisible="true" cellwidth="150px" Visible="true"
+	  enabled="true" Search="false" lookupquery="SELECT Custom AS CustomKey, Custom FROM iCustom29  Where Active = 1 ORDER BY CustomKey" select="true" textfield="Custom" ValueField="Custom" AutoPostBack="false" DefaultValue="In Progress"
+	  ApiDataType="string" ApiVisible="true" ApiOrder="015" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		  <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	  </column>
+	  <column Name="CustomField13" alias="Shoe Style" Type="dropdownlist" datatype="query" column="1" order="1" GridVisible="true" cellwidth="150px" Visible="true"
+  enabled="true" Search="false" lookupquery="SELECT Custom AS CustomKey, Custom FROM iCustom30  Where Active = 1 ORDER BY CustomKey" select="true" textfield="Custom" ValueField="Custom" AutoPostBack="false"
+			  DefaultValue=""
+  ApiDataType="string" ApiVisible="true" ApiOrder="015" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		  <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	  </column>
+	  <column Name="CustomField7" alias="Last #" Type="textbox" datatype="string" column="1" order="1" gridorder="18"
+		GridVisible="false" cellwidth="150px" Visible="true" enabled="true" Search="false"
+		ApiDataType="string" ApiVisible="true" ApiOrder="019" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		  <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	  </column>
+    <column Name="DesignSketchVersion" alias="DesignSketchVersion" Type="label" datatype="string" column="3" order="08" GridVisible="false" Visible="false" enabled="false" cellwidth="150px" Search="false"
+            ApiDataType="int" ApiVisible="true" ApiOrder="034" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+  </Table>
+</NewDataSet>

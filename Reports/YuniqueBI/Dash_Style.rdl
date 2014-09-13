@@ -1,0 +1,1891 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Rectangle Name="rectangle3">
+        <ReportItems>
+          <Chart Name="chart2">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="chart2_CategoryGroup1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Workflow.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!WorkflowSort.Value</Value>
+                      <Direction>Descending</Direction>
+                    </SortExpression>
+                    <SortExpression>
+                      <Value>=Fields!WorkStatus.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Workflow.Value</Label>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="chart2_SeriesGroup1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!WorkflowStatus.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!WorkflowSort.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!WorkflowStatus.Value</Label>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Series1">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!COUNT.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                        <Label>=Fields!COUNT.Value</Label>
+                        <Visible>true</Visible>
+                      </ChartDataLabel>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Width>0.376pt</Width>
+                        </Border>
+                        <Color>=code.StyleSubmitStatus(Fields!WorkStatus.Value)</Color>
+                      </Style>
+                      <ChartMarker>
+                        <Size>6pt</Size>
+                        <Style />
+                      </ChartMarker>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Subtype>PercentStacked</Subtype>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <CustomProperties>
+                    <CustomProperty>
+                      <Name>PointWidth</Name>
+                      <Value>0.6</Value>
+                    </CustomProperty>
+                    <CustomProperty>
+                      <Name>DrawingStyle</Name>
+                      <Value>Cylinder</Value>
+                    </CustomProperty>
+                  </CustomProperties>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                        <Width>0.75pt</Width>
+                      </Border>
+                      <FontFamily>verdana</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <Margin>False</Margin>
+                    <Interval>1</Interval>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                      <IntervalOffset>-1</IntervalOffset>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Enabled>True</Enabled>
+                      <Type>Inside</Type>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Enabled>True</Enabled>
+                      <Type>Inside</Type>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                      <IntervalOffset>-1</IntervalOffset>
+                    </ChartMinorTickMarks>
+                    <Reverse>true</Reverse>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <Angle>-65</Angle>
+                    <PreventFontShrink>true</PreventFontShrink>
+                    <PreventFontGrow>true</PreventFontGrow>
+                    <IncludeZero>false</IncludeZero>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                        <Width>0.75pt</Width>
+                      </Border>
+                      <FontFamily>verdana</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <Margin>False</Margin>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Enabled>True</Enabled>
+                      <Type>Cross</Type>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Enabled>True</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMinorTickMarks>
+                    <Reverse>true</Reverse>
+                    <Scalar>true</Scalar>
+                    <Minimum>0</Minimum>
+                    <HideLabels>true</HideLabels>
+                    <PreventFontShrink>true</PreventFontShrink>
+                    <PreventFontGrow>true</PreventFontGrow>
+                    <IncludeZero>false</IncludeZero>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                  <ProjectionMode>Perspective</ProjectionMode>
+                  <Shading>Simple</Shading>
+                  <WallThickness>5</WallThickness>
+                  <Clustered>true</Clustered>
+                </ChartThreeDProperties>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                    <Width>0.75pt</Width>
+                  </Border>
+                  <BackgroundColor>LightGrey</BackgroundColor>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <Border>
+                    <Color>White</Color>
+                    <Style>Solid</Style>
+                    <Width>0.75pt</Width>
+                  </Border>
+                </Style>
+                <Position>RightCenter</Position>
+                <Layout>Column</Layout>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <AutoFitTextDisabled>true</AutoFitTextDisabled>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>dsStyleWorkflowStatus</DataSetName>
+            <Top>0.25in</Top>
+            <Height>3.125in</Height>
+            <Width>10.9375in</Width>
+            <CustomProperties>
+              <CustomProperty>
+                <Name>__Upgraded2005__</Name>
+                <Value>__Upgraded2005__</Value>
+              </CustomProperty>
+            </CustomProperties>
+            <Style>
+              <Border>
+                <Color>DarkGray</Color>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Chart>
+          <Textbox Name="textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Style Workflow Status</Value>
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>DimGray</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Left>0.0625in</Left>
+            <Height>0.25in</Height>
+            <Width>10.875in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="line2">
+            <Top>0.25in</Top>
+            <Height>0in</Height>
+            <Width>10.9375in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Color>DarkGray</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+        </ReportItems>
+        <DataElementOutput>ContentsOnly</DataElementOutput>
+        <Top>3.6875in</Top>
+        <Left>0.025in</Left>
+        <Height>3.4375in</Height>
+        <Width>10.9375in</Width>
+        <Style>
+          <Border>
+            <Color>Gray</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="rectangle1">
+        <ReportItems>
+          <Chart Name="chart1">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label />
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="chart1_SeriesGroup1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!StyleTypeDescription.Value</GroupExpression>
+                      <GroupExpression>=Fields!StyleCount.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <Label>=Fields!StyleTypeDescription.Value</Label>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Series1">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!StyleCount.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Medium</FontWeight>
+                        </Style>
+                        <Label>=Fields!StyleTypeDescription.Value &amp; " (" &amp; Fields!StyleCount.Value &amp; ")"</Label>
+                        <Visible>true</Visible>
+                        <Rotation>90</Rotation>
+                      </ChartDataLabel>
+                      <Style>
+                        <Border>
+                          <Color>DarkGray</Color>
+                          <Width>0.376pt</Width>
+                        </Border>
+                        <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                        <BackgroundGradientEndColor>Gainsboro</BackgroundGradientEndColor>
+                      </Style>
+                      <ChartMarker>
+                        <Size>6pt</Size>
+                        <Style />
+                      </ChartMarker>
+                      <CustomProperties>
+                        <CustomProperty>
+                          <Name>PieLabelStyle</Name>
+                          <Value>Outside</Value>
+                        </CustomProperty>
+                      </CustomProperties>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Subtype>Doughnut</Subtype>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <Disabled>true</Disabled>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                        <Width>0.75pt</Width>
+                      </Border>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <Margin>False</Margin>
+                    <Interval>1</Interval>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                      <IntervalOffset>-1</IntervalOffset>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Enabled>True</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Type>None</Type>
+                    </ChartMinorTickMarks>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <PreventFontShrink>true</PreventFontShrink>
+                    <PreventFontGrow>true</PreventFontGrow>
+                    <IncludeZero>false</IncludeZero>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                        <Width>0.75pt</Width>
+                      </Border>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <Margin>True</Margin>
+                    <ChartMajorGridLines>
+                      <Enabled>True</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Enabled>True</Enabled>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.75pt</Width>
+                        </Border>
+                      </Style>
+                      <Interval>NaN</Interval>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Type>None</Type>
+                    </ChartMinorTickMarks>
+                    <Scalar>true</Scalar>
+                    <Minimum>0</Minimum>
+                    <PreventFontShrink>true</PreventFontShrink>
+                    <PreventFontGrow>true</PreventFontGrow>
+                    <IncludeZero>false</IncludeZero>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                  <ProjectionMode>Perspective</ProjectionMode>
+                  <Inclination>45</Inclination>
+                  <WallThickness>15</WallThickness>
+                  <Clustered>true</Clustered>
+                </ChartThreeDProperties>
+                <Style>
+                  <Border>
+                    <Color>White</Color>
+                    <Style>Solid</Style>
+                    <Width>0.75pt</Width>
+                  </Border>
+                  <BackgroundGradientEndColor>DarkGray</BackgroundGradientEndColor>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Hidden>true</Hidden>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                    <Width>0.75pt</Width>
+                  </Border>
+                </Style>
+                <Position>RightCenter</Position>
+                <Layout>Column</Layout>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <AutoFitTextDisabled>true</AutoFitTextDisabled>
+              </ChartLegend>
+            </ChartLegends>
+            <Palette>Pastel</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>dsStyleWhereSeason</DataSetName>
+            <Top>0.25in</Top>
+            <Height>2.5625in</Height>
+            <Width>5.625in</Width>
+            <CustomProperties>
+              <CustomProperty>
+                <Name>__Upgraded2005__</Name>
+                <Value>__Upgraded2005__</Value>
+              </CustomProperty>
+            </CustomProperties>
+            <Style>
+              <Border>
+                <Color>White</Color>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientEndColor>Silver</BackgroundGradientEndColor>
+            </Style>
+          </Chart>
+          <Textbox Name="textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>  Style Type</Value>
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>DimGray</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Height>0.25in</Height>
+            <Width>5.625in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <DataElementOutput>ContentsOnly</DataElementOutput>
+        <Top>0.75in</Top>
+        <Left>0.025in</Left>
+        <Height>2.8125in</Height>
+        <Width>5.625in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Color>Gray</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="rectangle4">
+        <ReportItems>
+          <Rectangle Name="rectangle11">
+            <ReportItems>
+              <Textbox Name="textbox13">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Costing</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.25in</Height>
+                <Width>1.625in</Width>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="txtOpenCount">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!CostingCount.Value, "dsStyleCount")</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>26pt</FontSize>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.25in</Top>
+                <Height>0.5in</Height>
+                <Width>1.625in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>1.9375in</Top>
+            <Left>0.125in</Left>
+            <Height>0.75in</Height>
+            <Width>1.625in</Width>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Rectangle>
+          <Textbox Name="textbox12">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>  Snapshot...</Value>
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>DimGray</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Height>0.25in</Height>
+            <Width>5.25in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Rectangle Name="rectangle10">
+            <ReportItems>
+              <Textbox Name="textbox11">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Colors</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.25in</Height>
+                <Width>1.625in</Width>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="txtColorCout">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!ColorCount.Value, "dsStyleCount")</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>26pt</FontSize>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.25in</Top>
+                <Height>0.5in</Height>
+                <Width>1.625in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>1.125in</Top>
+            <Left>0.125in</Left>
+            <Height>0.75in</Height>
+            <Width>1.625in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="rectangle7">
+            <ReportItems>
+              <Textbox Name="txtMaterialCount">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!StyleCount.Value, "dsStyleCount")</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>26pt</FontSize>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.25in</Top>
+                <Height>0.5in</Height>
+                <Width>1.625in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="textbox9">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Styles</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.25in</Height>
+                <Width>1.625in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>0.3125in</Top>
+            <Left>3.5in</Left>
+            <Height>0.75in</Height>
+            <Width>1.625in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Rectangle>
+          <Line Name="line1">
+            <Top>2.75in</Top>
+            <Left>0.0625in</Left>
+            <Height>0in</Height>
+            <Width>4.9375in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Color>WhiteSmoke</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Rectangle Name="rectangle5">
+            <ReportItems>
+              <Textbox Name="txtStyleCount">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!SeasonYearName.Value, "dsSeasonYearSelected")</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>26pt</FontSize>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.25in</Top>
+                <Height>0.5in</Height>
+                <Width>3.3125in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="textbox6">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Season &amp; Year</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.25in</Height>
+                <Width>3.3125in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>0.3125in</Top>
+            <Left>0.125in</Left>
+            <Height>0.75in</Height>
+            <Width>3.3125in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="rectangle8">
+            <ReportItems>
+              <Textbox Name="textbox5">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Quotes</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.25in</Height>
+                <Width>1.625in</Width>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="textbox4">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!QuoteCount.Value, "dsStyleCount")</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>26pt</FontSize>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.25in</Top>
+                <Height>0.5in</Height>
+                <Width>1.625in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>1.9375in</Top>
+            <Left>1.8125in</Left>
+            <Height>0.75in</Height>
+            <Width>1.625in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="rectangle9">
+            <ReportItems>
+              <Textbox Name="textbox8">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Samples</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Left>0.54514in</Left>
+                <Height>0.22792in</Height>
+                <Width>0.62153in</Width>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="textbox7">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!SampleCount.Value, "dsStyleCount")</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>26pt</FontSize>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.24306in</Top>
+                <Height>0.5in</Height>
+                <Width>1.625in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Image Name="Image4">
+                <Source>Embedded</Source>
+                <Value>icon_shortcut</Value>
+                <Sizing>FitProportional</Sizing>
+                <ActionInfo>
+                  <Actions>
+                    <Action>
+                      <Drillthrough>
+                        <ReportName>Dash_Sample</ReportName>
+                        <Parameters>
+                          <Parameter Name="SeasonYearID">
+                            <Value>=Parameters!SeasonYearID.Value</Value>
+                          </Parameter>
+                        </Parameters>
+                      </Drillthrough>
+                    </Action>
+                  </Actions>
+                </ActionInfo>
+                <Top>0.03347in</Top>
+                <Left>1.18056in</Left>
+                <Height>0.16667in</Height>
+                <Width>0.16667in</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Image>
+              <Line Name="Line3">
+                <Top>0.24181in</Top>
+                <Height>0in</Height>
+                <Width>1.625in</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>1.94444in</Top>
+            <Left>3.5in</Left>
+            <Height>0.74306in</Height>
+            <Width>1.625in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="rectangle12">
+            <ReportItems>
+              <Textbox Name="textbox16">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Tech Packs</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.25in</Height>
+                <Width>1.625in</Width>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="textbox15">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!TechPackCount.Value, "dsStyleCount")</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>26pt</FontSize>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.25in</Top>
+                <Height>0.5in</Height>
+                <Width>1.625in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>1.125in</Top>
+            <Left>3.5in</Left>
+            <Height>0.75in</Height>
+            <Width>1.625in</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="rectangle6">
+            <ReportItems>
+              <Textbox Name="textbox14">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!MaterialCount.Value, "dsStyleCount")</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>26pt</FontSize>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.25in</Top>
+                <Height>0.5in</Height>
+                <Width>1.625in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="textbox10">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Main Materials</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>DimGray</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.25in</Height>
+                <Width>1.625in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>1.125in</Top>
+            <Left>1.8125in</Left>
+            <Height>0.75in</Height>
+            <Width>1.625in</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Rectangle>
+        </ReportItems>
+        <DataElementOutput>ContentsOnly</DataElementOutput>
+        <Top>0.75in</Top>
+        <Left>5.7125in</Left>
+        <Height>2.75in</Height>
+        <Width>5.25in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Color>Gray</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="rectangle2">
+        <ReportItems>
+          <Image Name="imgLogo">
+            <Source>External</Source>
+            <Value>Yunique Logo.jpg</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.04444in</Top>
+            <Left>0.09375in</Left>
+            <Height>0.45in</Height>
+            <Width>3.025in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Image Name="Image1">
+            <Source>External</Source>
+            <Value>Lines.jpg</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.56005in</Top>
+            <Height>0.06495in</Height>
+            <Width>10.9375in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="textbox22">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Style Dashboard</Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                      <Color>Silver</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>textbox22</rd:DefaultName>
+            <Top>0.04444in</Top>
+            <Left>7.62145in</Left>
+            <Height>0.41001in</Height>
+            <Width>3.2223in</Width>
+            <ZIndex>2</ZIndex>
+            <ToolTip>##label##</ToolTip>
+            <Style>
+              <VerticalAlign>Middle</VerticalAlign>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <DataElementOutput>ContentsOnly</DataElementOutput>
+        <Left>0.03125in</Left>
+        <Height>0.625in</Height>
+        <Width>10.9375in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Color>Gray</Color>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+      </Rectangle>
+    </ReportItems>
+    <Height>8.5in</Height>
+    <Style />
+  </Body>
+  <Width>11in</Width>
+  <Page>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <InteractiveHeight>11in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <Style>
+      <BackgroundColor>WhiteSmoke</BackgroundColor>
+    </Style>
+  </Page>
+  <Author>Yunique Solutions</Author>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <DataSourceReference>plmOn</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>e5473de0-b72a-4538-9dd3-0569a3302120</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsSeasonYear">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_SeasonYear_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SeasonYearID">
+          <DataField>SeasonYearID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="SeasonYear">
+          <DataField>SeasonYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsStyleWhereSeason">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SeasonYearID">
+            <Value>=Parameters!SeasonYearID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_StyleFolder_WhereSeason_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="StyleCount">
+          <DataField>StyleCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StyleTypeDescription">
+          <DataField>StyleTypeDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SeasonYearID">
+          <DataField>SeasonYearID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Season">
+          <DataField>Season</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsStyleCount">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SeasonYearID">
+            <Value>=Parameters!SeasonYearID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_StyleFolder_WHERECount_SELECT</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="StyleCount">
+          <DataField>StyleCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ColorCount">
+          <DataField>ColorCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SampleCount">
+          <DataField>SampleCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MaterialCount">
+          <DataField>MaterialCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CountryCount">
+          <DataField>CountryCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TechPackCount">
+          <DataField>TechPackCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QuoteCount">
+          <DataField>QuoteCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CostingCount">
+          <DataField>CostingCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsSeasonYearSelected">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SeasonYearID">
+            <Value>=Parameters!SeasonYearID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_SeasonYear_SELECTED</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SeasonYearID">
+          <DataField>SeasonYearID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Season">
+          <DataField>Season</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Active">
+          <DataField>Active</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Sort">
+          <DataField>Sort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CUser">
+          <DataField>CUser</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CDate">
+          <DataField>CDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="MUser">
+          <DataField>MUser</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MDate">
+          <DataField>MDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CurrentSeason">
+          <DataField>CurrentSeason</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SAPCode">
+          <DataField>SAPCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SeasonYearName">
+          <DataField>SeasonYearName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsStyleWorkflowStatus">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SeasonYearID">
+            <Value>=Parameters!SeasonYearID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_StyleFolder_WorkflowBySeason_SELECT</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="COUNT">
+          <DataField>COUNT</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SeasonYearID">
+          <DataField>SeasonYearID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Workflow">
+          <DataField>Workflow</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WorkflowSort">
+          <DataField>WorkflowSort</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="WorkStatus">
+          <DataField>WorkStatus</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="WorkflowStatus">
+          <DataField>WorkflowStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="SeasonYearID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsSeasonYear</DataSetName>
+          <ValueField>SeasonYearID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Season Year</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsSeasonYear</DataSetName>
+          <ValueField>SeasonYearID</ValueField>
+          <LabelField>SeasonYear</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function FormatDate(ByVal inputDate as Object) As String
+	If inputDate Is Nothing Then
+		Return String.Empty
+	ElseIf	IsDate(inputDate) Then
+		Return CDate(inputDate).ToShortDateString()
+	Else
+		Return String.Empty
+	End If
+End Function
+
+Function StyleSubmitStatus(ByVal Status As String) As String
+        Select Case Status
+            Case "1"
+                Return "Silver"  
+            Case "2"
+                Return "CornflowerBlue"
+            Case "3"
+                Return "Gold"
+            Case "6"
+                Return "CornflowerBlue"
+            Case "100"	
+                Return "YellowGreen"
+            Case "102"	'
+                Return "Green"
+            Case "101"
+                Return "Red"
+            Case "999"
+                Return "Orange"
+            Case Else
+                Return "Gray"
+        End Select
+    End Function</Code>
+  <EmbeddedImages>
+    <EmbeddedImage Name="icon_shortcut">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODlhEAAQANUAABhdGP8A/2vTOUK6IVJRUnN1cxCiCACCAHvjUmbMMzmaIXuueyF1GCmWEFKOQjGaGFK6KTFNMWZmZoz3WhiOCHPfQkqyKSmuEDFZKVq6OTmWKTFxKTG2GJn/ZozzUnvnSkq+IVrHKVpZWhCKCCGSECl5IUKiKXt9e2PPQmvPQoSqhAiGCITrUilpIVLHKSGGEErDIXvfQlK2MTNmMxiqCCFdITlNOXPXQgiGAEqyMTFZMUKuKf///wAAAAAAAAAAACH5BAUUADwALAAAAAAQABAAAAZ8QB5vtSgaj8LkwUC7cAYgVyLhSApxzWd0uhFZh06oNNEifHmjJyw0tdjOPMpgPRVUFHASPWGPVTZnDWwQCRUxHywmgQkQAAwViB47El8PEDUEJxosHhM5XlYvM6AqNxMdJaBWJ1YyHSkRqnA8KAgYlLNJGTqyuQUFucFJQQA7</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>d9e96476-733f-4f0c-b8e5-02b970d9cf87</rd:ReportID>
+</Report>

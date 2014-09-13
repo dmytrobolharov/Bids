@@ -1,0 +1,2 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="LinePlan_Item_Business.ascx.vb" Inherits="plmOnApp.LinePlan_Item_Business" %>
+<asp:placeholder id="plhControlsHolder" runat="server"></asp:placeholder>

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="plmOn">
+      <rd:DataSourceID>f4ce3ef2-b95c-423b-a458-2a22365322cd</rd:DataSourceID>
+      <DataSourceReference>plmOn</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="IC">
+      <DataType>String</DataType>
+      <Prompt>ImageCatalogID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Top>0.125in</Top>
+        <Width>8.375in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>26pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>0.0625in</Left>
+        <Height>0.5in</Height>
+        <Value>Internal Image Report</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1.5in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <rd:ReportID>716fb3ea-e06d-4081-b036-f56690d9a821</rd:ReportID>
+  <DataSets>
+    <DataSet Name="dsImgCatRpt">
+      <Fields>
+        <Field Name="Row">
+          <DataField>Row</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ImageCode">
+          <DataField>ImageCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ImageDescription">
+          <DataField>ImageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrgImageName">
+          <DataField>OrgImageName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Designer">
+          <DataField>Designer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CadDesigner">
+          <DataField>CadDesigner</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Component">
+          <DataField>Component</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FilePath">
+          <DataField>FilePath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CatalogName">
+          <DataField>CatalogName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CatalogDescription">
+          <DataField>CatalogDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CUser">
+          <DataField>CUser</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CDate">
+          <DataField>CDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ImageSort">
+          <DataField>ImageSort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ImageNo">
+          <DataField>ImageNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_ImageCatalog_SELECT</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ImageCatalogID">
+            <Value>=Parameters!IC.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>8.5in</Width>
+  <Body>
+    <ReportItems>
+      <Matrix Name="mtxImgCat">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>2in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <DataSetName>dsImgCatRpt</DataSetName>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>0.03125in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup1">
+                <GroupExpressions>
+                  <GroupExpression>1</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox7">
+                  <rd:DefaultName>textbox7</rd:DefaultName>
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>1</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value />
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <Top>0.125in</Top>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <Height>0.21917in</Height>
+            <DynamicColumns>
+              <Grouping Name="matrix1_Row">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Row.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="Row">
+                  <rd:DefaultName>Row</rd:DefaultName>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>2</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Row.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Width>2.03125in</Width>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox2">
+              <rd:DefaultName>textbox2</rd:DefaultName>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+              <ZIndex>3</ZIndex>
+              <CanGrow>true</CanGrow>
+              <Value />
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>2.78083in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <List Name="lstImgCat">
+                    <DataSetName>dsImgCatRpt</DataSetName>
+                    <ReportItems>
+                      <Rectangle Name="rctImgCat">
+                        <ReportItems>
+                          <Textbox Name="ImageNo">
+                            <rd:DefaultName>ImageNo</rd:DefaultName>
+                            <Top>1.75in</Top>
+                            <Width>1in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <TextAlign>Left</TextAlign>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>12</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.875in</Left>
+                            <Height>0.125in</Height>
+                            <Value>=Fields!ImageNo.Value</Value>
+                          </Textbox>
+                          <Textbox Name="ImageDescription">
+                            <rd:DefaultName>ImageDescription</rd:DefaultName>
+                            <Top>1.875in</Top>
+                            <Width>1in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <TextAlign>Left</TextAlign>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>11</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.875in</Left>
+                            <Height>0.125in</Height>
+                            <Value>=Fields!ImageDescription.Value</Value>
+                          </Textbox>
+                          <Textbox Name="Component">
+                            <rd:DefaultName>Component</rd:DefaultName>
+                            <Top>2.625in</Top>
+                            <Width>1in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <TextAlign>Left</TextAlign>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>10</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.875in</Left>
+                            <Value>=Fields!Component.Value</Value>
+                          </Textbox>
+                          <Textbox Name="CadDesigner">
+                            <rd:DefaultName>CadDesigner</rd:DefaultName>
+                            <Top>2.375in</Top>
+                            <Width>1in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <TextAlign>Left</TextAlign>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>9</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.875in</Left>
+                            <Height>0.25in</Height>
+                            <Value>=Fields!CadDesigner.Value</Value>
+                          </Textbox>
+                          <Textbox Name="Designer">
+                            <rd:DefaultName>Designer</rd:DefaultName>
+                            <Top>2.25in</Top>
+                            <Width>1in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <TextAlign>Left</TextAlign>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>8</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.875in</Left>
+                            <Height>0.125in</Height>
+                            <Value>=Fields!Designer.Value</Value>
+                          </Textbox>
+                          <Textbox Name="OrgImageName">
+                            <rd:DefaultName>OrgImageName</rd:DefaultName>
+                            <Top>2in</Top>
+                            <Width>1in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <TextAlign>Left</TextAlign>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>7</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.875in</Left>
+                            <Height>0.25in</Height>
+                            <Value>=Fields!OrgImageName.Value</Value>
+                          </Textbox>
+                          <Textbox Name="textbox12">
+                            <Top>2.625in</Top>
+                            <Width>0.75in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>6</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.125in</Left>
+                            <Value>Component: </Value>
+                          </Textbox>
+                          <Textbox Name="textbox11">
+                            <Top>2.375in</Top>
+                            <Width>0.75in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>5</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.125in</Left>
+                            <Height>0.25in</Height>
+                            <Value>CAD Designer: </Value>
+                          </Textbox>
+                          <Textbox Name="textbox10">
+                            <Top>2.25in</Top>
+                            <Width>0.75in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>4</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.125in</Left>
+                            <Height>0.125in</Height>
+                            <Value>Designer: </Value>
+                          </Textbox>
+                          <Textbox Name="textbox9">
+                            <Top>2in</Top>
+                            <Width>0.75in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>3</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.125in</Left>
+                            <Height>0.25in</Height>
+                            <Value>Org. Image Name: </Value>
+                          </Textbox>
+                          <Textbox Name="textbox8">
+                            <Top>1.875in</Top>
+                            <Width>0.75in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>2</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.125in</Left>
+                            <Height>0.125in</Height>
+                            <Value>Final Name: </Value>
+                          </Textbox>
+                          <Textbox Name="txtproj">
+                            <Top>1.75in</Top>
+                            <Width>0.75in</Width>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>700</FontWeight>
+                              <PaddingLeft>1pt</PaddingLeft>
+                              <PaddingRight>1pt</PaddingRight>
+                              <PaddingTop>1pt</PaddingTop>
+                              <PaddingBottom>1pt</PaddingBottom>
+                            </Style>
+                            <ZIndex>1</ZIndex>
+                            <CanGrow>true</CanGrow>
+                            <Left>0.125in</Left>
+                            <Height>0.125in</Height>
+                            <Value>Project #: </Value>
+                          </Textbox>
+                          <Image Name="image2">
+                            <Sizing>FitProportional</Sizing>
+                            <Top>0.125in</Top>
+                            <Width>1.75in</Width>
+                            <MIMEType>image/jpeg</MIMEType>
+                            <Source>External</Source>
+                            <Style />
+                            <Left>0.125in</Left>
+                            <Height>1.5in</Height>
+                            <Value>=Fields!FilePath.Value</Value>
+                          </Image>
+                        </ReportItems>
+                        <Style>
+                          <BorderColor>
+                            <Default>DarkGray</Default>
+                          </BorderColor>
+                          <BorderStyle>
+                            <Default>Solid</Default>
+                          </BorderStyle>
+                        </Style>
+                        <Height>2.75in</Height>
+                      </Rectangle>
+                    </ReportItems>
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </List>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>3.125in</Height>
+  </Body>
+  <Language>en-US</Language>
+</Report>

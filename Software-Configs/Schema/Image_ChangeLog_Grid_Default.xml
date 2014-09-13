@@ -1,0 +1,33 @@
+<Table Name="pImageChange" formcolumns="3" gridcolumns="" FormSQL="spx_ImageChangeLog_SELECT"
+	GridReadSQL="spx_ImageChangeLog_SELECT" GridSQL="spx_ImageChangeLog_SELECT">
+	
+	<column Name="ImageChangeID" PK="true" alias="ImageChangeID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" Search="false" GridVisible="false"
+		GridWidth="100" column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="ImageChangeNo" alias="ID" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="40"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="ImageChangeType" alias="Status" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="80"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="ImageChangeDescription" alias="Notes" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="250"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="ImageChangeNotifyTo" alias="Sent To" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" Search="false" GridVisible="true" GridWidth="250"
+		column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

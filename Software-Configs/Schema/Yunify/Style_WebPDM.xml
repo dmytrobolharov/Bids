@@ -1,0 +1,183 @@
+﻿<Table Name="pStyleHeader" formcolumns="3" gridcolumns="" UseRadGrid="true" 
+       DataKeyField="StyleID" SortOrder="Active DESC, MDate DESC"
+       PageSize="10" GridHeight="540" ViewMode="ByRow" SaveMode="ByPage" AutoSizeInReadMode="true"
+       AllowColumnReordering="false" AllowGrouping="true" ShowGroupFooter="false"
+       AllowSorting="true" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="false" AllowPaging="true" AllowFiltering="false"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false" 
+       AllowRowSelect="false" AllowMultiRowSelect="false" 
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="false" 
+       FormSQL="SELECT * FROM vwx_StyleHeader_StyleDevelopmentItem_SEL" 
+       GridReadSQL=" SELECT * FROM vwx_StyleHeader_StyleDevelopmentItem_SEL" 
+       GridSQL=" SELECT * FROM vwx_StyleHeader_StyleDevelopmentItem_SEL" FieldSecurity="StyleStatusID">
+	<column Name="StyleID" PK="true" alias="Style ID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" Search="false" GridVisible="False" GridWidth="100" column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+        <column Name="DesignSketchID" alias="Picture" Type="StyleImage" datatype="string" enabled="false"
+            Visible="false" cellwidth="50px" Search="false" GridVisible="false" GridWidth="50" column="1" gridorder="0">
+            <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+        </column>
+	<column Name="StyleType" alias="Style Type" Type="dropdownlist" lookupquery="SELECT StyleTypeID, StyleTypeDescription FROM pStyleType ORDER BY StyleTypeOrder " select="true" datatype="string" column="1" gridorder="2" GridVisible="FALSE" cellwidth="150px" cssClass="fontRed" Visible="true" enabled="true" textfield="StyleTypeDescription" ValueField="StyleTypeID" AutoPostBack="true" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="StyleSet" alias="No of Item(s)" Type="dropdownlist" datatype="string" enabled="true" Visible="true" cellwidth="150px" Search="false" GridVisible="false" column="1" gridorder="3" lookupquery="SELECT Custom, CustomKey FROM xCustom9 ORDER BY Custom" select="true" DefaultValue="1" cssClass="inputBlue" textfield="CustomKey" ValueField="Custom" AutoPostBack="false">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Please select an item" />
+	</column>
+	<column Name="CustomField1" alias="Division" Type="dropdownlist" select="true" cellwidth="150px" datatype="query"
+		 column="1" gridorder="4" GridVisible="false" Visible="true" enabled="true"
+		lookupquery="SELECT CustomID, Custom FROM iCustom1 ORDER BY CustomKey" textfield="Custom" DefaultValue="" ValueField="CustomID"
+		AutoPostBack="false" Search="false" CacheTableName="iCustom1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		<Security AccessLevelSecurity="1" AccessLevelControl="hidden" />
+	</column>
+	<column Name="DevelopmentNo" alias="Dev No" Type="textbox" datatype="string" column="1" gridorder="5" GridVisible="true" cellwidth="150px" GridWidth="75" Visible="true" enabled="true" Search="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="StyleNo" alias="Style No." Type="textbox" datatype="string" column="1" gridorder="7" GridVisible="true" cellwidth="150px" GridWidth="75" Visible="true" enabled="true" Search="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Description" alias="Description" Type="textbox" datatype="string" column="2" gridorder="6" GridVisible="true" cellwidth="150px" GridWidth="125" Visible="true" enabled="true" Search="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="StyleCategory" alias="Style Category" Type="dropdownlist" datatype="query" enabled="true" Visible="TRUE" cellwidth="150px" Search="false" GridVisible="false" column="1" gridorder="8" lookupquery="SELECT StyleCategoryId, StyleCategory FROM pStyleCategory ORDER BY StyleCategory" select="true" textfield="StyleCategory" ValueField="StyleCategoryId" AutoPostBack="false" DefaultValue="8217f44c-dd47-4b38-9e35-cd39e7cbd5d4">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="SizeRange" alias="Size Range2" Type="dropdownlist" datatype="string" enabled="true" Visible="true" cellwidth="150px" Search="false" GridVisible="True" column="2" gridorder="9" lookupquery="SELECT SizeRangeCode, SizeRangeCode AS SizeRangeCodeName FROM pSizeRange ORDER BY SizeRangeCode" select="true" textfield="SizeRangeCode" ValueField="SizeRangeCode" AutoPostBack="false" DefaultValue="XS-3XL">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="SizeClass" alias="Size Class" Type="dropdownlist" select="false" cellwidth="150px" datatype="string" column="2" gridorder="10" GridVisible="True" Visible="true" enabled="true" lookupquery="SELECT Custom, Custom AS CustomName FROM pSizeClass ORDER BY CustomKey" textfield="Custom" DefaultValue="Missy" ValueField="Custom" AutoPostBack="false" Search="false">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomField2" alias="Season" Type="dropdownlist" select="true" cellwidth="150px" datatype="string" column="2" gridorder="11" GridVisible="True" GridWidth="100" Visible="true" enabled="true" lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom2 ORDER BY CustomKey" textfield="Custom" ValueField="Custom" AutoPostBack="false" Search="false" cssClass="inputBlue">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomField3" alias="Delivery A" Type="dropdownlist" datatype="string" column="2" gridorder="12" GridVisible="false" cellwidth="150px" Visible="False" enabled="true" Search="false" lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom3 ORDER BY CustomKey" select="true" textfield="Custom" ValueField="Custom" AutoPostBack="false" cssClass="inputBlue">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomField4" alias="Year" Type="dropdownlist" datatype="string" column="2" gridorder="13" GridVisible="true" GridWidth="100" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom4 ORDER BY CustomKey" select="true" textfield="Custom" ValueField="Custom" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomField5" alias="Item Category" Type="dropdownlist" datatype="string" column="2" gridorder="14" GridVisible="false" cellwidth="150px" lookupquery="SELECT Custom, Custom AS CustomName FROM xCustom1 ORDER BY CustomKey" Visible="true" enabled="true" textfield="Custom" ValueField="Custom" select="true" AutoPostBack="false" DefaultValue="Knits" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="WashType" alias="Garment Wash/Treatment" Type="dropdownlist" datatype="string" column="2" gridorder="15" GridVisible="false" cellwidth="150px" Visible="false" enabled="true" Search="false" lookupquery="SELECT Custom, Custom AS CustomName FROM iCustom14 ORDER BY CustomKey" select="true" textfield="Custom" ValueField="Custom" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="DueDate" alias="Tech-Pack Due" Type="calendarbox" datatype="datetime" column="2" gridorder="16" GridVisible="false" cellwidth="133px" lookupquery="" Visible="true" enabled="true" textfield="" ValueField="" select="" AutoPostBack="false" Search="false" cssClass="inputBlue" DefaultValue="T10">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomField10" alias="Start Ship Date" Type="calendarbox" datatype="datetime" column="2" gridorder="17" GridVisible="false" cellwidth="133px" lookupquery="" Visible="true" enabled="true" textfield="" ValueField="" select="" AutoPostBack="false" Search="false" cssClass="inputBlue">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomField7" alias="Group" Type="textbox" datatype="string" column="2" gridorder="18" GridVisible="false" cellwidth="150px" Visible="true" enabled="true" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomField8" alias="Gender" Type="dropdownlist" datatype="string" column="1" gridorder="19" GridVisible="false" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT * FROM xCustom5 WHERE Active = '1' ORDER BY CustomKey" select="true" textfield="Custom" ValueField="Custom" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="StyleAttribute" alias="Attribute" Type="attributebox" datatype="string" column="1" gridorder="20" GridVisible="false" cellwidth="130px" cellRows="4" Visible="False" ReadOnly="true" enabled="true" lookupquery="" select="true" textfield="" ValueField="" AutoPostBack="true" WindowURL="StyleAttributePopup.aspx" WindowXML="">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomField9" alias="Status" Type="dropdownlist" datatype="string" column="1" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT Custom, CustomKey FROM vwx_xCustom8 ORDER BY CustomKey" select="true" textfield="CustomKey" ValueField="Custom" AutoPostBack="false" DefaultValue="In Progress">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomField11" alias="CustomField11" Type="checkbox" datatype="string" column="3" gridorder="22" GridVisible="false" cellwidth="150px" Visible="false" enabled="true" Search="false" GridOrder="010">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Designer" alias="Design Contact" Type="dropdownlist" select="true" cellwidth="150px" datatype="string" column="3" gridorder="23" GridVisible="false" Visible="true" enabled="true" lookupquery="SELECT Firstname +'  ' +Lastname as name, Firstname +'  ' + Lastname as fullname from users Where TradePartner = 0 order by firstname" textfield="name" ValueField="fullname" AutoPostBack="false" Search="false" DefaultValue="Darioush  Nikpour" GridOrder="010">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="3" gridorder="1" GridVisible="true" cellwidth="150px" Visible="true" enabled="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="3" gridorder="2" GridVisible="true" cellwidth="150px" Visible="true" enabled="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="3" gridorder="1" GridVisible="false" cellwidth="150px" Visible="true" enabled="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="3" gridorder="0" GridVisible="true" cellwidth="150px" Visible="true" enabled="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Change" alias="Version" Type="label" datatype="string" column="3" gridorder="28" GridVisible="false" Visible="true" enabled="false" cellwidth="150px" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Active" alias="Active" Type="dropdownlist" datatype="query" column="1" order="3" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" lookupquery="SELECT CustomKey, Custom FROM pActive" select="true" textfield="Custom" ValueField="CustomKey" AutoPostBack="false" GridOrder="010">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<!--Extra columns from here on-->
+
+	<column Name="wCustom100" alias="WebPDM Column1" Type="dropdownlist" datatype="query" column="1" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom100 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom101" alias="WebPDM Column2" Type="dropdownlist" datatype="query" column="1" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom101 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom102" alias="WebPDM Column3" Type="dropdownlist" datatype="query" column="1" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom102 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom103" alias="WebPDM Column4" Type="dropdownlist" datatype="query" column="1" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom103 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom104" alias="WebPDM Column5" Type="dropdownlist" datatype="query" column="1" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom104 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom105" alias="WebPDM Column6" Type="dropdownlist" datatype="query" column="1" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom105 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom106" alias="WebPDM Column7" Type="dropdownlist" datatype="query" column="2" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom106 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom107" alias="WebPDM Column8" Type="dropdownlist" datatype="query" column="2" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom107 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom108" alias="WebPDM Column9" Type="dropdownlist" datatype="query" column="2" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom108 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom109" alias="WebPDM Column10" Type="dropdownlist" datatype="query" column="2" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom109 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom110" alias="WebPDM Column11" Type="dropdownlist" datatype="query" column="2" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom110 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom111" alias="WebPDM Column12" Type="dropdownlist" datatype="query" column="2" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom111 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="wCustom115" alias="WebPDM Company" Type="dropdownlist" datatype="query" column="3" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom115 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="wCustom112" alias="WebPDM Column13" Type="dropdownlist" datatype="query" column="3" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom112 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom113" alias="WebPDM Column14" Type="dropdownlist" datatype="query" column="3" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom113 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom114" alias="WebPDM Column15" Type="dropdownlist" datatype="query" column="3" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom114 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="wCustom116" alias="WebPDM Column17" Type="dropdownlist" datatype="query" column="3" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom116 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom117" alias="WebPDM Column18" Type="dropdownlist" datatype="query" column="3" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom117 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom118" alias="WebPDM Column19" Type="dropdownlist" datatype="query" column="3" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom118 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="wCustom119" alias="WebPDM Column20" Type="dropdownlist" datatype="query" column="3" gridorder="19" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM wCustom119 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<!--
+	<column Name="TradePartnerId" alias="Agent" Type="dropdownlist" select="true" cellwidth="150px" datatype="query" column="3" order="1" GridVisible="true" Visible="true" enabled="true" lookupquery="SELECT TradePartnerID, TradePartnerName FROM uTradePartner ORDER BY TradePartnerName" textfield="TradePartnerName" ValueField="TradePartnerID" AutoPostBack="true">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Please select costing type" />
+	</column>
+	<column Name="TradePartnerVendorId" alias="Vendor" Type="dropdownlist" select="true" cellwidth="150px" datatype="query" column="3" order="1" GridVisible="true" Visible="true" enabled="true" lookupquery="SELECT TradePartnerVendorID, VendorName FROM uTradePartnerVendor ORDER BY VendorName" textfield="VendorName" ValueField="TradePartnerVendorID" AutoPostBack="true">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Please select costing type" />
+	</column>
+	-->
+</Table>

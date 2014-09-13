@@ -1,0 +1,55 @@
+<Table Name="pWorkFlowItem" formcolumns="1" gridcolumns="" FormSQL="spx_WorkFlowItemList_SELECT"
+	GridReadSQL="spx_WorkFlowItemList_SELECT" GridSQL="spx_WorkFlowItemList_SELECT"
+	ApiSQL="spx_WorkFlowItemList_SELECT" ApiWhereClause="" ApiOrderBy="">
+	<column Name="WorkFlowItemID" PK="true" alias="WorkFlowItemID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="false" column="1" order="1"
+		ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="001" ApiRequired="true" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="StyleID" alias="StyleID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="false" column="1" order="1"
+		ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="002" ApiRequired="true" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="WorkflowID" alias="WorkflowID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="false" column="1" order="2"
+		ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="003" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+    <column TrackChange="true" Name="WorkflowItemTypeId" alias="Page Type" Type="dropdownlist" datatype="query" column="2" order="04" GridVisible="true" cellwidth="150px" Visible="true"
+            enabled="true" Search="false" lookupquery="select WorkflowItemTypeId, ItemTypeLabel from pWorkflowItemType order by ItemTypeLabel" select="true" 
+            textfield="ItemTypeLabel" ValueField="WorkflowItemTypeId" FilterField="MapId"  AutoPostBack="false" DefaultValue=""
+			ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="004" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		<LookupTable XMLFileName="Lookup_pWorkFlowItemType.xml" ParentIDField="WorkflowItemTypeId" ChildIDField="WorkflowItemTypeId" />
+    </column>
+    <column TrackChange="true" Name="WorkFlowItemName" alias="Name" Type="textbox" datatype="string"
+		column="1" order="3" GridVisible="true" cellwidth="150px" GridWidth="200" Visible="true"
+		enabled="true"
+		ApiDataType="string" ApiVisible="true" ApiOrder="005" ApiRequired="false" ApiSearch="true" ApiSearchRequired="false" ApiSearchType="ALL">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+    <column TrackChange="true" Name="WorkStatus" alias="Status" Type="dropdownlist" datatype="query" column="2" order="04" GridVisible="true" cellwidth="150px" Visible="true"
+            enabled="true" Search="false" lookupquery="SELECT WorkflowStatusID, WorkflowStatus FROM pWorkflowStatus WHERE Active = 1" select="true" textfield="WorkflowStatus" ValueField="WorkflowStatusID" AutoPostBack="false" DefaultValue=""
+			ApiDataType="string" ApiVisible="true" ApiOrder="006" ApiRequired="false" ApiSearch="true" ApiSearchRequired="false" ApiSearchType="ALL">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		<LookupTable XMLFileName="Lookup_pWorkflowStatus.xml" ParentIDField="WorkStatus" ChildIDField="WorkflowStatusID" />
+    </column>
+	<column TrackChange="true" Name="Sort" alias="Sort" Type="textbox" datatype="string" column="1" order="4" GridVisible="true" cellwidth="150px" GridWidth="70" Visible="true" enabled="true"
+		ApiDataType="string" ApiVisible="true" ApiOrder="007" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+  		<Validator Class="Length" Type="" Minimum="0" Maximum="4" Text="Up to four symbols allowed!" /> 
+  	</column>
+    <column Name="CUser" alias="Created By" Type="label" datatype="string" column="3" order="19"
+      GridVisible="false" cellwidth="150px" Visible="false" enabled="false"
+	  ApiDataType="string" ApiVisible="true" ApiOrder="008" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="CDate" alias="Created Date" Type="calendarbox" datatype="datetime" column="3"
+      order="20" GridVisible="false" cellwidth="150px" Visible="false" enabled="false"
+	  ApiDataType="datetime" ApiVisible="true" ApiOrder="009" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+      <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+    </column>
+</Table>

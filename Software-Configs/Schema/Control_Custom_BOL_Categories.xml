@@ -1,0 +1,50 @@
+<table Name="pBOLcategories" formcolumns="1" gridcolumns="" FormSQL="SELECT * FROM pBOLcategories" GridReadSQL="SELECT * FROM pBOLcategories" GridSQL="SELECT * FROM pBOLcategories">
+
+	<column Name="categoryId" PK="true" alias="categoryId"  Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" GridOrder="1" GridSearch="false" column="1" order="1">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	
+	<column Name="parentId" alias="parentId" Type="dropdownlist" datatype="query" column="1" order="3" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" lookupquery="SELECT categoryId, categoryName FROM pBOLcategories UNION SELECT '00000000-0000-0000-0000-000000000000' as categoryID, 'root' as categoryName"
+		select="false" textfield="categoryName" ValueField="categoryId" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="type" alias="type" Type="textbox" datatype="string" enabled="false" classCSS="fonthead" cellwidth="200" cellRows="2" MaxLength="" ReadOnly="true" Visible="true" GridVisible="true" GridWidth="" GridSearch="true"
+	column="1" order="1" DefaultValue="1">
+		<Validator Type="" Minimum="1" Maximum="200" Text="" />
+	</column>
+
+	<column Name="categoryName" alias="categoryName" Type="textbox" datatype="string" enabled="true" classCSS="fonthead" cellwidth="200" cellRows="2" MaxLength="" ReadOnly="false" Visible="true" GridVisible="true" GridWidth="" GridSearch="true"
+	column="1" order="1" DefaultValue="Rate Type Name">
+		<Validator Type="" Minimum="1" Maximum="200" Text="" />
+	</column>
+	
+	<!--column Name="Active" alias="Active" Type="checkbox" datatype="string" column="1" order="1" GridVisible="true" cellwidth="150px" GridWidth="25" Visible="true" enabled="true" GridOrder="001">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column-->  
+		<column Name="Active" alias="Active" Type="dropdownlist" datatype="query" column="1" order="3"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="true" lookupquery="SELECT CustomKey, Custom FROM pActive"
+		select="false" textfield="Custom" ValueField="CustomKey" DefaultValue="1" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="3" order="19"
+		GridVisible="false" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="3" order="20"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="3" order="21"
+		GridVisible="true" cellwidth="150px" Visible="FALSE" enabled="true" GridWidth="100">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="3" order="22"
+		GridVisible="true" GridWidth="200" cellwidth="150px" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</table>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix4">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="Textbox20">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox20</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <TopBorder>
+                        <Style>Solid</Style>
+                      </TopBorder>
+                      <BottomBorder>
+                        <Style>Solid</Style>
+                      </BottomBorder>
+                      <LeftBorder>
+                        <Style>Solid</Style>
+                      </LeftBorder>
+                      <BackgroundColor>#ffffc0</BackgroundColor>
+                      <BackgroundImage>
+                        <Source>Embedded</Source>
+                        <Value>table_header_yellow</Value>
+                      </BackgroundImage>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.93in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.95in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox132">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Day.Value &amp; VBcrlf &amp;  Fields!CalendarDescription.Value</Value>
+                              <Style>
+                                <FontFamily>="Tahoma, Geneva, Arial, Helvetica, sans-serif"</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Color>=iIf(Fields!Month.Value = Fields!CurrentMonth.Value, "Black", "Gray")</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox132</rd:DefaultName>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive, "javascript: var p; p=''; if ('\v'=='v') {p='../';} void(window.open(p + 'Sample/SampleRequest_Workflow_Redirect.aspx?SRWID=" &amp; Fields!SampleRequestWorkflowID.Value.ToString &amp; "&amp;SRTID="&amp; Fields!SampleRequestTradeID.Value.ToString &amp;"'))", Nothing)</Hyperlink>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
+                      <ToolTip>=Fields!Comment.Value</ToolTip>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <RightBorder>
+                          <Style>Solid</Style>
+                        </RightBorder>
+                        <BackgroundColor>=IIF(Fields!Date.Value = Parameters!RequestedDate.Value,"LightSteelBlue",IIF((WeekdayName(Fields!WeekDay.Value)="Saturday") or (WeekdayName(Fields!WeekDay.Value)="Sunday"),"#FFFFC0","WhiteSmoke"))</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="ColumnGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!WeekDay.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="WeekDay">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=WeekdayName(Fields!WeekDay.Value)</Value>
+                            <Style>
+                              <FontFamily>="Tahoma, Geneva, Arial, Helvetica, sans-serif"</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>#003366</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>WeekDay</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <TopBorder>
+                        <Style>Solid</Style>
+                      </TopBorder>
+                      <BottomBorder>
+                        <Style>Solid</Style>
+                      </BottomBorder>
+                      <RightBorder>
+                        <Style>Solid</Style>
+                      </RightBorder>
+                      <BackgroundColor>#ebeb89</BackgroundColor>
+                      <BackgroundImage>
+                        <Source>Embedded</Source>
+                        <Value>table_header_yellow</Value>
+                      </BackgroundImage>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="RowGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Ceiling(Fields!Order.Value / 7)</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>0.03125in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox17">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox17</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <BottomBorder>
+                        <Style>Solid</Style>
+                      </BottomBorder>
+                      <LeftBorder>
+                        <Style>Solid</Style>
+                      </LeftBorder>
+                      <BackgroundColor>=iif ((WeekdayName(Fields!WeekDay.Value)="Saturday") or (WeekdayName(Fields!WeekDay.Value)="Sunday"),"#FFFFC0","WhiteSmoke")</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>ds_Calendar</DataSetName>
+        <Height>1.2in</Height>
+        <Width>0.96125in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>1.2in</Height>
+    <Style />
+  </Body>
+  <Width>0.96125in</Width>
+  <Page>
+    <PageWidth>6.51in</PageWidth>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <DataSourceReference>plmOn</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>b9fb7ad7-c52a-4c3e-814e-c8fe0f026c0b</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ds_Calendar">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@TradePartnerId">
+            <Value>=Parameters!TradePartnerId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TeamId">
+            <Value>=Parameters!TeamId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@RequestedDate">
+            <Value>=Parameters!RequestedDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_SampleRequestActivityCalendarAgent_INSERT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Order">
+          <DataField>Order</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Date">
+          <DataField>DATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="WeekDay">
+          <DataField>WeekDay</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Day">
+          <DataField>Day</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Month">
+          <DataField>Month</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CalendarDescription">
+          <DataField>CalendarDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SampleRequestWorkflowID">
+          <DataField>SampleRequestWorkflowID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SampleRequestTradeID">
+          <DataField>SampleRequestTradeID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="CurrentMonth">
+          <DataField>CurrentMonth</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Comment">
+          <DataField>Comment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <Prompt>End Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TeamId">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Team Id</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TradePartnerId">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Trade Partner Id</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RequestedDate">
+      <DataType>String</DataType>
+      <Prompt>Requested Date</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="table_header_yellow">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODlhAwAeAMQAAPv66fn33/n33vn34Pj12Pb11fb10/b10vb0zvTyxvPxxPLwu/LwuvLwufLvt/HtrvDtq/DtrO/sou7rp+7rn+7rnu7qoe7qouTfaOHcWtfRIQAAAAAAAAAAAAAAAAAAACH5BAQUAP8ALAAAAAADAB4AAAUxYCYyJGAOqKAGLOEesCHPRY3cSa7sS9/8juBjGClOjpbkZUlpVp7NKEVChVgxWI02BAA7</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>74bab1a7-64f2-4ed8-a95d-9f24e1c62cc8</rd:ReportID>
+</Report>

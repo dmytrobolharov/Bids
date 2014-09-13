@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Rectangle Name="rectangle2">
+        <ReportItems>
+          <Textbox Name="textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Samples Outstanding</Value>
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>18pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>textbox2</rd:DefaultName>
+            <Top>0.125in</Top>
+            <Left>0.125in</Left>
+            <Height>0.375in</Height>
+            <Width>3.375in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Image Name="image1">
+            <Source>External</Source>
+            <Value>logo.jpg</Value>
+            <Left>8in</Left>
+            <Height>0.625in</Height>
+            <Width>3.02083in</Width>
+            <ZIndex>1</ZIndex>
+            <Style />
+          </Image>
+        </ReportItems>
+        <DataElementOutput>ContentsOnly</DataElementOutput>
+        <Height>0.625in</Height>
+        <Width>11.02083in</Width>
+        <Style>
+          <Border>
+            <Color>Gray</Color>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+      </Rectangle>
+    </ReportItems>
+    <Height>0.625in</Height>
+    <Style>
+      <Border>
+        <Color>Gray</Color>
+        <Style>Solid</Style>
+      </Border>
+      <BackgroundColor>WhiteSmoke</BackgroundColor>
+    </Style>
+  </Body>
+  <Width>11.02083in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="plmOn">
+      <DataSourceReference>plmOn</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>ac6d91f8-4029-4c1a-9e38-f202876c1627</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsSampleRequestOutstanding">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Flag">
+            <Value>=Parameters!Flag.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dpx_SampleRequestWorkflow_Approved_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="TradePartnerName">
+          <DataField>TradePartnerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StyleNo">
+          <DataField>StyleNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SizeClass">
+          <DataField>SizeClass</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SizeRange">
+          <DataField>SizeRange</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="Flag">
+      <DataType>Integer</DataType>
+      <Prompt>Flag</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Function ColorGroups(ByVal iItemNum As Integer) As String
+    Dim Colors() As String = {"Red", "Green", "RoyalBlue", "Gold", "Fuchsia", "Blue", "DarkOrange", "YellowGreen", "purple", "GoldenRod", "darkred", "mediumvioletred"}
+    If (iItemNum &gt; Colors.Length) OrElse (iItemNum &lt; 1) Then
+        'Error: Default to near White
+        ColorGroups = "WhiteSmoke"
+    Else
+        ColorGroups = Colors(iItemNum - 1)
+    End If
+End Function</Code>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>70dde9f4-48c7-4c48-887e-5b863ec50e31</rd:ReportID>
+</Report>

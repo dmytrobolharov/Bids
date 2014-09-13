@@ -1,0 +1,48 @@
+<configuration>
+    <configSections>
+        <section name="SYSTEM" type="System.Configuration.NameValueFileSectionHandler, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    </configSections>
+    <appSettings>
+        <!--01--> <add key="plmOnPasswordLength" value="6" />
+        <!--01a--> <add key="plmOnPWnumber" value="1" />
+        <!--01b--> <add key="plmOnPWspecial" value="1" />
+        <!--02--> <add key="ClientCulture" value="en-US" />
+        <!--03--> <add key="ServerCulture" value="en-US" />
+        <!--04--> <add key="SystemPreferredLanguage" value="TestLang" />
+        <!--04a--><add key="TranslateDataReports" value="FALSE" />
+        <!--05--> <add key="ServerTimeZone" value="0" />
+        <!--05a--><add key="ServerTypeID" value="$plmOnServerTypeID$" /><!-- 0=Production, 1=Development, 2=Staging 3=Default -->
+        <!--05b--><add key="ServerTypeName" value="$plmOnServerTypeName$" /><!--4 Char (MAX)-->
+        <!--06--> <add key="UnitOfMeasurementDefault" value="IN" />
+        <!--07--> <add key="NoActiveAccountMessage" value="The account has been deactivated, please contact the system administrator" />
+        <!--08--> <add key="UseEncryptedPassword" value="TRUE" />
+        <!--09--> <add key="CompressViewState" value="TRUE" />
+        <!--10--> <add key="ShowLanguageWebService" value="TRUE" />
+        <!--11--> <add key="LockingID" value="C00F0875-9417-LOCKED-800C-82950F2AA900" />
+        <!--12--> <add key="DisplayFractions" value="FALSE" />
+        <!--13--> <add key="ChangeManagementEnabled" value="FALSE" />
+
+        <!--14--> <add key="LDAPServer" value="" />
+        <!--14a--><add key="LDAPServerType" value="ads" /><!-- ads=MS Active Directory Services, novelledirectory=Novel eDirectory -->
+        <!--14b--><add key="LDAPSearchBase" value="" />
+        <!--14c--><add key="LDAPSearchBaseGroups" value="" />
+        <!--14d--><add key="LDAPAuthenticationType" value="secure" />
+        <!--15--> <add key="LDAPUsername" value="" />
+        <!--16--> <add key="LDAPPassword" value="" />
+        <!--17--> <add key="LDAPPasswordEncrypted" value="FALSE" />
+        <!--18--> <add key="LDAPIntegrationEnabled" value="FALSE" />
+
+        <!--19--> <add key="UseRadGrid" value="FALSE" />
+        <!--20--> <add key="Audit_SPX_OVerrides" value="FALSE" />
+        <!--21--> <add key="plmOnIISDownload" value="FALSE" />
+        <!--22--> <add key="MeasDecimalFormat" value="0.00" />
+        <!--23--> <add key="BeforeTreatmentEnabled" value="TRUE" />
+		<!--24--> <add key="BingTranslation" value="$plmOnEnableBingTranslations$" />
+		<!--25--> <add key="BingTranslationKey" value="$plmOnBingTranslationKey$" />
+		<!--26--> <add key="BingTranslationID" value="$BingTranslationID$" />
+		
+		<!--27--> <add key="EnableQuoteCalendar" value="TRUE" />
+		<!--28--> <add key="EnableCommitmentCalendar" value="TRUE" />
+		<!--29--> <add key="EnableServiceBus" value="FALSE" />
+    </appSettings>
+</configuration>

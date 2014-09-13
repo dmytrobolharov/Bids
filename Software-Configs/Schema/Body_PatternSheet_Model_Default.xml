@@ -1,0 +1,46 @@
+<Table Name="dbo.Cad_Model_Details" formcolumns="2" gridcolumns="1" >
+
+  <column Name="" PK="true" alias="ID" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="100px" GridOrder="1" GridSearch="false" GridVisible="false" GridWidth="100"
+		column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Model_Code" alias="Model_Code" Type="label" datatype="string" enabled="true"
+  Visible="true" cellwidth="100px" GridOrder="1" GridSearch="true" GridVisible="false" GridWidth="100"
+  column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Model_Name" alias="Model Name" Type="label" datatype="string" enabled="true"
+		Visible="true" cellwidth="100px" GridSearch="true" GridVisible="true" GridWidth="100"
+		column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+
+  <column Name="Model_Description" alias="Model Description" Type="label" datatype="string" enabled="true"
+ Visible="true" cellwidth="100px" Search="false" GridVisible="true" GridWidth="100" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+
+    <column Name="Model_Create" alias="Create Date" Type="label" datatype="datetime" enabled="true" dataformat="#shortdatetime#"
+ Visible="true" cellwidth="100px" Search="false" GridVisible="true" GridWidth="100" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Model_RevOp1" alias="Last Modified By" Type="label" datatype="string" enabled="true"
+ Visible="true" cellwidth="100px" Search="false" GridVisible="true" GridWidth="100" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Model_Rev1" alias="Last Modified Date" Type="label" datatype="datetime" enabled="true" dataformat="#shortdatetime#"
+Visible="true" cellwidth="100px" Search="false" GridVisible="true" GridWidth="100" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Model_RevOp2" alias="Prev. Modified By" Type="label" datatype="string" enabled="true"
+ Visible="true" cellwidth="100px" Search="false" GridVisible="true" GridWidth="100" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Model_Rev2" alias="Prev. Modified Date" Type="label" datatype="datetime" enabled="true" dataformat="#shortdatetime#"
+Visible="true" cellwidth="100px" Search="false" GridVisible="true" GridWidth="100" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+
+ 
+</Table>
