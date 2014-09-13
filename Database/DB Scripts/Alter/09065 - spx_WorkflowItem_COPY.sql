@@ -1,0 +1,594 @@
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[spx_WorkflowItem_COPY]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[spx_WorkflowItem_COPY]
+GO
+
+CREATE PROCEDURE [dbo].[spx_WorkflowItem_COPY] (
+	@WorkflowID uniqueidentifier,  
+	@WorkFlowItemId uniqueidentifier,  
+	@StyleID uniqueidentifier,  
+	@CopyStyleID uniqueidentifier,  
+	@StyleSet int,  
+	@CopyStyleSet int,  
+	@CUser nvarchar(100),  
+	@CDate datetime,
+	@NewWorkFlowItemId uniqueidentifier = NULL,
+	@StyleSeasonYearID UNIQUEIDENTIFIER = NULL
+)
+AS
+
+DECLARE @nSort as int   
+DECLARE @nMax as int   
+DECLARE @nCount as int  
+DECLARE @vcCount as nvarchar (4)  
+DECLARE @WorkFlowItemTypeId UNIQUEIDENTIFIER  
+Declare @NewMeasHdrId UNIQUEIDENTIFIER  
+Declare @oldMeashdrId UNIQUEIDENTIFIER  
+DECLARE @StyleImageLinked int  
+DECLARE @StyleDetailFormID UNIQUEIDENTIFIER  
+DECLARE @ImageID UNIQUEIDENTIFIER  
+DECLARE @ImageVersion int  
+
+
+Declare @NewBOMId UNIQUEIDENTIFIER
+Declare @oldBOMId UNIQUEIDENTIFIER
+Declare @ItemDim1TypeId nvarchar(50)	
+Declare @ItemDim2TypeId nvarchar(50)	
+Declare @ItemDim3TypeId nvarchar(50)
+
+BEGIN
+	
+ if @NewWorkFlowItemId IS NULL SET @NewWorkFlowItemId = NEWID()
+ SELECT @WorkFlowItemTypeId = WorkFlowItemTypeId from pWorkFlowItem WHERE WorkFlowItemId = @WorkFlowItemId  
+  
+ SELECT @nCount = count(*) FROM pWorkFlowItem WITH (NOLOCK) WHERE StyleId = @StyleID  AND  StyleSet = @StyleSet AND  WorkFlowItemTypeId = @WorkFlowItemTypeId  
+ SELECT @nMax = cast (   MAX (Sort)  as int ) FROM pWorkFlowItem WITH (NOLOCK) WHERE StyleId = @StyleID  AND  StyleSet = @StyleSet AND  WorkFlowItemTypeId = @WorkFlowItemTypeId  
+ IF  @nCount IS NULL   SET @nCount = 0   
+ IF @nMax IS NULL SET @nMax = 0   
+ IF @nCount > @nMax  SET @nSort = @nCount   
+ ELSE  SET @nSort = @nMax   
+ print  'nCount=' + Cast(@nCount  as nvarchar (10) ) + '   nMax=' + Cast( @nMax as nvarchar (10) ) + '   nSort=' + Cast( @nSort  as nvarchar (10) )  
+   
+ SET @nSort = @nSort + 1  
+ SET @vcCount =  RIGHT ( '0000' +  cast ( @nSort as nvarchar (4) ) , 2 )  
+ print  'vccount 1 = '  + @vcCount  
+  
+ INSERT INTO pWorkFlowItem  
+ (WorkFlowItemID, WorkflowID, WorkflowItemTypeId, StyleID, WorkFlowItemName, StyleSet, Sort, MDate, MUser, CUser, CDate, StatusID, WorkStart, WorkDue,WorkAssignedTo,WorkStatus,WorkEscalateTo, ActualStart)  
+ SELECT @NewWorkFlowItemId, @WorkflowID, WorkflowItemTypeId, @StyleID, WorkFlowItemName, @StyleSet, @vcCount, @CDate, @CUser, CUser, CDate,StatusID, WorkStart, WorkDue,WorkAssignedTo,
+ CASE WHEN WorkStatus = 1 THEN WorkStatus ELSE 6 END, WorkEscalateTo, CASE WHEN WorkStatus = 1 THEN NULL ELSE GETDATE() END 
+ FROM pWorkFlowItem WITH (NOLOCK)  
+ WHERE (WorkFlowItemId = @WorkFlowItemId)  
+  
+ IF @@Error <> 0 OR @@RowCount <> 1 GOTO Error  
+  If @WorkFlowId = '80000000-0000-0000-0000-000000000008'   
+  BEGIN  
+   INSERT INTO pConPageDetail  
+   ( StyleID, WorkflowID, WorkFlowItemId, Sort, StyleSet, Detail, OrigOperationSN, Level0Desc, Level1Desc, Level2Desc, Level3Desc, ImageID, AuxField1, AuxField2, AuxField3,   
+     AuxField4, AuxField5, Linked, Level0ID, Level1ID, Level2ID, Level3ID, CUser, CDate, MUser, MDate)  
+   SELECT @StyleID, @WorkflowID, @NewWorkFlowItemId, Sort, @StyleSet, Detail, OrigOperationSN, Level0Desc, Level1Desc, Level2Desc, Level3Desc, ImageID, AuxField1, AuxField2, AuxField3,   
+   AuxField4, AuxField5, Linked, Level0ID, Level1ID, Level2ID, Level3ID, @CUser, @CDate, @CUser, @CDate  
+   FROM pConPageDetail WITH (NOLOCK)  
+   WHERE StyleID = @CopyStyleID  
+   AND WorkflowItemID = @WorkflowItemID  
+   AND StyleSet = @CopyStyleSet  
+  END  
+  Else If @WorkFlowId = '40000000-0000-0000-0000-000000000050'   
+    
+   BEGIN  
+     
+   set @NewMeasHdrId = NEWID()  
+        
+   select @oldMeashdrId = AMLMeasHdrId from pamlmeashdr where WorkflowID = @WorkflowID AND WorkflowItemID = @WorkflowItemID AND StyleSet = @CopyStyleSet     
+     
+   INSERT INTO pamlmeashdr (AMLMeasHdrId, Workflowid, StyleId, StyleSet, CompanyId, CompanyName, IsRelative,  
+   IsNegative, IsMetric, SizeClass, SizeClassId, SizeRange, SizeRangeId, ProductType, ProductTypeId, MeasRowCnt,  
+   CUser, CDate, MUser, MDate, WorkFlowItemId)  
+   select @NewMeasHdrId, @WorkflowID, @StyleID, @StyleSet, CompanyId, CompanyName, IsRelative,  
+   IsNegative, IsMetric, SizeClass, SizeClassId, SizeRange, SizeRangeId, ProductType, ProductTypeId, MeasRowCnt,  
+   @CUser, @CDate, @CUser, @CDate, @NewWorkFlowItemId  
+   from pamlmeashdr where AMLMeasHdrId = @oldMeashdrId        
+             
+      INSERT INTO pamlmeaslbl (AMLMeasHdrId, SizeRangeId, SizeRangeDetailId, SizeCol, MeasLbl, IsVisible, IsSample,  
+      MeasDesc, CUser, CDate, MUser, MDate)  
+      Select @NewMeasHdrId, SizeRangeId, SizeRangeDetailId, SizeCol, MeasLbl, IsVisible, IsSample,  
+      MeasDesc, @CUser, @CDate, @CUser, @CDate  
+      from pamlmeaslbl where AMLMeasHdrId = @oldMeashdrId               
+             
+            INSERT INTO pamlmeaspom (AMLMeasHdrId, GRPOMCompanyId, POMGuidId, POMAlternatesId, POM_Row, RefCode, Description,  
+            TolPlus, TolMinus, Flag4QA, WSRowId, SortId, ImageId,  How2MeasText, CUser, CDate, MUser, MDate, IsLinked, Critical)  
+            select @NewMeasHdrId, GRPOMCompanyId, POMGuidId, POMAlternatesId, POM_Row, RefCode, Description,  
+            TolPlus, TolMinus, Flag4QA, WSRowId, SortId, ImageId,  How2MeasText, @CUser, @CDate, @CUser, @CDate, IsLinked, Critical
+      from pamlmeaspom where AMLMeasHdrId = @oldMeashdrId         
+        
+   INSERT INTO pamlmeasigc (AMLMeasHdrId, POM_Row, WSRowId, SizeCol, Incr, Grade, ConvGrade,  
+   CUser, CDate, MUser, MDate)  
+   select @NewMeasHdrId, POM_Row, WSRowId, SizeCol, Incr, Grade, ConvGrade,  
+   @CUser, @CDate, @CUser, @CDate from pamlmeasigc where AMLMeasHdrId = @oldMeashdrId   
+
+   INSERT INTO pStyleImageMeasurements (MeasurementID, StyleID, ImageSet1Id, ImageVersionSet1, ImageSet2Id, ImageVersionSet2, 
+   ImageSet3Id, ImageVersionSet3, ImageSet4Id, ImageVersionSet4)
+   SELECT @NewWorkFlowItemId, @StyleID, ImageSet1Id, ImageVersionSet1, ImageSet2Id, ImageVersionSet2,
+   ImageSet3Id, ImageVersionSet3, ImageSet3Id, ImageVersionSet4
+   FROM pStyleImageMeasurements WHERE MeasurementID = @WorkFlowItemId AND StyleID = @StyleID
+     
+   Update pamlmeasigc set AMLMeasPOMId = p.AMLMeasPOMId from pamlmeasigc i inner join pamlmeaspom p on   
+   i.AMLMeasHdrId=p.AMLMeasHdrId and i.pom_row=p.pom_row and i.WSRowId=p.WSRowId            
+   where i.amlmeashdrid=@NewMeasHdrId and i.amlmeaspomid is null  
+     
+     
+   END  
+   Else If @WorkFlowId = '40000000-0000-0000-0000-000000000080' 
+		
+			BEGIN
+			
+			set @NewBOMId = NEWID()
+			
+			SELECT @CopyStyleSet = StyleSet FROM pWorkflowItem where WorkflowItemID = @WorkflowItemID
+						
+			select @oldBOMId = StyleBOMDimensionId from pStyleBOMDimension where WorkflowID = @WorkflowID AND WorkflowItemID = @WorkflowItemID AND styleid=@CopyStyleID and StyleSet = @CopyStyleSet			
+						
+			INSERT INTO pStyleBOMDimension (StyleBOMDimensionID, StyleBOMDimensionCopyMasterID, Workflowid, WorkFlowItemID, StyleId, StyleSet, ItemDim1TypeId, ItemDim2TypeId, ItemDim3TypeId,
+			ItemDim1TypeName, ItemDim2TypeName, ItemDim3TypeName, Comments, ImageId, CUser, CDate, MUser, MDate)			
+			select @NewBOMId, @oldBOMId, @WorkflowID, @NewWorkFlowItemId, @StyleID, @StyleSet, ItemDim1TypeId, ItemDim2TypeId, ItemDim3TypeId,
+			ItemDim1TypeName, ItemDim2TypeName, ItemDim3TypeName, Comments, ImageId,
+			@CUser, @CDate, @CUser, @CDate 
+			from pStyleBOMDimension where StyleBOMDimensionID = @oldBOMId				
+			
+			INSERT INTO pStyleBOMConfig (StyleBOMDimensionID, DimBOM, DefaultBOMPage, FillColorway, ActiveColor)
+			SELECT @NewBOMId, DimBOM, DefaultBOMPage, FillColorway, ActiveColor 
+			FROM pStyleBOMConfig WHERE StyleBOMDimensionID = @oldBOMId
+           
+		    INSERT INTO pStyleBOMDimensionItem (StyleBOMDimensionID, WorkFlowID, WorkFlowItemID, StyleID, StyleSet,
+		    ItemDim1TypeId, ItemDim2TypeId, ItemDim3TypeId, ItemDim1Id, ItemDim2Id, ItemDim3Id, 
+		    ItemDim1Name, ItemDim2Name, ItemDim3Name, ItemDim1Sort, ItemDim2Sort, ItemDim3Sort, 
+		    ItemDim1Active, ItemDim2Active, ItemDim3Active, Comments, ImageId, CUser, CDate, MUser, MDate)
+		    Select @NewBOMId, @WorkflowID, @NewWorkFlowItemId, @StyleID, @StyleSet,
+		    ItemDim1TypeId, ItemDim2TypeId, ItemDim3TypeId, ItemDim1Id, ItemDim2Id, ItemDim3Id, 
+		    ItemDim1Name, ItemDim2Name, ItemDim3Name, ItemDim1Sort, ItemDim2Sort, ItemDim3Sort, 
+		    ItemDim1Active, ItemDim2Active, ItemDim3Active, Comments, ImageId,
+		    @CUser, @CDate, @CUser, @CDate
+		    from pStyleBOMDimensionItem where StyleBOMDimensionID = @oldBOMId                       
+            
+            INSERT INTO pStyleBOMDimensionItems (StyleBOMDimensionID, WorkFlowID, WorkFlowItemID, StyleID, StyleSet,
+		    ItemDim1TypeId, ItemDim2TypeId, ItemDim3TypeId, ItemDim1Id, ItemDim2Id, ItemDim3Id, 
+		    ItemDim1Name, ItemDim2Name, ItemDim3Name, ItemDim1Sort, ItemDim2Sort, ItemDim3Sort, 
+		    ItemDim1Active, ItemDim2Active, ItemDim3Active, ItemDimActive, Comments, ImageId, 
+		    CUser, CDate, MUser, MDate, ComboActive)
+		    Select @NewBOMId, @WorkflowID, @NewWorkFlowItemId, @StyleID, @StyleSet,
+		    ItemDim1TypeId, ItemDim2TypeId, ItemDim3TypeId, ItemDim1Id, ItemDim2Id, ItemDim3Id, 
+		    ItemDim1Name, ItemDim2Name, ItemDim3Name, ItemDim1Sort, ItemDim2Sort, ItemDim3Sort, 
+		    ItemDim1Active, ItemDim2Active, ItemDim3Active, ItemDimActive, Comments, ImageId,
+		    @CUser, @CDate, @CUser, @CDate, ComboActive
+		    from pStyleBOMDimensionItems where StyleBOMDimensionID = @oldBOMId    
+		    
+		   
+		    INSERT INTO pStyleBOM (StyleMaterialMasterID,CopyStyleMaterialID,MainMaterial,Development,MiscColor,StyleSet
+			,StyleID,WorkflowId,WorkflowItemId,StyleBOMDimensionId,Dim1TypeSel,Dim2TypeSel,Dim3TypeSel,UOM,Qty,MaterialPrice
+			,Ext,MaterialSize,MaterialID,MaterialPlacement,MaterialPlacementCode,MaterialPlacementDetail,MaterialImageID
+			,MaterialImageVersion,NoColorMatch,SupplierID,ComponentTypeID,MaterialType,MaterialNo,MaterialName,A
+			,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,Source,Notes,Placement,VendorPrice,VolumePrice,VolumePriceMinimum
+			,VendorProductionMin,VendorProductionLeadTime,DetailYesNo,ImageType,height,width,CDate,CUser,MDate,MUser
+			,MChange,SChange,DChange,CChange,[Action],ColorPlacement,Artwork,License,Colorway,MaterialSort,MaterialTrack
+			,MaterialLinked,MaterialDimension,MaterialSizeA0,MaterialSizeA1,MaterialSizeA2,MaterialSizeA3,MaterialSizeA4
+			,MaterialSizeA5,MaterialSizeA6,MaterialSizeA7,MaterialSizeA8,MaterialSizeA9,MaterialSizeA10,MaterialSizeA11
+			,MaterialSizeA12,MaterialSizeA13,MaterialSizeA14,MaterialSizeA15,MaterialSizeA16,MaterialSizeA17,MaterialSizeA18
+			,MaterialSizeA19,MaterialSizeB0,MaterialSizeB1,MaterialSizeB2,MaterialSizeB3,MaterialSizeB4,MaterialSizeB5
+			,MaterialSizeB6,MaterialSizeB7,MaterialSizeB8,MaterialSizeB9,MaterialSizeB10,MaterialSizeB11,MaterialSizeB12
+			,MaterialSizeB13,MaterialSizeB14,MaterialSizeB15,MaterialSizeB16,MaterialSizeB17,MaterialSizeB18,MaterialSizeB19
+			,MaterialLining,MaterialSizeID,MaterialColorId,MaterialPackLabelGroupID,TradePartnerID,TradePartnerVendorID
+			,MaterialBOM,MaterialCode,StyleMaterialLinkID,MultiCloth,MaterialCoreItemID,MaterialSwing,MaterialLinkID
+			,MultiMaterialParentID)
+		    SELECT StyleMaterialMasterID,StyleMaterialID,MainMaterial,Development,MiscColor,@StyleSet
+			,@StyleID,@WorkflowID,@NewWorkFlowItemId,@NewBOMId,Dim1TypeSel,Dim2TypeSel,Dim3TypeSel,UOM,Qty,MaterialPrice
+			,Ext,MaterialSize,MaterialID,MaterialPlacement,MaterialPlacementCode,MaterialPlacementDetail,MaterialImageID
+			,MaterialImageVersion,NoColorMatch,SupplierID,ComponentTypeID,MaterialType,MaterialNo,MaterialName,A
+			,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,Source,Notes,Placement,VendorPrice,VolumePrice,VolumePriceMinimum
+			,VendorProductionMin,VendorProductionLeadTime,DetailYesNo,ImageType,height,width,CDate,CUser,MDate,MUser
+			,MChange,SChange,DChange,CChange,[Action],ColorPlacement,Artwork,License,Colorway,MaterialSort,MaterialTrack
+			,MaterialLinked,MaterialDimension,MaterialSizeA0,MaterialSizeA1,MaterialSizeA2,MaterialSizeA3,MaterialSizeA4
+			,MaterialSizeA5,MaterialSizeA6,MaterialSizeA7,MaterialSizeA8,MaterialSizeA9,MaterialSizeA10,MaterialSizeA11
+			,MaterialSizeA12,MaterialSizeA13,MaterialSizeA14,MaterialSizeA15,MaterialSizeA16,MaterialSizeA17,MaterialSizeA18
+			,MaterialSizeA19,MaterialSizeB0,MaterialSizeB1,MaterialSizeB2,MaterialSizeB3,MaterialSizeB4,MaterialSizeB5
+			,MaterialSizeB6,MaterialSizeB7,MaterialSizeB8,MaterialSizeB9,MaterialSizeB10,MaterialSizeB11,MaterialSizeB12
+			,MaterialSizeB13,MaterialSizeB14,MaterialSizeB15,MaterialSizeB16,MaterialSizeB17,MaterialSizeB18,MaterialSizeB19
+			,MaterialLining,MaterialSizeID,MaterialColorId,MaterialPackLabelGroupID,TradePartnerID,TradePartnerVendorID
+			,MaterialBOM,MaterialCode,StyleMaterialLinkID,MultiCloth,MaterialCoreItemID,MaterialSwing,MaterialLinkID
+			,MultiMaterialParentID
+			FROM pStyleBOM where StyleBOMDimensionID = @oldBOMId 
+			and WorkflowID = @WorkflowID AND WorkflowItemID = @WorkflowItemID AND StyleID = @CopyStyleID and StyleSet = @CopyStyleSet
+					
+			CREATE TABLE #tmpItem (
+				Rec_ID INT IDENTITY (1,1),
+				StyleMaterialID NVARCHAR(50),	
+				MaterialID NVARCHAR(50),	
+				MaterialCode nvarchar(200),			
+				oldStyleMaterialID NVARCHAR(50),	
+				oldMaterialID NVARCHAR(50),
+				oldMaterialCode nvarchar(200)								
+			)
+			
+			CREATE TABLE #tmpMaterialItem (
+				Rec_ID INT IDENTITY (1,1),	
+				MaterialId NVARCHAR(50),	
+				Dim1ID NVARCHAR(50),	
+				Dim2ID NVARCHAR(50),
+				Dim3ID NVARCHAR(50),		
+				Qty nvarchar(20),
+				ColorId nvarchar(50),
+				SizeId nvarchar(50),
+				Price nvarchar(20), 
+				Comments nvarchar(510), 
+				ImageId nvarchar(50) 			
+				)	
+						
+			INSERT INTO #tmpItem (StyleMaterialID, MaterialId, MaterialCode, oldStyleMaterialID, oldMaterialId, oldMaterialCode)
+			SELECT sbNew.StyleMaterialID, sbNew.MaterialID, sbNew.MaterialCode, sbOld.StyleMaterialID, sbOld.MaterialID, sbOld.MaterialCode  
+			FROM pStyleBOM sbNew 
+			INNER JOIN pStyleBOM sbOld ON sbNew.CopyStyleMaterialID = sbOld.StyleMaterialID
+			WHERE sbNew.StyleBOMDimensionId = @NewBOMId				
+						
+			INSERT INTO	#tmpMaterialItem (MaterialId, Dim1ID,  Dim2ID,  Dim3ID, Qty, ColorId, SizeId, Price,
+			Comments, ImageId)
+			select StyleMaterialId, ItemDim1ID, ItemDim2ID, ItemDim3ID, MaterialQuantity, MaterialColorId, MaterialDimension, 
+			MaterialPrice, Comments, ImageId from pStyleBOMItem where styleBOMDimensionId=@oldBOMId	 			
+			
+			update #tmpMaterialItem set MaterialId=t1.StyleMaterialId 
+			from #tmpMaterialItem t inner join #tmpItem t1  
+			on t.MaterialId=t1.oldStyleMaterialId  
+			
+			select @ItemDim1TypeId = ItemDim1TypeId, @ItemDim2TypeId = ItemDim2TypeId, @ItemDim3TypeId=ItemDim3TypeId
+			from pStyleBOMDimension where StyleBOMDimensionId = @NewBOMId 		    
+			
+			Insert into pstylebomitem (StyleBOMDimensionId, StyleBOMDimensionItemID, StyleMaterialID, WorkflowID, WorkflowItemID, 
+			StyleID, StyleSet, ItemDim1TypeId, ItemDim2TypeId, ItemDim3TypeId, ItemDim1ID,
+			ItemDim2ID,ItemDim3ID, MaterialQuantity, MaterialColorId, MaterialDimension, MaterialPrice)		
+			select @NewBOMId, null, MaterialID, @WorkflowID, @NewWorkFlowItemId, @StyleID, @StyleSet,
+			@ItemDim1TypeId, @ItemDim2TypeId, @ItemDim3TypeId, Dim1ID , Dim2ID, Dim3ID, Qty, ColorId, SizeId, Price
+			from #tmpMaterialItem		
+			
+		    if (@ItemDim3TypeId='00000000-0000-0000-0000-000000000000') and  (@ItemDim2TypeId='00000000-0000-0000-0000-000000000000') 		    
+				begin										
+					UPDATE pstylebomitem
+					SET StyleBOMDimensionItemID = p.StyleBOMDimensionItemID
+						, ItemDim1Id = p.ItemDim1Id
+						, ItemDim2Id = p.ItemDim2Id
+						, ItemDim3Id = p.ItemDim3Id
+						, ItemDim1Name = p.ItemDim1Name
+						, ItemDim2Name = p.ItemDim2Name
+						, ItemDim3Name = p.ItemDim3Name
+						, ItemDim1TypeId = p.ItemDim1TypeId
+						, ItemDim2TypeId = p.ItemDim2TypeId
+						, ItemDim3TypeId = p.ItemDim3TypeId
+					FROM pstylebomitem b
+					INNER JOIN pStyleBOMDimensionItems p ON b.StyleBOMDimensionId = p.StyleBOMDimensionId
+						AND b.ItemDim1Id = p.ItemDim1Id
+					WHERE b.styleBOMDimensionId = @NewBOMId
+						AND b.StyleBOMDimensionItemID IS NULL
+						AND b.ItemDim1Id IS NOT NULL                 
+				end
+			else 
+				begin
+					if (@ItemDim3TypeId='00000000-0000-0000-0000-000000000000')
+						begin 							
+							UPDATE pstylebomitem
+							SET StyleBOMDimensionItemID = p.StyleBOMDimensionItemID
+								, ItemDim1Id = p.ItemDim1Id
+								, ItemDim2Id = p.ItemDim2Id
+								, ItemDim3Id = p.ItemDim3Id
+								, ItemDim1Name = p.ItemDim1Name
+								, ItemDim2Name = p.ItemDim2Name
+								, ItemDim3Name = p.ItemDim3Name
+								, ItemDim1TypeId = p.ItemDim1TypeId
+								, ItemDim2TypeId = p.ItemDim2TypeId
+								, ItemDim3TypeId = p.ItemDim3TypeId
+							FROM pstylebomitem b
+							INNER JOIN pStyleBOMDimensionItems p ON b.StyleBOMDimensionId = p.StyleBOMDimensionId
+								AND b.ItemDim1Id = p.ItemDim1Id
+								AND (b.ItemDim2Id = p.ItemDim2Id 
+									OR (b.ItemDim2Id IS NULL AND p.ItemDim2Id IS NULL)) -- dimension might not have items
+							WHERE b.styleBOMDimensionId = @NewBOMId
+								AND b.StyleBOMDimensionItemID IS NULL
+								AND b.ItemDim1Id IS NOT NULL
+								AND ((b.ItemDim2Id IS NOT NULL AND p.ItemDim2Id IS NOT NULL)
+									OR (b.ItemDim2Id IS NULL AND p.ItemDim2Id IS NULL))
+						end	
+					else
+						begin							
+							UPDATE pstylebomitem
+							SET StyleBOMDimensionItemID = p.StyleBOMDimensionItemID
+								, ItemDim1Id = p.ItemDim1Id
+								, ItemDim2Id = p.ItemDim2Id
+								, ItemDim3Id = p.ItemDim3Id
+								, ItemDim1Name = p.ItemDim1Name
+								, ItemDim2Name = p.ItemDim2Name
+								, ItemDim3Name = p.ItemDim3Name
+								, ItemDim1TypeId = p.ItemDim1TypeId
+								, ItemDim2TypeId = p.ItemDim2TypeId
+								, ItemDim3TypeId = p.ItemDim3TypeId
+							FROM pstylebomitem b
+							INNER JOIN pStyleBOMDimensionItems p ON b.StyleBOMDimensionId = p.StyleBOMDimensionId
+								AND b.ItemDim1Id = p.ItemDim1Id
+								AND (b.ItemDim2Id = p.ItemDim2Id 
+									OR (b.ItemDim2Id IS NULL AND p.ItemDim2Id IS NULL)) -- dimension might not have items
+								AND (b.ItemDim3Id = p.ItemDim3Id 
+									OR (b.ItemDim3Id IS NULL AND p.ItemDim3Id IS NULL)) -- dimension might not have items
+							WHERE b.styleBOMDimensionId = @NewBOMId
+								AND b.StyleBOMDimensionItemID IS NULL
+								AND b.ItemDim1Id IS NOT NULL
+								AND ((b.ItemDim2Id IS NOT NULL AND p.ItemDim2Id IS NOT NULL)
+									OR (b.ItemDim2Id IS NULL AND p.ItemDim2Id IS NULL))
+								AND ((b.ItemDim3Id IS NOT NULL AND p.ItemDim3Id IS NOT NULL)
+									OR (b.ItemDim3Id IS NULL AND p.ItemDim3Id IS NULL))											
+						end
+					
+				end
+			
+			delete from pStyleBOMItem where StyleBOMDimensionID=@NewBOMId and StyleBOMDimensionItemID is null
+					
+			drop table #tmpItem	
+			drop table #tmpMaterialItem
+			
+			-- Copying BOM Colors
+			DECLARE @ColorDimensionTypeID UNIQUEIDENTIFIER
+			SELECT @ColorDimensionTypeID = DimTypeID
+			FROM pStyleBOMDimType WHERE UPPER(RTRIM(LTRIM(DimTypeName)))='COLOR'
+			
+			DECLARE @CurrentDimensionType UNIQUEIDENTIFIER
+			DECLARE @CurrentBOMColorColumn NVARCHAR(100) = ''
+			SELECT @CurrentDimensionType = ItemDim1TypeId FROM pStyleBOMDimensionItem
+			WHERE StyleBOMDimensionID = @NewBOMId
+			
+			-- Checking, which of pStyleBOMDimensionItem item is the Colorway items
+			IF @CurrentDimensionType = @ColorDimensionTypeID -- Color
+			BEGIN
+				SET @CurrentBOMColorColumn = 'ItemDim1Id'
+			END
+			ELSE
+			BEGIN
+				SELECT @CurrentDimensionType = ItemDim2TypeId FROM pStyleBOMDimensionItem
+				WHERE StyleBOMDimensionID = @NewBOMId
+				IF @CurrentDimensionType = @ColorDimensionTypeID
+				BEGIN
+					SET @CurrentBOMColorColumn = 'ItemDim2Id'
+				END
+				ELSE
+				BEGIN
+					SELECT @CurrentDimensionType = ItemDim3TypeId FROM pStyleBOMDimensionItem
+					WHERE StyleBOMDimensionID = @NewBOMId
+					IF @CurrentDimensionType = @ColorDimensionTypeID
+					BEGIN
+						SET @CurrentBOMColorColumn = 'ItemDim3Id'
+					END
+				END
+			END
+			-- If we have the Colorway in the BOM
+			IF @CurrentBOMColorColumn <> ''
+			BEGIN
+				CREATE TABLE #tmpUsedColors (
+					ID INT IDENTITY(1, 1),
+					StyleColorID UNIQUEIDENTIFIER
+				)
+				
+				CREATE TABLE #tmpCopiedColors (
+					ID INT IDENTITY(1, 1),
+					OriginalStyleColorID UNIQUEIDENTIFIER,
+					NewStyleColorID UNIQUEIDENTIFIER
+				)
+				-- Getting the list of Colors used in the BOM
+				DECLARE @StrSQL NVARCHAR(4000) = 'INSERT INTO #tmpUsedColors (StyleColorID) 
+					SELECT DISTINCT ' + @CurrentBOMColorColumn + ' FROM 
+					pStyleBOMDimensionItem WHERE StyleBOMDimensionID = ''' + CAST(@oldBOMId AS NVARCHAR(40)) + ''' 
+					AND ' + @CurrentBOMColorColumn + ' IS NOT NULL '
+					
+				EXECUTE sp_executesql @StrSQL
+					
+				-- Inserting all the colors into the new style's Colorway
+				DECLARE @I INT = 1
+				DECLARE @ROW_COUNT INT = 0
+				
+				DECLARE @ColorPaletteID UNIQUEIDENTIFIER
+				DECLARE @ColorCode NVARCHAR(200)
+				DECLARE @ColorName NVARCHAR(200)
+				DECLARE @OldStyleColorID UNIQUEIDENTIFIER
+				DECLARE @NewStyleColorID UNIQUEIDENTIFIER
+				
+				DECLARE @SeasonYearID UNIQUEIDENTIFIER
+				SELECT @SeasonYearID = SeasonYearID FROM pStyleSeasonYear WHERE StyleSeasonYearID = @StyleSeasonYearID
+				
+				SELECT @ROW_COUNT = COUNT(*) FROM #tmpUsedColors
+
+				WHILE @I <= @ROW_COUNT
+				BEGIN
+					
+					SELECT @OldStyleColorID = StyleColorID
+					FROM #tmpUsedColors
+					WHERE ID = @I
+					
+					SELECT @ColorPaletteID = palette.ColorPaletteID,
+							@ColorCode = palette.ColorCode,
+							@ColorName = palette.ColorName
+					FROM pStyleColorway colorway INNER JOIN pColorPalette palette
+					ON palette.ColorPaletteID = colorway.ColorPaletteID
+					WHERE colorway.StyleColorID = @OldStyleColorID
+					
+					EXEC spx_StyleColorway_Color_INSERT_SELECT 
+										@StyleID, 
+										@ColorPaletteID, 
+										@ColorCode,
+										@ColorName,
+										@SeasonYearID OUT, 
+										@NewStyleColorID OUT,
+										@CUser, 
+										@CDate
+										
+					INSERT INTO #tmpCopiedColors (OriginalStyleColorID, NewStyleColorID)
+					VALUES (@OldStyleColorID, @NewStyleColorID)
+					
+					SET @OldStyleColorID = NULL
+					SET @NewStyleColorID = NULL
+					SET @I = @I + 1
+				END
+				
+				SET @I = 1
+				SELECT @ROW_COUNT = COUNT(*) FROM #tmpCopiedColors
+				SET @OldStyleColorID = NULL
+				SET @NewStyleColorID = NULL
+				
+				WHILE @I <= @ROW_COUNT
+				BEGIN
+				
+					SELECT @OldStyleColorID = OriginalStyleColorID, @NewStyleColorID = NewStyleColorID
+					FROM #tmpCopiedColors WHERE ID = @I
+				
+					SET @StrSQL = 'UPDATE pStyleBOMDimensionItem SET ' + @CurrentBOMColorColumn + ' = ''' + CAST(@NewStyleColorID AS NVARCHAR(40)) + '''
+						WHERE ' + @CurrentBOMColorColumn + ' = ''' + CAST(@OldStyleColorID AS NVARCHAR(40)) + ''' 
+						AND StyleBOMDimensionID = ''' + CAST(@NewBOMId AS NVARCHAR(40)) + ''' '
+						
+					EXECUTE sp_executesql @StrSQL
+					
+					SET @StrSQL = 'UPDATE pStyleBOMDimensionItems SET ' + @CurrentBOMColorColumn + ' = ''' + CAST(@NewStyleColorID AS NVARCHAR(40)) + '''
+						WHERE ' + @CurrentBOMColorColumn + ' = ''' + CAST(@OldStyleColorID AS NVARCHAR(40)) + '''
+						AND StyleBOMDimensionID = ''' + CAST(@NewBOMId AS NVARCHAR(40)) + ''' '
+						
+					EXECUTE sp_executesql @StrSQL
+					
+					SET @StrSQL = 'UPDATE pStyleBOMItem SET ' + @CurrentBOMColorColumn + ' = ''' + CAST(@NewStyleColorID AS NVARCHAR(40)) + '''
+						WHERE ' + @CurrentBOMColorColumn + ' = ''' + CAST(@OldStyleColorID AS NVARCHAR(40)) + '''
+						AND StyleBOMDimensionID = ''' + CAST(@NewBOMId AS NVARCHAR(40)) + ''' '
+						
+					EXECUTE sp_executesql @StrSQL
+					
+					SET @I = @I + 1
+				END
+				
+				-->> Copy Misc Materials
+				DECLARE @StyleMaterialMisc TABLE(
+					StyleMaterialMiscID UNIQUEIDENTIFIER DEFAULT(NEWID()),
+					OldStyleMaterialMiscID UNIQUEIDENTIFIER
+				)
+				
+				INSERT INTO @StyleMaterialMisc(OldStyleMaterialMiscID)
+				SELECT DISTINCT StyleMaterialMiscID FROM pStyleBOMMiscItem
+				WHERE StyleBOMDimensionID = @oldBOMId
+				
+				INSERT INTO pStyleBOMMiscItem(
+					StyleBOMMiscItemID, StyleBOMDimensionID, StyleBOMDimensionItemID,
+					StyleMaterialMiscID, StyleMaterialID, MaterialNo, MaterialName,
+					Placement, SubMaterial, MiscColorId, Custom1, Custom2,
+					Sort, CDate, CUser, MDate, MUser)
+				SELECT NEWID(), @NewBOMId, newsc.StyleColorID,
+					smm.StyleMaterialMiscID, newsb.StyleMaterialID, sbmi.MaterialNo, sbmi.MaterialName,
+					sbmi.Placement, sbmi.SubMaterial, sbmi.MiscColorId, sbmi.Custom1, sbmi.Custom2,
+					sbmi.Sort, @CDate, @CUser, @CDate, @CUser
+				FROM pStyleBOMMiscItem sbmi
+				INNER JOIN pStyleBOM sb ON sbmi.StyleMaterialID = sb.StyleMaterialID
+				INNER JOIN pStyleBOM newsb ON sb.StyleMaterialID = newsb.CopyStyleMaterialID AND newsb.StyleBOMDimensionId = @NewBOMId
+				INNER JOIN pStyleColorway sc ON sbmi.StyleBOMDimensionItemID = sc.StyleColorID
+				INNER JOIN pStyleColorway newsc ON sc.ColorPaletteID = newsc.ColorPaletteID AND newsc.StyleID = @StyleID AND newsc.StyleSet = @StyleSet
+				INNER JOIN @StyleMaterialMisc smm ON sbmi.StyleMaterialMiscID = smm.OldStyleMaterialMiscID
+				WHERE sbmi.StyleBOMDimensionID = @oldBOMId	
+				order by sbmi.StyleMaterialMiscID, smm.StyleMaterialMiscID, newsc.StyleColorID			
+				--<<
+				
+				DROP TABLE #tmpCopiedColors
+				DROP TABLE #tmpUsedColors
+				
+			END
+			
+		END
+	 Else If @WorkFlowId = '40000000-0000-0000-0000-000000000090' 
+	  BEGIN
+		DECLARE @StyleSKUItemID UNIQUEIDENTIFIER = NEWID()
+	  
+		INSERT INTO pStyleSKUItem(StyleSKUItemID, WorkflowItemID, StyleSKUTemplateID, StyleBOMDimensionID, 
+			ItemDim1TypeID, ItemDim2TypeID, ItemDim3TypeID)
+		SELECT @StyleSKUItemID, @NewWorkFlowItemId, StyleSKUTemplateID, StyleBOMDimensionID, 
+			ItemDim1TypeID, ItemDim2TypeID, ItemDim3TypeID
+		FROM pStyleSKUItem WHERE WorkflowItemID = @WorkFlowItemId
+		
+		INSERT INTO pStyleSKUItems (
+			StyleSKUItemID,ItemDim1ID, ItemDim2ID, ItemDim3ID,
+			Delivery1StatusID, Delivery2StatusID, Delivery3StatusID, 
+			Delivery1WSUnits, Delivery2WSUnits, Delivery3WSUnits, 
+			Delivery1RUnits, Delivery2RUnits, Delivery3RUnits,
+			Delivery1EUnits, Delivery2EUnits, Delivery3EUnits,
+			TotalWSUnits, TotalRUnits, TotalEUnits, TotalUnits)
+		SELECT @StyleSKUItemID,ItemDim1ID, ItemDim2ID, ItemDim3ID,
+			Delivery1StatusID, Delivery2StatusID, Delivery3StatusID, 
+			Delivery1WSUnits, Delivery2WSUnits, Delivery3WSUnits, 
+			Delivery1RUnits, Delivery2RUnits, Delivery3RUnits,
+			Delivery1EUnits, Delivery2EUnits, Delivery3EUnits,
+			TotalWSUnits, TotalRUnits, TotalEUnits, TotalUnits
+		FROM pStyleSKUItems WHERE StyleSKUItemID = (SELECT StyleSKUItemID FROM pStyleSKUItem WHERE WorkflowItemID = @WorkFlowItemId)
+	  END
+  Else If @WorkFlowId = '40000000-0000-0000-0000-000000000018'  
+   BEGIN  
+     
+    INSERT INTO pStyleComment  
+    (StyleID, StyleSet, WorkflowID, CUser, CDate, MUser, MDate, MChange, StyleReview, StyleComment, CTeamID, Active, WorkFlowItemId)  
+    SELECT @StyleID, StyleSet, WorkflowID, @CUser, @CDate, @CUser, @CDate, MChange, StyleReview, StyleComment, CTeamID, Active, @NewWorkFlowItemId   
+    FROM pStyleComment WITH (NOLOCK)  
+    WHERE StyleID = @CopyStyleID  
+    AND WorkFlowItemId = @WorkflowItemID  
+    AND StyleSet = @CopyStyleSet  
+  
+  
+    INSERT INTO pStyleDetailForm  
+    (StyleDetailFormMasterID, WorkflowID, WorkFlowItemId, StyleID, Comments, StyleSet, ImageID, ImageVersion, CUser, CDate, MUser, MDate, Sort, StyleImageLinked, SessionItemTempID, StyleDetailFormLinkID)  
+    SELECT NEWID(), WorkflowID, @NewWorkFlowItemId, @StyleID, Comments, StyleSet, ImageID, ImageVersion,@CUser, @CDate, @CUser, @CDate, Sort, StyleImageLinked, SessionItemTempID, StyleDetailFormLinkID  
+    FROM pStyleDetailForm WITH (NOLOCK)  
+    WHERE StyleID = @CopyStyleID  
+    AND WorkflowItemID = @WorkflowItemID  
+    AND StyleSet = @CopyStyleSet  
+   END     
+  Else If @WorkFlowId = '40000000-0000-0000-0000-000000000078'  -- new BOL v.2
+   BEGIN  
+     
+	EXEC spx_StyleNBOL_Copy
+			@WorkflowID = @WorkflowID,
+			@NewWorkFlowItemId = @NewWorkFlowItemId,
+			@OldWorkFlowItemId = @WorkFlowItemId,
+			@NewStyleID = @StyleID,
+			@OldStyleID = @CopyStyleID,
+			@NewStyleSet = @StyleSet,
+			@OldStyleSet = @CopyStyleSet,
+			@CUser = @CUser,
+			@CDate = @CDate
+  
+   END
+  ELSE
+    BEGIN  
+     
+    INSERT INTO pStyleComment  
+    (StyleID, StyleSet, WorkflowID, CUser, CDate, MUser, MDate, MChange, StyleReview, StyleComment, CTeamID, Active, WorkFlowItemId)  
+    SELECT @StyleID, StyleSet, WorkflowID, @CUser, @CDate, @CUser, @CDate, MChange, StyleReview, StyleComment, CTeamID, Active, @NewWorkFlowItemId   
+    FROM pStyleComment WITH (NOLOCK)  
+    WHERE StyleID = @CopyStyleID  
+    AND WorkFlowItemId = @WorkflowItemID  
+    AND StyleSet = @CopyStyleSet  
+  
+  
+    INSERT INTO pStyleDetailForm  
+    (StyleDetailFormMasterID, WorkflowID, WorkFlowItemId, StyleID, Comments, StyleSet, ImageID, ImageVersion, CUser, CDate, MUser, MDate, Sort, StyleImageLinked, SessionItemTempID, StyleDetailFormLinkID)  
+    SELECT NEWID(), WorkflowID, @NewWorkFlowItemId, @StyleID, Comments, StyleSet, ImageID, ImageVersion,@CUser, @CDate, @CUser, @CDate, Sort, StyleImageLinked, SessionItemTempID, StyleDetailFormLinkID  
+    FROM pStyleDetailForm WITH (NOLOCK)  
+    WHERE StyleID = @CopyStyleID  
+    AND WorkflowItemID = @WorkflowItemID  
+    AND StyleSet = @CopyStyleSet  
+   END  
+  
+  
+ IF @@Error <> 0 GOTO Error  
+  
+ RETURN  
+Error:  
+ ROLLBACK TRANSACTION  
+END 
+
+GO
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES   ('DB_Version', '6.0.0000', '09065', GetDate())
+GO
+
+

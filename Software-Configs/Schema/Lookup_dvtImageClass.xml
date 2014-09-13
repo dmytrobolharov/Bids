@@ -1,0 +1,4 @@
+<table Name="dvtImageClass" ApiSQL="SELECT ItemKey, ItemValue FROM dvtImageClass" ApiWhereClause="Active=1" ApiOrderBy="ORDER BY ItemSort, ItemValue" muiSections="Misc Details">
+  <column Name="ItemKey" PK="true" alias="Key" ApiDataType="string" ApiVisible="true" ApiOrder="1" ApiRequired="true" ApiSearch="true" ApiSearchRequired="False" muiSectionID="1" muiOrder="001" muiVisible="true" />
+  <column Name="ItemValue" PK="false" alias="Value" ApiDataType="string" ApiVisible="true" ApiOrder="2" ApiRequired="true" ApiSearch="true" ApiSearchRequired="False" muiSectionID="1" muiOrder="002" muiVisible="true" />
+</table>
