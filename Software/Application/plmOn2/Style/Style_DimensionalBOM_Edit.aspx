@@ -15,7 +15,24 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <link type="text/css" rel="stylesheet" href="../System/CSS/jquery-ui.css" />
-    <script type="text/javascript" src="../System/Jscript/Custom.js"></script>        
+    <script type="text/javascript" src="../System/Jscript/Custom.js"></script>
+    <!--[if IE]>
+    <style type="text/css">
+        #RadGridsummary thead th {
+        	padding: 2px 4px !important;
+        }
+        
+        #RadGridsummary_GridData td {
+        	padding: 2px 4px !important;
+        }
+
+        #RadGridsummary_GridData { padding-right: 15px; }
+        
+        .rgMasterTable { table-layout: fixed !important; }
+
+        #RadGridsummary_GridHeader { margin-right: 0 !important; }
+    </style>
+    <![endif]-->        
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -236,6 +253,15 @@
             if (chbSelectAll != undefined) {
                 chbSelectAll.disabled = disableSelectAll;
             }
+
+            // fix width for non ie browsers
+            Sys.Application.add_load(function () {
+                if ($.support.cssFloat) {
+                    $("#RadGridsummary textarea, #RadGridsummary :text, #RadGridsummary select").each(function () {
+                        $(this).width($(this).width() - 10)
+                    })
+                }
+            });
         </script>
     </telerik:RadScriptBlock>
     <div id="dialog" style="display: none;">

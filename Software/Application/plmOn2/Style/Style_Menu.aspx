@@ -10,16 +10,26 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
-        <style>
+        <style type="text/css">
             #imgContainer
             {
                 position:relative;
+                width : 340px;
+                height : 340px;
             }
             #imgContainer div 
             {
                 position:absolute;
                 left:0;
                 background-color: White;
+                visibility: hidden;
+                width : 340px;
+                height : 340px;
+            }
+            #imgContainer div img
+            {
+                width: 100%;
+                max-height: 100%;
             }
         </style>
 	</head>
@@ -177,27 +187,51 @@
             <cc1:ystreeview id="YSTreePlanning" runat="server"></cc1:ystreeview><br>
 			<br>
 		</form>
-
         <script type="text/javascript">
-            var hasDesignBack = false;
-
             $(window).load(function () {
+                var width = 0;
+                var height = 0;
+
+                var intervalHandler;
+
+                var hasDesignBack = false;
+
                 hasDesignBack = $("#imgDesignBack").attr("src").indexOf("00000000-0000-0000-0000-000000000000") == -1;
 
-                var height = 0;
-                var width = 0;
-
                 if (hasDesignBack) {
-                    height = ($("#imgDesign").height() > $("#imgDesignBack").height() ? $("#imgDesign").height() : $("#imgDesignBack").height());
-                    width = ($("#imgDesign").width() > $("#imgDesignBack").width() ? $("#imgDesign").width() : $("#imgDesignBack").width());
+                    width = Math.max($("#imgDesign").width(), $("#imgDesignBack").width());
+                    height = Math.max($("#imgDesign").height(), $("#imgDesignBack").height());
                 }
                 else {
-                    height = $("#imgDesign").height();
                     width = $("#imgDesign").width();
-                    $("#imgDesignBack").css("display", "none");
+                    height = $("#imgDesign").height();
                 }
 
+                $("#imgContainer")
+                .mouseover(function () {
+                    if (hasDesignBack) {
+                        $("#imgDesignContainer").fadeOut();
+                        clearInterval(intervalHandler);
+                        var elementToToggle = $("#imgDesignContainer");
+                        intervalHandler = setInterval(function () {
+                            elementToToggle.fadeToggle()
+                        }, 1200);
+                    }
+                })
+                .mouseleave(function () {
+                    if (hasDesignBack) {
+                        clearInterval(intervalHandler);
+                        $("#imgDesignContainer").fadeIn();
+                    }
+                });
+
+
                 $("#imgContainer").css({
+                    "width": width,
+                    "height": height
+                });
+
+                $("#imgDesignBackContainer").css({
                     "width": width,
                     "height": height
                 });
@@ -207,28 +241,10 @@
                     "height": height
                 });
 
-                $("#imgDesignBackContainer").css({
-                    "width": width,
-                    "height": height
-                });
-            });
+                $("#imgDesignContainer").css("visibility", "visible");
 
-            var intervalHandler;
-
-            $("#imgContainer")
-            .mouseover(function () {
-                if (hasDesignBack){
-                    $("#imgDesignContainer").fadeOut();
-                    clearInterval(intervalHandler)
-                    intervalHandler = setInterval(function () {
-                        $("#imgDesignContainer").fadeToggle()
-                    }, 1200)
-                }
-            })
-            .mouseleave(function () {
-                if (hasDesignBack){
-                    clearInterval(intervalHandler)
-                    $("#imgDesignContainer").fadeIn();
+                if ($("#imgDesignBack").attr("src").indexOf("00000000-0000-0000-0000-000000000000") == -1) {
+                    $("#imgDesignBackContainer").css("visibility", "visible");
                 }
             });
 
@@ -260,5 +276,5 @@
             }
 
         </script>
-	</body>
+    </body>
 </html>

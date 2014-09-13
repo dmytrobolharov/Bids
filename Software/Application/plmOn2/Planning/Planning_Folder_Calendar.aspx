@@ -238,7 +238,13 @@
         </form>
         <script type="text/javascript" language="javascript">
             $(window).load(function () {
-                if (window.location.href.indexOf("TB=2") > -1) {
+                if ('<%= strTab %>' == 'S') {
+                    $("[id$=Datalist1] br").remove();
+                    $("[id$=Datalist1] > span").wrap("<div></div>");
+                    var divWidth = $("[id$=Datalist1] > div").first().width();
+                    $("[id$=Datalist1] > div").css("float", "left");
+                    $("[id$=Datalist1] > div").width(divWidth);
+
                     var width = 0;
                     var height = 0;
 
@@ -303,6 +309,12 @@
                             $(this).find(".imgDesignBackContainer").css("visibility", "visible");
                         }
                     });
+
+                    var divHeight = 0;
+                    $("[id$=Datalist1] > div").each(function () {
+                        divHeight = Math.max(divHeight, $(this).height());
+                    });
+                    $("[id$=Datalist1] > div").height(divHeight);
                 }
             });
         </script>

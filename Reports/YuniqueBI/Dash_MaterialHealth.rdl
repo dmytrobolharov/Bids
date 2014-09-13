@@ -993,13 +993,17 @@
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="chart2_CategoryGroup1">
+                  <Group Name="chart2_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!TradePartnerName.Value</GroupExpression>
+                      <GroupExpression>=Fields!TradePartnerFullName.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <Label>=Fields!TradePartnerName.Value</Label>
-                  <DataElementOutput>Output</DataElementOutput>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!TradePartnerFullName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!TradePartnerFullName.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -1029,6 +1033,26 @@
                         <Label>=Fields!COUNT.Value</Label>
                         <Visible>true</Visible>
                       </ChartDataLabel>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Drillthrough>
+                              <ReportName>Dash_Material_RequestList</ReportName>
+                              <Parameters>
+                                <Parameter Name="SeasonYearID">
+                                  <Value>=Parameters!SeasonYearID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="MaterialTypeID">
+                                  <Value>=Parameters!MaterialTypeID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="TradePartnerRelationshipLevelID">
+                                  <Value>=Fields!TradePartnerRelationshipLevelID.Value</Value>
+                                </Parameter>
+                              </Parameters>
+                            </Drillthrough>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1654,16 +1678,20 @@ ORDER BY ComponentOrder</CommandText>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Status">
-          <DataField>Status</DataField>
+          <DataField>STATUS</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TradePartnerName">
-          <DataField>TradePartnerName</DataField>
+        <Field Name="TradePartnerFullName">
+          <DataField>TradePartnerFullName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="MaterialType">
           <DataField>MaterialType</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TradePartnerRelationshipLevelID">
+          <DataField>TradePartnerRelationshipLevelID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>

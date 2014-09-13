@@ -1753,7 +1753,7 @@
               <rd:DefaultName>Textbox138</rd:DefaultName>
               <Top>1.7236cm</Top>
               <Height>0.508cm</Height>
-              <Width>2.5cm</Width>
+              <Width>1.78562cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1783,7 +1783,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
-              <Top>2.26688cm</Top>
+              <Top>1.72359cm</Top>
+              <Left>18.44151cm</Left>
               <Height>0.508cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>2</ZIndex>
@@ -1815,8 +1816,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
-              <Top>1.7236cm</Top>
-              <Left>6.5407cm</Left>
+              <Top>2.29518cm</Top>
+              <Left>5.82632cm</Left>
               <Height>0.508cm</Height>
               <Width>1.78562cm</Width>
               <ZIndex>3</ZIndex>
@@ -1848,8 +1849,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
-              <Top>2.26688cm</Top>
-              <Left>6.5407cm</Left>
+              <Top>2.29518cm</Top>
+              <Left>11.9084cm</Left>
               <Height>0.508cm</Height>
               <Width>1.78562cm</Width>
               <ZIndex>4</ZIndex>
@@ -1881,8 +1882,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
-              <Top>2.26688cm</Top>
-              <Left>9.92632cm</Left>
+              <Top>2.29518cm</Top>
+              <Left>15.29402cm</Left>
               <Height>0.508cm</Height>
               <Width>1.5475cm</Width>
               <ZIndex>5</ZIndex>
@@ -1914,7 +1915,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
               <Top>1.7236cm</Top>
-              <Left>2.5cm</Left>
+              <Left>1.78562cm</Left>
               <Height>0.508cm</Height>
               <Width>4.0407cm</Width>
               <ZIndex>6</ZIndex>
@@ -1945,8 +1946,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
-              <Top>2.26688cm</Top>
-              <Left>2.5cm</Left>
+              <Top>1.72359cm</Top>
+              <Left>20.94151cm</Left>
               <Height>0.508cm</Height>
               <Width>4.0407cm</Width>
               <ZIndex>7</ZIndex>
@@ -1977,8 +1978,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
-              <Top>1.7236cm</Top>
-              <Left>8.32632cm</Left>
+              <Top>2.29518cm</Top>
+              <Left>7.61194cm</Left>
               <Height>0.508cm</Height>
               <Width>4.29646cm</Width>
               <ZIndex>8</ZIndex>
@@ -2011,8 +2012,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
-              <Top>2.26688cm</Top>
-              <Left>8.32632cm</Left>
+              <Top>2.29518cm</Top>
+              <Left>13.69402cm</Left>
               <Height>0.508cm</Height>
               <Width>1.6cm</Width>
               <ZIndex>9</ZIndex>
@@ -2045,8 +2046,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
-              <Top>2.26688cm</Top>
-              <Left>11.47381cm</Left>
+              <Top>2.29518cm</Top>
+              <Left>16.84151cm</Left>
               <Height>0.508cm</Height>
               <Width>1.6cm</Width>
               <ZIndex>10</ZIndex>
@@ -2103,6 +2104,265 @@
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox148">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Style Type:</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>1.72359cm</Top>
+              <Left>11.9084cm</Left>
+              <Height>0.508cm</Height>
+              <Width>1.78562cm</Width>
+              <ZIndex>14</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox149">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=iif(CountRows("dsStyleTypeID")=Parameters!StyleTypeID.Count,"All",System.String.Join(", ",Parameters!StyleTypeID.Label,0,iif(Parameters!StyleTypeID.Count&gt;1,2,1)) &amp; iif(Parameters!StyleTypeID.Count&gt;2,", etc",""))</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>1.72359cm</Top>
+              <Left>13.69402cm</Left>
+              <Height>0.508cm</Height>
+              <Width>4.74749cm</Width>
+              <ZIndex>15</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox150">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Division:</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>1.72359cm</Top>
+              <Left>5.82632cm</Left>
+              <Height>0.508cm</Height>
+              <Width>1.78562cm</Width>
+              <ZIndex>16</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox151">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=iif(CountRows("dsDivisionID")=Parameters!DivisionID.Count,"All",System.String.Join(", ",Parameters!DivisionID.Label,0,iif(Parameters!DivisionID.Count&gt;1,2,1)) &amp; iif(Parameters!DivisionID.Count&gt;2,", etc",""))</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>1.7236cm</Top>
+              <Left>7.61194cm</Left>
+              <Height>0.508cm</Height>
+              <Width>4.29646cm</Width>
+              <ZIndex>17</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox152">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Workflow:</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>2.29518cm</Top>
+              <Height>0.508cm</Height>
+              <Width>1.78562cm</Width>
+              <ZIndex>18</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox153">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=iif(CountRows("dsWorkflowID")=Parameters!WorkflowID.Count,"All",System.String.Join(", ",Parameters!WorkflowID.Label,0,iif(Parameters!WorkflowID.Count&gt;1,2,1)) &amp; iif(Parameters!WorkflowID.Count&gt;2,", etc",""))</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>2.29518cm</Top>
+              <Left>1.78562cm</Left>
+              <Height>0.508cm</Height>
+              <Width>4.0407cm</Width>
+              <ZIndex>19</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox154">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Action:</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>2.29518cm</Top>
+              <Left>18.44151cm</Left>
+              <Height>0.508cm</Height>
+              <Width>2.5cm</Width>
+              <ZIndex>20</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox155">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=iif(CountRows("dsActionType")=Parameters!ActionTypeID.Count,"All",System.String.Join(", ",Parameters!ActionTypeID.Label,0,iif(Parameters!ActionTypeID.Count&gt;1,2,1)) &amp; iif(Parameters!ActionTypeID.Count&gt;2,", etc",""))</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>2.29518cm</Top>
+              <Left>20.94151cm</Left>
+              <Height>0.508cm</Height>
+              <Width>4.0407cm</Width>
+              <ZIndex>21</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
           <Height>3.04307cm</Height>
@@ -2129,9 +2389,7 @@
     <TopMargin>1cm</TopMargin>
     <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>1.27cm</ColumnSpacing>
-    <Style>
-      <BackgroundColor>WhiteSmoke</BackgroundColor>
-    </Style>
+    <Style />
   </Page>
   <Author>Yunique Solutions</Author>
   <AutoRefresh>0</AutoRefresh>
@@ -2245,6 +2503,18 @@
           <DataField>ChangeFieldName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="ChangeTransTypeID">
+          <DataField>ChangeTransTypeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DivisionID">
+          <DataField>DivisionID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="StyleType">
+          <DataField>StyleType</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <Filters>
         <Filter>
@@ -2274,6 +2544,34 @@
           <Operator>Like</Operator>
           <FilterValues>
             <FilterValue>="*" &amp; Parameters!StyleNo.Value &amp; "*"</FilterValue>
+          </FilterValues>
+        </Filter>
+        <Filter>
+          <FilterExpression>=Fields!DivisionID.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!DivisionID.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+        <Filter>
+          <FilterExpression>=Fields!StyleType.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!StyleTypeID.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+        <Filter>
+          <FilterExpression>=Fields!WorkflowID.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!WorkflowID.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+        <Filter>
+          <FilterExpression>=Fields!ChangeTransTypeID.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!ActionTypeID.Value</FilterValue>
           </FilterValues>
         </Filter>
       </Filters>
@@ -2337,6 +2635,70 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsDivisionID">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT Custom, CustomID FROM iCustom1 WHERE Active = 1 ORDER BY CustomSort, Custom</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Custom">
+          <DataField>Custom</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomID">
+          <DataField>CustomID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsStyleTypeID">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT StyleTypeID, StyleTypeDescription FROM pStyleType WHERE Active = 1 ORDER BY StyleTypeOrder, StyleTypeDescription</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="StyleTypeID">
+          <DataField>StyleTypeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StyleTypeDescription">
+          <DataField>StyleTypeDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsWorkflowID">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT WorkflowID, Workflow FROM pWorkFlow WHERE Active = 1 ORDER BY Workflow</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="WorkflowID">
+          <DataField>WorkflowID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Workflow">
+          <DataField>Workflow</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsActionType">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT  *  FROM vwx_ChangeTransType_SEL</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ChangeTransTypeID">
+          <DataField>ChangeTransTypeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ActionType">
+          <DataField>ActionType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SortBy">
@@ -2364,15 +2726,41 @@
         </ParameterValues>
       </ValidValues>
     </ReportParameter>
-    <ReportParameter Name="StyleNo">
+    <ReportParameter Name="DivisionID">
       <DataType>String</DataType>
       <DefaultValue>
-        <Values>
-          <Value>=""</Value>
-        </Values>
+        <DataSetReference>
+          <DataSetName>dsDivisionID</DataSetName>
+          <ValueField>CustomID</ValueField>
+        </DataSetReference>
       </DefaultValue>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>Style No</Prompt>
+      <Prompt>Division</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsDivisionID</DataSetName>
+          <ValueField>CustomID</ValueField>
+          <LabelField>Custom</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="StyleTypeID">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsStyleTypeID</DataSetName>
+          <ValueField>StyleTypeID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Style Type</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsStyleTypeID</DataSetName>
+          <ValueField>StyleTypeID</ValueField>
+          <LabelField>StyleTypeDescription</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="StyleCat">
       <DataType>String</DataType>
@@ -2391,6 +2779,34 @@
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="WorkflowID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsWorkflowID</DataSetName>
+          <ValueField>WorkflowID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Workflow</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsWorkflowID</DataSetName>
+          <ValueField>WorkflowID</ValueField>
+          <LabelField>Workflow</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="StyleNo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=""</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Style No</Prompt>
     </ReportParameter>
     <ReportParameter Name="DateFrom">
       <DataType>DateTime</DataType>
@@ -2424,6 +2840,24 @@
           <DataSetName>dsUsers</DataSetName>
           <ValueField>UserId</ValueField>
           <LabelField>Name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="ActionTypeID">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsActionType</DataSetName>
+          <ValueField>ChangeTransTypeID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Action</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsActionType</DataSetName>
+          <ValueField>ChangeTransTypeID</ValueField>
+          <LabelField>ActionType</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>

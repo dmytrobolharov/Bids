@@ -350,6 +350,10 @@
                 chbSelectAll.disabled = disableSelectAll;
             }
 
+            // fix width for non ie browsers
+            Sys.Application.add_load(function () {
+                if ($.support.cssFloat) { $("#RadGridColorMgmt col").each(function () { $(this).width($(this).width() + 10) }) }
+            });
         </script>
     </telerik:RadScriptBlock>
     </form>

@@ -1441,7 +1441,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
               <Top>0.65in</Top>
-              <Left>3.065in</Left>
+              <Left>6.0775in</Left>
               <Height>0.2in</Height>
               <Width>1in</Width>
               <ZIndex>4</ZIndex>
@@ -1473,7 +1473,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox50</rd:DefaultName>
               <Top>0.65in</Top>
-              <Left>4.065in</Left>
+              <Left>7.0775in</Left>
               <Height>0.2in</Height>
               <Width>2in</Width>
               <ZIndex>5</ZIndex>
@@ -1506,7 +1506,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
               <Top>0.65in</Top>
-              <Left>6.06201in</Left>
+              <Left>9.07451in</Left>
               <Height>0.2in</Height>
               <Width>1in</Width>
               <ZIndex>6</ZIndex>
@@ -1538,7 +1538,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox50</rd:DefaultName>
               <Top>0.65in</Top>
-              <Left>7.06201in</Left>
+              <Left>10.07451in</Left>
               <Height>0.2in</Height>
               <Width>2in</Width>
               <ZIndex>7</ZIndex>
@@ -1780,7 +1780,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
               <Top>0.65in</Top>
-              <Left>9.06201in</Left>
+              <Left>12.11409in</Left>
               <Height>0.2in</Height>
               <Width>1in</Width>
               <ZIndex>16</ZIndex>
@@ -1812,7 +1812,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox50</rd:DefaultName>
               <Top>0.65in</Top>
-              <Left>10.06201in</Left>
+              <Left>13.11409in</Left>
               <Height>0.2in</Height>
               <Width>2in</Width>
               <ZIndex>17</ZIndex>
@@ -1845,7 +1845,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
               <Top>0.85in</Top>
-              <Left>9.06201in</Left>
+              <Left>12.11409in</Left>
               <Height>0.2in</Height>
               <Width>1in</Width>
               <ZIndex>18</ZIndex>
@@ -1877,7 +1877,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox50</rd:DefaultName>
               <Top>0.85in</Top>
-              <Left>10.06201in</Left>
+              <Left>13.11409in</Left>
               <Height>0.2in</Height>
               <Width>2in</Width>
               <ZIndex>19</ZIndex>
@@ -1909,8 +1909,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
-              <Top>0.65in</Top>
-              <Left>12.06201in</Left>
+              <Top>0.85in</Top>
+              <Left>9.08701in</Left>
               <Height>0.2in</Height>
               <Width>1in</Width>
               <ZIndex>20</ZIndex>
@@ -1941,11 +1941,76 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox50</rd:DefaultName>
-              <Top>0.65in</Top>
-              <Left>13.06201in</Left>
+              <Top>0.85in</Top>
+              <Left>10.08701in</Left>
               <Height>0.2in</Height>
               <Width>2in</Width>
               <ZIndex>21</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox147">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Division:</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>0.65in</Top>
+              <Left>3.065in</Left>
+              <Height>0.2in</Height>
+              <Width>1in</Width>
+              <ZIndex>22</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox59">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=iif(CountRows("ParamQuery_DivisionID")=Parameters!DivisionID.Count,"All",System.String.Join(", ",Parameters!DivisionID.Label,0,iif(Parameters!DivisionID.Count&gt;1,2,1)) &amp; iif(Parameters!DivisionID.Count&gt;2,", etc",""))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox50</rd:DefaultName>
+              <Top>0.65in</Top>
+              <Left>4.065in</Left>
+              <Height>0.2in</Height>
+              <Width>2in</Width>
+              <ZIndex>23</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2100,6 +2165,10 @@
           <DataField>ItemDim1Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="DivisionID">
+          <DataField>DivisionID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
         <Field Name="ItemDim2Name">
           <DataField>ItemDim2Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -2251,6 +2320,13 @@
           <Operator>In</Operator>
           <FilterValues>
             <FilterValue>=Parameters!Workflow.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+        <Filter>
+          <FilterExpression>=Fields!DivisionID.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!DivisionID.Value</FilterValue>
           </FilterValues>
         </Filter>
       </Filters>
@@ -2432,6 +2508,22 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="ParamQuery_DivisionID">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT CustomID AS DivisionID, Custom AS Division FROM iCustom1 WHERE Active = 1 ORDER BY CustomSort, Custom</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DivisionID">
+          <DataField>DivisionID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Division">
+          <DataField>Division</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="DateFrom">
@@ -2528,24 +2620,23 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
       </ValidValues>
       <MultiValue>true</MultiValue>
     </ReportParameter>
-    <ReportParameter Name="StyleType">
-      <DataType>Integer</DataType>
+    <ReportParameter Name="DivisionID">
+      <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>ParamQuery_StyleType</DataSetName>
-          <ValueField>StyleTypeID</ValueField>
+          <DataSetName>ParamQuery_DivisionID</DataSetName>
+          <ValueField>DivisionID</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Style Type</Prompt>
+      <Prompt>Division</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>ParamQuery_StyleType</DataSetName>
-          <ValueField>StyleTypeID</ValueField>
-          <LabelField>StyleTypeDescription</LabelField>
+          <DataSetName>ParamQuery_DivisionID</DataSetName>
+          <ValueField>DivisionID</ValueField>
+          <LabelField>Division</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
-      <UsedInQuery>True</UsedInQuery>
     </ReportParameter>
     <ReportParameter Name="Factory">
       <DataType>String</DataType>
@@ -2565,20 +2656,20 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
       </ValidValues>
       <MultiValue>true</MultiValue>
     </ReportParameter>
-    <ReportParameter Name="StyleCategoryID">
-      <DataType>String</DataType>
+    <ReportParameter Name="StyleType">
+      <DataType>Integer</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>ParamQuery_StyleCategoryID</DataSetName>
-          <ValueField>StyleCategoryID</ValueField>
+          <DataSetName>ParamQuery_StyleType</DataSetName>
+          <ValueField>StyleTypeID</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Style Category</Prompt>
+      <Prompt>Style Type</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>ParamQuery_StyleCategoryID</DataSetName>
-          <ValueField>StyleCategoryID</ValueField>
-          <LabelField>StyleCategory</LabelField>
+          <DataSetName>ParamQuery_StyleType</DataSetName>
+          <ValueField>StyleTypeID</ValueField>
+          <LabelField>StyleTypeDescription</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
@@ -2602,20 +2693,20 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
       </ValidValues>
       <MultiValue>true</MultiValue>
     </ReportParameter>
-    <ReportParameter Name="SizeClass">
+    <ReportParameter Name="StyleCategoryID">
       <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>ParamQuery_SizeClass</DataSetName>
-          <ValueField>Custom</ValueField>
+          <DataSetName>ParamQuery_StyleCategoryID</DataSetName>
+          <ValueField>StyleCategoryID</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Size Class</Prompt>
+      <Prompt>Style Category</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>ParamQuery_SizeClass</DataSetName>
-          <ValueField>Custom</ValueField>
-          <LabelField>Custom</LabelField>
+          <DataSetName>ParamQuery_StyleCategoryID</DataSetName>
+          <ValueField>StyleCategoryID</ValueField>
+          <LabelField>StyleCategory</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
@@ -2640,6 +2731,30 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
       <MultiValue>true</MultiValue>
       <UsedInQuery>True</UsedInQuery>
     </ReportParameter>
+    <ReportParameter Name="SizeClass">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>ParamQuery_SizeClass</DataSetName>
+          <ValueField>Custom</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Size Class</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ParamQuery_SizeClass</DataSetName>
+          <ValueField>Custom</ValueField>
+          <LabelField>Custom</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="NoofSubmits">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>No. of Submits</Prompt>
+    </ReportParameter>
     <ReportParameter Name="SizeRange">
       <DataType>String</DataType>
       <DefaultValue>
@@ -2658,11 +2773,6 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
       </ValidValues>
       <MultiValue>true</MultiValue>
       <UsedInQuery>True</UsedInQuery>
-    </ReportParameter>
-    <ReportParameter Name="NoofSubmits">
-      <DataType>Integer</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>No. of Submits</Prompt>
     </ReportParameter>
     <ReportParameter Name="UserGroup">
       <DataType>String</DataType>

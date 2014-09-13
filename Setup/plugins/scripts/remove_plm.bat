@@ -1,6 +1,18 @@
 @echo off
 
-set V=_SITE_ID_HERE_
+IF NOT EXIST ./environ.bat (
+  echo "Missing Environment File"
+  goto EndLabel
+)
+
+IF EXIST ./environ.bat call environ.bat
+
+set V=%PLM.AppServer.SiteID%
+
+set usrGroup=%PLM.AppServer.ImpersonateGroup%%V%
+set admGroup=%PLM.AppServer.ImpersonateAdminGroup%%V%
+set mailFolder=%PLM.Mail.QueueFolder%
+set installPath=%PLM.Installation.InstallPath%
 
 echo
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -73,6 +85,38 @@ echo Windows Services.....
 
 sc STOP plmOn%V%Services
 sc DELETE plmOn%V%Services
+
+echo
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo       Remove Chilkat Stuff
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo Chilkat Stuff.....
+
+sc STOP ChilkatSmtpq
+sc DELETE ChilkatSmtpq
+
+%SYSTEMDRIVE%\WINDOWS\system32\regsvr32.exe /u "C:\Program Files\YuniquePLM\ChilkatSmtpQ\ChilkatUtil.dll"
+%SYSTEMDRIVE%\WINDOWS\system32\regsvr32.exe /u "C:\Program Files\YuniquePLM\ChilkatSmtpQ\SmtpQMgr.dll"
+
+%SYSTEMDRIVE%\WINDOWS\system32\reg.exe delete "HKEY_LOCAL_MACHINE\SOFTWARE\Chilkat Software, Inc.\SmtpQ" /f
+
+rmdir /S /Q "C:\Program Files\YuniquePLM\ChilkatSmtpQ"
+rmdir /S /Q %mailFolder%
+
+echo
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo       Remove User Perms
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo Removing User Perms.....
+icacls %installPath%\Software-Etc\Share /T /remove %usrGroup%
+icacls %installPath%\Software-Etc\Store /T /remove %admGroup%
+icacls %installPath%\Software-Configs\Schema /T /remove %admGroup%
+
+echo
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+echo       Remove Scheduled tasks
+echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+schtasks /DELETE /TN "YuniquePLM Maintenance %V%"
 
 echo.
 echo.

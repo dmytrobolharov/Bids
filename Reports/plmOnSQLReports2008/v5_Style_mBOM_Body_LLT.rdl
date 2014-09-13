@@ -1165,6 +1165,14 @@
                                       <GroupExpression>=iif(Fields!ColorStatus.Value=1,Fields!ItemDim2Name.Value,Fields!ItemDim1Name.Value)</GroupExpression>
                                     </GroupExpressions>
                                   </Group>
+                                  <SortExpressions>
+                                    <SortExpression>
+                                      <Value>=iif(Fields!ColorStatus.Value=1,Fields!ItemDim2Sort.Value,Fields!ItemDim1Sort.Value)</Value>
+                                    </SortExpression>
+                                    <SortExpression>
+                                      <Value>=iif(Fields!ColorStatus.Value=1,Fields!ItemDim2Name.Value,Fields!ItemDim1Name.Value)</Value>
+                                    </SortExpression>
+                                  </SortExpressions>
                                   <TablixMembers>
                                     <TablixMember>
                                       <Group Name="ItemDim2Name3">
@@ -1173,6 +1181,9 @@
                                         </GroupExpressions>
                                       </Group>
                                       <SortExpressions>
+                                        <SortExpression>
+                                          <Value>=Fields!ItemDim2Sort.Value</Value>
+                                        </SortExpression>
                                         <SortExpression>
                                           <Value>=Fields!ItemDim2Name.Value</Value>
                                         </SortExpression>
@@ -2639,12 +2650,15 @@
                                     <TablixMember>
                                       <Group Name="ItemDim2Name2">
                                         <GroupExpressions>
-                                          <GroupExpression>=Fields!ItemDim2Sort.Value</GroupExpression>
+                                          <GroupExpression>=Fields!ItemDim2Name.Value</GroupExpression>
                                         </GroupExpressions>
                                       </Group>
                                       <SortExpressions>
                                         <SortExpression>
                                           <Value>=Fields!ItemDim2Sort.Value</Value>
+                                        </SortExpression>
+                                        <SortExpression>
+                                          <Value>=Fields!ItemDim2Name.Value</Value>
                                         </SortExpression>
                                       </SortExpressions>
                                       <TablixHeader>
@@ -2711,16 +2725,6 @@
                                             </GroupExpressions>
                                           </Group>
                                           <SortExpressions>
-                                            <SortExpression>
-                                              <Value>=Fields!MainMaterial.Value</Value>
-                                              <Direction>Descending</Direction>
-                                            </SortExpression>
-                                            <SortExpression>
-                                              <Value>=Fields!MaterialSort.Value</Value>
-                                            </SortExpression>
-                                            <SortExpression>
-                                              <Value>=Fields!MaterialNo.Value</Value>
-                                            </SortExpression>
                                             <SortExpression>
                                               <Value>=Fields!ItemDim3Sort.Value</Value>
                                             </SortExpression>
@@ -5337,6 +5341,9 @@
                                   </Group>
                                   <SortExpressions>
                                     <SortExpression>
+                                      <Value>=Fields!ItemDim1Sort.Value</Value>
+                                    </SortExpression>
+                                    <SortExpression>
                                       <Value>=Fields!ItemDim1Name.Value</Value>
                                     </SortExpression>
                                   </SortExpressions>
@@ -5372,6 +5379,7 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixHeader>
                                   <TablixMembers>
@@ -6733,7 +6741,10 @@
                                   </Group>
                                   <SortExpressions>
                                     <SortExpression>
-                                      <Value>=Fields!ItemDim1Name.Value</Value>
+                                      <Value>=iif(Fields!ColorStatus.Value=1,Fields!ItemDim2Sort.Value,Fields!ItemDim1Sort.Value)</Value>
+                                    </SortExpression>
+                                    <SortExpression>
+                                      <Value>=iif(Fields!ColorStatus.Value=1,Fields!ItemDim2Name.Value,Fields!ItemDim1Name.Value)</Value>
                                     </SortExpression>
                                   </SortExpressions>
                                   <TablixHeader>
@@ -6800,6 +6811,9 @@
                                         </GroupExpressions>
                                       </Group>
                                       <SortExpressions>
+                                        <SortExpression>
+                                          <Value>=Fields!ItemDim2Sort.Value</Value>
+                                        </SortExpression>
                                         <SortExpression>
                                           <Value>=Fields!ItemDim2Name.Value</Value>
                                         </SortExpression>
@@ -8246,6 +8260,9 @@
                                   </Group>
                                   <SortExpressions>
                                     <SortExpression>
+                                      <Value>=Fields!ItemDim1Sort.Value</Value>
+                                    </SortExpression>
+                                    <SortExpression>
                                       <Value>=Fields!ItemDim1Name.Value</Value>
                                     </SortExpression>
                                   </SortExpressions>
@@ -8310,12 +8327,14 @@
                                       <Group Name="ItemDim2Name5">
                                         <GroupExpressions>
                                           <GroupExpression>=Fields!ItemDim2Name.Value</GroupExpression>
-                                          <GroupExpression>=Fields!MaterialNo.Value</GroupExpression>
                                         </GroupExpressions>
                                       </Group>
                                       <SortExpressions>
                                         <SortExpression>
                                           <Value>=Fields!ItemDim2Sort.Value</Value>
+                                        </SortExpression>
+                                        <SortExpression>
+                                          <Value>=Fields!ItemDim2Name.Value</Value>
                                         </SortExpression>
                                       </SortExpressions>
                                       <TablixHeader>

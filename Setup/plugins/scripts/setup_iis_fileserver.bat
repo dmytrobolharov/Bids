@@ -10,18 +10,15 @@ set V=%PLM.AppServer.SiteID%
 
 echo setup_iis_fileserver.bat %plmOnRootDir% %V% >> cli.log
 
-call create_vdir.bat plmOn%V%Download %plmOnRootDir%\Software-Etc\Store\Download
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
+if NOT "%PLM.Installation.InstallComponent_PLM%" == "yes" goto skipPLM
+  call create_vdir.bat plmOn%V%Download %plmOnRootDir%\Software-Etc\Store\Download
+  IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
+:skipPLM
 
-REM These are no longer necessary
-rem call create_vdir.bat plmOn%V%Image %plmOnRootDir%\Software-Etc\Store\Images\Thumb
-rem call create_vdir.bat plmOn%V%ImageCare %plmOnRootDir%\Software-Etc\Store\Images\Care
-rem call create_vdir.bat plmOn%V%ImageColor %plmOnRootDir%\Software-Etc\Store\Images\Color
-rem call create_vdir.bat plmOn%V%ImagePOM %plmOnRootDir%\Software-Etc\Store\Images\POM\Thumbnail
-rem call create_vdir.bat plmOn%V%Sample %plmOnRootDir%\Software-Etc\Store\Sample
-
-call create_vdir.bat srmOn%V%Download %plmOnRootDir%\Software-Etc\Store\Download
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
+if NOT "%PLM.Installation.InstallComponent_SRM%" == "yes" goto skipSRM
+  call create_vdir.bat srmOn%V%Download %plmOnRootDir%\Software-Etc\Store\Download
+  IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
+:skipSRM
 
 goto EndLabel
  

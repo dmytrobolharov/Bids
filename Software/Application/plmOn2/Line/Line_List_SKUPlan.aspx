@@ -266,6 +266,8 @@
         })();
 
         $(document).ready(function () {
+            window.scrollTo(0, 0);
+
             jQuery.fn.extend({
                 disable: function (state) {
                     return this.each(function () {

@@ -72,5 +72,5 @@ end
 GO
 
 INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
-VALUES ('DB_Version', '0.5.0000', '08665', GetDate())
+VALUES ('DB_Version', '0.5.0000', '08706', GetDate())
 GO

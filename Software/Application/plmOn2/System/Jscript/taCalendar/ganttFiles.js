@@ -3247,7 +3247,7 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
                             '</table>' +
                             '</div>';
 
-                             var ganntButtons = ' <div class="__template__" type="GANTBUTTONS">' +
+                        var ganntButtons = ' <div class="__template__" type="GANTBUTTONS">' +
                             '<div class="ganttButtonBar noprint">' +
                             '<div class="buttons">' +
                             '<button onclick="$(\'#workSpace\').trigger(\'addAboveCurrentTask.gantt\');" type="button" class="button textual" title="'+Yunique.Data.getTranslatedString(TranslationData,'insert above')+'"><span class="teamworkIcon">l</span></button>' +
@@ -3260,7 +3260,7 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
                             '<button onclick="$(\'#workSpace\').trigger(\'moveUpCurrentTask.gantt\');" type="button" class="button textual" title="'+Yunique.Data.getTranslatedString(TranslationData,'move up')+'"><span class="teamworkIcon">k</span></button>' +
                             '<button onclick="$(\'#workSpace\').trigger(\'moveDownCurrentTask.gantt\');" type="button" class="button textual" title="'+Yunique.Data.getTranslatedString(TranslationData,'move down')+'"><span class="teamworkIcon">j</span></button>' +
                             '<span class="ganttButtonSeparator"></span>' +
-                            '<button onclick="ge.gantt.showCriticalPath=!ge.gantt.showCriticalPath; ge.redraw();" class="button textual" title="Critical Path"><span class="teamworkIcon">£</span></button>'+
+                            '<button onclick="$(\'#workSpace\').trigger(\'criticalPath.gantt\');event.preventDefault();" class="button textual" title="Critical Path"><span class="teamworkIcon">£</span></button>'+
                             '<span class="ganttButtonSeparator"></span>' +
                             '<button onclick="$(\'#workSpace\').trigger(\'zoomMinus.gantt\');" type="button" class="button textual" title="'+Yunique.Data.getTranslatedString(TranslationData,'zoom out')+'"><span class="teamworkIcon">)</span></button>' +
                             '<button onclick="$(\'#workSpace\').trigger(\'zoomPlus.gantt\');" type="button" class="button textual" title="'+Yunique.Data.getTranslatedString(TranslationData,'zoom in')+'"><span class="teamworkIcon">(</span></button>' +
@@ -3402,7 +3402,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 objectToPush.name = tempDatasource[i].TaskName;
                 objectToPush.level = parseInt(tempDatasource[i].level);
                 objectToPush.type = tempDatasource[i].TaskTypeId;
-                objectToPush.progress = tempDatasource[i].TaskProgress;
+                objectToPush.progress = (tempDatasource[i].TaskProgress)*100;
                 objectToPush.team = tempDatasource[i].TaskAssignedToID;
                 objectToPush.new = tempDatasource[i].new;
                 objectToPush.carryOver = tempDatasource[i].CarryOver;
@@ -3516,7 +3516,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             }
             var taskName;
             ge.loadProject(datasourceObj);
-            console.log(datasourceObj)
+            hide_wait_text();
             $($('.gdfTable')[1]).find('tbody').sortable({
                 items: "tr:not(.emptyRow)",
                 start: function (e, ui) {
@@ -3575,7 +3575,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                     objectToPush.TaskDuration = tempDatasource[i].duration;
                     objectToPush.depends = tempDatasource[i].depends;
                     objectToPush.active = 0;
-                    objectToPush.TaskProgress = tempDatasource[i].progress;
+                    //objectToPush.TaskProgress = tempDatasource[i].progress;
                     objectToPush.level = tempDatasource[i].level;
                     objectToPush.TACalTemplateTaskID = tempDatasource[i].TACalTemplateTaskID;
                     objectToPush.TaskNote = tempDatasource[i].TaskNote;
@@ -4380,6 +4380,8 @@ GanttMaster.prototype.init = function (place) {
 
         }).bind("addAboveCurrentTask.gantt", function () {
             self.addAboveCurrentTask();
+        }).bind("criticalPath.gantt", function () {
+            self.criticalPath();
 
         }).bind("addBelowCurrentTask.gantt", function () {
             self.addBelowCurrentTask();
@@ -5057,6 +5059,11 @@ GanttMaster.prototype.addBelowCurrentTask = function () {
         task.rowElement.find("[name=name]").focus();
     }
     self.endTransaction();
+
+};
+GanttMaster.prototype.criticalPath = function () {
+    ge.gantt.showCriticalPath=!ge.gantt.showCriticalPath;
+    ge.redraw();
 
 };
 

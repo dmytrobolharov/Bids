@@ -534,7 +534,7 @@
                         <Actions>
                           <Action>
                             <Drillthrough>
-                              <ReportName>Dash_MaterialHealth</ReportName>
+                              <ReportName>Dash_Material_List</ReportName>
                               <Parameters>
                                 <Parameter Name="SeasonYearID">
                                   <Value>=Fields!SeasonYearID.Value</Value>
@@ -1469,35 +1469,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Image Name="Image4">
-                <Source>Embedded</Source>
-                <Value>icon_shortcut</Value>
-                <Sizing>FitProportional</Sizing>
-                <ActionInfo>
-                  <Actions>
-                    <Action>
-                      <Drillthrough>
-                        <ReportName>Dash_MaterialRequestAgent</ReportName>
-                        <Parameters>
-                          <Parameter Name="SeasonYearID">
-                            <Value>=Parameters!SeasonYearID.Value</Value>
-                          </Parameter>
-                        </Parameters>
-                      </Drillthrough>
-                    </Action>
-                  </Actions>
-                </ActionInfo>
-                <Top>0.04166in</Top>
-                <Left>1.11111in</Left>
-                <Height>0.16667in</Height>
-                <Width>0.16667in</Width>
-                <ZIndex>2</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Image>
             </ReportItems>
             <DataElementOutput>ContentsOnly</DataElementOutput>
             <Top>1.125in</Top>
@@ -1584,35 +1555,6 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
-              <Image Name="Image5">
-                <Source>Embedded</Source>
-                <Value>icon_shortcut</Value>
-                <Sizing>FitProportional</Sizing>
-                <ActionInfo>
-                  <Actions>
-                    <Action>
-                      <Drillthrough>
-                        <ReportName>Dash_Style</ReportName>
-                        <Parameters>
-                          <Parameter Name="SeasonYearID">
-                            <Value>=Parameters!SeasonYearID.Value</Value>
-                          </Parameter>
-                        </Parameters>
-                      </Drillthrough>
-                    </Action>
-                  </Actions>
-                </ActionInfo>
-                <Top>0.04166in</Top>
-                <Left>1.11806in</Left>
-                <Height>0.16667in</Height>
-                <Width>0.16667in</Width>
-                <ZIndex>2</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Image>
             </ReportItems>
             <DataElementOutput>ContentsOnly</DataElementOutput>
             <Top>1.125in</Top>
@@ -1701,6 +1643,15 @@
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!ComponentTypeID.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!MaterialTypeID.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
     </DataSet>
     <DataSet Name="dsSeasonYear">
       <Query>
@@ -1756,6 +1707,15 @@
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!ComponentTypeID.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!MaterialTypeID.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
     </DataSet>
     <DataSet Name="dsMaterialCount">
       <Query>
@@ -1763,6 +1723,9 @@
         <QueryParameters>
           <QueryParameter Name="@SeasonYearID">
             <Value>=Parameters!SeasonYearID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@MaterialTypeID">
+            <Value>=Parameters!MaterialTypeID.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
@@ -1865,6 +1828,22 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsMaterialTypeID">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT ComponentTypeID, ComponentDescription FROM pComponentType WHERE Active = 1 ORDER BY ComponentOrder, ComponentDescription</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ComponentTypeID">
+          <DataField>ComponentTypeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ComponentDescription">
+          <DataField>ComponentDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SeasonYearID">
@@ -1885,6 +1864,24 @@
           <LabelField>SeasonYear</LabelField>
         </DataSetReference>
       </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="MaterialTypeID">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsMaterialTypeID</DataSetName>
+          <ValueField>ComponentTypeID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Material Type</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsMaterialTypeID</DataSetName>
+          <ValueField>ComponentTypeID</ValueField>
+          <LabelField>ComponentDescription</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
     </ReportParameter>
   </ReportParameters>
   <Code>Public Function FormatDate(ByVal inputDate as Object) As String

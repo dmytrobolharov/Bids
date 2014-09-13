@@ -19,7 +19,7 @@
 			if (self != top) top.location.replace(self.location);
 
 			function loadFirsOption() {
-			    if ('<%= strNewPlanning %>' == 1) {
+			    if ('<%= strIsRedirect %>' == 1) {
 			        window.top.main.location.href = window.top.menu.document.getElementById('tv_1').href;
 			    }			    
 			}

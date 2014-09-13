@@ -94,7 +94,7 @@
                 var goToCalendar = function () {
                     var tCalReferenceId = $("#drlColorTACalendarID").val()
                     //if (tCalReferenceId)
-                    var newWin = window.open("../TimeAction/TimeAction_Folder.aspx?TID=" + tCalReferenceId, "dp", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=200,height=180,left=375,top=200");
+                    var newWin = window.open("../TimeAction/TimeAction_Frame.aspx?TID=" + tCalReferenceId, "dp", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=200,height=180,left=375,top=200");
                     newWin.focus();
                 }
             </script>

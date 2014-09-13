@@ -69,6 +69,14 @@
                          #fixed_icons {
                             padding-bottom: 80px;
                             }
+                            
+                         .RadGrid_YPLM .rgHeader td, #FinancialPlanGrid .rgFooter td {
+                         	border-color: #ccc;
+                         }
+                         
+                         #FinancialPlanGrid .rgFooter td {
+                         	padding: 2px;
+                         }
                         </style>
                     </head>
                     <body>
@@ -407,10 +415,10 @@
         $grossMargin = $this.parent().closest("tr").find("[id*='lbl10000000-0000-0000-0000-000000000028']"),
         totalProjectUnit = getFloatValue($this.closest("tr").find("[id*='10000000-0000-0000-0000-000000000022']").html());
             //Update Extended fields with recomputed values
-            var extendedCostValue = totalProjectUnit * getFloatValue($AverageCost.val()),
-        extendedWholeSaleValue = getFloatValue(wholeSale) * getFloatValue($wholeSale.val()),
-        extendedRetailValue = getFloatValue(retailPrice) * getFloatValue($retailPrice.val()),
-        extendedEcomValue = getFloatValue(EcomPrice) * getFloatValue($EcomPrice.val());
+            var extendedCostValue = (totalProjectUnit * getFloatValue($AverageCost.val())).toFixed(2),
+        extendedWholeSaleValue = (getFloatValue(wholeSale) * getFloatValue($wholeSale.val())).toFixed(2),
+        extendedRetailValue = (getFloatValue(retailPrice) * getFloatValue($retailPrice.val())).toFixed(2),
+        extendedEcomValue = (getFloatValue(EcomPrice) * getFloatValue($EcomPrice.val())).toFixed(2);
 
             //compute Extended cost and recompute associated sum fields
             $extendedCost.text(getCurrencyValues(extendedCostValue));
@@ -429,7 +437,7 @@
             recomputeTopAndBottomValue($extendedEcom, $extendedEcom.parent().index(), 2);
 
             //  update gross values
-            var grossProfit = (extendedWholeSaleValue + extendedRetailValue + extendedEcomValue) - extendedCostValue,
+            var grossProfit = ((extendedWholeSaleValue + extendedRetailValue + extendedEcomValue) - extendedCostValue).toFixed(2),
         wholeSaleGrossMargin = ((extendedWholeSaleValue - getFloatValue(wholeSale) * getFloatValue($AverageCost.val())) / extendedWholeSaleValue) * 100,
         retailGrossMargin = ((extendedRetailValue - getFloatValue(retailPrice) * getFloatValue($AverageCost.val())) / extendedRetailValue) * 100,
         ecomGrossMargin = ((extendedEcomValue - getFloatValue(EcomPrice) * getFloatValue($AverageCost.val())) / extendedEcomValue) * 100,
@@ -501,7 +509,7 @@
                         $OverDevStyles = $this.siblings(":text");
 
                     $OverDevStyles.val(formatValue(getFloatValue(this.value) / 100 * NoOfStyles, getData($OverDevStyles)));
-                    //            this.value = percentFormat(getFloatValue(this.value));
+                    this.value = percentFormat(getFloatValue(this.value));
                 } else {
                     var $NoOfStyles = $this.closest("tr").find("[id*='txt10000000-0000-0000-0000-000000000000']"),
                         NoOfStyles = getFloatValue($NoOfStyles.val(), getData($NoOfStyles)),

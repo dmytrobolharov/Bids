@@ -6,8 +6,8 @@ echo *****************************************************
 echo Creating users and groups...
 
 set usr=%PLM.AppServer.ImpersonateName%
-set grp=%PLM.AppServer.ImpersonateGroup%
-set grpadmin=%PLM.AppServer.ImpersonateAdminGroup%
+set grp=%PLM.AppServer.ImpersonateGroup%%PLM.AppServer.SiteID%
+set grpadmin=%PLM.AppServer.ImpersonateAdminGroup%%PLM.AppServer.SiteID%
 set pwd=%PLM.AppServer.ImpersonatePassword%
 
 echo setup_createuser.bat %usr% %grp% %pwd% >> cli.log

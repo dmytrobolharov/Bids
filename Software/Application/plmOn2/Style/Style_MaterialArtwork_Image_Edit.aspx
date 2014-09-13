@@ -97,9 +97,9 @@
 							</td>						
 						</tr>
 						<tr>
-							<td style=" height:150; width:350px">
-								<cc1:BWImageButton id="btnImgNewWindow" runat="server" 
-									CommandName="Window"></cc1:BWImageButton>
+							<td style="height:150; width:350px">
+								<div style="width:290px; height:290px;"><cc1:BWImageButton id="btnImgNewWindow" runat="server" 
+									CommandName="Window"></cc1:BWImageButton></div>
 							</td>
 						</tr>
 					</table>
@@ -138,9 +138,9 @@
 							</td>						
 						</tr>
 						<tr>
-							<td style=" height:150; width:350px">
-								<cc1:BWImageButton id="btnImgNewWindow" runat="server" 
-									CommandName="Window"></cc1:BWImageButton>
+							<td style="height:150; width:350px">
+								<div style="width:290px; height:290px;"><cc1:BWImageButton id="btnImgNewWindow" runat="server" 
+									CommandName="Window"></cc1:BWImageButton></div>
 							</td>
 						</tr>
 					</table>

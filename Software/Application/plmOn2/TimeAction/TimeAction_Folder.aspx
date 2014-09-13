@@ -21,33 +21,20 @@
    <link rel="stylesheet" href="../System/CSS/kendoUI/default/kendo.default.min.css" type="text/css">
    <link rel="stylesheet" type="text/css" href="../System/CSS/taCalendar/notifIt.css"> 
    <link rel="stylesheet" type="text/css" href="../System/CSS/taCalendar/taCalMain.css"> 
- 
+    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 
-   
-   <script language="JavaScript">
-	<!--
-
-       if (window.screen) {
-           var aw = screen.availWidth;
-           var ah = screen.availHeight;
-           window.moveTo(0, 0);
-           window.resizeTo(aw, ah);
-       }
-
-       if (self != top) top.location.replace(self.location);
-	//-->
-	</script>
-   <!-- -->
 </head>
 <body ms_positioning="GridLayout" style="background-color: #fff;">
     <form id="Form1" method="post" runat="server" onkeydown = "return (event.keyCode!=13)" >
+     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
      <table class="TableHeader" id="toolbar" cellSpacing="0" cellpadding="0" width="100%" border="0"
 runat="server">
 <tr valign="middle">
 <td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 <td>
+<wc1:Color_Wait ID="cwColorWait" runat="server" />
 <asp:ImageButton id="btnSave" runat="server" CssClass="inputYu"></asp:ImageButton>
-                   <asp:ImageButton id="btnDelete" runat="server" CausesValidation="False" CssClass="inputYu"></asp:ImageButton>
+                   <cc1:confirmedimagebutton id="btnDelete" runat="server" CausesValidation="False" CssClass="inputYu" ></cc1:confirmedimagebutton>
                      <cc1:bwimagebutton id="btnCopy" runat="server" CausesValidation="False" CssClass="inputYu"></cc1:bwimagebutton>
                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" CssClass="inputYu"
                        ></cc1:confirmedimagebutton>
@@ -85,6 +72,8 @@ runat="server">
             </Windows>
         </telerik:RadWindowManager>      
 <script>
+    show_wait_text();
+    busyBox.Animate();
     function showTaskDetails(strTACalTemplateTaskID) {
         window.radopen("TimeAction_TemplateTask_Detail.aspx?TTID=" + strTACalTemplateTaskID,"MaterialColorsMenu");
     }
@@ -166,7 +155,7 @@ height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" borde
     }
 
     body {
-        overflow: hidden;
+         overflow-y: scroll;
     }
 
     .ganttButtonBar h1{

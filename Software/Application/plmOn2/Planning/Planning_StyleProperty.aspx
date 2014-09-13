@@ -27,6 +27,8 @@
             #imgContainer
             {
                 position:relative;
+                width : 300px;
+                height : 300px;
             }
             #imgContainer div 
             {
@@ -34,6 +36,8 @@
                 left:0;
                 background-color: White;
                 visibility: hidden;
+                width : 300px;
+                height : 300px;
             }
             #imgContainer div img
             {
@@ -202,23 +206,11 @@
     </table>
     <script type="text/javascript">
         $(window).load(function () {
-            var width = 0;
-            var height = 0;
-
             var intervalHandler;
 
             var hasDesignBack = false;
 
             hasDesignBack = $("#imgDesignBack").attr("src").indexOf("00000000-0000-0000-0000-000000000000") == -1;
-
-            if (hasDesignBack) {
-                width = Math.max($("#imgDesign").width(), $("#imgDesignBack").width());
-                height = Math.max($("#imgDesign").height(), $("#imgDesignBack").height());
-            }
-            else {
-                width = $("#imgDesign").width();
-                height = $("#imgDesign").height();
-            }
 
             $("#imgContainer")
                 .mouseover(function () {
@@ -237,22 +229,6 @@
                         $("#imgDesignContainer").fadeIn();
                     }
                 });
-
-
-            $("#imgContainer").css({
-                "width": width,
-                "height": height
-            });
-
-            $("#imgDesignBackContainer").css({
-                "width": width,
-                "height": height
-            });
-
-            $("#imgDesignContainer").css({
-                "width": width,
-                "height": height
-            });
 
             $("#imgDesignContainer").css("visibility", "visible");
 
@@ -305,6 +281,11 @@
                 changeGrid.height(minHeight);
             }
         })();    
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input[value*='../System/Icons/icon_info.gif']").val("");
+        });
     </script>
 </body>
 </html>

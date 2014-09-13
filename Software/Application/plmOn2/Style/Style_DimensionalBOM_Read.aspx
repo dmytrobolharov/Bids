@@ -18,7 +18,19 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-   
+    <!--[if IE]>
+    <style type="text/css">
+        thead th {
+        	padding: 2px 4px !important;
+        }
+        
+        #RadGridsummary_GridData td, #RadGridColorMgmt_GridData td {
+        	padding: 2px 4px !important;
+        }
+        
+        #RadGridsummary_GridHeader, #RadGridColorMgmt_GridHeader { margin-right: 0 !important; }
+    </style>
+    <![endif]-->
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>

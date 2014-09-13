@@ -95,7 +95,7 @@
             }
             var goToCalendar = function () {
                 var strTACalTemplateId = $("#drlMaterialRequestTACalendarID").val()
-                var newWin = window.open("../TimeAction/TimeAction_Folder.aspx?TID=" + strTACalTemplateId, "dp", "toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,left=375,top=200");
+                var newWin = window.open("../TimeAction/TimeAction_Frame.aspx?TID=" + strTACalTemplateId, "dp", "toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,left=375,top=200");
                 newWin.focus();
             }
         </script>

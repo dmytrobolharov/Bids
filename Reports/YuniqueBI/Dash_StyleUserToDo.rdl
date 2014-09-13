@@ -511,7 +511,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>dsStyleWorkflowUserToDo</DataSetName>
+            <DataSetName>dsStyleToDoWorkflow</DataSetName>
             <Top>0.31944in</Top>
             <Left>0.0625in</Left>
             <Height>0.5in</Height>
@@ -548,23 +548,8 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value xml:space="preserve">  </Value>
-                    <Style>
-                      <FontFamily>Tahoma</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                      <Color>DimGray</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!Workflow.Value, "dsWorkflow")</Value>
-                    <Style>
-                      <FontFamily>Tahoma</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                      <Color>DimGray</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> Status</Value>
+                    <Label>LBL</Label>
+                    <Value>=First(Fields!Workflow.Value, "dsWorkflow").ToString &amp; " Status"</Value>
                     <Style>
                       <FontFamily>Tahoma</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -579,9 +564,13 @@
             <Width>5.625in</Width>
             <Style>
               <Border>
-                <Color>Gray</Color>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
+              <BottomBorder>
+                <Color>DimGray</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
               <BackgroundColor>White</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -638,6 +627,44 @@
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Drillthrough>
+                              <ReportName>Dash_StyleUserToDo</ReportName>
+                              <Parameters>
+                                <Parameter Name="TID">
+                                  <Value>=Parameters!TID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="SeasonYearID">
+                                  <Value>=Parameters!SeasonYearID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="UserGroupID">
+                                  <Value>=Parameters!UserGroupID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="DivisionID">
+                                  <Value>=Parameters!DivisionID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="StyleTypeID">
+                                  <Value>=Parameters!StyleTypeID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="StyleCategoryID">
+                                  <Value>=Parameters!StyleCategoryID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="StyleStatusID">
+                                  <Value>=Parameters!StyleStatusID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="WorkStatus">
+                                  <Value>=Fields!WorkStatus.Value</Value>
+                                </Parameter>
+                                <Parameter Name="WorkflowID">
+                                  <Value>=Parameters!WorkflowID.Value</Value>
+                                </Parameter>
+                              </Parameters>
+                            </Drillthrough>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
                       <Style>
                         <Border>
                           <Color>Silver</Color>
@@ -839,6 +866,7 @@
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontFamily>Tahoma</FontFamily>
                 </Style>
+                <Position>RightCenter</Position>
                 <ChartLegendTitle>
                   <Caption />
                   <Style>
@@ -868,15 +896,15 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>dsStyleWorkflowStatus</DataSetName>
+            <DataSetName>dsPieChart</DataSetName>
             <Top>0.3125in</Top>
-            <Left>0.0625in</Left>
-            <Height>2.4375in</Height>
+            <Left>0.06944in</Left>
+            <Height>2.375in</Height>
             <Width>5.36458in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
-                <Color>LightGrey</Color>
+                <Color>DimGray</Color>
                 <Style>Solid</Style>
               </Border>
               <BackgroundColor>White</BackgroundColor>
@@ -887,7 +915,7 @@
         <DataElementOutput>ContentsOnly</DataElementOutput>
         <Top>0.75in</Top>
         <Left>0.0625in</Left>
-        <Height>2.89458in</Height>
+        <Height>2.75in</Height>
         <Width>5.625in</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -926,9 +954,13 @@
                 <Width>1.625in</Width>
                 <Style>
                   <Border>
-                    <Color>Gray</Color>
-                    <Style>Solid</Style>
+                    <Style>None</Style>
                   </Border>
+                  <BottomBorder>
+                    <Color>DimGray</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </BottomBorder>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -1003,9 +1035,13 @@
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
-                <Color>Gray</Color>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
+              <BottomBorder>
+                <Color>DimGray</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
               <BackgroundColor>White</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -1039,9 +1075,13 @@
                 <Width>1.625in</Width>
                 <Style>
                   <Border>
-                    <Color>Gray</Color>
-                    <Style>Solid</Style>
+                    <Style>None</Style>
                   </Border>
+                  <BottomBorder>
+                    <Color>DimGray</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </BottomBorder>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -1151,9 +1191,13 @@
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
-                    <Color>Gray</Color>
-                    <Style>Solid</Style>
+                    <Style>None</Style>
                   </Border>
+                  <BottomBorder>
+                    <Color>DimGray</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </BottomBorder>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -1245,9 +1289,13 @@
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
-                    <Color>Gray</Color>
-                    <Style>Solid</Style>
+                    <Style>None</Style>
                   </Border>
+                  <BottomBorder>
+                    <Color>DimGray</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </BottomBorder>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -1295,9 +1343,13 @@
                 <Width>1.625in</Width>
                 <Style>
                   <Border>
-                    <Color>Gray</Color>
-                    <Style>Solid</Style>
+                    <Style>None</Style>
                   </Border>
+                  <BottomBorder>
+                    <Color>DimGray</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </BottomBorder>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -1368,13 +1420,13 @@
                       </TextRun>
                     </TextRuns>
                     <Style>
-                      <TextAlign>Left</TextAlign>
+                      <TextAlign>Right</TextAlign>
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Left>0.54514in</Left>
-                <Height>0.22792in</Height>
-                <Width>0.62153in</Width>
+                <Top>0.00001cm</Top>
+                <Height>0.24306in</Height>
+                <Width>1.125in</Width>
                 <Style>
                   <Border>
                     <Color>Gray</Color>
@@ -1414,6 +1466,11 @@
                   <Border>
                     <Style>None</Style>
                   </Border>
+                  <TopBorder>
+                    <Color>DimGray</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </TopBorder>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -1449,18 +1506,6 @@
                   </Border>
                 </Style>
               </Image>
-              <Line Name="Line3">
-                <Top>0.24181in</Top>
-                <Height>0in</Height>
-                <Width>1.625in</Width>
-                <ZIndex>3</ZIndex>
-                <Style>
-                  <Border>
-                    <Color>Gray</Color>
-                    <Style>Solid</Style>
-                  </Border>
-                </Style>
-              </Line>
             </ReportItems>
             <DataElementOutput>ContentsOnly</DataElementOutput>
             <Top>1.94444in</Top>
@@ -1502,9 +1547,13 @@
                 <Width>1.625in</Width>
                 <Style>
                   <Border>
-                    <Color>Gray</Color>
-                    <Style>Solid</Style>
+                    <Style>None</Style>
                   </Border>
+                  <BottomBorder>
+                    <Color>DimGray</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </BottomBorder>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -1614,9 +1663,13 @@
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
-                    <Color>Gray</Color>
-                    <Style>Solid</Style>
+                    <Style>None</Style>
                   </Border>
+                  <BottomBorder>
+                    <Color>DimGray</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </BottomBorder>
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -1650,7 +1703,6 @@
             <Color>Gray</Color>
             <Style>Solid</Style>
           </Border>
-          <BackgroundColor>WhiteSmoke</BackgroundColor>
         </Style>
       </Rectangle>
       <Rectangle Name="rectangle2">
@@ -1741,9 +1793,7 @@
     <RightMargin>0.1in</RightMargin>
     <TopMargin>0.5in</TopMargin>
     <BottomMargin>0.25in</BottomMargin>
-    <Style>
-      <BackgroundColor>WhiteSmoke</BackgroundColor>
-    </Style>
+    <Style />
   </Page>
   <Author>Yunique Solutions</Author>
   <AutoRefresh>0</AutoRefresh>
@@ -1779,9 +1829,21 @@
           <QueryParameter Name="@SeasonYearID">
             <Value>=Parameters!SeasonYearID.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@DivisionID">
+            <Value>=Parameters!DivisionID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleTypeID">
+            <Value>=Parameters!StyleTypeID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleStatusID">
+            <Value>=Parameters!StyleStatusID.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>dpx_StyleFolder_WHERECount_SELECT</CommandText>
+        <CommandText>dpx_StyleToDo_Snapshot_SELECT</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -1799,10 +1861,6 @@
         </Field>
         <Field Name="MaterialCount">
           <DataField>MaterialCount</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="CountryCount">
-          <DataField>CountryCount</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="TechPackCount">
@@ -1881,40 +1939,39 @@
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="dsStyleWorkflowStatus">
+    <DataSet Name="dsPieChart">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@SeasonYearID">
             <Value>=Parameters!SeasonYearID.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@DivisionID">
+            <Value>=Parameters!DivisionID.Value</Value>
+          </QueryParameter>
           <QueryParameter Name="@UserGroupID">
             <Value>=Parameters!UserGroupID.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@StyleTypeID">
+            <Value>=Parameters!StyleTypeID.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@WorkflowID">
             <Value>=Parameters!WorkflowID.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleStatusID">
+            <Value>=Parameters!StyleStatusID.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>dpx_StyleFolder_WorkflowBySeasonAndStyleType_SELECT</CommandText>
+        <CommandText>dpx_StyleToDo_Workflow_PieChart_SELECT</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
         <Field Name="COUNT">
           <DataField>COUNT</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SeasonYearID">
-          <DataField>SeasonYearID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="Workflow">
-          <DataField>Workflow</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="WorkflowSort">
-          <DataField>WorkflowSort</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="WorkStatus">
@@ -1924,10 +1981,6 @@
         <Field Name="WorkflowStatus">
           <DataField>WorkflowStatus</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="WorkflowID">
-          <DataField>WorkflowID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -1957,7 +2010,7 @@
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="dsStyleWorkflowUserToDo">
+    <DataSet Name="dsStyleToDoWorkflow">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
         <QueryParameters>
@@ -1970,618 +2023,45 @@
           <QueryParameter Name="@WorkflowID">
             <Value>=Parameters!WorkflowID.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@DivisionID">
+            <Value>=Parameters!DivisionID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleTypeID">
+            <Value>=Parameters!StyleTypeID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleStatusID">
+            <Value>=Parameters!StyleStatusID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@WorkStatus">
+            <Value>=Parameters!WorkStatus.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>dpx_StyleFolder_WorkflowUserToDoList_SELECT</CommandText>
+        <CommandText>dpx_StyleToDo_Workflow_SELECT</CommandText>
       </Query>
       <Fields>
         <Field Name="StyleID">
           <DataField>StyleID</DataField>
           <rd:TypeName>System.Guid</rd:TypeName>
         </Field>
-        <Field Name="StyleMasterID">
-          <DataField>StyleMasterID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="StyleWorkflowID">
-          <DataField>StyleWorkflowID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="StyleType">
-          <DataField>StyleType</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="WorkflowType">
-          <DataField>WorkflowType</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="RefNo">
-          <DataField>RefNo</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="StyleNo">
           <DataField>StyleNo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TempID">
-          <DataField>TempID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TempNo">
-          <DataField>TempNo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomerNo">
-          <DataField>CustomerNo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DevelopmentID">
-          <DataField>DevelopmentID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DevelopmentNo">
-          <DataField>DevelopmentNo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ConceptID">
-          <DataField>ConceptID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="ConceptNo">
-          <DataField>ConceptNo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SpecNo">
-          <DataField>SpecNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Description">
           <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="StyleCategory">
-          <DataField>StyleCategory</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
         <Field Name="SizeClass">
           <DataField>SizeClass</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SizeRange">
-          <DataField>SizeRange</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StyleSet">
-          <DataField>StyleSet</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="TechPackId">
-          <DataField>TechPackId</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="TechPackDate">
-          <DataField>TechPackDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="DueDate">
-          <DataField>DueDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="RecDate">
-          <DataField>RecDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Customer">
-          <DataField>Customer</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Buyer">
-          <DataField>Buyer</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Designer">
-          <DataField>Designer</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SampleMaker">
-          <DataField>SampleMaker</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PatternMaker">
-          <DataField>PatternMaker</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ProductionManager">
-          <DataField>ProductionManager</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TechnicalDesigner">
-          <DataField>TechnicalDesigner</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StyleStatus">
-          <DataField>StyleStatus</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StyleLocation">
-          <DataField>StyleLocation</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="WashType">
-          <DataField>WashType</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Pitch">
-          <DataField>Pitch</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="MaterialID">
-          <DataField>MaterialID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="MaterialImageID">
-          <DataField>MaterialImageID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="MaterialImageVersion">
-          <DataField>MaterialImageVersion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="MaterialNo">
-          <DataField>MaterialNo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="MaterialName">
-          <DataField>MaterialName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="POMTempGroupID1">
-          <DataField>POMTempGroupID1</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="POMTempGroupID2">
-          <DataField>POMTempGroupID2</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="POMTempGroupID3">
-          <DataField>POMTempGroupID3</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="POMTempGroupID4">
-          <DataField>POMTempGroupID4</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="POMTempID1">
-          <DataField>POMTempID1</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="POMTempVersion1">
-          <DataField>POMTempVersion1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="POMTempSizeClass1">
-          <DataField>POMTempSizeClass1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="POMTempID2">
-          <DataField>POMTempID2</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="POMTempVersion2">
-          <DataField>POMTempVersion2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="POMTempSizeClass2">
-          <DataField>POMTempSizeClass2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="POMTempID3">
-          <DataField>POMTempID3</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="POMTempVersion3">
-          <DataField>POMTempVersion3</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="POMTempSizeClass3">
-          <DataField>POMTempSizeClass3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="POMTempID4">
-          <DataField>POMTempID4</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="POMTempVersion4">
-          <DataField>POMTempVersion4</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="POMTempSizeClass4">
-          <DataField>POMTempSizeClass4</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StyleMaterialID">
-          <DataField>StyleMaterialID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DesignSketchID">
-          <DataField>DesignSketchID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="TechSketchID">
-          <DataField>TechSketchID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="ConceptSketchID">
-          <DataField>ConceptSketchID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="ColorSketchID">
-          <DataField>ColorSketchID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DesignSketchVersion">
-          <DataField>DesignSketchVersion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="TechSketchVersion">
-          <DataField>TechSketchVersion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ConceptSketchVersion">
-          <DataField>ConceptSketchVersion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ColorSketchVersion">
-          <DataField>ColorSketchVersion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="DetailSketchID1">
-          <DataField>DetailSketchID1</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DetailSketchID2">
-          <DataField>DetailSketchID2</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DetailSketchID3">
-          <DataField>DetailSketchID3</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DetailSketchID4">
-          <DataField>DetailSketchID4</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DetailSketchVersion1">
-          <DataField>DetailSketchVersion1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="DetailSketchVersion2">
-          <DataField>DetailSketchVersion2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="DetailSketchVersion3">
-          <DataField>DetailSketchVersion3</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="DetailSketchVersion4">
-          <DataField>DetailSketchVersion4</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SpecSketchID1">
-          <DataField>SpecSketchID1</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="SpecSketchID2">
-          <DataField>SpecSketchID2</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="SpecSketchID3">
-          <DataField>SpecSketchID3</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="SpecSketchID4">
-          <DataField>SpecSketchID4</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="SpecSketchVersion1">
-          <DataField>SpecSketchVersion1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SpecSketchVersion2">
-          <DataField>SpecSketchVersion2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SpecSketchVersion3">
-          <DataField>SpecSketchVersion3</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SpecSketchVersion4">
-          <DataField>SpecSketchVersion4</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Markup">
-          <DataField>Markup</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="TargetPrice">
-          <DataField>TargetPrice</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="SellingPrice">
-          <DataField>SellingPrice</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="CustomField1">
-          <DataField>CustomField1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField2">
-          <DataField>CustomField2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField3">
-          <DataField>CustomField3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField4">
-          <DataField>CustomField4</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField5">
-          <DataField>CustomField5</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField6">
-          <DataField>CustomField6</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField7">
-          <DataField>CustomField7</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField8">
-          <DataField>CustomField8</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField9">
-          <DataField>CustomField9</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField10">
-          <DataField>CustomField10</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField11">
-          <DataField>CustomField11</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField12">
-          <DataField>CustomField12</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField13">
-          <DataField>CustomField13</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField14">
-          <DataField>CustomField14</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField15">
-          <DataField>CustomField15</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Pc1">
-          <DataField>Pc1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Pc2">
-          <DataField>Pc2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Pc3">
-          <DataField>Pc3</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Pc4">
-          <DataField>Pc4</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CUser">
-          <DataField>CUser</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CDate">
-          <DataField>CDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="MUser">
-          <DataField>MUser</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="MDate">
-          <DataField>MDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Active">
-          <DataField>Active</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Change">
-          <DataField>Change</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Action">
-          <DataField>Action</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NoColorCombo">
-          <DataField>NoColorCombo</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="StyleVersion">
-          <DataField>StyleVersion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="StyleDetail">
-          <DataField>StyleDetail</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StyleDetail1">
-          <DataField>StyleDetail1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StyleAttribute">
-          <DataField>StyleAttribute</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StyleDetail2">
-          <DataField>StyleDetail2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="LinePlanSketchID">
-          <DataField>LinePlanSketchID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="LinePlanSketchVersion">
-          <DataField>LinePlanSketchVersion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="LinePlanID">
-          <DataField>LinePlanID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="LinePlanNo">
-          <DataField>LinePlanNo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField16">
-          <DataField>CustomField16</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField17">
-          <DataField>CustomField17</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField18">
-          <DataField>CustomField18</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField19">
-          <DataField>CustomField19</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField20">
-          <DataField>CustomField20</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField21">
-          <DataField>CustomField21</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField22">
-          <DataField>CustomField22</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField23">
-          <DataField>CustomField23</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField24">
-          <DataField>CustomField24</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField25">
-          <DataField>CustomField25</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField26">
-          <DataField>CustomField26</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField27">
-          <DataField>CustomField27</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField28">
-          <DataField>CustomField28</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField29">
-          <DataField>CustomField29</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField30">
-          <DataField>CustomField30</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PackagingNo">
-          <DataField>PackagingNo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StyleCopyID">
-          <DataField>StyleCopyID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="LinePlanItemID">
-          <DataField>LinePlanItemID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="StyleStatusID">
-          <DataField>StyleStatusID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="BodyID">
-          <DataField>BodyID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="TradePartnerID">
-          <DataField>TradePartnerID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="TradePartnerVendorID">
-          <DataField>TradePartnerVendorID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="StyleLinkID">
-          <DataField>StyleLinkID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="MaterialCoreID">
-          <DataField>MaterialCoreID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="ProdDev">
-          <DataField>ProdDev</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField31">
-          <DataField>CustomField31</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="HeaderLocked">
-          <DataField>HeaderLocked</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="SeasonYearID">
           <DataField>SeasonYearID</DataField>
           <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="CustomField32">
-          <DataField>CustomField32</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField33">
-          <DataField>CustomField33</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField34">
-          <DataField>CustomField34</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField35">
-          <DataField>CustomField35</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="WorkStatus">
           <DataField>WorkStatus</DataField>
@@ -2591,97 +2071,17 @@
           <DataField>WorkflowStatus</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CustomField36">
-          <DataField>CustomField36</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="WorkflowID">
           <DataField>WorkflowID</DataField>
           <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="CustomField37">
-          <DataField>CustomField37</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CustomField38">
-          <DataField>CustomField38</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DaysLate">
           <DataField>DaysLate</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="CustomField39">
-          <DataField>CustomField39</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="DaysWork">
           <DataField>DaysWork</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="CustomField40">
-          <DataField>CustomField40</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Distribution">
-          <DataField>Distribution</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="IntroSeasonYearID">
-          <DataField>IntroSeasonYearID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="UserCID">
-          <DataField>UserCID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="UserMID">
-          <DataField>UserMID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DesignSketchBackID">
-          <DataField>DesignSketchBackID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DesignSketchBackVersion">
-          <DataField>DesignSketchBackVersion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="OwnerGroup">
-          <DataField>OwnerGroup</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StartDate">
-          <DataField>StartDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="PlannedDueDate">
-          <DataField>PlannedDueDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="PlannedStartDate">
-          <DataField>PlannedStartDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="ScheduleBy">
-          <DataField>ScheduleBy</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EnforceDependency">
-          <DataField>EnforceDependency</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="WorkflowTemplateID">
-          <DataField>WorkflowTemplateID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="DivisionID">
-          <DataField>DivisionID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="StyleThemeID">
-          <DataField>StyleThemeID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
         </Field>
         <Field Name="Materials">
           <DataField>Materials</DataField>
@@ -2821,6 +2221,22 @@ WHERE SettingType = 'plmOnServer'</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsDivision">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT CustomID, Custom FROM iCustom1 WHERE Active = 1</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CustomID">
+          <DataField>CustomID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Custom">
+          <DataField>Custom</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="TID">
@@ -2886,6 +2302,52 @@ WHERE SettingType = 'plmOnServer'</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="DivisionID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsDivision</DataSetName>
+          <ValueField>CustomID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Division ID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsDivision</DataSetName>
+          <ValueField>CustomID</ValueField>
+          <LabelField>Custom</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="StyleTypeID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Style Type ID</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="StyleCategoryID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Style Category ID</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="StyleStatusID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Style Status ID</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="WorkStatus">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+        </Values>
+      </DefaultValue>
+      <Prompt>WorkStatus</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
   </ReportParameters>
   <Code>Public Function FormatDate(ByVal inputDate as Object) As String
 	If inputDate Is Nothing Then
@@ -2918,7 +2380,25 @@ Function StyleSubmitStatus(ByVal Status As String) As String
             Case Else
                 Return "Gray"
         End Select
-    End Function</Code>
+    End Function
+
+Function StatusColor(ByVal Status As String) As String
+        Select Case Status
+            Case "-1"
+                Return "Silver"  
+            Case "40"
+                Return "CornflowerBlue"
+            Case "10"	
+                Return "YellowGreen"
+            Case "30"	'
+                Return "Green"
+            Case "20"
+                Return "Red"
+            Case Else
+                Return "Automatic"
+        End Select
+    End Function
+</Code>
   <EmbeddedImages>
     <EmbeddedImage Name="icon_shortcut">
       <MIMEType>image/gif</MIMEType>

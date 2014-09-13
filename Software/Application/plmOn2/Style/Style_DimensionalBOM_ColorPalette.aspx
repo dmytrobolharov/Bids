@@ -56,10 +56,11 @@
 								<td width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" text="GO"></asp:button></td>
 							</tr>
 						</table>
-						<table height="15" cellspacing="0" cellpadding="0" width="100%" bgColor="white" border="0">
+                        <div style="background-color:White;">
+						<table height="15" cellspacing="0" cellpadding="0" bgColor="white" border="0">
 							<tr>
 								<td><asp:placeholder id="plhSearchControl" runat="server" EnableViewState="False"></asp:placeholder></td>
-								<td valign="top" width="100%">
+								<td valign="top">
 									<table height="45">
 										<tr>
 											<td><asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
@@ -68,6 +69,7 @@
 								</td>
 							</tr>
 						</table>
+                        </div>
 						<asp:datagrid id="DataGrid1" runat="server" AllowSorting="True" DataKeyField="ColorFolderID">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>

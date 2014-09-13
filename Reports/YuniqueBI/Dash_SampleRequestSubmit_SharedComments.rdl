@@ -205,7 +205,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>25.61258cm</Size>
+                    <Size>27.375cm</Size>
                     <CellContents>
                       <Rectangle Name="Rectangle6">
                         <ReportItems>
@@ -528,7 +528,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>21.61258cm</Size>
+                            <Size>23.375cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox154">
                                 <CanGrow>true</CanGrow>
@@ -686,14 +686,14 @@
                                       <TablixHeader>
                                         <Size>2.5cm</Size>
                                         <CellContents>
-                                          <Textbox Name="Textbox52">
+                                          <Textbox Name="Textbox5">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Colorway</Value>
+                                                    <Value>BOM Name</Value>
                                                     <Style>
                                                       <FontFamily>Arial Unicode MS</FontFamily>
                                                       <FontSize>7pt</FontSize>
@@ -707,7 +707,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox36</rd:DefaultName>
+                                            <rd:DefaultName>Textbox5</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -726,16 +726,16 @@
                                       <TablixMembers>
                                         <TablixMember>
                                           <TablixHeader>
-                                            <Size>3cm</Size>
+                                            <Size>2.5cm</Size>
                                             <CellContents>
-                                              <Textbox Name="Textbox53">
+                                              <Textbox Name="Textbox52">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>Workflow</Value>
+                                                        <Value>Colorway</Value>
                                                         <Style>
                                                           <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>7pt</FontSize>
@@ -749,7 +749,7 @@
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>Textbox37</rd:DefaultName>
+                                                <rd:DefaultName>Textbox36</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Style>Solid</Style>
@@ -768,16 +768,16 @@
                                           <TablixMembers>
                                             <TablixMember>
                                               <TablixHeader>
-                                                <Size>2cm</Size>
+                                                <Size>3cm</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Textbox55">
+                                                  <Textbox Name="Textbox53">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
                                                       <Paragraph>
                                                         <TextRuns>
                                                           <TextRun>
-                                                            <Value>Submit</Value>
+                                                            <Value>Workflow</Value>
                                                             <Style>
                                                               <FontFamily>Arial Unicode MS</FontFamily>
                                                               <FontSize>7pt</FontSize>
@@ -791,7 +791,7 @@
                                                         </Style>
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Textbox38</rd:DefaultName>
+                                                    <rd:DefaultName>Textbox37</rd:DefaultName>
                                                     <Style>
                                                       <Border>
                                                         <Style>Solid</Style>
@@ -812,14 +812,14 @@
                                                   <TablixHeader>
                                                     <Size>2cm</Size>
                                                     <CellContents>
-                                                      <Textbox Name="Textbox54">
+                                                      <Textbox Name="Textbox55">
                                                         <CanGrow>true</CanGrow>
                                                         <KeepTogether>true</KeepTogether>
                                                         <Paragraphs>
                                                           <Paragraph>
                                                             <TextRuns>
                                                               <TextRun>
-                                                                <Value>Name - Time</Value>
+                                                                <Value>Submit</Value>
                                                                 <Style>
                                                                   <FontFamily>Arial Unicode MS</FontFamily>
                                                                   <FontSize>7pt</FontSize>
@@ -833,7 +833,7 @@
                                                             </Style>
                                                           </Paragraph>
                                                         </Paragraphs>
-                                                        <rd:DefaultName>Textbox39</rd:DefaultName>
+                                                        <rd:DefaultName>Textbox38</rd:DefaultName>
                                                         <Style>
                                                           <Border>
                                                             <Style>Solid</Style>
@@ -852,16 +852,16 @@
                                                   <TablixMembers>
                                                     <TablixMember>
                                                       <TablixHeader>
-                                                        <Size>7.98758cm</Size>
+                                                        <Size>2cm</Size>
                                                         <CellContents>
-                                                          <Textbox Name="Textbox56">
+                                                          <Textbox Name="Textbox54">
                                                             <CanGrow>true</CanGrow>
                                                             <KeepTogether>true</KeepTogether>
                                                             <Paragraphs>
                                                               <Paragraph>
                                                                 <TextRuns>
                                                                   <TextRun>
-                                                                    <Value>Comment</Value>
+                                                                    <Value>Name - Time</Value>
                                                                     <Style>
                                                                       <FontFamily>Arial Unicode MS</FontFamily>
                                                                       <FontSize>7pt</FontSize>
@@ -875,7 +875,7 @@
                                                                 </Style>
                                                               </Paragraph>
                                                             </Paragraphs>
-                                                            <rd:DefaultName>Textbox40</rd:DefaultName>
+                                                            <rd:DefaultName>Textbox39</rd:DefaultName>
                                                             <Style>
                                                               <Border>
                                                                 <Style>Solid</Style>
@@ -892,7 +892,51 @@
                                                         </CellContents>
                                                       </TablixHeader>
                                                       <TablixMembers>
-                                                        <TablixMember />
+                                                        <TablixMember>
+                                                          <TablixHeader>
+                                                            <Size>7.25cm</Size>
+                                                            <CellContents>
+                                                              <Textbox Name="Textbox56">
+                                                                <CanGrow>true</CanGrow>
+                                                                <KeepTogether>true</KeepTogether>
+                                                                <Paragraphs>
+                                                                  <Paragraph>
+                                                                    <TextRuns>
+                                                                      <TextRun>
+                                                                        <Value>Comment</Value>
+                                                                        <Style>
+                                                                          <FontFamily>Arial Unicode MS</FontFamily>
+                                                                          <FontSize>7pt</FontSize>
+                                                                          <FontWeight>Bold</FontWeight>
+                                                                          <Color>White</Color>
+                                                                        </Style>
+                                                                      </TextRun>
+                                                                    </TextRuns>
+                                                                    <Style>
+                                                                      <TextAlign>Left</TextAlign>
+                                                                    </Style>
+                                                                  </Paragraph>
+                                                                </Paragraphs>
+                                                                <rd:DefaultName>Textbox40</rd:DefaultName>
+                                                                <Style>
+                                                                  <Border>
+                                                                    <Style>Solid</Style>
+                                                                    <Width>0.5pt</Width>
+                                                                  </Border>
+                                                                  <BackgroundColor>#96c952</BackgroundColor>
+                                                                  <VerticalAlign>Middle</VerticalAlign>
+                                                                  <PaddingLeft>2pt</PaddingLeft>
+                                                                  <PaddingRight>2pt</PaddingRight>
+                                                                  <PaddingTop>2pt</PaddingTop>
+                                                                  <PaddingBottom>2pt</PaddingBottom>
+                                                                </Style>
+                                                              </Textbox>
+                                                            </CellContents>
+                                                          </TablixHeader>
+                                                          <TablixMembers>
+                                                            <TablixMember />
+                                                          </TablixMembers>
+                                                        </TablixMember>
                                                       </TablixMembers>
                                                     </TablixMember>
                                                   </TablixMembers>
@@ -1043,14 +1087,14 @@
                                       <TablixHeader>
                                         <Size>2.5cm</Size>
                                         <CellContents>
-                                          <Textbox Name="StyleColorway2">
+                                          <Textbox Name="BOMName">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!StyleColorway.Value</Value>
+                                                    <Value>=Fields!BOMName.Value</Value>
                                                     <Style>
                                                       <FontFamily>Arial Unicode MS</FontFamily>
                                                       <FontSize>7pt</FontSize>
@@ -1062,7 +1106,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>StyleColorway</rd:DefaultName>
+                                            <rd:DefaultName>BOMName</rd:DefaultName>
                                             <ActionInfo>
                                               <Actions>
                                                 <Action>
@@ -1070,7 +1114,6 @@
                                                 </Action>
                                               </Actions>
                                             </ActionInfo>
-                                            <ZIndex>5</ZIndex>
                                             <Style>
                                               <Border>
                                                 <Style>Solid</Style>
@@ -1087,16 +1130,16 @@
                                       <TablixMembers>
                                         <TablixMember>
                                           <TablixHeader>
-                                            <Size>3cm</Size>
+                                            <Size>2.5cm</Size>
                                             <CellContents>
-                                              <Textbox Name="SampleWorkflow2">
+                                              <Textbox Name="StyleColorway2">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!SampleWorkflow.Value</Value>
+                                                        <Value>=Fields!StyleColorway.Value</Value>
                                                         <Style>
                                                           <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>7pt</FontSize>
@@ -1108,7 +1151,7 @@
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>SampleWorkflow</rd:DefaultName>
+                                                <rd:DefaultName>StyleColorway</rd:DefaultName>
                                                 <ActionInfo>
                                                   <Actions>
                                                     <Action>
@@ -1116,7 +1159,7 @@
                                                     </Action>
                                                   </Actions>
                                                 </ActionInfo>
-                                                <ZIndex>4</ZIndex>
+                                                <ZIndex>5</ZIndex>
                                                 <Style>
                                                   <Border>
                                                     <Style>Solid</Style>
@@ -1133,16 +1176,16 @@
                                           <TablixMembers>
                                             <TablixMember>
                                               <TablixHeader>
-                                                <Size>2cm</Size>
+                                                <Size>3cm</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Submit2">
+                                                  <Textbox Name="SampleWorkflow2">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
                                                       <Paragraph>
                                                         <TextRuns>
                                                           <TextRun>
-                                                            <Value>=Fields!Submit.Value</Value>
+                                                            <Value>=Fields!SampleWorkflow.Value</Value>
                                                             <Style>
                                                               <FontFamily>Arial Unicode MS</FontFamily>
                                                               <FontSize>7pt</FontSize>
@@ -1154,7 +1197,7 @@
                                                         </Style>
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Submit</rd:DefaultName>
+                                                    <rd:DefaultName>SampleWorkflow</rd:DefaultName>
                                                     <ActionInfo>
                                                       <Actions>
                                                         <Action>
@@ -1162,7 +1205,7 @@
                                                         </Action>
                                                       </Actions>
                                                     </ActionInfo>
-                                                    <ZIndex>3</ZIndex>
+                                                    <ZIndex>4</ZIndex>
                                                     <Style>
                                                       <Border>
                                                         <Style>Solid</Style>
@@ -1181,14 +1224,14 @@
                                                   <TablixHeader>
                                                     <Size>2cm</Size>
                                                     <CellContents>
-                                                      <Textbox Name="textbox35">
+                                                      <Textbox Name="Submit2">
                                                         <CanGrow>true</CanGrow>
                                                         <KeepTogether>true</KeepTogether>
                                                         <Paragraphs>
                                                           <Paragraph>
                                                             <TextRuns>
                                                               <TextRun>
-                                                                <Value>=Fields!MUser.Value &amp; " - " &amp; FormatDateTime(Fields!MDate.Value, DateFormat.ShortDate) &amp; " " &amp; FormatDateTime(Fields!MDate.Value, DateFormat.LongTime)</Value>
+                                                                <Value>=Fields!Submit.Value</Value>
                                                                 <Style>
                                                                   <FontFamily>Arial Unicode MS</FontFamily>
                                                                   <FontSize>7pt</FontSize>
@@ -1200,7 +1243,7 @@
                                                             </Style>
                                                           </Paragraph>
                                                         </Paragraphs>
-                                                        <rd:DefaultName>textbox33</rd:DefaultName>
+                                                        <rd:DefaultName>Submit</rd:DefaultName>
                                                         <ActionInfo>
                                                           <Actions>
                                                             <Action>
@@ -1208,7 +1251,7 @@
                                                             </Action>
                                                           </Actions>
                                                         </ActionInfo>
-                                                        <ZIndex>2</ZIndex>
+                                                        <ZIndex>3</ZIndex>
                                                         <Style>
                                                           <Border>
                                                             <Style>Solid</Style>
@@ -1225,16 +1268,16 @@
                                                   <TablixMembers>
                                                     <TablixMember>
                                                       <TablixHeader>
-                                                        <Size>7.98758cm</Size>
+                                                        <Size>2cm</Size>
                                                         <CellContents>
-                                                          <Textbox Name="Comment2">
+                                                          <Textbox Name="textbox35">
                                                             <CanGrow>true</CanGrow>
                                                             <KeepTogether>true</KeepTogether>
                                                             <Paragraphs>
                                                               <Paragraph>
                                                                 <TextRuns>
                                                                   <TextRun>
-                                                                    <Value>=Fields!Comment.Value</Value>
+                                                                    <Value>=Fields!MUser.Value &amp; " - " &amp; FormatDateTime(Fields!MDate.Value, DateFormat.ShortDate) &amp; " " &amp; FormatDateTime(Fields!MDate.Value, DateFormat.LongTime)</Value>
                                                                     <Style>
                                                                       <FontFamily>Arial Unicode MS</FontFamily>
                                                                       <FontSize>7pt</FontSize>
@@ -1246,7 +1289,7 @@
                                                                 </Style>
                                                               </Paragraph>
                                                             </Paragraphs>
-                                                            <rd:DefaultName>Comment</rd:DefaultName>
+                                                            <rd:DefaultName>textbox33</rd:DefaultName>
                                                             <ActionInfo>
                                                               <Actions>
                                                                 <Action>
@@ -1254,13 +1297,12 @@
                                                                 </Action>
                                                               </Actions>
                                                             </ActionInfo>
-                                                            <ZIndex>1</ZIndex>
+                                                            <ZIndex>2</ZIndex>
                                                             <Style>
                                                               <Border>
                                                                 <Style>Solid</Style>
                                                                 <Width>0.5pt</Width>
                                                               </Border>
-                                                              <BackgroundColor>=IIF(Fields!IsSrmOn.Value = 1, "Khaki", "No Color")</BackgroundColor>
                                                               <PaddingLeft>2pt</PaddingLeft>
                                                               <PaddingRight>2pt</PaddingRight>
                                                               <PaddingTop>2pt</PaddingTop>
@@ -1270,7 +1312,56 @@
                                                         </CellContents>
                                                       </TablixHeader>
                                                       <TablixMembers>
-                                                        <TablixMember />
+                                                        <TablixMember>
+                                                          <TablixHeader>
+                                                            <Size>7.25cm</Size>
+                                                            <CellContents>
+                                                              <Textbox Name="Comment2">
+                                                                <CanGrow>true</CanGrow>
+                                                                <KeepTogether>true</KeepTogether>
+                                                                <Paragraphs>
+                                                                  <Paragraph>
+                                                                    <TextRuns>
+                                                                      <TextRun>
+                                                                        <Value>=Fields!Comment.Value</Value>
+                                                                        <Style>
+                                                                          <FontFamily>Arial Unicode MS</FontFamily>
+                                                                          <FontSize>7pt</FontSize>
+                                                                        </Style>
+                                                                      </TextRun>
+                                                                    </TextRuns>
+                                                                    <Style>
+                                                                      <TextAlign>Left</TextAlign>
+                                                                    </Style>
+                                                                  </Paragraph>
+                                                                </Paragraphs>
+                                                                <rd:DefaultName>Comment</rd:DefaultName>
+                                                                <ActionInfo>
+                                                                  <Actions>
+                                                                    <Action>
+                                                                      <Hyperlink>="javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString &amp; "/Sample/SampleRequest_Workflow_Submit_Folder.aspx?SID=" &amp; Fields!StyleID.Value.ToString &amp; "&amp;TB=" &amp; Fields!Submit.Value.ToString &amp; "&amp;TPID=" &amp; Fields!TradePartnerID.Value.ToString &amp; "&amp;SRTID=" &amp; Fields!SampleRequestTradeID.Value.ToString &amp; "&amp;SN=" &amp; Fields!StyleSet.Value.ToString &amp; "&amp;FDIM=" &amp; Fields!isBOM.Value.ToString &amp; "&amp;SDIM1=" &amp; Fields!ItemDim1Id.Value.ToString &amp; "&amp;SDIM2=" &amp; Fields!ItemDim2Id.Value.ToString &amp; "&amp;SDIM3=" &amp; Fields!ItemDim3Id.Value.ToString &amp; "&amp;SCID=" &amp; Fields!StyleColorID.Value.ToString &amp; "&amp;SWID=" &amp; Fields!SampleWorkflowID.Value.ToString &amp; "&amp;SRWID=" &amp; Fields!SampleRequestWorkflowID.Value.ToString &amp; "&amp;TB2=1'))"</Hyperlink>
+                                                                    </Action>
+                                                                  </Actions>
+                                                                </ActionInfo>
+                                                                <ZIndex>1</ZIndex>
+                                                                <Style>
+                                                                  <Border>
+                                                                    <Style>Solid</Style>
+                                                                    <Width>0.5pt</Width>
+                                                                  </Border>
+                                                                  <BackgroundColor>=IIF(Fields!IsSrmOn.Value = 1, "Khaki", "No Color")</BackgroundColor>
+                                                                  <PaddingLeft>2pt</PaddingLeft>
+                                                                  <PaddingRight>2pt</PaddingRight>
+                                                                  <PaddingTop>2pt</PaddingTop>
+                                                                  <PaddingBottom>2pt</PaddingBottom>
+                                                                </Style>
+                                                              </Textbox>
+                                                            </CellContents>
+                                                          </TablixHeader>
+                                                          <TablixMembers>
+                                                            <TablixMember />
+                                                          </TablixMembers>
+                                                        </TablixMember>
                                                       </TablixMembers>
                                                     </TablixMember>
                                                   </TablixMembers>
@@ -1389,7 +1480,7 @@
                                   <TablixHeader>
                                     <Size>2.5cm</Size>
                                     <CellContents>
-                                      <Textbox Name="Textbox129">
+                                      <Textbox Name="Textbox8">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
@@ -1403,7 +1494,7 @@
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox129</rd:DefaultName>
+                                        <rd:DefaultName>Textbox8</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -1419,9 +1510,9 @@
                                   <TablixMembers>
                                     <TablixMember>
                                       <TablixHeader>
-                                        <Size>3cm</Size>
+                                        <Size>2.5cm</Size>
                                         <CellContents>
-                                          <Textbox Name="Textbox130">
+                                          <Textbox Name="Textbox129">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -1435,7 +1526,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox130</rd:DefaultName>
+                                            <rd:DefaultName>Textbox129</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>None</Style>
@@ -1451,9 +1542,9 @@
                                       <TablixMembers>
                                         <TablixMember>
                                           <TablixHeader>
-                                            <Size>2cm</Size>
+                                            <Size>3cm</Size>
                                             <CellContents>
-                                              <Textbox Name="Textbox7">
+                                              <Textbox Name="Textbox130">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
@@ -1467,7 +1558,7 @@
                                                     <Style />
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>Textbox6</rd:DefaultName>
+                                                <rd:DefaultName>Textbox130</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Style>None</Style>
@@ -1485,7 +1576,7 @@
                                               <TablixHeader>
                                                 <Size>2cm</Size>
                                                 <CellContents>
-                                                  <Textbox Name="Textbox11">
+                                                  <Textbox Name="Textbox7">
                                                     <CanGrow>true</CanGrow>
                                                     <KeepTogether>true</KeepTogether>
                                                     <Paragraphs>
@@ -1499,7 +1590,7 @@
                                                         <Style />
                                                       </Paragraph>
                                                     </Paragraphs>
-                                                    <rd:DefaultName>Textbox11</rd:DefaultName>
+                                                    <rd:DefaultName>Textbox6</rd:DefaultName>
                                                     <Style>
                                                       <Border>
                                                         <Style>None</Style>
@@ -1515,9 +1606,9 @@
                                               <TablixMembers>
                                                 <TablixMember>
                                                   <TablixHeader>
-                                                    <Size>7.98758cm</Size>
+                                                    <Size>2cm</Size>
                                                     <CellContents>
-                                                      <Textbox Name="Textbox26">
+                                                      <Textbox Name="Textbox11">
                                                         <CanGrow>true</CanGrow>
                                                         <KeepTogether>true</KeepTogether>
                                                         <Paragraphs>
@@ -1531,7 +1622,7 @@
                                                             <Style />
                                                           </Paragraph>
                                                         </Paragraphs>
-                                                        <rd:DefaultName>Textbox26</rd:DefaultName>
+                                                        <rd:DefaultName>Textbox11</rd:DefaultName>
                                                         <Style>
                                                           <Border>
                                                             <Style>None</Style>
@@ -1545,7 +1636,41 @@
                                                     </CellContents>
                                                   </TablixHeader>
                                                   <TablixMembers>
-                                                    <TablixMember />
+                                                    <TablixMember>
+                                                      <TablixHeader>
+                                                        <Size>7.25cm</Size>
+                                                        <CellContents>
+                                                          <Textbox Name="Textbox26">
+                                                            <CanGrow>true</CanGrow>
+                                                            <KeepTogether>true</KeepTogether>
+                                                            <Paragraphs>
+                                                              <Paragraph>
+                                                                <TextRuns>
+                                                                  <TextRun>
+                                                                    <Value />
+                                                                    <Style />
+                                                                  </TextRun>
+                                                                </TextRuns>
+                                                                <Style />
+                                                              </Paragraph>
+                                                            </Paragraphs>
+                                                            <rd:DefaultName>Textbox26</rd:DefaultName>
+                                                            <Style>
+                                                              <Border>
+                                                                <Style>None</Style>
+                                                              </Border>
+                                                              <PaddingLeft>2pt</PaddingLeft>
+                                                              <PaddingRight>2pt</PaddingRight>
+                                                              <PaddingTop>2pt</PaddingTop>
+                                                              <PaddingBottom>2pt</PaddingBottom>
+                                                            </Style>
+                                                          </Textbox>
+                                                        </CellContents>
+                                                      </TablixHeader>
+                                                      <TablixMembers>
+                                                        <TablixMember />
+                                                      </TablixMembers>
+                                                    </TablixMember>
                                                   </TablixMembers>
                                                 </TablixMember>
                                               </TablixMembers>
@@ -1576,7 +1701,7 @@
         <Top>0.21446cm</Top>
         <Left>0.25625cm</Left>
         <Height>5.16134cm</Height>
-        <Width>25.69196cm</Width>
+        <Width>27.45438cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1587,7 +1712,7 @@
     <Height>2.35036in</Height>
     <Style />
   </Body>
-  <Width>10.4668in</Width>
+  <Width>10.9097in</Width>
   <Page>
     <PageHeader>
       <Height>1.19806in</Height>
@@ -2019,9 +2144,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
               <Top>0.67859in</Top>
-              <Left>5.59953in</Left>
+              <Left>5.6in</Left>
               <Height>0.2in</Height>
-              <Width>1in</Width>
+              <Width>2.8cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
                 <Border>
@@ -2051,10 +2176,75 @@
               </Paragraphs>
               <rd:DefaultName>Textbox138</rd:DefaultName>
               <Top>0.67859in</Top>
-              <Left>6.59953in</Left>
+              <Left>17cm</Left>
               <Height>0.2in</Height>
               <Width>2.5in</Width>
               <ZIndex>15</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox153">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Sample Workflow:</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>2.28353cm</Top>
+              <Left>5.6in</Left>
+              <Height>0.508cm</Height>
+              <Width>2.8cm</Width>
+              <ZIndex>16</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox155">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=iif(CountRows("ParamQuery_SampleWorkflow")=Parameters!SampleWorkflowID.Count,"All",System.String.Join(", ",Parameters!SampleWorkflowID.Label,0,iif(Parameters!SampleWorkflowID.Count&gt;1,2,1)) &amp; iif(Parameters!SampleWorkflowID.Count&gt;2,", etc",""))</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox138</rd:DefaultName>
+              <Top>2.28353cm</Top>
+              <Left>17cm</Left>
+              <Height>0.508cm</Height>
+              <Width>6cm</Width>
+              <ZIndex>17</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2233,6 +2423,10 @@
           <DataField>SampleRequestWorkflowID</DataField>
           <rd:TypeName>System.Guid</rd:TypeName>
         </Field>
+        <Field Name="BOMName">
+          <DataField>BOMName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <Filters>
         <Filter>
@@ -2255,6 +2449,13 @@
           <FilterValues>
             <FilterValue>=Parameters!BeginDateString.Value</FilterValue>
             <FilterValue>=DateAdd("d",1, Parameters!EndDateString.Value)</FilterValue>
+          </FilterValues>
+        </Filter>
+        <Filter>
+          <FilterExpression>=Fields!SampleWorkflowID.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!SampleWorkflowID.Value</FilterValue>
           </FilterValues>
         </Filter>
       </Filters>
@@ -2362,6 +2563,22 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="ParamQuery_SampleWorkflow">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT SampleWorkflowID, SampleWorkflow FROM pSampleWorkflow WHERE Active = 'Yes' ORDER BY SampleWorkflowSort</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SampleWorkflowID">
+          <DataField>SampleWorkflowID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SampleWorkflow">
+          <DataField>SampleWorkflow</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="StyleCategoryID">
@@ -2422,6 +2639,24 @@
       <DataType>String</DataType>
       <AllowBlank>true</AllowBlank>
       <Prompt>Style No</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SampleWorkflowID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>ParamQuery_SampleWorkflow</DataSetName>
+          <ValueField>SampleWorkflowID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Sample Workflow</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ParamQuery_SampleWorkflow</DataSetName>
+          <ValueField>SampleWorkflowID</ValueField>
+          <LabelField>SampleWorkflow</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
     </ReportParameter>
     <ReportParameter Name="CUser">
       <DataType>String</DataType>
