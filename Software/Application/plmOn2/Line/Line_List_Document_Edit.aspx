@@ -2,7 +2,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="CuteWebUI" Namespace="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <HTML>
@@ -18,7 +17,6 @@
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
      <form id="Form1" method="post" runat="server">
-         <wc1:Color_Wait ID="Color_Wait" runat="server" />
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<tr vAlign="middle">
@@ -202,10 +200,8 @@
 							<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 							<TD width="500">
 								<cc1:confirmedimagebutton id="edit_btnSave" runat="server"  Message="NONE" Visible='<%# ShowHideSaveBtn() %>' CommandName="update"></cc1:confirmedimagebutton>								
-								<cc1:ConfirmedLinkButton id="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>'  CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>' >
-								</cc1:ConfirmedLinkButton>
-								<asp:linkbutton id="Linkbutton5" runat="Server" 
-									CommandName="download"></asp:linkbutton>
+								<cc1:ConfirmedLinkButton id="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>'  CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>' ></cc1:ConfirmedLinkButton>
+								<asp:linkbutton id="btnDownload" runat="Server" CommandName="download" OnClientClick="parent.dont_show_wait_next_time();" ></asp:linkbutton>
 								<cc1:confirmedimagebutton id="btnEditCancel" runat="server" Message="NONE" CommandName="cancel"></cc1:confirmedimagebutton>															
 							</TD>
 							<TD>&nbsp;</TD>

@@ -27,6 +27,44 @@
                 visibility: hidden;
             }
         </style>
+        <style type="text/css">
+             .imgContainer
+            {
+                position:relative;
+            }
+            .imgContainer div 
+            {
+                position:absolute;
+                background-color: White;
+                left: 0px;
+                visibility: hidden;
+            }
+        
+            .imgContainer div:before,
+            .frame_before {
+                content: "";
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            .imgContainer img {
+                vertical-align: middle;
+            }           
+        </style>
+        <!--[IF IE]>
+        <style type="text/css">
+            .imgContainer div {
+                list-style:none;
+                behavior: expression(
+                    function(t){
+                        t.insertAdjacentHTML('afterBegin','<span class="frame_before"></span>');
+                        t.runtimeStyle.behavior = 'none';
+                    }(this)
+                );
+            }
+        </style>
+        <![endif]-->
 	</head>
 	<body>
      <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>

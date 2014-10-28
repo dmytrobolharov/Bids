@@ -521,7 +521,7 @@
           </Tablix>
           <Image Name="imgStyleImage">
             <Source>External</Source>
-            <Value>= First(Fields!QRPath.Value, "dsStyleImage")</Value>
+            <Value>= First(Fields!FilePath.Value, "dsStyleImage")</Value>
             <Sizing>FitProportional</Sizing>
             <Left>5.875in</Left>
             <Height>1.5in</Height>

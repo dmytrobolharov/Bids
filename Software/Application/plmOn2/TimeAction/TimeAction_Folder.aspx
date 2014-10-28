@@ -156,6 +156,11 @@ height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" borde
 
     body {
          overflow-y: scroll;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .ganttButtonBar h1{
@@ -164,6 +169,61 @@ height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" borde
         font-size: 28px;
         margin-left: 10px;
     }
+       .eventPopupShadow{
+        position: fixed;
+        top: 0;
+        z-index: 9998;
+        opacity: 0.3;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+
+    }
+    .eventPopup{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width:450px;
+        height:250px;
+        border-radius: 5px;
+        z-index: 9999;
+        -webkit-box-shadow: rgb(51, 51, 51) 1px 1px 6px;
+        border: 8px solid rgb(119, 119, 119);
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+    }
+    .eventPopup *{
+        margin-top: 3px;
+        margin-left: 5px;
+    }
+    .eventPopup input{
+        width: 50px;
+    }
+    .eventPopup .k-dropdown{
+        width: 150px;
+    }
+    .eventPopupBody{
+        position: absolute;
+        width: 100%;
+    }
+    .saveEventPopup{
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+    }
+    .closeEventPopup{
+        cursor: pointer;
+        position: absolute;
+        right: -48px;
+        top: -22px;
+    }
+    .closeEventPopup:hover{
+        cursor: pointer;
+    }
+
 
 </style>
 <div id="gantEditorTemplates" style="display:none">

@@ -134,8 +134,8 @@
                                 <tr>
                                     <td>
                                          <asp:datagrid id="DataGrid1" runat="server" PageSize="50" AllowSorting="True" DataKeyField="TradePartnerId">
-							                <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-							                <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
+							                <AlternatingItemStyle Font-Size="11px" Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							                <ItemStyle Font-Size="11px" Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							                <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							                <PagerStyle Visible="False"></PagerStyle>
                                             <Columns> 

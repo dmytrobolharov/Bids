@@ -169,7 +169,7 @@
                                         <asp:PlaceHolder runat="server" ID="plhSearchControl"></asp:PlaceHolder>
                                     </td>
                                     <td>
-                                        <asp:ImageButton ID="imgBtnSearch" runat="server"></asp:ImageButton>
+                                        <asp:ImageButton ID="imgBtnSearch" runat="server" CausesValidation="false"></asp:ImageButton>
                                     </td>
                                 </tr>
                             </table>
@@ -311,8 +311,14 @@
             }
         }
 
-        var CurrencyDecimalSymbol = "<%= GetFormatInfo.CurrencyDecimalSymbol %>";
-        var CurrencyDigitGroupingSymbol = "<%= GetFormatInfo.CurrencyDigitGroupingSymbol %>";
+        var CurrencyDecimalSymbol = "<%= System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator %>";
+        var CurrencyDigitGroupingSymbol = "<%= System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator %>";
+        $.format.locale({
+            number: {
+                groupingSeparator: CurrencyDigitGroupingSymbol,
+                decimalSeparator: CurrencyDecimalSymbol
+            }
+        });
 
         var $findCached = _.memoize($find);
         var $closestCached = _.memoize(function (elem, sel) {
@@ -367,7 +373,8 @@
             return function () {
                 var info = getData($(this));
                 var resultValue = (getFloatValue($(this).siblings(":text").val()) / 100) * getFloatValue(total.value);
-                this.value = isNaN(resultValue) ? 0 : formatValue(resultValue, info);
+                
+                this.value = isNaN(resultValue) ? formatValue(0, info) : formatValue(resultValue, info);
             }
         }
 
@@ -377,16 +384,16 @@
         }
 
         function percentFormat(val) {
-            var value = getFloatValue(val).toFixed(4),
+            var value = (typeof val == "number" ? val : getFloatValue(val)).toFixed(4),
                         fixedFactor = /\.0000$/.test(value) ? 0 : 4; // do not show trailing zeros after decimal point
 
-            return getFloatValue(val).toFixed(fixedFactor) + " %";
+            return $.format.number(+value, "###,###.####") + " %";
         }
 
         function getFloatValue(value) {
             var result = 0;
             if (typeof value !== typeof undefined && value !== false) {
-                result = parseFloat(value.toString().split(CurrencyDecimalSymbol).join(".").split(CurrencyDigitGroupingSymbol).join(""))
+                result = parseFloat(value.toString().split(CurrencyDigitGroupingSymbol).join("").split(CurrencyDecimalSymbol).join("."))
             }
             return (isNaN(result) ? 0 : result);
         }
@@ -489,7 +496,7 @@
                 info = getData($(this)),
                 total = 0,
                 position = $(this).parent().index();
-            //if user update averageCost||EconPrice||WholeSale||retail fields
+            //if user update averageCost||EcomPrice||WholeSale||retail fields
             if (this.id.indexOf("10000000-0000-0000-0000-000000000006") != -1
                 || this.id.indexOf("10000000-0000-0000-0000-000000000023") != -1
                 || this.id.indexOf("txt10000000-0000-0000-0000-000000000007") != -1
@@ -774,6 +781,7 @@
             // @ p = if value is percent - return it as a %
             if (!p) {
                 var numberOfDigits = (n || n == 0) ? n : 2;
+                //return $.format.number(i, "###,###" + (n > 0 ? "." + Array(name + 1).join("0") : ""));
                 if (i < 0) {
                     i = i * -1;
                     return '-' + i.toFixed(numberOfDigits).replace(/./g, function (c, i, a) {
@@ -881,10 +889,13 @@
                     }
                     return arrowkeyPressed(this.id, id, e.originalEvent);
                 });
+
                 $this.on("keydown", "input[type=text]", function (e) {
                     if ($(this).is('.percentbox')) {
                         if (e.keyCode == 39) {
-                            if (getCaretPosForInput(this, 'right')) $(this).next().focus();
+                            if (getCaretPosForInput(this, 'right')) {                                
+                                $(this).next().focus();
+                            }
                         } else if (e.keyCode == 37) {
                             if (getCaretPosForInput(this, 'left')) {
                                 if ($(this).closest('td').prev().find(':text:eq(1)')[0]) {
@@ -921,7 +932,7 @@
                                     $(this).prev().focus();
                                 }
                                 else {
-                                    $(this).closest('td').prev().find(':text:eq(1)').focus()
+                                    $(this).closest('td').prevAll(':has(:text):first').find(':text:last').focus();
                                 }
                             }
                         } else if (e.keyCode == 38) {
@@ -944,9 +955,8 @@
             setTimeout(function () {
                 elem.select(); 
             }, 0);
-        })
-        ;
-        
+        });
+
         /** Resizing Grid to take all the free height on the screen **/
         (function resizeGrid() {
 

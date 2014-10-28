@@ -6,20 +6,53 @@
 
   <appSettings>
     <add key="ReceiverServiceId" value="1"/>
-    <add key="ReceiverQueueEndpoint" value="yplm.srv.bus.receiver@localhost"/>
+    <add key="ReceiverQueueEndpoint" value="$plmOnServiceBusReceiverQueue$"/>
     <add key="PluginFolderPath" value="$plmOnServiceBusPluginPath$"/>
     <add key="ProcessingCores" value="2"/>
     <add key="PluginGlobalNamespace" value="Yunique.Service.Plugins"/>
     <add key="RetryLimit" value="3"/>
     <add key="RetryIntervalFactor" value="5.0"/>
     <add key="RemoveAllQueues" value="false"/>
+
+    <add key="AppSettingGroupID" value="$AppSettingGroupID$"/>
+    <add key="SERVER" value="$plmOnConfig$\Config\server.config"/>
+    <add key="MAIL" value="$plmOnConfig$\Config\mail.config"/>
+    <add key="IMAGE" value="$plmOnConfig$\Config\image.config"/>
+    <add key="COLOR" value="$plmOnConfig$\Config\color.config"/>
+    <add key="BODY" value="$plmOnConfig$\Config\body.config"/>
+    <add key="STORAGE" value="$plmOnConfig$\Config\storage.config"/>
+    <add key="LICENSE" value="$plmOnConfig$\Config\license.config"/>
+    <add key="MATERIAL" value="$plmOnConfig$\Config\material.config"/>
+    <add key="FLASHEDIT" value="$plmOnConfig$\Config\flashedit.config"/>
+    <add key="STYLE" value="$plmOnConfig$\Config\style.config"/>
+    <add key="LINELIST" value="$plmOnConfig$\Config\linelist.config"/>
+    <add key="REPORT" value="$plmOnConfig$\Config\report.config"/>
+    <add key="TRADEPARTNER" value="$plmOnConfig$\Config\tradepartner.config"/>
+    <add key="COMPLIANCE" value="$plmOnConfig$\Config\compliance.config"/>
+    <add key="SYSTEM" value="$plmOnConfig$\Config\system.config"/>
+    <add key="LINEPLAN" value="$plmOnConfig$\Config\lineplan.config"/>
+    <add key="REPORTSERVER" value="http://$plmOnRSServer$/$plmOnRSVDir$?/$plmOnRSReportFolder$"/>
+    <add key="REPORTSERVER_ASPX" value="http://$plmOnHTTPServer$/$plmOnVDplmOnReport$"/>
   </appSettings>
+
   <startup>
     <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
   </startup>
+  
   <connectionStrings>
-    <add name="DefaultConnection" connectionString="$plmOnDBConnectionString$"/>
+    <add name="DefaultConnection" connectionString="$plmOnDBConnectionString$" providerName="System.Data.SqlClient"/>
+    <add name="SQLCACHECONNECTION" connectionString="$plmOnDBConnectionString$" providerName="System.Data.SqlClient"/>
   </connectionStrings>
+
+  <system.web>
+    <caching>
+      <sqlCacheDependency enabled="true" pollTime="6000">
+        <databases>
+          <add name="plmOnDB" connectionStringName="SQLCACHECONNECTION"/>
+        </databases>
+      </sqlCacheDependency>
+    </caching>
+  </system.web>
 
   <log4net>
     <appender name="LogFileAppender" type="log4net.Appender.RollingFileAppender">

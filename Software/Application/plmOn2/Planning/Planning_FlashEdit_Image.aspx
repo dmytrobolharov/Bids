@@ -319,7 +319,7 @@
                 modal: true,
                 resizable: false,
                 height: 350,
-                width: 700,
+                width: 875,
                 title: '<%= GetSystemText("Planning") %>'
 
             });

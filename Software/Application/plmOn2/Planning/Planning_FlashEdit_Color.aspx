@@ -18,11 +18,25 @@
         <style type="text/css">
             .EmptyItemTemplate
             {
-            	display: none;
+                display: none;
             }
-            #drag-holder { width: 0px; }
-            #drag-holder, #drag-holder table { z-index: 100; }
-            #drag-holder table td { background-color: #fff; }
+            #drag-holder
+            {
+                width: 0px;
+            }
+            #drag-holder, #drag-holder table
+            {
+                z-index: 100;
+            }
+            #drag-holder table td
+            {
+                background-color: #fff;
+            }
+            
+            .multi-bom
+            {
+                background-color: yellow;
+            }
         </style>
 	</head>
 	<body style="background-color: White;">

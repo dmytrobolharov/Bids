@@ -52,13 +52,13 @@
 					</asp:TemplateColumn>
 					<asp:TemplateColumn HeaderText="Style No">
 						<ItemTemplate>
-							<asp:Label ID="txtStyleNo" runat="Server" Text='<%# DataBinder.Eval(Container.DataItem, "StyleNo")%>' Font-Bold="true" Font-Size="12">
+							<asp:Label ID="txtStyleNo" runat="Server" Text='<%# DataBinder.Eval(Container.DataItem, "StyleNo")%>' Font-Bold="true" Font-Size="9">
 							</asp:Label>
 						</ItemTemplate>
 					</asp:TemplateColumn>
 					<asp:TemplateColumn HeaderText="Description">
 						<ItemTemplate>
-							<asp:Label ID="txtDescription" runat="Server" Text='<%# DataBinder.Eval(Container.DataItem, "Description")%>' Font-Bold="true" Font-Size="12">
+							<asp:Label ID="txtDescription" runat="Server" Text='<%# DataBinder.Eval(Container.DataItem, "Description")%>' Font-Bold="true" Font-Size="9">
 							</asp:Label>
 						</ItemTemplate>
 					</asp:TemplateColumn>

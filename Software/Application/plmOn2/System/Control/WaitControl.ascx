@@ -10,7 +10,7 @@
                 <table border="0">
                     <tr align="center">
                         <td>
-                            <asp:Image ID="BusyBoxImg" runat="server" ImageUrl='<%=IIF(Not String.IsNullOrEmpty(src),src,"../System")%>/Images/busy_Layer_0.gif' />
+                            <asp:Image ID="BusyBoxImg" runat="server" ImageUrl='' />
                         </td>
                         <td>
                             <asp:Label ID="LabelWait" runat="server" Font-Bold="true" Font-Size="14"></asp:Label>
@@ -221,7 +221,7 @@
         // Load all the images to cache into the aniframes array
         for (var i = 0; i < this.ImageCount; i++) {
             this.Images[i] = new Image();
-            this.Images[i].src = '<%=IIF(Not String.IsNullOrEmpty(src),src,"../System")%>/Images/' + this.ImageNamePrefix + i + this.ImageNameSuffix;
+            this.Images[i].src = '<%=Me.src%>/Images/' + this.ImageNamePrefix + i + this.ImageNameSuffix;
            // alert(this.Images[i].src);
         }
     }

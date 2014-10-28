@@ -145,8 +145,6 @@
                 <cc1:ConfirmedImageButton ID="btnColorDrop" runat="server" CausesValidation="false" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:confirmedimagebutton id="btnClear" runat="server" message="NONE"></cc1:confirmedimagebutton>
                 <cc1:ConfirmedImageButton ID="btnRemove" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;">
-                </cc1:BWImageButton>
                 <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
             </td>
             <td>

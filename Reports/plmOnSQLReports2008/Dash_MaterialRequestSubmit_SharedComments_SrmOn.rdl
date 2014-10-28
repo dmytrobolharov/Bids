@@ -1659,6 +1659,71 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Textbox Name="Textbox142">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Workflow:</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox138</rd:DefaultName>
+          <Top>0.95in</Top>
+          <Left>6.55in</Left>
+          <Height>0.2in</Height>
+          <Width>1in</Width>
+          <ZIndex>16</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox151">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=iif(CountRows("dsWorkflow")=Parameters!Workflow.Count,"All",System.String.Join(", ",Parameters!Workflow.Label,0,iif(Parameters!Workflow.Count&gt;1,2,1)) &amp; iif(Parameters!Workflow.Count&gt;2,", etc",""))</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox138</rd:DefaultName>
+          <Top>0.95in</Top>
+          <Left>7.55in</Left>
+          <Height>0.2in</Height>
+          <Width>2.5in</Width>
+          <ZIndex>17</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -1694,6 +1759,9 @@
           </QueryParameter>
           <QueryParameter Name="@CUser">
             <Value>=Parameters!CUser.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@WorkflowID">
+            <Value>=Parameters!Workflow.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
@@ -1809,27 +1877,19 @@
     <DataSet Name="dsTradePartner">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>select TradePartnerID, TradePartnerName from uTradePartner where Active = 1</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@TradePartnerID">
+            <Value>=Parameters!TPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT TradePartnerName FROM uTradePartner WHERE TradePartnerID=@TradePartnerID</CommandText>
       </Query>
       <Fields>
-        <Field Name="TradePartnerID">
-          <DataField>TradePartnerID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
         <Field Name="TradePartnerName">
           <DataField>TradePartnerName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
-      <Filters>
-        <Filter>
-          <FilterExpression>=Fields!TradePartnerID.Value</FilterExpression>
-          <Operator>Equal</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!TPID.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-      </Filters>
     </DataSet>
     <DataSet Name="dsCUser">
       <Query>
@@ -1853,8 +1913,29 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsWorkflow">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <CommandText>SELECT MaterialRequestWorkflowID, MaterialRequestWorkflow FROM pMaterialRequestWorkflow</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="MaterialRequestWorkflowID">
+          <DataField>MaterialRequestWorkflowID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaterialRequestWorkflow">
+          <DataField>MaterialRequestWorkflow</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
+    <ReportParameter Name="TPID">
+      <DataType>String</DataType>
+      <Prompt>Trade Partner</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
     <ReportParameter Name="MaterailType">
       <DataType>Integer</DataType>
       <DefaultValue>
@@ -1873,9 +1954,15 @@
       </ValidValues>
       <MultiValue>true</MultiValue>
     </ReportParameter>
-    <ReportParameter Name="TPID">
+    <ReportParameter Name="MaterialNo">
       <DataType>String</DataType>
-      <Prompt>Trade Partner</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>=""</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Material No</Prompt>
     </ReportParameter>
     <ReportParameter Name="BeginDateString">
       <DataType>DateTime</DataType>
@@ -1895,16 +1982,6 @@
       </DefaultValue>
       <Prompt>End Date</Prompt>
     </ReportParameter>
-    <ReportParameter Name="MaterialNo">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=""</Value>
-        </Values>
-      </DefaultValue>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>Material No</Prompt>
-    </ReportParameter>
     <ReportParameter Name="CUser">
       <DataType>String</DataType>
       <DefaultValue>
@@ -1919,6 +1996,24 @@
           <DataSetName>dsCUser</DataSetName>
           <ValueField>CTeamID</ValueField>
           <LabelField>CUser</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="Workflow">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>dsWorkflow</DataSetName>
+          <ValueField>MaterialRequestWorkflowID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Workflow</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>dsWorkflow</DataSetName>
+          <ValueField>MaterialRequestWorkflowID</ValueField>
+          <LabelField>MaterialRequestWorkflow</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>

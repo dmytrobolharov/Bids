@@ -27,8 +27,8 @@
         </node>
 
         <node name="nIIS" text="Configure IIS" description="Configure application pools, web applications, and virtual directories." >
-          <node name="nIISWebApps" text="" description="" plugin="IISWebApplications" />
-          <node name="nIISVirDirs" text="" description="" plugin="IISVirtualDirectories" />
+          <node name="nIISWebApps" text="" description="" plugin="IISWebApplications" args="--installPLM --installSRM" />
+          <node name="nIISVirDirs" text="" description="" plugin="IISVirtualDirectories" args="--installPLM --installSRM" />
         </node>
 		
 		<node name="nMarkupTool" text="Configure Markup Tool" description="Install application pool, web application for Markup Tool and generate config file.">

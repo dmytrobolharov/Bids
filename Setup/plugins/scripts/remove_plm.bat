@@ -85,6 +85,8 @@ echo Windows Services.....
 
 sc STOP plmOn%V%Services
 sc DELETE plmOn%V%Services
+sc STOP YuniquePLMServiceBus%V%
+sc DELETE YuniquePLMServiceBus%V%
 
 echo
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

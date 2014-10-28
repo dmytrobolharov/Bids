@@ -534,7 +534,7 @@
       </Rectangle>
       <Image Name="imgStyleImage">
         <Source>External</Source>
-        <Value>= First(Fields!QRPath.Value, "dsStyleImage")</Value>
+        <Value>= First(Fields!FilePath.Value, "dsStyleImage")</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.75in</Top>
         <Left>8.625in</Left>

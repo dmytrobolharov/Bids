@@ -304,7 +304,8 @@
                 autoOpen: false,
                 modal: true,
                 resizable: false,
-                width: 500,
+                height: 350,
+                width: 875,
                 title: "<%= strSKUHeaderName %>",
                 buttons: {}
             });

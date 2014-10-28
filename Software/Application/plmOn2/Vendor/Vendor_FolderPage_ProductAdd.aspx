@@ -85,9 +85,9 @@
 				         <tr bgColor="#ffffff">
 					        <td vAlign="top" width="600">
 					            <asp:datagrid id="DataGrid1" runat="server"  DataKeyField="StyleCategoryId">
-                                        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate">
+                                        <AlternatingItemStyle Font-Size="11px" Height="20px" CssClass="AlternateItemTemplate">
                                         </AlternatingItemStyle>
-                                        <ItemStyle CssClass="ItemTemplate"></ItemStyle>
+                                        <ItemStyle Font-Size="11px" CssClass="ItemTemplate"></ItemStyle>
                                         <headerStyle Height="25px" CssClass="tableheader"></headerStyle>
                                         <PagerStyle Visible="False"></PagerStyle>
                                         <Columns>

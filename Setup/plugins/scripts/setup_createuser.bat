@@ -3,7 +3,7 @@
 IF EXIST ./environ.bat call environ.bat
 
 echo *****************************************************
-echo Creating users and groups...
+echo Creating users and groups....
 
 set usr=%PLM.AppServer.ImpersonateName%
 set grp=%PLM.AppServer.ImpersonateGroup%%PLM.AppServer.SiteID%

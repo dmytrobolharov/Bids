@@ -68,7 +68,32 @@
                 background-color: White;
                 visibility: hidden;
             }
+            
+            .imgContainer div:before,
+            .frame_before {
+                content: "";
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            .imgContainer img {
+                vertical-align: middle;
+            }           
         </style>
+        <!--[IF IE]>
+        <style type="text/css">
+            .imgContainer div {
+                list-style:none;
+                behavior: expression(
+                    function(t){
+                        t.insertAdjacentHTML('afterBegin','<span class="frame_before"></span>');
+                        t.runtimeStyle.behavior = 'none';
+                    }(this)
+                );
+            }
+        </style>
+        <![endif]-->
 	</HEAD>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -255,7 +280,7 @@
                 } else {
                     $("[id$='chkSelect']:checked").each(function () {
                         var td = $(this).closest("table").parent();
-                        listItems.push('<li><div class="img-cont"><img src="' + td.find("[id$='lblLineImage'] img").attr("src").replace(/\?S=\d+/ig, "?S=50") + '" /></div><span>' + td.find("[id$='lblStyleNo2']").text() + '</span></li>');
+                        listItems.push('<li><div class="img-cont"><img src="' + td.find(".imgDesign").attr("src").replace(/\?S=\d+/ig, "?S=50") + '" /></div><span>' + td.find("[id$='lblStyleNo2']").text() + '</span></li>');
                     });
                 }
 

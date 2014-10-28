@@ -82,7 +82,7 @@
 					            </td>
 				            </tr>
 			            </table>
-                        <div id="divMenu" style="overflow: auto;">
+                        <div id="divMenu" style="overflow: auto; overflow-x: hidden;">
                             <cc2:YSTreeView id="YSTreeViewPlanMenu" runat="server"></cc2:YSTreeView>
                         </div>
                     </td>
@@ -105,6 +105,11 @@
             $("#FinancialPlanGrid").width($("#divGrid").width())
         </script>
         </form>
+         <script type="text/javascript">
+             $("select[id$=cboRecordsPerPage] option").filter(function () {
+                 return $(this).attr("value") > 50;
+             }).remove();
+        </script>
         <script type="text/javascript" language="javascript">
             function ShowHeaderContent(obj) {
                 obj.style.display = 'none';
@@ -144,22 +149,27 @@
                 PageMethods.SaveHiddenColumns('FinancialPlanGrid', '<%= aspxPageName & "?PLID=" & strPlanningId %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
             }
 
+            (function ($) {
+                $.fn.hasScrollBar = function () {
+                    return this.get(0).scrollHeight > this.height();
+                }
+            })(jQuery);
+
             /** Resizing Grid to take all the free height on the screen **/
             (function resizeGrid() {
-
+                var productMenu = $("#divMenu");
+                productMenu.height(0);
                 var changeGrid = $("#FinancialPlanGrid");
+                changeGrid.height(0);
+
                 var windowHeight = $(window).height();
                 var formHeight = $("#Form1").height();
-                var minHeight = 100;
 
                 // Calculating, how much free space we have on the window for grid area
-                var diff = windowHeight - (formHeight - changeGrid.height());
+                var diff = windowHeight - formHeight;
 
-                if (diff > minHeight) {
-                    changeGrid.height(diff - 40); // leave space for footer
-                } else {
-                    changeGrid.height(minHeight);
-                }
+                changeGrid.height(diff);
+                productMenu.height(diff);
             })();
         </script>
 	</body>

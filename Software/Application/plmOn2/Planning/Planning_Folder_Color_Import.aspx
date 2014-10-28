@@ -364,6 +364,10 @@
             function addColorForSaving(colorInfo) {
 
                 var hdnAddedColors = $("#DataListExisting").siblings("input[id*='hdnAddedColors']");
+                
+                if(hdnAddedColors.length == 0){
+                    return true;
+                }
                 var arrExistingColors = hdnAddedColors.val().split(";");
 
                 if (_.indexOf(arrExistingColors, colorInfo.colorPaletteID) != -1) {

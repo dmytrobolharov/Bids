@@ -76,6 +76,13 @@
       </protocols>
     </webServices>
 	<sessionState mode="$SessionStateMode$" stateConnectionString="tcpip=127.0.0.1:42424" sqlConnectionString="$SessionStateSqlConnectionString$" cookieless="false" timeout="20"/>
+    <caching>
+      <sqlCacheDependency enabled="true" pollTime="6000">
+        <databases>
+          <add name="plmOnDB" connectionStringName="SQLCACHECONNECTION"/>
+        </databases>
+      </sqlCacheDependency>
+    </caching>
   </system.web>
   <!-- 
         The system.webServer section is required for running ASP.NET AJAX under Internet

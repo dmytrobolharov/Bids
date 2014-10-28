@@ -36,7 +36,7 @@
         <asp:Label ID="Label1" runat="server" ForeColor="#E0E0E0" Font-Size="X-Large" Font-Names="Tahoma,Verdana">Copy To </asp:Label>
         <asp:RadioButtonList ID="RadioButtonList1" runat="server">
             <asp:ListItem Selected="True" Value="0">New Group</asp:ListItem>
-            <asp:ListItem Value="1">Exists Group</asp:ListItem>
+            <asp:ListItem Value="1">Existing Group</asp:ListItem>
         </asp:RadioButtonList>
     </div>
     <div id="newgroup">

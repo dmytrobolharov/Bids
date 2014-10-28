@@ -27,6 +27,10 @@
                 display:none;
             }            
             
+            .multi-bom
+            {
+                background-color: yellow;
+            }
         </style>
 	</head>
 	<body style="background-color: White;">
@@ -130,8 +134,6 @@
                                             <asp:ListItem Value="30">30</asp:ListItem>
                                             <asp:ListItem Value="40">40</asp:ListItem>
                                             <asp:ListItem Value="50">50</asp:ListItem>
-                                            <asp:ListItem Value="75">75</asp:ListItem>
-                                            <asp:ListItem Value="100">100</asp:ListItem>
                                         </asp:DropDownList>
                                     </td>
                                     <td width="10">
@@ -251,6 +253,11 @@
                 <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
                 <script language="javascript" type="text/javascript" src="../System/Jscript/colResizable-1.3.min.js"></script>
                 <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+                <script type="text/javascript">
+                    $("select[id$=ctrMaterialGridList_ps] option").filter(function () {
+                        return $(this).attr("value") > 50;
+                    }).remove();
+                </script>
             	<script type="text/javascript" language="javascript">
             	    var frm = document.Form1;
             	    function CheckAllColors(checkAllBox) {
@@ -266,7 +273,7 @@
             	        var actVar = checkAllBox.checked;
             	        for (i = 0; i < frm.length; i++) {
             	            e = frm.elements[i];
-            	            if (e.type == 'checkbox' && e.name.indexOf("chkSelectStyle") != -1)
+            	            if (e.type == 'checkbox' && e.name.indexOf("chkSelectStyle") != -1 && !e.disabled)
             	                e.checked = actVar;
             	        }
             	    }

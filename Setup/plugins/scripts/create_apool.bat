@@ -2,6 +2,9 @@ REM @ECHO OFF
 
 IF EXIST ./environ.bat call environ.bat
 
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS ENUM /P w3svc/AppPools/%1
+IF ERRORLEVEL 0 goto EndLabel 
+
 CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS CREATE w3svc/AppPools/%1 IIsApplicationPool
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 
@@ -20,5 +23,6 @@ IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 goto EndLabel
  
 :ErrorLabel
+EXIT /b 1
  
 :EndLabel

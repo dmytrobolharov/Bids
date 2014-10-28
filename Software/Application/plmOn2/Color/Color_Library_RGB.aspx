@@ -28,7 +28,7 @@
             </td>
             <td>
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <asp:ImageButton ID="btnClose" runat="server" />
+                <asp:ImageButton ID="btnClose" runat="server" CausesValidation="false" />
             </td>
             <td>
                 &nbsp;

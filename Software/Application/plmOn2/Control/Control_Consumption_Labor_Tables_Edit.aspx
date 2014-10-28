@@ -96,8 +96,8 @@
 				</tr>
 			</table>
 						<asp:datagrid id="DataGrid1" runat="server" AllowSorting="True" DataKeyField="ConsumptionLaborTablesID">
-							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
+							<AlternatingItemStyle Font-Size="11px" Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle Font-Size="11px" Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Text="StyleCategoryID" Visible="False"></asp:label>

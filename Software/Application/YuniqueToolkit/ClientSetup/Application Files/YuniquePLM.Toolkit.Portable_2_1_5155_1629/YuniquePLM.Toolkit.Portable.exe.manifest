@@ -4,7 +4,7 @@
   <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.0.0.39686" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.0.0.40733" language="neutral" processorArchitecture="x86" />
     <commandLine file="YuniquePLM.Toolkit.Portable.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -211,14 +211,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="plmOnBizObj.dll" size="1190912">
-      <assemblyIdentity name="plmOnBizObj" version="6.0.0.39686" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="plmOnBizObj.dll" size="1190400">
+      <assemblyIdentity name="plmOnBizObj" version="6.0.0.40733" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>zR1IREzOqMS7PV+EUpouNqfFO2o=</dsig:DigestValue>
+        <dsig:DigestValue>ElGyIsaykrUtU1+W5QF1IUlGex0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -248,109 +248,97 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="YSWebControls.dll" size="86016">
-      <assemblyIdentity name="YSWebControls" version="6.0.0.39686" publicKeyToken="2091C8D306170FAC" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="YSWebControls" version="6.0.0.40733" publicKeyToken="2091C8D306170FAC" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>CgvxiCWCcG/zkVsOYikTpQ5E56k=</dsig:DigestValue>
+        <dsig:DigestValue>83+WVij9xRdjUUonbVZ9gObKZfM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.API.Common.dll" size="25088">
-      <assemblyIdentity name="Yunique.API.Common" version="6.0.0.39686" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.API.Common" version="6.0.0.40733" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>y2SKAPKRaMg0+1NtGr9DjkW+RdE=</dsig:DigestValue>
+        <dsig:DigestValue>mRbN4TOfIVsVt4fQi1YHHF3Baqc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.dll" size="1124864">
-      <assemblyIdentity name="Yunique.Core" version="6.0.0.39686" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.dll" size="1128448">
+      <assemblyIdentity name="Yunique.Core" version="6.0.0.40733" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Cl5iA4FruIF1geE/ei1E3wCrMFw=</dsig:DigestValue>
+        <dsig:DigestValue>+wI1fKE+BFAPipPToef1BRamue4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.Extensions.dll" size="239616">
-      <assemblyIdentity name="Yunique.Core.Extensions" version="6.0.0.39686" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.Extensions" version="6.0.0.40733" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>RAfp2DzrI5T83xsmRCsRt1atFYM=</dsig:DigestValue>
+        <dsig:DigestValue>CRhaQ5rJD9BS2cZ3oZpwyPChLX8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.License.dll" size="21504">
-      <assemblyIdentity name="Yunique.Core.License" version="6.0.0.39686" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.License" version="6.0.0.40733" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>V6EE5Bb6T2D3Q7eMQCabnEvBqiM=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.Logger.dll" size="59392">
-      <assemblyIdentity name="Yunique.Core.Logger" version="6.0.0.39686" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>OR/eJVdV0MLcNIJAISkhq1abMg4=</dsig:DigestValue>
+        <dsig:DigestValue>Iiq16iRdJhBJxJeVIhkV0pxopA4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.Utilities.dll" size="23552">
-      <assemblyIdentity name="Yunique.Core.Utilities" version="6.0.0.39686" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.Utilities" version="6.0.0.40733" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>f8slnjifLu5gU93IriWDaxs11HE=</dsig:DigestValue>
+        <dsig:DigestValue>+jWoQPNR3R+bY7pFifcaPnXq9Xg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Toolkit.API.DTO.dll" size="123904">
-      <assemblyIdentity name="Yunique.Toolkit.API.DTO" version="6.0.0.39686" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Toolkit.API.DTO" version="6.0.0.40733" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>jY7MW/MXuLak3PrQk0AFC0ys8Tc=</dsig:DigestValue>
+        <dsig:DigestValue>yTt5pcactvRjKWgFFtqU0MGNe8k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="YuniquePLM.Toolkit.Portable.exe" size="3296768">
-      <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.0.0.39686" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.0.0.40733" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+EtevzqCOd4ZqkMJ4hidWxIpi34=</dsig:DigestValue>
+        <dsig:DigestValue>0YrkXKZyQJI05+J6vaJPNjU+e0E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -559,4 +547,4 @@
       <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
     </application>
   </compatibility>
-<publisherIdentity name="CN=VM-WIN7\eschuele" issuerKeyHash="c225a6e5aca61f3c9de4213e3cce7daa7a3e85d6" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>omQzNXfahjr1Y//xB6WkweHhEh8=</DigestValue></Reference></SignedInfo><SignatureValue>U9Z53gcBjYYjiVPb/Uiz3JaxjoqMZtD7XljJJMXRWFwRYtSkF8gXhri3+Iea/o5ONM8jQhumNep3DTcmCzcKxH2r/L7aU6vBA0+YLMf8aZc6DzpwH3I+iwzF3lBLIsKpSk5BDJJCSOKNBfCSPWbqFiXsRYKUUtkfK95HEqwiAiI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>7TMvwI2jNuD4/1xcmTG9j+xoT+U6GF19ZRTz57kWYnQUiOKVQfdzk2+ac8hBmBlTBTfQeclr997Bz7YRjvyLvoAv3g719o+w9mwfxQ5zd4Cy9dIJhvrn6X0gvxbx6iDcYPFkYazMiL80cIJ7FEr2w3P6gJlBVcFA7/xgNEAAy98=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="1f12e1e1c1a4a507f1ff63f53a86da77353364a2" Description="" Url=""><as:assemblyIdentity version="2.1.5155.1629" name="YuniquePLM.Toolkit.Portable.exe" publicKeyToken="072726a55427f6a9" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=VM-WIN7\eschuele</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>WoaPeYSUxrLQnvz8+ffkpsjffq4=</DigestValue></Reference></SignedInfo><SignatureValue>UAaeHYRIPAFSTExgxl11WElzcTii3UEsfHc7r4Wtwse/n7wa8Rc9gOtnbuI6ggiWge7o2lWYs7QQivUt7tczoGEST1/u68chJGn6mvLzF0TZ4n5bS42Unz8y/GXEbIWhrMoW4h1WFTr7yJdZaTB2YN5bxze+k6w/E0tWpexzFPY=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>7TMvwI2jNuD4/1xcmTG9j+xoT+U6GF19ZRTz57kWYnQUiOKVQfdzk2+ac8hBmBlTBTfQeclr997Bz7YRjvyLvoAv3g719o+w9mwfxQ5zd4Cy9dIJhvrn6X0gvxbx6iDcYPFkYazMiL80cIJ7FEr2w3P6gJlBVcFA7/xgNEAAy98=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQQsARfZuEOblA+lN783yGFjANBgkqhkiG9w0BAQUFADArMSkwJwYDVQQDHiAAVgBNAC0AVwBJAE4ANwBcAGUAcwBjAGgAdQBlAGwAZTAeFw0xNDAyMDgxNjA3MzhaFw0xNTAyMDgyMjA3MzhaMCsxKTAnBgNVBAMeIABWAE0ALQBXAEkATgA3AFwAZQBzAGMAaAB1AGUAbABlMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDtMy/AjaM24Pj/XFyZMb2P7GhP5ToYXX1lFPPnuRZidBSI4pVB93OTb5pzyEGYGVMFN9B5yWv33sHPthGO/Iu+gC/eDvX2j7D2bB/FDnN3gLL10gmG+ufpfSC/FvHqINxg8WRhrMyIvzRwgnsUSvbDc/qAmUFVwUDv/GA0QADL3wIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAOqvLqLaq65kyjv/BpPDShWgc5M3yOQwCSOcqROEJ/ZHQImtXURFGjmKGg7uVjV9YTiezt1hp/HodkT2gnZzOE18mRzwyaRG3elZfdCmvif9twhI+cvyjvBW9/WDdIUwL1DrtLZH6J4B1gePYVJ3Q8ngEO++mFBg3iGtZjWG30rH</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=VM-WIN7\eschuele" issuerKeyHash="c225a6e5aca61f3c9de4213e3cce7daa7a3e85d6" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>V6FbEfXsdxs67As7f3xtun0ULoY=</DigestValue></Reference></SignedInfo><SignatureValue>b97xoCJlZOGlcfnCv9NO0B+cMnNBqlm6A3D4xH5kJag0Evvv6JFDe1bILi0d6AKs4iaqogzDIrOlB+kBRaI23S0qz+Ikn7vEny0LpXUXPVMUjzlDH6lWUK6VHfnOnVTuGmHtnXhyj2WvbzOgSuPQ1qHhb0O3vH0vwH9MXlj8cmE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>7TMvwI2jNuD4/1xcmTG9j+xoT+U6GF19ZRTz57kWYnQUiOKVQfdzk2+ac8hBmBlTBTfQeclr997Bz7YRjvyLvoAv3g719o+w9mwfxQ5zd4Cy9dIJhvrn6X0gvxbx6iDcYPFkYazMiL80cIJ7FEr2w3P6gJlBVcFA7/xgNEAAy98=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="862e147dba6d7c7f3b0bec3a1b77ecf5115ba157" Description="" Url=""><as:assemblyIdentity version="2.1.5155.1629" name="YuniquePLM.Toolkit.Portable.exe" publicKeyToken="072726a55427f6a9" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=VM-WIN7\eschuele</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>7KoI/voPMRFalZx4QLqI+FBOug8=</DigestValue></Reference></SignedInfo><SignatureValue>aMalw0LLmP1yy2JRglTbTmRGRHHOd2SXDIjGpUwaq30SLL7P0SvZ8qAs68ZOaODwI3Qc7oUpL1YTSdqclfdS1sUb8Ov3W7yfRKLAuwCwZUJO6LxfiLwwwAqSfrAy+DCTul3bjZ/dMRG6bipW6EhaQ24Ttp8ETXYUHDC/to6NdUg=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>7TMvwI2jNuD4/1xcmTG9j+xoT+U6GF19ZRTz57kWYnQUiOKVQfdzk2+ac8hBmBlTBTfQeclr997Bz7YRjvyLvoAv3g719o+w9mwfxQ5zd4Cy9dIJhvrn6X0gvxbx6iDcYPFkYazMiL80cIJ7FEr2w3P6gJlBVcFA7/xgNEAAy98=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQQsARfZuEOblA+lN783yGFjANBgkqhkiG9w0BAQUFADArMSkwJwYDVQQDHiAAVgBNAC0AVwBJAE4ANwBcAGUAcwBjAGgAdQBlAGwAZTAeFw0xNDAyMDgxNjA3MzhaFw0xNTAyMDgyMjA3MzhaMCsxKTAnBgNVBAMeIABWAE0ALQBXAEkATgA3AFwAZQBzAGMAaAB1AGUAbABlMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDtMy/AjaM24Pj/XFyZMb2P7GhP5ToYXX1lFPPnuRZidBSI4pVB93OTb5pzyEGYGVMFN9B5yWv33sHPthGO/Iu+gC/eDvX2j7D2bB/FDnN3gLL10gmG+ufpfSC/FvHqINxg8WRhrMyIvzRwgnsUSvbDc/qAmUFVwUDv/GA0QADL3wIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAOqvLqLaq65kyjv/BpPDShWgc5M3yOQwCSOcqROEJ/ZHQImtXURFGjmKGg7uVjV9YTiezt1hp/HodkT2gnZzOE18mRzwyaRG3elZfdCmvif9twhI+cvyjvBW9/WDdIUwL1DrtLZH6J4B1gePYVJ3Q8ngEO++mFBg3iGtZjWG30rH</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

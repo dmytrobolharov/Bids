@@ -70,6 +70,13 @@
         <add name="HttpPost"/>
       </protocols>
     </webServices>
+    <caching>
+      <sqlCacheDependency enabled="true" pollTime="6000">
+        <databases>
+          <add name="plmOnDB" connectionStringName="SQLCACHECONNECTION"/>
+        </databases>
+      </sqlCacheDependency>
+    </caching>
   </system.web>
   <!-- 
         The system.webServer section is required for running ASP.NET AJAX under Internet

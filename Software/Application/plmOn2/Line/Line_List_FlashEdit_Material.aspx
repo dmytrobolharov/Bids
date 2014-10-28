@@ -25,6 +25,10 @@
                 display:none;
             }            
             
+            .multi-bom
+            {
+                background-color: yellow;
+            }
         </style>
 	</head>
 	<body style="background-color: White;">
@@ -315,7 +319,7 @@
                             modal: true,
                             resizable: false,
                             height: 350,
-                            width: 700,
+                            width: 800,
                             title: '<%= GetSystemText("Line List") %>'
                 
                         });

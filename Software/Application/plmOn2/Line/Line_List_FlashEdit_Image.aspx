@@ -321,7 +321,7 @@
                 modal: true,
                 resizable: false,
                 height: 350,
-                width: 700,
+                width: 800,
                 title: '<%= GetSystemText("Line List") %>'
 
             });

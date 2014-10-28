@@ -16,12 +16,25 @@
         <style type="text/css">
             .EmptyItemTemplate
             {
-            	display: none;
+                display: none;
             }
             
-            #drag-holder { height: 0; }
-            #drag-holder, #drag-holder table { z-index: 100; }
-            #drag-holder table td { background-color: #fff; }
+            #drag-holder
+            {
+                height: 0;
+            }
+            #drag-holder, #drag-holder table
+            {
+                z-index: 100;
+            }
+            #drag-holder table td
+            {
+                background-color: #fff;
+            }
+            .multi-bom
+            {
+                background-color: yellow;
+            }
         </style>
 	</head>
 	<body style="background-color: White;">
@@ -425,7 +438,7 @@
                     modal: true,
                     resizable: false,
                     height: 350,
-                    width: 700,
+                    width: 800,
                     title: '<%= GetSystemText("Line List") %>'
 
                 });

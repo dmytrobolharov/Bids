@@ -1,26 +1,4 @@
-﻿/*
- Copyright (c) 2012-2014 Open Lab
- Written by Roberto Bicchierai and Silvia Chelazzi http://roberto.open-lab.com
- Permission is hereby granted, free of charge, to any person obtaining
- a copy of this software and associated documentation files (the
- "Software"), to deal in the Software without restriction, including
- without limitation the rights to use, copy, modify, merge, publish,
- distribute, sublicense, and/or sell copies of the Software, and to
- permit persons to whom the Software is furnished to do so, subject to
- the following conditions:
-
- The above copyright notice and this permission notice shall be
- included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-$.gridify = function (table, opt) {
+﻿$.gridify = function (table, opt) {
     var options = {
         resizeZoneWidth:10
     };
@@ -3291,7 +3269,7 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
                             '<div>' +
                             '<h1 style="opacity: 0.6;margin-left: 15px;margin-top: 15px;">'+Yunique.Data.getTranslatedString(TranslationData,'Notes')+':<h1>' +
                             '<textarea id="taskNote" name = "taskNote" class="taskNoteTextArea"></textarea>' +
-                            '<div class="taskNoteSave"><button class="button taskNoteSaveBnt" id="saveNote">'+Yunique.Data.getTranslatedString(TranslationData,'Save')+'</button></div>' +
+                            '<div class="taskNoteSave"><button class="button taskNoteSaveBnt" id="saveNote">'+Yunique.Data.getTranslatedString(TranslationData,'OK')+'</button></div>' +
                             '</div>' +
                             '--></div>';
 
@@ -3354,6 +3332,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             $(function () {
                 // here starts gantt initialization
                 ge = new GanttMaster();
+                _Yunique = new EventPopup();
                 var workSpace = $("#workSpace");
 
                 workSpace.css({
@@ -3377,6 +3356,10 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             }
             var tempDatasource = resp.YuniqueAPI.pTACalTemplateTask;
             typeDatasource = resp.YuniqueAPI.Lookups.TaskTypeId;
+            _Yunique.dataForEvent = resp.YuniqueAPI.Lookups.TaskStatus ;
+            _Yunique.dataForEvent.unshift({
+                key: '',
+               value: ' '});
             if (!$.isArray(tempDatasource)) {
                 tempDatasource = [];
                 tempDatasource.push(resp.YuniqueAPI.pTACalTemplateTask);
@@ -3415,6 +3398,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 objectToPush.carryOver = tempDatasource[i].CarryOver;
                 objectToPush.TACalTemplateTaskID = tempDatasource[i].TACalTemplateTaskID;
                 objectToPush.TaskNote = tempDatasource[i].TaskNote;
+                objectToPush.TaskStatus = tempDatasource[i].TaskStatus;
                 calendarDatasource.push(objectToPush);
             }
             datasourceLength = calendarDatasource.length;
@@ -3514,12 +3498,13 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 });
             };
             kendo.culture(userLocalCulture);
-            Date.defaultFormat = kendo.cultures.current.calendars.standard.patterns.d;
-            Date.monthNames = kendo.cultures.current.calendars.standard.months.names;
-            Date.monthAbbreviations = kendo.cultures.current.calendars.standard.months.namesAbbr;
-            Date.dayNames = kendo.cultures.current.calendars.standard.days.names;
-            Date.dayAbbreviations = kendo.cultures.current.calendars.standard.days.namesAbbr;
-            Date.firstDayOfWeek = kendo.cultures.current.calendars.standard.firstDay;
+            var _kendoStandart = kendo.cultures.current.calendars.standard
+            Date.defaultFormat = _kendoStandart.patterns.d;
+            Date.monthNames = _kendoStandart.months.names;
+            Date.monthAbbreviations = _kendoStandart.months.namesAbbr;
+            Date.dayNames = _kendoStandart.days.names;
+            Date.dayAbbreviations = _kendoStandart.days.namesAbbr;
+            Date.firstDayOfWeek = _kendoStandart.firstDay;
             function openResourceEditor() {
                 var editor = $("<div>");
                 editor.append("<h2>Resource editor</h2>");
@@ -3583,6 +3568,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                     if (tempDatasource[i].type === '0') {
                         objectToPush.new = '0';
                         objectToPush.CarryOver = '0';
+                        objectToPush.TaskProgress = (tempDatasource[i].progress)/100 || 0;
                     } else {
                         objectToPush.TaskWorkflowId = tempDatasource[i].TaskWorkflowId;
                         objectToPush.taskWorkfowIsChanged = tempDatasource[i].TaskWorkfowIsChanged ?tempDatasource[i].TaskWorkfowIsChanged:0;
@@ -3608,6 +3594,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                     objectToPush.depends = tempDatasource[i].depends;
                     objectToPush.active = 0;
                     //objectToPush.TaskProgress = tempDatasource[i].progress;
+                    objectToPush.TaskStatus = tempDatasource[i].TaskStatus
                     objectToPush.level = tempDatasource[i].level;
                     objectToPush.TACalTemplateTaskID = tempDatasource[i].TACalTemplateTaskID;
                     objectToPush.TaskNote = tempDatasource[i].TaskNote;
@@ -3798,9 +3785,9 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             }
 
         }
-        this.element.find(".taskRowIndex").each(function (i, el) {
-            $(el).html(i + 1);
-        });
+//        this.element.find(".taskRowIndex").each(function (i, el) {
+//            $(el).html(i + 1);
+//        });
         //prof.stop();
         try {
             if (localStorage.getItem("yuniqueColumnsData")) {
@@ -3817,7 +3804,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             if (localStorageForIE) {
                 for (var i = 0, k = localStorageForIE.length; i < k; i++) {
                     taskRow.each(function () {
-                        $(this).find('td').eq(localStorageForIE[i]).css('display', 'none')
+                        $(this).find('td').eq(localStorageForIE[i]).css('display', 'none');
                         $($('.gdfTable')[0]).find('.gdfColHeader').eq(localStorageForIE[i]).css('display', 'none');
                     });
                 }
@@ -3900,6 +3887,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 task.name = text;
                 task.TaskWorkfowIsChanged = 1;
                 self.master.taskIsChanged();
+
             }else{
                 toastr.warning(Yunique.Data.getTranslatedString(TranslationData,'You cannot choose same action'));
                 e.preventDefault();
@@ -3910,6 +3898,21 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 self.master.taskIsChanged();
 
             }
+        }
+
+    }
+    function groupFinder(val){
+        var i= 0,taskWorkflowLength = taskWorkflow.length;
+        while(i<taskWorkflowLength){
+            if(taskWorkflow[i].key === val){
+                var elem = taskWorkflow[i].value2;
+                if(elem === 'MATERIAL REQUEST' || elem === 'STYLE' || elem === ' SOURCING QUOTATION' || elem === 'COLOR' || elem ==='IMAGE' || elem ==='SOURCING'){
+                    return true;
+                    break;
+                }
+
+            }
+            i++;
         }
     }
 
@@ -3953,7 +3956,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 close:function(e,m,p){
                     if((this.value()==='group')){
                         e.preventDefault();
-                        toastr.warning(Yunique.Data.getTranslatedString(TranslationData,'You cannot choose groupnames as tasks.'));;
+                        toastr.warning(Yunique.Data.getTranslatedString(TranslationData,'You cannot choose groupnames as tasks.'));
 
                     }
                 },
@@ -3968,6 +3971,11 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                     }else{
                         dropDownChanger(task,currValue,this.text(),self,e,el);
                     }
+                    /*if(groupFinder(task.TaskWorkflowId)){
+                     taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
+                     }else{
+                     taskRow.find('.carryOver').find('input').css('visibility', 'visible');
+                     }*/
                 },
                 change:function(e,m){
                     //since telerik doesnt know that someone would love to have 2 events,instead of just 1,
@@ -3986,6 +3994,11 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
             }
             if (task.type === '1') {
+                /*if(groupFinder(task.TaskWorkflowId)){
+                 taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
+                 }else{
+                 taskRow.find('.carryOver').find('input').css('visibility', 'visible');
+                 }*/
                 $(el2).css('display', 'none')
             } else {
                 task.type = '0';
@@ -4014,6 +4027,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 el.change(function () {
                     task.type = el.val();
                     if (el.val() === '1') {
+                        task.eventPrev = 1;
                         taskRow.find('span.taskNameDDL').css('display', 'block');
                         taskRow.find('.taskNameYunique').css('display', 'none');
                         taskRow.find('.new').find('input').css('visibility', 'visible');
@@ -4359,24 +4373,80 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
         });
 
     };
-    function openEventPopup(task){
-        //1)check if we need to get data
-        //2)get data from API
-        //3)
-        console.log(task)
+    function EventPopup(){
+        this.createEventPopup = function(task,self){
+            var that = this;
+            $('body').append('' +'<div id="eventPopup" ><div class="eventPopupShadow"></div>' +
+                '<div class="eventPopup">'+
+                '<h2 style="opacity: 0.6;margin-left: 15px;margin-top: 15px;">Task event details</h2>'+
+                '<div class="eventPopupBody">' +
+                '<div><span>Progress</span><input type="text" id="progress" value="'+this.getProgress(task)+'"/><span>%</span></div>'+
+                '<div><span>Step</span>' +
+                '<div id="workflowStep">'+
+                '</div>'+
+                '</div></div>'+
+                '<button class="button saveEventPopup">OK</button>'+
+                '<p class="closeEventPopup"><img src="closeBig.png" title="close"></p>'+
+                '</div></div>');
+            $('#workflowStep').kendoDropDownList({
+                dataTextField: "value",
+                dataValueField: "key",
+                dataSource: this.dataForEvent,
+                index: this.checkStatusData(task)?this.checkStatusData(task):0,
+                select:function(e){
+                    that.workStep = this.dataItem(e.item.index()).key;
+                    if(that.workStep === '100'){
+                        $('#eventPopup').find('input').val('100')
+                    }
+                }
+            });
+            var element = $('#eventPopup');
+            element.find('button').click(function(){
+                var opt = {};
+                opt.progress = element.find('input').val();
+                opt.workflowStep = that.workStep || task.TaskStatus;
+                that.saveData(task,self,opt);
+                element.remove()
+            });
+            element.find('input').blur(function(e){
+                var value = e.target.value*1;
+                if (isNaN(value)|| value<0 || value>100){
+                    $(this).val(0)
+                }
+            })
+            element.find('.closeEventPopup').click(function(){
+                element.remove();
+            })
+        };
+        this.checkStatusData = function(task){
+            for(var i= 0,k= this.dataForEvent.length;i<k;i++){
+                if(task.TaskStatus === this.dataForEvent[i].key){
+                    return i;
+                    break;
+                }
+            }
+            return false
+        };
+        this.saveData = function(task,self,opt){
+            task.progress = opt.progress;
+            task.TaskStatus = opt.workflowStep;
+            self.master.taskIsChanged();
+        }
+        this.getProgress = function(task){
+            return task.progress || 0
+        }
 
-    }
-
+    };
     GridEditor.prototype.openFullEditor = function (task, taskRow) {
 
         var self = this;
 
         //task editor in popup
         var taskId = taskRow.attr("taskId");
-        if (task.id !== '1' && task.type !== '0' && task.TACalTemplateTaskID !== '00000000-0000-0000-0000-000000000000') {
+        if (task.id !== '1' && task.type !== '0' && task.TACalTemplateTaskID !== '00000000-0000-0000-0000-000000000000' && !task.eventPrev) {
             showTaskDetails(task.TACalTemplateTaskID)
-        }else if(task.id !=='1' && task.type ==='0'){
-            openEventPopup(task)
+        }else if(task.id !=='1' && task.type ==='0' && !task.hasChild && task.level<2){
+            _Yunique.createEventPopup(task,self);
         }
 
     };

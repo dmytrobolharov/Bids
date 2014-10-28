@@ -6,14 +6,29 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="Style_Comment" Src="Style_Comment.ascx" %>
 <%@ Register TagPrefix="uc3" TagName="Style_WorkflowItem" Src="Style_WorkFlowItem.ascx" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 	<head>
 		<title>Style</title>	
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <script src="../System/Jscript/jquery-1.6.2.min.js" type="text/javascript"></script>
+        <script type="text/javascript" language="javascript">
+            //adjust height of comments textarea wi #11609
+            $(document).ready(function () {
+
+                $("*[name*='txtComment']").each(function () {
+                    //alert($(this).parent().css('height'));
+                    $(this).css('height', $(this).parent().css('height'));
+
+                });
+
+            });
+        </script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
+            <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
 			<table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0"
 				runat="server">
 				<tr valign="middle">
@@ -63,7 +78,16 @@
 									 CommandName="Break"></cc1:confirmedimagebutton></td>
 						
 							<td valign="top" style="height:150;" rowspan="2">
-							    <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" MaxLength="2000" BorderColor="Silver" BorderWidth="1" Width="100%" Height="100%" Text="Test" />
+							     <telerik:RadEditor runat="server" ID="txtComment" Width="680px" EditModes="Design" spellchecks>
+                                    <Tools>
+											<telerik:EditorToolGroup >
+                                            <telerik:EditorTool Name="Bold" />
+                                            <telerik:EditorTool Name="Italic" />
+                                            <telerik:EditorTool Name="Underline" />
+                                        </telerik:EditorToolGroup>
+                                    </Tools>
+                                </telerik:RadEditor>
+								<asp:HiddenField ID="hdnComment" runat="server" />
 								<%--<asp:Label ID="Label1" runat="server" BorderColor="Silver" BorderWidth="1" Width="100%" Height="100%">test</asp:Label>--%>							
 								<input id="txtImageVersion" type="hidden" value='<%# DataBinder.Eval(Container.DataItem, "ImageVersion") %>' runat="server" />
 								<input id="txtImageID" type="hidden" value='<%# DataBinder.Eval(Container.DataItem, "ImageID") %>' runat="server" />
@@ -106,6 +130,15 @@
 				<td valign="middle" align="center" width="7"><IMG src="../System/Images/table_bar_right.gif"></td>
 			</tr>
 		</table>
+        <script type="text/javascript" language="javascript">
+        	//adjust height of comments textarea wi #11609
+        	$(window).load(function () {
+        		$("#DataList1>tbody>tr>td").each(function () {
+        		    var height = $(this).find("input[id$=btnImgNewWindow]").css("height");
+        		    $(this).find("div[id$=txtComment]").css("height", height + 1)
+        		});
+        	});
+		</script>
 	</body>
 </html>
 
