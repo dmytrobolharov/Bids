@@ -8,7 +8,9 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
-		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>		
+		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
             .RightAlign 
             {
@@ -50,7 +52,7 @@
 						<cc1:confirmedimagebutton id="btnsave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 						<cc1:bwimagebutton id="btnDrop" runat="server" ></cc1:bwimagebutton>
                         <cc1:confirmedimagebutton id="btnBatchUpdate" runat="server"  Message="NONE" Visible="False"></cc1:confirmedimagebutton>						
-						<cc1:confirmedimagebutton id="btnClose" runat="server" visible="true" Message="NONE"></cc1:confirmedimagebutton>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" visible="true" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
                     </td>     
 					<td>
 			            <table width="200" border="0" cellspacing="0" cellpadding="0" >
@@ -127,6 +129,10 @@
             if (e.type == 'checkbox' && e.name.indexOf('chbSelectItem') != -1)
                 e.checked = actVar;
         }
+    }
+    function btnClose_Click() {
+		<%= strExitScript %>
+        return false;
     }
     </script>
 </html>

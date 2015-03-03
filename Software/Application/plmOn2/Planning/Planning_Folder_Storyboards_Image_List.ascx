@@ -94,7 +94,7 @@
                     </asp:TemplateColumn>
                 </Columns>
             </asp:DataGrid>
-            <asp:Label ID="SortOrder" runat="server" Visible="False"></asp:Label>
+            <asp:Label ID="SortOrder" runat="server" Visible="False" Text="MDate desc"></asp:Label>
         </td>
     </tr>
 </table>

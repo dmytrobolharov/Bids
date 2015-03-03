@@ -13,8 +13,8 @@
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td width="80">
-						<cc1:confirmedimagebutton id="btnMaterialNew" runat="server" Message="NONE"
-						></cc1:confirmedimagebutton></td>
+                        <cc1:BWImageButton id="btnMaterialNew" runat="server" Message="NONE"></cc1:BWImageButton>
+                    </td>
 					<td width="80"></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>

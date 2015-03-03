@@ -12,6 +12,14 @@ spx_StyleSourcing_MostLikelyVendor_SELECT
     <title runat="server" id="PageTitle">Most Likely Vendor</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet"/>
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script>
+    function btnClose_Click() {
+        <%= strExitScript %>
+        return false;
+    }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,7 +30,7 @@ spx_StyleSourcing_MostLikelyVendor_SELECT
 		<tr valign="middle" height="25">
 		    <td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 			<td><asp:ImageButton id="btnSave" runat="server"  /><asp:ImageButton id="btnClose" 
-			runat="server" /></td>
+			runat="server" OnClientClick="return btnClose_Click();" /></td>
 		</tr>
 		</table>
 					

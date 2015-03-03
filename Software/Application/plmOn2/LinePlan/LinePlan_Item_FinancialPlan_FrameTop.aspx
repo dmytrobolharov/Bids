@@ -23,7 +23,7 @@
                     <td>
                         <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE" />
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" />
+                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" />
                     </td>
                     <td class="FontHead" align="right" width="75">
                     </td>
@@ -37,5 +37,11 @@
             <br />
             <cc2:YSTabView ID="YSTabView1" runat="server"></cc2:YSTabView>
         </form>
+        <script language="javascript">
+	function btnClose_Click() {
+		<%= strExitScript %>
+        return false;
+    }
+</script>
     </body>
 </html>

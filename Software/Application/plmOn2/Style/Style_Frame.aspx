@@ -314,6 +314,7 @@ self.focus();
         }
 
         function addUnload() {
+        if (window.frames[1].document.location.pathname.split('/').length > 3) {
             $(document.getElementById("mainF").contentWindow.document.body).prepend(' <div id=\'div_wait\' style="display: none; margin: 0; padding: 0; border: 0; background-color: #f5f5f5; filter:alpha(opacity=70); opacity: 0.7; position: absolute; left: 0; top: 0;">'+
             
 '</div>'+
@@ -345,7 +346,7 @@ self.focus();
                     show_wait_text(); busyBox.Show();
                 }
             }
-           
+           }
         }
             
        

@@ -5,13 +5,8 @@
 		                <td vAlign="middle" align="center" width="20"><IMG src="../System/Icons/icon_attach.gif"></td>
 		                <td class="fontHead">&nbsp;<asp:label id="lblAttachments" runat="server">Attachments</asp:label></td>
 		                <td align="right" >
-		                <cc1:confirmedlinkbutton  ID="btnMultipleFiles" runat="server" ForeColor="#009900" 
-                                Font-Underline="True" ></cc1:confirmedlinkbutton>&nbsp;
-<%--                                <cc1:bwhyperlink  ID="btnAddAttach" runat="server" ForeColor="#0066CC" Font-Underline="True" >
-                             </cc1:bwhyperlink>--%>
-                            <cc1:confirmedlinkbutton id="btnRemoveAttachment" runat="server" Text="Remove" 
-                                 ForeColor="#CC3300" 
-                                Font-Underline="True" ></cc1:confirmedlinkbutton>
+		                    <cc1:BWImageButton ID="btnMultipleFiles" runat="server" ForeColor="#009900" Font-Underline="True" ></cc1:BWImageButton>&nbsp;
+                            <cc1:ConfirmedImageButton id="btnRemoveAttachment" runat="server" Text="Remove" ForeColor="#CC3300" Font-Underline="True" ></cc1:ConfirmedImageButton>
                         </td>
 	                </tr>
                 </table>

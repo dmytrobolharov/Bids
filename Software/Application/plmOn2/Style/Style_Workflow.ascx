@@ -27,11 +27,11 @@
 			<cc1:bwimagebutton id="btnSummary" runat="server" ></cc1:bwimagebutton>
             <cc1:bwimagebutton id="btnDimView" visible="false" runat="server" ></cc1:bwimagebutton>            
 			<cc1:bwimagebutton id="btnPrint" runat="server" ></cc1:bwimagebutton>
-			<cc1:confirmedimagebutton id="btnNewTask" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+			<cc1:BWImageButton id="btnNewTask" runat="server"  Message="NONE"></cc1:BWImageButton>
 			<cc1:confirmedimagebutton id="btnTemplate" runat="server" Message="NONE" 
 				CausesValidation="False"></cc1:confirmedimagebutton>
-			<cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" 
-				CausesValidation="False"></cc1:confirmedimagebutton>
+			<cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" 
+				CausesValidation="False"></cc1:BWImageButton>
             <cc1:BWImageButton ID="btnCopy" runat="server" Visible="false"></cc1:bwimagebutton>    
             <cc1:ConfirmedImageButton ID="btnReplace" runat="server" Visible="false" Message="NONE" OnClientClick="return ShowSelectionDialog()"></cc1:ConfirmedImageButton>
             <cc1:confirmedimagebutton id="btnLinkWorkflowItem" OnClientClick="return WorkflowLinkPostBack();" runat="server"  Message="NONE" Visible="false"></cc1:confirmedimagebutton>

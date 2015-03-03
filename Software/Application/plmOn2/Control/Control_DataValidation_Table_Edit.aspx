@@ -21,10 +21,10 @@
                     <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                 </td>
                 <td>
-                    <cc1:ConfirmedImageButton ID="btnSave" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save_close.gif&PL=EN-US" Message="NONE"></cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnSaveNew" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save_new.gif&PL=EN-US"></cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnDelete" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_delete.gif"></cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnSaveNew" runat="server" Message="NONE" ></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnDelete" runat="server"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                 </td>
                 <td class="FontHead" align="right" width="75">
                 </td>
@@ -55,5 +55,11 @@
             </tr>
         </table>
         </form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
     </body>
 </html>

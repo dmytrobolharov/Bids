@@ -20,7 +20,7 @@
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 				</tr>
 			</TABLE>
 			<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
@@ -82,12 +82,28 @@
 								</td>
 							</tr>
 						</table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="MaterialID">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="MaterialID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
 							<Columns>
+                            <asp:TemplateColumn>
+                                <HeaderTemplate>
+                                    <asp:CheckBox runat="server" ID="checkAll" OnClick = "CheckAll(this)" name= "checkAll" />
+                                 </HeaderTemplate>
+							    <ItemTemplate>
+    							    <asp:CheckBox runat="server" ID="chbMaterialID"  />
+	    						</ItemTemplate>
+		    					</asp:TemplateColumn>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <%# GetSystemText("Image")%>
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:Image ID="imgMaterialImageID" runat="server" ImageUrl='<%# GetImageStreamPath(50, Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString) %>' />
+                                    </ItemTemplate>
+                            </asp:TemplateColumn>
 							</Columns>
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 				</TR>
@@ -104,7 +120,11 @@
 				if (e.type == 'checkbox' && e.name.indexOf("chbMaterialID") != -1)
 				e.checked= actVar ;
 			}
-			}
+            }
+            function btnClose_Click() {
+                        <%= strExitScript %>
+                        return false;
+            }
 		</SCRIPT>
 	</body>
 </HTML>

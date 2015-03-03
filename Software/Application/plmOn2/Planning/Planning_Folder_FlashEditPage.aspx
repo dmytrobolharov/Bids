@@ -9,7 +9,9 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>		
+		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
 
 	        .rgRowYPLME td, .rgAltRowYPLME td {
@@ -106,8 +108,8 @@
                                     </asp:RadioButtonList>
                                 </TD>
                                 <TD></TD>
+                                <td width="110" align="right"><span id="Span1" class="fontHead">Records per Page:</span></td>
 					            <TD width="25"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
-							            <asp:ListItem Value="2">2</asp:ListItem>
                                         <asp:ListItem Value="5">5</asp:ListItem>
 							            <asp:ListItem Value="10">10</asp:ListItem>
 							            <asp:ListItem Value="15">15</asp:ListItem>

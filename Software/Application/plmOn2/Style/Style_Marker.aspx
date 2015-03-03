@@ -14,6 +14,9 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -42,8 +45,7 @@
                 <cc1:bwimagebutton ID="btnCreateMarker" runat="server" Message="NONE"></cc1:bwimagebutton>
                 <cc1:bwimagebutton ID="btnAdd1" runat="server" Message="NONE" runat="server">
                 </cc1:bwimagebutton>
-                <cc1:ConfirmedImageButton ID="btnRemove1" runat="server" Message="NONE" runat="server">
-                </cc1:ConfirmedImageButton>
+                <cc1:BWImageButton ID="btnRemove" runat="server" Message="NONE" runat="server"></cc1:BWImageButton>
                 <cc1:bwimagebutton ID="btnAddBF" runat="server" Message="NONE" runat="server">
                 </cc1:bwimagebutton>&nbsp;&nbsp;&nbsp;
                 <asp:CheckBox valign="top" align="center" ID="chbImperial" AutoPostBack="true" runat="server"
@@ -124,8 +126,7 @@
         </tr>
     </table>
     </form>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" language="javascript">
         function jsWorkWhereUsed(StyleWorkflowID, StyleID, ShowParent) {
 

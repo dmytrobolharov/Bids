@@ -7,6 +7,12 @@
 <head runat="server">
     <title runat="server" id="PageTitle">Upload</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <script>
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
+   </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -50,7 +56,7 @@
                     &nbsp;</td>
                 <td align="center" width="300">
                     <asp:ImageButton ID="btnSave" runat="server" />
-                    <asp:ImageButton ID="btnClose" runat="server" />
+                    <asp:ImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click();"/>
                 </td>
                 <td align="center">
                     &nbsp;</td>

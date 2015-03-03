@@ -8,7 +8,9 @@
     <title></title>
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
-	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>    
+	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -18,7 +20,7 @@
 					<td><asp:imagebutton 
 					    id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton><cc1:confirmedimagebutton 
 					    id="btnUpdate" runat="server" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-    					id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+    					id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td>&nbsp;</td>
 				</TR>
 			</TABLE>
@@ -80,7 +82,7 @@
 			</table>
 			<table cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<TR vAlign="top">
-					<TD><asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleSeasonYearID">
+					<TD><asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleSeasonYearID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
@@ -95,6 +97,9 @@
 							        </ItemTemplate>
 							    </asp:TemplateColumn>
 							    <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <%# GetSystemText("Image")%>
+                                    </HeaderTemplate>
 							        <ItemTemplate> 
 							            <asp:Image runat="server" ID="imgStyle" ImageUrl='<%# GetImageStreamPath("50", Eval("DesignSketchVersion").ToString, Eval("DesignSketchID").ToString)%>' />
 							        </ItemTemplate>
@@ -116,7 +121,12 @@
 		        }
 		    }
 		</script>
-
+        <script language="javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+        </script>
 
 	</body>
 	

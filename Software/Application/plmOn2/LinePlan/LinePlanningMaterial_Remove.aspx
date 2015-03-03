@@ -11,7 +11,9 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 		<script language="javascript" src="../System/Jscript/Custom.js"></script>
-		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>		   
+		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body MS_POSITIONING="GridLayout">
 		<form id="form1" method="post" runat="server">
@@ -21,7 +23,7 @@
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton 
 					    id="btnRemove" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-					    id="btnClose" runat="server"  Message="NONE" ></cc1:confirmedimagebutton></td>
+					    id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 				</tr>
 			</TABLE>						
 			<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
@@ -77,5 +79,11 @@
 		        }
 		    }
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

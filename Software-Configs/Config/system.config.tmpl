@@ -4,8 +4,8 @@
     </configSections>
     <appSettings>
         <!--01--> <add key="plmOnPasswordLength" value="6" />
-        <!--01a--> <add key="plmOnPWnumber" value="1" />
-        <!--01b--> <add key="plmOnPWspecial" value="1" />
+        <!--01a--><add key="plmOnPWnumber" value="1" />
+        <!--01b--><add key="plmOnPWspecial" value="1" />
         <!--02--> <add key="ClientCulture" value="en-US" />
         <!--03--> <add key="ServerCulture" value="en-US" />
         <!--04--> <add key="SystemPreferredLanguage" value="TestLang" />
@@ -23,14 +23,19 @@
         <!--13--> <add key="ChangeManagementEnabled" value="TRUE" />
 
         <!--14--> <add key="LDAPServer" value="" />
+        <!--14g--><add key="LDAPServerPortNumber" value="389" />
         <!--14a--><add key="LDAPServerType" value="ads" /><!-- ads=MS Active Directory Services, novelledirectory=Novel eDirectory -->
         <!--14b--><add key="LDAPSearchBase" value="" />
         <!--14c--><add key="LDAPSearchBaseGroups" value="" />
         <!--14d--><add key="LDAPAuthenticationType" value="secure" />
+        <!--14e--><add key="LDAPUserNameAttribute" value="sAMAccountName" />
+        <!--14f--><add key="LDAPGroupNameAttribute" value="sAMAccountName" />
         <!--15--> <add key="LDAPUsername" value="" />
         <!--16--> <add key="LDAPPassword" value="" />
         <!--17--> <add key="LDAPPasswordEncrypted" value="FALSE" />
         <!--18--> <add key="LDAPIntegrationEnabled" value="FALSE" />
+        <!--18a--><add key="LDAPSearchUserNameAttributeOnly" value="FALSE" />
+        <!--18b--><add key="LDAPSearchGroupNameAttributeOnly" value="FALSE" />
 
         <!--19--> <add key="UseRadGrid" value="FALSE" />
         <!--20--> <add key="Audit_SPX_OVerrides" value="FALSE" />

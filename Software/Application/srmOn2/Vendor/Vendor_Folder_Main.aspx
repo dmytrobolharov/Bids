@@ -17,6 +17,8 @@
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 	<link href="../System/CSS/CheckListDropDown.css" type="text/css" rel="stylesheet"/>		
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <script language="javascript">
     
 //            if (window.screen) {

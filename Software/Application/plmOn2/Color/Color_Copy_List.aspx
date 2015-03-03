@@ -11,6 +11,12 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <script>
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
+                </script>
 	</HEAD>
 	<body>
         <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -18,7 +24,7 @@
 		<TABLE class="TableHeader" cellSpacing="0" cellPadding="0" width="100%" border="0" >
 			<TR vAlign="middle" height="30">
 				<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-				<TD ><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" EnableViewState="False"></cc1:confirmedimagebutton></TD>
+				<TD ><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" EnableViewState="False" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton></TD>
 			</TR>
 		</TABLE>
 		<table style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"

@@ -23,13 +23,9 @@
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><%--<cc1:confirmedimagebutton id="btnNewUpload" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_new.gif"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif"
-							Visible="False"></cc1:confirmedimagebutton>--%>
+					<td>
 							 <cc1:bwimagebutton id="btnMultiUploadWin" runat="server" ></cc1:bwimagebutton>
-                             <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-<%--							  <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE"
-                    ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_attachfileMulti.gif" CausesValidation="False">
-                </cc1:ConfirmedImageButton>--%></td>
+                             <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton></td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
 					<td></td>

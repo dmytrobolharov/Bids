@@ -9,6 +9,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -50,7 +52,7 @@
 			<table cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<TR vAlign="top">
 					<TD>
-						<table class="tableHeader" height="25" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff"
+						<table class="TableHeader" height="25" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff"
 							border="0">
 							<TR vAlign="middle">
 								<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
@@ -90,7 +92,7 @@
 						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="TradePartnerInfrastructureID" AllowSorting="True" Width="400px">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
-							<HeaderStyle Height="25px" CssClass="tableHeader"></HeaderStyle>
+							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 				</TR>

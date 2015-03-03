@@ -12,8 +12,11 @@
 		<link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>	
 		<link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
+	    
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 		<script language="javascript">
 
 //		    if (window.screen) {
@@ -55,7 +58,7 @@
                             <asp:textbox id="txtApplyQty" runat="server" width='50' CssClass="fontHead"></asp:textbox>&nbsp;
                             <cc1:confirmedimagebutton id="btnQtyApplyAll" runat="server"></cc1:confirmedimagebutton>&nbsp;&nbsp;
                             <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:BWImageButton>
-                            <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>    
+                            <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>    
                         </td>
                     </tr>                    
 			    </table>			    			    			    			    
@@ -77,5 +80,10 @@
         }
 
     </script>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </html>

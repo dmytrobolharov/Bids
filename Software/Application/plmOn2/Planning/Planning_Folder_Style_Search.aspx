@@ -12,6 +12,8 @@
         <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />    
 		<script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>		
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body onload="document.getElementById('chkSelectAll').checked = false;">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -25,7 +27,7 @@
 					<asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Height="0px"></asp:imagebutton>
 					<cc1:confirmedimagebutton id="btnAdd" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
                     <%--<cc1:ConfirmedImageButton ID="btnCopy" runat="server" Message="NONE"></cc1:ConfirmedImageButton>--%>
-					<cc1:confirmedimagebutton id="imgBtnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="imgBtnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 				</tr>
 			</table>
@@ -103,7 +105,6 @@
                     </Columns>
                 </asp:DataGrid>
             </div>
-            <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
             <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
             <script type="text/javascript">
                 var frm = document.Form1;
@@ -133,5 +134,11 @@
                 }
             </script>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="LinePlan_Item_Costing.aspx.vb" Inherits="plmOnApp.LinePlan_Item_Costing" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="LinePlan_Item_Costing.aspx.vb" Inherits="plmOnApp.LinePlan_Item_Costing" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register src="LinePlanningHeader.ascx" tagname="LinePlanningHeader" tagprefix="uc1" %>
 
@@ -10,6 +10,8 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />    
     <LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -23,7 +25,7 @@
 			    <cc1:confirmedimagebutton     id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 			    <cc1:ConfirmedImageButton 	id="btnUnlock"  Message="Do you want to continue?" runat="server"/>
 			    <cc1:bwimagebutton id="btnChangeLog" runat="server"></cc1:bwimagebutton>
-			    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+			    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 			    <td class="FontHead" align="right" width="75"></td>
 			    <td width="40"></td>
 			    <td></td>
@@ -61,6 +63,11 @@
         <input type ="hidden" runat ="server" id="hdnSQL" />            
         
     </form>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

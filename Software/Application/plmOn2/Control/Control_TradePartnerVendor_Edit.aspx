@@ -12,6 +12,8 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
     	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">    
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 
 		<script language="javascript">
 			function calendar(sTxtBoxName)
@@ -29,7 +31,7 @@
 					<td width="100%">
 					    <cc2:confirmedimagebutton id="btnSaveUser" runat="server"  Message="NONE"></cc2:confirmedimagebutton>
 					    <cc2:confirmedimagebutton id="btnDelete" runat="server"  CausesValidation="False"></cc2:confirmedimagebutton>
-					    <cc2:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="False"></cc2:confirmedimagebutton></td>
+					    <cc2:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc2:confirmedimagebutton></td>
 					<td>&nbsp;</td>
 				</tr>
 			</table>
@@ -265,4 +267,10 @@
          }
      }
 </script>	
+<script language="javascript">
+	function btnClose_Click() {
+		<%= strExitScript %>
+        return false;
+    }
+</script>
 </HTML>

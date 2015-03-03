@@ -16,6 +16,8 @@
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -29,12 +31,11 @@
             <td width="400">
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton><cc1:ConfirmedImageButton
                     ID="btnSamplesize" runat="server" Message="Are you sure you want to change sample size?"
-                    Visible="False" ToolTip="Change Sample Size..."></cc1:ConfirmedImageButton>
+                    Visible="False" ToolTip="Change Sample Size..." OnClientClick="btnSampleSize_Click()"></cc1:ConfirmedImageButton>
                 <!-- ac issue 4004 -->
-                <cc1:ConfirmedImageButton ID="btnUpdateSize" runat="server" Message="Are you sure you want to update Grade Rules ?"
-                    ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif" Visible="true"
+                <cc1:ConfirmedImageButton ID="btnUpdateSize" runat="server" Message="Are you sure you want to update Grade Rules ?" Visible="true"
                     ToolTip="Change Sample Size..."></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                 <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
             </td>
             <td class="FontHead" align="right" width="75">
@@ -432,5 +433,15 @@
             </td>
         </tr>
     </table>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+	    function btnSampleSize_Click() {
+		    <%= strSamplesize %>
+            return false;
+        }     
+    </script>
 </body>
 </html>

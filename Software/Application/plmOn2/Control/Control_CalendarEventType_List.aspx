@@ -73,7 +73,7 @@
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
-						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False" Text="Sort"></asp:label></TD>
+						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False" Text=""></asp:label></TD>
 				</TR>
 			</TABLE>
 		</form>

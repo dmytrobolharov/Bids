@@ -9,7 +9,6 @@
                         <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
                         <link href="../System/CSS/jquery-ui-1.10.3.css" rel="stylesheet" type="text/css" />
                         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-                        <script type="text/javascript" src="../System/Jscript/Custom.js"></script>
                         <style type="text/css">
                         #divListPlanningDivisions .PlanningValuesGrid {
                             margin-bottom: 10px;
@@ -121,7 +120,7 @@
                                         <cc1:ConfirmedImageButton ID="btnImport" runat="server" Message="NONE" OnClientClick="return ShowSelectionDialog()"></cc1:ConfirmedImageButton>
                                         <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                                         <cc1:ConfirmedImageButton ID="btnSaveClose" runat="server" Message="NONE" OnClientClick="$('#frameset', window.parent.document).attr('cols', '250,*');"></cc1:ConfirmedImageButton>
-                                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="$('#frameset', window.parent.document).attr('cols', '250,*');">
+                                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="$('#frameset', window.parent.document).attr('cols', '250,*'); return btnClose_Click()">
                                         </cc1:ConfirmedImageButton>
                                         <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" Visible="false" OnClientClick="javascript:Page_ValidationActive = false;">
                                         </cc1:BWImageButton>
@@ -252,10 +251,12 @@
                                 <asp:RadioButtonList runat="server" ID="rblSeasonYears" DataTextField="SeasonYear" DataValueField="SeasonYearID">
                                 </asp:RadioButtonList>
                             </div>
-                            <script type="text/javascript" src="../System/Jscript/jquery-1.8.0.js"></script>
+                            <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
                             <script type="text/javascript" src="../System/Jscript/underscore-min.js"></script>
                             <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
                             <script type="text/javascript" src="../System/Jscript/jquery.format-1.3.min.js"></script>
+                            <script type="text/javascript" src="../System/Jscript/Custom.js"></script>
+	                        <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
                             <script type="text/javascript">
 
                             (function ($) {
@@ -436,30 +437,30 @@
         extendedEcomValue = (getFloatValue(EcomPrice) * getFloatValue($EcomPrice.val()));
 
             //compute Extended cost and recompute associated sum fields
-            $extendedCost.text(getCurrencyValues(extendedCostValue));
+            $extendedCost.text(formatValue(extendedCostValue, getData($extendedCost)));
             recomputeTopAndBottomValue($extendedCost, $extendedCost.parent().index(), 2);
 
             //compute extended WholeSale and recompute associated sum fields
-            $extendedWholeSale.text(getCurrencyValues(extendedWholeSaleValue));
+            $extendedWholeSale.text(formatValue(extendedWholeSaleValue, getData($extendedWholeSale)));
             recomputeTopAndBottomValue($extendedWholeSale, $extendedWholeSale.parent().index(), 2);
 
             //compute extended Retail and recompute associated sum fields
-            $extendedRetail.text(getCurrencyValues(extendedRetailValue));
+            $extendedRetail.text(formatValue(extendedRetailValue, getData($extendedRetail)));
             recomputeTopAndBottomValue($extendedRetail, $extendedRetail.parent().index(), 2);
 
             //compute extended Ecom and recompute associated sum fields
-            $extendedEcom.text(getCurrencyValues(extendedEcomValue));
+            $extendedEcom.text(formatValue(extendedEcomValue, getData($extendedEcom)));
             recomputeTopAndBottomValue($extendedEcom, $extendedEcom.parent().index(), 2);
 
             //  update gross values
-            var grossProfit = ((extendedWholeSaleValue + extendedRetailValue + extendedEcomValue) - extendedCostValue).toFixed(2),
+            var grossProfit = (extendedWholeSaleValue + extendedRetailValue + extendedEcomValue) - extendedCostValue,
         wholeSaleGrossMargin = ((extendedWholeSaleValue - getFloatValue(wholeSale) * getFloatValue($AverageCost.val())) / extendedWholeSaleValue) * 100,
         retailGrossMargin = ((extendedRetailValue - getFloatValue(retailPrice) * getFloatValue($AverageCost.val())) / extendedRetailValue) * 100,
         ecomGrossMargin = ((extendedEcomValue - getFloatValue(EcomPrice) * getFloatValue($AverageCost.val())) / extendedEcomValue) * 100,
         grossMargin = (grossProfit / (extendedWholeSaleValue + extendedRetailValue + extendedEcomValue)) * 100;
 
             //compute gross profit and recompute associated sum fields
-            $grossProfit.text(grossProfit);
+            $grossProfit.text(formatValue(grossProfit, getData($grossProfit)));
             recomputeTopAndBottomValue($grossProfit, $grossProfit.parent().index(), 2);
 
             //compute wholesail gross margin and recompute associated sum fields
@@ -484,9 +485,9 @@
         };
         function recomputePercentage(value) {
             if (!isFinite(value)) {
-                return '0%'
+                return percentFormat(0);
             } else {
-                return value.toFixed(4) + '%'
+                return percentFormat(value);
             }
         };
 
@@ -554,19 +555,21 @@
                         NoOfStyles = getFloatValue($NoOfStyles.val(), getData($NoOfStyles)),
                         $OverDevStyles = $this.closest("tr").find("[id*='txt10000000-0000-0000-0000-000000000020']"),
                         $OverDevStylesParent = $OverDevStyles.siblings(":text");
-                    $OverDevStyles.val(getCurrencyValues(((getFloatValue($OverDevStylesParent.val())) * NoOfStyles) / 100));
                 } else {
                     var $NoOfStyles = $this,
                         NoOfStyles = getFloatValue($NoOfStyles.val(), getData($NoOfStyles)),
                         $OverDevStyles = $this.closest("tr").find("[id*='txt10000000-0000-0000-0000-000000000020']"),
                         $OverDevStylesParent = $OverDevStyles.siblings(":text");
-                    $OverDevStyles.val(getCurrencyValues(((getFloatValue($OverDevStylesParent.val())) * NoOfStyles) / 100));
                     //
                     var total = findTotal(info)[0];
                     total.value = getSum(findBoxes(info).filter(":not(.percentbox)"));
                     findBoxes(info).filter(".percentbox").each(recalculatePercent(total));
                 }
                 recomputeTopAndBottomValue($this, $this.parent().index());
+
+                NoOfStyles = getFloatValue($NoOfStyles.val(), getData($NoOfStyles))
+                $OverDevStyles.val(formatValue(((getFloatValue($OverDevStylesParent.val())) * NoOfStyles) / 100, getData($OverDevStyles)));
+
                 recomputeTopAndBottomValue($OverDevStyles, $OverDevStyles.parent().index(), 0, false, false)
             }
             else if ($this.is(".percentbox")) {
@@ -584,7 +587,7 @@
                     var total = findTotal(info)[0];
                     total.value = getSum(findBoxes(info).filter(":not(.percentbox)"));
                     findBoxes(info).filter(".percentbox").each(recalculatePercent(total));
-                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq($(findTotal(info)[0]).parent().index()).text(' ' + getCurrencyValues(getSum(findBoxes(info).filter(":not(.percentbox)"))))
+                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq($(findTotal(info)[0]).parent().index()).text(' ' + formatValue(getSum(findBoxes(info).filter(":not(.percentbox)")), info))
                 }
                 catch (err) {
                     //otherwise recompute manually
@@ -598,7 +601,7 @@
             $totalProjectUnitsTxt = $this.closest("tr").find("[id*='10000000-0000-0000-0000-000000000022']");
                 var totalProjectUnits = getFloatValue(wholeSale) + getFloatValue(ecomUnits) + getFloatValue(retailUnits);
 
-                $totalProjectUnitsTxt.text(getCurrencyValues(totalProjectUnits, 0));
+                $totalProjectUnitsTxt.text(formatValue(totalProjectUnits, getData($totalProjectUnitsTxt)));
                 recomputeTopAndBottomValue($totalProjectUnitsTxt, $totalProjectUnitsTxt.parent().index(), 0);
                 recomputeExtended($this);
             }
@@ -746,14 +749,14 @@
                 }
                 //find bottom row, then find column and update sum
                 if ($(elem).is('input.value')) {
-                    $('.rgHeader ').find('td').eq(position).val(getCurrencyValues(total, digits, isPercent));
+                    $('.rgHeader ').find('td').eq(position).val(isPercent ? percentFormat(total) : formatValue (total, info));
                 } else {
-                    $('.rgHeader ').find('td').eq(position).text(getCurrencyValues(total, digits, isPercent));
+                    $('.rgHeader ').find('td').eq(position).text(isPercent ? percentFormat(total) : formatValue (total, info));
                 }
                 if (dontUpdate) {
-                    $('.rgHeader ').find('td').eq(position).text(getCurrencyValues(total, digits, isPercent));
+                    $('.rgHeader ').find('td').eq(position).text(isPercent ? percentFormat(total) : formatValue (total, info));
                 }
-                $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text(' ' + getCurrencyValues(total, digits, isPercent))
+                $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text(' ' + (isPercent ? percentFormat(total) : formatValue (total, info)))
             } else {
                 if (!dontUpdate) {
                     var sum = getSum(findBoxes(info).filter('.percentbox')),
@@ -767,8 +770,8 @@
 
                 }
                 catch (err) {
-                    $('.rgHeader ').find('td').eq(position).text(getCurrencyValues(getSum(findBoxes(info).filter(":not(.percentbox)"))));
-                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text(' ' + getCurrencyValues(getSum(findBoxes(info).filter(":not(.percentbox)"))))
+                    $('.rgHeader ').find('td').eq(position).text(formatValue(getSum(findBoxes(info).filter(":not(.percentbox)")), info));
+                    $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq(position).text(' ' + formatValue(getSum(findBoxes(info).filter(":not(.percentbox)")), info))
 
                 }
             }
@@ -1022,7 +1025,10 @@
         document.getElementById('divHeaderContent').style.display = 'none';
         return false;
     }
-
+    function btnClose_Click() {
+		<%= strExitScript %>
+        return false;
+    }
 
     </script>
                     </body>

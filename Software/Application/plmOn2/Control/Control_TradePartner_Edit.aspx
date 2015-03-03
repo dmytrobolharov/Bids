@@ -48,7 +48,7 @@
                 <cc2:ConfirmedImageButton ID="btnSaveUser" runat="server"  Message="NONE"></cc2:ConfirmedImageButton>
                 <cc2:BWImageButton ID="btnPassword" runat="server"  ToolBar="False" Status="False" ScrollBars="False" Resizable="False" MenuBar="False" Location="False" WindowHeight="250px" WindowWidth="600px" WindowName="Control_TradePartner_Edit_Password" NavigateUrl="Control_TradePartner_Edit_Password.aspx">
                 </cc2:BWImageButton>
-                <cc2:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc2:ConfirmedImageButton>
+                <cc2:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc2:ConfirmedImageButton>
             </td>
             <td>
                 &nbsp;
@@ -355,5 +355,11 @@
         </asp:DataList>
     </asp:Panel>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

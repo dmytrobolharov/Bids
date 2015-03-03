@@ -21,7 +21,7 @@
                         <td height="30">
                             <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
                             <cc1:bwimagebutton id="btnAddTreatment" runat="server"></cc1:bwimagebutton>
-                            <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                            <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
                         </td>
                     </tr>
                 </table>
@@ -126,5 +126,11 @@
 		    }
 		    
 	</script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

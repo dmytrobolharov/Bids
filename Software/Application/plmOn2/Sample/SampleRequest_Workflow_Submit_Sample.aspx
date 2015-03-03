@@ -28,9 +28,15 @@
 				runat="server">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><asp:button id="btnDefault" runat="server" Text="" Width="1px" Height="1px"></asp:button><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-					<TD><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></TD>
+					<TD><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 			<asp:placeholder id="phSubmit" runat="server"></asp:placeholder></form>
+            <script language="javascript">
+	            function btnClose_Click() {
+		            <%= strExitScript %>
+                    return false;
+                }
+            </script>
 	</body>
 </HTML>

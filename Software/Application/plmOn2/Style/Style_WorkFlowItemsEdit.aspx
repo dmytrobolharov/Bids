@@ -11,7 +11,9 @@
 	<title>Workflow Items Edit</title>
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
-      <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -21,7 +23,7 @@
 		    <td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 		    <td valign="middle" align="left" width="706" >
 		        <cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-                <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 		    </td>
 		</tr>
 	</table>
@@ -62,6 +64,11 @@
 	
 		
     </form>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

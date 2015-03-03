@@ -66,7 +66,7 @@
 							<TD width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" text="GO"></asp:button></TD>
 						</TR>
 					</TABLE>
-					<asp:datagrid id="DataGrid1" runat="server" DataKeyField="PlanningFlashEditID">
+					<asp:datagrid id="DataGrid1" runat="server" DataKeyField="PlanningFlashEditID" AllowSorting="true">
 						<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 						<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 						<HeaderStyle CssClass="TableHeader" Height="25px"></HeaderStyle>

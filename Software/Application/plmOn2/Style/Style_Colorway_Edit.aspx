@@ -28,14 +28,13 @@
 				runat="server">
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton 
-					    id="btnSave" runat="server"  Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-					    id="btnSummary" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_summary.gif"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-					    id="btnAutoColor" runat="server"  Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_colorway_auto.gif"></cc1:confirmedimagebutton><cc1:BWImageButton
-					    id="btnAddColor" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_LinePlan_Color_Alloc_Add.gif"></cc1:BWImageButton><cc1:BWImageButton
-					    id="btnAddMainMaterialColor" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_add_mainmaterial_color.gif"></cc1:BWImageButton><cc1:confirmedimagebutton 
-					    id="btnClose" runat="server" Message="NONE"  ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" ></cc1:confirmedimagebutton>
-					    <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"/></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnSummary" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnAutoColor" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+                    <cc1:BWImageButton id="btnAddColor" runat="server" Message="NONE"></cc1:BWImageButton>
+                    <cc1:BWImageButton id="btnAddMainMaterialColor" runat="server" Message="NONE"></cc1:BWImageButton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
+					<cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"/></td>
 					<td class="FontHead" align="right">&nbsp;</td>
 					<td></td>
 				</tr>
@@ -81,5 +80,11 @@
 				</tr>
 			</table>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

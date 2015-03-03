@@ -8,6 +8,8 @@
     <title></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" /> 
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,7 +19,7 @@
 		    <tr valign="middle">
 			    <td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 			    <td><cc1:confirmedimagebutton id="btnDelete" runat="server"  ></cc1:confirmedimagebutton>
-				    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"
+				    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"
 					    ></cc1:confirmedimagebutton></td>
 		    </tr>
 	    </table>
@@ -59,6 +61,10 @@
 	                e.checked = actVar;
 	        }
 	    }
+        function btnClose_Click() {
+                        <%= strExitScript %>
+                        return false;
+        }
 	</script>
 	
 </body>

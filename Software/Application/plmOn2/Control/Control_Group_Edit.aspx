@@ -19,7 +19,7 @@
 					<td style="margin-left: 40px"><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnSaveNew" runat="server"  Message="NONE"></cc1:confirmedimagebutton>                   
                     <cc1:BWImageButton id="btnCopyPermissions" runat="server" ></cc1:BWImageButton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"
+					<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"
 							CausesValidation="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnDelete" runat="server" 
 							CausesValidation="False"></cc1:confirmedimagebutton>
 					</td>
@@ -71,5 +71,11 @@
 				</TR>
 			</TABLE>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

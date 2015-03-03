@@ -33,7 +33,7 @@
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><asp:imagebutton 
 					    id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Height="0px"></asp:imagebutton><cc1:confirmedimagebutton 
-					    id="imgBtnClose" runat="server"  Message="NONE" Visible="true"></cc1:confirmedimagebutton></td>
+					    id="imgBtnClose" runat="server"  Message="NONE" Visible="true" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				</tr>
 			</TABLE>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
@@ -58,5 +58,11 @@
 			<asp:PlaceHolder id="phStyle" runat="server"></asp:PlaceHolder>
 			<asp:PlaceHolder id="phStyleGrid" runat="server"></asp:PlaceHolder>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

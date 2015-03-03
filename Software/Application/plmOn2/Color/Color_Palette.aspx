@@ -5,7 +5,8 @@
 	<HEAD>
 		<title>Palette</title>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-        
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</HEAD>
 	<body onKeyPress="DisableEnterKey()">
         <script>
@@ -26,9 +27,9 @@
 					<td valign="top"><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" EnableViewState="False"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnNewImage" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnCopy" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnNewTask" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:BWImageButton id="btnNewTask" runat="server" Message="NONE"></cc1:BWImageButton>
 					<cc1:BWImageButton id="btnPreview" runat="server"  />
-					<cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+					<cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
 					<cc1:confirmedimagebutton id="btnDeletePalette" runat="server"  CausesValidation="False"></cc1:confirmedimagebutton>
                       
                     </td>

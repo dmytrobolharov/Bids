@@ -9,7 +9,8 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>	
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -72,7 +73,7 @@
                     <td align="left" width="200px">
 					    <asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Height="0px" />
 					    <cc1:confirmedimagebutton id="btnBatchUpdate" runat="server" Message="NONE" Visible="False"></cc1:confirmedimagebutton>						
-					    <cc1:confirmedimagebutton id="btnClose" runat="server" visible="true" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnClose" runat="server" visible="true" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
                     </td>
 					<td>
 			            <table width="200" border="0" cellspacing="0" cellpadding="0" >
@@ -140,6 +141,10 @@
             } else {
                 args.IsValid = true;
             }
+        }
+        function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
         }
     </script>
 

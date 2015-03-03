@@ -14,6 +14,8 @@
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />		
     <link href="../System/CSS/Grid.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
 					<td><asp:ImageButton id="btnSave" runat="server"  />
 						<cc1:BWImageButton ID="btnColorAdd" runat="server" />
 						<cc1:BWImageButton id="btnRemove" runat="server"  />
-						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>
 					</td>
 					<td></td>
 				</tr>
@@ -84,6 +86,12 @@
 				</tr>
 			</table>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>
 

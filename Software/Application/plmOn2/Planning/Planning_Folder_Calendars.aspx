@@ -10,6 +10,8 @@
     <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui-1.10.3.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .confirm-dialog {
         	display: none;        	
@@ -91,10 +93,11 @@
         <p><%= GetSystemText("Are you sure you wish to continue?")%></p>
     </div>    
 
-    <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>  
     <script type="text/javascript" src="../System/Jscript/toastr.min.js"></script>
     <script type="text/javascript">
+        $("td:has(:checkbox)").click(function(e) { e.stopPropagation(); });
+
         toastr.options = {
             "closeButton": true,
             "debug": false,

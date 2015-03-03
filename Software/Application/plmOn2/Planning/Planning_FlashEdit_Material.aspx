@@ -32,6 +32,7 @@
                 background-color: yellow;
             }
         </style>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 	</head>
 	<body style="background-color: White;">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -68,7 +69,7 @@
                     <asp:ImageButton id="btnAdd" runat="server" OnClientClick="addSelectedMaterials(); return false;" />
 					<asp:ImageButton id="btnRemove" runat="server" OnClientClick="removeMaterialsFromStyles(); return false;" />
                     <cc1:ConfirmedImageButton ID="btnInfo" runat="server" Message="NONE" CausesValidation="false" onclientclick="javascript:showHeader();return false;"/>
-				    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" />
+				    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" />
                 </td>     
 		    </tr>
         </table>
@@ -123,11 +124,11 @@
                                             </strong>
                                             </div>
                                     </td>
+                                    <td width="110" align="right"><span id="Span1" class="fontHead">Records per Page:</span></td>
                                     <td width="25">
                                         <asp:DropDownList ID="ps" runat="server" CssClass="fontHead">
                                             <asp:ListItem Value="5">5</asp:ListItem>
-                                            <asp:ListItem Value="10">10</asp:ListItem>
-                                            <asp:ListItem Value="12" Selected="true">12</asp:ListItem>
+                                            <asp:ListItem Value="10" Selected="True">10</asp:ListItem>
                                             <asp:ListItem Value="15">15</asp:ListItem>
                                             <asp:ListItem Value="20">20</asp:ListItem>
                                             <asp:ListItem Value="25">25</asp:ListItem>
@@ -639,6 +640,12 @@
                     };
             // ]]>
 
+                </script>
+                <script language="javascript">
+	                function btnClose_Click() {
+		                <%= strExitScript %>
+                        return false;
+                    }
                 </script>
     </body>
 </html>

@@ -9,6 +9,7 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
         <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -16,7 +17,7 @@
 				<tr>
 					<td align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton id="btnCopy" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+					<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
 			<uc1:style_header id="Style_Header1" runat="server" StyleID='<%Request("SID")%>'></uc1:style_header>
@@ -55,6 +56,11 @@
                 $("[name$='chbSelect']:enabled").each(function () { this.checked = chb.checked });
             }
 	    </script>  
-
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

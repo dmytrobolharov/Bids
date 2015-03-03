@@ -19,7 +19,7 @@
 						<td valign="middle" align="left" width="400">
 							<cc1:bwimagebutton id="btnTeamAdd" runat="server"  Visible="False"></cc1:bwimagebutton>
 							<cc1:bwimagebutton id="btnAgentAdd" runat="server" ></cc1:bwimagebutton>
-							<cc1:confirmedimagebutton id="btnNewTask" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+							<cc1:BWImageButton id="btnNewTask" runat="server"  Message="NONE"></cc1:BWImageButton>
 						</td>
 						<td></td>
 					</tr>

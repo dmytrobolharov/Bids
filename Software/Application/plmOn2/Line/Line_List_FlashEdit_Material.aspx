@@ -11,6 +11,9 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <style type="text/css">
+			form {
+			margin-bottom: 0;
+			}
             .style-colors {
             	margin-left: 10px;
             }
@@ -278,7 +281,7 @@
             	        var actVar = checkAllBox.checked;
             	        for (i = 0; i < frm.length; i++) {
             	            e = frm.elements[i];
-            	            if (e.type == 'checkbox' && e.name.indexOf("chkSelectStyle") != -1)
+            	            if (e.type == 'checkbox' && e.name.indexOf("chkSelectStyle") != -1 && !e.disabled)
             	                e.checked = actVar;
             	        }
             	    }
@@ -295,9 +298,13 @@
                     function OnMaterialAjaxStart() { hide_wait_text(); }
                     
             	    $(document).ready(function () {
+						var ieOffset = 0;
+						if (navigator.userAgent.toLowerCase().indexOf('msie') != -1) { 
+							ieOffset = 14;				
+						}
                         $("#scrollDiv1").height($(window).height() - 10 - 27);
                         $("#scrollDiv2").height($(window).height() - 10 - 27).scrollLeft(0);
-                        $("#resizableTable").height($(window).height() - 3 - 27);
+                        $("#resizableTable").height($(window).height() - 3 - 27 - ieOffset);
 
                         var styleList = $("#scrollDiv1");
                          $("#resizableTable").colResizable({
@@ -593,8 +600,11 @@
 
                         var selectedMaterials = stylesList.find("input[id*='chbSelectMaterial']:checked");
                         for (var i = 0; i < selectedMaterials.length; i++) {
-                            addMaterialForRemoval(selectedMaterials[i]);
-                            $(selectedMaterials[i]).closest("table").parent().remove();
+                            var mainMaterialSelected = $("#"+selectedMaterials[i].id).parent().parent().parent().parent().parent().parent().hasClass('EmptyItemTemplate');
+                            if(mainMaterialSelected != true){
+                                addMaterialForRemoval(selectedMaterials[i]);
+                                $(selectedMaterials[i]).closest("table").parent().remove();
+                            }
                         }
             	    }
 
@@ -643,7 +653,10 @@
                         });
                     };
             // ]]>
-
+            function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
                 </script>
     </body>
 </html>

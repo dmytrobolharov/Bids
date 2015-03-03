@@ -58,10 +58,10 @@
             </td>
             <td width="100%">
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
+                <cc1:BWImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
                 <cc1:BWImageButton ID="btnImageSelect" runat="server"></cc1:BWImageButton>
                 <cc1:BWImageButton ID="btnImageRemove" runat="server"></cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
             <td>
                 &nbsp;
@@ -113,6 +113,12 @@
 
         function ReloadForm() {
             window.location.reload();
+        }
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
         }
     </script>
 </html>

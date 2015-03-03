@@ -11,6 +11,8 @@
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />		
     <link href="../System/CSS/Grid.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />  
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -23,7 +25,7 @@
 				<td valign="top">
 				    <asp:imagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton>
 				    <asp:imagebutton id="btnBack" runat="server" ></asp:imagebutton>
-				    <asp:imagebutton ID="btnClose" runat="server"   />
+				    <asp:imagebutton ID="btnClose" runat="server"   OnClientClick="return btnClose_Click()"/>
                 </td>
 				<td width="75">&nbsp;</td>
 				<td align="right"></td>
@@ -193,6 +195,10 @@
 		        var chkColorSelect = $(this).find(":checkbox[id$='chkColorSelect']").get(0);
 		        if (chkColorSelect && e.target.id != chkColorSelect.id) chkColorSelect.checked = !chkColorSelect.checked;
 		    })
+            function btnClose_Click() {
+                        <%= strExitScript %>
+                        return false;
+                    }
 		</script>	            
             				
     </form>

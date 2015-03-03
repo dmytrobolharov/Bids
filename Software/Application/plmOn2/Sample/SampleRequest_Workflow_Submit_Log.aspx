@@ -13,16 +13,6 @@
 	</HEAD>
 	<body onload="self.focus()">
 		<form id="Form1" method="post" runat="server">
-			<!--
-			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
-				runat="server">
-				<tr vAlign="middle">
-					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td height="20" style="WIDTH: 840px"><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif"></cc1:confirmedimagebutton></td>
-					<td>&nbsp;</td>
-				</tr>
-			</table>
-		-->
 			<table class="TableHeader" height="25" cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
@@ -50,8 +40,8 @@
 					<asp:Panel Runat="server" ID="pnlList" Visible="False">
 						<asp:datagrid id="dgSampleLog" runat="server" AutoGenerateColumns="False" PageSize="100" BorderWidth="1px"
 							BorderStyle="Solid" BorderColor="#E0E0E0" ShowHeader="False" Width="100%" OnItemDataBound="dgSampleLog_OnItemDataBound">
-							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Width="100%"></HeaderStyle>
 							<Columns>
 								<asp:TemplateColumn >

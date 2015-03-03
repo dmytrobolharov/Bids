@@ -11,6 +11,9 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
     <style type="text/css">
          #RadGridStyles .rgMasterTable td, #RadGridMaterials .rgMasterTable td, #RadGridImageCatalog .rgMasterTable td {
             border-color: #ddd !important;
@@ -229,8 +232,7 @@
         <div id="catalog-dialog-message" style="display: none;"><p><%= GetSystemText("You are about to update the version of the image in ") & "{N}" & GetSystemText(" Image Catalogs. Are you sure you want to continue")%>?</p></div>
     </asp:Panel>
 
-    <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" language="javascript">
         var frm = document.forms['form1'];
         function CheckAll(checkAllBox, name) {

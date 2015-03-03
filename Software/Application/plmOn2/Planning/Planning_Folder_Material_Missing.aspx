@@ -15,6 +15,7 @@
             	vertical-align: top !important;
             }
         </style>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -46,7 +47,7 @@
 					<td valign="top">
                         <cc1:confirmedimagebutton id="btnMaterialAdd" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnMaterialReplace" runat="server" message="NONE" OnClientClick="return ReplaceButtonClick();"></cc1:confirmedimagebutton>
-                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                     </td>
 					<td></td>
 				</tr>
@@ -170,5 +171,11 @@
 
             </script>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

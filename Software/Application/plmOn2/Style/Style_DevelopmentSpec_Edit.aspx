@@ -27,7 +27,7 @@
 					id="btnSamplesize" runat="server" Message="NONE"  ToolTip="Change Sample Size..."></cc1:confirmedimagebutton><cc1:bwimagebutton 
 					id="btnSizeRange" runat="server"  ToolTip="Change Size Range..." WindowName="Sizerange"></cc1:bwimagebutton><cc1:confirmedimagebutton 
 					id="btnGradeRules" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-					id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+					id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>
 					<cc1:BWImageButton ID="btnChangeLog" runat="server" /> </td>
 					<td class="FontHead" align="right" width="75" style="height: 28px">&nbsp;<asp:Label id="lblSelectSet" runat="server" >Select Set:</asp:Label></td>
 					<td width="40" style="height: 28px"><asp:dropdownlist id="dpStyleSet" runat="server" AutoPostBack="true" DataValueField="ID" DataTextField="Value"
@@ -270,5 +270,11 @@
 				<td valign="middle" align="center" width="7"><IMG src="../System/Images/table_bar_right.gif"></td>
 			</tr>
 		</table>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

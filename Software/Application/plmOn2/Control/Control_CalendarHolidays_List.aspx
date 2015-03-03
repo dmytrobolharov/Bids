@@ -7,6 +7,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body ms_positioning="GridLayout">
     <form id="Form1" method="post" runat="server">

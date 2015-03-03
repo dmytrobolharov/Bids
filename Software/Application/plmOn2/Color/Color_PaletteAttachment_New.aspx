@@ -7,6 +7,12 @@
 <head runat="server">
     <title runat="server" id="PageTitle">Upload</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <script>
+    function btnClose_Click() {
+        <%= strExitScript %>
+        return false;
+    }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,7 +23,7 @@
 		    <tr vAlign="middle">
 			    <td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 			    <td width="80"><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
-			    <td width="80"><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+			    <td width="80"><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton></td>
 			    <td width="75">&nbsp;</td>
 			    <td>&nbsp;</td>
 		    </tr>

@@ -21,7 +21,7 @@
             </td>
             <td valign="top">
                 <asp:ImageButton ID="btnBack" runat="server"></asp:ImageButton>
-                <asp:ImageButton ID="btnClose" runat="server" />
+                <asp:ImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click()"/>
             </td>
             <td width="75">
                 &nbsp;
@@ -174,6 +174,11 @@
         $(":checkbox[id$=chkColorSelect]")
             .parent().css('position', 'relative').end()
             .wrap($("<label>").css({ position: 'absolute', width: '100%', height: '100%' }));
+
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
     </script>
     </form>
 </body>

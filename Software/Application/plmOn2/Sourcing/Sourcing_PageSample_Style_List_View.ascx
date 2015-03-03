@@ -12,26 +12,7 @@
 </style>
 <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-<script type="text/javascript">
 
-    var frm = document.forms['Form1'];
-    function selectAll(checkAllBox) {
-        var actVar = checkAllBox.checked;
-        for (i = 0; i < frm.length; i++) {
-            e = frm.elements[i];
-            if (e.type == 'checkbox' && e.name.indexOf("chbSelect") != -1)
-                e.checked = actVar;
-        }
-    }
-
-    
-    $(document).ready(function () {
-        $("select[id*=ddlBOM]").each(function () {
-            
-            $(this).css("width", "90px");
-        });
-    });
-</script>
 
 <table class="TableHeader" height="25" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server" style="vertical-align:middle;display:none;">
     <tr style="white-space:nowrap;">
@@ -96,11 +77,47 @@
 				<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 				<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 				<PagerStyle Visible="False"></PagerStyle>
+                <Columns>
+                <asp:TemplateColumn>
+                        <HeaderTemplate>
+                            <asp:CheckBox runat="server" ID="chbSelectAll" checked="false" onclick="selectAll(this)"/>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <asp:CheckBox runat="server" ID="chbSelect" />
+                        </ItemTemplate>
+                    </asp:TemplateColumn>
+                    <asp:TemplateColumn>
+                        <HeaderTemplate>
+                            <%# GetSystemText("Image")%>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <asp:Image ID="imgDesignSketchID" runat="server" ImageUrl='<%# GetImageStreamPath(50, Eval("DesignSketchVersion").ToString, Eval("DesignSketchID").ToString) %>' />
+                        </ItemTemplate>
+                    </asp:TemplateColumn>
+                </Columns>
 			</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 	</TR>
 </TABLE>
 <input id="hiddenCurrentPage" type="hidden" value="0" name="hiddenCurrentPage" runat="server">&nbsp;&nbsp;
 <script type="text/javascript">
+
+    var frm = document.forms['Form1'];
+    function selectAll(checkAllBox) {
+        var actVar = checkAllBox.checked;
+        for (i = 0; i < frm.length; i++) {
+            e = frm.elements[i];
+            if (e.type == 'checkbox' && e.name.indexOf("chbSelect") != -1)
+                e.checked = actVar;
+        }
+    }
+
+    
+    $(document).ready(function () {
+        $("select[id*=ddlBOM]").each(function () {
+            
+            $(this).css("width", "90px");
+        });
+    });
     function validateBOM(src, args) {
         var checked = $(src).closest('tr').find('[id$=chbSelect]').get(0).checked;        
 

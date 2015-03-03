@@ -49,11 +49,28 @@
 
 	            </tr>
             </table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="MaterialID">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="MaterialID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate <%#draggableClass%>"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate <%#draggableClass%>"></ItemStyle>
 							<HeaderStyle CssClass="TableHeader" Height="25px"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
+                            <Columns>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <asp:CheckBox ID="chkSelectAll" runat="server" onclick="CheckAllMaterials(this);" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="chkSelectMaterial" runat="server" />
+                                        <asp:HiddenField ID="hdnMaterialID" runat="server" />
+                                        <asp:HiddenField ID="hdnMaterialImageURL" runat="server" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                                <asp:TemplateColumn>
+                                    <ItemTemplate>
+                                        <asp:Image ID="imgMaterialImageID" runat="server" ImageUrl='<%# GetImageStreamPath(50, Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString) %>' />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                            </Columns>
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label>
 		</td>
 	</tr>

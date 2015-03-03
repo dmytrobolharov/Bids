@@ -15,6 +15,8 @@ spx_StyleMaterialLogic_Linked_UPDATE
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="../System/Jscript/Custom.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <script language="JavaScript">
 		<!--
 			if (window.screen) {
@@ -39,12 +41,12 @@ spx_StyleMaterialLogic_Linked_UPDATE
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td>
                         <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-                        <cc1:confirmedimagebutton id="btnCopy" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_copy.gif" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;" ></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnCopy" runat="server" Message="NONE" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;" ></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnRemove" runat="server"  Message="NONE" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnReplace" runat="server"  Message="NONE" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnAddMaterial" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;" Message="NONE"></cc1:confirmedimagebutton>
 					    <cc1:confirmedimagebutton id="btnUpdate" visible="true" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-					    <cc1:confirmedimagebutton id="btnClose" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;" Message="NONE"></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnClose" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false; return btnClose_Click()" Message="NONE"></cc1:confirmedimagebutton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75"></td>
@@ -119,5 +121,11 @@ spx_StyleMaterialLogic_Linked_UPDATE
     
 					
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

@@ -341,8 +341,8 @@
 						</TABLE>
 							<asp:datagrid id="DataGrid1" runat="server" Width="600px" BorderStyle="Solid" AutoGenerateColumns="False"
 							PageSize="100" BorderWidth="1px" BorderColor="#E0E0E0">
-							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-							<ItemStyle Height="20px" BackColor="White"></ItemStyle>
+							<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<Columns>
 							    <asp:TemplateColumn > 
 							        <ItemTemplate>

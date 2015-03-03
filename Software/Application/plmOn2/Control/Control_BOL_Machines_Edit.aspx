@@ -31,7 +31,7 @@
 				    <cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnSaveNew" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnDelete" runat="server" CausesValidation="false"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 				</td>
 				<td class="FontHead" align="right" width="75"></td>
 				<td width="40"></td>
@@ -92,5 +92,11 @@
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

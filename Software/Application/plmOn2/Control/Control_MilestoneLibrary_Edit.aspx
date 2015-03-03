@@ -11,6 +11,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <script src="../System/Jscript/underscore-min.js" type="text/javascript"></script>
     <script src="../System/Jscript/YSCalendarFunctions.js" type="text/javascript"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .TableHeader td {
         	white-space: nowrap;
@@ -47,7 +49,7 @@
                 </cc1:ConfirmedImageButton><cc1:BWImageButton ID="btnAddTask" runat="server" Message="NONE">
                 </cc1:BWImageButton><cc1:ConfirmedImageButton ID="btmImgDelete" CausesValidation="false" runat="server">
                 </cc1:ConfirmedImageButton><cc1:BWImageButton ID="btnSort" runat="server" WindowHeight="400px" WindowWidth="400px"></cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false">
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()">
                 </cc1:ConfirmedImageButton>
             </td>
             <td class="FontHead" align="right" width="75">
@@ -190,6 +192,12 @@
                 }
             })
         });
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

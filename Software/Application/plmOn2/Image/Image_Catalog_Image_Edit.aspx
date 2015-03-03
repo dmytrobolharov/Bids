@@ -16,6 +16,8 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	
 
         <script language="javascript" type="text/javascript">
@@ -50,9 +52,9 @@
 							Visible="False"></cc1:bwimagebutton>
 						<cc1:bwimagebutton id="btn_creatematerial" runat="server" 
 							Visible="False"></cc1:bwimagebutton>
-						<cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" 
-							CausesValidation="False"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"
+						<cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" 
+							CausesValidation="False"></cc1:BWImageButton>
+						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"
 							CausesValidation="False"></cc1:confirmedimagebutton></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
@@ -190,5 +192,11 @@
 			<asp:textbox id="txtURL" runat="server" Visible="False"></asp:textbox>
 			<p>&nbsp;</p>
 		</form>
+        <script  language="javascript" type="text/javascript">
+                    function btnClose_Click() {
+                        <%= strExitScript %>;
+                        return false;
+                    }
+        </script>
 	</body>
 </HTML>

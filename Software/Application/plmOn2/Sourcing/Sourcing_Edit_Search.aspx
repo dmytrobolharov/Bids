@@ -7,6 +7,12 @@
 <head runat="server">
 		<title>Save Search</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet"/>
+        <script>
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,7 +25,7 @@
 					<td>
 					    <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"
-							CausesValidation="False"></cc1:confirmedimagebutton>
+							CausesValidation="False" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton>
 					</td>
 				</tr>
 			</table>

@@ -107,8 +107,8 @@
                         
                                 <asp:datagrid id="dgCustom" runat="server" BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px"
 	                                PageSize="10000" AutoGenerateColumns="false" Width="375px" DataKeyField="SampleRequestMaterialID">
-                                    <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-                                    <ItemStyle Height="20px" CssClass="font" VerticalAlign="Top" BackColor="White"></ItemStyle>
+                                    <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                                    <ItemStyle CssClass="ItemTemplate"></ItemStyle>
                                     <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                                 </asp:datagrid>
 
@@ -125,8 +125,7 @@
                             <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                         </td>
                         <td>
-                            <asp:ImageButton ID="btnComment1" runat="server" >
-                            </asp:ImageButton>
+                            <cc1:BWImageButton ID="btnComment1" runat="server" ></cc1:BWImageButton>
                             <asp:CheckBox ID="cbAutoComment" runat="server" CssClass="fontHead" ForeColor="DarkRed"
                                 AutoPostBack="True" Visible="False"></asp:CheckBox>
                         </td>
@@ -143,10 +142,8 @@
                                         <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                                     </td>
                                     <td class="fontHead">
-                                       <%-- <cc1:ConfirmedImageButton ID="btnNewImage" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_add.gif"
-                                            Message="NONE"></cc1:ConfirmedImageButton>--%>
-                                        <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False">
-                                        </cc1:ConfirmedImageButton>
+                                        <cc1:BWImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False">
+                                        </cc1:BWImageButton>
                                         <cc1:ConfirmedImageButton ID="btnDeleteImage" runat="server" >
                                         </cc1:ConfirmedImageButton>
                                     </td>
@@ -154,8 +151,8 @@
                             </table>
                             <asp:datagrid id="dgFitImage" runat="server" AutoGenerateColumns="False" PageSize="100" BorderWidth="1px"
 								BorderStyle="Solid" BorderColor="Silver" Width="100%" DataKeyField="SampleRequestSubmitImageID">
-								<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-								<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+								<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+								<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 								<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 								<Columns>
 									<asp:TemplateColumn>
@@ -185,8 +182,8 @@
                                         <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                                     </td>
                                     <td class="fontHead">
-                                        <cc1:ConfirmedImageButton ID="btnAttachFiles" runat="server" Message="NONE" CausesValidation="False">
-                                        </cc1:ConfirmedImageButton>
+                                        <cc1:BWImageButton ID="btnAttachFiles" runat="server" Message="NONE" CausesValidation="False">
+                                        </cc1:BWImageButton>
                                     </td>
                                 </tr>
                             </table>
@@ -387,7 +384,7 @@
                                 </td>
                                 <td class="fontHead">
                                     <cc1:confirmedimagebutton id="btnSaveSort" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-                                    <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_upload.gif&PL=EN-US" Message="NONE"></cc1:ConfirmedImageButton>
+                                    <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                                     <cc1:ConfirmedImageButton ID="btnDeleteFitPhotos" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                                     <cc1:BWImageButton ID="btnMarkup" runat="server" Message="NONE" ToolTip="Markup..."></cc1:BWImageButton>
                                     <cc1:BWImageButton ID="btnSelectImage" runat="server" />
@@ -406,8 +403,8 @@
                         </table>
                         <asp:DataGrid ID="dgFitPhotos" runat="server" AutoGenerateColumns="False" PageSize="100"
                                       BorderWidth="1px" BorderStyle="Solid" BorderColor="Silver" Width="100%" DataKeyField="FitPhotoId">
-                            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-                            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
+                            <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                            <ItemStyle CssClass="ItemTemplate"></ItemStyle>
                             <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                             <Columns>
                                 <asp:TemplateColumn>
@@ -438,8 +435,7 @@
                     <tr class="TableHeader">
                         <td>
                             &nbsp;
-                            <asp:ImageButton ID="btnComment" runat="server">
-                            </asp:ImageButton>
+                            <cc1:BWImageButton ID="btnComment" runat="server"></cc1:BWImageButton>
                         </td>
                     </tr>
                     <tr>

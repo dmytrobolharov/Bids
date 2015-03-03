@@ -12,6 +12,8 @@
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
     <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -53,11 +55,17 @@
 		            <td align="center" width="50">&nbsp;</td>
 		            <td align="center" width="500">
 			            <asp:imagebutton id="btnRemove" runat="server" ></asp:imagebutton>
-			            <asp:imagebutton id="btnClose" runat="server" ></asp:imagebutton>
+			            <asp:imagebutton id="btnClose" runat="server" OnClientClick="return btnClose_Click()" ></asp:imagebutton>
 		            </td>
 		            <td align="center">&nbsp;</td>
 	            </tr>
             </table>
     </form>
+            <script language="javascript">
+                function btnClose_Click() {
+                    <%= strExitScript %>
+                    return false;
+                }
+            </script>
 </body>
 </html>

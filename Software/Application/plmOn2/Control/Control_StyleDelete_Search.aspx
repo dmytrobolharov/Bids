@@ -82,16 +82,20 @@
 								</td>
 							</tr>
 						</table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle CssClass="TableHeader" Height="25px"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
 							<Columns>
-								<asp:BoundColumn DataField="chkDelete" HeaderText="&lt;input type=checkbox name='allvalues' id='allvalues' onClick='CheckAll(this);'&gt;&lt;/input&gt;">
-									<HeaderStyle Wrap="False" Width="14px"></HeaderStyle>
-									<ItemStyle Wrap="False"></ItemStyle>
-								</asp:BoundColumn>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <asp:CheckBox runat="server" ID="allvalues" onclick="CheckAll(this);" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox runat="server" ID="chkDelete" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
 								<asp:BoundColumn DataField="StyleID" Visible="False">
 									<HeaderStyle Width="1px"></HeaderStyle>
 								</asp:BoundColumn>
@@ -106,9 +110,9 @@
 			function CheckAll( checkAllBox ) {
 				var frm = document.Form1 ;
 				var actVar = checkAllBox.checked ;
-				for(i=0;i< frm.length;i++) {
-					e=frm.elements[i];
-					if ( e.type=='checkbox' && e.name.indexOf("cb__") != -1 )
+				for(var i=0;i< frm.length;i++) {
+					var e=frm.elements[i];
+					if (e.type == 'checkbox' && e.name.indexOf("chkDelete") != -1)
 						e.checked= actVar ;
 				}
 			}

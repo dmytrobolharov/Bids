@@ -14,6 +14,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -46,8 +48,7 @@
                 <td>
                     <asp:ImageButton ID="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif"
                         Width="0px" Height="0px" />
-                    <cc1:ConfirmedImageButton ID="btnNew" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_new.gif"
-                        Message="NONE"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnNew" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 </td>
                 <td>
                     &nbsp;

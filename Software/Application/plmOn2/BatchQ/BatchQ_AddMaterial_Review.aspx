@@ -8,6 +8,8 @@
     <title></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -24,7 +26,7 @@
 		        <td><cc1:confirmedimagebutton 
 		            id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
 		            id="btnExecute" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-		            id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+		            id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 		        <td width="75">&nbsp;</td>
 		        <td>&nbsp;</td>
 	        </TR>
@@ -107,5 +109,11 @@
     
     </div>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

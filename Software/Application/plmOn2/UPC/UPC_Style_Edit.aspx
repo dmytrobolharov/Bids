@@ -16,7 +16,8 @@
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnDelete" runat="server" Message="Are you sure you want to delete it?"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnDelete" runat="server" Message="Are you sure you want to delete it?"></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
 					<td></td>
@@ -39,5 +40,11 @@
 				</tr>
 			</table>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

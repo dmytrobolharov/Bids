@@ -23,7 +23,7 @@
 				    <asp:imagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton>
 				    <asp:imagebutton id="btnBack" runat="server" ></asp:imagebutton>
 				    <asp:imagebutton id="btnAdd" runat="server" ></asp:imagebutton>
-				    <asp:imagebutton ID="btnClose" runat="server"    />
+				    <asp:imagebutton ID="btnClose" runat="server" OnClientClick="return btnClose_Click()"    />
                 </td>
 				<td width="75">&nbsp;</td>
 				<td align="right"></td>
@@ -139,6 +139,10 @@
 		                e.checked = actVar;
 		        }
 		    }
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
 		</script>	            
             				
     </form>

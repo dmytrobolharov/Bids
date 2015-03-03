@@ -12,6 +12,8 @@
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
     <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -63,12 +65,37 @@
 	            <tr>
 		            <td align="center" width="50">&nbsp;</td>
 		            <td align="center" width="500">
-			            <asp:imagebutton id="btnAdd" runat="server" ></asp:imagebutton>
-			            <asp:imagebutton id="btnClose" runat="server" ></asp:imagebutton>
+                        <asp:imagebutton id="btnAdd" runat="server"></asp:imagebutton>
+			            <asp:imagebutton id="btnClose" runat="server" OnClientClick="return btnClose_Click()" ></asp:imagebutton>
 		            </td>
 		            <td align="center">&nbsp;</td>
 	            </tr>
             </table>
+            
+            <script>
+                function ResetCheckboxes() {
+                    var datalist = document.getElementById('<%=dgMaterial.ClientID%>').childNodes[0];
+                    var tb = datalist.getElementsByTagName("input");
+                    for (var i = 0; i < tb.length; i++) {
+                        if (tb[i].type == "checkbox") {
+                            tb[i].checked = false;
+                        }
+                    }
+                    var datalist = document.getElementById('<%=dgMaterialWorkflow.ClientID%>').childNodes[0];
+                    var tb = datalist.getElementsByTagName("input");
+                    for (var i = 0; i < tb.length; i++) {
+                        if (tb[i].type == "checkbox") {
+                            tb[i].checked = false;
+                        }
+                    }
+                }
+            </script>
+            <script language="javascript">
+                function btnClose_Click() {
+                    <%= strExitScript %>
+                    return false;
+                }
+            </script>
     </form>
 </body>
 </html>

@@ -17,7 +17,7 @@
 				runat="server">
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSaveSet" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"
+					<td><cc1:confirmedimagebutton id="btnSaveSet" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"
 							CausesValidation="False"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
@@ -128,7 +128,7 @@
 			<table height="100" cellSpacing="0" cellpadding="0" width="100%" bgColor="#ffffff" border="0">
 				<tr valign="top">
 					<td width="10">&nbsp;</td>
-					<td width="900"><asp:placeholder id="plhControlsHolder" runat="server"></asp:placeholder></td>
+					<td width="900"><asp:placeholder id="plhControlsHolder" runat="server" EnableViewState="False"></asp:placeholder></td>
 					<td><cc1:bwimagebutton id="imgDesign" runat="server"></cc1:bwimagebutton></td>
 				</tr>
 			</table>
@@ -214,5 +214,11 @@
                     return;
                 }
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

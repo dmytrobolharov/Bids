@@ -27,7 +27,8 @@
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 					Height="0px"></asp:imagebutton><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td width="40"></td>
 					<td></td>
 				</tr>
@@ -76,11 +77,22 @@
 								<td width="100%"><asp:imagebutton id="imgBtnSearch" runat="server"></asp:imagebutton></td>
 							</tr>
 						</table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="POMLibraryID" >
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="POMLibraryID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
-							<PagerStyle Visible="False"></PagerStyle></asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
+							<PagerStyle Visible="False"></PagerStyle>
+                            <Columns>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <asp:CheckBox runat="server" ID="checkAll" onclick="CheckAll(this);" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox runat="server" ID="chbPOMLibraryID" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                            </Columns>
+                        </asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 				</TR>
 			</TABLE>
 		</form>
@@ -102,5 +114,11 @@
 		if (window.event.keyCode == 13) window.event.keyCode = 0;
 		}
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

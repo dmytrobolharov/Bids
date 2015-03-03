@@ -22,10 +22,10 @@
 					<td width="600" style="height: 28px">
 					<cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="imgBtnCopy" Visible="false" runat="server" Message="Are you sure you want to copy from style spec ?" ></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnSamplesize"  Visible="false"  runat="server" Message="NONE" ToolTip="Change Sample Size..."></cc1:confirmedimagebutton>
+					<cc1:bwimagebutton id="btnSamplesize"  Visible="false"  runat="server" Message="NONE" ToolTip="Change Sample Size..."></cc1:bwimagebutton>
 					<cc1:bwimagebutton id="btnSizeRange"  Visible="false" runat="server" ToolTip="Change Size Range..." WindowName="Sizerange"></cc1:bwimagebutton>
 					<cc1:confirmedimagebutton id="btnGradeRules" Visible="false"  runat="server" Message="NONE"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="90px" style="height: 28px">&nbsp;<asp:Label id="lblSelectSet" runat="server" CssClass="fontHead">Select Set:</asp:Label></td>
 					<td width="40" style="height: 28px"><asp:dropdownlist id="dpBodySet" runat="server" AutoPostBack="true" DataValueField="ID" DataTextField="Value"
 							CssClass="font"></asp:dropdownlist></td>
@@ -241,5 +241,11 @@
 
     
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

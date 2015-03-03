@@ -4,9 +4,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 	<head>
-		
         <title runat="server" id="PageTitle"></title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -18,7 +19,7 @@
 					    id="btnSaveMaterial" runat="server"  visible="False" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
 					    id="btnRemoveColor" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
 				    	id="btnNoApplicable" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-					    id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+					    id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
 				</tr>
@@ -131,5 +132,11 @@
 				</tr>
 			</table>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

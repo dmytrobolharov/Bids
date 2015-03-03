@@ -37,7 +37,7 @@
 							Visible="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnCopyImage" runat="server"  DESIGNTIMEDRAGDROP="18"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnDeleteImage" runat="server" 
 							CausesValidation="False"></cc1:confirmedimagebutton>
                             <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-                            <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"
+                            <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"
 							CausesValidation="False"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
@@ -176,5 +176,11 @@
 			</table>
 			<p>&nbsp;</p>
 		</form>
+        <script language="javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

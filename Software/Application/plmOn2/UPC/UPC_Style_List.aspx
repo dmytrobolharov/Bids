@@ -32,8 +32,8 @@
 					<TD>
 						<asp:imagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton>
 						<cc1:bwimagebutton id="btnAddUPC" runat="server" ></cc1:bwimagebutton>
-						<cc1:confirmedimagebutton id="btnNewTask" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+						<cc1:bwimagebutton id="btnNewTask" runat="server" Message="NONE"></cc1:bwimagebutton>
+						<cc1:bwimagebutton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:bwimagebutton>
 						<cc1:bwimagebutton id="btnDeleteUPC" runat="server" ></cc1:bwimagebutton>
 					</TD>
 					<td>&nbsp;</td>

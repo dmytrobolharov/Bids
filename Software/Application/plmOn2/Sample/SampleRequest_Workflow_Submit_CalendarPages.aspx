@@ -43,8 +43,8 @@
                 <cc1:BWImageButton id="btnAddCalendar" runat="server"  Message="NONE"></cc1:BWImageButton>
                 <cc1:ConfirmedImageButton id="btnRemoveCalendar" runat="server"  Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:BWImageButton ID="btnGoToStyle" runat="server"></cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:BWImageButton ID="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
         </tr>
     </table>
@@ -96,8 +96,8 @@
         </table>
         <asp:DataGrid ID="DataGrid1" runat="server" Width="1200px" BorderWidth="1px" PageSize="100"
             AutoGenerateColumns="False" BorderStyle="Solid" BorderColor="#E0E0E0">
-            <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-            <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
             <Columns>
                 <asp:TemplateColumn>
                     <HeaderStyle Height="20px" Width="125px" CssClass="TableHeader"></HeaderStyle>
@@ -239,8 +239,8 @@
         </table>
         <asp:DataGrid ID="DataGrid2" runat="server" Width="1200px" BorderWidth="1px" PageSize="100"
             AutoGenerateColumns="False" BorderStyle="Solid" BorderColor="#E0E0E0">
-            <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-            <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
             <Columns>
                 <asp:TemplateColumn>
                     <HeaderStyle Height="20px" Width="125px" CssClass="TableHeader"></HeaderStyle>
@@ -382,8 +382,8 @@
         </table>
         <asp:DataGrid ID="DataGrid3" runat="server" Width="1200px" BorderWidth="1px" PageSize="100"
             AutoGenerateColumns="False" BorderStyle="Solid" BorderColor="#E0E0E0">
-            <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-            <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
             <Columns>
                 <asp:TemplateColumn>
                     <HeaderStyle Height="20px" Width="125px" CssClass="TableHeader"></HeaderStyle>
@@ -525,8 +525,8 @@
         </table>
         <asp:DataGrid ID="DataGrid4" runat="server" Width="1200px" BorderWidth="1px" PageSize="100"
             AutoGenerateColumns="False" BorderStyle="Solid" BorderColor="#E0E0E0">
-            <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-            <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
             <Columns>
                 <asp:TemplateColumn>
                     <HeaderStyle Height="20px" Width="125px" CssClass="TableHeader"></HeaderStyle>
@@ -666,6 +666,11 @@
                 newWin.focus();
             }
         </script>
-
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 </body>
 </html>

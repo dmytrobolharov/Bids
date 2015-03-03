@@ -15,6 +15,9 @@
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/BOMColorway.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -141,7 +144,7 @@
                     <asp:ImageButton ID="btnSortMaterials" runat="server" disabled="disabled" />
                     <asp:ImageButton ID="btnConfigure" runat="server" disabled="disabled" />
                     <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:BWImageButton>
-                    <cc1:ConfirmedImageButton ID="btnClose" Message="NONE" runat="server" disabled="disabled" />
+                    <cc1:ConfirmedImageButton ID="btnClose" Message="NONE" runat="server" disabled="disabled" OnClientClick="return btnClose_Click()" />
                 </td>
             </tr>
         </table>
@@ -392,8 +395,7 @@
     </telerik:RadScriptBlock>
     </form>
 
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript">
 
         var strEmptyGuid = '<%= Guid.Empty.ToString() %>'
@@ -912,6 +914,12 @@
             $("#pnlColorMgmt input").disable(false);
         });
 
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

@@ -10,6 +10,8 @@
     <title>Control Panel</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 
     <script language="javascript" type="text/javascript">
 // <!CDATA[
@@ -105,10 +107,8 @@
                                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                             </td>
                             <td>
-                                <cc1:ConfirmedImageButton ID="btnAddFixed" runat="server" Message="NONE">
-                                </cc1:ConfirmedImageButton>
-                                <cc1:ConfirmedImageButton ID="btnDeleteFixed" runat="server" Message="NONE">
-                                </cc1:ConfirmedImageButton>
+                                <cc1:BWImageButton ID="btnAddFixed" runat="server" Message="NONE"></cc1:BWImageButton>
+                                <cc1:ConfirmedImageButton ID="btnDeleteFixed" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                             </td>
                         </tr>
                     </table>

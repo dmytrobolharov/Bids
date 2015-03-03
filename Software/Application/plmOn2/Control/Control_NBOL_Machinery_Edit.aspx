@@ -27,7 +27,7 @@
                     <cc1:ConfirmedImageButton ID="btnSaveClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnSaveNew" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnDelete" runat="server" CausesValidation="false"></cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                 </td>
                 <td class="FontHead" align="right" width="75">
                 </td>
@@ -89,5 +89,11 @@
         </table>
     </div>    
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

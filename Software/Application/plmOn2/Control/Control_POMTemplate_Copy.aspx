@@ -17,8 +17,8 @@
 				runat="server">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-					<TD width="80"><asp:imagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" ></cc1:confirmedimagebutton></TD>
-					<td width="80"></td>
+					<TD width="80"><cc1:confirmedimagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" Message="NONE"></cc1:confirmedimagebutton></TD>
+					<td width="80"><cc1:confirmedimagebutton id="btnImgClose" runat="server" Height="0px" Width="0px" Message="NONE"></cc1:confirmedimagebutton></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
 				</TR>
@@ -67,7 +67,7 @@
 								<td width="100%"><asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
 							</tr>
 						</table>
-						<asp:datagrid id="DataGrid1" runat="server" AutoGenerateColumns="False" DataKeyField="POMTempID">
+						<asp:datagrid id="DataGrid1" runat="server" AutoGenerateColumns="False" DataKeyField="POMTempID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>

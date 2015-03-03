@@ -9,7 +9,9 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
-		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>		
+		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -38,7 +40,7 @@
 					<td><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 							Height="0px"></asp:imagebutton>
 						<cc1:bwimagebutton id="btnNew" runat="server" Visible="false" Message="NONE" ></cc1:bwimagebutton>
-						<cc1:confirmedimagebutton id="imgBtnClose" runat="server"  Message="NONE"
+						<cc1:confirmedimagebutton id="imgBtnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"
 							Visible="True"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
@@ -140,5 +142,11 @@
             <input id="hiddenSearchSQL" type="hidden" value="" name="hiddenSearchSQL" runat="server" />
             </asp:Panel>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

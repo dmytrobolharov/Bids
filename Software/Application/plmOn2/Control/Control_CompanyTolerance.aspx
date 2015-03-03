@@ -9,6 +9,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -20,7 +22,7 @@
                         Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
                         <cc1:ConfirmedImageButton ID="btnDelete" runat="server" 
                         Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
-                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" 
+                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click()"
                         Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
                     </TD>
 				</TR>
@@ -112,5 +114,11 @@
 		        }
 		    }
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

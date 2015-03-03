@@ -17,7 +17,7 @@
 					<TR vAlign="middle">
 						<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 						<TD vAlign="middle" align="left" width="400"><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></TD>
+							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></TD>
 						<TD></TD>
 					</TR>
 				</TBODY>
@@ -40,8 +40,8 @@
 			</asp:Panel>
 			<asp:datagrid id="DataGrid1" runat="server" Width="300px" BorderColor="#E0E0E0" BorderStyle="Solid"
 				BorderWidth="1px" PageSize="100" AutoGenerateColumns="False" DataKeyField="SampleRequestQAWorksheetID">
-				<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-				<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+				<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+				<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 				<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 				<Columns>
 					<asp:TemplateColumn>
@@ -85,5 +85,11 @@
                 return false ;
 		    }
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

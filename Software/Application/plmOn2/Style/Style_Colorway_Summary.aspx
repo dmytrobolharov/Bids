@@ -5,11 +5,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 	<head>
-		     <title runat="server" id="PageTitle"></title>
+		<title runat="server" id="PageTitle"></title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet"/>
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet"/>
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		<script language="javascript">
 		    function SelectColor(sColor, sTxtBox) {
 		        opener.document.Form1[sTxtBox].value = sColor;

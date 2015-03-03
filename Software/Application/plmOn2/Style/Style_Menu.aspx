@@ -45,7 +45,7 @@
                             &nbsp;
 							<asp:imagebutton id="btnSearch" runat="server" ImageUrl="../System/icons/icon_search.gif"></asp:imagebutton>
                             &nbsp;
-							<asp:imagebutton id="btnTask" runat="server" ImageUrl="../System/icons/icon_task.gif"></asp:imagebutton>
+							<cc2:BWImageButton id="btnTask" runat="server" ImageUrl="../System/icons/icon_task.gif" />
                             &nbsp;
 							<asp:imagebutton id="btnRefresh" runat="server" ImageUrl="../System/icons/icon_refresh.gif"></asp:imagebutton></div>
 					</td>
@@ -199,12 +199,12 @@
                 hasDesignBack = $("#imgDesignBack").attr("src").indexOf("00000000-0000-0000-0000-000000000000") == -1;
 
                 if (hasDesignBack) {
-                    width = Math.max($("#imgDesign").width(), $("#imgDesignBack").width());
-                    height = Math.max($("#imgDesign").height(), $("#imgDesignBack").height());
+                    width = Math.max($("#imgDesign").get(0).naturalWidth, $("#imgDesignBack").get(0).naturalWidth);
+                    height = Math.max($("#imgDesign").get(0).naturalHeight, $("#imgDesignBack").get(0).naturalHeight);
                 }
                 else {
-                    width = $("#imgDesign").width();
-                    height = $("#imgDesign").height();
+                    width = $("#imgDesign").get(0).naturalWidth;
+                    height = $("#imgDesign").get(0).naturalHeight;
                 }
 
                 $("#imgContainer")

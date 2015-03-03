@@ -13,6 +13,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>

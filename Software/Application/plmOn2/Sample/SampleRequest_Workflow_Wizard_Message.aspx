@@ -100,8 +100,8 @@
 							<HeaderTemplate>
 								&nbsp;Select Trade Partner...
 							</HeaderTemplate>
-							<AlternatingItemStyle Height="20px" CssClass="font" BackColor="White"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="AliceBlue"></ItemStyle>
+							<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<ItemTemplate>
 								<TABLE height="25" cellSpacing="0" cellPadding="0" width="100%" border="0">
 									<TR>
@@ -109,8 +109,8 @@
 									</TR>
 								</TABLE>
 								<asp:DataGrid id=dgTradeContact runat="server" Width="100%" BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px" PageSize="100" AutoGenerateColumns="False" DataKeyField="TradePartnerContactId" DataSource='<%# TradePartnerContactDataTable(DataBinder.Eval(Container.DataItem, "TradePartnerId").ToString) %>' ShowHeader="False">
-									<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-									<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+									<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+									<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 									<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 									<Columns>
 										<asp:TemplateColumn ItemStyle-Width="20px">
@@ -178,8 +178,8 @@
 			</TABLE>
 			<asp:datalist id="dlAgent" runat="server" Width="100%" DataKeyField="TradePartnerID" ShowFooter="False"
 				CellPadding="0">
-				<AlternatingItemStyle Height="20px" CssClass="font" BackColor="White"></AlternatingItemStyle>
-				<ItemStyle Height="20px" CssClass="font" BackColor="AliceBlue"></ItemStyle>
+				<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+				<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 				<ItemTemplate>
 					<TABLE height="25" cellSpacing="0" cellPadding="0" width="100%" border="0">
 						<TR>

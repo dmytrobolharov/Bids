@@ -19,7 +19,8 @@
 				runat="server">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-					<TD><asp:imagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></TD>
+					<TD><asp:imagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 			<table id="Table1" style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
@@ -90,6 +91,16 @@
 										<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 										<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 										<PagerStyle Visible="False"></PagerStyle>
+                                        <Columns>
+                                            <asp:TemplateColumn>
+                                                <HeaderTemplate>
+                                                    <asp:CheckBox runat="server" ID="checkAll" onclick="CheckAll(this);" />
+                                                </HeaderTemplate>
+                                                <ItemTemplate>
+                                                    <asp:CheckBox runat="server" ID="chbPOMTempItemID" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+                                        </Columns>
 									</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 							</TR>
 						</TABLE>
@@ -125,7 +136,12 @@
 			
 			
 		</form>
-		
+		<script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 
 	</body>
 </HTML>

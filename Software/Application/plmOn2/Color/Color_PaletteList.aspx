@@ -10,6 +10,8 @@
 		<title runat="server" id="PageTitle">Palette</title>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
             th.rgHeaderYPLM, th.rgHeader {
                 padding: 0 0px !important;
@@ -54,7 +56,7 @@
 					<cc1:bwimagebutton id="btnColorRemove" runat="server"></cc1:bwimagebutton>
 					<cc1:confirmedimagebutton id="btnDeletePalette" runat="server" CausesValidation="False"></cc1:confirmedimagebutton>   
                     <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton>
                     </td>
 					<td width="75">&nbsp;</td>
 					<td align="right"></td>
@@ -114,7 +116,12 @@
 			if ( e.type=='checkbox' && e.name.indexOf("chkDelete") != -1 )
 			e.checked= actVar ;
 		}
-		}
+}
+
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
 		</script>
 	        <table id="Table2" border="0" cellpadding="0" cellspacing="0" 
                 class="TableHeader" height="20" width="100%">

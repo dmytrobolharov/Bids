@@ -69,7 +69,7 @@
 		        <td align="center" width="50">&nbsp;</td>
 		        <td align="center" width="500">
 			        <asp:imagebutton id="btnSave" runat="server" ></asp:imagebutton>
-			        <asp:imagebutton id="btnClose" runat="server" ></asp:imagebutton>
+			        <asp:imagebutton id="btnClose" runat="server" OnClientClick="return btnClose_Click()" ></asp:imagebutton>
 		        </td>
 		        <td align="center">&nbsp;</td>
 	        </tr>
@@ -77,5 +77,11 @@
 
     </div>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

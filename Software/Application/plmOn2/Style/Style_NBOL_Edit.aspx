@@ -16,6 +16,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         #RadGridBOLData td { cursor:default; }  
         #RadGridBOLData .rgRowYPLMLtBlueE td.rgExpandCol {cursor: pointer;}
@@ -88,7 +90,7 @@
             <cc1:confirmedimagebutton id="btnGoTo" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
                 <cc1:ConfirmedImageButton id="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>&nbsp;
                 <cc1:confirmedimagebutton id="btnPageCopy" Visible="false" OnClientClick="return NoPostBack()" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-                <cc1:ConfirmedImageButton id="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>&nbsp;
+                <cc1:ConfirmedImageButton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>&nbsp;
                 <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:BWImageButton>
             </td>
             <td class="FontHead" align="right" width="75">
@@ -378,6 +380,11 @@
             btnCollapse.show();
         }
     </script>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

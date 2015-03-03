@@ -8,11 +8,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title></title>
-        <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
-		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
-        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-        <script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>				
+    <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>				
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server" defaultbutton="imgbtnSearch">
@@ -24,7 +26,7 @@
             </td>
             <td valign="top">
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
             <td width="75">
                 &nbsp;
@@ -95,5 +97,11 @@
             </asp:Panel>
 
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

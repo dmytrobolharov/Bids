@@ -37,7 +37,7 @@
                         </td>
                         <td>
                              <cc1:ConfirmedImageButton ID="btnSave" Visible="true" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
-                             <cc1:ConfirmedImageButton ID="btnClose" Visible="true" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
+                             <cc1:ConfirmedImageButton ID="btnClose" OnClientClick="return btnClose_Click()" Visible="true" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
                         </td>
                         <td>
                             &nbsp;
@@ -53,5 +53,11 @@
         </tr>
     </table>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

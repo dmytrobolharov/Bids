@@ -122,6 +122,16 @@
 		<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 		<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 		<PagerStyle Visible="False"></PagerStyle>
+        <Columns>
+            <asp:TemplateColumn>
+                <HeaderTemplate>
+                    <asp:CheckBox ID="checkAll" runat="server" onclick="CheckAll(this);" />
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <asp:CheckBox ID="chbLevel3ID" runat="server" />
+                </ItemTemplate>
+            </asp:TemplateColumn>            
+        </Columns>
 	</asp:datagrid>   
     <asp:label id="SortOrder" runat="server" Visible="False"></asp:label>
      

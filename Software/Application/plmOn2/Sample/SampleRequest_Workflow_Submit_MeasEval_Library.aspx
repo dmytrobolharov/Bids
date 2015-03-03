@@ -7,8 +7,10 @@
 
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
-         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		
 		<script language="javascript">
 			function SelectColor(sColor,sTxtBox) 
@@ -26,7 +28,8 @@
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 					Height="0px"></asp:imagebutton><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td width="40"></td>
 					<td></td>
 				</tr>
@@ -78,8 +81,8 @@
                     <asp:datagrid id="DataGrid1" runat="server" DataKeyField="POMAlternatesID" 
             		        AutoGenerateColumns="false" Width="100%">
             		        <PagerStyle Visible ="false"></PagerStyle>
-				            <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-				            <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+				            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+				            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 				            <headerStyle Height="25px" CssClass="TableHeaderRed"></headerStyle>
                                <Columns>
                                 <asp:TemplateColumn HeaderStyle-Width="20" HeaderStyle-BorderWidth="0" ItemStyle-BorderWidth="0">
@@ -113,5 +116,11 @@
 		if (window.event.keyCode == 13) window.event.keyCode = 0;
 		}
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

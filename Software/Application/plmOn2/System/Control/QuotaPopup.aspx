@@ -3,14 +3,15 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 	<HEAD>
-	<title runat="server" id="PageTitle"></title>
-	
+    	<title runat="server" id="PageTitle"></title>
 		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
 		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
 		<meta content="JavaScript" name="vs_defaultClientScript">
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../CSS/Grid.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		<script language="javascript">
 			function SelectWindowCustom(sValue,sTxtBox) 
 			{

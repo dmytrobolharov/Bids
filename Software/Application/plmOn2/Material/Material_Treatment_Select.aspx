@@ -24,7 +24,7 @@
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"
 							></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
@@ -83,7 +83,7 @@
 						
 						<table cellspacing="0" cellpadding="0"  border="0" >
 						<tr><td>
-						    <asp:datagrid id="DataGrid1" runat="server" DataKeyField="Custom" AutoGenerateColumns="False"  Width="800px">
+						    <asp:datagrid id="DataGrid1" runat="server" DataKeyField="Custom" AutoGenerateColumns="False"  Width="200px">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
@@ -121,5 +121,11 @@
 		}
 		}
 		</SCRIPT>
+        <script language="javascript">
+            function btnClose_Click() {
+              <%= strExitScript %>
+              return false;
+            }
+        </script>
 	</body>
 </HTML>

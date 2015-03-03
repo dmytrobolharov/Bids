@@ -4,7 +4,7 @@
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+    <head>
 		<title runat="server" id="PageTitle">Style Model</title>
 		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
 		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
@@ -12,6 +12,8 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		<script language="javascript">
 			function SelectColor(sColor,sTxtBox) 
 			{
@@ -20,14 +22,14 @@
 			}
 		</script>
 	</head>
-<body MS_POSITIONING="GridLayout">
+    <body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 					Height="0px"></asp:imagebutton><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnDelete" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+					<td><cc1:confirmedimagebutton id="btnDelete" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td width="40"></td>
 					<td></td>
 				</tr>
@@ -116,4 +118,10 @@
 	        if (window.event.keyCode == 13) window.event.keyCode = 0;
 	    }
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 </html>

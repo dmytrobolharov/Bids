@@ -17,7 +17,7 @@
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td height="20"><cc1:confirmedimagebutton id="btnTechDelete" runat="server" Message="Are you sure you want to delete tech pack log?"
-							></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"
+							></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"
 							></cc1:confirmedimagebutton></td>
 					<td>&nbsp;</td>
 				</tr>
@@ -48,5 +48,11 @@
 				</Columns>
 			</asp:datagrid>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

@@ -5,6 +5,8 @@
 	<head>
 		<title runat="server" id="PageTitle"></title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body onblur="this.focus();" onload="self.focus()">
 		<form id="Form1" method="post" runat="server">
@@ -15,7 +17,7 @@
 					<td height="20">
 						<cc1:confirmedimagebutton 
 						    id="btnEmail" runat="server" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-						    id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+						    id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td>&nbsp;</td>
 				</tr>
 			</table>
@@ -34,5 +36,11 @@
 			</asp:DataGrid>
 			
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

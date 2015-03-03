@@ -8,6 +8,8 @@
     <title></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet"/>
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet"/>        
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,7 +22,7 @@
 				<td width="1"><asp:imagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton></td>
 				<td valign="top">
 				    <asp:ImageButton runat="server" ID="btnAdd" />
-				    <asp:ImageButton runat="server" ID="btnClose"  />
+				    <asp:ImageButton runat="server" ID="btnClose" OnClientClick="return btnClose_Click()" />
                 </td>
 				<td width="75">&nbsp;</td>
 				<td align="right"></td>
@@ -96,5 +98,11 @@
     
     </div>
     </form>
+        <script language="javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+        </script>
 </body>
 </html>

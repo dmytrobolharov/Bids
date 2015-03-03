@@ -6,12 +6,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>POM</title>
-		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
-		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
-		<meta content="JavaScript" name="vs_defaultClientScript">
-		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
-		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+	<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
+	<meta content="JavaScript" name="vs_defaultClientScript">
+	<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .style1
         {
@@ -34,7 +36,7 @@
 							Message="NONE"></cc1:confirmedimagebutton>	
                         <cc1:confirmedimagebutton id="btnPDFView" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnDelete" runat="server" ToolTip="Delete..." 							Message="NONE"></cc1:confirmedimagebutton>						
-						<cc1:confirmedimagebutton id="btnClose" Visible="false" runat="server" ToolTip=""
+						<cc1:confirmedimagebutton id="btnClose" Visible="false" runat="server" ToolTip="" OnClientClick="return btnClose_Click()"
 							 Message="NONE"></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
@@ -121,5 +123,11 @@
 		}
 		}
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 </html>
 

@@ -26,7 +26,7 @@
                                             </cc1:ConfirmedImageButton>
                         <cc1:ConfirmedImageButton ID="btnDelete" runat="server" 
                                             CausesValidation="false"></cc1:ConfirmedImageButton>
-                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" 
+                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click()"
                                 CausesValidation="false" Message="NONE"></cc1:ConfirmedImageButton>
 							 
 					</TD>
@@ -90,5 +90,11 @@
 		}
 		}
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

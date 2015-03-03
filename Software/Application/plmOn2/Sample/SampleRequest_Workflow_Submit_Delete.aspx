@@ -17,15 +17,15 @@
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton id="btnDelete" runat="server" Message="Are you sure you want to delete selected submit(s)?" ></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
 			<table cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<tr bgColor="#ffffff">
 					<td vAlign="top" width="600"><asp:datagrid id="DataGrid1" runat="server" Width="400px" AutoGenerateColumns="False" PageSize="100"
 							BorderWidth="1px" BorderStyle="Solid" BorderColor="Silver">
-							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 							<Columns>
 								<asp:TemplateColumn>
@@ -82,5 +82,11 @@
 			}
 			}
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

@@ -11,12 +11,10 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
 
-    <script language="javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-
     <script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-
     <script language="javascript" src="../System/Jscript/Custom.js"></script>
-
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -29,7 +27,7 @@
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE" />
                 <cc1:ConfirmedImageButton ID="btnGoTo" runat="server" Message="NONE" />
                 <cc1:BWImageButton ID="btnPreview" runat="server" Message="NONE"></cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" />
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();"/>
             </td>
         </tr>
     </table>
@@ -318,6 +316,10 @@
             }
         }
 		
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
     </script>
 
 </body>

@@ -8,6 +8,7 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui-1.10.3.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .confirm-dialog {
         	display: none;        	

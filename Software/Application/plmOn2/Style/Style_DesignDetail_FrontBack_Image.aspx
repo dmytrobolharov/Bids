@@ -21,7 +21,7 @@
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 
 					<td noWrap width="650">
-					<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
                     <cc1:bwimagebutton id="btnPrint" runat="server" ></cc1:bwimagebutton>
                      <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
 					</td>
@@ -110,6 +110,12 @@
 				<td valign="middle" align="center" width="7"><IMG src="../System/Images/table_bar_right.gif"></td>
 			</tr>
 		</table>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>
 

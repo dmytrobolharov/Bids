@@ -17,7 +17,7 @@
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton id="btnDelete" runat="server"  ></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td>&nbsp;</td>
 				</tr>
 			</TABLE>
@@ -72,7 +72,11 @@
 			if ( e.type=='checkbox' && e.name.indexOf("chkDelete") != -1 )
 			e.checked= actVar ;
 		}
-		}
+}
+        function btnClose_Click() {
+                        <%= strExitScript %>
+                        return false;
+                    }
 		</SCRIPT>
 	</body>
 </HTML>

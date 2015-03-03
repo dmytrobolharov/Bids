@@ -51,7 +51,7 @@
                             <asp:textbox id="txtApplyQty" runat="server" width='50' CssClass="fontHead"></asp:textbox>&nbsp;
                             <cc1:confirmedimagebutton id="btnQtyApplyAll" runat="server"></cc1:confirmedimagebutton>&nbsp;&nbsp;
                             <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:BWImageButton>
-                            <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton> 
+                            <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton> 
                         </td>
                     </tr>                    
 			    </table>			    			    			    			    
@@ -73,5 +73,10 @@
             }
 
     </script>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </html>

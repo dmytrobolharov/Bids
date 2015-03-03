@@ -33,7 +33,7 @@
 					<cc1:bwimagebutton id="btnImageSort" runat="server" ></cc1:bwimagebutton>
 					<cc1:confirmedimagebutton id="btnCopy" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:bwimagebutton id="btnImageRemove" runat="server" ></cc1:bwimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
                     <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>				
 					</td>
 					<td class="FontHead" align="right" width="75"><!--&nbsp;<%=GetSystemText("Select Set")%>:--></td>
@@ -137,5 +137,11 @@
 		        });
 		    });
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
       	</body>
 </html>

@@ -11,7 +11,8 @@
         <link href="../System/CSS/Grid.css" rel="stylesheet" type="text/css" />
         <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />  
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</HEAD>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -37,7 +38,7 @@
 									<asp:imagebutton id="btnAdd" runat="server"></asp:imagebutton>
 									<asp:imagebutton id="btnAddColor" runat="server" ></asp:imagebutton>
                                     <cc1:ConfirmedImageButton ID="btnDelete" runat="server"  />
-                                    <cc1:ConfirmedImageButton ID="btnClose" runat="server"/>
+                                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click();"/>
                     </td>
 					<td width="75">&nbsp;</td>
 					<td align="right"></td>
@@ -162,6 +163,11 @@
 		        var chkColorSelect = $(this).find(":checkbox[id$='chkColorSelect']").get(0);
 		        if (chkColorSelect && e.target.id != chkColorSelect.id) chkColorSelect.checked = !chkColorSelect.checked;
 		    })
+
+            function btnClose_Click() {
+                    <%= strExitScript %>
+                    return false;
+            }
         </script>	
 			
 		</form>

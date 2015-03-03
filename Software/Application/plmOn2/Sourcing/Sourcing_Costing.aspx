@@ -15,21 +15,28 @@
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+    <script>
+    function btnClose_Click() {
+        <%= strExitScript %>
+        return false;
+    }
+    </script>
 </head>
 <body>
     <form id="Form1" runat="server">
 	<TABLE class="TableHeader" cellSpacing="0" cellPadding="0" width="100%" border="0">
 		<TR vAlign="middle" height="25">
 			<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-			<TD><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-			id="btnAddColor" Visible="true" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_addcolor.gif"></cc1:confirmedimagebutton><cc1:bwimagebutton 
-			id="btnAddCosting" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_add_costing.gif"></cc1:bwimagebutton><cc1:confirmedimagebutton 
-			id="btnRemove" runat="server" Message="NONE"  Visible="false" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_remove.gif"></cc1:confirmedimagebutton><cc1:bwimagebutton 
-			id="btnGoTo" Visible="false" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_goto.gif"></cc1:bwimagebutton><cc1:bwimagebutton 
-			id="btnPreview" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_preview_pdf.gif"></cc1:bwimagebutton><cc1:bwimagebutton 
-			id="btnChangeLog" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_change_log.gif"></cc1:bwimagebutton><cc1:confirmedimagebutton 
-			id="btnClose" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" CausesValidation="false"></cc1:confirmedimagebutton></TD>
-			
+			<TD>
+                <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnAddColor" Visible="true" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                <cc1:bwimagebutton id="btnAddCosting" runat="server" Message="NONE"></cc1:bwimagebutton>
+                <cc1:confirmedimagebutton id="btnRemove" runat="server" Message="NONE"  Visible="false"></cc1:confirmedimagebutton>
+                <cc1:bwimagebutton id="btnGoTo" Visible="false" runat="server" Message="NONE"></cc1:bwimagebutton>
+                <cc1:bwimagebutton id="btnPreview" runat="server" Message="NONE"></cc1:bwimagebutton>
+                <cc1:bwimagebutton id="btnChangeLog" runat="server"></cc1:bwimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton>
+            </TD>
             <td class="FontHead" vAlign="middle" align="center" width="75"><asp:label ID="lblColorWay" runat="server" >Colorway</asp:label>&nbsp;</td>
             <td width="40"><asp:dropdownlist id="dpColoways" runat="server" AutoPostBack="true" DataValueField="ID" DataTextField="Value" CssClass="font"></asp:dropdownlist></td>					
             <td width="40">&nbsp;</td>

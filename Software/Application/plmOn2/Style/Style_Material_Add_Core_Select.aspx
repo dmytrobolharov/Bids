@@ -13,6 +13,8 @@ Material_CoreItem_Default.xml
 		<title>Material Group</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		<link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
@@ -21,7 +23,7 @@ Material_CoreItem_Default.xml
 				runat="server">
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
 					<td></td>
@@ -101,5 +103,11 @@ Material_CoreItem_Default.xml
 			}
 			}
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

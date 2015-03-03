@@ -7,6 +7,8 @@
 	<title id="tlLinkFeature" runat="server">Link Feature</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
@@ -18,7 +20,7 @@
             </td>
             <td>
                 <cc1:ConfirmedImageButton ID="btnLink" runat="server" ToolTip="Add..." Message="NONE"/>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" ToolTip="" Message="NONE" />
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" ToolTip="" Message="NONE" OnClientClick="return btnClose_Click()" />
             </td>
         </tr>
     </table>
@@ -142,6 +144,11 @@
             }
         }
     </script>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

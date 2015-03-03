@@ -17,7 +17,7 @@
 			    <td vAlign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3" /></td>
 			    <td>
 				    <asp:ImageButton id="btnSave" runat="server" ></asp:ImageButton>
-				    <asp:ImageButton id="btnClose" runat="server" ></asp:ImageButton></td>
+				    <asp:ImageButton id="btnClose" runat="server" OnClientClick="return btnClose_Click()" ></asp:ImageButton></td>
 		    </tr>
 	    </table>
 	    <br /><br />
@@ -96,5 +96,11 @@
 
        
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

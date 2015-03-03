@@ -18,6 +18,8 @@ spx_LinePlanBodyItem_INSERT
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
@@ -25,7 +27,8 @@ spx_LinePlanBodyItem_INSERT
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				</tr>
 			</TABLE>
 			<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
@@ -129,5 +132,11 @@ spx_LinePlanBodyItem_INSERT
 			}
 			}
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

@@ -21,6 +21,8 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
 
     <script language="javascript" src="../System/Jscript/Custom.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     
     <script language="JavaScript1.2">        
         top.window.moveTo(0,0);
@@ -238,7 +240,7 @@
                 <td>
                     <cc1:ConfirmedImageButton ID="btnSaveSummary" Visible="false" Message="NONE" runat="server">
                     </cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnaddMatMgmt" Visible="true" runat="server" Message="NONE">
+                    <cc1:ConfirmedImageButton ID="btnaddMatMgmt" Visible="true" runat="server" Message="NONE" OnClientClick="btnAddMatMgmt_Click()">
                     </cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnCopy" Visible="false" runat="server" Message="NONE">
                     </cc1:ConfirmedImageButton>
@@ -249,7 +251,7 @@
                     <cc1:ConfirmedImageButton ID="btnUpdate" Visible="true" runat="server" Message="NONE">
                     </cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnAutoColor" runat="server" Visible="false"></cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnManageDim" Visible="false" runat="server" Message="NONE">
+                    <cc1:ConfirmedImageButton ID="btnManageDim" Visible="false" runat="server" Message="NONE" OnClientClick="btnManageDim_Click()">
                     </cc1:ConfirmedImageButton>
                     
                 </td>
@@ -404,6 +406,16 @@
 </form>
 
     <script language="javascript" type="text/javascript">
+
+        function btnAddMatMgmt_Click() {
+		    <%= addMatMgmt() %>
+            return false;
+        }
+
+        function btnManageDim_Click() {
+		    <%= ManageDim() %>
+            return false;
+        }
 
         function SaveMQE() {
             document.getElementById('btnMaterialQuickSearchAddSaveHidden').click();

@@ -11,6 +11,7 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>
         <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
             a img {border:none; outline: none;}
             .search-cell td {
@@ -19,6 +20,10 @@
 
             th.rgHeaderYPLM, th.rgHeader {
                 padding: 0 0px !important;
+            }
+            
+            #DataList1 > span {
+            	vertical-align: top;
             }
         </style>
 	</head>
@@ -147,43 +152,55 @@
 								<TD width="10" align="right"><asp:button id="btnGo" runat="server" CssClass="fontHead" text="GO"></asp:button></TD>
 				            </tr>
 			            </table>			            				
-					
-			            <table bordercolor="gainsboro" cellspacing="1" cellpadding="0" border="0">
-				            <tr>
-					            <td valign="top">
-                                <asp:datalist id="DataList1" runat="server" RepeatDirection="Horizontal" 
-                                    RepeatLayout="Flow" EnableViewState="True" DataKeyField="ColorPaletteID">
-	                                <ItemStyle BorderWidth="1px" BorderStyle="Solid" BackColor="white" BorderColor="Gainsboro" VerticalAlign="Top"></ItemStyle>
-	                                <ItemTemplate>
-                                        <asp:HiddenField ID="hdnPlanningColorID" runat="server" Value='<%# Eval("PlanningColorID") %>' />
-                                        <asp:HiddenField ID="hdnPlanningColorDrop" runat="server" Value='<%# Eval("PlanningColorDrop") %>' />
-                                        <table width="170px">
-                                            <tr><td><asp:Label ID="lblMessage" runat="server"></asp:Label></td></tr>
-                                            <tr>
-                                                <td>
-		                                            <asp:Label align="left" ID="colorChip" runat="server" AssociatedControlID="colorCheck" style="display:block;">
-		                                            <asp:CheckBox ID="colorCheck" runat="server" /> 
-		                                            <%--asp:Image id="imgColorChip" runat="server"></asp:Image--%>
-		                                            </asp:Label>
-		                                            <asp:PlaceHolder ID="plhHeaderItem" runat="server"></asp:PlaceHolder>
-		                                            <br/>
-                                                </td>
-                                                <%--<td>
-                                                    <asp:Label ID="lblColorCode" runat="server" Width="120" CssClass="font" /><br />
-                                                    <asp:Label ID="lblColorName" runat="server" Width="120" CssClass="font" />
-                                                    <asp:HiddenField ID="hdnColorPaletteID" runat="server" Value='<% Eval("ColorPaletteID") %>' />
-                                                </td>--%>
-                                            </tr>
-                                        </table>
-	                                </ItemTemplate>
-                                </asp:datalist>
-                                <asp:PlaceHolder runat="server" ID="plhColorsGrid"></asp:PlaceHolder>			                    
-                                </td>
-				            </tr>
-			            </table>
+				
+                        <asp:datalist id="DataList1" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow" EnableViewState="True" DataKeyField="ColorPaletteID">
+	                        <ItemStyle BorderWidth="1px" BorderStyle="Solid" BackColor="white" BorderColor="Gainsboro" VerticalAlign="Top"></ItemStyle>
+	                        <ItemTemplate>
+                                <asp:HiddenField ID="hdnPlanningColorID" runat="server" Value='<%# Eval("PlanningColorID") %>' />
+                                <asp:HiddenField ID="hdnPlanningColorDrop" runat="server" Value='<%# Eval("PlanningColorDrop") %>' />
+                                <table width="170px">
+                                    <tr><td><asp:Label ID="lblMessage" runat="server"></asp:Label></td></tr>
+                                    <tr>
+                                        <td>
+                                            <div style="width:170px">
+		                                    <asp:Label align="left" ID="colorChip" runat="server" AssociatedControlID="colorCheck" style="display:block;">
+		                                    <asp:CheckBox ID="colorCheck" runat="server" /> 
+		                                    </asp:Label>
+		                                    <asp:PlaceHolder ID="plhHeaderItem" runat="server"></asp:PlaceHolder>
+		                                    </div>
+                                        </td>
+                                    </tr>
+                                </table>
+	                        </ItemTemplate>
+                        </asp:datalist>
+                        <asp:PlaceHolder runat="server" ID="plhColorsGrid"></asp:PlaceHolder>			                    
                         <script type="text/javascript">
-                            $("#DataList1 [id*=lbl]").parent().width("50")
-                            $("#DataList1 [id*=hdr]").css("white-space", "nowrap")
+                            $("#DataList1 td:has([id*=lbl]):has([id*=hdr])").removeAttr("width");
+                            $("#DataList1 [id*=hdr]").removeAttr("width");
+                            Sys.Application.add_load(function () {
+                                function resizeByRows() {
+                                    var height = 0, groups = {};
+                                    $("#DataList1 > span").each(function () {
+                                        var $this = $(this), top = $this.position().top;
+                                        groups[top] = groups[top] || { elems: $(), height: 0 };
+
+                                        groups[top].elems = groups[top].elems.add($this);
+                                        groups[top].height = Math.max(groups[top].height, $(this).height());
+                                    });
+
+                                    $.each(groups, function (top, e) {
+                                        if (e.height > <%= ImageWidth %>) {
+                                            e.elems.height(e.height);
+                                        }
+                                    });
+                                }
+
+                                resizeByRows();
+                                $(window).on('resize', function () {
+                                    $("#DataList1 > span").height("auto");
+                                    resizeByRows();
+                                })
+                            });
                         </script>
 			            <input id="imageSize" type="hidden" runat="server" />
                         </td>

@@ -1,6 +1,6 @@
 <generator>
 	<table name="pMaterial" codecolumn="MaterialNo" idcolumn="MaterialID" spacecolumn="5">
-		<column name="" lookupSpace="LAB" lookupNull="??"  order="1"/>
-		<column name="autoid" lookupSpace="" lookupNull="??"  order="2"/>
+		<column name="" lookup="" lookupId="" lookupSelect="" lookupSpace="LAB" lookupNull="??" order="001" />
+		<column name="autoid" lookup="" lookupId="" lookupSelect="" lookupSpace="" lookupNull="??" order="002" />
 	</table>
 </generator>

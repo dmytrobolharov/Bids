@@ -11,7 +11,6 @@
 <body>
     <form id="form1" runat="server">
     <div>
-
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<tr vAlign="middle">
@@ -19,7 +18,7 @@
 					<td>
 					    <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"
-							CausesValidation="False"></cc1:confirmedimagebutton>
+							CausesValidation="False" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton>
 					</td>
 				</tr>
 			</table>
@@ -63,5 +62,11 @@
     
     </div>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

@@ -20,7 +20,7 @@
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD width="80"><cc1:confirmedimagebutton id="btnSaveColorList" runat="server" Message="NONE" ></cc1:confirmedimagebutton></TD>
-					<td width="80"><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+					<td width="80"><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
 				</TR>
@@ -146,5 +146,11 @@
 		}
 		}		
 		</script>
+        <script language="javascript">
+            function btnClose_Click() {
+              <%= strExitScript %>
+              return false;
+            }
+        </script>
 	</body>
 </HTML>

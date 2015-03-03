@@ -10,6 +10,8 @@
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet"></link>
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .drag-helper {
         	display: none;
@@ -111,6 +113,8 @@
         	overflow-x: hidden !important;
         }
     </style>
+    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -144,7 +148,7 @@
                 <cc1:ConfirmedImageButton ID="btnRemove" runat="server" Message="NONE"></cc1:confirmedimagebutton>
                 <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;">
                 </cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
             </td>
             <td>
             </td>
@@ -448,8 +452,7 @@
     </div>
     <div id="dialog-message" style="display: none;"><p><%= GetSystemText("Please select materials and styles before clicking the replace material button")%></p></div>
 
-    <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" language="javascript">
         var frm = document.forms['form1'];
@@ -612,6 +615,12 @@
             PageMethods.SaveHiddenColumns('RadGridStyles', '<%= aspxPageName & "?PLID=" & _PlanningID %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
         }
 
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

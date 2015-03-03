@@ -15,6 +15,8 @@
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" src="../System/Jscript/System.js"></script>
 	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -30,7 +32,7 @@
 					    <cc1:bwimagebutton id="btnColor" Visible="false" runat="server" ></cc1:bwimagebutton>
 					    <cc1:bwimagebutton id="btnSizeSort" runat="server"  Visible="false"></cc1:bwimagebutton>
 					    <cc1:bwimagebutton id="btnRemove" runat="server"  Visible="false"></cc1:bwimagebutton>
-					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75"><asp:Label runat="server" ID="lblSelectSet" class="fontHead" >&nbsp;Select Set:</asp:Label></td>
@@ -99,6 +101,12 @@
 				</tr>
 			</table>					
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>
 

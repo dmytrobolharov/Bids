@@ -12,6 +12,8 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .StyleDiv {
             width: 210px;
@@ -179,6 +181,7 @@
                                                 <td nowrap>
                                                     <asp:Label ID="RecordCount" runat="server" CssClass="font"></asp:Label>
                                                 </td>
+                                                <td width="110" align="right"><span id="lblRecordPerPage" class="fontHead">Records per Page:</span></td>
                                                 <td width="25">
                                                     <asp:DropDownList ID="ps" runat="server" CssClass="fontHead">
                                                         <asp:ListItem Value="5">5</asp:ListItem>
@@ -190,8 +193,6 @@
                                                         <asp:ListItem Value="30">30</asp:ListItem>
                                                         <asp:ListItem Value="40">40</asp:ListItem>
                                                         <asp:ListItem Value="50">50</asp:ListItem>
-                                                        <asp:ListItem Value="75">75</asp:ListItem>
-                                                        <asp:ListItem Value="100">100</asp:ListItem>
                                                     </asp:DropDownList>
                                                 </td>
                                                 <td width="10">
@@ -273,10 +274,9 @@
     <input type="hidden" id="hdnPlanningItems" runat="server" />    
     </form>
     <script language="javascript" type="text/javascript" src="../System/Jscript/underscore-min.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/System.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/colResizable-1.3.min.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.ui.core.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>    

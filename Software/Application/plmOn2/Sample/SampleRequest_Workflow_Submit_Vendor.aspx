@@ -36,7 +36,7 @@
 					<TD>
 						<cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:bwimagebutton id="btnVendorReplace" runat="server"></cc1:bwimagebutton>
-						<cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+						<cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False" />
 					</TD>
 				</TR>
 			</TABLE>

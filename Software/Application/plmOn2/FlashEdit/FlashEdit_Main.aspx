@@ -100,12 +100,12 @@
 								<TD width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" text="GO"></asp:button></TD>
 							</TR>
 						</TABLE>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="FlashEditFolderItemId">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="FlashEditFolderItemId" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle CssClass="TableHeader" Height="25px"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
-						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
+						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False" Text="FlashEditItemSort"></asp:label></TD>
 				</TR>
 			</TABLE>
 			</asp:Panel>

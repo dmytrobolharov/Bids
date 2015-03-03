@@ -13,7 +13,7 @@
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton id="btnDelete" runat="server" Message="Are you sure you want to delete selected costing?"
-							 ToolTip="Delete Costing..."></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" 
+							 ToolTip="Delete Costing..."></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"
 							ToolTip="Close Window..."></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
@@ -73,5 +73,11 @@
 		}
 		}
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

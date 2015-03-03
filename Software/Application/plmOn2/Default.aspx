@@ -3,7 +3,7 @@
 <HTML style="height: 100%;">
 	<HEAD>
         <meta http-equiv="x-ua-compatible" content="IE=Edge"/> 
-        <link REL='SHORTCUT ICON' href='favicon.ico'>
+        <%--<link REL='SHORTCUT ICON' href='favicon.ico'>--%>
 		<title>plmOn</title>
 		<meta content="JavaScript" name="vs_defaultClientScript"/>
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema"/>

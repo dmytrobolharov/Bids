@@ -9,7 +9,8 @@
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui-1.10.3.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .confirm-dialog {
         	display: none;        	
@@ -31,7 +32,7 @@
             <td valign="middle" align="left">
                  <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnSaveClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
         </tr>
     </table>
@@ -163,6 +164,11 @@
         }
     </script>
     </form>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

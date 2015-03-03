@@ -9,11 +9,16 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 
     <script src="../System/jscript/color.js" type="text/javascript"></script>
-
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 
     <script>
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
         function DisableEnterKey() {
             //alert(window.event.keyCode)
             if (window.event.keyCode == 13)
@@ -31,7 +36,7 @@
                     Width="3px" Height="15px" EnableTheming="False" EnableViewState="False" />
             </td>
             <td width="80">
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();"></cc1:ConfirmedImageButton>
             </td>
             <td width="75">
                 &nbsp;

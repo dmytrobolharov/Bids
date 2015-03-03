@@ -15,6 +15,8 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
         <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />                
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server" >
@@ -26,7 +28,7 @@
 					<td width="400"><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnSamplesize" runat="server" Message="Are you sure you want to change sample size?"
 							 Visible="False" ToolTip="Change Sample Size..."></cc1:confirmedimagebutton>
                              <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="75">&nbsp;<asp:label id="lblSelectSet" runat="server" CssClass="fontHead">Select Set:</asp:label></td>
 					<td width="40"><asp:dropdownlist id="dpStyleSet" runat="server" AutoPostBack="true" DataValueField="ID" DataTextField="Value"
 							CssClass="font"></asp:dropdownlist></td>
@@ -199,6 +201,11 @@
 
 
 
-
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

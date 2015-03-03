@@ -17,7 +17,7 @@
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td width="80"><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
 					<td width="80"><cc1:confirmedimagebutton id="btnMaterial" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
-					<td width="80"><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"
+					<td width="80"><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"
 							></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="75"><asp:Label id="lblSelectSet" CssClass="FontHead" runat="server" />&nbsp;Select Set:</td>
 					<td width="40"><asp:dropdownlist id="dpStyleSet" runat="server" AutoPostBack="true" DataValueField="ID" DataTextField="Value"
@@ -217,5 +217,11 @@
 		}
 		}
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

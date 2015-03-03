@@ -30,8 +30,8 @@
 	<tr>
 		<td Width="600"><asp:datagrid id="dgSourcing" runat="server" Width="450px" BorderStyle="Solid" AutoGenerateColumns="False"
 				PageSize="100" BorderWidth="1px" BorderColor="#E0E0E0" DataKeyField="StyleSourcingID"  CssClass="font">
-				<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-				<ItemStyle Height="20px" BackColor="White"></ItemStyle>
+				<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+				<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 				<Columns>
 					<asp:TemplateColumn>
 						<HeaderStyle Height="20px" Width="50px" HorizontalAlign="Center" CssClass="TableHeader"></HeaderStyle>

@@ -8,6 +8,8 @@
 	<title>Material</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,7 +21,7 @@
                 <asp:checkbox id="chkApplyAll" runat="server" ></asp:checkbox>&nbsp;&nbsp;  
                 <asp:checkbox id="chkApply" runat="server" ></asp:checkbox>&nbsp;&nbsp;                              
                 <cc1:confirmedimagebutton id="btnClear"  runat="server" />
-                <cc1:confirmedimagebutton ID="btnClose" runat="server" Message="NONE" />
+                <cc1:confirmedimagebutton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -105,5 +107,11 @@
             window.close();
         }				    
 	</script>	
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

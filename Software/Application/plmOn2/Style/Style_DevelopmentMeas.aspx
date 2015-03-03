@@ -13,7 +13,9 @@
 		<title>Style Development Spec</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
-            <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
             #DataGrid1 .TableHeader {background-repeat: repeat;}
             #DataGrid1 .TableHeaderGreen {background-repeat: repeat;}
@@ -46,12 +48,12 @@
 					        <td nowrap="nowrap">
 					            <cc1:confirmedimagebutton id="btnLink" visible="false" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
                                 <cc1:confirmedimagebutton id="btnBreakLink" visible="false" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-                                <cc1:confirmedimagebutton id="btnCritical" visible="false" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-					            <cc1:confirmedimagebutton id="btnSamplesize" visible="true" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-                                <cc1:confirmedimagebutton id="btnshowhidesizes"  visible="true" runat="server" Message="NONE" ></cc1:confirmedimagebutton>	
+                                <cc1:BWImageButton id="btnCritical" visible="false" runat="server" Message="NONE" ></cc1:BWImageButton>
+					            <cc1:BWImageButton id="btnSamplesize" visible="true" runat="server" Message="NONE" ></cc1:BWImageButton>
+                                <cc1:BWImageButton id="btnshowhidesizes"  visible="true" runat="server" Message="NONE" ></cc1:BWImageButton>	
                                 <cc1:confirmedimagebutton id="btnHowtoMeas"  visible="true" runat="server" Message="NONE" > </cc1:confirmedimagebutton>    
                                 <cc1:confirmedimagebutton id="btnEditSample" visible="true" runat="server" Message="NONE" ></cc1:confirmedimagebutton> 
-                                <cc1:confirmedimagebutton id="btnBeforeTreat" visible="true" runat="server" Message="NONE" ></cc1:confirmedimagebutton>                                                 
+                                <cc1:BWImageButton id="btnBeforeTreat" visible="true" runat="server" Message="NONE" ></cc1:BWImageButton>                                                 
                                 <cc1:confirmedimagebutton id="btnChangeMeasInfo" visible="false" runat="server" Message="NONE" ></cc1:confirmedimagebutton>     
 					        </td>
 					        <td valign="middle" align="right" height="25" width="100%">

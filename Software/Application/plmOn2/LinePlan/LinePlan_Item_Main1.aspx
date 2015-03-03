@@ -12,8 +12,9 @@
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
 	<script language="javascript" src="../System/Jscript/System.js"></script>
-	<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>    
-	
+	<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server" >
@@ -25,7 +26,7 @@
 					<TD><asp:imagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton>
 					<cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:bwimagebutton id="btnNew" runat="server"  Message="NONE">
 				        </cc1:bwimagebutton>
-				        <cc1:confirmedimagebutton   id="btnClose" runat="server" Message="NONE" CausesValidation="false" ></cc1:confirmedimagebutton></TD>
+				        <cc1:confirmedimagebutton   id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></TD>
 					<td>&nbsp;</td>
 				</TR>
 			</TABLE>
@@ -155,5 +156,11 @@
 		}
 		}
 		</script>    
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 </body>
 </html>

@@ -12,6 +12,8 @@
 	<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -25,7 +27,7 @@
 					    <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 					    <cc1:bwimagebutton id="btnSizeSort" runat="server" ></cc1:bwimagebutton>
 					    <cc1:bwimagebutton id="btnRemove" runat="server" ></cc1:bwimagebutton>
-					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
@@ -80,5 +82,11 @@
 			<BR>
 			
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

@@ -23,8 +23,14 @@
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td height="20"><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton><cc1:bwimagebutton id="btnAgentAdd" runat="server" ></cc1:bwimagebutton><cc1:confirmedimagebutton id="btnPreview" runat="server" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnTechDelete" runat="server" Message="Are you sure you want to delete tech pack?"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" 
-							CausesValidation="False"></cc1:confirmedimagebutton></td>
+					<td height="20">
+                        <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                        <cc1:bwimagebutton id="btnAgentAdd" runat="server" ></cc1:bwimagebutton>
+                        <cc1:confirmedimagebutton id="btnPreview" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnTechDelete" runat="server" Message="Are you sure you want to delete tech pack?"></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
+                        <cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
+                    </td>
 					<td>&nbsp;</td>
 				</tr>
 			</table>
@@ -264,5 +270,11 @@
 				</tr>
 			</table>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

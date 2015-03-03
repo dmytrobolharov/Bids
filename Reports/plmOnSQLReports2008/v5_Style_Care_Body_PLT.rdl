@@ -243,185 +243,205 @@
         <Width>8.25in</Width>
         <Style />
       </Rectangle>
-      <Tablix Name="Tablix4">
-        <TablixCorner>
-          <TablixCornerRows>
-            <TablixCornerRow>
-              <TablixCornerCell>
-                <CellContents>
-                  <Textbox Name="Textbox10">
-                    <CanGrow>true</CanGrow>
-                    <KeepTogether>true</KeepTogether>
-                    <Paragraphs>
-                      <Paragraph>
-                        <TextRuns>
-                          <TextRun>
-                            <Value>Row</Value>
-                            <Style>
-                              <Color>White</Color>
-                            </Style>
-                          </TextRun>
-                        </TextRuns>
-                        <Style />
-                      </Paragraph>
-                    </Paragraphs>
-                    <rd:DefaultName>Textbox10</rd:DefaultName>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                      <PaddingLeft>2pt</PaddingLeft>
-                      <PaddingRight>2pt</PaddingRight>
-                      <PaddingTop>2pt</PaddingTop>
-                      <PaddingBottom>2pt</PaddingBottom>
-                    </Style>
-                  </Textbox>
-                </CellContents>
-              </TablixCornerCell>
-            </TablixCornerRow>
-          </TablixCornerRows>
-        </TablixCorner>
+      <Tablix Name="Tablix5">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.55in</Width>
+              <Width>1.47in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.11in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.55in</Height>
+              <Height>0.25in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Rectangle Name="Rectangle1">
-                      <ReportItems>
-                        <Tablix Name="Tablix5">
-                          <TablixBody>
-                            <TablixColumns>
-                              <TablixColumn>
-                                <Width>1.47in</Width>
-                              </TablixColumn>
-                            </TablixColumns>
-                            <TablixRows>
-                              <TablixRow>
-                                <Height>1.2in</Height>
-                                <TablixCells>
-                                  <TablixCell>
-                                    <CellContents>
-                                      <Image Name="Image2">
-                                        <Source>External</Source>
-                                        <Value>=Fields!Imagepath.Value</Value>
-                                        <Sizing>FitProportional</Sizing>
-                                        <Style>
-                                          <Border>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                        </Style>
-                                      </Image>
-                                    </CellContents>
-                                  </TablixCell>
-                                </TablixCells>
-                              </TablixRow>
-                            </TablixRows>
-                          </TablixBody>
-                          <TablixColumnHierarchy>
-                            <TablixMembers>
-                              <TablixMember>
-                                <Group Name="Alias">
-                                  <GroupExpressions>
-                                    <GroupExpression>=Fields!Alias.Value</GroupExpression>
-                                  </GroupExpressions>
-                                </Group>
-                                <SortExpressions>
-                                  <SortExpression>
-                                    <Value>=Fields!Alias.Value</Value>
-                                  </SortExpression>
-                                </SortExpressions>
-                                <TablixHeader>
-                                  <Size>0.25in</Size>
-                                  <CellContents>
-                                    <Textbox Name="Alias">
-                                      <CanGrow>true</CanGrow>
-                                      <KeepTogether>true</KeepTogether>
-                                      <Paragraphs>
-                                        <Paragraph>
-                                          <TextRuns>
-                                            <TextRun>
-                                              <Value>=Fields!Alias.Value</Value>
-                                              <Style>
-                                                <FontFamily>Arial Unicode MS</FontFamily>
-                                                <FontWeight>Bold</FontWeight>
-                                              </Style>
-                                            </TextRun>
-                                          </TextRuns>
-                                          <Style>
-                                            <TextAlign>Center</TextAlign>
-                                          </Style>
-                                        </Paragraph>
-                                      </Paragraphs>
-                                      <rd:DefaultName>Alias</rd:DefaultName>
-                                      <Style>
-                                        <Border>
-                                          <Style>Solid</Style>
-                                        </Border>
-                                        <TopBorder>
-                                          <Color>Black</Color>
-                                          <Style>Solid</Style>
-                                          <Width>1pt</Width>
-                                        </TopBorder>
-                                        <BottomBorder>
-                                          <Color>Black</Color>
-                                          <Style>Solid</Style>
-                                          <Width>1pt</Width>
-                                        </BottomBorder>
-                                        <LeftBorder>
-                                          <Color>Black</Color>
-                                          <Style>Solid</Style>
-                                          <Width>1pt</Width>
-                                        </LeftBorder>
-                                        <RightBorder>
-                                          <Color>Black</Color>
-                                          <Style>Solid</Style>
-                                          <Width>1pt</Width>
-                                        </RightBorder>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
-                                        <PaddingTop>2pt</PaddingTop>
-                                        <PaddingBottom>2pt</PaddingBottom>
-                                      </Style>
-                                    </Textbox>
-                                  </CellContents>
-                                </TablixHeader>
-                                <Visibility>
-                                  <Hidden>=iif(Fields!Alias.Value="Special" and Fields!Name.Value="StyleCareSpecial",true,false)</Hidden>
-                                </Visibility>
-                              </TablixMember>
-                            </TablixMembers>
-                          </TablixColumnHierarchy>
-                          <TablixRowHierarchy>
-                            <TablixMembers>
-                              <TablixMember />
-                            </TablixMembers>
-                          </TablixRowHierarchy>
-                          <DataSetName>ds_CareSelect</DataSetName>
-                          <Left>0.05in</Left>
-                          <Height>1.45in</Height>
-                          <Width>1.47in</Width>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                          </Style>
-                        </Tablix>
-                      </ReportItems>
+                    <Textbox Name="Alias">
+                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
-                      <ZIndex>3</ZIndex>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Alias.Value</Value>
+                              <Style>
+                                <FontFamily>Arial Unicode MS</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Alias</rd:DefaultName>
+                      <Visibility>
+                        <Hidden>=IsNothing(Fields!Column.Value)</Hidden>
+                      </Visibility>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Arial Unicode MS</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox12</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                    </Rectangle>
+                    </Textbox>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>1.2in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Image Name="Image2">
+                      <Source>External</Source>
+                      <Value>=Fields!Imagepath.Value</Value>
+                      <Sizing>FitProportional</Sizing>
+                      <Visibility>
+                        <Hidden>=IsNothing(Fields!Column.Value)</Hidden>
+                      </Visibility>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Image>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.1in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -431,7 +451,7 @@
         <TablixColumnHierarchy>
           <TablixMembers>
             <TablixMember>
-              <Group Name="Column">
+              <Group Name="Col">
                 <GroupExpressions>
                   <GroupExpression>=Fields!Column.Value</GroupExpression>
                 </GroupExpressions>
@@ -441,40 +461,10 @@
                   <Value>=Fields!Column.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <TablixHeader>
-                <Size>0.0625in</Size>
-                <CellContents>
-                  <Textbox Name="Column">
-                    <CanShrink>true</CanShrink>
-                    <KeepTogether>true</KeepTogether>
-                    <Paragraphs>
-                      <Paragraph>
-                        <TextRuns>
-                          <TextRun>
-                            <Value>=Fields!Column.Value</Value>
-                            <Style>
-                              <Color>White</Color>
-                            </Style>
-                          </TextRun>
-                        </TextRuns>
-                        <Style>
-                          <TextAlign>Center</TextAlign>
-                        </Style>
-                      </Paragraph>
-                    </Paragraphs>
-                    <rd:DefaultName>Column</rd:DefaultName>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                      <PaddingLeft>2pt</PaddingLeft>
-                      <PaddingRight>2pt</PaddingRight>
-                      <PaddingTop>2pt</PaddingTop>
-                      <PaddingBottom>2pt</PaddingBottom>
-                    </Style>
-                  </Textbox>
-                </CellContents>
-              </TablixHeader>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixColumnHierarchy>
@@ -491,59 +481,28 @@
                   <Value>=Fields!Row.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <TablixHeader>
-                <Size>0.03125in</Size>
-                <CellContents>
-                  <Textbox Name="Row">
-                    <CanGrow>true</CanGrow>
-                    <KeepTogether>true</KeepTogether>
-                    <Paragraphs>
-                      <Paragraph>
-                        <TextRuns>
-                          <TextRun>
-                            <Value>=Fields!Row.Value</Value>
-                            <Style>
-                              <Color>White</Color>
-                            </Style>
-                          </TextRun>
-                        </TextRuns>
-                        <Style />
-                      </Paragraph>
-                    </Paragraphs>
-                    <rd:DefaultName>Row</rd:DefaultName>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                      <PaddingLeft>2pt</PaddingLeft>
-                      <PaddingRight>2pt</PaddingRight>
-                      <PaddingTop>2pt</PaddingTop>
-                      <PaddingBottom>2pt</PaddingBottom>
-                    </Style>
-                  </Textbox>
-                </CellContents>
-              </TablixHeader>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ds_CareSelect</DataSetName>
-        <Top>2.33in</Top>
-        <Left>0.0375in</Left>
-        <Height>1.6125in</Height>
-        <Width>1.58125in</Width>
+        <Top>2.28694in</Top>
+        <Left>0.125in</Left>
+        <Height>1.55in</Height>
+        <Width>1.58in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
-            <Color>LightGrey</Color>
             <Style>None</Style>
           </Border>
-          <RightBorder>
-            <Style>None</Style>
-          </RightBorder>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.5in</Height>
+    <Height>8in</Height>
     <Style />
   </Body>
   <Width>8.5in</Width>
@@ -624,7 +583,7 @@
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpx_Style_Care_SELECT</CommandText>
+        <CommandText>rpx_Style_Care_PLT_SELECT</CommandText>
       </Query>
       <Fields>
         <Field Name="Row">

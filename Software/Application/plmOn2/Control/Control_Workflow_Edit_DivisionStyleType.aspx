@@ -46,7 +46,7 @@
                 <td>
                     <cc1:ConfirmedImageButton ID="btnSaveOnly" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                 </td>
                 <td class="FontHead" align="right" width="75">
                 </td>
@@ -134,6 +134,12 @@
             } else {
                 img.src = "../System/Icons/icon_Next.gif";
             }
+        }
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
         }
     </script>
 </body>

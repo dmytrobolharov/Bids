@@ -4,10 +4,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-		<title>Material</title>
-		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
-        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-		<script language="javascript" src="../System/Jscript/Custom.js"></script>
+	<title>Material</title>
+	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" src="../System/Jscript/Custom.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
  <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -18,9 +20,9 @@
                 <tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton 
-					    id="btnSave" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-					    id="btnRemove" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_remove.gif" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-					    id="btnClose" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" CausesValidation="false"  OnClientClick="javascript:Page_ValidationActive = false;"  Message="NONE"></cc1:confirmedimagebutton></td>
+					    id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
+					    id="btnRemove" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
+					    id="btnClose" runat="server" CausesValidation="false"  OnClientClick="javascript:Page_ValidationActive = false; return btnClose_Click()"  Message="NONE"></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
 					<td></td>
@@ -71,5 +73,11 @@
     
 					
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

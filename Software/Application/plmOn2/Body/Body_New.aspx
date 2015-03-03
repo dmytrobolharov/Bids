@@ -35,7 +35,7 @@
 					<TD>
 						<asp:ImageButton id="btnSave" runat="server" ></asp:ImageButton>
 						<cc1:confirmedimagebutton id="imgBtnNext" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"  CausesValidation="False"></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"  CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
                     </TD>
 				</TR>
 			</TABLE>
@@ -82,5 +82,11 @@
 			</table>
 						
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

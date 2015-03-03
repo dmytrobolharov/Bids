@@ -4,23 +4,23 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <HTML>
 	<HEAD>
-		  <title runat="server" id="PageTitle"></title>
-		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
-		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
-		<meta content="JavaScript" name="vs_defaultClientScript">
-		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
-		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
-		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
-		<link href="../System/CSS/mamagi.css" type="text/css" rel="stylesheet">
-                 <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
-          <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-		<script language="javascript" src='../System/Jscript/YSCalendarFunctions.js'></script>
-		
-	
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
-    <script language="javascript" type="text/javascript" src='../System/Jscript/YSCustomFunctions.js'></script>
+        <title runat="server" id="PageTitle"></title>
+        <meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+        <meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
+        <meta content="JavaScript" name="vs_defaultClientScript">
+        <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+        <LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/mamagi.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" src='../System/Jscript/YSCalendarFunctions.js'></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
+        <%--<script language="javascript" type="text/javascript" src='../System/Jscript/YSCustomFunctions.js'></script>--%>
+
 	<script language="javascript" type="text/javascript">
 
 
@@ -221,11 +221,11 @@
 					<TD><cc1:confirmedimagebutton id="btnMakeMeasurement" runat="server" visible="false" MESSAGE="NONE" onclientclick="javascript:enterMeasurement();return false;"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnSave" OnClientClick="javascript:if(checkSubmit()==false){return false;}" runat="server" MESSAGE="NONE"></cc1:confirmedimagebutton>
                         <cc1:bwimagebutton id="btnGoToStyle" runat="server" ></cc1:bwimagebutton>
-						<cc1:confirmedimagebutton id="btnPreview" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+						<cc1:bwimagebutton id="btnPreview" runat="server" Message="NONE"></cc1:bwimagebutton>
 						<cc1:confirmedimagebutton id="btnDelete" runat="server"  ></cc1:confirmedimagebutton>
 						<cc1:bwimagebutton id="btnLog" runat="server" ></cc1:bwimagebutton>
-						<cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+						<cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 						<cc1:BWImageButton id="btnChangeLog" runat="server" CausesValidation="False"/>
                         <asp:HiddenField ID="HFSubmitForm" runat="server" Value="0" />
 					</TD>
@@ -268,4 +268,10 @@
 			</form>
 			
 	</body>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </HTML>

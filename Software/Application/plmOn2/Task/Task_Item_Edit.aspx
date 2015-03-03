@@ -21,7 +21,7 @@
 			    <TD><cc1:confirmedimagebutton 
 			    id="btnAdd" runat="server"  Message="NONE" style="height: 24px"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
 			    id="btnSave" runat="server" Message="NONE" style="height: 24px"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-			    id="btnClose" runat="server" Message="NONE" style="height: 24px"></cc1:confirmedimagebutton>
+			    id="btnClose" runat="server" Message="NONE" style="height: 24px" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 			    </TD>
 		    </TR>
 	    </TABLE>
@@ -112,5 +112,11 @@
     </div>
     
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

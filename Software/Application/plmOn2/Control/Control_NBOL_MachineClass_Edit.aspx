@@ -9,6 +9,8 @@
     <title>Untitled Page</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
     .rightAlign 
     {
@@ -30,7 +32,7 @@
 					    <cc1:ConfirmedImageButton ID="btnSaveNew" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
 					    <%--<cc1:bwimagebutton id="btnSizeSort" runat="server" ></cc1:bwimagebutton>--%>
 					    <cc1:confirmedimagebutton id="btnDelete" runat="server" CausesValidation="false"></cc1:confirmedimagebutton>
-					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
@@ -115,6 +117,11 @@
             }
         }
     </script>
-        
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

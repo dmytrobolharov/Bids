@@ -12,6 +12,8 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -28,7 +30,7 @@
 						<cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnCreateSpec" runat="server"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnDelete" runat="server" ></cc1:confirmedimagebutton>
-                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75">&nbsp;<asp:Label ID="lblHeader2" runat="server"></asp:Label></td>
 					<td width="40"><asp:dropdownlist id="dpStyleSet" runat="server" AutoPostBack="true" DataValueField="ID" DataTextField="Value"
@@ -351,5 +353,11 @@
 				<td valign="middle" align="center" width="7"><IMG src="../System/Images/table_bar_right.gif"></td>
 			</tr>
 		</table>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

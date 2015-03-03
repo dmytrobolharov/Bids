@@ -7,6 +7,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -20,7 +22,7 @@
                         <asp:ImageButton id="btnBack" runat="server" TabIndex="100" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif"></asp:ImageButton>
                         <asp:ImageButton id="btnSave" runat="server" TabIndex="101" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif"></asp:ImageButton>
                         <asp:ImageButton id="btnSaveClose" runat="server" TabIndex="102" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif"></asp:ImageButton>
-                        <asp:ImageButton id="btnClose" runat="server" TabIndex="103" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" ></asp:ImageButton>
+                        <asp:ImageButton id="btnClose" runat="server" TabIndex="103" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" OnClientClick="return btnClose_Click()" ></asp:ImageButton>
                     </td>
 				</tr>
 			</table>
@@ -101,5 +103,11 @@
             }
         }
 	</script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

@@ -15,6 +15,14 @@
     <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script>
+    function btnClose_Click() {
+        <%= strExitScript %>
+        return false;
+    }
+    </script>
 </head>
 <body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -35,7 +43,7 @@
                 <cc1:BWImageButton ID="btnRGB" runat="server"></cc1:BWImageButton>
                 <cc1:ConfirmedImageButton ID="btnRemove" runat="server"></cc1:ConfirmedImageButton>
                 <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();"></cc1:ConfirmedImageButton>
             </td>
             <td>
             </td>

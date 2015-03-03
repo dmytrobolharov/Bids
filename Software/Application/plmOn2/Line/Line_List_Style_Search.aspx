@@ -73,7 +73,7 @@
 					<asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Height="0px"></asp:imagebutton>
 					<cc1:confirmedimagebutton id="btnNew" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 				    <!--<cc1:confirmedimagebutton id="btnNewStyle" runat="server" Message="NONE"></cc1:confirmedimagebutton>-->
-					<cc1:confirmedimagebutton id="imgBtnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="imgBtnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 				</tr>
 			</table>
@@ -230,6 +230,10 @@
                     if (e.type == 'checkbox')
                         e.checked = actVar;
                 }
+            }
+            function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
             }
         </script>
 	</body>

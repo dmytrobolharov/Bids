@@ -5,13 +5,15 @@
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
-	<HEAD runat="server">
+	<head runat="server">
 		<title runat="server" id="PageTitle"></title>
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
         <script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-</head>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    </head>
 <body>
 		<form id="form1" method="post" runat="server">
 			<table height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">

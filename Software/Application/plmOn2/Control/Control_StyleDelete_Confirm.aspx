@@ -102,6 +102,10 @@
                     <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
              
                     <Columns>
+                        <asp:TemplateColumn ItemStyle-Width="50px">
+                            <HeaderTemplate><%# GetSystemText("Picture")%></HeaderTemplate>
+                            <ItemTemplate><asp:Image runat="server" ID="imgDesignSketchID" ImageUrl='<%# GetImageStreamPath("50", Eval("DesignSketchVersion").ToString, Eval("DesignSketchID").ToString) %>' /></ItemTemplate>
+                        </asp:TemplateColumn>
                         <asp:BoundColumn DataField="Description"  ItemStyle-Width="200">
                         </asp:BoundColumn>
                         <asp:BoundColumn DataField="StyleNo" ></asp:BoundColumn>

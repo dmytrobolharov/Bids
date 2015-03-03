@@ -17,8 +17,9 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="Form1" runat="server">
@@ -54,7 +55,7 @@
                 <cc1:bwimagebutton id="btnGoToStyle" runat="server" ></cc1:bwimagebutton>
                 <cc1:BWImageButton ID="btnCopyQuote" runat="server"></cc1:BWImageButton>
                 <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton>
                 
             </td>
             <td>
@@ -595,6 +596,11 @@
 
             function refresh() {
                 <%= ClientScript.GetPostBackEventReference(New PostBackOptions(imgBtnTechPackAdd) With {.PerformValidation = False}) %>;                
+            }
+
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
             }
         </script>
 </html>

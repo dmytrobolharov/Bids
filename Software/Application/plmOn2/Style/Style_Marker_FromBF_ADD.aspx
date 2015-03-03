@@ -28,7 +28,7 @@
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"></td>
 					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td width="40"></td>
 					<td></td>
 				</tr>
@@ -101,5 +101,11 @@
 		        if (window.event.keyCode == 13) window.event.keyCode = 0;
 		    }
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

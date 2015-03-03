@@ -24,7 +24,7 @@
 					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 					<cc1:ConfirmedImageButton ID="btnAdd" runat="server" Message="NONE" Visible="False" CausesValidation="False"></cc1:ConfirmedImageButton>
 					<img alt='' runat="server" id="Img1" style="display: none;" onclick="Upload_Click();return false;" />
-					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"  CausesValidation="False"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"  CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
@@ -159,5 +159,9 @@
 		            alert("These file(s) are already in the queue : \r\n\t" + sames.join('\r\n\t'));
 		        }
 		    }
+            function btnClose_Click() {
+                        <%= strExitScript %>
+                        return false;
+                    }
 </script>
 </HTML>

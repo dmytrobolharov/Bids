@@ -11,6 +11,7 @@
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .dropimage
         {
@@ -36,7 +37,7 @@
             </td>
             <td>
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
             <td>
                 &nbsp;
@@ -236,5 +237,11 @@
         }
     </script>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

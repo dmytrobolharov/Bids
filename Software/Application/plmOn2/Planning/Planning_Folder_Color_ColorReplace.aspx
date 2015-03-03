@@ -10,6 +10,8 @@
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet"></link>
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
     <style type="text/css">
         .color-chip {
@@ -145,8 +147,7 @@
 			</tr>
 		</table>
         <div id="dialog-message" style="display: none;"><p><%= GetSystemText("Please select colors to replace and a replacement color before clicking the replace color button")%></p></div>
-        <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-        <script type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+        <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
         <script type="text/javascript">
             if ($("#dlColors [id*='chkSelect']").length == 1)
             {

@@ -811,7 +811,7 @@
                                               <ActionInfo>
                                                 <Actions>
                                                   <Action>
-                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "'))", Nothing)</Hyperlink>
+                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "&amp;UPD=1'))", Nothing)</Hyperlink>
                                                   </Action>
                                                 </Actions>
                                               </ActionInfo>
@@ -849,7 +849,7 @@
                                               <ActionInfo>
                                                 <Actions>
                                                   <Action>
-                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "'))", Nothing)</Hyperlink>
+                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "&amp;UPD=1'))", Nothing)</Hyperlink>
                                                   </Action>
                                                 </Actions>
                                               </ActionInfo>
@@ -887,7 +887,7 @@
                                               <ActionInfo>
                                                 <Actions>
                                                   <Action>
-                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "'))", Nothing)</Hyperlink>
+                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "&amp;UPD=1'))", Nothing)</Hyperlink>
                                                   </Action>
                                                 </Actions>
                                               </ActionInfo>
@@ -927,7 +927,7 @@
                                               <ActionInfo>
                                                 <Actions>
                                                   <Action>
-                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "'))", Nothing)</Hyperlink>
+                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "&amp;UPD=1'))", Nothing)</Hyperlink>
                                                   </Action>
                                                 </Actions>
                                               </ActionInfo>
@@ -965,7 +965,7 @@
                                               <ActionInfo>
                                                 <Actions>
                                                   <Action>
-                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "'))", Nothing)</Hyperlink>
+                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "&amp;UPD=1'))", Nothing)</Hyperlink>
                                                   </Action>
                                                 </Actions>
                                               </ActionInfo>
@@ -1003,7 +1003,7 @@
                                               <ActionInfo>
                                                 <Actions>
                                                   <Action>
-                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "'))", Nothing)</Hyperlink>
+                                                    <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "&amp;UPD=1'))", Nothing)</Hyperlink>
                                                   </Action>
                                                 </Actions>
                                               </ActionInfo>
@@ -1017,6 +1017,7 @@
                                                 <PaddingBottom>2pt</PaddingBottom>
                                               </Style>
                                             </Textbox>
+                                            <rd:Selected>true</rd:Selected>
                                           </CellContents>
                                         </TablixCell>
                                       </TablixCells>
@@ -1193,7 +1194,7 @@
                                             <ActionInfo>
                                               <Actions>
                                                 <Action>
-                                                  <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "'))", Nothing)</Hyperlink>
+                                                  <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "&amp;UPD=1'))", Nothing)</Hyperlink>
                                                 </Action>
                                               </Actions>
                                             </ActionInfo>
@@ -1234,7 +1235,7 @@
                                                 <ActionInfo>
                                                   <Actions>
                                                     <Action>
-                                                      <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "'))", Nothing)</Hyperlink>
+                                                      <Hyperlink>=IIf(Globals!RenderFormat.IsInteractive(), "javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "server").ToString() &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString() &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString() &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString() &amp; "&amp;SHID=" &amp; Fields!SourcingHeaderID.Value.ToString() &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString() &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString() &amp; "&amp;UPD=1'))", Nothing)</Hyperlink>
                                                     </Action>
                                                   </Actions>
                                                 </ActionInfo>

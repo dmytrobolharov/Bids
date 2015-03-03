@@ -93,7 +93,12 @@
 	                    Event.observe(window,'load',function() {
 	                    var sHex = '<% = Request.QueryString("HEX") %>';
 	                    cp1 = new Refresh.Web.ColorPicker('cp1', { startHex: '' + sHex + '', startMode: 's' });
-	                    });
+	                });
+
+                    function btnClose_Click() {
+                        <%= strExitScript %>
+                        return false;
+                    }
 	                </script>
 	        </div>        
             <div visible="false" style="visibility: hidden">    
@@ -121,7 +126,7 @@
                     &nbsp;</td>
                 <td align="center" width="300">
                     <asp:ImageButton ID="btnSave" runat="server"/>
-                    <asp:ImageButton ID="btnClose" runat="server"/>
+                    <asp:ImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click();"/>
                 </td>
                 <td align="center">
                     &nbsp;</td>

@@ -9,6 +9,8 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -18,7 +20,7 @@
 					<td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3" alt="" /></td>
 					<td>
 						<asp:ImageButton ID="btnSave" runat="server" ></asp:ImageButton>
-						<asp:ImageButton ID="btnClose" runat="server" CausesValidation="false"></asp:ImageButton></td>
+						<asp:ImageButton ID="btnClose" runat="server" CausesValidation="false" OnClientClick="return btnClose_Click()"></asp:ImageButton></td>
 				</tr>
 			</table>            
             <table style="border-bottom: orange thin solid; border-left-style: none; height: 24px; background-color: white"
@@ -200,6 +202,11 @@
 			    }
 
 		</script>
-		
+		<script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

@@ -23,7 +23,7 @@
 					<td>
 					    <cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:BWImageButton id="btnLockFolder" runat="server" ></cc1:BWImageButton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 					<td class="fontHead" align="right" width="75"></td>
 					<td width="40"></td>
@@ -69,5 +69,11 @@
 				</ItemTemplate>
 			</asp:datalist></form>
 		<asp:Label id="lblWarning" runat="server" CssClass="fontHead"></asp:Label>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

@@ -17,6 +17,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -131,8 +133,8 @@
     </table>
     <asp:DataGrid ID="dgSampleWorkflow" runat="server" BorderColor="#E0E0E0" BorderStyle="Solid"
         BorderWidth="1px" PageSize="100" AutoGenerateColumns="false">
-        <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-        <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+        <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
         <HeaderStyle Height="20px"></HeaderStyle>
     </asp:DataGrid><cc3:DataCalendar ID="DataCalendar1" runat="server" BorderColor="Silver"
         DayField="Duedate" Width="100%" Font-Name="Tahoma" DayNameFormat="Full" NextPrevFormat="FullMonth"

@@ -10,6 +10,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .BOMColorwayList {
         	width: 200px;
@@ -87,7 +89,7 @@
                     ID="btnGoToStyle" runat="server"></cc1:BWImageButton><cc1:ConfirmedImageButton ID="btnDrop" runat="server">
                     </cc1:ConfirmedImageButton><cc1:ConfirmedImageButton ID="btnSetActive" runat="server"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnRemove" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
         </tr>
     </table>    
@@ -286,6 +288,12 @@
         $(document).ready(function () {
             $("input[value*='../System/Icons/icon_info.gif']").val("");
         });
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

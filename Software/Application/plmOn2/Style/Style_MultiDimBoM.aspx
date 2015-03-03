@@ -13,6 +13,8 @@ spx_StyleMaterialLogic_Linked_UPDATE
 <head runat="server">
 		<title>Material</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <script language="JavaScript">
 		<!--
 			if (window.screen) {

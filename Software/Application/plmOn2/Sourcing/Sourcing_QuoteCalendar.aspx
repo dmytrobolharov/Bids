@@ -29,6 +29,8 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -42,7 +44,7 @@
                         <cc1:bwimagebutton id="btnAddCalendar" visible="true" runat="server" ></cc1:bwimagebutton>
                         <cc1:confirmedimagebutton id="btnRemoveCalendar" runat="server"></cc1:confirmedimagebutton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();" ></cc1:confirmedimagebutton>
                     </td>
 				</tr>
 			</table>
@@ -103,6 +105,11 @@
                     //if (tCalReferenceId)
                     var newWin = window.open("../TimeAction/TimeAction_Frame.aspx?TID=" + tCalReferenceId, "dp", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=200,height=180,left=375,top=200");
                     newWin.focus();
+                }
+
+                function btnClose_Click() {
+                    <%= strExitScript %>
+                    return false;
                 }
             </script>
 	</body>

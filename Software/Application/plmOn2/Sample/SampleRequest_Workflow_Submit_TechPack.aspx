@@ -19,7 +19,8 @@
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td height="20"><cc1:confirmedimagebutton id="btnSend" runat="server" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnPreview" runat="server" ></cc1:confirmedimagebutton><cc1:bwimagebutton id="btnTechLog" runat="server"></cc1:bwimagebutton><cc1:confirmedimagebutton id="btnTechDelete" runat="server" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"></cc1:confirmedimagebutton></td>
+					<td height="20"><cc1:confirmedimagebutton id="btnSend" runat="server" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnPreview" runat="server" ></cc1:confirmedimagebutton><cc1:bwimagebutton id="btnTechLog" runat="server"></cc1:bwimagebutton><cc1:confirmedimagebutton id="btnTechDelete" runat="server" ></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td>&nbsp;</td>
 				</tr>
 			</table>
@@ -101,8 +102,8 @@
 						</table>
 						<asp:datagrid id="dgTechMessage" runat="server" Width="100%" ShowHeader="False" BorderColor="#E0E0E0"
 							BorderStyle="Solid" BorderWidth="1px" PageSize="100" AutoGenerateColumns="False">
-							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+							<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<Columns>
 								<asp:TemplateColumn>
 									<ItemStyle Width="25px"></ItemStyle>
@@ -133,8 +134,8 @@
 						</table>
 						<asp:datagrid id="dgTechPage" runat="server" Width="100%" AutoGenerateColumns="False" PageSize="100"
 							BorderWidth="1px" BorderStyle="Solid" BorderColor="#E0E0E0" ShowHeader="False">
-							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+							<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Width="100%"></HeaderStyle>
 							<Columns>
 								<asp:TemplateColumn>
@@ -170,8 +171,8 @@
 									</tr>
 								</table>
 							</HeaderTemplate>
-							<AlternatingItemStyle Height="20px" CssClass="font" BackColor="White"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="AliceBlue"></ItemStyle>
+							<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<ItemTemplate>
 								<TABLE>
 									<TR>
@@ -192,8 +193,8 @@
 							<HeaderTemplate>
 								&nbsp;<asp:Label ID="lblSelectTradePartnerH" runat="server"><%#GetSystemText("Select Trade Partner...")%></asp:Label>
 							</HeaderTemplate>
-							<AlternatingItemStyle Height="20px" CssClass="font" BackColor="White"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="AliceBlue"></ItemStyle>
+							<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<ItemTemplate>
 								<TABLE height="25" cellSpacing="0" cellPadding="0" width="100%" border="0">
 									<TR>
@@ -264,5 +265,11 @@
 				</tr>
 			</table>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

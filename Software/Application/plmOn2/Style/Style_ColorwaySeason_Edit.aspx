@@ -14,7 +14,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -30,7 +31,7 @@
 					    <cc1:bwimagebutton id="btnColor"  runat="server" ></cc1:bwimagebutton>
 					    <cc1:bwimagebutton id="btnSizeSort" runat="server"  Visible="false"></cc1:bwimagebutton>
 					    <cc1:bwimagebutton id="btnRemove" runat="server"  Visible="false"></cc1:bwimagebutton>
-					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>
 					    <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75"><asp:label id="lblSelectSet" runat="server">&nbsp;Select Set:</asp:label></td>
@@ -87,6 +88,12 @@
                 $(this).closest('td').css('background-color', 'LightGray');
             })
         })
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

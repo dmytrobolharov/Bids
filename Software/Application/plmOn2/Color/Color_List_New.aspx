@@ -1,4 +1,6 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Color_List_New.aspx.vb" Inherits="plmOnApp.Color_List_New" %>
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Color_List_New.aspx.vb"
+    Inherits="plmOnApp.Color_List_New" %>
+
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <HTML>
@@ -20,6 +22,10 @@
             if (window.event.keyCode == 13)
             window.event.keyCode =0;
             } 
+function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
         </script>
 		<form id="Form1" method="post" runat="server">
 			<TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
@@ -27,7 +33,7 @@
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-                        <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="False" ></cc1:confirmedimagebutton></TD>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 			<table height="25" cellSpacing="0" cellPadding="0" width="100%" bgColor="#cddeee" border="0">

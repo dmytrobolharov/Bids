@@ -31,7 +31,7 @@
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnSaveMeasurements" runat="server" Message="NONE" />
                 <cc1:ConfirmedImageButton ID="btnLink" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
         </tr>
     </table>
@@ -687,5 +687,10 @@
         $(allCheckBoxes).attr("checked", setChecked)
     }
 </script>
-
+<script language="javascript">
+	function btnClose_Click() {
+		<%= strExitScript %>
+        return false;
+    }
+</script>
 </html>

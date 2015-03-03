@@ -24,18 +24,14 @@
                 <cc1:ConfirmedImageButton ID="btnNewUpload" runat="server" Message="NONE" >
                 </cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnNewTask" runat="server" 
-                    Message="NONE"></cc1:ConfirmedImageButton>
+                    Message="NONE" OnClientClick="btnNewTask_Click()"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnNewIssue" runat="server" Message="NONE" 
-                    CausesValidation="False"></cc1:ConfirmedImageButton>
+                    CausesValidation="False" OnClientClick="btnNewIssue_Click()"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" 
                     Visible="False" CausesValidation="False"></cc1:ConfirmedImageButton>
                  <cc1:bwimagebutton id="btnImageSelect" runat="server" ></cc1:bwimagebutton>   
                  <cc1:bwimagebutton id="btnMultiUploadWin" runat="server" ></cc1:bwimagebutton>
 
-                    
-                <%--<cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" visible="false"
-                    ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_attachfileMulti.gif" CausesValidation="False">
-                </cc1:ConfirmedImageButton>--%>
             </td>
             <td class="fontHead" align="right" width="75">
             </td>
@@ -455,6 +451,17 @@
                     e.checked = actVar;
             }
         }
+
+        function btnNewTask_Click() {
+		    <%= strOpenScript %>
+            return false;
+        }
+
+        function btnNewIssue_Click() {
+		    <%= strIssueScript %>
+            return false;
+        }
+        
     </script>
 
 </body>

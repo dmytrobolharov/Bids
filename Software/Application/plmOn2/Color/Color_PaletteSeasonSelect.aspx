@@ -7,6 +7,12 @@
 <head runat="server">
     <title runat="server" id="PageTitle">Select Season</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <script>
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -62,7 +68,7 @@
 		        <td align="center" width="50">&nbsp;</td>
 		        <td align="center" width="500">
 			        <asp:imagebutton id="btnSave" runat="server" ></asp:imagebutton>
-			        <asp:imagebutton id="btnClose" runat="server" ></asp:imagebutton>
+			        <asp:imagebutton id="btnClose" runat="server" OnClientClick="return btnClose_Click();"></asp:imagebutton>
 		        </td>
 		        <td align="center">&nbsp;</td>
 	        </tr>

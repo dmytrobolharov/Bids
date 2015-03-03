@@ -92,7 +92,7 @@
                                     </td>
                                     <td class="fontHead">
                                         <cc1:confirmedimagebutton id="btnSaveSort" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-                                        <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_upload.gif&PL=EN-US" Message="NONE"></cc1:ConfirmedImageButton>
+                                        <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                                         <cc1:ConfirmedImageButton ID="btnDeleteFitPhotos" runat="server" Message="Are you sure you want to remove this photo?"></cc1:ConfirmedImageButton>
                                     </td>
                                 </tr>

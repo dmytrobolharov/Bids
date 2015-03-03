@@ -12,8 +12,8 @@
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif" Message="NONE"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" Message="NONE"></cc1:confirmedimagebutton>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
@@ -42,15 +42,21 @@
 							BorderStyle="Outset"></asp:listbox></TD>
 					<TD class="fonthead" align="center">(+/-)<br>
 						<br>
-						<asp:imagebutton id="btnaddall" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_nav_last1.gif"></asp:imagebutton><BR>
-						<asp:imagebutton id="btnadditem" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_nav_next.gif"></asp:imagebutton><BR>
-						<asp:imagebutton id="btnremoveitem" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_nav_prev.gif"></asp:imagebutton><BR>
-						<asp:imagebutton id="btnremoveall" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_nav_first1.gif"></asp:imagebutton><BR>
+						<asp:imagebutton id="btnaddall" runat="server"></asp:imagebutton><BR>
+						<asp:imagebutton id="btnadditem" runat="server"></asp:imagebutton><BR>
+						<asp:imagebutton id="btnremoveitem" runat="server"></asp:imagebutton><BR>
+						<asp:imagebutton id="btnremoveall" runat="server"></asp:imagebutton><BR>
 					</TD>
 					<TD align="center"><asp:listbox id="lstSelected" CssClass="fonthead" Width="250px" Height="550px" SelectionMode="Multiple"
 							Runat="server"></asp:listbox></TD>
 				</TR>
 			</TABLE>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

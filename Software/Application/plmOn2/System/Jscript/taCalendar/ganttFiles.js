@@ -2740,18 +2740,20 @@ Ganttalendar.prototype.drawTask = function (task) {
         //progress
         if (task.progress > 0) {
             var progress = svg.rect(taskSvg, 0, 0, (task.progress > 100 ? 100 : task.progress) + "%", "100%", {fill:(task.progress > 100 ? "red" : "rgb(153,255,51)"), rx:"6", ry:"6", opacity:.4});
-            if (dimensions.width>50){
-                var textStyle={fill:"#888", "font-size":"10px"};
-                if (task.progress>90)
-                    textStyle.transform="translate(-30)";
-                svg.text(taskSvg, (task.progress > 90 ? 100 : task.progress) + "%", 18, task.progress + "%", textStyle);
-            }
         }
 
         //status
         if (dimensions.width>15)
             svg.rect(taskSvg, 6, 6, 13, 13, {stroke:1, rx:"2", ry:"2", status:task.status, class:"taskStatusSVG"});
 
+		//progress
+        if (task.progress > 0 && dimensions.width>50) {
+			var textStyle={fill:"#888", "font-size":"10px"};
+			if (task.progress>90)
+				textStyle.transform="translate(-30)";
+			svg.text(taskSvg, (task.progress > 90 ? 100 : task.progress) + "%", 18, task.progress + "%", textStyle);
+        }	
+		
         if (task.hasChild)
             svg.rect(taskSvg, 0, 0, "100%", 3, {fill:"#000"});
 
@@ -3192,16 +3194,18 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
         }).then(function(resp) {
                 window.userLocalCulture = resp.YuniqueAPI['@ClientCulture'];
                 userLocalCultureEndpoint = '/l10n/translations/system/' + userLocalCulture + '/taCalendar';
-                for (var apiResp = resp.YuniqueAPI.pTACalHoliday, tempArrayOfDates = [], tempArrayOfNames = [], i = 0, k = apiResp.length; k > i; i++) {
-                    var holidayInternal = (new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).format("#yyyy_MM_dd#");
-                    tempArrayOfDates.push((new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).getTime());
-                    tempArrayOfNames.push({
-                        key: (new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).getTime(),
-                        value: apiResp[i].TACalHolidayName
-                    });
-                    holidayArrayForInternal.push(holidayInternal)
+                if(resp.YuniqueAPI.pTACalHoliday){
+                    for (var apiResp = resp.YuniqueAPI.pTACalHoliday, tempArrayOfDates = [], tempArrayOfNames = [], i = 0, k = apiResp.length; k > i; i++) {
+                        var holidayInternal = (new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).format("#yyyy_MM_dd#");
+                        tempArrayOfDates.push((new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).getTime());
+                        tempArrayOfNames.push({
+                            key: (new Date((apiResp[i].TACalHolidayDate).formatYuniqueDates())).getTime(),
+                            value: apiResp[i].TACalHolidayName
+                        });
+                        holidayArrayForInternal.push(holidayInternal)
+                    }
+                    holidayArrayData.dates = tempArrayOfDates, holidayArrayData.holNames = tempArrayOfNames
                 }
-                holidayArrayData.dates = tempArrayOfDates, holidayArrayData.holNames = tempArrayOfNames
                 Yunique.Http.get(userLocalCultureEndpoint, {
                     pagesize: 9999
                 }).then(function(resp) {
@@ -3359,7 +3363,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             _Yunique.dataForEvent = resp.YuniqueAPI.Lookups.TaskStatus ;
             _Yunique.dataForEvent.unshift({
                 key: '',
-               value: ' '});
+                value: ' '});
             if (!$.isArray(tempDatasource)) {
                 tempDatasource = [];
                 tempDatasource.push(resp.YuniqueAPI.pTACalTemplateTask);
@@ -3392,7 +3396,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 objectToPush.name = tempDatasource[i].TaskName;
                 objectToPush.level = parseInt(tempDatasource[i].level);
                 objectToPush.type = tempDatasource[i].TaskTypeId;
-                objectToPush.progress = (tempDatasource[i].TaskProgress)*100;
+				objectToPush.progress = ((tempDatasource[i].TaskProgress)*100).toFixed(0);
                 objectToPush.team = tempDatasource[i].TaskAssignedToID;
                 objectToPush.new = tempDatasource[i].new;
                 objectToPush.carryOver = tempDatasource[i].CarryOver;
@@ -3450,18 +3454,15 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             var objectToCreate = [];
             $.fn.multiselect = function () {
                 $(this).each(function () {
-                    var checkboxes = $(this).find("input:checkbox");
+                    var checkboxes = $(this).find("input:checkbox"),
+                        $tables = $('.gdfTable'),
+                        $secondTable = $($tables[1]),
+                        $firstTable = $($tables[0]);
                     checkboxes.each(function () {
                         var checkbox = $(this);
-                        // Highlight pre-selected checkboxes
-                        if (!checkbox.prop("checked")){
-                            checkbox.parent().addClass("multiselect-on");
-                        }
-
-                        // Highlight checkboxes that the user selects
                         checkbox.click(function () {
-                            var taskEditRow = $('.taskEditRow ');
-                            var checkboxValue = checkbox.val();
+                            var taskEditRow = $('.taskEditRow '),
+                                checkboxValue = checkbox.val();
                             if (!checkbox.prop("checked")) {
                                 taskEditRow.each(function () {
                                     $(this).find('td').eq(checkboxValue).css('display', 'none')
@@ -3472,9 +3473,8 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                                 } catch (e) {
                                     localStorageForIE = objectToCreate;
                                 }
-                                $($('.gdfTable')[1]).find('.gdfColHeader').eq(checkbox.val()).css('display', 'none');
-                                $($('.gdfTable')[0]).find('.gdfColHeader').eq(checkbox.val()).css('display', 'none');
-
+                                $secondTable.find('.gdfColHeader').eq(checkbox.val()).css('display', 'none');
+                                $firstTable.find('.gdfColHeader').eq(checkbox.val()).css('display', 'none');
                                 checkbox.parent().addClass("multiselect-on");
                             } else {
                                 var index = objectToCreate.indexOf(checkboxValue);
@@ -3489,14 +3489,14 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                                 taskEditRow.each(function () {
                                     $(this).find('td').eq(checkboxValue).css('display', 'table-cell')
                                 });
-                                $($('.gdfTable')[1]).find('.gdfColHeader').eq(checkbox.val()).css('display', 'table-cell');
-                                $($('.gdfTable')[0]).find('.gdfColHeader').eq(checkbox.val()).css('display', 'table-cell');
-                                checkbox.parent().removeClass("multiselect-on");
+                                $firstTable.find('.gdfColHeader').eq(checkbox.val()).css('display', 'table-cell');
+                                $secondTable.find('.gdfColHeader').eq(checkbox.val()).css('display', 'table-cell');
                             }
                         });
                     });
                 });
             };
+
             kendo.culture(userLocalCulture);
             var _kendoStandart = kendo.cultures.current.calendars.standard
             Date.defaultFormat = _kendoStandart.patterns.d;
@@ -3628,7 +3628,12 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             btnSave.removeAttr('onclick');
             btnSave.click(function(event){
                 event.preventDefault();
-                saveFunc()
+                if(Page_IsValid){
+                    saveFunc()
+                }else{
+                    toastr.error(Yunique.Data.getTranslatedString(TranslationData,'Error! Please fill necessary fields'));
+                }
+                
             });
         },
         function(e){
@@ -3906,7 +3911,8 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
         while(i<taskWorkflowLength){
             if(taskWorkflow[i].key === val){
                 var elem = taskWorkflow[i].value2;
-                if(elem === 'MATERIAL REQUEST' || elem === 'STYLE' || elem === ' SOURCING QUOTATION' || elem === 'COLOR' || elem ==='IMAGE' || elem ==='SOURCING'){
+                console.log(elem)
+                if(elem === 'MATERIAL REQUEST' || elem === 'SAMPLE REQUEST' || elem === 'SOURCING QUOTATION' || elem === 'COLOR' || elem ==='IMAGE' || elem ==='SOURCING'){
                     return true;
                     break;
                 }
@@ -3971,11 +3977,11 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                     }else{
                         dropDownChanger(task,currValue,this.text(),self,e,el);
                     }
-                    /*if(groupFinder(task.TaskWorkflowId)){
+                    if(groupFinder(task.TaskWorkflowId)){
                      taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
                      }else{
                      taskRow.find('.carryOver').find('input').css('visibility', 'visible');
-                     }*/
+                     }
                 },
                 change:function(e,m){
                     //since telerik doesnt know that someone would love to have 2 events,instead of just 1,
@@ -3994,11 +4000,11 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
             }
             if (task.type === '1') {
-                /*if(groupFinder(task.TaskWorkflowId)){
+                if(groupFinder(task.TaskWorkflowId)){
                  taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
                  }else{
                  taskRow.find('.carryOver').find('input').css('visibility', 'visible');
-                 }*/
+                 }
                 $(el2).css('display', 'none')
             } else {
                 task.type = '0';

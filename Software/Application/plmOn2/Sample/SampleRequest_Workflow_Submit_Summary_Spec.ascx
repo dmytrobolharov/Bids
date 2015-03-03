@@ -10,8 +10,8 @@
 <asp:label id="lblFitComment" runat="server"></asp:label>
 <asp:datagrid id="dgSampleWorkflow" runat="server" BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px"
 	PageSize="100" AutoGenerateColumns="false" Width="300">
-	<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-	<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+	<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+	<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 	<HeaderStyle Height="20px"></HeaderStyle>
 	<Columns></Columns>
 </asp:datagrid>

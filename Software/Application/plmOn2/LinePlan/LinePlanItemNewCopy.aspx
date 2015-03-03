@@ -9,7 +9,9 @@
 		<title>New</title>
         <LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	    <LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
-        <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>	
+        <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		<script language="JavaScript">
 		<!--
 		    if (window.screen) {
@@ -35,7 +37,7 @@
 						<asp:ImageButton 
 						        id="btnSaveStyle" runat="server" ></asp:ImageButton><cc1:BWImageButton  
 						        id="btnAddColor" runat="server" CausesValidation="False" /><cc1:confirmedimagebutton 
-						        id="btnClose" runat="server" Message="NONE" CausesValidation="False" ></cc1:confirmedimagebutton></td>
+						        id="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
 			<table cellSpacing="0" cellPadding="0" width="100%" border="0" runat="server" id="tbNoCopies" bgcolor="White">
@@ -179,5 +181,11 @@
     		    
     		    
 		</script>		
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 </body>
 </html>

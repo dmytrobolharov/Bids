@@ -28,7 +28,7 @@
                 </cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnDelete" runat="server" 
                     ></cc1:ConfirmedImageButton><cc1:ConfirmedImageButton
-                        ID="btnClose" runat="server"  Message="NONE">
+                        ID="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()">
                     </cc1:ConfirmedImageButton>
             </td>
             <td class="FontHead" align="right" width="75">
@@ -1022,5 +1022,11 @@
     </table>
     <br>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

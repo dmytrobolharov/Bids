@@ -113,9 +113,14 @@
 
         for (i = 0; i < allelements.length; i++)
             if (allelements[i].href.substr(0, 19) == 'javascript:calendar' || allelements[i].href.substr(0, 23) == 'javascript:customwindow' || allelements[i].href.substr(0, 27) == 'javascript:void(window.open')
-                allelements[i].attachEvent('onclick', dont_show_wait_next_time);
-
+                if (!document.addEventListener) {
+                    //for old IE
+                    allelements[i].attachEvent('onclick', dont_show_wait_next_time);
+                } else {
+                    allelements[i].addEventListener('click', dont_show_wait_next_time);
+                }
     }
+
 
     function wait_text_resize() {
         if (wait_text_is_shown) {

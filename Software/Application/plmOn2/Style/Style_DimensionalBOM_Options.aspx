@@ -9,7 +9,9 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
-     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -54,7 +56,7 @@
                     <cc1:confirmedimagebutton id="btnBatchUpdate" runat="server" Message="NONE" Visible="True" CausesValidation="false"></cc1:confirmedimagebutton>
                     <asp:ImageButton ID="btnConfigure" runat="server" OnClientClick="showConfigureBOM(); return false;" />
                     <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:BWImageButton>
-                    <cc1:ConfirmedImageButton ID="btnClose" Message="NONE" runat="server"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnClose" Message="NONE" runat="server" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                 </td>
             </tr>
         </table>
@@ -165,6 +167,12 @@
 
         function showConfigureBOM() {
             window.radopen("Style_DimensionalBOM_Configure.aspx?SBDID=" + "<%= _StyleDimensionBOMId %>", "ConfigBOM");
+        }
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
         }
     </script>
 </body>

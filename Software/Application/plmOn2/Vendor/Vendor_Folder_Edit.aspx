@@ -54,7 +54,7 @@
             </td>
             <td width="100%">
                 <cc2:ConfirmedImageButton ID="btnSaveUser" runat="server"  Message="NONE"></cc2:ConfirmedImageButton>                
-                <cc2:ConfirmedImageButton ID="btnClose" visible="false" runat="server" Message="NONE"></cc2:ConfirmedImageButton>
+                <cc2:ConfirmedImageButton ID="btnClose" visible="false" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc2:ConfirmedImageButton>
             </td>
             <td>
                 &nbsp;
@@ -106,5 +106,11 @@
     </asp:Panel>
    
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

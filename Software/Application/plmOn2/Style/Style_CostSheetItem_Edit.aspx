@@ -31,7 +31,7 @@
                             <cc1:confirmedimagebutton id="btnDelete" runat="server" />
                             <cc1:confirmedimagebutton id="btnRemoveSelected" runat="server" />
                             <cc1:ConfirmedImageButton ID="btnClear" runat="server" OnClientClick="return CheckClearColumnSelection();" />			
-							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" />
+							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()" />
                             <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>					
 					</td>					
 				</tr>
@@ -753,6 +753,12 @@
                 }
             });
 
+        </script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
         </script>
 	</body>
 </html>

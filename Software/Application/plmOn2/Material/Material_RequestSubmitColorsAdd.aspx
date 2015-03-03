@@ -7,6 +7,8 @@
 		<title>Available Colors</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body> 
 		<form id="Form1" method="post" runat="server">
@@ -15,7 +17,7 @@
 				<TR valign="middle">
 					<td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3" /></td>
 					<td width="80"><cc1:confirmedimagebutton id="btnSaveColorList" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
-					<td width="80"><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+					<td width="80"><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
 				</TR>
@@ -124,5 +126,11 @@
 		    }
 		    }		
 		</script>
+        <script language="javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

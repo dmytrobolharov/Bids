@@ -17,6 +17,8 @@
         <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/RadComboBox.YPLM.css" type="text/css" rel="stylesheet" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
             .slider-container {
             	position: relative;
@@ -81,7 +83,7 @@
             <td width="100%">
                 <cc1:confirmedimagebutton id="btnGenerate" runat="server" Message="NONE"></cc1:confirmedimagebutton>
                 <cc1:confirmedimagebutton id="btnShare" runat="server" Message="NONE" CausesValidation="true" ValidationGroup="TechPack"></cc1:confirmedimagebutton>
-                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
             </td>
         </tr>
         </table>
@@ -303,7 +305,10 @@
 
         addScrollToTable();
 
-
+        function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
     </body>
 </html>

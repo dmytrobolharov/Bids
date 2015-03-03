@@ -6,6 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head id="Head1" runat="server">
         <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     </head>
 
     <body style="margin:0;padding:0">

@@ -45,11 +45,21 @@
 					<td width="10"><asp:button id="btnGo" onclick="RePage" runat="server" CssClass="fontHead"></asp:button></td>
 				</tr>
 			</table>
-			<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID" EnableViewState="False">
+			<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID" EnableViewState="False" AllowSorting="true">
 				<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 				<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 				<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 				<PagerStyle Visible="False"></PagerStyle>
+                <Columns>
+                    <asp:TemplateColumn>
+                        <HeaderTemplate>
+                            <%# GetSystemText("Image")%>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <asp:Image runat="server" ID="imgDesignImageID" ImageUrl='<%# GetImageStreamPath("50", Eval("DesignSketchVersion").ToString, Eval("DesignSketchID").ToString) %>' />
+                        </ItemTemplate>
+                    </asp:TemplateColumn>
+                </Columns>
 			</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></td>
 	</tr>
 </table>

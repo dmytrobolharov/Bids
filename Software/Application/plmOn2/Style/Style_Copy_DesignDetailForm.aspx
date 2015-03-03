@@ -11,12 +11,13 @@
 </head>
 	<body>
 		<form id="Form1" method="post" runat="server">
+        <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
 			<table class="TableHeader" cellspacing="0" cellpadding="0" width="100%" height="25" border="0">
 				<tr>
 					<td align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton id="btnCopy" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnLink" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
 			<uc1:Style_Copy_Workflow id="Style_Copy_Workflow1" runat="server"></uc1:Style_Copy_Workflow>
@@ -38,7 +39,8 @@
 								<asp:CheckBox id="cbSelectStyle" runat="server" Text='<%#Getsystemtext("Click here to select style")%>' CssClass="font"></asp:CheckBox>
 							</td>
 							<td valign="top" style="height:150;" rowspan="2">
-								<asp:Label ID="lblComment" runat="server" Width="100%" Height="100%" />
+								<telerik:RadEditor runat="server" ID="lblComment" Width="680px" Enabled="false" >
+                                </telerik:RadEditor>
 							</td>
 						</tr>
 						<tr>
@@ -79,5 +81,11 @@
 			}
 			}
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

@@ -6,6 +6,8 @@
     <title>ManageByDimension</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,8 +17,8 @@
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><asp:ImageButton 
-					    id="btnSave" runat="server" TabIndex="100" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif"></asp:ImageButton><asp:ImageButton
-					    id="btnClose" runat="server" TabIndex="101" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" ></asp:ImageButton></td>
+					    id="btnSave" runat="server" TabIndex="100"></asp:ImageButton><asp:ImageButton
+					    id="btnClose" runat="server" TabIndex="101" OnClientClick="return btnClose_Click()"></asp:ImageButton></td>
 				</tr>
 			</table>
 			<table style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
@@ -34,5 +36,11 @@
 		    </asp:datagrid>
 		    <asp:label id="SortOrder" runat="server" Visible="False"></asp:label>			    
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

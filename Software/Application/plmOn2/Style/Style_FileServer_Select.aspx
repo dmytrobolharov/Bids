@@ -23,7 +23,7 @@
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td>
                         &nbsp;<asp:ImageButton ID="btnDownload" runat="server" />&nbsp;<asp:ImageButton
-                            ID="btnClose" runat="server"  /></td>
+                            ID="btnClose" runat="server" OnClientClick="return btnClose_Click()"  /></td>
 				</tr>
 			</table>
 			<asp:datagrid id="DataGrid1" runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"
@@ -97,5 +97,11 @@
 			
 			
 			</form>
+            <script language="javascript">
+	            function btnClose_Click() {
+		            <%= strExitScript %>
+                    return false;
+                }
+            </script>
 	</body>
 </html>

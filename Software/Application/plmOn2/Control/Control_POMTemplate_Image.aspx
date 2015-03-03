@@ -42,7 +42,7 @@
                         DESIGNTIMEDRAGDROP="18"></cc1:ConfirmedImageButton><cc1:ConfirmedImageButton ID="imgBtnDeleteImage"
                             runat="server"  ToolTip="Remove Image ..."
                             Message="Do you want to remove this image?"></cc1:ConfirmedImageButton><cc1:ConfirmedImageButton
-                                ID="btnClose" runat="server"  Message="Are you sure you want to do close this form?">
+                                ID="btnClose" runat="server"  Message="Are you sure you want to do close this form?" OnClientClick="return btnClose_Click()">
                             </cc1:ConfirmedImageButton>
             </td>
         </tr>
@@ -241,5 +241,11 @@
     <p>
         &nbsp;</p>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

@@ -3,10 +3,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head >
+    <head >
         <title runat="server" id="PageTitle"></title>		
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body> 
 		<form id="Form1" method="post" runat="server">
@@ -16,7 +18,7 @@
 					<td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3" /></td>
 					<td width="80"><asp:imagebutton 
 					    id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton><cc1:confirmedimagebutton 
-					    id="btnClose" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif"></cc1:confirmedimagebutton></td>
+					    id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
 				</TR>
@@ -63,7 +65,7 @@
 								<td vAlign="top" width="100%">
 									<table height="45">
 										<tr>
-											<td><asp:imagebutton id="imgBtnSearch" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_search_small.gif"></asp:imagebutton></td>
+											<td><asp:imagebutton id="imgBtnSearch" runat="server"></asp:imagebutton></td>
 										</tr>
 									</table>
 								</td>
@@ -79,5 +81,11 @@
 			</TABLE>
 	</form>
 	</body>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </html>
 

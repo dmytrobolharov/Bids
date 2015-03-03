@@ -6,6 +6,8 @@
 		<title>Control</title>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">		
@@ -19,8 +21,6 @@
 						<asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 							Height="0px" />
 						<cc1:confirmedimagebutton id="btnNew" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-						<%--<cc1:BWImageButton id="btnSort" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_sort.gif" runat="server" WindowHeight="400px"
-							WindowWidth="400px"></cc1:BWImageButton>--%>
 					</TD>
 					<td>&nbsp;</td>
 				</TR>

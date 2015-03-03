@@ -17,7 +17,7 @@
 				<td><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 						Height="0px"></asp:imagebutton>
 					<cc1:confirmedimagebutton id="btnAdd" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 				</td>
 			</tr>
 		</table>
@@ -60,11 +60,21 @@
 		        <td width="100%"><asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
 	        </tr>
         </table>  
-        <asp:datagrid id="DataGrid1" runat="server" AllowSorting="False" DataKeyField="Level3ID">
+        <asp:datagrid id="DataGrid1" runat="server" AllowSorting="False" DataKeyField="TradePartnerID">
 	        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 	        <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 	        <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 	        <PagerStyle Visible="False"></PagerStyle>
+            <Columns>
+                <asp:TemplateColumn>
+                    <HeaderTemplate>
+                        <asp:CheckBox runat="server" ID="checkAll" onclick="CheckAll(this);" />
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <asp:CheckBox runat="server" ID="chbTradePartnerID" />
+                    </ItemTemplate>
+                </asp:TemplateColumn>
+            </Columns>
         </asp:datagrid>   
         <asp:label id="SortOrder" runat="server" Visible="False"></asp:label>		
 		
@@ -81,5 +91,11 @@
 	        }
 	    }
 	</script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

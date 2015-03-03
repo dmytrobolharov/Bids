@@ -75,7 +75,7 @@
             </td>
             <td>
                 <cc1:BWImageButton ID="btnMultiUploadWin" runat="server"></cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" CausesValidation="false" Message="NONE" />
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" CausesValidation="false" Message="NONE" OnClientClick="return btnClose_Click()"/>
                 <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:BWImageButton>
             </td>
             <td class="FontHead" align="right" width="75">
@@ -280,5 +280,11 @@
         </EditItemTemplate>
     </asp:DataList>
     </form>
+        <script  language="javascript" type="text/javascript">
+                    function btnClose_Click() {
+                        <%= strExitScript %>
+                        return false;
+                    }
+        </script>
 </body>
 </html>

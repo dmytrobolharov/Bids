@@ -9,7 +9,9 @@
     <title></title>
     <LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">  
-     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />  
+    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />  
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -55,7 +57,7 @@
 		                <td align="center" width="50">&nbsp;</td>
 		                <td align="center" width="500">
 			                <asp:imagebutton id="btnSave" runat="server" ></asp:imagebutton>
-			                <asp:imagebutton id="btnClose" runat="server" ></asp:imagebutton>
+			                <asp:imagebutton id="btnClose" runat="server" OnClientClick="return btnClose_Click()" ></asp:imagebutton>
 		                </td>
 		                <td align="center">&nbsp;</td>
 	                </tr>
@@ -63,5 +65,11 @@
                     
     </div>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

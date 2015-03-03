@@ -17,7 +17,7 @@
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 				</tr>
 			</TABLE>
 			<table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="#cddeee" border="0">
@@ -143,5 +143,11 @@
 				</TR>
 			</TABLE>
 		</form>
+        <script language="javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

@@ -29,11 +29,21 @@
 		            <td width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" Text="GO"></asp:button></td>
 	            </tr>
             </table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="MaterialID">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="MaterialID" AllowSorting="true" AllowPaging="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle CssClass="TableHeader" Height="25px"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
+                            <Columns>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <%# GetSystemText("Image")%>
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:Image ID="imgMaterialImageID" runat="server" ImageUrl='<%# GetImageStreamPath(50, Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString) %>' />
+                                    </ItemTemplate>
+                            </asp:TemplateColumn>
+                            </Columns>
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label>
 		</td>
 	</tr>

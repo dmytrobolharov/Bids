@@ -20,7 +20,8 @@
 <![endif]-->
 <style type="text/css">
     .marginCLS { margin-right: 3px; }
-</style> 
+</style>
+<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script> 
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -175,19 +176,17 @@
                                                 </b>
                                             </div>
                                         </td>
+                                        <td width="110" align="right"><span id="lblRecordPerPage" class="fontHead">Records per Page:</span></td>
                                         <td width="25">
                                             <asp:DropDownList ID="ps" runat="server" CssClass="fontHead">
                                                 <asp:ListItem Value="5">5</asp:ListItem>
-                                                <asp:ListItem Value="10">10</asp:ListItem>
-                                                <asp:ListItem Value="12" Selected="true">12</asp:ListItem>
+                                                <asp:ListItem Value="10" Selected="True">10</asp:ListItem>
                                                 <asp:ListItem Value="15">15</asp:ListItem>
                                                 <asp:ListItem Value="20">20</asp:ListItem>
                                                 <asp:ListItem Value="25">25</asp:ListItem>
                                                 <asp:ListItem Value="30">30</asp:ListItem>
                                                 <asp:ListItem Value="40">40</asp:ListItem>
                                                 <asp:ListItem Value="50">50</asp:ListItem>
-                                                <asp:ListItem Value="75">75</asp:ListItem>
-                                                <asp:ListItem Value="100">100</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
                                         <td width="10">
@@ -307,7 +306,7 @@
             $('.StyleDiv').find('tbody').css('border-color', 'gainsboro');
             $('*[id*="hdr_lblImageID"]').closest('tr').hide();
 
-            $('.droppable').find('td').attr('noWrap', 'noWrap');
+            //$('.droppable').find('td').attr('noWrap', 'noWrap');
 
         }
 
@@ -466,6 +465,7 @@
         .StyleDiv
         {
             width: 200px;
+            vertical-align: top;
         }
     </style>
 </body>

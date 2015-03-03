@@ -19,7 +19,7 @@
 					id="btnAddColor" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
 					id="btnRemoveColor" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
 					id="btnNoApplicable" runat="server" visible="false" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-					id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></TD>
+					id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 			<table class="TableHeaderGreen" height="25" cellSpacing="0" cellPadding="0" width="100%"
@@ -128,6 +128,11 @@
 			    var busyBox = new BusyBox("busyBox", 12, "busy_Layer_", ".gif", 120);
 			</script>
 			</form>
-            
+            <script language="javascript">
+	            function btnClose_Click() {
+		            <%= strExitScript %>
+                    return false;
+                }
+            </script>
 	</body>
 </html>

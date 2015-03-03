@@ -9,6 +9,7 @@
 		<meta name="vs_defaultClientScript" content="JavaScript">
 		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</HEAD>
 	<body bgcolor="#ffffff">
 		<form id="Form1" method="post" runat="server">
@@ -17,7 +18,7 @@
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton id="btnDelete" runat="server"  Message=""></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td>&nbsp;</td>
 				</tr>
 			</TABLE>
@@ -30,8 +31,8 @@
                 <ItemTemplate>
 			    <asp:datagrid id="DataGrid1" runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"
 				    PageSize="1000" AutoGenerateColumns="False" DataKeyField="FitPhotoID">
-				    <AlternatingItemStyle Height="20px" BackColor="AliceBlue" VerticalAlign="Middle" HorizontalAlign="Center"></AlternatingItemStyle>
-				    <ItemStyle Height="20px" CssClass="font" BackColor="White" HorizontalAlign="Center" VerticalAlign="Middle"></ItemStyle>
+				    <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+				    <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 				    <HeaderStyle Height="20px" CssClass="TableHeader" HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
 				    <Columns>
 					    <asp:TemplateColumn>
@@ -43,8 +44,8 @@
 			    </asp:datagrid>
 			    <asp:datagrid id="DataGrid2" runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"
 				    PageSize="1000" AutoGenerateColumns="False" DataKeyField="FitPhotoCommentId">
-				    <AlternatingItemStyle Height="20px" BackColor="AliceBlue" VerticalAlign="Middle" HorizontalAlign="Center"></AlternatingItemStyle>
-				    <ItemStyle Height="20px" CssClass="font" BackColor="White" HorizontalAlign="Center" VerticalAlign="Middle"></ItemStyle>
+				    <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+				    <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 				    <HeaderStyle Height="20px" CssClass="TableHeader" HorizontalAlign="Center" VerticalAlign="Middle"></HeaderStyle>
 				    <Columns>
 					    <asp:TemplateColumn>
@@ -83,5 +84,11 @@
                 });
             </script>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

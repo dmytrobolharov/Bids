@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
     <title>Planning SKU Plan</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
@@ -12,6 +13,8 @@
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
     <script type="text/javascript" language="javascript" src="../System/Jscript/Custom.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .search-cell td {
             vertical-align: top !important;
@@ -22,7 +25,23 @@
         .multi-sku {
         	background-color: yellow;
         }
-    </style>
+        .rgRowYPLM td, .rgAltRowYPLM td {	    	
+	    	white-space: normal !important;
+	    }
+	    
+        th.rgHeaderYPLM, th.rgHeader {
+            padding: 0 0px !important;
+        }	    
+        
+        #RadGridSKUItems .rgMasterTable td {
+            border-color: #ddd !important;
+        }
+        
+        .rgCheck {
+        	padding: 2px !important;
+        }
+    </style> 
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -59,7 +78,7 @@
                 <cc1:ConfirmedImageButton ID="btnSyncStatus" runat="server" Message="NONE" Visible="True"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnRemove" runat="server" Message="NONE" Visible="True"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnDelete" runat="server" Visible="True"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" Visible="True" CausesValidation="false"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" Visible="True" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                 <cc1:BWImageButton ID="btnChangeLog" runat="server" Visible="true" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;" />
             </td>
         </tr>
@@ -157,8 +176,7 @@
     </script>
     </form>
 
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript">
         function ConfirmSave(btn) {
             var hasChanged = false;
@@ -213,7 +231,20 @@
             } else {
                 changeGrid.height(minHeight);
             }
+
+            var totalWidth = 0;
+            $(".rgDataDiv col").each(function(){
+                totalWidth += parseInt($(this).css("width"), 10);
+            });
+            $("#RadGridSKUItems").width(Math.min($(window).width(), totalWidth + 20));
+            $(".rgPagerYPLM td:nth-child(2)").append("<div style='width:100px'>")
         })();        
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

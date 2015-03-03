@@ -28,7 +28,7 @@
 					<td width="600" style="height: 28px">
                             <cc1:confirmedimagebutton id="btnEdit" runat="server" Message="NONE" />		
                             <cc1:bwimagebutton id="btnPreview" runat="server" Message="NONE" />					
-							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" />
+							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" />
                             <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>					
 					</td>					
 				</tr>
@@ -494,6 +494,12 @@
             resizeGridScrollArea();
             $(window).resize(function () { resizeGridScrollArea(); });
 
+        </script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
         </script>
 	</body>
 </html>

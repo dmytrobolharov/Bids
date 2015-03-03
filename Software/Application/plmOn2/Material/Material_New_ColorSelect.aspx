@@ -10,6 +10,8 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <%--<script language="JavaScript">
         if (window.screen) {
             var aw = screen.availWidth;
@@ -32,7 +34,7 @@
                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
             </td>
             <td width="80">
-                <asp:ImageButton ID="btnClose" runat="server"></asp:ImageButton>
+                <asp:ImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click()"></asp:ImageButton>
             </td>
             <td width="80">
             </td>
@@ -149,5 +151,11 @@
     </table>
     <asp:HiddenField ID="hdnXmlFile" runat="server" />
     </form>
+        <script language="javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+        </script>
 </body>
 </html>

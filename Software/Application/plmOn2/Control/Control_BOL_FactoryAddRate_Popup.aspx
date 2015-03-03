@@ -21,7 +21,7 @@
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD><cc1:confirmedimagebutton id="imgBtnsave" runat="server" ToolTip="Add..." 
 							Message="NONE"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" ToolTip=""
+						<cc1:confirmedimagebutton id="btnClose" runat="server" ToolTip="" OnClientClick="return btnClose_Click()"
 							CausesValidation="false" Message="NONE"></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
@@ -82,5 +82,11 @@
 		}
 		}
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

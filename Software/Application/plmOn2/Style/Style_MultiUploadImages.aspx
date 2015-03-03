@@ -24,7 +24,7 @@
                     Visible="True" CausesValidation="False"></cc1:ConfirmedImageButton> 
                 <img  id="Img1"  runat="server" style="display: none;" onclick="Upload_Click();return false;" /> 
                 <asp:ImageButton ID="btnDelete" runat="server" OnClick="btnDelete_Click" Visible="False"  />
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" 
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"
                     Visible="True" CausesValidation="False"></cc1:ConfirmedImageButton>                
             </td>
             <td class="fontHead" align="right" width="75">
@@ -244,5 +244,10 @@
         }
     }
 </script>
-
+<script language="javascript">
+	function btnClose_Click() {
+		<%= strExitScript %>
+        return false;
+    }
+</script>
 </html>

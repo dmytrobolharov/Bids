@@ -12,7 +12,8 @@
 	    <LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
-		
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -25,7 +26,7 @@
                             style="height: 24px"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
 					id="btnAddMaterial" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:BWImageButton
 					id="btmImgDeletePOM" runat="server"  ></cc1:BWImageButton><cc1:confirmedimagebutton 
-					id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+					id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
 					<td></td>
@@ -71,7 +72,10 @@
 			        e.checked= actVar ;
 		        }
 		    }
-   		
+   		    function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
 		    </script>			
 	</body>
 </HTML>

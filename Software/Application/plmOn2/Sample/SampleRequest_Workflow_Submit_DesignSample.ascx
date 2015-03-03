@@ -16,8 +16,8 @@
 <asp:datagrid id="DataGrid2" runat="server" BorderColor="Silver" 
                             BorderStyle="Solid" BorderWidth="1px"
 					            PageSize="100" AutoGenerateColumns="False" AllowPaging="true" PagerStyle-Visible="false" OnItemDataBound="DataGrid2_ItemDataBound">
-					            <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-					            <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+					            <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+					            <ItemStyle CssClass="ItemTemplate"></ItemStyle>
 					            <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle></asp:datagrid>
 </ItemTemplate>
 </asp:DataList>

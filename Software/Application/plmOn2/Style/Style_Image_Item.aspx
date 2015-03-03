@@ -53,7 +53,7 @@
 							<cc1:confirmedimagebutton id="btnCancelUpdate" runat="server"  Message="NONE" CausesValidation="False" Visible="False"></cc1:confirmedimagebutton>
                             <cc1:confirmedimagebutton id="imgBtnCopyImage" runat="server" ToolTip="Copy Image From..." DESIGNTIMEDRAGDROP="18" Message="Do you want to copy this image?"></cc1:confirmedimagebutton>
                             <cc1:confirmedimagebutton id="imgBtnDeleteImage" runat="server" ToolTip="Remove Image From Style..." Message="Do you want to remove this image?" CausesValidation="False"></cc1:confirmedimagebutton>
-							<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+							<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 				</tr>
 			</table>
@@ -261,5 +261,11 @@
 			            alert("These file(s) are already in the queue : \r\n\t" + sames.join('\r\n\t'));
 			        }
 			    }
+</script>
+<script language="javascript">
+	function btnClose_Click() {
+		<%= strExitScript %>
+        return false;
+    }
 </script>
 </html>

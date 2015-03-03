@@ -8,6 +8,8 @@
     <title>Range Planning Attributes</title>
     <LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">    
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,7 +19,7 @@
 			<tr vAlign="middle">
 				<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 				<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" style="height: 24px">
-    				</cc1:confirmedimagebutton><asp:ImageButton runat="server" ID="btnClose"></asp:ImageButton></td>
+    				</cc1:confirmedimagebutton><asp:ImageButton runat="server" ID="btnClose" OnClientClick="return btnClose_Click()"></asp:ImageButton></td>
 				<td class="FontHead" align="right" width="75"></td>
 				<td width="40"></td>
 				<td></td>
@@ -69,5 +71,11 @@
     
 
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

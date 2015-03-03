@@ -1,6 +1,6 @@
 <generator>
-   <table name="xCustom10" codecolumn="CustomKey" idcolumn="CustomID" spacecolumn="3"> 
-	   <column name="" lookupSpace="F-" lookupNull="XXX"  order="1"/> 
-  	  <column name="autoid" lookupSpace="X" lookupNull="XXX"  order="2"/>  
-   </table>
+	<table name="xCustom10" codecolumn="CustomKey" idcolumn="CustomID" spacecolumn="3">
+		<column name="" lookup="" lookupId="" lookupSelect="" lookupSpace="F-" lookupNull="XXX" order="001" />
+		<column name="autoid" lookup="" lookupId="" lookupSelect="" lookupSpace="X" lookupNull="XXX" order="002" />
+	</table>
 </generator>

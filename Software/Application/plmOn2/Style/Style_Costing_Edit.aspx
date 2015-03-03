@@ -53,7 +53,7 @@
 					id="btnSaveStyle" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:bwimagebutton 
 					id="btnAddCosting" runat="server" ></cc1:bwimagebutton><cc1:bwimagebutton 
 					id="btnDelete" runat="server" ></cc1:bwimagebutton><cc1:confirmedimagebutton 
-					id="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton><cc1:bwimagebutton 
+					id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton><cc1:bwimagebutton 
 					id="btnCopyFrom" runat="server" ></cc1:bwimagebutton>
                     <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
 					</td>
@@ -181,5 +181,11 @@
 				</tr>
 			</table>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

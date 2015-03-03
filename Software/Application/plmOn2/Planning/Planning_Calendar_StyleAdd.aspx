@@ -26,7 +26,7 @@
                 <asp:ImageButton ID="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Height="0px">
                 </asp:ImageButton>
                 <cc1:ConfirmedImageButton ID="btnAdd" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="imgBtnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="imgBtnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
         </tr>
     </table>
@@ -132,7 +132,11 @@
                 if (e.type == 'checkbox' && e.name.indexOf('Datalist1') != -1 && !e.disabled)
                     e.checked = actVar;
             }
-        }               
+        }    
+        function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }           
     </script>
     </form>
 </body>

@@ -9,6 +9,12 @@
     <title runat="server" id="PageTitle">Sourcing</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+    <script>
+    function btnClose_Click() {
+        <%= strExitScript %>
+        return false;
+    }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,7 +24,7 @@
 			    <td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 			    <td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" 
                          style="height: 24px"></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-			    id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+			    id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton></td>
 		    </tr>
 	    </table>
 

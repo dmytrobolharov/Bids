@@ -13,8 +13,9 @@
         <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/mamagi.css" type="text/css" rel="stylesheet" />
-        <script language="javascript" src='../System/Jscript/jquery-1.6.2.min.js'></script>
         <script language="javascript" src='../System/Jscript/mamagi/jquery.mamagi.yunique.js'></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		<script language="javascript">
 			function calendar(sTxtBoxName)
 			{

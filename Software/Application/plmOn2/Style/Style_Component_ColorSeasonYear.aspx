@@ -7,6 +7,8 @@
 <head id="Head1" runat="server">
     <title></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,7 +17,7 @@
 		            <td align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td> 
 		            <td ><cc1:confirmedimagebutton 
 		                id="btnAdd" runat="server" Message="NONE" ></cc1:confirmedimagebutton><asp:ImageButton 
-		                id="btnClose" runat ="server" />
+		                id="btnClose" runat ="server" OnClientClick="return btnClose_Click()" />
 		            </td>
 	            </tr>
             </table>
@@ -113,5 +115,11 @@
 		    }
 		}
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 </body>
 </html>

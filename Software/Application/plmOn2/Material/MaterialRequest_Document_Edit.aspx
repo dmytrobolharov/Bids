@@ -17,13 +17,8 @@
 				runat="server">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><%--<cc1:confirmedimagebutton id="btnNewUpload" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_new.gif"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif"
-							Visible="False"></cc1:confirmedimagebutton>--%>
-							 <cc1:bwimagebutton id="btnMultiUploadWin" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_attachfileMulti.gif"></cc1:bwimagebutton>
-                             <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-<%--							  <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE"
-                    ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_attachfileMulti.gif" CausesValidation="False">
-                </cc1:ConfirmedImageButton>--%></td>
+					<td><cc1:bwimagebutton id="btnMultiUploadWin" runat="server"></cc1:bwimagebutton>
+                             <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton></td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
 					<td></td>
@@ -72,8 +67,8 @@
 					<TR>
 						<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 						<TD width="500">
-							<cc1:confirmedimagebutton id="btnAdd" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_attachfile.gif" Message="NONE"></cc1:confirmedimagebutton>
-							<cc1:confirmedimagebutton id="btnAddClose" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_cancel.gif" Message="NONE"  CausesValidation="False"></cc1:confirmedimagebutton>
+							<cc1:confirmedimagebutton id="btnAdd" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+							<cc1:confirmedimagebutton id="btnAddClose" runat="server" Message="NONE"  CausesValidation="False"></cc1:confirmedimagebutton>
 						</TD>
 						<TD>&nbsp;</TD>
 					</TR>
@@ -196,12 +191,12 @@
 						<TR>
 							<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 							<TD width="500">
-								<cc1:confirmedimagebutton id="edit_btnSave" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif" Message="NONE" Visible='<%# ShowHideSaveBtn() %>' CommandName="update"></cc1:confirmedimagebutton>								
-								<cc1:ConfirmedLinkButton id="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>' Text='<IMG border="0" alt="Delete" src="../System/Button/ButtonStream.ashx?BN=btn_delete.gif">' CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>' >
-								</cc1:ConfirmedLinkButton>
-								<asp:linkbutton id="Linkbutton5" runat="Server" Text='<IMG border="0" alt="download" src="../System/Button/ButtonStream.ashx?BN=btn_download.gif">'
-									CommandName="download"></asp:linkbutton>
-								<cc1:confirmedimagebutton id="btnEditCancel" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" Message="NONE" CommandName="cancel"></cc1:confirmedimagebutton>															
+								<cc1:confirmedimagebutton id="edit_btnSave" runat="server" ImageUrl='<%#GetImagePath("btn_save.gif", UserProperties.PrefLang) %>' Message="NONE" Visible='<%# ShowHideSaveBtn() %>' CommandName="update"></cc1:confirmedimagebutton>								
+								<cc1:confirmedimagebutton id="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>' ImageUrl='<%#GetImagePath("btn_delete.gif", UserProperties.PrefLang) %>' CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>' >
+								</cc1:confirmedimagebutton>
+								<cc1:confirmedimagebutton id="Linkbutton5" runat="Server" ImageUrl='<%#GetImagePath("btn_download.gif", UserProperties.PrefLang) %>'
+									CommandName="download"></cc1:confirmedimagebutton>
+								<cc1:confirmedimagebutton id="btnEditCancel" runat="server" ImageUrl='<%#GetImagePath("btn_close.gif", UserProperties.PrefLang) %>' Message="NONE" CommandName="cancel"></cc1:confirmedimagebutton>															
 							</TD>
 							<TD>&nbsp;</TD>
 						</TR>

@@ -38,7 +38,7 @@
 					<TD><asp:imagebutton id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton>
 					<cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnDelete" runat="server"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" ></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>
 					<cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
                     </TD>
 					<td>&nbsp;</td>
@@ -84,6 +84,12 @@
 			e.checked= actVar ;
 		}
 		}
-		</script>    
+		</script>  
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>  
 </body>
 </html>

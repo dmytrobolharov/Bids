@@ -19,7 +19,7 @@
 	            <tr>
 		            <td align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td> 
 		            <td ><cc1:confirmedimagebutton id="btnDelete" runat="server"  ></cc1:confirmedimagebutton>
-		                <asp:ImageButton ID="btnClose"  runat ="server"   />
+		                <asp:ImageButton ID="btnClose"  runat ="server" OnClientClick="return btnClose_Click();"/>
 		            </td>
 	            </tr>
             </table>
@@ -78,22 +78,17 @@
 			                <td>
 			                    <%-- cc1:ScrollingGrid ID="sgColorPaletteGrid" runat="server" Width="800" ScrollBars="Auto" Height="600" --%>
 			                        <div style="width:800px;height:600px;background-color:#ffffff;overflow:auto;">
-
-
                                     <asp:datagrid id="DataGrid1" runat="server" AllowSorting="False" DataKeyField="ColorPaletteID">
-<%--                                        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate">
-                                        </AlternatingItemStyle>
-                                        <ItemStyle CssClass="ItemTemplate"></ItemStyle>
-                                        <headerStyle Height="25px" CssClass="tableheader"></headerStyle>
-                                        <PagerStyle Visible="False"></PagerStyle>
                                         <Columns>
                                             <asp:TemplateColumn>
+                                                <HeaderTemplate>
+                                                    <asp:CheckBox ID="checkAll" runat="server" onclick="CheckAll(this);" />
+                                                </HeaderTemplate>
                                                 <ItemTemplate>
                                                     <asp:CheckBox runat="server" ID="chkDelete" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-                                        </Columns>--%>
-                                        
+                                        </Columns>                                        
                                         <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
                                         <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
                                         <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
@@ -120,13 +115,18 @@
 		function CheckAll( checkAllBox )
 		{
 		var actVar = checkAllBox.checked ;
-		for(i=0;i< frm.length;i++)
+		for(var i=0; i < frm.length; i++)
 		{
-			e=frm.elements[i];
-			if (e.type == 'checkbox' && e.name.indexOf("chbLevel3ID") != -1)
+			var e=frm.elements[i];
+			if (e.type == 'checkbox' && e.name.indexOf("chkDelete") != -1)
 			e.checked= actVar ;
 		}
-		}
+}
+
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
 		</script>
 	</body>
 </html>

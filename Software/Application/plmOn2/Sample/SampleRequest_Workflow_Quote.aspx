@@ -31,7 +31,8 @@
 				runat="server">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><asp:button id="btnDefault" runat="server" Height="1px" Width="1px" Text=""></asp:button><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-					<TD><cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+					<TD>
+                        <cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
 					</TD>
 				</TR>
 			</TABLE>
@@ -126,8 +127,8 @@
 						</TABLE>
 						<asp:datagrid id="dgFreightCost" runat="server" Width="300px" BorderColor="Silver" BorderStyle="Solid"
 							BorderWidth="1px" PageSize="100" AutoGenerateColumns="False">
-							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 							<Columns>
 								<asp:TemplateColumn>

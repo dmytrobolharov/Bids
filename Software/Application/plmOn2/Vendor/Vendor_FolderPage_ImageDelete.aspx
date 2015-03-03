@@ -3,12 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title runat="server" id="PageTitle">Image</title>
-    <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
-    <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
-    <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
-</head>
+    <head id="Head1" runat="server">
+        <title runat="server" id="PageTitle">Image</title>
+        <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    </head>
 	<body>
 
 		<form id="Form1" method="post" runat="server">

@@ -20,15 +20,14 @@
 				border="0" runat="server">
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSaveStyle" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="cmdPdfPrint" runat="server" Message="NONE" 
-							Visible="False"></cc1:confirmedimagebutton>
-						<cc1:bwimagebutton id="btnEditVendorQuote" runat="server" 
-							Visible="False" DESIGNTIMEDRAGDROP="17"></cc1:bwimagebutton>
-						<cc1:bwimagebutton id="btnVendorReplace" runat="server" 
-							DESIGNTIMEDRAGDROP="195"></cc1:bwimagebutton><cc1:confirmedimagebutton id="btnDelete" runat="server" Message="Do you want to delete this quote?" ></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" 
-							CausesValidation="False"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"  CausesValidation="False"></cc1:confirmedimagebutton></td>
+					<td>
+                        <cc1:confirmedimagebutton id="btnSaveStyle" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                        <cc1:bwimagebutton id="cmdPdfPrint" runat="server" Message="NONE" Visible="False"></cc1:bwimagebutton>
+						<cc1:bwimagebutton id="btnEditVendorQuote" runat="server" Visible="False" DESIGNTIMEDRAGDROP="17"></cc1:bwimagebutton>
+						<cc1:bwimagebutton id="btnVendorReplace" runat="server" DESIGNTIMEDRAGDROP="195"></cc1:bwimagebutton>
+                        <cc1:confirmedimagebutton id="btnDelete" runat="server" Message="Do you want to delete this quote?" ></cc1:confirmedimagebutton>
+						<cc1:bwimagebutton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:bwimagebutton>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"  CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
 			<table class="TableHeader" height="25" cellSpacing="0" cellpadding="0" width="100%" border="0">
@@ -300,5 +299,11 @@
 		
 		
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

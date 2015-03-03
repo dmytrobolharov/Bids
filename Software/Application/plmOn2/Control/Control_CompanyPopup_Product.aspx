@@ -12,6 +12,8 @@
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
     <LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
 		<form id="Form1" method="post" runat="server">
@@ -21,7 +23,7 @@
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD><cc1:confirmedimagebutton id="imgBtnsave" runat="server" ToolTip="Add..." 
 							Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" ToolTip=""
-							 Message="NONE"></cc1:confirmedimagebutton></TD>
+							 Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 			<TABLE style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
@@ -120,4 +122,10 @@
 		}
 		</script>
 	</body>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </html>

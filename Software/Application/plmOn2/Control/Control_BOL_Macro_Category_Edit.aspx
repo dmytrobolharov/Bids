@@ -13,6 +13,8 @@
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		
     <style type="text/css">
         .style4
@@ -85,7 +87,7 @@
                     Message="NONE" CausesValidation="True"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnAddNewSubcategory" runat="server" 
                     Message="NONE" CausesValidation="True"></cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" 
+                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click()"
                     Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnDeleteCat" runat="server" 
                     Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
@@ -229,5 +231,11 @@
 				
     </div>
 	 </form>
+     <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

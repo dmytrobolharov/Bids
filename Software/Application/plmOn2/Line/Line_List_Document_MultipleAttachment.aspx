@@ -27,7 +27,7 @@
                     Visible="True" CausesValidation="False"></cc1:ConfirmedImageButton> 
                 <img  runat="server" id='btnUpload' style="display: none;" onclick="Upload_Click();return false;" /> 
                 <asp:ImageButton ID="btnDelete" runat="server" OnClick="btnDelete_Click" Visible="False"  />
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" 
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"
                     Visible="True" CausesValidation="False"></cc1:ConfirmedImageButton>                
             </td>
             <td class="fontHead" align="right" width="75">
@@ -222,6 +222,10 @@
         if (sames.length > 0) {
             alert("These file(s) are already in the queue : \r\n\t" + sames.join('\r\n\t'));
         }
+    }
+    function btnClose_Click() {
+		<%= strExitScript %>
+        return false;
     }
 </script>
  

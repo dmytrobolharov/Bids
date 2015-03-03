@@ -9,6 +9,8 @@
     <title>Showroom</title>
     <LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <script language="JavaScript">
 
 	<!--
@@ -162,7 +164,7 @@
 					    <td>
 					    <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" style="height: 24px"></cc1:confirmedimagebutton>
 					    <cc1:bwimagebutton id="btnChangeLog" runat="server" ></cc1:bwimagebutton>
-					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				    </tr>
 			    </table>
 			    <uc1:LinePlanningHeader ID="LinePlanningHeader1" runat="server" />
@@ -238,5 +240,11 @@
             <input type ="hidden" runat ="server" id="hdnFilter" />
 					
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

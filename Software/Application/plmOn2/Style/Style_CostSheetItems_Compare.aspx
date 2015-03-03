@@ -36,7 +36,7 @@
 					<td valign="middle" align="center" width="10" style="height: 28px"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td width="600" style="height: 28px">
                             <cc1:BWImageButton id="btnPreview" runat="server" />		
-							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" />
+							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" />
 					</td>					
 				</tr>
 			</table>
@@ -88,6 +88,12 @@
             resizeGridScrollArea();
             $(window).resize(function () { resizeGridScrollArea(); });
 
+        </script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
         </script>
 	</body>
 </html>

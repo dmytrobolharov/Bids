@@ -24,7 +24,7 @@
 							Visible="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnCancelUpdate" runat="server"  Message="Are you sure you want to cancel update?"
 							Visible="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnCopyImage" runat="server"  ToolTip="Copy Image From..."
 							DESIGNTIMEDRAGDROP="18"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnDeleteImage" runat="server" 
-							ToolTip="Delete Image From Style..." Message="Do you want to remove this image from this Style?"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+							ToolTip="Delete Image From Style..." Message="Do you want to remove this image from this Style?"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
 			<asp:placeholder id="plhHeaderControl" runat="server" EnableViewState="False"></asp:placeholder><br>
@@ -122,5 +122,11 @@
 			</table>
 			<p>&nbsp;</p>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

@@ -10,7 +10,6 @@
             <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
         </td>
         <td>
-            <%--<cc1:confirmedimagebutton id="btnNewUpload" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_new.gif" Message="NONE"></cc1:confirmedimagebutton>--%>
             <cc1:BWImageButton ID="btnMultiUploadWin" runat="server"></cc1:BWImageButton>
         </td>
     </tr>

@@ -16,7 +16,7 @@
             </td>
             <td>
                 <cc1:confirmedimagebutton ImageUrl="../System/Button/EN-US/btn_delete.gif" id="btnDelete" runat="server" Message="Are you sure you want to remove this photo?"></cc1:confirmedimagebutton>
-                <cc1:confirmedimagebutton ImageUrl="../System/Button/EN-US/btn_close.gif" id="btnClose" runat="server" message="NONE"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton ImageUrl="../System/Button/EN-US/btn_close.gif" id="btnClose" runat="server" message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
             </td>
             <td>
                 &nbsp;
@@ -27,5 +27,11 @@
         <asp:Image ID="commentImage" runat="server" />
     </div>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

@@ -36,7 +36,7 @@
 							<cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 							<cc1:confirmedimagebutton id="btnBatchQueue" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 							<cc1:confirmedimagebutton id="btnBatchQueueAgent" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>
 						</TD>
 					</TR>
 				</TABLE>
@@ -192,5 +192,11 @@
 				
 			</script>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

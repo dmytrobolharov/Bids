@@ -14,6 +14,10 @@
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
         
         <style type="text/css">
+			
+			form {
+			margin-bottom: 0;
+			}
             .EmptyItemTemplate
             {
                 display: none;
@@ -450,8 +454,13 @@
 
             $(document).ready(function () {
                 //window.parent.document.getElementById('frameset').cols = "0%,*";
-
-                $("#resizableTable").height($(window).height() - 20);
+				//alert($(window).height());
+				//alert($('.TableHeader').height());
+				var ieOffset = 0;
+				if ($.browser.msie) { 
+					ieOffset = 14;					
+				}
+                $("#resizableTable").height($(window).height() - 3 - 27 - ieOffset);
                 $("#resizableTable").colResizable({
                     liveDrag: true,
                     minWidth: 200,

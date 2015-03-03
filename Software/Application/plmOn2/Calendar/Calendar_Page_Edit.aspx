@@ -22,7 +22,7 @@
             <td valign="top">
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Visible="false" Message="NONE">
                 </cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
             <td width="75">
                 &nbsp;
@@ -105,6 +105,12 @@
             }
 
             $(".Collapsible").hide();
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

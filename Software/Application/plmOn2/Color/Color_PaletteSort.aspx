@@ -42,6 +42,10 @@
 	</style>
 
     <script type="text/javascript">
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
         /** Rearranges the rows after the manual change of sort in thumbnail view */
         function sortRows2(txtSort) {
             var draggingRow = $(txtSort).closest('li'); // Getting the current table row
@@ -245,7 +249,7 @@
 	            <tr>
 		            <td align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td> 
 		            <td width="50"><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
-                    <td width="50"><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+                    <td width="50"><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton></td>
 		            <td width="50">&nbsp;</td>
 		            <td align="right" width="75"><asp:label id="lblSortBy" Runat="server" CssClass="font"><b>&nbsp;Sort by:</b></asp:label></td>
                     <td width="50"><asp:dropdownlist id="ddlSortBy" Runat="server"></asp:dropdownlist></td>

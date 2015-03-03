@@ -45,7 +45,7 @@
                     <cc1:BWImageButton ID="btnPassword" runat="server" NavigateUrl="Control_User_Edit_Password.aspx" WindowName="Control_User_Edit_Password"
                         WindowWidth="600px" WindowHeight="250px" Location="False" MenuBar="False" Resizable="False"
                         ScrollBars="False" Status="False" ToolBar="False"></cc1:BWImageButton>
-                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                 </td>
                 <td class="FontHead" align="right" width="75">
                 </td>
@@ -201,5 +201,11 @@
         </asp:DataGrid>
     </asp:Panel>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

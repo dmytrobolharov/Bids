@@ -15,10 +15,10 @@
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif"></TD>
 					<TD><asp:imagebutton 
 					id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Height="0px"></asp:imagebutton><cc1:confirmedimagebutton 
-					id="btnAddColor" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
+					id="btnAddColor" runat="server" Message="NONE" OnClientClick="btnAddColor_Click()" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
 					id="btnRemoveColor" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
 					id="btnNoApplicable" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton 
-					id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></TD>
+					id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 			<table class="TableHeaderGreen" height="25" cellSpacing="0" cellPadding="0" width="100%"
@@ -112,4 +112,15 @@
 			</form>
 
 	</body>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+
+        function btnAddColor_Click() {
+            <%= strOpenScript %>
+            return false;
+        }
+    </script>
 </html>

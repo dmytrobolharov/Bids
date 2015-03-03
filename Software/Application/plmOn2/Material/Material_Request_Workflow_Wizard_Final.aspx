@@ -12,7 +12,8 @@
     <link href="../System/CSS/Grid.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />    
 	<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">

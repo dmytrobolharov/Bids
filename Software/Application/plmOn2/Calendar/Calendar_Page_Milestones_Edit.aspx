@@ -8,8 +8,9 @@
     <title></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
     <script src="../System/Jscript/underscore-min.js" type="text/javascript"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,7 +23,7 @@
             </td>
             <td valign="top">
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE" OnClientClick="return validation();"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
             <td width="75">
                 &nbsp;
@@ -219,6 +220,12 @@
                 }
             })
         });
+        </script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
         </script>
 </body>
 </html>

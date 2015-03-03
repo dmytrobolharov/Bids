@@ -6,8 +6,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
 	<title></title>
-		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,9 +19,9 @@
 			runat="server">
 			<tr vAlign="middle">
 				<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-				<td><cc1:confirmedimagebutton id="btnAdd" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_Add.gif&PL=EN-US"  Message="NONE"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnRemove" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_remove.gif&PL=EN-US"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnClose" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif" Message="NONE"></cc1:confirmedimagebutton></td>
+				<td><cc1:confirmedimagebutton id="btnAdd" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnRemove" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				<td class="FontHead" align="right" width="75"></td>
 				<td width="40"></td>
 				<td></td>
@@ -84,7 +86,7 @@
 							<td vAlign="top" width="100%">
 								<table height="45">
 									<tr>
-										<td><asp:imagebutton id="imgBtnSearch" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_search_small.gif"></asp:imagebutton></td>
+										<td><asp:imagebutton id="imgBtnSearch" runat="server"></asp:imagebutton></td>
 									</tr>
 								</table>
 							</td>
@@ -101,5 +103,11 @@
 		</table>			    
     </div>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

@@ -28,19 +28,17 @@
 		            <td width="20"><asp:imagebutton id="btnImgLast" runat="server"></asp:imagebutton></td>
 		            <td width="10">&nbsp;</td>
 		            <td nowrap><asp:label id="RecordCount" runat="server" CssClass="font"></asp:label></td>
+                    <td width="110" align="right"><span id="Span1" class="fontHead">Records per Page:</span></td>
                     <td width="25">
                         <asp:DropDownList ID="ps" runat="server" CssClass="fontHead">
                             <asp:ListItem Value="5">5</asp:ListItem>
                             <asp:ListItem Value="10">10</asp:ListItem>
-                            <asp:ListItem Value="12">12</asp:ListItem>
                             <asp:ListItem Value="15">15</asp:ListItem>
                             <asp:ListItem Value="20">20</asp:ListItem>
                             <asp:ListItem Value="25" Selected="true">25</asp:ListItem>
                             <asp:ListItem Value="30">30</asp:ListItem>
                             <asp:ListItem Value="40">40</asp:ListItem>
                             <asp:ListItem Value="50">50</asp:ListItem>
-                            <asp:ListItem Value="75">75</asp:ListItem>
-                            <asp:ListItem Value="100">100</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td width="10">
@@ -49,12 +47,30 @@
 
 	            </tr>
             </table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="MaterialID">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="MaterialID" AllowSorting="true" AllowPaging="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate <%#draggableClass%>"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate <%#draggableClass%>"></ItemStyle>
 							<HeaderStyle CssClass="TableHeader" Height="25px"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
-						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label>
+                            <Columns>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <asp:CheckBox ID="chkSelectAll" runat="server" onclick="CheckAllMaterials(this);" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="chkSelectMaterial" runat="server" />
+                                        <asp:HiddenField ID="hdnMaterialID" runat="server" />
+                                        <asp:HiddenField ID="hdnMaterialImageURL" runat="server" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate><%#GetSystemText("Image")%></HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:Image ID="imgMaterialImageID" runat="server" ImageUrl='<%# GetImageStreamPath("50", Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString) %>' />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                            </Columns>
+						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False" Text="MDate desc"></asp:label>
 		</td>
 	</tr>
 </table>

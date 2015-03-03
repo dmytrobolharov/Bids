@@ -22,7 +22,7 @@
 					<td><asp:imagebutton 
 					    id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton><cc1:confirmedimagebutton 
 					    id="btnUpdate" runat="server"></cc1:confirmedimagebutton>
-					    <cc1:confirmedimagebutton id="btnclose" visible="false" CausesValidation="False" Message="NONE" runat="server"></cc1:confirmedimagebutton></td>
+					    <cc1:confirmedimagebutton id="btnclose" visible="false" CausesValidation="False" Message="NONE" runat="server" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 				</TR>
 			</TABLE>
 			<table height="10" cellSpacing="0" cellPadding="0" width="100%" bgColor="#cddeee" border="0">
@@ -82,11 +82,29 @@
 			</table>
 			<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<TR vAlign="top">
-					<TD><asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID">
+					<TD><asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
+                            <Columns>
+                            <asp:TemplateColumn>
+                                <HeaderTemplate>
+                                    <asp:CheckBox runat="server" ID="checkAll" OnClick = "CheckAll(this)" name= "checkAll" />
+                                 </HeaderTemplate>
+							    <ItemTemplate>
+    							    <asp:CheckBox runat="server" ID="chbStyleID"  />
+	    						</ItemTemplate>
+		    					</asp:TemplateColumn>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <%# GetSystemText("Image")%>
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:Image ID="imgMaterialImageID" runat="server" ImageUrl='<%# GetImageStreamPath(50, Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString) %>' />
+                                    </ItemTemplate>
+                            </asp:TemplateColumn>
+							</Columns>
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 				</TR>
 			</TABLE>
@@ -103,7 +121,12 @@
 			}
 		}
 		</script>
-
+        <script language="javascript">
+            function btnClose_Click() {
+              <%= strExitScript %>
+              return false;
+            }
+        </script>
 
 	</body>
 </HTML>

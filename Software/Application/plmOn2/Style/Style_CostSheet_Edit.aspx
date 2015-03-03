@@ -9,10 +9,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
-	    <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
-        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-        <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <title>
     	
     </title>
@@ -50,7 +52,7 @@
                     <cc1:bwimagebutton id="btnCopy" runat="server" ></cc1:bwimagebutton>
                     <cc1:bwimagebutton id="btnPreview" runat="server" ></cc1:bwimagebutton>
                     <cc1:confirmedimagebutton id="btnCompare" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
-                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
                     <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
 				</td>
 			</tr>
@@ -229,6 +231,11 @@
 
         });
     </script>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

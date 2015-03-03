@@ -10,9 +10,11 @@
 <html>
 	<head>
 		<title>Style</title>	
-		 <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
-	     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
-         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
         <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -33,7 +35,7 @@
 					    <cc1:bwimagebutton id="btnImageSort" runat="server" ></cc1:bwimagebutton>
 					    <cc1:confirmedimagebutton id="btnCopy" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 					    <cc1:bwimagebutton id="btnImageRemove" runat="server" ></cc1:bwimagebutton>
-					    <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75">&nbsp;<%=GetSystemText("Select Set")%>:</td>
 					<td width="40"><asp:dropdownlist id="dpStyleSet" runat="server" CssClass="font" DataTextField="Value" DataValueField="ID"
@@ -115,7 +117,13 @@
 		                e.checked = actVar;
 		        }
 		    }
-		</SCRIPT>		
+		</SCRIPT>	
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>	
 	</body>
 </html>
 

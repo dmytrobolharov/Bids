@@ -18,6 +18,8 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <!--[if IE]>
     <style type="text/css">
         thead th {
@@ -573,8 +575,7 @@
         }
 
         /** Resizing BOM Grid to take all the free height on the screen **/
-        (function resizeGrid() {
-
+        Sys.Application.add_load(function () {
             var changeGrid = $("#RadGridsummary");
             if (changeGrid.length == 0) {
                 changeGrid = $("#dgComponent").closest(".auto-resize");
@@ -591,7 +592,12 @@
             } else {
                 changeGrid.height(minHeight);
             }
-        })();
+
+            grid = $find("RadGridsummary");
+            if (grid) {
+                grid.GridDataDiv.style.height = (changeGrid.height() - 67) + "px";
+            }
+        });
 
     </script>
     </form>

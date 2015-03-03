@@ -20,7 +20,7 @@
 				<tr>
 					<td width="10">&nbsp;</td>
 					<td width="50">
-						<div align="center"><img src="./System/Icons/icon_warning_32.gif" width="38" height="38" border="0"></div>
+						<div align="center"><img src="../System/Icons/icon_warning_32.gif" width="38" height="38" border="0"></div>
 					</td>
 					<td class="fontHead">
                         <asp:Label ID="lblHeader1" runat="server"></asp:Label>

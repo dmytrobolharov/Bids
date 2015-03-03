@@ -8,6 +8,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -18,7 +20,7 @@
 					<TD>
 						<cc1:confirmedimagebutton id="btnSave" runat="server" ToolTip="Edit..." 
 							Message="NONE"></cc1:confirmedimagebutton>						
-						<cc1:confirmedimagebutton id="btnClose" runat="server" ToolTip=""
+						<cc1:confirmedimagebutton id="btnClose" runat="server" ToolTip="" OnClientClick="return btnClose_Click()"
 							 Message="NONE"></cc1:confirmedimagebutton>
 				    </TD>
 				</TR>
@@ -95,7 +97,7 @@
 				</tr>
 				<TR class="fontHead">
 					<TD width="50" align ="left">
-						<cc1:confirmedimagebutton id="btnAdd" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+						<cc1:BWImageButton id="btnAdd" runat="server" Message="NONE" ></cc1:BWImageButton></td>
 					</TR>
 			</table>
 			
@@ -165,5 +167,11 @@
 		        }
 		    }
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

@@ -19,7 +19,7 @@
 					<TD ><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 							Height="0px"></asp:imagebutton><cc1:confirmedimagebutton 
 							id="btnDelete" runat="server"></cc1:confirmedimagebutton>
-                            <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" />
+                            <cc1:confirmedimagebutton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();" />
                             </TD>
 					<td width="80"></td>
 					<td width="75">&nbsp;</td>
@@ -87,5 +87,11 @@
 				</TR>
 			</TABLE>				    
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

@@ -13,6 +13,8 @@
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="../System/Jscript/Custom.js"></script>
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body MS_POSITIONING="GridLayout">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -24,7 +26,7 @@
 					<td>
                         <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-                        <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" ></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>
                     </td>
 				</tr>
 			</TABLE>
@@ -127,5 +129,11 @@
 		        }
 		    }
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

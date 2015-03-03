@@ -7,7 +7,13 @@
 <head runat="server">
     <title runat="server" id="PageTitle">Sourcing</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
-	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />     
+	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" /> 
+    <script>
+    function btnClose_Click() {
+        <%= strExitScript %>
+        return false;
+    }
+    </script>    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,7 +21,7 @@
 		<TABLE class="TableHeader" cellSpacing="0" cellPadding="0" width="100%" border="0">
 			<TR vAlign="middle">
 				<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-				<TD><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></TD>
+				<TD><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"  OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton></TD>
 			</TR>
 		</TABLE>
         <asp:datagrid id="DataGrid1" runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"

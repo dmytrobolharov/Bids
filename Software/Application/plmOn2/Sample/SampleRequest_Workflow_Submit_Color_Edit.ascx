@@ -43,8 +43,8 @@
 							<asp:datagrid id="DataGrid1" runat="server" BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px"
 								PageSize="100" AutoGenerateColumns="False" OnItemDataBound="ItemDataBoundEventHandler" OnItemCommand="DisplayBoundColumnValues"
 								Width="375px">
-								<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-								<ItemStyle Height="20px" CssClass="font" VerticalAlign="Top" BackColor="White"></ItemStyle>
+								<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+								<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 								<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 								<Columns>
 									<asp:TemplateColumn>
@@ -112,15 +112,14 @@
 								<TR class="TableHeader">
 									<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 									<TD class="fontHead">
-										<%--<cc1:confirmedimagebutton id="btnNewImage" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_add.gif" Message="NONE"></cc1:confirmedimagebutton>--%>
-										  <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+										  <cc1:BWImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
 										<cc1:confirmedimagebutton id="btnDeleteImage" runat="server"  Message="Are you sure you want to continue?"></cc1:confirmedimagebutton></TD>
 								</TR>
 							</TABLE>
 							<asp:datagrid id="dgFitImage" runat="server" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"
 								PageSize="200" AutoGenerateColumns="False" Width="500px">
-								<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-								<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+								<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+								<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 								<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 								<Columns>
 									<asp:TemplateColumn>

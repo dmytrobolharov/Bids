@@ -67,12 +67,12 @@
 								</td>
 							</tr>
 						</table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="TradePartnerID">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="TradePartnerID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
-						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
+						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False" Text="TradePartnerCode, TradePartnerName"></asp:label></TD>
 				</TR>
 			</TABLE>
 		</form>

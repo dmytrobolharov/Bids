@@ -12,8 +12,8 @@
 <asp:PlaceHolder ID="phComment" runat="server" ></asp:PlaceHolder>
 <asp:datagrid id="DataGrid1" runat="server" AutoGenerateColumns="False" PageSize="200" 
  >
-<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 <Columns>
 	<asp:TemplateColumn>

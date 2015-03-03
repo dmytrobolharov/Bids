@@ -73,8 +73,8 @@
                                 </table>
                                 <asp:DataGrid ID="DataGrid1" runat="server" AutoGenerateColumns="False" PageSize="200"
                                     BorderWidth="1px" BorderStyle="Solid" BorderColor="#E0E0E0">
-                                    <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-                                    <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+                                    <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                                    <ItemStyle CssClass="ItemTemplate"></ItemStyle>
                                     <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                                     <Columns>
                                         <asp:TemplateColumn>
@@ -326,10 +326,7 @@
                                                     <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                                                 </td>
                                                 <td class="fontHead">
-<%--                                                    <cc1:ConfirmedImageButton ID="btnNewImage" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_add.gif"
-                                                        Message="NONE"></cc1:ConfirmedImageButton>--%>
-                                                         <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False">
-                                                    </cc1:confirmedimagebutton>
+                                                    <cc1:BWImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False" />
                                                     <cc1:ConfirmedImageButton ID="btnDeleteImage" runat="server" >
                                                     </cc1:ConfirmedImageButton>
                                                 </td>
@@ -337,8 +334,8 @@
                                         </table>
                                         <asp:DataGrid ID="dgFitImage" runat="server" AutoGenerateColumns="False" PageSize="100"
                                             BorderWidth="1px" BorderStyle="Solid" BorderColor="Silver" Width="100%">
-                                            <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-                                            <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+                                            <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                                            <ItemStyle CssClass="ItemTemplate"></ItemStyle>
                                             <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                                             <Columns>
                                                 <asp:TemplateColumn>
@@ -438,7 +435,7 @@
                                 </td>
                                 <td class="fontHead">
                                     <cc1:confirmedimagebutton id="btnSaveSort" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-                                    <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_upload.gif&PL=EN-US" Message="NONE"></cc1:ConfirmedImageButton>
+                                    <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                                     <cc1:ConfirmedImageButton ID="btnDeleteFitPhotos" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                                     <cc1:BWImageButton ID="btnMarkup" runat="server" Message="NONE" ToolTip="Markup..."></cc1:BWImageButton>
                                 </td>
@@ -456,8 +453,8 @@
                         </table>
                         <asp:DataGrid ID="dgFitPhotos" runat="server" AutoGenerateColumns="False" PageSize="100"
                                       BorderWidth="1px" BorderStyle="Solid" BorderColor="Silver" Width="100%" DataKeyField="FitPhotoId">
-                            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-                            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
+                            <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                            <ItemStyle CssClass="ItemTemplate"></ItemStyle>
                             <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                             <Columns>
                                 <asp:TemplateColumn>

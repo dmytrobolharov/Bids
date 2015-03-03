@@ -25,7 +25,7 @@
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td>&nbsp;</td>
 				</tr>
 			</table>
@@ -71,7 +71,7 @@
 							<asp:Label runat="server" CssClass="fontHead" ID="label1"><%#GetSystemText("Sort")%></asp:Label>
 						</HeaderTemplate>
 						<ItemTemplate>
-							<asp:TextBox id="txtSort" runat="server" Font-Size="X-Large" Width="75px" Height="50px" MaxLength="5" Text="">
+							<asp:TextBox id="txtSort" runat="server" Width="40px" MaxLength="4" Text="">
 							</asp:TextBox>
                             <asp:HiddenField runat="server" ID="hdnSort" Value='<%#DataBinder.Eval(Container.DataItem,"Sort").tostring%>' />
 						</ItemTemplate>
@@ -119,11 +119,11 @@
                     for (var i = 1, currentRow; currentRow = table.rows[i]; i++) {
                         /** Recalculating sorts */
                         var sortInput = $(currentRow).find('input[name*="txtSort"]'); // Getting the txtSort for current row
-                        //var hdnSort = $(currentRow).find('input[name*="hdnSort"]');
+                        var hdnSort = $(currentRow).find('input[name*="hdnSort"]');
                         var newSort = "0000" + i.toString(); // Generating the new sort for it
                         newSort = newSort.substr(newSort.length - 4, 4); // Rough implementation of RIGHT
                         sortInput.val(newSort);
-                        //hdnSort.val(newSort);
+                        hdnSort.val(newSort);
                     }
                 }
 
@@ -201,7 +201,7 @@
                     strNewSort = strNewSort.substr(strNewSort.length - 4, 4); // Rough implementation of RIGHT
                     $(txtSort).val(strNewSort);
                     // Changing the hidden value
-                    //hdnOldSort.val(strNewSort);
+                    hdnOldSort.val(strNewSort);
                     // Repainting the table
                     // repaintRows($("#DataGrid1").get(0), draggingRow);
                     processRowDrop($("#DataGrid1").get(0), draggingRow);
@@ -218,5 +218,11 @@
                 }
     </script>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

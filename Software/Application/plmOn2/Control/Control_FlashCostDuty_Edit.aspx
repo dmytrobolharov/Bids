@@ -46,7 +46,7 @@
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td>
                         <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE" />
-                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false"/>
+                        <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"/>
                     </td>
                     <td>&nbsp;</td>
 				</tr>
@@ -86,5 +86,11 @@
             </telerik:RadScriptBlock>
 
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

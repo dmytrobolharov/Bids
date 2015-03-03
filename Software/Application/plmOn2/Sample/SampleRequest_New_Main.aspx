@@ -11,6 +11,8 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="../System/Jscript/System.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .compliance-failed {
         	color: #f00;
@@ -52,7 +54,7 @@
                 <cc1:confirmedimagebutton id="btnGenerate" runat="server" Message="NONE" CausesValidation="true"></cc1:confirmedimagebutton>
                 <cc1:ConfirmedImageButton ID="btnShare" runat="server" Message="NONE" CausesValidation="true"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE" CausesValidation="true"></cc1:ConfirmedImageButton>
-                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
             </td>
             <td>
                 &nbsp;
@@ -182,8 +184,8 @@
 
         <asp:datagrid id="DataGrid1" runat="server" Width="650" BorderStyle="Solid" AutoGenerateColumns="False"
 							PageSize="100" BorderWidth="1px" BorderColor="#E0E0E0">
-							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-							<ItemStyle Height="20px" BackColor="White"></ItemStyle>
+							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<Columns>
 							    <asp:TemplateColumn> 
                                     <HeaderStyle Height="20px" Width="25px" />
@@ -291,8 +293,8 @@
                     <asp:DataGrid ID="DataGridDim1" runat="server" Datakeys="DimID" BorderColor="Silver"
                         BorderStyle="Solid" BorderWidth="1px" PageSize="100" AutoGenerateColumns="false"
                         AllowPaging="true" PagerStyle-Visible="false">
-                        <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-                        <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+                        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                        <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
                         <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                     </asp:DataGrid>
                 </td>
@@ -313,8 +315,8 @@
                     <asp:DataGrid ID="DataGridDim2" runat="server" Datakeys="DimID" BorderColor="Silver"
                         BorderStyle="Solid" BorderWidth="1px" PageSize="100" AutoGenerateColumns="false"
                         AllowPaging="true" PagerStyle-Visible="false">
-                        <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-                        <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+                        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                        <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
                         <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                     </asp:DataGrid>
                 </td>
@@ -335,8 +337,8 @@
                     <asp:DataGrid ID="DataGridDim3" runat="server" Datakeys="DimID" BorderColor="Silver"
                         BorderStyle="Solid" BorderWidth="1px" PageSize="100" AutoGenerateColumns="false"
                         AllowPaging="true" PagerStyle-Visible="false">
-                        <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-                        <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+                        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                        <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
                         <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                     </asp:DataGrid>
                 </td>
@@ -512,5 +514,11 @@
     $("#SamplePalette").height($(window).height() - 30);
     $("#SamplePartner").height($(window).height() - 30);
 
+</script>
+<script language="javascript">
+	function btnClose_Click() {
+		<%= strExitScript %>
+        return false;
+    }
 </script>
 </html>

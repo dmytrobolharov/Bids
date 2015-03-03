@@ -33,15 +33,12 @@
                 </td>
                 <td>
                     <cc1:ConfirmedImageButton ID="btnSaveStyle" runat="server" Message="NONE" />
-                    <cc1:ConfirmedImageButton ID="btnStyleSet" runat="server" Message="NONE" />
-                    <cc1:ConfirmedImageButton ID="btnSamplesize" runat="server" Message="NONE" />
-                    <cc1:ConfirmedImageButton ID="btnDrop" runat="server" CausesValidation="False" Message="NONE"
-                        Visible="False" />
-                    <cc1:ConfirmedImageButton ID="btnNewTask" runat="server" Message="NONE" />
-                    <cc1:ConfirmedImageButton ID="btnNewIssue" runat="server" CausesValidation="False"
-                        Message="NONE" />
-                    <cc1:ConfirmedImageButton ID="btnDelete" runat="server" CausesValidation="False"
-                        Message="NONE" />
+                    <cc1:BWImageButton ID="btnStyleSet" runat="server" Message="NONE" />
+                    <cc1:BWImageButton ID="btnSamplesize" runat="server" Message="NONE" />
+                    <cc1:BWImageButton ID="btnDrop" runat="server" CausesValidation="False" Message="NONE" Visible="False" />
+                    <cc1:BWImageButton ID="btnNewTask" runat="server" Message="NONE" />
+                    <cc1:BWImageButton ID="btnNewIssue" runat="server" CausesValidation="False" Message="NONE" />
+                    <cc1:BWImageButton ID="btnDelete" runat="server" CausesValidation="False" Message="NONE" />
                     <cc1:confirmedimagebutton id="btnUnlockHeader" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
                     <cc1:BWImageButton ID="btnStatus" runat="server" Visible="false" />
                     <cc1:BWImageButton ID="btnPrint" runat="server"></cc1:BWImageButton>
@@ -73,7 +70,7 @@
                                     &nbsp;
                                 </td>
                                 <td>
-                                    <asp:PlaceHolder ID="plhControlsHolder" runat="server"></asp:PlaceHolder>
+                                    <asp:PlaceHolder ID="plhControlsHolder" runat="server" EnableViewState="False"></asp:PlaceHolder>
                                 </td>
                             </tr>
                         </table>

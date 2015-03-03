@@ -10,6 +10,8 @@
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	<style type="text/css">
 	    .notify-selected td, .notify-selected td.rgSorted,
 	    .RadGrid_YPLM .notify-selected td, .RadGrid_YPLM .notify-selected td.rgSorted {
@@ -46,7 +48,9 @@
 	    	white-space: normal !important;
 	    }
 	    
-        th.rgHeaderYPLM, th.rgHeader {            padding: 0 0px !important;        }	    
+        th.rgHeaderYPLM, th.rgHeader {
+            padding: 0 0px !important;
+        }	    
         
         #RadGridChangeLog .rgMasterTable td {
             border-color: #ddd !important;
@@ -84,7 +88,7 @@
                     </asp:ImageButton><cc1:ConfirmedImageButton ID="btnSendTo" runat="server" Message="NONE" OnClientClick="return emailPopup();">
                     </cc1:ConfirmedImageButton><cc1:ConfirmedImageButton ID="btnClearSelection" runat="server" Message="NONE">
                     </cc1:ConfirmedImageButton><cc1:ConfirmedImageButton ID="btnSelectAll" runat="server" Message="NONE" OnClientClick="return selectAll();">
-                    </cc1:ConfirmedImageButton><cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE">
+                    </cc1:ConfirmedImageButton><cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()">
                     </cc1:ConfirmedImageButton>
                 </td>
                 <td width="75">
@@ -114,7 +118,7 @@
                                 <table height="45">
                                     <tr>
                                         <td>
-                                            <asp:ImageButton ID="imgBtnSearch" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_search_small.gif">
+                                            <asp:ImageButton ID="imgBtnSearch" runat="server">
                                             </asp:ImageButton>
                                         </td>
                                     </tr>
@@ -226,5 +230,11 @@
         </script>
 	</telerik:RadCodeBlock>	
 	</body>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </html>
 

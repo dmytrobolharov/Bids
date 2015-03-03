@@ -11,6 +11,8 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 
      <style type="text/css">
             .material-colors {
@@ -80,7 +82,7 @@
                      <cc1:ConfirmedImageButton ID="btnRemove" runat="server" Message="NONE" /> 
                     <cc1:ConfirmedImageButton ID="btnCMAutoColor" runat="server" Message="NONE" />
                      <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:BWImageButton>
-                    <cc1:ConfirmedImageButton ID="btnClose" Message="NONE" runat="server" />
+                    <cc1:ConfirmedImageButton ID="btnClose" Message="NONE" runat="server" OnClientClick="return btnClose_Click()" />
                 </td>
             </tr>
         </table>
@@ -160,6 +162,12 @@
             $(sender).closest("table").find("input[id*='chbColorway']").each(function() {$(this)[0].checked = sender.checked;});
         }
 
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

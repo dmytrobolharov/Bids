@@ -8,6 +8,8 @@
     <title >Select Color Folder</title>
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />    
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	<script language="JavaScript">
 		if (window.screen) {
 			var aw = screen.availWidth;
@@ -28,7 +30,7 @@
 			<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 			<td width="80"><asp:imagebutton 
 			    id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton><asp:ImageButton 
-			    id="btnClose" runat="server" ></asp:ImageButton></td>
+			    id="btnClose" runat="server" OnClientClick="return btnClose_Click()" ></asp:ImageButton></td>
 			<td width="80"></td>
 			<td width="80"></td>
 			<td>&nbsp;</td>
@@ -110,5 +112,11 @@
     </table>
     <asp:HiddenField ID="hdnXmlFile" runat="server" />
     </form>
+        <script language="javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+        </script>
 </body>
 </html>

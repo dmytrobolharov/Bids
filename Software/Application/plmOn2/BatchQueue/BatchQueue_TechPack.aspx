@@ -24,7 +24,7 @@
 					<td>
 						<asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 							Height="0px" />
-						<cc1:confirmedimagebutton id="btnNew" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+						<cc1:BWImageButton id="btnNew" runat="server"  Message="NONE"></cc1:BWImageButton>
 						<cc1:confirmedimagebutton id="btnAgentAdd" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnDelete" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnReset" runat="server"  Message="NONE"></cc1:confirmedimagebutton>

@@ -12,6 +12,8 @@
     <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="../System/Jscript/System.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .compliance-failed {
         	color: #f00;
@@ -53,7 +55,7 @@
                 <cc1:confirmedimagebutton id="btnGenerate" runat="server" Message="NONE" CausesValidation="true"></cc1:confirmedimagebutton>
                 <cc1:ConfirmedImageButton ID="btnShare" runat="server" Message="NONE" CausesValidation="true"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE" CausesValidation="true"></cc1:ConfirmedImageButton>
-                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton>
             </td>
             <td>
                 &nbsp;
@@ -203,7 +205,7 @@
 		</TABLE>
 
         <asp:datagrid id="DataGrid1" runat="server" Width="600px" BorderStyle="Solid" AutoGenerateColumns="False"
-							PageSize="100" BorderWidth="1px" BorderColor="#E0E0E0">
+							PageSize="100" BorderWidth="1px" BorderColor="#E0E0E0"  AllowPaging="false">
 							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
 							<ItemStyle Height="20px" BackColor="White"></ItemStyle>
 							<Columns>
@@ -569,7 +571,10 @@
         $("#FloatDGMain").width($(".tablescroll_head").width());
     };
 
-
+    function btnClose_Click() {
+        <%= strExitScript %>
+        return false;
+    }
 </script>
 
 </html>

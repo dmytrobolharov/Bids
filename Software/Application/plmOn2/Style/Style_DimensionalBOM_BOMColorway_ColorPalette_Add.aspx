@@ -6,6 +6,8 @@
     <title><%= Me.GetSystemText("Select Color") %></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,7 +19,7 @@
 					<td>
                         <asp:ImageButton ID="btnBack" runat="server" />
                         <asp:ImageButton id="btnSave" runat="server"></asp:ImageButton>
-                        <asp:ImageButton id="btnClose" runat="server"></asp:ImageButton>
+                        <asp:ImageButton id="btnClose" runat="server" OnClientClick="return btnClose_Click()"></asp:ImageButton>
                     </td>
 				</tr>
 			</table>
@@ -33,7 +35,7 @@
 							<td vAlign="top" width="100%">
 								<table height="45">
 									<tr>
-										<td><asp:imagebutton id="imgBtnSearch" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_search_small.gif"></asp:imagebutton></td>
+										<td><asp:imagebutton id="imgBtnSearch" runat="server"></asp:imagebutton></td>
 									</tr>
 								</table>
 							</td>
@@ -98,5 +100,11 @@
             }
         }
 	</script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

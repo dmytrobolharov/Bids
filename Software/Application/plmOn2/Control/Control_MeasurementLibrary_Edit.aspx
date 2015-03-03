@@ -30,12 +30,9 @@
                     runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Height="0px" TabIndex="0" />
             </td>
             <td>
-                <cc1:ConfirmedImageButton ID="btmImgNewPOM" runat="server" 
-                    Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnPDFView" runat="server" 
-                    Message="NONE"></cc1:ConfirmedImageButton><cc1:ConfirmedImageButton ID="btnClose"
-                        runat="server"  Message="NONE" Visible="false"
-                        CausesValidation="False"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btmImgNewPOM" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
+                <cc1:BWImageButton ID="btnPDFView" runat="server" Message="NONE"></cc1:BWImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server"  Message="NONE" Visible="false" CausesValidation="False"></cc1:ConfirmedImageButton>
             </td>
             <td class="FontHead" align="right" width="75">
             </td>

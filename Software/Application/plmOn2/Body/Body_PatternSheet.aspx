@@ -21,20 +21,11 @@
                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/>
             </td>
             <td>
-            	<cc1:ConfirmedImageButton ID="btnCreateModel" runat="server" Message="NONE">
-                </cc1:ConfirmedImageButton>           	
-                 <cc1:ConfirmedImageButton ID="btnAdd1" runat="server" Message="NONE" runat="server"  >
-                </cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnRemove1" runat="server" Message="NONE" runat="server"  >
-                </cc1:ConfirmedImageButton>
+                <cc1:BWImageButton ID="btnCreateModel" runat="server" Message="NONE"></cc1:BWImageButton>           	
+                <cc1:BWImageButton ID="btnAdd1" runat="server" Message="NONE" runat="server"></cc1:BWImageButton>
+                <cc1:BWImageButton ID="btnRemove1" runat="server" Message="NONE" runat="server"></cc1:BWImageButton>
                 &nbsp;&nbsp;&nbsp;
                 <asp:CheckBox valign="top" align="center" ID="chbImperial" autopostback="true"  runat="server" Text="Imperial" CssClass="fontHead" />
-               <%--<cc1:bwimagebutton ID="btnAdd" runat="server" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_add.gif" WindowName="ModelAdd">
-                </cc1:bwimagebutton>--%>
-                <%--<cc1:BWImageButton ID="btnRemove" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_remove.gif">
-                </cc1:BWImageButton>--%>
-               <%--<cc1:ConfirmedImageButton ID="btnRefresh" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_refresh.gif">
-                </cc1:ConfirmedImageButton>--%>
             </td>
         </tr>
     </table>
@@ -73,98 +64,6 @@
      <asp:Label ID="SortOrder2" runat="server" Visible="False"></asp:Label>
     <br />
     <br />
- <%--   <table class="TableHeader" id="Table1" cellspacing="0" cellpadding="0" width="100%"
-        border="0" runat="server">
-        <tr>
-            <td>
-                <cc1:ConfirmedImageButton ID="btnEdit" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_edit.gif">
-                </cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif">
-                </cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_cancel.gif">
-                </cc1:ConfirmedImageButton>
-                <br />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <cc2:YSTabView ID="YSTabView1" runat="server"></cc2:YSTabView>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <%-- <asp:PlaceHolder  runat ="server"  ID="plhControlsHolderEdit" ></asp:PlaceHolder>
-                <asp:PlaceHolder runat="server" ID="plhControlsHolder"></asp:PlaceHolder>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <br />
-            </td>
-        </tr>
-        <!-- Piece Views -->
-        <tr>
-            <td>
-                <cc2:YSTabView ID="YSTabView2" runat="server"></cc2:YSTabView>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <!-- Piece List View -->
-           
-                			<asp:datagrid id="DataGrid1" runat="server" AllowSorting="False" 
-                    DataKeyField="ID">
-							<AlternatingItemStyle Height="25px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-							<ItemStyle Height="25px" CssClass="ItemTemplate"></ItemStyle>
-							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
-							<PagerStyle Visible="False"></PagerStyle>
-						</asp:datagrid>
-                <asp:Label ID="SortOrder1" runat="server" Visible="False"></asp:Label>
-            </td>
-        </tr>
-    </table>--%>
-<%--    <!-- Thumbnail View -->
-    <table bordercolor="gainsboro" cellspacing="1" cellpadding="0" border="0">
-        <tr>
-            <td valign="top">
-                <asp:DataList ID="Datalist2" runat="server" EnableViewState="false" RepeatDirection="Horizontal"
-                    RepeatColumns="1" RepeatLayout="Table" DataKeyField="ImageId">
-                    <ItemStyle HorizontalAlign="Left" BorderWidth="0px" BorderStyle="Solid" BorderColor="Gainsboro"
-                        VerticalAlign="Top" BackColor="White"></ItemStyle>
-                    <HeaderStyle HorizontalAlign="Left"></HeaderStyle>
-                    <ItemTemplate>
-                        <table id="tbItem" runat="server" bordercolor='#CCCCCC' border="1" cellpadding="0"
-                            width="100%" cellspacing="0">
-                            <tr>
-                                <td>
-                                    <table class="TableHeader" cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                            <td>
-                                                <asp:Label ID="lblEdit" runat="server"></asp:Label>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr height='<%#ImageWidth%>'>
-                                <td>
-                                    <asp:Image ID="imgDesign" runat="server" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:PlaceHolder ID="pnlHeader" runat="server"></asp:PlaceHolder>
-                                </td>
-                            </tr>
-                        </table>
-                        <input type="hidden" id="txtImageVersion" runat="server" />
-                        <input type="hidden" id="txtImageFileName" runat="server" /><br />
-                    </ItemTemplate>
-                </asp:DataList>
-            </td>
-        </tr>
-    </table>
-    <input id="imageSize" type="hidden" runat="server" />--%>
     </form>
 </body>
 </html>

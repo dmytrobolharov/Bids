@@ -16,7 +16,9 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 	    <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
-
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
         <style type="text/css">
             #DataGrid1 .TableHeader {background-repeat: repeat;}
             #DataGrid1 .TableHeaderGreen {background-repeat: repeat;}
@@ -34,15 +36,17 @@
 				runat="server">
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10" style="height: 28px"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td width="600" style="height: 28px"><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnCopy" visible=false runat="server" Message="Are you sure you want to copy from style spec ?"
-							></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnSamplesize" runat="server" visible=false Message="NONE" 
-							ToolTip="Change Sample Size..."></cc1:confirmedimagebutton><cc1:bwimagebutton id="btnSizeRange" runat="server" visible=false ToolTip="Change Size Range..."
-							WindowName="Sizerange"></cc1:bwimagebutton><cc1:confirmedimagebutton id="btnGradeRules"  runat="server" visible=false Message="NONE" ></cc1:confirmedimagebutton>
-							<cc1:confirmedimagebutton id="btnEditSample" runat="server" visible="false" Message="NONE" ></cc1:confirmedimagebutton>							
-							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-                            <cc1:confirmedimagebutton id="btnUnLinkWorkflowItem" OnClientClick="return MeasUnLinkConfirm();" runat="server"  Message="NONE" Visible="false"></cc1:confirmedimagebutton>
-                            <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
-							<asp:CheckBox valign="top" align="center" ID="ChbShowHide" autopostback="true" runat="server" Text="Show Sort ID" />						
+					<td width="600" style="height: 28px">
+                        <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="imgBtnCopy" visible=false runat="server" Message="Are you sure you want to copy from style spec ?"></cc1:confirmedimagebutton>
+                        <cc1:bwimagebutton id="btnSamplesize" runat="server" visible=false Message="NONE"></cc1:bwimagebutton>
+                        <cc1:bwimagebutton id="btnSizeRange" runat="server" visible=false ToolTip="Change Size Range..." WindowName="Sizerange"></cc1:bwimagebutton>
+                        <cc1:confirmedimagebutton id="btnGradeRules"  runat="server" visible=false Message="NONE" ></cc1:confirmedimagebutton>
+						<cc1:confirmedimagebutton id="btnEditSample" runat="server" visible="false" Message="NONE" ></cc1:confirmedimagebutton>							
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnUnLinkWorkflowItem" OnClientClick="return MeasUnLinkConfirm();" runat="server"  Message="NONE" Visible="false"></cc1:confirmedimagebutton>
+                        <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
+						<asp:CheckBox valign="top" align="center" ID="ChbShowHide" autopostback="true" runat="server" Text="Show Sort ID" />						
 					</td>					
 					<td class="FontHead" align="right" width="75" style="height: 28px"><!--&nbsp;<asp:Label id="lblSelectSet" runat="server" >Select Set:</asp:Label>--></td>
 					<td width="40" style="height: 28px"><!--<asp:dropdownlist id="dpStyleSet" runat="server" AutoPostBack="true" DataValueField="ID" DataTextField="Value"
@@ -357,8 +361,7 @@
         </script>		
 
         
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
         <script type="text/javascript" language="javascript">
 
             function MeasUnLinkConfirm() {
@@ -393,6 +396,11 @@
                 return false;
             }	    
         </script>   
-
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

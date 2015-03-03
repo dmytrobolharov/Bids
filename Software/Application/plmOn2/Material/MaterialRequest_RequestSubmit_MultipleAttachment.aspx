@@ -22,13 +22,11 @@
                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
             </td>
             <td>
-                <asp:ImageButton runat="server" ID="btnSave" OnClick="btnSave_Click" OnClientClick="return btnSave_Click()" Visible="False" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif" />
-                <cc1:ConfirmedImageButton ID="btnAdd" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_attachfile.gif"
-                    Visible="True" CausesValidation="False"></cc1:ConfirmedImageButton> 
-                <img src="../System/Button/ButtonStream.ashx?BN=btn_attachfile.gif" id='btnUpload' style="display: none;" onclick="Upload_Click();return false;" /> 
-                <asp:ImageButton ID="btnDelete" runat="server" OnClick="btnDelete_Click" Visible="False" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_delete.gif" />
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_close.gif"
-                    Visible="True" CausesValidation="False"></cc1:ConfirmedImageButton>                
+                <asp:ImageButton runat="server" ID="btnSave" OnClick="btnSave_Click" OnClientClick="return btnSave_Click()" Visible="False" />
+                <cc1:ConfirmedImageButton ID="btnAdd" runat="server" Message="NONE" Visible="True" CausesValidation="False"></cc1:ConfirmedImageButton> 
+                <asp:ImageButton runat="server" id="btnUpload" Visible="false" OnClientClick="Upload_Click();return false;" />
+                <asp:ImageButton ID="btnDelete" runat="server" OnClick="btnDelete_Click" Visible="False" />
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" Visible="True" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>                
             </td>
             <td class="fontHead" align="right" width="75">
             </td>
@@ -224,6 +222,11 @@
         }
     }
 </script>
-
+<script language="javascript">
+            function btnClose_Click() {
+              <%= strExitScript %>
+              return false;
+            }
+        </script>
 </html>
 

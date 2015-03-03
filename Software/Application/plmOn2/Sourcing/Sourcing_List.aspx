@@ -46,7 +46,8 @@
 								<TD noWrap><asp:label id="RecordCount" runat="server" CssClass="font"></asp:label></TD>
 								<TD class="fontHead" align="right"><asp:label id="lblRecordsPerPage" runat="server" CssClass="fontHead">Records per Page:</asp:label></TD>
 								<TD width="25"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
-										<asp:ListItem Value="5">5</asp:ListItem>
+										<asp:ListItem Value="1">1</asp:ListItem>
+                                        <asp:ListItem Value="5">5</asp:ListItem>
 										<asp:ListItem Value="10">10</asp:ListItem>
 										<asp:ListItem Value="15">15</asp:ListItem>
 										<asp:ListItem Value="20">20</asp:ListItem>
@@ -75,6 +76,13 @@
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
+                            <Columns>
+                                <asp:TemplateColumn>
+                                    <ItemTemplate>
+                                        <asp:CheckBox runat="server" ID="chbStyleSourcingID" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                            </Columns>
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 				</TR>
 			</TABLE>

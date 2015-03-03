@@ -8,3 +8,8 @@ Script #2 :
 Text: script2.sql
 WI : 27881
 Why: INSERT script to add all portrait report files to rReportStylePageItem so that customers can use the portrait files.
+
+Script #3 :
+Text: script3.sql
+WI : 28754
+Why: Delete Tech Pack batch queue functionality 

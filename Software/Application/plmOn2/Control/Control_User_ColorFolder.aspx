@@ -27,7 +27,7 @@
             <td>
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:BWImageButton ID="btnLockFolder" runat="server"></cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
             <td class="FontHead" align="right" width="75">
             </td>
@@ -103,7 +103,12 @@
             }
         }
     </script>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
     <asp:Label ID="lblWarning" runat="server" CssClass="fontHead"></asp:Label>
 </body>
 </html>

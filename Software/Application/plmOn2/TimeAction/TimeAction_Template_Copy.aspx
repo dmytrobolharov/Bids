@@ -14,7 +14,23 @@
 	</head>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
-        
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server" >
+        <Scripts>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js"></asp:ScriptReference>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js"></asp:ScriptReference>
+        </Scripts>
+        <CdnSettings TelerikCdn="Disabled" />
+    </telerik:RadScriptManager>
+    <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" Runat="server">
+        <StyleSheets>
+            <telerik:StyleSheetReference Path="../System/CSS/RadCalendar.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadComboBox.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadGrid.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadInput.YPLM.css" />
+        </StyleSheets>
+        <CdnSettings TelerikCdn="Disabled" />
+    </telerik:RadStyleSheetManager>
         
     
 			<TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"

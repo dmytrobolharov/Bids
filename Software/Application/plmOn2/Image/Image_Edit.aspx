@@ -14,8 +14,9 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" / >
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-    <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="../System/Jscript/jqueryZoom.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+    	<script type="text/javascript" src="../System/Jscript/jqueryZoom.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <script type="text/javascript">
 		<!--
 
@@ -47,19 +48,19 @@
                 <cc1:ConfirmedImageButton ID="btnNew" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="imgBtnCopyImage" runat="server"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnPreview" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:BWImageButton ID="btnPreview" runat="server" Message="NONE"></cc1:BWImageButton>
                 <cc1:ConfirmedImageButton ID="btnUpdate" runat="server" Message="NONE" Visible="False">
                 </cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnCancelUpdate" runat="server" Message="NONE" Visible="False">
                 </cc1:ConfirmedImageButton>
                 <cc1:BWImageButton ID="btn_createstyle" runat="server" Visible="False"></cc1:BWImageButton>
                 <cc1:BWImageButton ID="btn_creatematerial" runat="server" Visible="False"></cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnNewTask" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnNewIssue" runat="server" Message="NONE" CausesValidation="False">
-                </cc1:ConfirmedImageButton>
+                <cc1:BWImageButton ID="btnNewTask" runat="server" Message="NONE"></cc1:BWImageButton>
+                <cc1:BWImageButton ID="btnNewIssue" runat="server" Message="NONE" CausesValidation="False">
+                </cc1:BWImageButton>
                 <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;">
                 </cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
             <td>
                 &nbsp;
@@ -356,7 +357,10 @@
             alert("These file(s) are already in the queue : \r\n\t" + sames.join('\r\n\t'));
         }
     }
-
+    function btnClose_Click() {
+                        <%= strExitScript %>
+                        return false;
+                    }
 
 </script>
 </html>

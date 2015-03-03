@@ -15,7 +15,9 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
-    <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>    
+    <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="Form1" runat="server" defaultbutton="btnSave">
@@ -52,7 +54,7 @@
 		        <cc1:bwimagebutton id="btnGoToStyle" runat="server"></cc1:bwimagebutton>
                 <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;">
                 </cc1:BWImageButton>
-                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return ConfirmClose();"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="if(ConfirmClose()){return btnClose_Click();}else{return false;};"></cc1:confirmedimagebutton>
                 <cc1:confirmedimagebutton id="btnCommit" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>
                 <cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>
             </td>
@@ -626,6 +628,11 @@
 		            return true;
 		        }
 		    }
+
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
 
             if ($("#drlStyleCostingType").val() == "9") {
                 $("#flash2").hide();

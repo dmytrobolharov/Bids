@@ -10,6 +10,8 @@
         <meta content="JavaScript" name="vs_defaultClientScript" />
         <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
 		<script language="javascript" src="../System/Jscript/System.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     </head>
     <body>

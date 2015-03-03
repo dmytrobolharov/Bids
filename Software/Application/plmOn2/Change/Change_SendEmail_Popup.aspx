@@ -12,6 +12,8 @@
 		<link href="../System/CSS/jquery-ui-1.8.21.custom.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/jquery.tagit.css" type="text/css" rel="stylesheet" />     
 		<link href="../System/CSS/tagit.ui-zendesk.css" type="text/css" rel="stylesheet" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 
         <style type="text/css">
             .tdBtnAddEmail 
@@ -20,8 +22,7 @@
             }
         </style>    
           
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/tag-it.js"></script>
 		
         <style type="text/css">
@@ -39,7 +40,7 @@
                         </td>
                         <td width="100%">
                             <cc1:ConfirmedImageButton ID="btnSend" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                            <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
+                            <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                         </td>
                         <td>
                             &nbsp;
@@ -169,4 +170,10 @@
             </script>
         </telerik:RadCodeBlock>
     </body>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </html>

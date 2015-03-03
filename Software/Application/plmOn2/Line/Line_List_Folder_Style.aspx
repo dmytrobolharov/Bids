@@ -49,9 +49,8 @@
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:bwimagebutton id="btnGoToStyle" runat="server" ></cc1:bwimagebutton><cc1:confirmedimagebutton id="btn_drop" runat="server" ></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnDelete" runat="server" ></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" 
-							CausesValidation="False"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton><asp:textbox id="txtStatus" runat="server" Visible="False"></asp:textbox></TD>
+						<cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
+						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton><asp:textbox id="txtStatus" runat="server" Visible="False"></asp:textbox></TD>
 				</TR>
 			</TABLE>
 			<TABLE id="TB_Version" borderColor="#ffcc66" height="30" cellSpacing="0" cellPadding="1"
@@ -200,6 +199,10 @@
 
         function showSeasonalColor(strStyleID, strLineFolderID, strLineFolderItemID, strStyleBOMDimensionID) {
             window.radopen("Line_List_Folder_Style_SeasonalColorAdd.aspx?SID=" + strStyleID + "&LFID=" + strLineFolderID + "&LFIID=" + strLineFolderItemID + "&DBOM=" + strStyleBOMDimensionID, "AddSeasonalColor");
+        }
+        function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
         }
     </script>
 

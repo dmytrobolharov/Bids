@@ -3868,7 +3868,7 @@
     <DataSet Name="dsStyle">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT StyleID, StyleNo FROM pStyleHeader WHERE Active = 1</CommandText>
+        <CommandText>SELECT StyleID, ISNULL(StyleNo, '') AS StyleNo FROM pStyleHeader WHERE Active = 1</CommandText>
       </Query>
       <Fields>
         <Field Name="StyleID">

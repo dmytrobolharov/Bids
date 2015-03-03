@@ -119,12 +119,6 @@
                     <asp:ImageButton runat="server" ID="btnNew" OnClientClick="saveClick()" />
                     <asp:ImageButton runat="server" ID="btnSaveClose" OnClientClick="saveCloseClick()" />
                     <asp:ImageButton runat="server" ID="btnClose" OnClientClick="window.close();" />
-                    <%--<input type="image" style="border-width: 0px;" src="http://<%= Request.Url.Host %>/plmOnImageServer/ButtonStream.ashx?BN=btn_save.gif&PL=en-US"
-                        id="imgBtnNew" name="imgBtnNew" onclick="saveClick()">
-                    <input type="image" style="border-width: 0px;" src="http://<%= Request.Url.Host %>/plmOnImageServer/ButtonStream.ashx?BN=btn_save_close.gif&PL=en-US"
-                        id="btnSaveClose" name="btnSaveClose" onclick="saveCloseClick()">
-                    <input type="image" style="border-width: 0px;" src="http://<%= Request.Url.Host %>/plmOnImageServer/ButtonStream.ashx?BN=btn_close.gif&PL=en-US"
-                        id="btnClose" name="btnClose" onclick="window.close();">--%>
                 </td>
             </tr>
         </tbody>

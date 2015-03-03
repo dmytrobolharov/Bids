@@ -24,8 +24,8 @@
 				<TD>
 					<cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 					<cc1:bwimagebutton id="btnSet" runat="server" Message="NONE" Visible="false" ToolTip="Edit Style Set..."></cc1:bwimagebutton>
-					<cc1:confirmedimagebutton id="btnDelete" runat="server" Message="NONE"  CausesValidation="False"></cc1:confirmedimagebutton>
-                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton></TD>
+					<cc1:bwimagebutton id="btnDelete" runat="server" Message="NONE"  CausesValidation="False"></cc1:bwimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></TD>
 			</TR>
 		</table> 
 		<TABLE height="100" cellSpacing="0" cellPadding="0" width="100%" border="0">
@@ -39,5 +39,11 @@
 		<asp:placeholder id="pnlStyleComments1" runat="server"></asp:placeholder>		   
     
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

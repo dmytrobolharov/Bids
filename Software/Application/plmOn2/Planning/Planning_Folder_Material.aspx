@@ -14,6 +14,8 @@
         <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
             a img {border:none; outline: none;}
             .search-cell td {
@@ -34,6 +36,7 @@
         	    /*border: 1px solid #eee;*/
             }
         </style>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -72,6 +75,7 @@
                         <cc1:ConfirmedImageButton ID="btnMaterialRemove" runat="server"></cc1:ConfirmedImageButton>
                         <cc1:ConfirmedImageButton ID="btnWhereUsed" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>  
+                        <cc1:BWImageButton id="btnSort" runat="server" Message="NONE" ></cc1:BWImageButton>
                     </td>
 					<td></td>
 				</tr>
@@ -303,8 +307,7 @@
         </script>
 
         
-        <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-        <script type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+        <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
         <script type="text/javascript" src="../System/Jscript/toastr.min.js"></script>
 
         <script type="text/javascript">

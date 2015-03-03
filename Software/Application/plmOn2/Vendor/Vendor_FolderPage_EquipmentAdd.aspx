@@ -7,8 +7,9 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet" />
-        <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery.tablescroll.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
@@ -18,7 +19,7 @@
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td>
 						<cc1:confirmedimagebutton id="btnAdd" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					</td>
 				</tr>
 			</table>
@@ -140,6 +141,12 @@
                 $(".tablescroll_wrapper").width($(".tablescroll_wrapper").width() + 1);
 
             });
+        </script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
         </script>
 	</body>
 </html>

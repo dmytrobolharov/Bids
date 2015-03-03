@@ -98,7 +98,7 @@
 
         <table id="resizableTable" width="100%">
             <tr>
-                <td width="70%" id="scrollTD1" height="100%">
+                <td width="65%" id="scrollTD1" height="100%">
                 <!-- Left frame-->
                 <div style="overflow-y:scroll;width:100%;height:100%;overflow-x:hidden;" id="scrollDiv1">
                     <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelStyle" ClientEvents-OnRequestStart="onAjaxRequestStart"
@@ -143,11 +143,11 @@
                                             </div>
                                     </td>
                                     <td>&nbsp;&nbsp;&nbsp;</td>
+                                    <td width="110" align="right"><span id="lblRecordPerPage" class="fontHead">Records per Page:</span></td>
 								    <td width="25">
 								        <asp:dropdownlist id="ps_style" runat="server" CssClass="fontHead">
 										    <asp:ListItem Value="5">5</asp:ListItem>
-										    <asp:ListItem Value="10">10</asp:ListItem>
-                                            <asp:ListItem Value="12" Selected="True">12</asp:ListItem>
+										    <asp:ListItem Value="10" Selected="True">10</asp:ListItem>
 										    <asp:ListItem Value="15">15</asp:ListItem>
 										    <asp:ListItem Value="20">20</asp:ListItem>
 										    <asp:ListItem Value="25">25</asp:ListItem>
@@ -201,7 +201,7 @@
                 </div>
                 </td>
 
-                <td width="30%" height="100%">
+                <td width="35%" height="100%">
                 <!-- Right frame -->
                 <div style="overflow-y:scroll;width:100%;height:100%;overflow-x:hidden;" id="scrollDiv2">
                     <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelColor" ClientEvents-OnRequestStart="" ClientEvents-OnResponseEnd="" Width="100%">
@@ -234,7 +234,7 @@
                                 <table class="TableHeader" cellSpacing="0" cellPadding="0" width="100%" border="0">
 				                <tr>
 					                <td align="center" width="10" height="30"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					                <td><asp:label id="lblSelectAllColors" CssClass="fontHead" Runat="server"></asp:label>&nbsp;<input id="checkAllColors" onclick="CheckAllColors(this);" type="checkbox" name="checkAll" /></td>
+					                <td nowrap><asp:label id="lblSelectAllColors" CssClass="fontHead" Runat="server"></asp:label>&nbsp;<input id="checkAllColors" onclick="CheckAllColors(this);" type="checkbox" name="checkAll" /></td>
 				                    <td>
 									        <div align="left">&nbsp;
 										        <asp:label id="lblColorsCurrentIndex" Runat="server" Visible="False" Text="0"></asp:label>
@@ -242,30 +242,30 @@
                                             </div>
 								        </td>
 								        <td width="15">
-									        <div align="center">
+									        <div align="left">
 									            <asp:imagebutton id="btnImgColorsFirst" runat="server"></asp:imagebutton>
 									        </div>
 								        </td>
 								        <td width="15">
-									        <div align="center">
+									        <div align="left">
 									            <asp:imagebutton id="btnImgColorsPrevious" runat="server"></asp:imagebutton>
 								            </div>
 								        </td>
-								        <td width="150">
+								        <td width="110" nowrap>
 									        <div align="center"><asp:label id="lblColorsCounts" Runat="server" CssClass="plaintable"></asp:label></DIV>
 								        </td>
 								        <td width="15">
-									        <div align="center">
+									        <div align="left">
 			                                    <asp:imagebutton id="btnImgColorsNext" runat="server"></asp:imagebutton>
 			                                </div>
 								        </td>
 								        <td width="15">
-			                                <div align="center">
+			                                <div align="left">
 			                                    <asp:imagebutton id="btnImgColorsLast" runat="server"></asp:imagebutton>
 			                                </div>
 								        </td>
-								        <td>
-									        <div align="left">
+								        <td nowrap>
+									        <div align="center">
 									            <B>
 									                <asp:label id="lblColorsRecordCount" Runat="server" Visible="true"></asp:label>
 									                &nbsp;
@@ -274,11 +274,11 @@
                                             </div>
 								        </td>
 								        <td>&nbsp;&nbsp;&nbsp;</td>
+                                        <td width="110" align="right" nowrap><span id="Span1" class="fontHead">Records per Page:</span></td>
 								        <td width="25">
 								            <asp:dropdownlist id="ps_color" runat="server" CssClass="fontHead">
 										        <asp:ListItem Value="5">5</asp:ListItem>
-										        <asp:ListItem Value="10">10</asp:ListItem>
-                                                <asp:ListItem Value="12" Selected="True">12</asp:ListItem>
+										        <asp:ListItem Value="10" Selected="True">10</asp:ListItem>
 										        <asp:ListItem Value="15">15</asp:ListItem>
 										        <asp:ListItem Value="20">20</asp:ListItem>
 										        <asp:ListItem Value="25">25</asp:ListItem>
@@ -302,7 +302,7 @@
                                                 <td align="center" valign="middle" width="60">
                                                     <table width="50" height="50"  cellSpacing="0" cellPadding="0" border="0">
                                                         <tr>
-                                                            <td runat="server" id="tdColorImage" align="left" valign="top">
+                                                            <td  width="50" height="50" runat="server" id="tdColorImage" align="left" valign="top">
                                                                 <label style="width:100%; height:100%; display:block;">
 					                                                <asp:CheckBox ID="chkSelectColor" Runat="server"></asp:CheckBox>
                                                                     <asp:HiddenField ID="hdnColorPaletteID" runat="server" />
@@ -600,6 +600,7 @@
                 }
 
                 document.getElementById("checkAllStyles").checked = false;
+                document.getElementById("checkAllColors").checked = false;
             }
 
             /*

@@ -12,6 +12,8 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
     	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
             .search-cell td {
             	vertical-align: top !important;
@@ -45,7 +47,7 @@
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD>
                         <cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-					    <asp:imagebutton id="btnClose" runat="server" ></asp:imagebutton>
+					    <asp:imagebutton id="btnClose" runat="server" OnClientClick="return btnClose_Click();"></asp:imagebutton>
 					</TD>
 					<td>&nbsp;</td>
 				</TR>
@@ -160,6 +162,10 @@
                         }
                     }
                 }
+            }
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
             }
         </script>
 

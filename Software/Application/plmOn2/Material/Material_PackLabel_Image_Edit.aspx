@@ -18,7 +18,7 @@
 					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE">
 					    </cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnUpdate" runat="server"  Message="NONE"
 							Visible="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnCancelUpdate" runat="server"  Message="NONE"
-							Visible="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"
+							Visible="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"
 							CausesValidation="False"></cc1:confirmedimagebutton></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
@@ -83,5 +83,11 @@
 
 
     </form>
+    <script language="javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+        </script>
 </body>
 </html>

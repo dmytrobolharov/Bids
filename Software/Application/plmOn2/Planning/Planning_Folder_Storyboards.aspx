@@ -28,7 +28,7 @@
                 <cc1:ConfirmedImageButton ID="btnAddImage" runat="server" Message="NONE" />
                 <cc1:BWImageButton ID="btnUpload" runat="server" Message="NONE" />
                 <cc1:BWImageButton ID="btnSort" runat="server" Message="NONE" />
-                <cc1:ConfirmedImageButton ID="btnPreview" runat="server" Message="NONE" />
+                <cc1:BWImageButton ID="btnPreview" runat="server" Message="NONE" />
                 <cc1:ConfirmedImageButton ID="btnBurn" runat="server" Message="Are you sure you want to burn this folder?" />
                 <cc1:ConfirmedImageButton ID="btnRemove" runat="server" Message="NONE" />
                 <cc1:ConfirmedImageButton ID="btnDelete" runat="server" Message="NONE" />

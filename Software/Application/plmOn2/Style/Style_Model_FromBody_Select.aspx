@@ -65,12 +65,6 @@
 								<TD width="10"><asp:button id="btnRepage" onclick="RePage" runat="server" Text ="GO" CssClass="fontHead" /></asp:button></TD>
 							</TR>
 						</TABLE>
-						<table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">
-							<tr>
-								<td><%--<asp:placeholder id="plhSearchControl" runat="server"></asp:placeholder>--%></td>
-								<%--<td width="100%"><asp:imagebutton id="imgBtnSearch" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_search_small.gif"></asp:imagebutton></td>--%>
-							</tr>
-						</table>
 						<table height="15" cellspacing="0" cellpadding="0" width="100%" bgColor="white" border="0">
 							<tr>
 								<td><asp:placeholder id="plhSearchControl" runat="server"></asp:placeholder></td>

@@ -32,7 +32,7 @@
 						<td style="WIDTH: 122px">
 							<asp:CheckBox id="cbMainMaterial" runat="server" Text="Main Material ?" ToolTip="Click here to select main material..."></asp:CheckBox></td>
 						<td>
-							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"
+							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"
 								></cc1:confirmedimagebutton></td>
 					</tr>
 				</table>
@@ -133,5 +133,11 @@
 				</asp:datagrid>
 			</asp:panel>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

@@ -16,7 +16,7 @@
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD width="80"><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton></TD>
-					<TD><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton></TD>
+					<TD><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 				<table height="25" cellSpacing="0" cellPadding="0" width="100%" bgColor="#cddeee" border="0">
@@ -59,5 +59,11 @@
 
 
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

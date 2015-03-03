@@ -12,6 +12,14 @@
 	<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
     <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
     <script language="javascript" src="../System/Jscript/Custom.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script>
+    function btnClose_Click() {
+        <%= strExitScript %>
+        return false;
+    }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,7 +34,7 @@
 					id="btnRemove" runat="server" Message="NONE" ></cc1:confirmedimagebutton><cc1:bwimagebutton 
 					id="btnGoTo" runat="server" Message="NONE" ></cc1:bwimagebutton><cc1:bwimagebutton 
 					id="btnPreview" runat="server" Message="NONE" ></cc1:bwimagebutton><cc1:confirmedimagebutton 
-					id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></TD>
+					id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton></TD>
 					
                     <td class="FontHead" vAlign="middle" align="center" width="75"><asp:label ID="lblColorWay" runat="server" >Colorway</asp:label>&nbsp;</td>
 		            <td width="40"><asp:dropdownlist id="dpColoways" runat="server" AutoPostBack="true" DataValueField="ID" DataTextField="Value" CssClass="font"></asp:dropdownlist></td>					

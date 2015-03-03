@@ -9,6 +9,8 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -18,7 +20,7 @@
 					<td vAlign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3" /></td>
 					<td><asp:imagebutton id="btnSave" runat="server" style="height: 24px"></asp:imagebutton>
                         <asp:imagebutton id="imgBtnSave" runat="server" >
-					</asp:imagebutton><asp:imagebutton id="btnClose" runat="server">
+					</asp:imagebutton><asp:imagebutton id="btnClose" runat="server" OnClientClick="return btnClose_Click()">
 					</asp:imagebutton></td>
 				</tr>
 			</table>
@@ -120,8 +122,7 @@
 							        <AlternatingItemStyle Height="20px" CssClass="font" BackColor="White"></AlternatingItemStyle>
 							        <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
 							        <ItemTemplate>
-								        <asp:CheckBox id="chkTeam" runat="server"></asp:CheckBox>&nbsp;<%# DataBinder.Eval(Container.DataItem, "FirstName")%>&nbsp;<%# DataBinder.Eval(Container.DataItem, "LastName")%>
-								        <asp:TextBox id="txtEmail" runat="server" Visible="False" Text='<%# DataBinder.Eval(Container.DataItem, "Email")%>'>
+								        <asp:CheckBox id="chkTeam" runat="server"></asp:CheckBox>&nbsp;<%# DataBinder.Eval(Container.DataItem, "FirstName")%>&nbsp;<%# DataBinder.Eval(Container.DataItem, "LastName")%><asp:TextBox id="txtEmail" runat="server" Visible="False" Text='<%# DataBinder.Eval(Container.DataItem, "Email")%>'>
 								        </asp:TextBox>
 								        <INPUT id=Mail type=hidden value='<%# Container.DataItem("Email")%>' name=Mail runat="server" />
 								        <INPUT id=To type=hidden value='<%#Container.DataItem("FirstName") &amp; " " &amp; Container.DataItem("LastName")%>' name=To runat="server" />
@@ -251,7 +252,12 @@
 		    }
 
 		</script>
-		
+		<script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
                                     
                                      		
 	</body>

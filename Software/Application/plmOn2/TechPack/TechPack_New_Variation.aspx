@@ -32,7 +32,7 @@
                             <IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 						<td>
 							<CC1:confirmedimagebutton id="btnSave" runat="server"   Message="NONE"></CC1:confirmedimagebutton>
-							<CC1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="False"></CC1:confirmedimagebutton>
+							<CC1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></CC1:confirmedimagebutton>
 						</td>
 					</tr>
 				</table>
@@ -478,5 +478,11 @@
 
 			</script>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

@@ -36,7 +36,7 @@ runat="server">
 <asp:ImageButton id="btnSave" runat="server" CssClass="inputYu"></asp:ImageButton>
                    <cc1:confirmedimagebutton id="btnDelete" runat="server" CausesValidation="False" CssClass="inputYu" ></cc1:confirmedimagebutton>
                      <cc1:bwimagebutton id="btnCopy" runat="server" CausesValidation="False" CssClass="inputYu"></cc1:bwimagebutton>
-                   <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" CssClass="inputYu"
+                   <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" CssClass="inputYu" OnClientClick="return btnClose_Click()"
                        ></cc1:confirmedimagebutton>
                                               </td>
                        <td>&nbsp;</td>
@@ -156,7 +156,7 @@ height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" borde
 
     body {
          overflow-y: scroll;
-        -moz-user-select: none;
+         -moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
@@ -253,6 +253,12 @@ height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" borde
        $(document).ready(function () {
            $(".calendarYU input").kendoDatePicker().css("font-size", "14px");
        });
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

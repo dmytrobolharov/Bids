@@ -25,8 +25,8 @@
             <td>
                 <cc1:ConfirmedImageButton ID="btmImgNewPOM" runat="server" 
                     Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnPDFView" runat="server" 
-                    Message="NONE"></cc1:ConfirmedImageButton><cc1:ConfirmedImageButton ID="btnClose"
+                <cc1:BWImageButton ID="btnPDFView" runat="server" 
+                    Message="NONE"></cc1:BWImageButton><cc1:ConfirmedImageButton ID="btnClose"
                         runat="server"  Message="NONE" Visible="false"
                         CausesValidation="False"></cc1:ConfirmedImageButton>
             </td>

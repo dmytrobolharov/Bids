@@ -259,7 +259,7 @@
 												<table cellspacing="0" cellpadding="1" width="125" border='<%# SelectHTMLImageCurrentVersion(DataBinder.Eval(Container.DataItem,"Version")) %>' bordercolor=CornflowerBlue>
 													<tr bgColor="#ffffff">
 														<td valign="middle" align="center">
-															<cc1:ConfirmedImageButton id=imgBtnImage Enabled='<%# ModifyStyleAccess() %>' runat="server"  Message='NONE' CommandName="Edit">
+															<cc1:ConfirmedImageButton id=imgBtnImage Enabled='true' runat="server"  Message='NONE' CommandName="Edit">
 															</cc1:ConfirmedImageButton></td>
 													</tr>
 													<tr bgColor="#ffffff">

@@ -3219,14 +3219,6 @@
     <DataSet Name="ds_MaterialUsage">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@MaterialNo">
-            <Value>=Parameters!MaterialNo.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@StyleNo">
-            <Value>=Parameters!StyleNo.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
         <CommandText>dpx_BOMMaterialUsage</CommandText>
       </Query>

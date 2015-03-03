@@ -18,6 +18,7 @@
 </style>   
 <![endif]-->
 <style type="text/css">
+	form {margin-bottom: 0;}
     .marginCLS { margin-right: 3px; }
 </style> 
 </head>
@@ -273,11 +274,14 @@
 
         /* Make GridArea div to take all the free height on the window, but no more */
         $(document).ready(function () {
-            
+			var ieOffset = 0;
+				if ($.browser.msie) { 
+					ieOffset = 14;				
+				}
             $("#scrollDiv1").height($(window).height() - 10 - 27);
             $("#scrollDiv2").height($(window).height() - 10 - 27).scrollLeft(0);
 
-            $("#resizableTable").height($(window).height() - 3 - 27);
+            $("#resizableTable").height($(window).height() - 3 - 27 - ieOffset);
 
 
 

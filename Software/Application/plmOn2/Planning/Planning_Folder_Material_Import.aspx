@@ -12,6 +12,7 @@
             .EmptyItemTemplate {display: none;}
             #tblSearch td {vertical-align: top;}
         </style>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 	</head>
 	<body style="background-color: White;">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>

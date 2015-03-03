@@ -20,7 +20,7 @@
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"><asp:imagebutton id="btnInvSearch" tabIndex="0" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton></td>
 					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:BWImageButton id="btnLockFolder" runat="server" ></cc1:BWImageButton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton></td>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<TD class="FontHead" align="right" width="75"></TD>
 					<TD width="40"></TD>
 					<td></td>
@@ -83,6 +83,12 @@
 		}
 		</SCRIPT>
 		<asp:Label id="lblWarning" runat="server" CssClass="fontHead"></asp:Label>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>
 

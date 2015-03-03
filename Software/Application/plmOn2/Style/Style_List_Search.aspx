@@ -1,5 +1,5 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_List_Search.aspx.vb" Inherits="plmOnApp.Style_List_Search" %>
-<%@ Register TagPrefix="cc3" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
+<%@ Register TagPrefix="cc3" Namespace="plmOnCustomControls.YSTab" Assembly="plmOnCustomControls"%>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="Style_List_Image" Src="Style_List_Image.ascx" %>
 <%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
@@ -13,7 +13,8 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-        <script src="../System/Jscript/jquery-1.6.2.min.js" type="text/javascript"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
              .imgContainer
             {
@@ -68,7 +69,7 @@
 	</head>
 	<body>
      <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
-		<form id="Form1" method="post" runat="server">
+		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
 		<asp:Panel runat="server" ID="pnlPerm" Visible=false>
 				<table style="height:50;" cellspacing="0" cellpadding="0" width="100%"  bgColor="#990000" border="1" borderColor="red">
 					<tr>

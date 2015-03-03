@@ -16,6 +16,9 @@
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <link type="text/css" rel="stylesheet" href="../System/CSS/jquery-ui.css" />
     <script type="text/javascript" src="../System/Jscript/Custom.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
     <!--[if IE]>
     <style type="text/css">
         #RadGridsummary thead th {
@@ -55,7 +58,7 @@
         </StyleSheets>
         <CdnSettings TelerikCdn="Disabled" />
     </telerik:RadStyleSheetManager>
-    <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />
+    <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" ClientEvents-OnRequestStart="showWait()" ClientEvents-OnResponseEnd="hideWait()" />
     <telerik:RadWindowManager ID="RadWindowManager1" runat="server">
         <Windows>
             <telerik:RadWindow ID="ConfigBOM" runat="server" Title="Configure BOM" Height="250px" 
@@ -98,7 +101,7 @@
                     </cc1:BWImageButton>
                     <cc1:ConfirmedImageButton ID="btnReplacePrev" runat="server" Visible="true" Message="NONE" OnClientClick="return ShowSelectionDialog()">
                     </cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnClose" Message="NONE" runat="server"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnClose" Message="NONE" runat="server" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                 </td>
             </tr>
         </table>
@@ -474,7 +477,7 @@
         }
 
         /** Resizing BOM Grid to take all the free height on the screen **/
-        (function resizeGrid() {
+        Sys.Application.add_load(function () {
 
             var changeGrid = $("#RadGridsummary");
             var windowHeight = $(window).height();
@@ -488,6 +491,11 @@
                 changeGrid.height(diff);
             } else {
                 changeGrid.height(minHeight);
+            }
+
+            var grid = $find("RadGridsummary");
+            if (grid) {
+                grid.GridDataDiv.style.height = (changeGrid.height() - 67) + "px";
             }
         })();
 
@@ -518,6 +526,48 @@
         function showMaterialSort(strStyleBOMDimensionID) {
             window.radopen("Style_DimensionalBOM_BOMColorway_Material_Sort.aspx?SBDID=" + strStyleBOMDimensionID, "SortMaterials");
         }
+		
+		function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
+
+        function reloadPage() {
+            var grid = $find("RadGridsummary");
+            if (grid) {
+                grid.get_masterTableView().rebind();
+            }
+        }
+
+        function showWait() {
+            show_wait_text(); busyBox.Show();
+        }
+
+        function hideWait() {
+            busyBox.Hide(); hide_wait_text();
+        }
+
+
+        function GridCreated(sender, eventArgs) {
+        //gets the main table scrollArea HTLM element  
+        var scrollArea = document.getElementById(sender.get_element().id + "_GridData");
+        var row = sender.get_masterTableView().get_selectedItems()[0];
+
+        //if the position of the selected row is below the viewable grid area  
+        if (row) {
+            if ((row.get_element().offsetTop - scrollArea.scrollTop) + row.get_element().offsetHeight + 20 > scrollArea.offsetHeight) {
+                //scroll down to selected row  
+                scrollArea.scrollTop = scrollArea.scrollTop + ((row.get_element().offsetTop - scrollArea.scrollTop) +
+                row.get_element().offsetHeight - scrollArea.offsetHeight) + row.get_element().offsetHeight;
+            }
+            //if the position of the the selected row is above the viewable grid area  
+            else if ((row.get_element().offsetTop - scrollArea.scrollTop) < 0) {
+                //scroll the selected row to the top  
+                scrollArea.scrollTop = row.get_element().offsetTop;
+            }
+        }
+    }
+
         </script>           
     
 </body>

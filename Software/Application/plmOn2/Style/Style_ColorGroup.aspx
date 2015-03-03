@@ -16,22 +16,13 @@
     <link href="../System/CSS/Grid.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="form1" runat="server">
-			<%--<table class="TableHeader" cellSpacing="0" cellPadding="0" width="100%" 
-                height="25" border="0">
-				<tr vAlign="middle">
-					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><asp:ImageButton id="btnSave" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_save.gif" />
-						<cc1:BWImageButton ID="btnColorAdd" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_addColor.gif" />
-						<cc1:BWImageButton id="btnRemove" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_remove.gif" />						
-					</td>
-					<td></td>
-				</tr>
-			</table>--%>
 			<uc1:Style_Workflow id="Style_Workflow1" runat="server"></uc1:Style_Workflow>
 			
 			<asp:panel id="pnlChange" runat="server">

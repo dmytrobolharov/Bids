@@ -19,6 +19,8 @@
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
         <LINK href="../System/CSS/Calendar.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <style type="text/css">
             .search-cell td {
             	vertical-align: top !important;
@@ -130,8 +132,8 @@
                 AutoGenerateColumns="false" AllowPaging="true"
                 BorderWidth="1" BorderColor="#CCCCCC" CellPadding="1" BackColor="White" 
                 CellSpacing="0" DataKeyField="SampleRequestTradeID">
-		    <AlternatingItemStyle Height="20px" CssClass="font"></AlternatingItemStyle>
-		    <ItemStyle Height="20px" CssClass="font"></ItemStyle>
+		    <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+		    <ItemStyle CssClass="ItemTemplate"></ItemStyle>
 		    <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
             <PagerStyle Visible="false" />
 		    <Columns>

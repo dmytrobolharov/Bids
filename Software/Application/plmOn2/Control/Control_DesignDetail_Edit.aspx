@@ -12,6 +12,8 @@
     <meta content="JavaScript" name="vs_defaultClientScript">
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body ms_positioning="GridLayout">
     <form id="Form1" method="post" runat="server">
@@ -27,7 +29,7 @@
                         runat="server"  Message="NONE"></cc1:ConfirmedImageButton><cc1:ConfirmedImageButton
                             ID="btmImgDeletePOM" runat="server" 
                            ></cc1:ConfirmedImageButton><cc1:ConfirmedImageButton
-                                ID="btnClose" runat="server"  Message="NONE">
+                                ID="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()">
                             </cc1:ConfirmedImageButton>
             </td>
             <td class="FontHead" align="right" width="75">
@@ -161,6 +163,11 @@
             }
         }
     </script>
-
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

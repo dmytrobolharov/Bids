@@ -6,12 +6,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Size Range</title>
-		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
-		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
-		<meta content="JavaScript" name="vs_defaultClientScript">
-		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
-		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+	<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
+	<meta content="JavaScript" name="vs_defaultClientScript">
+	<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .style1
         {
@@ -29,7 +31,7 @@
 				runat="server">
 				<TR vAlign="middle">					
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-					<td><cc1:confirmedimagebutton id="btnClose" runat="server" ToolTip=""
+					<td><cc1:confirmedimagebutton id="btnClose" runat="server" ToolTip="" OnClientClick="return btnClose_Click()"
 							Message="NONE"></cc1:confirmedimagebutton>						
 					</td>
 				
@@ -107,7 +109,12 @@
 				</TR>
 			</TABLE>
 		</form>
-			
+			<script language="javascript">
+	            function btnClose_Click() {
+		            <%= strExitScript %>
+                    return false;
+                }
+            </script>
 	</body>
 </html>
 

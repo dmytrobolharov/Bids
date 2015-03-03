@@ -9,6 +9,8 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -21,7 +23,7 @@
 					    <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" Visible="True"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE" Visible="True"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnBatchUpdate" runat="server" Message="NONE" Visible="True" CausesValidation="false"></cc1:confirmedimagebutton>
-					    <cc1:confirmedimagebutton id="btnClose" runat="server" visible="true" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnClose" runat="server" visible="true" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
                     </td>
 				</tr>
 			</table>
@@ -127,6 +129,12 @@
 		        }
 		    }
 		}
+    </script>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
 </body>
 </html>

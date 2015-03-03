@@ -252,7 +252,6 @@
                                                     <IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 												<TD class="fontHead">
 												<cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
-													<%--<cc1:confirmedimagebutton id="btnNewImage" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_add.gif" Message="NONE"></cc1:confirmedimagebutton>--%>
 													<cc1:confirmedimagebutton id="btnDeleteImage" runat="server" ></cc1:confirmedimagebutton></TD>
 											</TR>
 										</TABLE>
@@ -285,7 +284,7 @@
                                                 </td>
                                                 <td class="fontHead">
                                                     <cc1:confirmedimagebutton id="btnSaveSort" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-                                                    <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_upload.gif&PL=EN-US" Message="NONE"></cc1:ConfirmedImageButton>
+                                                    <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                                                     <cc1:ConfirmedImageButton ID="btnDeleteFitPhotos" runat="server" Message="Are you sure you want to remove this photo?"></cc1:ConfirmedImageButton>                                                    
                                                </td>
                                             </tr>

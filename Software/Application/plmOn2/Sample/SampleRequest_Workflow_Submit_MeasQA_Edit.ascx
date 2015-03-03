@@ -25,8 +25,8 @@
 				<TR class="TableHeader">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD width="20"><asp:imagebutton id="imbBtnExpand" runat="server" ImageUrl="../System/Icons/icon_Next.gif"></asp:imagebutton><asp:imagebutton id="imgBtnCollapse" runat="server" ImageUrl="../System/Icons/icon_Down.gif"></asp:imagebutton></TD>
-					<TD class="fontHead" width="1"><cc1:confirmedimagebutton id="btnSizeChange" runat="server"  ></cc1:confirmedimagebutton></TD>
-					<TD class="fontHead" width="1"><cc1:confirmedimagebutton id="btnSampleChange" runat="server"  ></cc1:confirmedimagebutton></TD>
+					<TD class="fontHead" width="1"><cc1:BWImageButton id="btnSizeChange" runat="server" /></TD>
+					<TD class="fontHead" width="1"><cc1:BWImageButton id="btnSampleChange" runat="server" /></TD>
 					<TD class="fontHead">&nbsp;
 						<cc1:bwhyperlink id="lblHeaderSpec" runat="server"></cc1:bwhyperlink>&nbsp;
 						<asp:label id="txtSampleSize" runat="server"></asp:label>&nbsp;
@@ -66,13 +66,11 @@
 												Checked="True"></asp:CheckBox>
 										</TD>
 										<TD>
-											<asp:ImageButton id="btnSpecCreate" runat="server">
-											</asp:ImageButton>
+											<cc1:BWImageButton id="btnSpecCreate" runat="server" />
 											<asp:HiddenField ID="HFSubmitForm" runat="server" Value="0" />
-											<asp:ImageButton id="btnComment" runat="server" Visible="false">
-											</asp:ImageButton>
+											<cc1:BWImageButton id="btnComment" runat="server" Visible="false" />
                                             <cc1:confirmedimagebutton id="btnSpecRemove" visible="false" runat="server"></cc1:confirmedimagebutton>
-                                            <cc1:confirmedimagebutton id="btnSpecExplode" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                                            <cc1:BWImageButton id="btnSpecExplode" runat="server" Message="NONE" />
                                             <cc1:bwimagebutton id="btnPOMSort" runat="server" visible="false" WindowName="POMLibrary">
 											</cc1:bwimagebutton><cc1:confirmedimagebutton id="btnUpdateDevSpec" visible="false" runat="server" Message="NONE"></cc1:confirmedimagebutton>
                                             <cc1:confirmedimagebutton id="btnSizeFix" visible="false" runat="server"></cc1:confirmedimagebutton>
@@ -82,8 +80,8 @@
 								
                                 <asp:datagrid id="dgSampleSpec" runat="server" BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px"
 	                                PageSize="10000" AutoGenerateColumns="false" Width="375px" DataKeyField="SamplePomId">
-                                    <AlternatingItemStyle Height="20px"></AlternatingItemStyle>
-                                    <ItemStyle Height="20px" CssClass="font" VerticalAlign="Top"></ItemStyle>
+                                    <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                                    <ItemStyle CssClass="ItemTemplate"></ItemStyle>
                                     <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 	                                <Columns></Columns>
                                 </asp:datagrid>
@@ -122,15 +120,15 @@
 												<TD vAlign="middle" align="center" width="10">
                                                     <IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 												<TD class="fontHead">
-												<cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+												<cc1:BWImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False" />
 												
 												<cc1:confirmedimagebutton id="btnDeleteImage" runat="server" ></cc1:confirmedimagebutton></TD>
 											</TR>
 										</TABLE>
 										<asp:datagrid id="dgFitImage" runat="server" AutoGenerateColumns="False" PageSize="100" BorderWidth="1px"
 									            BorderStyle="Solid" BorderColor="Silver" Width="100%" DataKeyField="SampleRequestSubmitImageID">
-									            <AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-									            <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+									            <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+									            <ItemStyle CssClass="ItemTemplate"></ItemStyle>
 									            <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 									            <Columns>
 										            <asp:TemplateColumn>
@@ -154,8 +152,8 @@
 				
                 <asp:datagrid id="dgHowToMeasure" runat="server" BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px"
                     PageSize="10000" AutoGenerateColumns="false" Width="200px"  DataKeyField="SamplePomId">
-                    <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-                    <ItemStyle Height="20px" CssClass="ItemTemplate" ></ItemStyle>
+                    <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                    <ItemStyle CssClass="ItemTemplate"></ItemStyle>
                     <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                     <Columns></Columns>
                 </asp:datagrid>
@@ -172,7 +170,7 @@
                                 </td>
                                 <td class="fontHead">
                                     <cc1:confirmedimagebutton id="btnSaveSort" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-                                    <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_upload.gif&PL=EN-US" Message="NONE"></cc1:ConfirmedImageButton>
+                                    <cc1:ConfirmedImageButton ID="btnUploadFile" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                                     <cc1:ConfirmedImageButton ID="btnDeleteFitPhotos" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                                     <cc1:BWImageButton ID="btnMarkup" runat="server" Message="NONE" ToolTip="Markup..."></cc1:BWImageButton>
                                     <cc1:BWImageButton ID="btnSelectImage" runat="server" />
@@ -191,8 +189,8 @@
                         </table>
                         <asp:DataGrid ID="dgFitPhotos" runat="server" AutoGenerateColumns="False" PageSize="100"
                                       BorderWidth="1px" BorderStyle="Solid" BorderColor="Silver" Width="100%" DataKeyField="FitPhotoId">
-                            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-                            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
+                            <AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                            <ItemStyle CssClass="ItemTemplate"></ItemStyle>
                             <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
                             <Columns>
                                 <asp:TemplateColumn>
@@ -217,7 +215,7 @@
 				<TABLE id="TB_FitComment" cellSpacing="0" cellPadding="0" width="400" border="0" runat="server">
 					<TR class="TableHeader">
 						<TD>&nbsp;
-							<asp:imagebutton id="btnComment1" runat="server"></asp:imagebutton></TD>
+							<cc1:BWImageButton id="btnComment1" runat="server" /></TD>
 					</TR>
 					<TR>
 						<TD bgColor="#ffffff"><BR>

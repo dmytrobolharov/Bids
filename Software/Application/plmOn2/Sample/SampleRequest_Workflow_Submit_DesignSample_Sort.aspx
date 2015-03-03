@@ -30,7 +30,8 @@
 				<TBODY>
 					<tr valign="middle">
 						<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-						<td valign="middle" align="left" width="400"><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+						<td valign="middle" align="left" width="400"><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 						<td></td>
 					</tr>
 				</TBODY>
@@ -52,8 +53,8 @@
 			</asp:Panel>
 			<asp:datagrid id="DataGrid1" runat="server" Width="300px" BorderColor="#E0E0E0" BorderStyle="Solid"
 				BorderWidth="1px" PageSize="100" AutoGenerateColumns="False" DataKeyField="SampleRequestAMLMeasPomID">
-				<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-				<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+				<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+				<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 				<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 				<Columns>
                     <asp:TemplateColumn ItemStyle-CssClass="dropimage">
@@ -115,13 +116,13 @@
                 $(document).ready(function () {
                     $("#DataGrid1").tableDnD({
                         onDrop: processRowDrop,
-                        onCancel: repaintRows,
+                        //onCancel: repaintRows,
                         onDragClass: null,
                         onDragStyle: { "background-color": "#6495ED" }
                     })
                 });
 
-                /** Changing the background color to make the table look consistent */
+                /** Changing the background color to make the table look consistent
                 function repaintRows(table, row) {
                    for (var i = 1, currentRow; currentRow = table.rows[i]; i++) {
                         if (i % 2 == 0) {
@@ -130,10 +131,10 @@
                             $(currentRow).css("background-color", "white");  // Item style
                         }
                     }
-                }
+                }*/
 
                 function processRowDrop(table, row) {
-                    repaintRows(table, row);
+                    //repaintRows(table, row);
                     for (var i = 1, currentRow; currentRow = table.rows[i]; i++) {
                         /** Recalculating sorts */
                         var sortInput = $(currentRow).find('input[name*="txtSort"]'); // Getting the txtSort for current row
@@ -189,7 +190,7 @@
                     // Changing the hidden value
                     hdnOldSort.val(strNewSort);
                     // Repainting the table
-                    repaintRows($("#DataGrid1").get(0), draggingRow);
+                    //repaintRows($("#DataGrid1").get(0), draggingRow);
                     // Centering the element on screen
                     var rowTop = draggingRow.offset().top;
                     var documentHeight = $(document).height();
@@ -202,6 +203,12 @@
                     $(txtSort).focus();
                 }
 
+            </script>
+            <script language="javascript">
+	            function btnClose_Click() {
+		            <%= strExitScript %>
+                    return false;
+                }
             </script>
 	</body>
 </html>

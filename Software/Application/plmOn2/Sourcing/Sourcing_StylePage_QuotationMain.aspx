@@ -13,6 +13,8 @@
     <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="../System/Jscript/System.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="Form1" runat="server" defaultbutton="imgBtnSearch">
@@ -48,7 +50,7 @@
                 <cc1:confirmedimagebutton id="btnGenerate" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>
                 <cc1:ConfirmedImageButton ID="btnShare" runat="server" Message="NONE" CausesValidation="true" OnClientClick="TotalSummValidate(); var y = ShareValidate(); return y;"
                     ValidationGroup="TechPack"></cc1:ConfirmedImageButton>
-                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return ConfirmClose();"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="if(ConfirmClose()){return btnClose_Click();}else{return false;};"></cc1:confirmedimagebutton>
             </td>
             <td>
                 &nbsp;
@@ -559,6 +561,11 @@
                 } else {
                     return true;
                 }
+            }
+
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
             }
 
             function SelectAllBomDetails(sender)

@@ -9,8 +9,9 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
-    <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>	
-    
+    <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -23,7 +24,7 @@
 			    <td><asp:imagebutton 
 			    id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton><asp:ImageButton 
 			    id="btnSave" runat="server" ></asp:ImageButton>
-			    <asp:ImageButton    id="btnClose" runat="server"   CausesValidation="False"></asp:ImageButton></td>
+			    <asp:ImageButton    id="btnClose" runat="server" OnClientClick="return btnClose_Click()"  CausesValidation="False"></asp:ImageButton></td>
 		    </tr>
 	    </table>		
 	    <br /><br />
@@ -58,5 +59,11 @@
 			</Columns>
 		</asp:datagrid>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

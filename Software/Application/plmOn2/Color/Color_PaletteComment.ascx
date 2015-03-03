@@ -7,8 +7,8 @@
         <td class="fontHead">
 	        <asp:label id="lblComment" runat="server">Messages</asp:label></td>
         <td align="right" >
-        <asp:panel id="AddCommentPnl" Runat="server"><asp:LinkButton ID="lnk_NewComment" runat="server" CssClass="fontHead" CommandName="new" 
-                ForeColor="#0066CC" Font-Underline="True" onclick="lnk_NewComment_Click">Add New&nbsp;</asp:LinkButton>
+        <asp:panel id="AddCommentPnl" Runat="server"><asp:ImageButton ID="lnk_NewComment" runat="server" CssClass="fontHead" CommandName="new" 
+                ForeColor="#0066CC" Font-Underline="True" onclick="lnk_NewComment_Click"></asp:ImageButton>
         </asp:panel>
 	        
         </td>

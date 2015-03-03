@@ -35,11 +35,17 @@
 				<tr>
 					<td width="50"></td>
 					<td align="center">
-				    	<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+				    	<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()    " ></cc1:confirmedimagebutton></td>
 					<td width="50"></td>
 				</tr>
 			</table>
 		</form>
         <script language="javascript">document.getElementById('lblWarning').innerHTML = window.opener.strMsg;</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

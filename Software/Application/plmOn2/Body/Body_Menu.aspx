@@ -51,5 +51,11 @@
 			</table>
 
     </form>
+    <script type="text/javascript">
+	    function btnSearch_Click() {
+		    <%= strSearchScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

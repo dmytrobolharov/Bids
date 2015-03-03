@@ -24,7 +24,7 @@
             </td>
             <td nowrap="nowrap">
                 <cc1:confirmedimagebutton id="btnSave" runat="server" message="NONE"></cc1:confirmedimagebutton>
-                <cc1:confirmedimagebutton id="btnClose" runat="server" message="NONE" causesvalidation="False"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server" message="NONE" causesvalidation="False" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
             </td>
         </tr>
     </table>
@@ -86,5 +86,11 @@
         });
     </script>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

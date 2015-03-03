@@ -1,8 +1,7 @@
 <generator>
 	<table name="pStyleHeader" codecolumn="StyleNo" idcolumn="StyleID" spacecolumn="4">
-		<column name="StyleType" lookup="SELECT StyleTypeID, StyleTypeCode FROM pStyleType" lookupID="StyleTypeID" lookupSelect="StyleTypeCode" lookupSpace="" lookupNull="?" order="2"/>
-		<column name="StyleCategory" lookup="SELECT StyleCategoryId, StyleCategoryCode FROM pStyleCategory" lookupID="StyleCategoryId" lookupSelect="StyleCategoryCode" lookupSpace="" lookupNull="??" order="4"/>
-
-		<column name="AUTOID" lookupSpace="" lookupNull="" lookupNumber="4" order="5"/>
+		<column name="StyleType" lookup="SELECT StyleTypeID, StyleTypeCode FROM pStyleType" lookupId="StyleTypeID" lookupSelect="StyleTypeCode" lookupSpace="" lookupNull="?" order="002" />
+		<column name="StyleCategory" lookup="SELECT StyleCategoryId, StyleCategoryCode FROM pStyleCategory" lookupId="StyleCategoryId" lookupSelect="StyleCategoryCode" lookupSpace="" lookupNull="??" order="004" />
+		<column name="AUTOID" lookup="" lookupId="" lookupSelect="" lookupSpace="" lookupNull="" order="005" />
 	</table>
 </generator>

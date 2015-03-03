@@ -6,11 +6,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title runat="server" id="PageTitle">Set RGB Color</title>
-    <script type="text/javascript" src="../System/Jscript/prototype.js"></script>
-    <script type="text/javascript" src="../System/Jscript/colormethods.js"></script>
-    <script type="text/javascript" src="../System/Jscript/colorvaluepicker.js"></script>
-    <script type="text/javascript" src="../System/Jscript/slider.js"></script>
-    <script type="text/javascript" src="../System/Jscript/colorpicker.js"></script>
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 </head>
@@ -28,7 +23,7 @@
             </td>
             <td>
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <asp:ImageButton ID="btnClose" runat="server" CausesValidation="false" />
+                <asp:ImageButton ID="btnClose" runat="server" CausesValidation="false" OnClientClick="return btnClose_Click();"/>
             </td>
             <td>
                 &nbsp;
@@ -195,12 +190,6 @@
                         <img src="../System/Images/map-brightness.png" />
                         <img src="../System/Images/map-hue.png" />
                     </div>
-                    <script type="text/javascript">
-                        Event.observe(window, 'load', function () {
-                            var sHex = '<% = Request.QueryString("HEX") %>';
-                            cp1 = new Refresh.Web.ColorPicker('cp1', { startHex: '' + sHex + '', startMode: 's' });
-                        });
-                    </script>
                 </asp:Panel>
                 <asp:Panel ID="pnlUpload" runat="server">
                     <blockquote dir="ltr" style="margin-right: 0px">
@@ -318,6 +307,12 @@
              var targetObj = [dataGridId, rowId, objId].join("_");
              document.getElementById(targetObj).focus();
          }
+     
+                function btnClose_Click() {
+                    <%= strExitScript %>
+                    return false;
+                }
+     
      </script>
     </form>
 </body>

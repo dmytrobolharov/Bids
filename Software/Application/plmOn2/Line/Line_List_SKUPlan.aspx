@@ -11,6 +11,8 @@
     <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
     <script type="text/javascript" language="javascript" src="../System/Jscript/Custom.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .search-cell td {
             vertical-align: top !important;
@@ -282,8 +284,7 @@
             $("#toolbar input").disable(false);
         });       
     </script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript">
         function showInfoDialog() {
             var $infoDialog = $("#divSKUHeader");

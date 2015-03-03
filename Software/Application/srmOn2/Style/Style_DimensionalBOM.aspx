@@ -19,6 +19,8 @@
     <link href="../System/CSS/RadComboBox.YPLM.css" type="text/css" rel="stylesheet" />
 
     <script language="javascript" src="../System/Jscript/Custom.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     
     <script language="JavaScript1.2">        
         top.window.moveTo(0,0);

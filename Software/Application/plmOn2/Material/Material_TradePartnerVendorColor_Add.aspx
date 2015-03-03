@@ -22,7 +22,7 @@
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD>
 						<cc1:confirmedimagebutton id="btnSaveMaterial" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></TD>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 			<TABLE style="BORDER-BOTTOM: white thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
@@ -184,5 +184,11 @@
 			}
 		}
 		</script>
+        <script language="javascript">
+            function btnClose_Click() {
+              <%= strExitScript %>
+              return false;
+            }
+        </script>
 	</body>
 </HTML>

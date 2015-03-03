@@ -14,6 +14,8 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -60,7 +62,7 @@
 								<TR>
 									<TD width="1%">
 										<asp:datagrid id="dgComponentType" runat="server" Width="100%" OnItemDataBound="dgComponentType_ItemDataBound"
-											OnEditCommand="dgComponentType_EditCommand" DataKeyField="MaterialLinkID" BorderColor="#E0E0E0">
+											OnEditCommand="dgComponentType_EditCommand" DataKeyField="MaterialLinkID" BorderColor="#E0E0E0" PagerStyle-Visible="false">
 											<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 											<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 											<HeaderStyle Height="25px" CssClass="TableHeaderOver"></HeaderStyle>

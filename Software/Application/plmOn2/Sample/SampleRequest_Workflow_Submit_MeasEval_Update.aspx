@@ -8,6 +8,8 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"> 
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />       
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 
         <style type="text/css">
             #DataGrid1 .TableHeader {background-repeat: repeat;}
@@ -28,7 +30,7 @@
 					<td valign="middle" align="center" width="10" style="height: 28px"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td width="600" style="height: 28px">
 					    <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>							
-					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>	
+					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>	
 					    <asp:CheckBox valign="top"  align="center" ID="ChbShowHide" visible="false" autopostback="true" runat="server" Text="Show Sort ID" />						
 					    <asp:CheckBox valign="top"  align="center" ID="ChbFixEvalSize" runat="server" Text="Update EvalSize" />						
 					</td>										
@@ -53,14 +55,17 @@
 					<td valign="top" width="600">												
 						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="AMLMeasPomID" EnableViewState="False" OnItemDataBound="ItemDataBoundEventHandler" BorderColor="#E0E0E0" BorderStyle="Solid" BorderWidth="1px"
 							PageSize="100"  Width="300px">
-							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
+							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 							<Columns>
                                 <asp:TemplateColumn HeaderStyle-CssClass="TableHeaderRed" ItemStyle-CssClass="TableHeaderRed" HeaderStyle-BorderWidth="0" ItemStyle-BorderWidth="0">
                                     <HeaderTemplate >
                                         <input type="checkbox" onclick="SelectAll(this)" id="chkSelectAll" />
-                                    </HeaderTemplate>                        
+                                    </HeaderTemplate>  
+                                    <ItemTemplate>
+                                        <asp:CheckBox runat="server" ID="chbAMLMeasPOMId" />
+                                    </ItemTemplate>                      
                                 </asp:TemplateColumn>
                                 <asp:TemplateColumn>
 					                <HeaderTemplate>
@@ -178,5 +183,11 @@
 		    }
 		    
 		</script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

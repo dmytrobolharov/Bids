@@ -25,7 +25,7 @@
 					<cc1:confirmedimagebutton id="btnAddSizeRange" runat="server" 
 							Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnCopy" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnPDFView" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server" CausesValidation="false"  Message="NONE"></cc1:confirmedimagebutton></td>
+						<cc1:confirmedimagebutton id="btnClose" runat="server" CausesValidation="false"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
 					<td></td>
@@ -486,5 +486,11 @@
 		    }		
 		
 		</SCRIPT>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

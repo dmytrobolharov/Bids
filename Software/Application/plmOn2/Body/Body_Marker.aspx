@@ -11,6 +11,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,15 +24,11 @@
                     <img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/>
                 </td>
                 <td>
-                <cc1:ConfirmedImageButton ID="btnCreateMarker" runat="server" Message="NONE" >
-                </cc1:ConfirmedImageButton> 
-                <cc1:ConfirmedImageButton ID="btnAdd1" runat="server" Message="NONE" runat="server" >
-                </cc1:ConfirmedImageButton>
-                                 <cc1:ConfirmedImageButton ID="btnRemove1" runat="server" Message="NONE" runat="server" >
-                </cc1:ConfirmedImageButton>
-                &nbsp;&nbsp;&nbsp;
-                <asp:CheckBox valign="top" align="center" ID="chbImperial" autopostback="true"  runat="server" Text="Imperial" CssClass="fontHead" />
-               
+                    <cc1:BWImageButton ID="btnCreateMarker" runat="server" Message="NONE" ></cc1:BWImageButton> 
+                    <cc1:BWImageButton ID="btnAdd1" runat="server" Message="NONE" runat="server" ></cc1:BWImageButton>
+                    <cc1:BWImageButton ID="btnRemove1" runat="server" Message="NONE" runat="server" ></cc1:BWImageButton>
+                    &nbsp;&nbsp;&nbsp;
+                    <asp:CheckBox valign="top" align="center" ID="chbImperial" autopostback="true"  runat="server" Text="Imperial" CssClass="fontHead" />
                 </td>
             </tr>
         </table>

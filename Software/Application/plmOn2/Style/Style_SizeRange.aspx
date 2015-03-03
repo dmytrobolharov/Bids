@@ -12,7 +12,7 @@
 				runat="server">
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" OnClientClick="return btnClose_Click()"  Message="NONE"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
 			<table cellSpacing="0" cellpadding="0" width="100%" bgColor="#ffffff" border="0">
@@ -33,5 +33,11 @@
 			<BLOCKQUOTE>
 				<asp:RadioButtonList id="rbSizeRange" runat="server" CssClass="fontHead"></asp:RadioButtonList></BLOCKQUOTE>
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>

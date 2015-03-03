@@ -23,7 +23,7 @@
             </td>
             <td nowrap="nowrap">
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
         </tr>
     </table>
@@ -82,6 +82,10 @@
                 rebindDropdowns()
             });
         });
+        function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
     </script>
     </form>
 </body>

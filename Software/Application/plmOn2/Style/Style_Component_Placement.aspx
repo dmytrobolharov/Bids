@@ -17,7 +17,7 @@
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3" /></td>
 					<td><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE">
-					</cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" 
+					</cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"
 					></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
@@ -26,5 +26,11 @@
     </div>
         <asp:TextBox ID="txtPlacement" runat="server" Height="519px" TextMode="MultiLine" Width="786px"></asp:TextBox>
     </form>
+    <script language="javascript">
+	    function btnClose_Click() {
+		    <%= strExitScript %>
+            return false;
+        }
+    </script>
 </body>
 </html>

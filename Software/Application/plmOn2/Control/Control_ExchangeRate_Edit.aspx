@@ -10,8 +10,9 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />    
     <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.tablescroll.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <style type="text/css">
         .RightAlign input
         {
@@ -35,7 +36,7 @@
 					id="btnRemove" runat="server" Message="NONE" CausesValidation="false"  style="height: 24px"></cc1:confirmedimagebutton><cc1:bwimagebutton 
 					id="btnCopy" runat="server" ></cc1:bwimagebutton><cc1:bwimagebutton 
 					id="btnSizeSort" runat="server" ></cc1:bwimagebutton><cc1:confirmedimagebutton 
-					id="btnClose" runat="server" Message="NONE" ></cc1:confirmedimagebutton></td>
+					id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton></td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
 					<td></td>
@@ -186,6 +187,12 @@
                 table.tableScroll({ height: tableHeight });
 
             });
+        </script>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
         </script>
 </body>
 </html>

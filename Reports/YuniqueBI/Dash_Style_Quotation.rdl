@@ -2166,7 +2166,7 @@
                                         <ActionInfo>
                                           <Actions>
                                             <Action>
-                                              <Hyperlink>="javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "dsServer").ToString &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString &amp; "&amp;SHID=" &amp; Fields!SourcingFolderID.Value.ToString &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString &amp; "'))"</Hyperlink>
+                                              <Hyperlink>="javascript: void(window.open('" &amp; First(Fields!AppSettingValue.Value, "dsServer").ToString &amp; "/Sourcing/Sourcing_StylePage_QoutationEditFrame.aspx?TPID=" &amp; Fields!TradePartnerID.Value.ToString &amp; "&amp;SQIID=" &amp; Fields!StyleQuoteItemID.Value.ToString &amp; "&amp;SID=" &amp; Fields!StyleID.Value.ToString &amp; "&amp;SHID=" &amp; Fields!SourcingFolderID.Value.ToString &amp; "&amp;SDID=" &amp; Fields!StyleDevelopmentID.Value.ToString &amp; "&amp;SSID=" &amp; Fields!StyleSourcingID.Value.ToString &amp; "&amp;UPD=1'))"</Hyperlink>
                                             </Action>
                                           </Actions>
                                         </ActionInfo>
@@ -3861,7 +3861,7 @@
     <DataSet Name="dsStyle">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT StyleID, StyleNo FROM pStyleHeader WHERE Active = 1</CommandText>
+        <CommandText>SELECT StyleID, ISNULL(StyleNo, '') AS StyleNo FROM pStyleHeader WHERE Active = 1</CommandText>
       </Query>
       <Fields>
         <Field Name="StyleID">

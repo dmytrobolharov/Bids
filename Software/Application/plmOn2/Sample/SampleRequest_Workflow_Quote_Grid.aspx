@@ -70,7 +70,7 @@
 								<td width="100%"><asp:imagebutton id="imgBtnSearch" runat="server"/></td>
 							</tr>
 						</table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleQuoteItemID">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleQuoteItemID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>

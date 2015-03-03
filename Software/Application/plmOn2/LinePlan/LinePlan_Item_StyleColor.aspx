@@ -14,7 +14,9 @@ LinePlan_Item_StyleColor_Search.xml
         <LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	    <LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 	    <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
-        <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>	
+        <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		<script language="JavaScript">
 			<!--
 
@@ -43,7 +45,7 @@ LinePlan_Item_StyleColor_Search.xml
 					<td><asp:imagebutton 
 					    id="btnInvSearch" runat="server" Height="0px" Width="0px" ImageUrl="../System/icons/1x1.gif"></asp:imagebutton>
 					    <asp:ImageButton    id="btnSaveStyle" runat="server" ></asp:ImageButton>
-					    <asp:ImageButton id="btnClose" runat="server"  CausesValidation="False"></asp:ImageButton>
+					    <asp:ImageButton id="btnClose" runat="server"  CausesValidation="False" OnClientClick="return btnClose_Click()"></asp:ImageButton>
 					    <cc1:bwimagebutton id="btnApplyAll" Visible = "true" runat="server" Message="NONE" ></cc1:bwimagebutton>
 					    <cc1:ConfirmedImageButton id="btnUnlockFields"  Message="Do you want to continue?" runat="server" /></td>
 				</tr>
@@ -116,5 +118,11 @@ LinePlan_Item_StyleColor_Search.xml
 			<asp:HiddenField runat="server" ID="hdnSql" />
 						
 		</form>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </HTML>

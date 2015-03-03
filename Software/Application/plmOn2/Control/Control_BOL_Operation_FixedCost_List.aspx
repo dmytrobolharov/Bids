@@ -10,6 +10,8 @@
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -23,7 +25,7 @@
 				<td>
 					<asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 						Height="0px" />
-					<cc1:confirmedimagebutton id="btnNew" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_new.gif" Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnNew" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 				</td>
 				<td>&nbsp;</td>
 			</tr>
@@ -70,7 +72,7 @@
 							<td vAlign="top" width="100%">
 								<table height="45">
 									<tr>
-										<td><asp:imagebutton id="imgBtnSearch" runat="server" ImageUrl="../System/Button/ButtonStream.ashx?BN=btn_search_small.gif"></asp:imagebutton></td>
+										<td><asp:imagebutton id="imgBtnSearch" runat="server"></asp:imagebutton></td>
 									</tr>
 								</table>
 							</td>

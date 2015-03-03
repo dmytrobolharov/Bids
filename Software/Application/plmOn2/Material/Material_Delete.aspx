@@ -20,7 +20,7 @@
 			<TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-					<TD width="80"><cc1:confirmedimagebutton id="btnDelete" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></TD>
+					<TD width="80"><cc1:BWImageButton id="btnDelete" runat="server" CausesValidation="False" Message="NONE"></cc1:BWImageButton></TD>
 					<td width="80"></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>

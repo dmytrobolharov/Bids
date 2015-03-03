@@ -18,10 +18,12 @@
 				runat="server">
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td width="400"><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnSummary" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnSamplesize" runat="server" Message="Are you sure you want to change sample size?"
-							 Visible="False" ToolTip="Change Sample Size..."></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"
-							></cc1:confirmedimagebutton></td>
+					<td width="400">
+                        <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+						<cc1:confirmedimagebutton id="btnSummary" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnSamplesize" runat="server" Message="Are you sure you want to change sample size?" Visible="False" ToolTip="Change Sample Size..."></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
+                    </td>
 					<td class="FontHead" align="right" width="75"><asp:Label id="lblSelectSet" CssClass="FontHead" runat="server" /></td>
 					<td width="40"><asp:dropdownlist id="dpStyleSet" runat="server" AutoPostBack="true" DataValueField="ID" DataTextField="Value"
 							CssClass="font"></asp:dropdownlist></td>
@@ -536,5 +538,11 @@
 				<td valign="middle" align="center" width="7"><IMG src="../System/Images/table_bar_right.gif"></td>
 			</tr>
 		</table>
+        <script language="javascript">
+	        function btnClose_Click() {
+		        <%= strExitScript %>
+                return false;
+            }
+        </script>
 	</body>
 </html>
