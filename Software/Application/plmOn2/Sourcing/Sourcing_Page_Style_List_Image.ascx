@@ -2,9 +2,9 @@
 <%@ Register TagPrefix="ys001" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 
 
-<TABLE class="TableHeader" id="Table2" height="20" cellSpacing="0" cellPadding="0" width="100%"
-	border="0">
-	<TR class="fontHead">
+<TABLE class="TableHeader" id="Table2" height="25" cellSpacing="0" cellPadding="0" width="100%"
+	border="0" style="background-position:center;" bgColor="white">
+	<TR class="fontHead" valign="middle">
 		<TD align="center" width="10" height="25"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></TD>
 		<TD height="25">
 			<DIV align="left">&nbsp;

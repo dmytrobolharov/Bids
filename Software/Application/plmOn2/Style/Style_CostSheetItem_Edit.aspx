@@ -4,8 +4,8 @@
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register TagPrefix="uc1" TagName="Style_Comment" Src="Style_Comment.ascx" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<title>Costing Scenarios</title>
@@ -13,9 +13,12 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
         <link href="../System/CSS/CostingStyles.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../System/Jscript/CostingScripts.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     </head>
     <!-- Once upon a time here was a great pile of styles. Now it lies in CostingStyles.css -->
 	<body>
@@ -26,13 +29,13 @@
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10" style="height: 28px"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td width="600" style="height: 28px">	
-                            <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" />	
-                            <cc1:bwimagebutton id="btnPreview" runat="server" />		
-                            <cc1:confirmedimagebutton id="btnDelete" runat="server" />
-                            <cc1:confirmedimagebutton id="btnRemoveSelected" runat="server" />
-                            <cc1:ConfirmedImageButton ID="btnClear" runat="server" OnClientClick="return CheckClearColumnSelection();" />			
-							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()" />
-                            <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>					
+                            <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" disabled="disabled" />	
+                            <cc1:bwimagebutton id="btnPreview" runat="server" disabled="disabled" />		
+                            <cc1:confirmedimagebutton id="btnDelete" runat="server" disabled="disabled" />
+                            <cc1:confirmedimagebutton id="btnRemoveSelected" runat="server" disabled="disabled" />
+                            <cc1:ConfirmedImageButton ID="btnClear" runat="server" OnClientClick="return CheckClearColumnSelection();" disabled="disabled" />			
+							<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()" disabled="disabled" />
+                            <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;" disabled="disabled"></cc1:bwimagebutton>					
 					</td>					
 				</tr>
 			</table>
@@ -751,6 +754,20 @@
                         this.value = this.value.replace(/\xA0/g, ' ');
                     });
                 }
+
+                // Add "disable" function
+                jQuery.fn.extend({
+                    disable: function (state) {
+                        return this.each(function () {
+                            if (this) {
+                                this.disabled = state;
+                            }
+                        });
+                    }
+                });
+
+                // Enable all disabled buttons which are disabled from the start
+                $("#toolbar input").disable(false);
             });
 
         </script>

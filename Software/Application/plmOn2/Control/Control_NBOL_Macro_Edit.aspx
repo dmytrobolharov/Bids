@@ -9,8 +9,11 @@
     <title>Control Panel</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
     .rightAlign 
     {
@@ -29,7 +32,7 @@
                     <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                 </td>
                 <td>
-                <cc1:bwimagebutton id="btnWhereUsed" runat="server" WindowName="BOLMacroWhereUsed"></cc1:bwimagebutton>
+                <cc1:BWImageButton id="btnWhereUsed" runat="server" WindowName="BOLMacroWhereUsed"></cc1:BWImageButton>
                     <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnSaveClose" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnSaveNew" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
@@ -93,7 +96,7 @@
                 </td>
             </tr>
         </table>
-        <table id="Table2" class="TableHeader" runat="server" cellspacing="0" cellpadding="0"
+        <table id="Table2" class="TableHeader TableFloatHeader" runat="server" cellspacing="0" cellpadding="0"
             width="100%" border="0">
             <tr valign="middle">
                 <td valign="middle" align="center" width="10">
@@ -215,6 +218,33 @@
 </body>
 
 <script language="javascript">
+
+    $(document).ready(function () {
+        $('#txtOperationCode').keydown(function (event) {
+            if (event.keyCode == 13) {
+                __doPostBack('imgBtnSearch', 'OnClick');
+                return false;
+            }
+        });
+        $('#txtOperationName').keydown(function (event) {
+            if (event.keyCode == 13) {
+                __doPostBack('imgBtnSearch', 'OnClick');
+                return false;
+            }
+        });
+        $('#txtOpCUser').keydown(function (event) {
+            if (event.keyCode == 13) {
+                __doPostBack('imgBtnSearch', 'OnClick');
+                return false;
+            }
+        });
+        $('#txtOpMUser').keydown(function (event) {
+            if (event.keyCode == 13) {
+                __doPostBack('imgBtnSearch', 'OnClick');
+                return false;
+            }
+        });
+    });
     var frm = document.form1;
 
     function SelectAll(checkAllBox) {

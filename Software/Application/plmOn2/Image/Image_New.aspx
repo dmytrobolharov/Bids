@@ -1,9 +1,8 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Image_New.aspx.vb" Inherits="plmOnApp.Image_New" %>
 <%@ Register TagPrefix="CuteWebUI" Namespace="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>New Image</title>
@@ -12,11 +11,14 @@
         <meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
         <meta content="JavaScript" name="vs_defaultClientScript">
         <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
-          <wc1:Color_Wait ID="Color_Wait" runat="server" />
 			<TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<tr vAlign="middle">

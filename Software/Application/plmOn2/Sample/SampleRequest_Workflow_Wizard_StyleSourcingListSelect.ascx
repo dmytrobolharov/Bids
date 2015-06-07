@@ -101,6 +101,7 @@
                             <td>
                                 <cc1:ConfirmedImageButton ID="imgBtnEditImage" runat="server" Message="NONE" CommandName="Edit" ToolTip="Select Style..."></cc1:ConfirmedImageButton>&nbsp;
                                 <input type="hidden" runat="server" id="hdnSYID" />
+                                <input type="hidden" runat="server" id="hdnVariation" value='<%# Eval("VariationId") %>'  />
                             </td>
                         </tr>
                         <!--

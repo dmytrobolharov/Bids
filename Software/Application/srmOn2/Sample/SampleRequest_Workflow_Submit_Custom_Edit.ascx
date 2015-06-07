@@ -58,9 +58,9 @@
                             <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                         </td>
                         <td class="fontHead">
-                            <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False">
-                            </cc1:ConfirmedImageButton>
+                            <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
                             <cc1:ConfirmedImageButton ID="btnDeleteImage" runat="server"></cc1:ConfirmedImageButton>
+                            <cc1:BWImageButton ID="btn3DFiles" runat="server" CausesValidation="False" />
                         </td>
                     </tr>
                 </table>

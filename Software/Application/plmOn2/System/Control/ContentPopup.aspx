@@ -1,6 +1,5 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="ContentPopup.aspx.vb" Inherits="plmOnApp.ContentPopup"   %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register src="WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
@@ -17,18 +16,17 @@
 			{
 			opener.document.Form1[sTxtBox].value = sValue;
 			self.close();
-			}
+            }
 		</script>
 	</HEAD>
 	<body>
-    <wc1:Color_Wait ID="Color_Wait" runat="server" SRC=".." />
 		<form id="Form1" method="post" runat="server" >
         
 			<TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../Images/bbTbSCnr.gif" width="3"></TD>
-					<TD><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton></TD>
+					<TD><cc1:confirmedimagebutton id="btnSave" runat="server" CausesValidation="True" ValidationGroup="Group1" Message="NONE"></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 			<TABLE cellSpacing="1" cellPadding="1" width="100%" border="0" bgColor="#ffffff">
@@ -57,7 +55,9 @@
 					<asp:TemplateColumn HeaderText="Content %">
 						<HeaderStyle Width="100px"></HeaderStyle>
 						<ItemTemplate>
-    						<asp:TextBox id="txtContentPerc" runat="Server" MaxLength="4" Columns="10"></asp:TextBox>
+    						<asp:TextBox id="txtContentPerc" runat="Server"  MaxLength="4" Columns="10"></asp:TextBox>
+                            <asp:RequiredFieldValidator ControlToValidate="txtContentPerc" Display="Static" ErrorMessage="*" ValidationExpression="^\d+$" runat="server" ValidationGroup="Group1" />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Numbers only" ControlToValidate="txtContentPerc" ValidationExpression="^\d+$" ValidationGroup="Group1">*</asp:RegularExpressionValidator>
 						</ItemTemplate>
 					</asp:TemplateColumn>
 					<asp:TemplateColumn HeaderText="Content Type">

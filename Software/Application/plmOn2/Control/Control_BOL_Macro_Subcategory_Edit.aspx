@@ -13,9 +13,12 @@
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
-		
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+	
     <style type="text/css">
         .style4
         {
@@ -157,7 +160,7 @@
   <div  id="DataHolder1" runat="server">
 
         <asp:PlaceHolder ID="plhLanguage" runat="server"></asp:PlaceHolder>
-		<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
+		<table class="TableHeader TableFloatHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 			runat="server">
 			<tr vAlign="middle">
 				<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>

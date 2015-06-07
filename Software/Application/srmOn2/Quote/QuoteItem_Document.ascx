@@ -132,7 +132,7 @@
         </div>
     </asp:Panel>--%>
 <asp:datalist id="DataList1" runat="server" Width="100%" BorderWidth="1px" BorderStyle="Solid"
-	BorderColor="WhiteSmoke" BackColor="White" DataKeyField="StyleQuoteDocumentID" OnEditCommand="DataList_EditCommand"
+	BorderColor="WhiteSmoke" BackColor="White" OnEditCommand="DataList_EditCommand"
 	OnCancelCommand="DataList_CancelCommand">
 	<HeaderTemplate>
 		<table bordercolor="#999999" cellspacing="0" cellpadding="0" width="100%" border="0">
@@ -177,7 +177,7 @@
 			<TR>
 				<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 				<TD width="500">
-					<asp:linkbutton id="Linkbutton5" runat="Server"	CommandName="download"></asp:linkbutton>
+					<asp:linkbutton id="Linkbutton5" runat="Server"	CommandName="download" OnClientClick="dont_show_wait_twice(); return true;"></asp:linkbutton>
 					<cc1:confirmedimagebutton id="btnEditUpdate" runat="server"  Message="NONE" CommandName="update"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnEditCancel" runat="server" Message="NONE" 	CommandName="cancel"></cc1:confirmedimagebutton>
 				</TD>

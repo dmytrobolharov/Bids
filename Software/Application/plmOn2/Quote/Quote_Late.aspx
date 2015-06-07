@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Quote_Late.aspx.vb" Inherits="plmOnApp.Quote_Late" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Quote_Late.aspx.vb" Inherits="plmOnApp.Quote_Late" %>
 <%@ Register TagPrefix="cc3" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
@@ -13,6 +13,8 @@
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Calendar.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">

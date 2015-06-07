@@ -1,14 +1,16 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Main.aspx.vb" Inherits="plmOnApp.Style_Main" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="Style_Variation" Src="Style_Variation.ascx" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Variation</title>
 		<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">		
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script src="../System/Jscript/jquery-1.6.2.min.js" type="text/javascript"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
              .imgContainer
             {
@@ -21,6 +23,12 @@
                 background-color: White;
                 visibility: hidden;
             }
+            .imgContainer div img
+            {
+                width: 100%;
+                max-height: 100%;
+            }
+            
         </style>
 	</head>
 	<BODY>
@@ -84,13 +92,13 @@
                         hasDesignBack = $(this).find(".imgDesignBack").attr("src").indexOf("00000000-0000-0000-0000-000000000000") == -1;
 
                         if (hasDesignBack) {
-                            width = Math.max(width, Math.max($(this).find(".imgDesign").width(), $(this).find(".imgDesignBack").width()));
-                            height = Math.max(height, Math.max($(this).find(".imgDesign").height(), $(this).find(".imgDesignBack").height()));
+                            width = Math.max(width, Math.max($(this).find(".imgDesign").get(0).width, $(this).find(".imgDesignBack").get(0).width));
+                            height = Math.max(height, Math.max($(this).find(".imgDesign").get(0).height, $(this).find(".imgDesignBack").get(0).height));
                         }
 
                         else {
-                            width = Math.max(width, $(this).find(".imgDesign").width());
-                            height = Math.max(height, $(this).find(".imgDesign").height());
+                            width = Math.max(width, $(this).find(".imgDesign").get(0).width);
+                            height = Math.max(height, $(this).find(".imgDesign").get(0).height);
                         }
 
                         $(this)
@@ -135,7 +143,7 @@
                             $(this).find(".imgDesignBackContainer").css("visibility", "visible");
                         }
                     });
-            });
+                });
 
         </script>
 	</BODY>

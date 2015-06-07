@@ -15,9 +15,15 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #trQuotationDetail td.font{white-space: nowrap;}
+        #Datagrid1 tr.font{white-space: nowrap;}
+    </style>
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="Form1" runat="server" defaultbutton="btnSave">
@@ -41,22 +47,22 @@
     </telerik:RadStyleSheetManager>
     <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />
 
-        <table class="TableHeader" height="25" cellspacing="0" cellpadding="0" width="100%"
+        <table class="TableHeader" height="25" cellspacing="0" cellpadding="0" width="100%" id="toolbar"
         border="0">
         <tr>
             <td valign="middle" align="center" width="10">
                 <img alt="" height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
             </td>
             <td width="100%">
-                <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>            
-                <cc1:confirmedimagebutton id="btnDrop" runat="server" Message="NONE" Visible="false"></cc1:confirmedimagebutton>  
-                <cc1:confirmedimagebutton id="btnEdit" runat="server" Message="NONE" Visible="false"></cc1:confirmedimagebutton>  
-		        <cc1:bwimagebutton id="btnGoToStyle" runat="server"></cc1:bwimagebutton>
-                <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;">
+                <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" OnClientClick="TotalSummValidate();" disabled="disabled"></cc1:confirmedimagebutton>            
+                <cc1:confirmedimagebutton id="btnDrop" runat="server" Message="NONE" Visible="false" disabled="disabled"></cc1:confirmedimagebutton>  
+                <cc1:confirmedimagebutton id="btnEdit" runat="server" Message="NONE" Visible="false" disabled="disabled"></cc1:confirmedimagebutton>  
+		        <cc1:bwimagebutton id="btnGoToStyle" runat="server" disabled="disabled"></cc1:bwimagebutton>
+                <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;" disabled="disabled">
                 </cc1:BWImageButton>
-                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="if(ConfirmClose()){return btnClose_Click();}else{return false;};"></cc1:confirmedimagebutton>
-                <cc1:confirmedimagebutton id="btnCommit" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>
-                <cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE" OnClientClick="TotalSummValidate();"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="if(ConfirmClose()){return btnClose_Click();}else{return false;};" disabled="disabled"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnCommit" runat="server" Message="NONE" OnClientClick="TotalSummValidate();" disabled="disabled"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE" OnClientClick="TotalSummValidate();" disabled="disabled"></cc1:confirmedimagebutton>
             </td>
             <td>
                 &nbsp;
@@ -196,6 +202,8 @@
 												                            <ItemTemplate>
 													                            <asp:TextBox id="txtAmount" runat="Server" BorderWidth="1px" BorderStyle="Solid" BorderColor="#E0E0E0" maxlength="5" columns="5"></asp:TextBox>
 												                                <asp:HiddenField ID="hdnAmount" runat="server" />
+                                                                                <asp:CustomValidator id="PriceValidator" ControlToValidate="txtAmount" ClientValidationFunction="ValidatePrice" Display="Dynamic" 
+                                                                                    ErrorMessage="*" ToolTip="Invalid currency format!" runat="server"/>
 												                            </ItemTemplate>
 											                            </asp:TemplateColumn>
 										                            </Columns>
@@ -344,6 +352,8 @@
             <tr>
               <td>  <asp:Label id="lblCost" runat="server"><%= GetSystemText("Cost") %></asp:Label>:&nbsp;&nbsp;</td>
                <td> <asp:TextBox ID="txtCost" runat="server" Width="40"></asp:TextBox>&nbsp;&nbsp;</td>
+               <td> <asp:CustomValidator id="PriceValidator1" ControlToValidate="txtCost" ClientValidationFunction="ValidatePrice" Display="Dynamic" 
+                  ErrorMessage="<IMG height='17' src='../System/Icons/icon_warning.gif' border='0'>" ToolTip="Invalid currency format!" runat="server"/>&nbsp;&nbsp;</td>
                <td> <cc1:confirmedimagebutton id="btnCost" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
                </tr>
                </table>
@@ -387,6 +397,20 @@
                         ValidateUnitsSumm();
                         //hide approved option when not aproved
                         $('.statusField option[value="3"]').remove();
+
+                        // Add "disable" function
+                        jQuery.fn.extend({
+                            disable: function (state) {
+                                return this.each(function () {
+                                    if (this) {
+                                        this.disabled = state;
+                                    }
+                                });
+                            }
+                        });
+
+                        // Enable all disabled buttons which are disabled from the start
+                        $("#toolbar input").disable(false);
                     }
                     catch (ex) {
                     
@@ -411,7 +435,15 @@
         <%--<script type="text/javascript" src="../System/Jscript/jquery-1.8.3.in.js"></script>--%>
         <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
         <script type="text/javascript">
-
+            function ValidatePrice(sender, args) {
+                var priceString = document.getElementById(sender.controltovalidate).value;
+                var regex = /<%= strRegExp %>/
+                if (regex.test(priceString)) {
+                    args.IsValid = true;
+                } else {
+                    args.IsValid = false;
+                }
+            }
             var drlStyleSKUItemIDValue = $("#drlStyleSKUItemID").val();
             $("#drlStyleSKUItemID").change(function () {
                 $("#sku-confirm").dialog({

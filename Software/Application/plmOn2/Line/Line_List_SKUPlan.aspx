@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Line_List_SKUPlan.aspx.vb" Inherits="plmOnApp.Line_List_SKUPlan" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
     <title>Planning Style Configuration</title>
@@ -9,14 +9,18 @@
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
     <script type="text/javascript" language="javascript" src="../System/Jscript/Custom.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .search-cell td {
             vertical-align: top !important;
         }
+        #Table1 .font{ white-space: nowrap; padding-left: 10px; }
+        
     </style>
 </head>
 <body>
@@ -50,6 +54,7 @@
                     <cc1:ConfirmedImageButton ID="btnBatchUpdate" runat="server" Message="NONE" Visible="True" CausesValidation="false">
                     </cc1:ConfirmedImageButton>
                     <asp:ImageButton ID="btnInfo" runat="server" OnClientClick="showInfoDialog(); return false;" disabled="disabled" />
+                     <cc1:confirmedimagebutton id="btnExcelExport" runat="server"  Message="NONE" OnClientClick="enable_close_link();"></cc1:confirmedimagebutton>
                     <cc1:BWImageButton ID="btnChangeLog" runat="server" Visible="true" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;" />
                 </td>
             </tr>

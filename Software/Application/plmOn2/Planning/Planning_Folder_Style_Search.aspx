@@ -1,8 +1,8 @@
 <%@ Register TagPrefix="cc3" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_Style_Search.aspx.vb" Inherits="plmOnApp.Planning_Folder_Style_Search" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Style Search</title>
@@ -11,14 +11,22 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>
         <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />    
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>		
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+        <style type="text/css">
+            .ImagesList p 
+            {
+                margin: 0px;
+            }
+        </style>
 	</head>
 	<body onload="document.getElementById('chkSelectAll').checked = false;">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 			<table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0"
 				runat="server">
 				<tr valign="middle">
@@ -31,7 +39,7 @@
 					</td>
 				</tr>
 			</table>
-			<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+			<table height="45" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
 				<tr>
 					<td>&nbsp;<asp:Label id="lblHeader" runat="server" Font-Names="Tahoma,Verdana" Font-Size="X-Large" ForeColor="#E0E0E0">Style</asp:Label></td>
 				</tr>
@@ -53,7 +61,9 @@
             <table class="TableHeader" id="Table2" height="20" cellSpacing="0" cellPadding="0" width="100%"
 	            border="0">
 	            <tr class="fontHead">
-		            <td align="center" width="10" height="25"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td>
+		            <td align="center" width="10" height="25">
+                        <IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"/>
+                    </td>
                     <td height="25">
                         <div align="left"><asp:CheckBox runat="server" id="chkSelectAll" LabelAttribute="class:fonthead;" onclick="CheckAll(this)"/></div>
                     </td>
@@ -68,30 +78,36 @@
 		            <td width="20"><asp:imagebutton id="btnImgNext" OnClick="ShowNextPage" runat="server"></asp:imagebutton></td>
 		            <td width="20"><asp:imagebutton id="btnImgLast" OnClick="ShowLastPage" runat="server" ToolTip="Last"></asp:imagebutton></td>
 		            <td width="10">&nbsp;</td>
-		            <td noWrap height="25"><div align="left"><b>
-                           <asp:label id="lblRecordCount" Visible="true" Runat="server"></asp:label>&nbsp;
-                           <asp:label id="lblRecordFound" Runat="server" />
-                         </b></div>
+		            <td noWrap height="25">
+                        <div align="left">
+                            <b>
+                                <asp:label id="lblRecordCount" Visible="true" Runat="server" />
+                                &nbsp;
+                                <asp:label id="lblRecordFound" Runat="server" />
+                            </b>
+                        </div>
                     </td>	
 		            <td height="25">
-			            <p align="right"><asp:dropdownlist id="ddlSortField" runat="server"></asp:dropdownlist>
+			            <div align="right"><asp:dropdownlist id="ddlSortField" runat="server"></asp:dropdownlist>
 				            <asp:dropdownlist id="ddlSortBy" runat="server">
 					            <asp:ListItem Value="ASC">ASC</asp:ListItem>
 					            <asp:ListItem Value="DESC">DESC</asp:ListItem>
 				            </asp:dropdownlist>
-				            <asp:ImageButton id="btnSort" runat="server" ImageUrl="../System/Icons/icon_sort.gif"></asp:ImageButton></P>
+				            <asp:ImageButton id="btnSort" runat="server" ImageUrl="../System/Icons/icon_sort.gif"></asp:ImageButton>
+                        </div>
 		            </td>
 	            </tr>
             </table>
-            <table borderColor="gainsboro" cellSpacing="1" cellPadding="0" border="0">
+            <table borderColor="gainsboro" cellSpacing="1" cellPadding="0" border="0" class="ImagesList">
 	            <tr>
-		            <td vAlign="top"><asp:datalist id="Datalist1" runat="server" DataKeyField="StyleId" RepeatLayout="Table" RepeatColumns="1"
-				            RepeatDirection="Horizontal" EnableViewState="false">
+		            <td vAlign="top">
+                        <asp:datalist id="Datalist1" runat="server" DataKeyField="StyleId" RepeatLayout="Table" RepeatColumns="1" RepeatDirection="Horizontal" EnableViewState="false">
 				            <ItemStyle HorizontalAlign="Left" BorderWidth="0px" BorderStyle="Solid" BorderColor="Gainsboro" VerticalAlign="Top" BackColor="White"></ItemStyle>
 				            <ItemTemplate>
 				            </ItemTemplate>
 				            <HeaderStyle HorizontalAlign="Left" ></HeaderStyle>
-			            </asp:datalist></td>
+			            </asp:datalist>
+                    </td>
 	            </tr>
             </table>
             <div id="mbom-styles-dialog">                

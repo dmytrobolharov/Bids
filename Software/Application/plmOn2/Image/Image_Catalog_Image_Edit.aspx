@@ -4,22 +4,20 @@
 <%@ Register TagPrefix="uc1" TagName="Image_User" Src="Image_User.ascx" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Image</title>
 		
-		
-		
-		
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	
-
         <script language="javascript" type="text/javascript">
 // <!CDATA[
 
@@ -32,10 +30,6 @@
 </HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" encType="multipart/form-data" runat="server">
-			<!--
-
-			-->
-            <wc1:Color_Wait ID="Color_Wait" runat="server" />
 			<TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<tr vAlign="middle">
@@ -44,8 +38,6 @@
 					<cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="imgBtnCopyImage" runat="server" ToolTip="Copy Image From..."
 							Message="Are you sure you want to copy this image?"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnUpdate" runat="server"  Message="NONE"
-							Visible="False"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnCancelUpdate" runat="server"  Message="NONE"
 							Visible="False"></cc1:confirmedimagebutton>
 						<cc1:bwimagebutton id="btn_createstyle" runat="server" 
@@ -85,10 +77,20 @@
 										Message="NONE" ToolTip="Edit Image File..."></cc1:confirmedimagebutton>
 									<cc1:confirmedimagebutton id="imgBtnDeleteImage" runat="server" 
 										Message="Are you sure you want to remove this image?" ToolTip="Remove Image From catalog..." CausesValidation="False"></cc1:confirmedimagebutton>
+                                    <cc1:confirmedimagebutton id="btnUpdate" runat="server" Message="NONE"	Visible="False"></cc1:confirmedimagebutton>
+                                    <asp:ImageButton ID="btnUpload" runat="server" Visible="false"/>
 								</td>
 								<td>&nbsp;</td>
 							</tr>
 						</table>
+                        <asp:Panel ID="pnlFileUpdateUpload" runat="server" Visible="false">
+                            <div>  
+                                <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachmentsUpdate" ManualStartUpload="False" AutoUseSystemTempFolder="False"
+                                    InsertButtonID="btnUpload" MultipleFilesUpload="false" MaxFilesLimit="1" ShowCheckBoxes="false" ShowFileIcons="false">
+                                </CuteWebUI:UploadAttachments>
+                                <br />
+                            </div>
+                        </asp:Panel>
 						<table class="MenuGroup" cellSpacing="0" cellPadding="0" width="100%" border="0">
 							<tr>
 								<td align="center"><asp:panel id="pnlFileLocked" runat="server" Visible="False">

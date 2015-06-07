@@ -2,7 +2,6 @@
     Inherits="plmOnApp.Line_List_FlashEdit_Image" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
 <%@ Register Src="Line_List_Header.ascx" TagName="Header" TagPrefix="hc1" %>
 <%@ Register Src="Line_List_Folder_FlashEdit_Style.ascx" TagName="List" TagPrefix="lc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -12,13 +11,15 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <!--[if lt IE 9]>
 <style type="text/css">
+	form {margin-bottom: 0;}
     .StyleDiv { display: inline !imporant; }
 </style>   
 <![endif]-->
 <style type="text/css">
-	form {margin-bottom: 0;}
     .marginCLS { margin-right: 3px; }
 </style> 
 </head>
@@ -84,7 +85,7 @@
             <td width="60%" valign="top">
                 <div style="overflow: scroll; width: 100%; height: 100%;" id="scrollDiv1">
                     <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelStyle" ClientEvents-OnRequestStart="onAjaxRequestStart"
-                        ClientEvents-OnResponseEnd="" Width="98%">
+                        ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="98%">
                         <div style="width: 100%; height: 100%" class="inner">
                             <table style="border-bottom: orange thin solid; border-left-style: none; background-color: white"
                                 height="45" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
@@ -103,8 +104,8 @@
             </td>
             <td width="40%" valign="top">
                 <div style="overflow: auto; width: 100%; height: 900px;" id="scrollDiv2">
-                    <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanel2" ClientEvents-OnRequestStart=""
-                        ClientEvents-OnResponseEnd="" Width="98%">
+                    <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanel2" ClientEvents-OnRequestStart="onAjaxRequestStart"
+                        ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="98%">
                             <div style="width: 97%; height: 100%" class="inner">
                                 <table style="border-bottom: orange thin solid; border-left-style: none; background-color: white"
                                     height="45" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
@@ -274,10 +275,10 @@
 
         /* Make GridArea div to take all the free height on the window, but no more */
         $(document).ready(function () {
-			var ieOffset = 0;
-				if ($.browser.msie) { 
-					ieOffset = 14;				
-				}
+            var ieOffset = 0;
+			if (navigator.userAgent.toLowerCase().indexOf('msie') != -1) { 
+				ieOffset = 14;				
+			}
             $("#scrollDiv1").height($(window).height() - 10 - 27);
             $("#scrollDiv2").height($(window).height() - 10 - 27).scrollLeft(0);
 
@@ -316,7 +317,6 @@
         }
 
         function showHeader() {
-
             var $confirmDialog = $("#headerModal");
             //$confirmDialog.html(' <p> <%= GetSystemText("Enter Measurement name") %> </p>' +
             // '<input type=text width="60px" name="name" id="name"');
@@ -324,8 +324,7 @@
                 autoOpen: false,
                 modal: true,
                 resizable: false,
-                height: 350,
-                width: 800,
+                width: 870,
                 title: '<%= GetSystemText("Line List") %>'
 
             });
@@ -346,7 +345,8 @@
                                     "ctrLineSearch$ctrLineFolder$btnImgPrevious", "ctrLineSearch$ctrLineFolder$btnImgLast", "ctrLineSearch$ctrLineFolder$btnImgFirst"],
                 confirmed = false;
 
-            window.onAjaxRequestStart = function(sender, eventArgs) {                  
+            window.onAjaxRequestStart = function(sender, eventArgs) { 
+                show_wait_text();                 
                 // if confirmed request or nonconfirmable button or no pending changes then proceed as is                          
                 if (confirmed || _.indexOf(buttonsToConfirm, eventArgs.get_eventTarget()) == -1 || !hasPendingChanges()) {
                     confirmed = false;
@@ -376,6 +376,7 @@
             $("#btnClose").click(function(e) {
                 if (hasPendingChanges()) {
                     $("#confirm-dialog").dialog({
+                        open: hide_wait_text(),
                         title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
                         width: '400px',
                         resizable: false,
@@ -397,6 +398,7 @@
             form1.__EVENTTARGET.value = ''
             form1.__EVENTARGUMENT.value = ''
             $("input[id*='hdnNewImageID']").val("");
+            hide_wait_text();
         }
 
         function removeImage(obj) {

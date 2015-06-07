@@ -40,8 +40,8 @@
 					<asp:Panel Runat="server" ID="pnlList" Visible="False">
 						<asp:datagrid id="dgSampleLog" runat="server" AutoGenerateColumns="False" PageSize="100" BorderWidth="1px"
 							BorderStyle="Solid" BorderColor="#E0E0E0" ShowHeader="False" Width="100%" OnItemDataBound="dgSampleLog_OnItemDataBound">
-							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
+							<AlternatingItemStyle Height="20px" Font-Size="11px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle Height="20px" Font-Size="11px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Width="100%"></HeaderStyle>
 							<Columns>
 								<asp:TemplateColumn >

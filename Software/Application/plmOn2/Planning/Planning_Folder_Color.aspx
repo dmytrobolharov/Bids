@@ -2,8 +2,8 @@
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register Src="Planning_Header.ascx" TagName="Planning_Header" TagPrefix="hc1" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_Color.aspx.vb" Inherits="plmOnApp.Planning_Folder_Color" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<title>Planning Color</title>
@@ -11,7 +11,9 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>
         <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             a img {border:none; outline: none;}
             .search-cell td {
@@ -21,16 +23,23 @@
             th.rgHeaderYPLM, th.rgHeader {
                 padding: 0 0px !important;
             }
-            
+            td.font{white-space: normal;}
             #DataList1 > span {
             	vertical-align: top;
             }
         </style>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script type="text/javascript">
+            function reloadParentPage() {
+                window.parent.reloadPage(window.location.href.replace('Planning_Folder_Color.aspx', 'Planning_FlashEdit_Color.aspx'));
+                return false;
+            }
+        </script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
             <Scripts>
                 <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
@@ -58,12 +67,13 @@
 					<td valign="top">
                         <cc1:BWImageButton id="btnImportColor" runat="server" CausesValidation="false"></cc1:BWImageButton>
                         <cc1:BWImageButton id="btnColorAdd" runat="server" CausesValidation="false"></cc1:BWImageButton>
-                        <cc1:confirmedimagebutton id="btnAllocation" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnAllocation" runat="server" Message="NONE" OnClientClick="return reloadParentPage()"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnColorDrop" runat="server" Message="NONE"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnSetActive" runat="server" ></cc1:confirmedimagebutton>
                         <cc1:ConfirmedImageButton ID="btnColorRemove" runat="server"></cc1:ConfirmedImageButton>
                         <cc1:ConfirmedImageButton ID="btnWhereUsed" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>  
+                        <cc1:confirmedimagebutton id="btnExcelExport" runat="server"  Message="NONE" OnClientClick="enable_close_link();"></cc1:confirmedimagebutton>
                     </td>
 					<td></td>
 				</tr>
@@ -102,7 +112,9 @@
                                 <td width="100" runat="server" id="tdCheckAll"><input type="checkbox" onclick="SelectAll(this, 'colorCheck')" /><%=GetSystemText("Select All")%></td>
 					            <td height="25">
 						            <div align="left">&nbsp;
-							            <asp:label id="lblCurrentIndex" Runat="server" Visible="False" Text="0"></asp:label></div>
+							            <asp:label id="lblCurrentIndex" Runat="server" Visible="False" Text="0"></asp:label>
+                                        <asp:Label ID="lblPageSize" Runat="server" Text="25" Visible="False"></asp:Label>
+                                        </div>
 					            </td>
 					            <td width="20" height="25">
 						            <div align="center"><asp:imagebutton id="btnImgFirst" runat="server" ImageUrl="../System/Icons/icon_first.gif"></asp:imagebutton></div>
@@ -138,6 +150,15 @@
 								            <asp:ListItem Value="DESC">DESC</asp:ListItem>
 							            </asp:dropdownlist><asp:imagebutton id="btnSort" runat="server" ImageUrl="../System/Icons/icon_sort.gif"></asp:imagebutton></p>
 					            </td>--%>
+                                <td height="25">
+                                    <p align="right" style="margin: 0;">
+                                        <span id="spanSortPanel" runat="server">
+                                            <asp:DropDownList ID="ddlSortField" runat="server"></asp:DropDownList>
+                                            <asp:DropDownList ID="ddlSortBy" runat="server"></asp:DropDownList>
+                                            <asp:ImageButton ID="btnSort" runat="server" CausesValidation="false" ImageUrl="../System/Icons/icon_sort.gif" />
+                                        </span>
+                                    </p>
+                                </td>
                                 <TD  align="right"><asp:label id="lblRecordPerPage" runat="server" CssClass="fontHead"></asp:label></TD>
 								<TD width="25" align="right"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
 										<asp:ListItem Value="5">5</asp:ListItem>
@@ -233,11 +254,7 @@
                 return false;
             }
 
-            function reloadParentPage() {
-                var currentPageLocation = window.location.href;
-                window.parent.location.href = currentPageLocation.replace('Planning_Folder_Color.aspx', 'Planning_FlashEdit_Color.aspx');
-                return false;
-            }
+
 
             function ColumnHidden(sender, eventArgs) {
                 var tableColumns = $find("RadGridColors").get_masterTableView().get_columns();
@@ -262,7 +279,6 @@
                 var strHiddenColumns = hiddenColumns.join();
                 PageMethods.SaveHiddenColumns('RadGridColors', '<%= aspxPageName & "?PLID=" & strPlanningId %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
             }
-
         </script>
     
         <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>

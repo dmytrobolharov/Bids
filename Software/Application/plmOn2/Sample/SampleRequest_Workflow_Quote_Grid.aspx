@@ -10,6 +10,8 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -43,11 +45,11 @@
 							<TR vAlign="middle">
 								<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 								<TD width="16"></TD>
-								<TD width="20"><asp:imagebutton id="btnImgFirst" runat="server"></asp:imagebutton></TD>
-								<TD width="20"><asp:imagebutton id="btnImgPrevious" runat="server"></asp:imagebutton></TD>
+								<TD width="20"><asp:imagebutton id="btnImgFirst" runat="server" CausesValidation="false"></asp:imagebutton></TD>
+								<TD width="20"><asp:imagebutton id="btnImgPrevious" runat="server" CausesValidation="false"></asp:imagebutton></TD>
 								<TD align="center" width="75" nowrap><asp:label id="lblPageCount" runat="server" CssClass="fontHead"></asp:label></TD>
-								<TD width="20"><asp:imagebutton id="btnImgNext" runat="server"></asp:imagebutton></TD>
-								<TD width="20"><asp:imagebutton id="btnImgLast" runat="server" ToolTip="Last"></asp:imagebutton></TD>
+								<TD width="20"><asp:imagebutton id="btnImgNext" runat="server" CausesValidation="false"></asp:imagebutton></TD>
+								<TD width="20"><asp:imagebutton id="btnImgLast" runat="server" ToolTip="Last" CausesValidation="false"></asp:imagebutton></TD>
 								<TD width="10">&nbsp;</TD>
 								<TD nowrap><asp:label id="RecordCount" runat="server" CssClass="font"></asp:label></TD>
 								<TD width="110" align="right" class="fontHead"><asp:Label ID="lblRecordsPerPage" runat="server" ><%#GetSystemText("Records per Page") & ":"%></asp:Label></TD>

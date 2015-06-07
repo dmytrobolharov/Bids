@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Calendar_SavedSearch_List.aspx.vb" Inherits="plmOnApp.Calendar_SavedSearch_List" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -9,10 +8,11 @@
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />  
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />  
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
+    <form id="form1" runat="server"  defaultbutton="imgBtnSearch">
 
             <TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">

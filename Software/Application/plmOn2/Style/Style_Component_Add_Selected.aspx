@@ -5,12 +5,10 @@
 <html>
 	<head>
 		<title>Style</title>
-		
-		
-		<link
-		
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<BODY onLoad="window.setTimeout(&quot;location.href='javascript:window.location.reload();'&quot;,10000)">
 		<form id="Form1" method="post" runat="server">

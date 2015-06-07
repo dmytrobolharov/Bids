@@ -2,7 +2,6 @@
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register Assembly="YSTab" Namespace="Yunique.WebControls.YSTab" TagPrefix="cc2" %>
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -10,10 +9,13 @@
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Grid.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server" defaultbutton="imgBtnSearch">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table class="TableHeader" id="TABLE1" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">
@@ -46,7 +48,7 @@
         </tr>
     </table>
     <cc2:YSTabView ID="YSTabView1" runat="server" />
-    <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
+    <table class="TableHeader TableFloatHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">
                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
@@ -122,8 +124,8 @@
                         <asp:Label ID="lblRecordCount" runat="server" Visible="true"></asp:Label>
                         &nbsp;<asp:Label ID="lblRecordsFound" runat="server" Text="Records Found"></asp:Label></b></div>
             </td>
-            <td height="25">
-                <p align="right">
+            <td height="25" >
+                <p align="right" style="margin:0;">
                     <asp:DropDownList ID="ddlSortField" runat="server">
                     </asp:DropDownList>
                     <asp:DropDownList ID="ddlSortBy" runat="server">

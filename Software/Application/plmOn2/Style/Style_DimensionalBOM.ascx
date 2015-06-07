@@ -14,7 +14,7 @@
 	        <ItemTemplate>
 	            <table runat="server" id="tbGrid" cellspacing="0" cellpadding="0"  border="0"  width="100%" >
 	            <tr> <td >
-                    <asp:datagrid id="DataGrid1" runat="server" Width="100%">
+                    <asp:datagrid id="DataGrid1" runat="server" Width="100%" AllowPaging="false">
 	                    <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 	                    <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 	                    <HeaderStyle Height="25px" CssClass="TableHeaderOver"></HeaderStyle>

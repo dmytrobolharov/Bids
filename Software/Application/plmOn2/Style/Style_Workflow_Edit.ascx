@@ -1,13 +1,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Control Language="vb" AutoEventWireup="false" Codebehind="Style_Workflow_Edit.ascx.vb" Inherits="plmOnApp.Style_Workflow_Edit" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" debug="True" %>
-<script language="javascript">
-	function calendar(sTxtBoxName)
-	{
-	windowDatePicker = window.open("../System/Control/month_popup.aspx?txtbox=" + sTxtBoxName,"dp","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=200,height=180,left=375,top=200");
-	windowDatePicker.focus();
-	}
-</script>
+
 <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
 <br />
 <table id="tbHeader" runat="server" style="border-bottom: orange thin solid; border-left-style: none; background-color: white" height="45"

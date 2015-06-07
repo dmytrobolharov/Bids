@@ -1,7 +1,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="TimeAction_Grid.aspx.vb" Inherits="plmOnApp.TimeAction_Grid" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title></title>
@@ -11,7 +10,11 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .search-cell td {
             	vertical-align: top !important;
@@ -20,7 +23,6 @@
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
-		<wc1:Color_Wait ID="Color_Wait" runat="server" />
 		<asp:Panel runat="server" ID="pnlPerm" Visible=false>
 				<table style="height:50;" cellspacing="0" cellpadding="0" width="100%"  bgColor="#990000" border="1" borderColor="red">
 					<tr>

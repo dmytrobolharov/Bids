@@ -13,10 +13,13 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" / >
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+	
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
-    	<script type="text/javascript" src="../System/Jscript/jqueryZoom.js"></script>
+    <script type="text/javascript" src="../System/Jscript/jqueryZoom.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <script type="text/javascript">
 		<!--
 
@@ -35,6 +38,20 @@
 </head>
 <body>
     <form id="Form1" method="post" enctype="multipart/form-data" runat="server">
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
+        
+        <CdnSettings TelerikCdn="Disabled" />
+    </telerik:RadScriptManager>
+    <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" runat="server">
+        <StyleSheets>
+            <telerik:StyleSheetReference Path="../System/CSS/RadCalendar.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadComboBox.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadGrid.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadInput.YPLM.css" />
+        </StyleSheets>
+        <CdnSettings TelerikCdn="Disabled" />
+    </telerik:RadStyleSheetManager>
+    <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />
     <!--
 
 			-->
@@ -49,8 +66,6 @@
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="imgBtnCopyImage" runat="server"></cc1:ConfirmedImageButton>
                 <cc1:BWImageButton ID="btnPreview" runat="server" Message="NONE"></cc1:BWImageButton>
-                <cc1:ConfirmedImageButton ID="btnUpdate" runat="server" Message="NONE" Visible="False">
-                </cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnCancelUpdate" runat="server" Message="NONE" Visible="False">
                 </cc1:ConfirmedImageButton>
                 <cc1:BWImageButton ID="btn_createstyle" runat="server" Visible="False"></cc1:BWImageButton>
@@ -101,6 +116,9 @@
                             <cc1:ConfirmedImageButton ID="imgBtnFolderImage" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                             <cc1:ConfirmedImageButton ID="imgBtnEditImage" runat="server" Message="NONE" ToolTip="Edit Image File...">
                             </cc1:ConfirmedImageButton>
+                            <asp:ImageButton ID="imgBtnUpload" runat="server" Visible="false"/>
+                            <cc1:ConfirmedImageButton ID="btnUpdate" runat="server" Message="NONE" Visible="False">
+                            </cc1:ConfirmedImageButton>
                             <cc1:BWImageButton ID="btnDelete" runat="server"></cc1:BWImageButton>
                         </td>
                         <td>
@@ -108,6 +126,14 @@
                         </td>
                     </tr>
                 </table>
+                <asp:Panel ID="pnlFileUpdateUpload" runat="server" Visible="false">
+                    <div>  
+                        <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachmentsUpdate" ManualStartUpload="False" AutoUseSystemTempFolder="False"
+                            InsertButtonID="imgBtnUpload" MultipleFilesUpload="false" MaxFilesLimit="1" ShowCheckBoxes="false" ShowFileIcons="false">
+                        </CuteWebUI:UploadAttachments>
+                        <br />
+                    </div>
+                </asp:Panel>
                 <table class="MenuGroup" cellspacing="0" cellpadding="0" width="100%" border="0">
                     <tr>
                         <td align="center">
@@ -334,33 +360,35 @@
     }
 
     //prevent duplicated items
-    function CuteWebUI_AjaxUploader_OnSelect(files) {
-        var sames = [];
-        var items = uploader.getitems();
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
-            //alert('file ' + file.FileName);
-            var exists = false;
-            for (var j = 0; j < items.length; j++) {
-                var item = items[j];
-                //alert('item ' + item.FileName);
-                if (item.FileName == file.FileName) {
-                    exists = true;
-                }
-            }
-            if (exists) {
-                sames.push(file.FileName);
-                file.Cancel();
-            }
-        }
-        if (sames.length > 0) {
-            alert("These file(s) are already in the queue : \r\n\t" + sames.join('\r\n\t'));
-        }
-    }
+//    function CuteWebUI_AjaxUploader_OnSelect(files) {
+//        var sames = [];
+//        var items = uploader.getitems();
+//        for (var i = 0; i < files.length; i++) {
+//            var file = files[i];
+//            //alert('file ' + file.FileName);
+//            var exists = false;
+//            for (var j = 0; j < items.length; j++) {
+//                var item = items[j];
+//                //alert('item ' + item.FileName);
+//                if (item.FileName == file.FileName) {
+//                    exists = true;
+//                }
+//            }
+//            if (exists) {
+//                sames.push(file.FileName);
+//                file.Cancel();
+//            }
+//        }
+//        if (sames.length > 0) {
+//            alert("These file(s) are already in the queue : \r\n\t" + sames.join('\r\n\t'));
+//        }
+//    }
     function btnClose_Click() {
                         <%= strExitScript %>
                         return false;
                     }
 
 </script>
+
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 </html>

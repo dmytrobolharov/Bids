@@ -1,13 +1,14 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Image_Version.aspx.vb" Inherits="plmOnApp.Image_Version" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Image version</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <script type="text/javascript">
         function changeCmpVersion(src, version) {
             $("#<%= imgCmpVersion.ClientID %>").attr("src", src).show();
@@ -53,7 +54,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table style="border-bottom: orange thin solid; border-left-style: none; background-color: white" height="45"
         cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
         <tr>

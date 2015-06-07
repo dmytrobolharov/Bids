@@ -2,8 +2,8 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="Planning_Header" Src="Planning_Header.ascx"%>
 <%@ Register TagPrefix="uc2" TagName="Planning_FlashEdit_Color_StyleDetails" Src="Planning_FlashEdit_Color_StyleDetails.ascx"%>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Flash Edit Color</title>
@@ -11,10 +11,12 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-        <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-        
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+       
         <style type="text/css">
             .EmptyItemTemplate
             {
@@ -32,16 +34,17 @@
             {
                 background-color: #fff;
             }
-            
+            td.font{white-space: nowrap;}
+            #popupModal td.font{ white-space:normal; }
             .multi-bom
             {
                 background-color: yellow;
             }
         </style>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 	</head>
 	<body style="background-color: White;">
 		<form id="Form1" method="post" runat="server" height="100%">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" >
             <Scripts>
@@ -85,7 +88,7 @@
 		    <tr valign="middle">
 				<td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td>
 				<td>
-                    <asp:ImageButton id="btnAdd" runat="server" OnClientClick="addSelectedColors(); return false;" />
+                    <asp:ImageButton id="btnAdd" runat="server" OnClientClick="return addSelectedColors(); return false;" EnableViewState="False"/>                    
 					<asp:ImageButton id="btnRemove" runat="server" OnClientClick="removeColorwaysFromStyles(); return false;" />
                     <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE" />			
                     <cc1:ConfirmedImageButton ID="btnSaveClose" runat="server" Message="NONE" />
@@ -157,7 +160,7 @@
 									    </asp:dropdownlist>
 								    </td>
 								    <td>&nbsp;</td>
-								    <td width="10"><asp:button id="btnRepageStyle" runat="server" CssClass="fontHead"></asp:button></td>
+								    <td width="10"><asp:button id="btnRepageStyle" runat="server" onclick="RePage" CssClass="fontHead"></asp:button></td>
                                     <td width="20">
                                     </td>
 	                            </tr>
@@ -219,6 +222,7 @@
                                     <tr>
                                         <td><asp:Label ID="lblColorFolder" runat="server" class="fontHead"></asp:Label><br /><asp:DropDownList ID="drlColorFolder" runat="server" Width="120" AutoPostBack="true" class="font"></asp:DropDownList></td>
                                         <td><asp:Label ID="lblColorType" runat="server" class="fontHead"></asp:Label><br /><asp:DropDownList ID="drlColorType" runat="server" Width="120" AutoPostBack="true" class="font"></asp:DropDownList></td>
+                                        <td><asp:Label ID="lblColorSeasonYearID" runat="server" class="fontHead"></asp:Label><br /><asp:DropDownList ID="drlColorSeasonYearID" runat="server" Width="120" AutoPostBack="true" class="font"></asp:DropDownList></td>
                                         <%--<td><asp:Label ID="lblActive" runat="server" class="fontHead"></asp:Label><br /><asp:DropDownList ID="drlActive" runat="server" Width="120" AutoPostBack="true" class="font"></asp:DropDownList></td>--%>
                                         <td valign="bottom"><asp:Label ID="lblPlanningColor" runat="server" class="fontHead" Width="120"></asp:Label><asp:CheckBox id="chkPlanningColor" runat="server" Checked="true" AutoPostBack="true" /></td>
                                         <td width="100%" valign="bottom"><asp:imagebutton id="imgBtnSearchColor" runat="server"></asp:imagebutton></td>
@@ -288,7 +292,7 @@
 									        </asp:dropdownlist>
 								        </td>
 								        <td>&nbsp;</td>
-								        <td width="10"><asp:button id="btnRepageColor" runat="server" CssClass="fontHead"></asp:button></td>
+								        <td width="10"><asp:button id="btnRepageColor" runat="server" onclick="RePage" CssClass="fontHead"></asp:button></td>
                                         <td width="20">
                                     </td>
                                 </tr>
@@ -327,7 +331,7 @@
         </table>
         <div id="drag-holder"></div>
         <div id="headerModal" style="display:none;">
-            <table cellSpacing="0" cellPadding="0" width="100%" border="0">
+            <table id="popupModal" cellSpacing="0" cellPadding="0" width="100%" border="0">
                 <tr><td width="100%"><uc1:Planning_Header ID="Planning_Header" runat="server" /></td></tr>
 			</table>
         </div>
@@ -337,11 +341,22 @@
         </telerik:RadCodeBlock>        
     </form>
         <script language="javascript" type="text/javascript" src="../System/Jscript/underscore-min.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/colResizable-1.3.min.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery.ui.core.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>        
         <script type="text/javascript" language="javascript">
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+            
+            function BeginRequestHandler(sender, args) {
+                show_wait_text();
+            }
+            
+            function EndRequestHandler(sender, args) {
+                hide_wait_text();
+            }
+
             var frm = document.Form1;
             function CheckAllColors(checkAllBox) {
                 var actVar = checkAllBox.checked;
@@ -377,11 +392,11 @@
                 var buttonsToConfirm = ["imgBtnSearch", "btnRepageStyle", "btnImgNext", "btnImgPrevious", "btnImgLast", "btnImgFirst"],                            
                     confirmed = false;
 
-                window.onAjaxRequestStart = function(sender, eventArgs) {  
+                window.onAjaxRequestStart = function(sender, eventArgs) {
                     // if confirmed request or nonconfirmable button or no pending changes then proceed as is                       
                     if (confirmed || _.indexOf(buttonsToConfirm, eventArgs.get_eventTarget()) == -1 || !hasPendingChanges()) {
                         confirmed = false;
-                        if (eventArgs.get_eventTarget() == "btnSave") { var busyBox = new BusyBox("busyBox", 12, "busy_Layer_", ".gif", 120); show_wait_text(); busyBox.Show(); }
+                        if (eventArgs.get_eventTarget() == "btnSave") { show_wait_text(); }
                         return true;
                     }
 
@@ -599,8 +614,9 @@
                     selectedStyles[i].checked = false;
                 }
 
-                document.getElementById("checkAllStyles").checked = false;
+                document.getElementById("chkSelectAllStyles").checked = false;
                 document.getElementById("checkAllColors").checked = false;
+                return false;
             }
 
             /*
@@ -621,6 +637,8 @@
                         itemTemplate.find("span[id*='lblColorNo']").text(colorInfo.colorCode).css("color", "Red");
                         itemTemplate.find("span[id*='lblColorName']").text(colorInfo.colorName).css("color", "Red");
                         itemTemplate.find("td[id*='tdImage']").css("background-image", colorInfo.backgroundImageUrl);
+                        itemTemplate.find("td[id*='tdImage']").css("background-position", "center");
+                        itemTemplate.find("td[id*='tdImage']").css("background-repeat", "no-repeat");
                         // Renaming all the IDs and names to avoid collisions
                         itemTemplate.find("td,span,input,img").each(function () {
                             if (this.id != null && this.id != "") {
@@ -687,7 +705,7 @@
             function showDroppedColorways(strStyleBOMDimensionID) {
                 window.radopen('Planning_FlashEdit_Color_Dropped.aspx?SBDID=' + strStyleBOMDimensionID, 'DroppedColorways');
             }
-
+            
         </script>
 
             

@@ -23,19 +23,19 @@
             enabled="true" Search="false" lookupquery="select WorkflowItemTypeId, ItemTypeLabel from pWorkflowItemType order by ItemTypeLabel" select="true" 
             textfield="ItemTypeLabel" ValueField="WorkflowItemTypeId" FilterField="MapId"  AutoPostBack="false" DefaultValue=""
 			ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="004" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
-        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+        <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Page Type Required!" />
 		<LookupTable XMLFileName="Lookup_pWorkFlowItemType.xml" ParentIDField="WorkflowItemTypeId" ChildIDField="WorkflowItemTypeId" />
     </column>
     <column TrackChange="true" Name="WorkFlowItemName" alias="Name" Type="textbox" datatype="string"
 		column="1" order="3" GridVisible="true" cellwidth="150px" GridWidth="200" Visible="true"
 		enabled="true"
 		ApiDataType="string" ApiVisible="true" ApiOrder="005" ApiRequired="false" ApiSearch="true" ApiSearchRequired="false" ApiSearchType="ALL">
-		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		<Validator Class="required" Type="" Minimum="" Maximum="" Text="Name Required!" />
 	</column>
     <column TrackChange="true" Name="StatusID" alias="Status" Type="dropdownlist" datatype="query" column="2" order="04" GridVisible="true" cellwidth="150px" Visible="true"
             enabled="true" Search="false" lookupquery="SELECT CustomID, Custom FROM xCustom8 WHERE Active = 1 ORDER BY Custom" select="true" textfield="Custom" ValueField="CustomID" AutoPostBack="false" DefaultValue=""
 			ApiDataType="string" ApiVisible="true" ApiOrder="006" ApiRequired="false" ApiSearch="true" ApiSearchRequired="false" ApiSearchType="ALL">
-        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+        <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Status Required!" />
 		<LookupTable XMLFileName="Lookup_xCustom8_ByID.xml" ParentIDField="StatusID" ChildIDField="CustomID" />
     </column>
 	<column TrackChange="true" Name="Sort" alias="Sort" Type="textbox" datatype="string" column="1" order="4" GridVisible="true" cellwidth="150px" GridWidth="70" Visible="true" enabled="true"

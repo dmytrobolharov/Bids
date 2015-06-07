@@ -94,15 +94,14 @@ echo       Remove Chilkat Stuff
 echo =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 echo Chilkat Stuff.....
 
-sc STOP ChilkatSmtpq
-sc DELETE ChilkatSmtpq
+sc STOP ChilkatSmtpq_x64
+sc DELETE ChilkatSmtpq_x64
 
-%SYSTEMDRIVE%\WINDOWS\system32\regsvr32.exe /u "C:\Program Files\YuniquePLM\ChilkatSmtpQ\ChilkatUtil.dll"
-%SYSTEMDRIVE%\WINDOWS\system32\regsvr32.exe /u "C:\Program Files\YuniquePLM\ChilkatSmtpQ\SmtpQMgr.dll"
+%SYSTEMDRIVE%\WINDOWS\system32\regsvr32.exe /u "C:\Program Files\YuniquePLM (x64)\ChilkatSmtpQ\SmtpQMgr.dll"
 
-%SYSTEMDRIVE%\WINDOWS\system32\reg.exe delete "HKEY_LOCAL_MACHINE\SOFTWARE\Chilkat Software, Inc.\SmtpQ" /f
+%SYSTEMDRIVE%\WINDOWS\system32\reg.exe delete "HKEY_LOCAL_MACHINE\SOFTWARE\Chilkat Software, Inc.\SmtpQ" /f /reg:64
 
-rmdir /S /Q "C:\Program Files\YuniquePLM\ChilkatSmtpQ"
+rmdir /S /Q "C:\Program Files\YuniquePLM (x64)\ChilkatSmtpQ"
 rmdir /S /Q %mailFolder%
 
 echo

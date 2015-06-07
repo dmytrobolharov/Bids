@@ -2739,20 +2739,20 @@ Ganttalendar.prototype.drawTask = function (task) {
 
         //progress
         if (task.progress > 0) {
-            var progress = svg.rect(taskSvg, 0, 0, (task.progress > 100 ? 100 : task.progress) + "%", "100%", {fill:(task.progress > 100 ? "red" : "rgb(153,255,51)"), rx:"6", ry:"6", opacity:.4});
+            var progress = svg.rect(taskSvg, 0, 0, (task.progress > 100 ? 100 : task.progress) + "%", "100%", {fill:(task.progress > 100 ? "red" : "rgb(153,255,51)"), rx:"6", ry:"6", opacity:.4});           
         }
 
         //status
         if (dimensions.width>15)
             svg.rect(taskSvg, 6, 6, 13, 13, {stroke:1, rx:"2", ry:"2", status:task.status, class:"taskStatusSVG"});
-
+		
 		//progress
         if (task.progress > 0 && dimensions.width>50) {
 			var textStyle={fill:"#888", "font-size":"10px"};
 			if (task.progress>90)
 				textStyle.transform="translate(-30)";
 			svg.text(taskSvg, (task.progress > 90 ? 100 : task.progress) + "%", 18, task.progress + "%", textStyle);
-        }	
+        }		
 		
         if (task.hasChild)
             svg.rect(taskSvg, 0, 0, "100%", 3, {fill:"#000"});
@@ -3192,7 +3192,7 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
         Yunique.Http.get("/TACalendarHoliday", {
             pagesize: 9999
         }).then(function(resp) {
-                window.userLocalCulture = resp.YuniqueAPI['@ClientCulture'];
+                window.userLocalCulture = resp.YuniqueAPI['@ClientCulture'].toLowerCase() === 'tstlng' ? 'en-US' : resp.YuniqueAPI['@ClientCulture'];
                 userLocalCultureEndpoint = '/l10n/translations/system/' + userLocalCulture + '/taCalendar';
                 if(resp.YuniqueAPI.pTACalHoliday){
                     for (var apiResp = resp.YuniqueAPI.pTACalHoliday, tempArrayOfDates = [], tempArrayOfNames = [], i = 0, k = apiResp.length; k > i; i++) {
@@ -3219,12 +3219,12 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
                             '<th class="gdfColHeader gdfResizable" style="width:100px;">'+Yunique.Data.getTranslatedString(TranslationData,'Task type')+'</th>' +
                             '<th class="gdfColHeader gdfResizable" style="width:160px;">'+Yunique.Data.getTranslatedString(TranslationData,'Task name')+'</th>' +
                             '<th class="gdfColHeader gdfResizable" style="width:145px;">'+Yunique.Data.getTranslatedString(TranslationData,'Assigned To')+'</th>' +
-                            '<th class="gdfColHeader gdfResizable" style="width:60px;">'+Yunique.Data.getTranslatedString(TranslationData,'New')+'</th>' +
-                            '<th class="gdfColHeader gdfResizable" style="width:75px;">'+Yunique.Data.getTranslatedString(TranslationData,'Carryover')+'</th>' +
                             '<th class="gdfColHeader gdfResizable" style="width:125px;">'+Yunique.Data.getTranslatedString(TranslationData,'Start')+'</th>' +
-                            '<th class="gdfColHeader gdfResizable" style="width:125px;">'+Yunique.Data.getTranslatedString(TranslationData,'end')+'</th>' +
+                            '<th class="gdfColHeader gdfResizable" style="width:125px;">'+Yunique.Data.getTranslatedString(TranslationData,'End')+'</th>' +
                             '<th class="gdfColHeader gdfResizable" style="width:50px;">'+Yunique.Data.getTranslatedString(TranslationData,'Dur.')+'</th>' +
                             '<th class="gdfColHeader gdfResizable" style="width:50px;">'+Yunique.Data.getTranslatedString(TranslationData,'Dep.')+'</th>' +
+                            '<th class="gdfColHeader gdfResizable" style="width:60px;">'+Yunique.Data.getTranslatedString(TranslationData,'New')+'</th>' +
+                            '<th class="gdfColHeader gdfResizable" style="width:75px;">'+Yunique.Data.getTranslatedString(TranslationData,'Carryover')+'</th>' +
                             '</tr>' +
                             '</thead>' +
                             '</table>' +
@@ -3287,12 +3287,12 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
                             '<input class="taskNameYunique" type="text" name="name"  style="(#=obj.level>0#)">' +
                             '</td>' +
                             '<td class="gdfCell teamYunique"><input name="team"/></td>' +
-                            '<td class="gdfCell new"><input type="checkbox" name="new" value="(#=obj.new#)"/></td>' +
-                            '<td class="gdfCell carryOver"><input type="checkbox" name="carryOver" value="(#=obj.carryOver#)"/></td>' +
                             '<td class="gdfCell"><input type="text" name="start"  value="" class="date"></td>' +
                             '<td class="gdfCell"><input type="text" name="end" value="" class="date"></td>' +
                             '<td class="gdfCell"><input type="text" name="duration" value="(#=obj.duration#)"></td>' +
                             '<td class="gdfCell"><input type="text" name="depends" value="(#=obj.depends#)" (#=obj.hasExternalDep?"readonly":""#)></td>' +
+							'<td class="gdfCell new"><input type="checkbox" name="new" value="(#=obj.new#)"/></td>' +
+                            '<td class="gdfCell carryOver"><input type="checkbox" name="carryOver" value="(#=obj.carryOver#)"/></td>' +
                             '<td class="gdfCell taskAssigs">(#=obj.getAssigsString()#)</td>' +
                             '</tr>' + '--></div>';
 
@@ -3307,7 +3307,7 @@ var ge; //this is the hugly but very friendly global var for the gantt editor
                         $(rowEdit).appendTo(self);
                         $(ganntButtons).appendTo(self);
 //createGannt('0fce0d27-2a7f-43d1-999f-e15190ebe32d', options.calendarHeight, options.calendarWidth);
-                        createGannt(location.href.split('TID=')[1],options.calendarHeight,options.calendarWidth);
+createGannt(location.href.split('TID=')[1],options.calendarHeight,options.calendarWidth);
                     });
             },function(){
                 toastr.options.timeOut = 0;
@@ -3554,6 +3554,27 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 var tempDate = new Date(millis);
                 return new Date(Date.UTC(tempDate.getFullYear(),tempDate.getMonth(),tempDate.getDate())).toISOString().replace('.000Z','');
             }
+            //popup window when user want to close.
+            /*  $('#btnClose').click(function(e){
+             if(!_Yunique.closeConfirmed && ge.__undoStack.length>1){
+             e.preventDefault();
+             //if() {
+             _Yunique.createConfirmBox({title: 'Warning!',
+             text: 'You have unsaved changes, still close window?',
+             acceptFunction: function () {
+             _Yunique.closeConfirmed = true;
+             $('#btnClose').trigger('click');
+             }})
+             //}
+             }
+             });*/
+            window.onbeforeunload = function() {
+                if(ge.__undoStack.length>1){
+					hide_wait_text();
+                    return 'You have unsaved changes, still close window?'
+                }
+            }
+
             window.saveFunc = function () {
                 var tempDatasource = (ge.saveProject()).tasks,
                     deletedIds = ge.yuniqueDeletedGuis,
@@ -3612,12 +3633,12 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                     Yunique.Http.post('/TACalendarTemplateTask', calendarDatasource)
                         .then(function (resp) {
                             btnSave.on('click', saveFunc);
+                            window.onbeforeunload = null;
                             toastr.success(Yunique.Data.getTranslatedString(TranslationData,'All changes saved'));
                             //ugly hack for "tooo fast" browsers
                             setTimeout(function () {
                                 window.__doPostBack('btnSave', '');
                             }, 1000)
-
                         },function(e){toastr.error(Yunique.Data.getTranslatedString(TranslationData,'There was an error during save.'));
                         });
                 }else{
@@ -3627,6 +3648,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             };
             btnSave.removeAttr('onclick');
             btnSave.click(function(event){
+				Page_ClientValidate();
                 event.preventDefault();
                 if(Page_IsValid){
                     saveFunc()
@@ -3911,7 +3933,6 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
         while(i<taskWorkflowLength){
             if(taskWorkflow[i].key === val){
                 var elem = taskWorkflow[i].value2;
-                console.log(elem)
                 if(elem === 'MATERIAL REQUEST' || elem === 'SAMPLE REQUEST' || elem === 'SOURCING QUOTATION' || elem === 'COLOR' || elem ==='IMAGE' || elem ==='SOURCING'){
                     return true;
                     break;
@@ -3970,6 +3991,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                     window.alreadyCalled = false;
                 },
                 select: function (e) {
+                    self.master.beginTransaction();
                     var currValue = this.value();
                     if(e.item && !alreadyCalled){
                         alreadyCalled=true;
@@ -3978,10 +4000,11 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                         dropDownChanger(task,currValue,this.text(),self,e,el);
                     }
                     if(groupFinder(task.TaskWorkflowId)){
-                     taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
-                     }else{
-                     taskRow.find('.carryOver').find('input').css('visibility', 'visible');
-                     }
+                        taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
+                    }else{
+                        taskRow.find('.carryOver').find('input').css('visibility', 'visible');
+                    }
+                    self.master.endTransaction();
                 },
                 change:function(e,m){
                     //since telerik doesnt know that someone would love to have 2 events,instead of just 1,
@@ -4001,10 +4024,10 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             }
             if (task.type === '1') {
                 if(groupFinder(task.TaskWorkflowId)){
-                 taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
-                 }else{
-                 taskRow.find('.carryOver').find('input').css('visibility', 'visible');
-                 }
+                    taskRow.find('.carryOver').find('input').css('visibility', 'hidden');
+                }else{
+                    taskRow.find('.carryOver').find('input').css('visibility', 'visible');
+                }
                 $(el2).css('display', 'none')
             } else {
                 task.type = '0';
@@ -4342,7 +4365,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
             var changer = $.JST.createFromTemplate({}, "CHANGE_STATUS");
             var taskNote = changer.find('#taskNote').text(task.TaskNote);
             changer.find('#saveNote').click(function () {
-                task.TaskNote = taskNote.val();
+                self.master.beginTransaction();                task.TaskNote = taskNote.val();
                 if (task.TaskNote && (task.TaskNote).length !== 0) {
                     el.attr('src', 'jQueryGantt/css/images/notes_edit.png');
                     var notesInside = task.TaskNote.length >= 128 ? task.TaskNote.substring(0, 128) + '...' : task.TaskNote;
@@ -4353,6 +4376,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
                 }
                 $("#__blackpopup__").trigger("close");
             });
+            self.master.endTransaction();
             createBlackPage(800, 500).append(changer);
         });
 
@@ -4380,6 +4404,32 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
 
     };
     function EventPopup(){
+        this.createConfirmBox = function(opt){
+            var opt = opt || {},text = opt.text || 'Confirm?',
+                title = opt.title || 'Confirm action',
+                acceptFunction = opt.acceptFunction || function(){
+                    console.log('what you want me to do?')
+                };
+            $('body').append('' +'<div id="confirmPopup" ><div class="eventPopupShadow"></div>' +
+                '<div class="eventPopup">'+
+                '<h2 style="opacity: 0.6;margin-left: 15px;margin-top: 15px;color:red">'+title+'</h2>'+
+                '<div class="eventPopupBody">' +
+                '<div><span>'+text+'</span>' +
+                '<div id="workflowStep">'+
+                '</div>'+
+                '</div></div>'+
+                '<div class="saveEventPopup">' +
+                '<button id="confirmOk" class="button">Proceed</button>'+
+                '<button id="confirmCancel" class="button">Cancel</button>' +
+                '</div>'+
+                '<p class="closeEventPopup"><img src="closeBig.png" title="close"></p>'+
+                '</div></div>');
+            var element = $('#confirmPopup');
+            element.find('.closeEventPopup,#confirmCancel').click(function(){
+                element.remove();
+            });
+            element.find('#confirmOk').click(acceptFunction);
+        };
         this.createEventPopup = function(task,self){
             var that = this;
             $('body').append('' +'<div id="eventPopup" ><div class="eventPopupShadow"></div>' +

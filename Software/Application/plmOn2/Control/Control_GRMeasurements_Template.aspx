@@ -1,6 +1,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Control_GRMeasurements_Template.aspx.vb" Inherits="plmOnApp.Control_GRMeasurements_Template" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Measurements Template</title>
@@ -10,6 +10,11 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -18,7 +23,10 @@
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 							Height="0px" /></TD>
-					<TD><cc1:confirmedimagebutton id="btnNewPOM" runat="server"  Message="NONE"></cc1:confirmedimagebutton></TD>
+					<TD>
+                    <asp:imagebutton id="Imagebutton1" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
+							Height="0px" />
+                    <cc1:confirmedimagebutton id="btnNewPOM" runat="server"  Message="NONE"></cc1:confirmedimagebutton></TD>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
 				</TR>
@@ -36,10 +44,9 @@
 							border="0">
 							<TR vAlign="middle">
 								<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-								<TD class="fontHead" width="100"></TD>
 								<TD width="20"><asp:imagebutton id="btnImgFirst" runat="server"></asp:imagebutton></TD>
 								<TD width="20"><asp:imagebutton id="btnImgPrevious" runat="server"></asp:imagebutton></TD>
-								<TD noWrap align="center" width="75"><asp:label id="lblPageCount" runat="server" CssClass="fontHead"></asp:label></TD>
+								<TD noWrap align="center" width="100"><asp:label id="lblPageCount" runat="server" CssClass="fontHead"></asp:label></TD>
 								<TD width="20"><asp:imagebutton id="btnImgNext" runat="server"></asp:imagebutton></TD>
 								<TD width="20"><asp:imagebutton id="btnImgLast" runat="server" ToolTip="Last"></asp:imagebutton></TD>
 								<TD width="10">&nbsp;</TD>

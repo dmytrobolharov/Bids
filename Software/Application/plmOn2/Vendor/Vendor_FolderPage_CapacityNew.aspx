@@ -1,6 +1,6 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Vendor_FolderPage_CapacityNew.aspx.vb" Inherits="plmOnApp.Vendor_FolderPage_CapacityNew" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>capacity</title>
@@ -9,6 +9,10 @@
 		<meta name="vs_defaultClientScript" content="JavaScript">
 		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
 		<link href="../System/CSS/Style.css" rel="stylesheet" type="text/css">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">

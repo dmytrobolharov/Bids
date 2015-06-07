@@ -10,10 +10,14 @@
 		<meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">
 		<meta name="vs_defaultClientScript" content="JavaScript">
 		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
-		    <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
-    <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
-    <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
-    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>

@@ -11,9 +11,12 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
          #RadGridStyles .rgMasterTable td, #RadGridMaterials .rgMasterTable td, #RadGridImageCatalog .rgMasterTable td {
             border-color: #ddd !important;
@@ -21,6 +24,16 @@
          
         th.rgHeaderYPLM, th.rgHeader {
             padding: 0 0px !important;
+        }
+        .ui-dialog .ui-dialog-titlebar-close span
+        {
+         padding:0px !important;
+         margin-left: -8px;
+         margin-top: -8px;
+        }
+        
+        .search-cell .font {
+            vertical-align: top;
         }
     </style>
 </head>
@@ -72,7 +85,7 @@
             <td class="search-cell">
                 <asp:PlaceHolder ID="plhControlsHolder" runat="server" EnableViewState="False"></asp:PlaceHolder>
             </td>
-            <td valign="middle" width="100%">
+            <td valign="top" width="100%">
                 <table id="Table3" height="45">
                     <tr>
                         <td valign="middle">
@@ -175,6 +188,34 @@
     </asp:DataList>
     <div id="style-dialog-message" style="display: none;"><p><%= GetSystemText("You are about to update the version of the image in ") & "{N}" & GetSystemText(" styles. Are you sure you want to continue")%>?</p></div>
     </asp:Panel>
+    <asp:Panel runat="server" ID="pnlColors">
+        <asp:PlaceHolder runat="server" ID="plhColorsGrid"></asp:PlaceHolder>
+        <asp:DataList ID="dlColors" runat="server" RepeatDirection="Horizontal" RepeatColumns="6" EnableViewState="True"
+            DataKeyField="ColorPaletteID">
+            <ItemStyle BorderWidth="1px" BorderStyle="Solid" BackColor="White" BorderColor="Gainsboro" VerticalAlign="Top">
+            </ItemStyle>
+            <ItemTemplate>                                
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblMessage" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label align="left" ID="lblColorData" runat="server" AssociatedControlID="colorCheck" Width='<%#ImageWidth.Value%>'
+                                Height='<%#ImageWidth.Value%>' Style='<%# String.Format("display: block; background-repeat:no-repeat; background-position: center center; background-image:url({0})", GetImageStreamPath(ImageWidth.Value, Eval("ImageVersion").ToString, Eval("ImageID").ToString))%>'>
+                                <asp:CheckBox ID="colorCheck" runat="server" />
+                            </asp:Label>
+                            <asp:PlaceHolder ID="plhHeaderItem" runat="server"></asp:PlaceHolder>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </ItemTemplate>
+        </asp:DataList>
+        <div id="color-dialog-message" style="display: none;"><p><%= GetSystemText("You are about to update the version of the image in ") & "{N}" & GetSystemText(" Colors. Are you sure you want to continue")%>?</p></div>
+    </asp:Panel>
     <asp:Panel runat="server" ID="pnlMaterial">
         <asp:PlaceHolder runat="server" ID="plhMaterialsGrid"></asp:PlaceHolder>
         <asp:DataList ID="dlMaterials" runat="server" RepeatDirection="Horizontal" RepeatColumns="8" EnableViewState="True"
@@ -191,7 +232,7 @@
                     <tr>
                         <td>
                             <asp:Label align="left" ID="lblMaterialData" runat="server" AssociatedControlID="materialCheck" Width='<%#ImageWidth.Value%>'
-                                Height='<%#ImageWidth.Value%>' Style='<%# String.Format("display: block; background-image:url({0})", GetImageStreamPath(ImageWidth.Value, Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString))%>'>
+                                Height='<%#ImageWidth.Value%>' Style='<%# String.Format("display: block; background-repeat:no-repeat; background-position: center center; background-image:url({0})", GetImageStreamPath(ImageWidth.Value, Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString))%>'>
                                 <asp:CheckBox ID="materialCheck" runat="server" />
                             </asp:Label>
                             <asp:PlaceHolder ID="plhHeaderItem" runat="server"></asp:PlaceHolder>
@@ -219,7 +260,7 @@
                     <tr>
                         <td>
                             <asp:Label align="left" ID="lblImageCatalogData" runat="server" AssociatedControlID="ImageCatalogCheck" Width='<%#ImageWidth.Value%>'
-                                Height='<%#ImageWidth.Value%>' Style='<%# String.Format("display: block; background-image:url({0})", GetImageStreamPath(ImageWidth.Value, Eval("CatalogImageVersion").ToString, Eval("CatalogImageID").ToString))%>'>
+                                Height='<%#ImageWidth.Value%>' Style='<%# String.Format("display: block; background-repeat:no-repeat; background-position: center center; background-image:url({0})", GetImageStreamPath(ImageWidth.Value, Eval("CatalogImageVersion").ToString, Eval("CatalogImageID").ToString))%>'>
                                 <asp:CheckBox ID="ImageCatalogCheck" runat="server" />
                             </asp:Label>
                             <asp:PlaceHolder ID="plhHeaderItem" runat="server"></asp:PlaceHolder>
@@ -246,11 +287,13 @@
 
         function ShowMessage() {
             if (($("#RadGridStyles tbody :checked").length > 0 || $("#dlStyles :checked").length > 0) ||
+                ($("#RadGridColors tbody :checked").length > 0 || $("#dlColors :checked").length > 0) ||
                 ($("#RadGridMaterials tbody :checked").length > 0 || $("#dlMaterials :checked").length > 0) ||
                 ($("#RadGridImageCatalog tbody :checked").length > 0 || $("#dlImageCatalog :checked").length > 0)
                 ) {
             
                 $("#style-dialog-message p").text($("#style-dialog-message p").text().replace("{N}", $("#RadGridStyles tbody :checked").length + $("#dlStyles :checked").length));
+                $("#color-dialog-message p").text($("#color-dialog-message p").text().replace("{N}", $("#RadGridColors tbody :checked").length + $("#dlColors :checked").length));
                 $("#materials-dialog-message p").text($("#materials-dialog-message p").text().replace("{N}", $("#RadGridMaterials tbody :checked").length + $("#dlMaterials :checked").length));
                 $("#catalog-dialog-message p").text($("#catalog-dialog-message p").text().replace("{N}", $("#RadGridImageCatalog tbody :checked").length + $("#dlImageCatalog :checked").length));
             
@@ -323,6 +366,30 @@
             PageMethods.SaveHiddenColumns('RadGridMaterials', '<%= aspxPageName %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
         }
 
+        function RadGridColors_ColumnHidden(sender, eventArgs) {
+            var tableColumns = $find("RadGridColors").get_masterTableView().get_columns();
+            var hiddenColumns = new Array();
+            for (var i = 0; i < tableColumns.length; i++) {
+                if (tableColumns[i].get_visible() == false) {
+                    hiddenColumns.push(tableColumns[i].get_uniqueName());
+                }
+            }
+            var strHiddenColumns = hiddenColumns.join();
+            PageMethods.SaveHiddenColumns('RadGridColors', '<%= aspxPageName %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
+        }
+
+        function RadGridColors_ColumnShown(sender, eventArgs) {
+            var tableColumns = $find("RadGridColors").get_masterTableView().get_columns();
+            var hiddenColumns = new Array();
+            for (var i = 0; i < tableColumns.length; i++) {
+                if (tableColumns[i].get_visible() == false) {
+                    hiddenColumns.push(tableColumns[i].get_uniqueName());
+                }
+            }
+            var strHiddenColumns = hiddenColumns.join();
+            PageMethods.SaveHiddenColumns('RadGridColors', '<%= aspxPageName %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
+        }
+
         function RadGridImageCatalog_ColumnHidden(sender, eventArgs) {
             var tableColumns = $find("RadGridImageCatalog").get_masterTableView().get_columns();
             var hiddenColumns = new Array();
@@ -345,6 +412,29 @@
             }
             var strHiddenColumns = hiddenColumns.join();
             PageMethods.SaveHiddenColumns('RadGridImageCatalog', '<%= aspxPageName %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
+        }
+        function styleOpen(styleId, seasonyearId) {
+            if (event.target.type != "checkbox") {
+                var strURL = "../Planning/Planning_Folder_StyleGoTo.aspx?SID=" + styleId + "&SYID=" + seasonyearId;
+                window.open(strURL, 'StylePOP');
+                
+            }
+
+        }
+        function colorOpen(ColorPaletteID, ColorFolderID) {
+            if (event.target.type != "checkbox") {
+                window.open('../Color/Color_Folder.aspx?OP=E&CT=1&CFID=' + ColorFolderID + '&CPID=' + ColorPaletteID + '', 'Color', 'width=10,height=10,toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes')
+            }
+        }
+        function materialOpen(MaterialID) {
+            if (event.target.type != "checkbox") {
+                window.open('../Material/Material_Frame.aspx?MTID=' + MaterialID + '')
+             }
+        }
+        function imageCatalogOpen(catalogID) {
+            if (event.target.type != "checkbox") {
+                window.open('Image_Catalog_Folder.aspx?IC=' + catalogID + '', 'ImageCatalog', 'width=800, height=600, location=yes, menubar=yes, status=yes, toolbar=no, scrollbars=yes, resizable=yes');
+            }
         }
 
     </script>

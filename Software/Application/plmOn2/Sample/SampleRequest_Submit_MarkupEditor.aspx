@@ -8,8 +8,10 @@
     <link id="CssHistory" rel="stylesheet" type="text/css" runat="server" />
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script src="<%=strMarkupServer %>/AC_OETags.js" type="text/javascript" language="javascript"></script>
     <script src="<%=strMarkupServer %>/history/history.js" type="text/javascript" language="javascript"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
 			body { margin: 0px; overflow:hidden }			
 	</style>

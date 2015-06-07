@@ -1,4 +1,14 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="Material_List_View.ascx.vb" Inherits="plmOnApp.Material_List_View" %>
+<script type="text/javascript">
+    function RadGridRowClick(sender, eventArgs) {
+        window.open('../Material/Material_Frame.aspx?MTID=' + eventArgs.getDataKeyValue("MaterialID"));
+    }
+</script>
+<style type="text/css">
+    th.rgHeaderYPLM, th.rgHeader {
+        padding: 0 0px !important;
+    }
+</style>
 <table cellspacing="0" cellpadding="0" width="100%" border="0">
 	<tr valign="top">
 		<td>
@@ -14,7 +24,9 @@
 		            <td width="20"><asp:imagebutton id="btnImgNext" runat="server"></asp:imagebutton></td>
 		            <td width="20"><asp:imagebutton id="btnImgLast" runat="server"></asp:imagebutton></td>
 		            <td width="10">&nbsp;</td>
-		            <td nowrap><asp:label id="RecordCount" runat="server" CssClass="font"></asp:label></td>
+		            <td nowrap><asp:label id="lblRecordCount" runat="server" CssClass="font"></asp:label>
+                                <asp:HiddenField ID="hdnRecordCount" runat="server" Value='' />
+                                <asp:label id="RecordCount" runat="server" CssClass="font"></asp:label></td>
 		            <td class="fontHead" align="right" width="110"><asp:Label ID="lblRecordsperPage" runat="server" Visible="true" Text="Records per Page:"></asp:Label></td>
 		            <td width="25"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
 				            <asp:ListItem Value="5">5</asp:ListItem>
@@ -47,5 +59,12 @@
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label>
 		</td>
 	</tr>
+</table>
+<table borderColor="gainsboro" cellSpacing="1" cellPadding="0" border="0">
+	<tr>
+		<td vAlign="top">
+            <asp:PlaceHolder ID="plhMaterialsGrid" runat="server"></asp:PlaceHolder>
+        </td>
+    </tr>
 </table>
 <input id="hiddenCurrentPage" type="hidden" value="0" name="hiddenCurrentPage" runat="server">&nbsp;&nbsp;

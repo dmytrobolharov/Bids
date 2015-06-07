@@ -1,15 +1,17 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Variation_Edit.aspx.vb" Inherits="plmOnApp.Style_Variation_Edit" %>
 <%@ Register TagPrefix="uc1" TagName="Style_Variation" Src="Style_Variation.ascx" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Variation</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.ui.core.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">

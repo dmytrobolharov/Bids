@@ -29,10 +29,17 @@
 			<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 			<td id="tblExpand"  style="width:85"><img runat="server" id="btnExpandAll" alt="" onclick="expandall(1)"  />
             <img id="btnCollapseAll" runat="server" alt="" onclick="expandall(0)" style="display: none" /></td>
-			<TD><cc1:bwimagebutton id="btnPrint" runat="server" /></TD>
+			<TD>
+                <cc1:bwimagebutton id="btnPrint" runat="server" />
+            </TD>
 		</TR>
 	</TABLE>
-
+<table class="TableHeader" height="25" cellSpacing="0" cellpadding="0" width="100%" border="0" runat="server" id="tbl3DButtons">
+    <tr><td>
+        <cc1:BWImageButton ID="btnMultiUploadWin" runat="server"></cc1:BWImageButton>
+        <cc1:ConfirmedImageButton ID="btnClose" runat="server" CausesValidation="false" Message="NONE" OnClientClick="return btnClose_Click()"/>
+    </td></tr>
+</table>
 <table class="TableHeader" height="25" cellSpacing="0" cellPadding="0" width="100%" border="0">
 	<tr>
 		<td align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
@@ -41,3 +48,9 @@
 		<td class="fontHead" vAlign="middle" align="center" width="25"></td>
 	</tr>
 </table>
+<script  language="javascript" type="text/javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+</script>

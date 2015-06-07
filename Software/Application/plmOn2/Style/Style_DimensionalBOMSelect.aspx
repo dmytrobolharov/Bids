@@ -11,7 +11,11 @@
 		<link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>
 		<link href="../System/CSS/CheckListDropDown.css" type="text/css" rel="stylesheet"/>		
-		<script language="javascript" src="../System/Jscript/arc90_multiselect.js"></script>	
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+		<script language="javascript" src="../System/Jscript/arc90_multiselect.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>	
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		<script language="javascript" type="text/javascript">
 		    // change the default options for all multiselects
 		    a$.NO_SELECTION = 'No selection'; 	// TEXT for 'No selection' when nothing selected
@@ -77,7 +81,9 @@
 		            <td valign=top width="30%" >                        
 	                  <asp:label id="lblDimTab" runat="server" visible="false" CssClass="fontHead"></asp:label>
 	                  <asp:DropDownList ID="drDimTab" runat="server" AutoPostBack="true" visible="false" CssClass="fontHead"></asp:DropDownList>  
-	                  <asp:Checkbox id="chbDimTab" runat="server" visible="false" text="Select All" CssClass="fontHead"></asp:Checkbox>		            	
+	                  <asp:Checkbox id="chbDimTab" runat="server" visible="false" text="Select All" CssClass="fontHead"></asp:Checkbox>	  
+                      
+                      <asp:HiddenField ID="drDimTabIndex" runat="server" Value="0"/>
                     </td>                               		            
 		            <td valign=top>	            
                         <div class="examples">
@@ -203,6 +209,13 @@
 			</asp:Panel>		
 		</form>		
         <script language="javascript">
+            jQuery(document).ready(function ($) {
+                var hrefs = $('a')
+                for (var i = 0; i < hrefs.length; i++) {
+                    //hrefs[i].href += "&DTI=" + document.getElementById('drDimTab').selectedIndex 
+                }
+            })
+
              var frm = document.Form1;
              function CheckAll(checkAllBox) {
                  var actVar = checkAllBox.checked;
@@ -211,8 +224,9 @@
                      if (e.type == 'checkbox' && (e.name.indexOf("chbDimRow") != -1 || e.name.indexOf("chbDimColorRow") != -1 || e.name.indexOf("chbDimSizeRow") != -1 
                      || e.name.indexOf("ChbDimCol") != -1 || e.name.indexOf("ChbDimColorCol") != -1 || e.name.indexOf("ChbDimSizeCol") != -1))
                          e.checked = actVar;
+                         e.onchange = function () { checkAllBox.checked = false }
                  }
-             }        
+             }    
 	    </script>
         <script language="javascript">
 	        function btnClose_Click() {

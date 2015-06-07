@@ -12,7 +12,9 @@
 	<head>
 		<title>Style</title>	
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script src="../System/Jscript/jquery-1.6.2.min.js" type="text/javascript"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <script type="text/javascript" language="javascript">
             //adjust height of comments textarea wi #11609
             $(document).ready(function () {

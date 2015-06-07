@@ -5,14 +5,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
+<title>Pom Library Select</title>
     <meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
     <meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
     <meta content="JavaScript" name="vs_defaultClientScript">
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
     <LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
     <LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+
 </head>
 <body>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
@@ -88,13 +93,13 @@
             </table>           
 			            
             <asp:datagrid id="DataGrid1" runat="server" DataKeyField="POMAlternatesID" 
-            		AutoGenerateColumns="false" Width="100%">
+            		AutoGenerateColumns="false">
             		<PagerStyle Visible ="false"></PagerStyle>
 				    <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 				    <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 				    <headerStyle Height="25px" CssClass="TableHeaderRed"></headerStyle>
                        <Columns>
-                        <asp:TemplateColumn HeaderStyle-Width="20" HeaderStyle-BorderWidth="0" ItemStyle-BorderWidth="0">
+                        <asp:TemplateColumn>
                             <HeaderTemplate >
                                 <asp:CheckBox runat="server" ID="chkSelectAll" onclick="CheckAll(this);"/>
                             </HeaderTemplate>

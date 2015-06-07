@@ -1,7 +1,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Control_GRMeasurements_Template_Edit.aspx.vb" Inherits="plmOnApp.Control_GRMeasurements_Template_Edit" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 	<HEAD>
 		<title>POM Template</title>
@@ -11,8 +11,12 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">	
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+
 		<style type="text/css">.DataGridHeader { PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND-IMAGE: url(../System/Images/table_header.gif); PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BACKGROUND-REPEAT: repeat-x; FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;  TOP: expression(this.offsetParent.scrollTop) }
 	.DataGridControl { FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;  TOP: expression(this.offsetParent.scrollTop); BACKGROUND-COLOR: #f5f5f5 }
 		</style> 
@@ -29,6 +33,25 @@
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
+
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server" >
+        <Scripts>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js"></asp:ScriptReference>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js"></asp:ScriptReference>
+        </Scripts>
+        <CdnSettings TelerikCdn="Disabled" />
+    </telerik:RadScriptManager>
+    <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" Runat="server">
+        <StyleSheets>
+            <telerik:StyleSheetReference Path="../System/CSS/RadCalendar.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadComboBox.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadGrid.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadInput.YPLM.css" />
+        </StyleSheets>
+        <CdnSettings TelerikCdn="Disabled" />
+    </telerik:RadStyleSheetManager>
+
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<tr vAlign="middle">
@@ -38,7 +61,8 @@
 					    <cc1:BWImageButton id="btnAddSizeRange" runat="server" Message="NONE"></cc1:BWImageButton>
                         <cc1:confirmedimagebutton id="imgBtnCopy" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnPDFView" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></td>
+						<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
+                    </td>
 					<td class="FontHead" align="right" width="75"></td>
 					<td width="40"></td>
 					<td></td>
@@ -308,11 +332,5 @@
 		    }		
 		
 		</script>
-        <script language="javascript">
-	        function btnClose_Click() {
-		        <%= strExitScript %>
-                return false;
-            }
-        </script>
 	</body>
 </HTML>

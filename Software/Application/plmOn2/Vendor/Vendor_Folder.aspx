@@ -1,5 +1,5 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Vendor_Folder.aspx.vb" Inherits="plmOnApp.Vendor_Folder" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle"></title>
@@ -13,8 +13,8 @@
 				window.resizeTo(aw, ah);
             }
 			//self.focus();
-			//if (self != top) top.location.replace(self.location);				
-			
+            //if (self != top) top.location.replace(self.location);
+            window.opener.top.frames['dbody'].frames['menu'].location.reload(true);
 		//-->
 		</script>
 	</HEAD>

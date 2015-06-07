@@ -4,8 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
-   <title runat="server" id="PageTitle">Batch Queue</title>
-   <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
+    <title runat="server" id="PageTitle">Batch Queue</title>
+    <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="Form1" method="post" runat="server">

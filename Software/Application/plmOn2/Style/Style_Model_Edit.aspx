@@ -10,10 +10,29 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet"/>
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+    <style type="text/css">
+    .overflowColumn
+    {
+        word-wrap: break-word;   
+    }
+    </style>
+    <script language="javascript">
+        function addCssClass() {
+            //var arr = $(".fabric_type").find("span");
+            $(".fabric_type").find("span").each(function (element) {
+                element = $(this);
+                element.addClass("overflowColumn");
+                element.attr("title", element.text());
+                //console.log(element.text());
+            })
+        }
+    </script>
 </head>
-<body>
+<body onload = "addCssClass();">
     <form id="form1" runat="server">
         <table style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
 				height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
@@ -73,8 +92,17 @@
                                     <asp:CheckBox ID="chbUnlink" runat="server" />
                                 </ItemTemplate>
                             </asp:TemplateColumn>
-                            <asp:BoundColumn DataField="ModelName" HeaderText="Model Name" 
+                            <asp:BoundColumn DataField="ModelName" HeaderText="Model Name" Visible="False" 
                                 ItemStyle-Width="100px" ItemStyle-BorderWidth="1px" ItemStyle-BorderColor="Gainsboro" ItemStyle-BorderStyle="solid"></asp:BoundColumn>
+                            <asp:TemplateColumn>
+                                <HeaderTemplate>
+                                    <%#GetSystemText("Model Name")%>
+                                </HeaderTemplate>
+                                <ItemStyle BorderWidth="1px" BorderColor="Gainsboro" BorderStyle="Solid" />
+                                <ItemTemplate>
+                                <asp:Label ID="lblModelName" runat="server" text='<%# Container.DataItem("ModelName") %>' />
+                                </ItemTemplate>   
+                            </asp:TemplateColumn>
                             <asp:TemplateColumn>
                                 <HeaderTemplate>
                                     <%#GetSystemText("Fabric Type")%>
@@ -179,10 +207,8 @@
 
                             </tr>
                             <tr>
-                                                            <td>
-                                    <asp:LinkButton ID="btndownload" runat="Server"  
-                                        CommandName="download">
-                                    </asp:LinkButton>
+                                <td>
+                                    <asp:LinkButton ID="btndownload" runat="Server" OnClientClick="dont_show_wait_twice();" CommandName="download"></asp:LinkButton>
                                 </td>
                             </tr>
                             <tr>
@@ -213,6 +239,8 @@
                    e.checked = actVar;
            }
         }
+
+        
 
         function toggleMatGrid(trigger) {
             var panel = document.getElementById("pnlFabricType"),

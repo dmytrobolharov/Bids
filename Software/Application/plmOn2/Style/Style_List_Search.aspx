@@ -1,20 +1,22 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_List_Search.aspx.vb" Inherits="plmOnApp.Style_List_Search" %>
-<%@ Register TagPrefix="cc3" Namespace="plmOnCustomControls.YSTab" Assembly="plmOnCustomControls"%>
+<%@ Register TagPrefix="cc3" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab"%>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="Style_List_Image" Src="Style_List_Image.ascx" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Style Search</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
              .imgContainer
             {
@@ -97,7 +99,9 @@
                         <cc1:confirmedimagebutton id="btnSaveSearch" runat="server" Message="NONE" AutoPostBack="TRUE" ></cc1:confirmedimagebutton>
                         <cc1:bwimagebutton id="btnCopy" runat="server" Message="NONE"></cc1:bwimagebutton>
 						<cc1:confirmedimagebutton id="imgBtnClose" runat="server"  Message="NONE"
-							Visible="False"></cc1:confirmedimagebutton></td>
+							Visible="False"></cc1:confirmedimagebutton>
+                            <cc1:confirmedimagebutton id="btnExcelExport" runat="server"  Message="NONE" OnClientClick="enable_close_link();"></cc1:confirmedimagebutton>
+                            </td>
 				</tr>
 			</table>
 			<table id="Table4" style="BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
@@ -214,8 +218,8 @@
                         }
                     });
                 }
-
-                parent.frames[0].MenuRefresh();
+                //parent.frames[0].location.reload();
+                //parent.frames[0].MenuRefresh();
 
             });
 
@@ -231,7 +235,7 @@
                     }
                 }
                 var strHiddenColumns = hiddenColumns.join();
-                PageMethods.SaveHiddenColumns('ctrGrid_RadGridStyles', '<%= aspxPageName %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
+                PageMethods.SaveHiddenColumns('ctrGrid_RadGridStyles', '<%= aspxPageName %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>', '<%= strRequestSaveSearch %>');
             }
 
             function ColumnShown(sender, eventArgs) {
@@ -243,9 +247,8 @@
                     }
                 }
                 var strHiddenColumns = hiddenColumns.join();
-                PageMethods.SaveHiddenColumns('ctrGrid_RadGridStyles', '<%= aspxPageName %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
+                PageMethods.SaveHiddenColumns('ctrGrid_RadGridStyles', '<%= aspxPageName %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>', '<%= strRequestSaveSearch %>');
             }
-
         </script>
 	</body>
 </html>

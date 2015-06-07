@@ -6,8 +6,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <HEAD>
 		<title runat="server" id="PageTitle">POM</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <%--<%--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />--%>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 			
 	    <style type="text/css">
             .style1
@@ -118,12 +120,21 @@
                                 <cc1:ConfirmedImageButton ID="btnImageRemove" runat="server" ToolTip="Delete Image File..." />
                                 <cc1:ConfirmedImageButton ID="btnUpdate" runat="server" Message="NONE" Visible="False">
                                 </cc1:ConfirmedImageButton>
+                                <asp:ImageButton ID="btnUpload" runat="server" Visible="false"/>
                                 <cc1:ConfirmedImageButton ID="btnCancelUpdate" runat="server" Message="NONE" Visible="False">
                                 </cc1:ConfirmedImageButton>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2"  class="font" width="50">
+                            <asp:Panel ID="pnlFileUpdateUpload" runat="server" Visible="false">
+                                <div>  
+                                    <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachmentsUpdate" ManualStartUpload="False" AutoUseSystemTempFolder="False"
+                                        InsertButtonID="btnUpload" MultipleFilesUpload="false" MaxFilesLimit="1" ShowCheckBoxes="false" ShowFileIcons="false">
+                                    </CuteWebUI:UploadAttachments>
+                                    <br />
+                                </div>
+                            </asp:Panel>
                             <br />
                                 <cc1:BWImageButton id="imgFeature" runat="server" />
                             </td>

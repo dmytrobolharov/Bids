@@ -15,7 +15,10 @@
               <Width>1.125in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.5in</Width>
+              <Width>1.125in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.125in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.125in</Width>
@@ -36,7 +39,7 @@
                             <TextRun>
                               <Value>Color Name</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -84,7 +87,7 @@
                             <TextRun>
                               <Value>Status</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -132,7 +135,7 @@
                             <TextRun>
                               <Value>Delivery1</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -180,7 +183,7 @@
                             <TextRun>
                               <Value>Delivery2</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -228,7 +231,55 @@
                             <TextRun>
                               <Value>Delivery3</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox14</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <ToolTip>##label##</ToolTip>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>Solid</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>Solid</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox16">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Delivery4</Value>
+                              <Style>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -281,7 +332,7 @@
                             <TextRun>
                               <Value>=Fields!StyleColorName.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>SemiBold</FontWeight>
                               </Style>
@@ -330,7 +381,7 @@
                             <TextRun>
                               <Value>=Fields!Status.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>SemiBold</FontWeight>
                               </Style>
@@ -379,7 +430,7 @@
                             <TextRun>
                               <Value>=Fields!StyleColorDelivery1.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>=iif(Fields!StyleColorDelivery1.Value = "No", "Bolder", "Semi-bold")</FontWeight>
                               </Style>
@@ -427,7 +478,7 @@
                             <TextRun>
                               <Value>=Fields!StyleColorDelivery2.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>=iif(Fields!StyleColorDelivery2.Value = "No", "Bolder", "Semi-bold")</FontWeight>
                               </Style>
@@ -475,7 +526,55 @@
                             <TextRun>
                               <Value>=Fields!StyleColorDelivery3.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>=iif(Fields!StyleColorDelivery3.Value = "No", "Bolder", "Semi-bold")</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox15</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>Solid</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>Solid</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!StyleColorDelivery4.Value</Value>
+                              <Style>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>=iif(Fields!StyleColorDelivery3.Value = "No", "Bolder", "Semi-bold")</FontWeight>
                               </Style>
@@ -523,6 +622,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -546,7 +646,7 @@
         </TablixRowHierarchy>
         <DataSetName>dsSeasonalColors</DataSetName>
         <Height>0.5in</Height>
-        <Width>6in</Width>
+        <Width>6.75in</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -576,39 +676,36 @@
   <Width>10.75in</Width>
   <Page>
     <PageHeader>
-      <Height>2.5in</Height>
+      <Height>2.75in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="textbox1">
+        <Textbox Name="textbox8">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Seasonal</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
-                    <FontSize>26pt</FontSize>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>textbox1</rd:DefaultName>
-          <Top>0.1in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
           <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -660,6 +757,10 @@
           <DataField>Status</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="StyleColorNo">
+          <DataField>StyleColorNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="StyleColorDelivery1">
           <DataField>StyleColorDelivery1</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -678,6 +779,24 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SID">
@@ -687,6 +806,10 @@
     <ReportParameter Name="SYID">
       <DataType>String</DataType>
       <Prompt>SYID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

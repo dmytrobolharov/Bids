@@ -1,7 +1,7 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Material_Menu.aspx.vb" Inherits="plmOnApp.Material_Menu" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls.YsTreeView" Assembly="YSTreeView" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Production_Menu</title>

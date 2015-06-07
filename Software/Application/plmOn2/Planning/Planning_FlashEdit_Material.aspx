@@ -3,8 +3,8 @@
 <%@ Register TagPrefix="uc1" TagName="Planning_Header" Src="Planning_Header.ascx"%>
 <%@ Register TagPrefix="uc1" TagName="Planning_FlashEdit_Material_StyleDetails" Src="Planning_FlashEdit_Material_StyleDetails.ascx"%>
 <%@ Register TagPrefix="uc2" TagName="Planning_FlashEdit_Material_MaterialList" Src="Planning_FlashEdit_Material_MaterialList.ascx"%>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Flash Edit Material</title>
@@ -12,6 +12,9 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .style-colors {
             	margin-left: 10px;
@@ -31,7 +34,20 @@
             {
                 background-color: yellow;
             }
+            #headerModal .font > span
+            {
+                word-wrap: break-word;
+            }
+            .fontHead
+            {
+                vertical-align: text-top;
+            }
+            .TableHeader .fontHead
+            {
+                vertical-align: middle !important;
+            }
         </style>
+    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
     <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 	</head>
 	<body style="background-color: White;">
@@ -58,7 +74,6 @@
         <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1">
             <ClientEvents OnRequestStart="onAjaxRequestStart" OnResponseEnd="onAjaxResponseEnd" />
         </telerik:RadAjaxManager>
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 
         <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="99%" border="0" height="30px">
 		    <tr valign="middle">
@@ -69,7 +84,7 @@
                     <asp:ImageButton id="btnAdd" runat="server" OnClientClick="addSelectedMaterials(); return false;" />
 					<asp:ImageButton id="btnRemove" runat="server" OnClientClick="removeMaterialsFromStyles(); return false;" />
                     <cc1:ConfirmedImageButton ID="btnInfo" runat="server" Message="NONE" CausesValidation="false" onclientclick="javascript:showHeader();return false;"/>
-				    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" />
+				    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" />
                 </td>     
 		    </tr>
         </table>
@@ -249,17 +264,28 @@
         </form>
 
                 <script language="javascript" type="text/javascript" src="../System/Jscript/underscore-min.js"></script>
-                <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+                <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
                 <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.ui.core.js"></script>
                 <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
                 <script language="javascript" type="text/javascript" src="../System/Jscript/colResizable-1.3.min.js"></script>
-                <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+                <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
                 <script type="text/javascript">
                     $("select[id$=ctrMaterialGridList_ps] option").filter(function () {
                         return $(this).attr("value") > 50;
                     }).remove();
                 </script>
             	<script type="text/javascript" language="javascript">
+                Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+                function BeginRequestHandler(sender, args) {
+                    show_wait_text();
+                }
+
+                function EndRequestHandler(sender, args) {
+                    hide_wait_text();
+                }
+
             	    var frm = document.Form1;
             	    function CheckAllColors(checkAllBox) {
             	        var actVar = checkAllBox.checked;
@@ -340,13 +366,12 @@
                          });
                     });
 
+                    // if you add and then remove material - the hidden fild will contain jast separators itself
+                    function removeSeparator(s) { return s.replace(";", ""); }
 
                     function hasPendingChanges() {
                         var changes = _.pluck($("input[id*='hdnAddedMaterials']"), "value")
-                                        .concat(_.pluck($("input[id*='hdnRemovedMaterials']"), "value"));
-
-                        // if you add and then remove material - the hidden fild will contain jast separators itself
-                        function removeSeparator(s) { return s.replace(";", ""); }
+                                        .concat(_.pluck($("input[id*='hdnRemovedMaterials']"), "value"));                        
 
                         return _.chain(changes).map(removeSeparator).compact().some().value();
                     };
@@ -391,10 +416,13 @@
                                     modal: true,
                                     buttons: {
                                         '<%= GetSystemText("Yes") %>': function() { <%= ClientScript.GetPostBackEventReference(btnClose, "SAVE") %>; },
-                                        '<%= GetSystemText("No") %>': function() { <%= ClientScript.GetPostBackEventReference(btnClose, "") %>; }
+                                        '<%= GetSystemText("No") %>': function() { btnClose_Click(); e.preventDefault(); }
                                     }
                                 });
 
+                                e.preventDefault();
+                            } else {
+                                btnClose_Click();
                                 e.preventDefault();
                             }
                         });
@@ -416,7 +444,7 @@
             	        var dataListItem = $(sender).closest("table[id*='tbStyle']");
             	        var btnClicked = (hdnCurrentState.val() != 'true')
             	        hdnCurrentState.val(btnClicked.toString());
-            	        dataListItem.find("input[id*='chbSelectMaterial']").attr('checked', btnClicked);
+            	        dataListItem.find("input[id*='chbSelectMaterial']:visible").prop('checked', btnClicked);
             	        return false;
             	    }
 
@@ -568,6 +596,8 @@
             	                itemTemplate.find("span[id*='lblMaterialNo']").text(materialInfo.materialNo).css("color", "Red");
             	                itemTemplate.find("span[id*='lblMaterialName']").text(materialInfo.materialName).css("color", "Red");
             	                itemTemplate.find("td[id*='tdImage']").css("background-image", materialInfo.backgroundImageUrl);
+                                itemTemplate.find("td[id*='tdImage']").css("background-repeat", "no-repeat");
+                                itemTemplate.find("td[id*='tdImage']").css("background-position", "center");
             	                // Renaming all the IDs and names to avoid collisions
             	                itemTemplate.find("td,span,input,img").each(function () {
             	                    if (this.id != null && this.id != "") {
@@ -615,7 +645,9 @@
             	                    itemTemplate.find("input[id*='hdnStyleMaterialID']").val(materialInfo.materialID);
             	                    itemTemplate.find("span[id*='lblMaterialNo']").text(materialInfo.materialNo).css("color", "Red");
             	                    itemTemplate.find("span[id*='lblMaterialName']").text(materialInfo.materialName).css("color", "Red");
-            	                    itemTemplate.find("td[id*='tdImage']").css("background-image", materialInfo.backgroundImageUrl);                
+            	                    itemTemplate.find("td[id*='tdImage']").css("background-image", materialInfo.backgroundImageUrl);   
+                                    itemTemplate.find("td[id*='tdImage']").css("background-repeat", "no-repeat");
+                                    itemTemplate.find("td[id*='tdImage']").css("background-position", "center");             
                                     return $("<table></table>").append($("<tr></tr>").append(itemTemplate));
                                 },
                                 snap: '.ui-droppable',

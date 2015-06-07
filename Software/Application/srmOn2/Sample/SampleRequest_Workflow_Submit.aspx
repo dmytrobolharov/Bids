@@ -13,8 +13,10 @@
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/mamagi.css" type="text/css" rel="stylesheet">
-		<script language="javascript" src='../System/Jscript/YSCalendarFunctions.js'></script>
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+		
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" src='../System/Jscript/YSCalendarFunctions.js'></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		<%--<script language="javascript" src='../System/Jscript/YSCustomFunctions.js'></script>--%>
 		<!--<script language="javascript">
@@ -26,6 +28,7 @@
 		</script>-->
         <script language="javascript" src='../System/Jscript/mamagi/jquery.mamagi.yunique.js'></script>
         <script language="javascript" src='../System/Jscript/mamagi/scroll.comment.js'></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <script language=javascript type="text/javascript">
             function checkSubmit() {
                 if (document.getElementById("<%=HFSubmitForm.ClientID %>").value == 1)

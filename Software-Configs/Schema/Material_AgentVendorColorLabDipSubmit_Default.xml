@@ -25,7 +25,7 @@
 		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
 	</column>
 
-	<column Name="AssignedTo" alias="Assigned To" Type="dropdownlist" select="true" cellwidth="150px" datatype="query" column="1" gridorder="23" GridVisible="true" Visible="true" enabled="true" lookupquery="SELECT UserID, Firstname +'  ' + Lastname as fullname from users Where TradePartner = 0 order by firstname" textfield="fullname" ValueField="UserID" AutoPostBack="false" Search="false" DefaultValue="00410038-0033-0038-4600-380033003300">
+	<column Name="AssignedTo" alias="Assigned To" Type="dropdownlist" select="true" cellwidth="150px" datatype="query" column="1" gridorder="23" GridVisible="true" Visible="true" enabled="true" lookupquery="SELECT UserID, LTRIM(RTRIM(ISNULL(FirstName, '') + ' ' + ISNULL(LastName, ''))) AS fullname from users Where TradePartner = 0 order by fullname" textfield="fullname" ValueField="UserID" AutoPostBack="false" Search="false" DefaultValue="00410038-0033-0038-4600-380033003300">
 		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
 	</column>
 

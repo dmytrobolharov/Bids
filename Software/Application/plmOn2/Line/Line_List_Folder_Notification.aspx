@@ -1,20 +1,21 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Line_List_Folder_Notification.aspx.vb" Inherits="plmOnApp.Line_List_Folder_Notification" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register Src="Line_List_Header.ascx" TagName="Line_List_Header" TagPrefix="hc1" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head id="Head1" runat="server">
     <title></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table class="TableHeader" height="27" cellspacing="0" cellpadding="0" width="100%" border="0">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">

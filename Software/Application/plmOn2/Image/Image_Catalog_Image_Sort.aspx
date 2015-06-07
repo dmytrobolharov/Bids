@@ -1,6 +1,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Image_Catalog_Item_Sort.aspx.vb" Inherits="plmOnApp.Image_Catalog_Item_Sort" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
 <HTML>
 	<HEAD>
 		            <title runat="server" id="PageTitle"></title>
@@ -14,6 +14,7 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="../System/CSS/jquery.ui.core.css" />
 	<link rel="stylesheet" href="../System/CSS/jquery.ui.theme.css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 
         <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
         <script src="../System/Jscript/jquery.ui.core.js"></script>
@@ -25,6 +26,7 @@
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
         
         <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .dropimage
             {
@@ -33,7 +35,15 @@
             	background-position:center;
             	width: 10px;
             }
-            
+            .ui-state-default
+            {
+                height: 250px !important;
+                width: 160px !important;
+            }
+            .ui-state-default table tbody tr td
+            {
+                width: 155px !important;
+            }
         </style>
 
    

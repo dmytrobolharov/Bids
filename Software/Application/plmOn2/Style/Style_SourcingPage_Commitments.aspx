@@ -1,8 +1,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_SourcingPage_Commitments.aspx.vb" Inherits="plmOnApp.Style.Sourcing.Style_SourcingPage_Commitments" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle">Quotation</title>
@@ -14,10 +13,11 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
-		<form id="Form1" method="post" runat="server">
-         <wc1:Color_Wait ID="Color_Wait" runat="server" />
+		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
 
 			<table id="tbHeader" runat="server" style="border-bottom: orange thin solid; border-left-style: none;
                 background-color: white" height="45" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff"

@@ -6,9 +6,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <HEAD>
 		<title runat="server" id="PageTitle">Alternates</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <%--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />--%>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	    <style type="text/css">
             .style1
             {
@@ -46,7 +48,7 @@
             </td>
         </tr>
     </table>
-    <table cellspacing="0" cellpadding="0" width="100%" border="0" style="border-bottom: orange thin solid;" >
+    <table cellspacing="0" cellpadding="0" width="100%" border="0" style="border-bottom: orange thin solid;padding-top: 10px;" >
        
         <tr>
             <td class="style1">&nbsp;</td>           
@@ -60,16 +62,17 @@
              
              <td width="10">&nbsp;</td>
         </tr>
+        <tr style="height:10px;"></tr>
          <tr>
             <td class="style1">&nbsp;</td>
-            <td>    
+            <td style="width: 40%;">    
                 <asp:Label ID="lblDescription" runat="server" width="100px" CssClass="fontHead"></asp:Label>                               
                 <asp:TextBox ID="txtDescription" runat="server" width="150px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rvDescription" runat="server"
                     ControlToValidate="txtDescription" Display="Dynamic" ErrorMessage="*"> 
                     </asp:RequiredFieldValidator>
              </td>
-            <td align="right"><asp:Label ID="lblLastModifiedLabel" runat="server" CssClass="fontHead"></asp:Label>&nbsp;</td>
+            <td align="left"><asp:Label ID="lblLastModifiedLabel" runat="server" CssClass="fontHead"></asp:Label>&nbsp;</td>
         </tr>   
          <tr>
             <td class="style1">&nbsp;</td>

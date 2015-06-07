@@ -12,7 +12,9 @@
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<link href="../System/CSS/CheckListDropDown.css" type="text/css" rel="stylesheet"/>		
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" src="../System/Jscript/arc90_multiselect.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	<script language="javascript" type="text/javascript">
 	    // change the default options for all multiselects
 	    a$.NO_SELECTION = 'No selection'; 	// TEXT for 'No selection' when nothing selected

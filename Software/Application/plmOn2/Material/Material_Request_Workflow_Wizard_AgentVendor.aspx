@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Material_Request_Workflow_Wizard_AgentVendor.aspx.vb" Inherits="plmOnApp.Material_Request_Workflow_Wizard_AgentVendor" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc2" TagName="Material_Header" Src="Material_Header.ascx" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -12,15 +11,16 @@
     <link href="../System/CSS/Grid.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Tree.css" rel="stylesheet" type="text/css" />    
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
     <form id="form1" runat="server" defaultbutton="imgBtnSearch">
-     <wc1:Color_Wait ID="Color_Wait" runat="server" />
 			<table height="25" cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<tr class="TableHeader">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
@@ -78,7 +78,7 @@
 								            <TD noWrap><asp:label id="RecordCount" runat="server" CssClass="fontHead"></asp:label></TD>
 								            <TD class="fontHead" align="right" width="110"><asp:Label ID="lblRecordsperPage" runat="server" Visible="true" Text="Records per Page:"></asp:Label></TD>
 								            <TD width="25"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
-										            <asp:ListItem Value="5">5</asp:ListItem>
+                                                    <asp:ListItem Value="5">5</asp:ListItem>
 										            <asp:ListItem Value="10">10</asp:ListItem>
 										            <asp:ListItem Value="15">15</asp:ListItem>
 										            <asp:ListItem Value="20">20</asp:ListItem>

@@ -10,15 +10,19 @@
     <title id="titleImage" runat="server">Image</title>
     	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="../System/Jscript/System.js"></script>
-		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>	
+		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>	
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		
 </head>
 <body>
     <form id="form1" runat="server">
 
         <cc2:ystabview id="YSTabView1" runat="server"></cc2:ystabview>
-        <table height="25" cellSpacing="0" cellPadding="1" width="100%" border="0">
+        <table class="TableFloatHeader" height="25" cellSpacing="0" cellPadding="1" width="100%" border="0">
 				<tr class="TableHeader" bgColor="whitesmoke">
 					<td style="WIDTH: 11px" vAlign="middle" align="center" width="11"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td class="fonthead">

@@ -3,7 +3,6 @@
 <%@ Register TagPrefix="uc1" TagName="Material_Comment" Src="Material_Comment.ascx" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="Material_WorkflowStatus" Src="Material_WorkflowStatus.ascx" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -13,12 +12,21 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema"/>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet"/>
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>				
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>				
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+        <style type="text/css">
+        tr .font
+        {
+            white-space: nowrap;    
+        }
+        </style>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
-          <wc1:Color_Wait ID="Color_Wait" runat="server" />
 		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="TablePage" runat="server">
 		<tr>
 		<td>
@@ -151,14 +159,13 @@
 								<td>&nbsp;&nbsp;&nbsp;</td>
 								<td width="25">
 								    <asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
-										<asp:ListItem Value="5">5</asp:ListItem>
-										<asp:ListItem Value="10">10</asp:ListItem>
-										<asp:ListItem Value="15">15</asp:ListItem>
-										<asp:ListItem Value="20">20</asp:ListItem>
-										<asp:ListItem Value="25" Selected="True">25</asp:ListItem>
-										<asp:ListItem Value="30">30</asp:ListItem>
+										<asp:ListItem Value="8">8</asp:ListItem>
+										<asp:ListItem Value="16">16</asp:ListItem>
+										<asp:ListItem Value="24">24</asp:ListItem>
+										<asp:ListItem Value="32" Selected="True">32</asp:ListItem>
 										<asp:ListItem Value="40">40</asp:ListItem>
-										<asp:ListItem Value="50">50</asp:ListItem>
+										<asp:ListItem Value="48">48</asp:ListItem>
+										<asp:ListItem Value="56">56</asp:ListItem>
 									</asp:dropdownlist>
 								</td>
 								<td>&nbsp;</td>
@@ -280,6 +287,8 @@
 												<ItemTemplate>
 													<asp:TextBox id="txtMaterialPrice" runat="Server" BorderWidth="1px" BorderStyle="Solid" BorderColor="#E0E0E0" maxlength="5" columns="5"></asp:TextBox>
 												    <asp:HiddenField ID="hdnMaterialPrice" runat="server" />
+                                                    <asp:CustomValidator id="PriceValidator" ControlToValidate="txtMaterialPrice" ClientValidationFunction="ValidatePrice" Display="Dynamic" 
+                                                        ErrorMessage="*" ToolTip="Invalid currency format!" runat="server"/>
 												</ItemTemplate>
 											</asp:TemplateColumn>
 											<asp:TemplateColumn>
@@ -307,6 +316,15 @@
 		</form>
 		<P>&nbsp;</P>
 		<script language="javascript">
+            function ValidatePrice(sender, args) {
+                var priceString = document.getElementById(sender.controltovalidate).value;
+                var regex = /<%= strRegExp %>/
+                if (regex.test(priceString)) {
+                    args.IsValid = true;
+                } else {
+                    args.IsValid = false;
+                }
+            }
 		    var frm = document.Form1;
 		    function CheckAll(checkAllBox) {
 		        var actVar = checkAllBox.checked;

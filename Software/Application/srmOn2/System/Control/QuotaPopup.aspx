@@ -30,7 +30,7 @@
 			<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<TR vAlign="top">
 					<TD>
-						<table>
+						<table class="TableHeader">
 							<tr>
 								<TD width="10">&nbsp;</TD>
 								<TD width="20"><asp:imagebutton id="btnImgFirst" runat="server" ImageUrl="../Icons/icon_first.gif"></asp:imagebutton></TD>
@@ -69,7 +69,7 @@
 								</td>
 							</tr>
 						</table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="CustomID">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="CustomID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>

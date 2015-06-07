@@ -21,7 +21,7 @@
 			                    <table>
 			                        <tr>
 			                            <td width="18"><asp:CheckBox ID="chkDeleteFile" runat="server" /></td> 
-			                            <td width="18"><asp:ImageButton runat="server" ID="btnDownload" ImageUrl="../System/Icons/icon_file.gif" CommandName="download" /></td>
+			                            <td width="18"><asp:ImageButton runat="server" ID="btnDownload" ImageUrl="../System/Icons/icon_file.gif" CommandName="download" onClientClick="dont_show_wait_twice()" /></td>
 			                            <td><asp:Label id="lblDescription" runat="server" Font-Size="10pt" ForeColor="Black"></asp:Label></td>
 			                        </tr>
 			                        <tr>

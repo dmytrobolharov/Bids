@@ -52,10 +52,17 @@
 										<TD bgColor="#ffffff">
 											<TABLE id="Table3" height="1" cellSpacing="0" cellPadding="0" width="100%" border="0">
 												<TR>
-													<TD align="center" bgColor="#666666" height="80">
-														<DIV align="right"><IMG src="System/Images/main_yunique.gif" width="300" height="75"></DIV>
+													<TD align="center" height="80">
+														<DIV align="right" style="margin-right:10px;"><IMG src="System/Images/header_logo.png" width="186" height="75"></DIV>
 													</TD>
 												</TR>
+											</TABLE>
+                                            <TABLE height="3" cellspacing="0" cellpadding="0" width="100%" border="0" id="Table12">
+												<TBODY>
+													<TR>
+														<TD align="right" bgColor="#666666" height="2"></TD>
+													</TR>
+												</TBODY>
 											</TABLE>
 											<TABLE id="Table4" width="794" border="0" style="WIDTH: 794px; HEIGHT: 321px">
 												<TR>

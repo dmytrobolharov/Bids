@@ -2,7 +2,7 @@
 
 <%@ Register Assembly="YSTab" Namespace="Yunique.WebControls.YSTab" TagPrefix="cc2" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Material Request Workflow</title>
@@ -13,8 +13,11 @@
         <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	    <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 	    <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
@@ -22,10 +25,10 @@
 				runat="server">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-					<TD ><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+					<TD ><cc1:confirmedimagebutton id="btnSave" runat="server" CausesValidation="True" Message="NONE"></cc1:confirmedimagebutton>
                             <cc1:bwimagebutton id="btnGroup" runat="server"></cc1:bwimagebutton>
-                            <cc1:confirmedimagebutton id="btnRemove" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-                            <cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                            <cc1:confirmedimagebutton id="btnRemove" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton>
+                            <cc1:confirmedimagebutton id="btnSaveClose" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton>
 
                             </TD>
 					 
@@ -40,7 +43,7 @@
                                 <td width="3"></td>
                                 <td>
                                     <cc1:ConfirmedImageButton ID="btnSort" runat="server" 
-                                         Message="NONE" />
+                                         CausesValidation="False" Message="NONE" />
                                 </td>                                                            
                             </tr>
                         </table>
@@ -87,7 +90,7 @@
 										<asp:ListItem Value="40">40</asp:ListItem>
 										<asp:ListItem Value="50" Selected="True">50</asp:ListItem>
 									</asp:dropdownlist></TD>
-								<TD width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" ></asp:button></TD>
+								<TD width="10"><asp:button id="Button1" onclick="RePage" runat="server" CausesValidation="False" CssClass="fontHead" ></asp:button></TD>
 							</TR>
 						</TABLE>
 						<asp:datagrid id="DataGrid1" runat="server" AllowSorting="True" DataKeyField="MaterialRequestWorkflowItemID">
@@ -119,7 +122,7 @@
                                     </asp:DropDownList>
                                 </td>
                                 <td width="50">
-                                    <cc1:ConfirmedImageButton ID="btnAdd" runat="server" 
+                                    <cc1:ConfirmedImageButton ID="btnAdd" CausesValidation="False" runat="server" 
                                         Message="NONE" />
                                 </td>
                                 <td></td>
@@ -133,4 +136,7 @@
             <asp:HiddenField ID="hdnXmlFiles" runat="server" />
 		</form>
 	</body>
+<%--    <script>
+        $('[id*=txtMaterialRequestWorkflowItemSort]').attr("maxlength", "4");
+    </script>--%>
 </HTML>

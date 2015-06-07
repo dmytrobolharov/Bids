@@ -4,7 +4,16 @@
     <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
       <section name="plmOn2Report.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
     </sectionGroup>
+	<section name="ABCpdf9.Section" type="WebSupergoo.ABCpdf9.ConfigSection, ABCpdf" allowLocation="true"
+		allowDefinition="Everywhere" allowExeDefinition="MachineToLocalUser" overrideModeDefault="Allow"
+		restartOnExternalChanges="true" requirePermission="true" />
   </configSections>
+  <ABCpdf9.Section>
+	<Preferences>
+	  <clear />
+	  <add Key="TempDirectory" Value="$plmOnTemp$" />
+	</Preferences>
+  </ABCpdf9.Section>
   <system.web>
     <compilation debug="true" strict="false" explicit="true" targetFramework="4.0">
       <buildProviders>

@@ -91,7 +91,7 @@
 				</TR>
 			</TABLE>
 
-			<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID" EnableViewState="False">
+			<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID" EnableViewState="false">
 				<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 				<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 				<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>

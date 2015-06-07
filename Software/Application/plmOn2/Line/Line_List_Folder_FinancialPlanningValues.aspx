@@ -1,5 +1,4 @@
 ﻿<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Line_List_Folder_FinancialPlanningValues.aspx.vb" Inherits="plmOnApp.Line_List_Folder_FinancialPlanningValues" %>
 
 
@@ -8,7 +7,10 @@
 <head id="Head1" runat="server">
     <title>Line List Planning Values</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         #DataGrid1 {
         	margin-top: 10px;
@@ -49,7 +51,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
     
     <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
         <tr valign="middle">

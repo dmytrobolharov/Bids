@@ -6,7 +6,9 @@
 		<title>POM Template</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
-         <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
      	<form id="Form1" method="post" runat="server">
@@ -15,7 +17,7 @@
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
 							Height="0px"></asp:imagebutton></td>
-					<td width="80"><cc1:confirmedimagebutton id="btnImgClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+					<td width="80"><cc1:confirmedimagebutton id="btnImgClose" runat="server"  Message="NONE" OnClientClick="window.top.close(); return false;"></cc1:confirmedimagebutton></td>
 					<td width="80"></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>

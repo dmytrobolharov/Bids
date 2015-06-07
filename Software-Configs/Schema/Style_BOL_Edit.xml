@@ -40,7 +40,7 @@
 
 	<column Name="MachineId" alias="Machine" Type="dropdownlist" datatype="query" enabled="true"
 		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="100" GridSearch="true" column="1" order="1"
-		lookupquery="SELECT '00000000-0000-0000-0000-000000000000' as MachineId, '' as MachineCode union SELECT MachineId, MachineCode FROM pBOLMachines" select="false" textfield="MachineCode" 
+		lookupquery="SELECT '00000000-0000-0000-0000-000000000000' as MachineId, '' as MachineCode union SELECT MachineId, MachineCode FROM pBOLMachines WHERE Active=1" select="false" textfield="MachineCode" addNullField="False"
 		ValueField="MachineId" DefaultValue="" AutoPostBack="false">
 		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
 	</column>	

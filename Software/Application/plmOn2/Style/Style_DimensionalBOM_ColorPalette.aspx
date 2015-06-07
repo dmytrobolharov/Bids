@@ -8,6 +8,10 @@
     <title><%=Me.strColor%></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server" defaultbutton="imgBtnSearch">
@@ -70,7 +74,7 @@
 							</tr>
 						</table>
                         </div>
-						<asp:datagrid id="DataGrid1" runat="server" AllowSorting="True" DataKeyField="ColorFolderID">
+						<asp:datagrid id="DataGrid1" runat="server" AllowSorting="True" DataKeyField="ColorFolderID" AllowPaging="false">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>

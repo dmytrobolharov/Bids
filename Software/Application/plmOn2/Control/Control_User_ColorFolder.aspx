@@ -3,7 +3,7 @@
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Control_User_ColorFolder.aspx.vb"
     Inherits="plmOnApp.Control_User_ColorFolder" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
     <title>User Access</title>
@@ -12,6 +12,8 @@
     <meta content="JavaScript" name="vs_defaultClientScript">
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form onkeypress="if(event.keyCode==13) {document.getElementById('btnImgSearch').click(); return false}"

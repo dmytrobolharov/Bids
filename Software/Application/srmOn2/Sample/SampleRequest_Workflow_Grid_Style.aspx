@@ -13,6 +13,8 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -71,126 +73,7 @@
                         <ItemTemplate>
                             <cc1:BWImageButton runat="server" ID="imgRedirect" ImageUrl="../System/icons/icon_search.gif" />
                          </ItemTemplate>
-                    </asp:TemplateColumn>
-                    
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100"><tr><td><asp:Label runat="server" ID="hAgent" 
-                            CssClass="fontHead" ><%#GetSystemText("Agent")%></asp:Label></td></tr></table>
-                        </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblAgent" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "TradePartnerName"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate >
-                            <table border="0" cellpadding="0" cellspacing="0" width="50"><tr><td><asp:Label runat="server" ID="hVendor" 
-                            CssClass="fontHead"  ><%#GetSystemText("Vendor")%></asp:Label></td></tr></table>
-                        </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblVendor" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "VendorName"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-
-                    <asp:TemplateColumn>
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate >
-                            <table border="0" cellpadding="0" cellspacing="0" width="50"><tr><td><asp:Label runat="server" ID="hPartnerAgent" 
-                            CssClass="fontHead"  ><%# GetSystemText("Agent")%></asp:Label></td></tr></table>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label runat="server" ID="lblPartnerAgent" CssClass="font" ><%# Convert.ToString(DataBinder.Eval(Container.DataItem, "NPM_AgentName"))%></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateColumn>
-                    <asp:TemplateColumn>
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate >
-                            <table border="0" cellpadding="0" cellspacing="0" width="50"><tr><td><asp:Label runat="server" ID="hPartnerVendor" 
-                            CssClass="fontHead"  ><%# GetSystemText("Vendor")%></asp:Label></td></tr></table>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label runat="server" ID="lblPartnerVendor" CssClass="font" ><%# Convert.ToString(DataBinder.Eval(Container.DataItem, "NPM_VendorName"))%></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateColumn>
-                    <asp:TemplateColumn>
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate >
-                            <table border="0" cellpadding="0" cellspacing="0" width="50"><tr><td><asp:Label runat="server" ID="hPartnerFactory" 
-                            CssClass="fontHead"  ><%#GetSystemText("Factory")%></asp:Label></td></tr></table>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label runat="server" ID="lblPartnerFactory" CssClass="font" ><%# Convert.ToString(DataBinder.Eval(Container.DataItem, "NPM_FactoryName"))%></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateColumn>
-                    
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <table border="0" cellpadding="0" cellspacing="0" width="50"><tr><td><asp:Label runat="server" ID="hStyleNo" CssClass="fontHead" ><%#GetSystemText("StyleNo")%></asp:Label></td></tr></table>
-                        </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblStyleNo" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "StyleNo"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100"><tr><td><asp:Label runat="server" ID="hDescription" 
-                            CssClass="fontHead" ><%#GetSystemText("Description")%></asp:Label></td></tr></table>                        
-                        </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblDescription" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "Description"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <table border="0" cellpadding="0" cellspacing="0" width="50"><tr><td><asp:Label runat="server" ID="hSizeClass" CssClass="fontHead"  ><%#GetSystemText("SizeClass")%></asp:Label></td></tr></table>
-                        </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblSizeClass" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "SizeClass"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                    
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate><asp:Label runat="server" ID="hStyleSet" CssClass="fontHead"  ><%#GetSystemText("StyleSet")%></asp:Label></HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblStyleSet" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "StyleSetName"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                    
-                    <%--<asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <table border="0" cellpadding="0" cellspacing="0" width="80"><tr><td><asp:Label runat="server" ID="hColor" CssClass="fontHead"  ><%#GetSystemText("Color")%></asp:Label></td></tr></table>
-                         </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblColor" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "Color"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn> --%>
-                    
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <table border="0" cellpadding="0" cellspacing="0" width="80"><tr><td><asp:Label runat="server" ID="hDim1" CssClass="fontHead"  ></asp:Label></td></tr></table>
-                         </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblDim1" CssClass="font" ></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                   
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <table border="0" cellpadding="0" cellspacing="0" width="80"><tr><td><asp:Label runat="server" ID="hDim2" CssClass="fontHead"  ><%#GetSystemText("Dim2")%></asp:Label></td></tr></table>
-                         </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblDim2" CssClass="font" ></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                   
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <table border="0" cellpadding="0" cellspacing="0" width="80"><tr><td><asp:Label runat="server" ID="hDim3" CssClass="fontHead"  ><%#GetSystemText("Dim3")%></asp:Label></td></tr></table>
-                         </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblDim3" CssClass="font" ></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                    
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate><asp:Label runat="server" ID="hTechPack" CssClass="fontHead" ><%#GetSystemText("TechPack")%></asp:Label></HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblTechpack" CssClass="font" ></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                    
+                    </asp:TemplateColumn>                 
 
 				</Columns>
 				

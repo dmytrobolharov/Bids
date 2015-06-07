@@ -13,6 +13,10 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		<script language="javascript">
 			function SelectColor(sColor,sTxtBox) 
 			{
@@ -83,7 +87,19 @@
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
-							<PagerStyle Visible="False"></PagerStyle></asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
+							<PagerStyle Visible="False"></PagerStyle>
+                            <Columns>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <asp:CheckBox runat="server" ID="checkAll" onclick="CheckAll(this);" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox runat="server" ID="chbMarker_Code" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                            </Columns>
+                            </asp:datagrid>
+                            <asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 				</TR>
 			</TABLE>
 		</form>

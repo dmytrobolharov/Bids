@@ -29,11 +29,7 @@ if NOT "%PLM.Installation.InstallComponent_SRM%" == "yes" goto skipSRM
   IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
   call create_app.bat plmOn%V%ImageServer plmOn%V%ImageServices %plmOnRootDir%\Software\%padawanDir%\plmOnFileServices
   IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-
-  call create_apool.bat plmOn%V%FileServices
-  IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-  call create_app.bat plmOn%V%FileServices plmOn%V%FileServices %plmOnRootDir%\Software\%padawanDir%\plmOnFileServices
-  IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
+  
 
 :skipSRM
 
@@ -58,28 +54,13 @@ IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 call create_app.bat YuniqueBI%V% YuniqueBI%V% %plmOnRootDir%\Software\%knightDir%\YuniqueBI
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 
-call create_apool.bat plmOn%V%Dashboard
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-call create_app.bat plmOn%V%Dashboard plmOn%V%Dashboard %plmOnRootDir%\Software\%padawanDir%\plmOnDashboard
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-
 REM =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 REM Web/File/Image Services
 REM =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-call create_apool.bat plmOn%V%WebServices
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-call create_app.bat plmOn%V%WebServices plmOn%V%WebServices %plmOnRootDir%\Software\%masterDir%\plmOnWebServices
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-
 call create_apool.bat plmOn%V%ImageServices
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 call create_app.bat plmOn%V%ImageServer plmOn%V%ImageServices %plmOnRootDir%\Software\%padawanDir%\plmOnFileServices
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-
-call create_apool.bat plmOn%V%FileServices
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-call create_app.bat plmOn%V%FileServices plmOn%V%FileServices %plmOnRootDir%\Software\%padawanDir%\plmOnFileServices
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 
 REM =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -107,11 +88,6 @@ REM =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 call create_apool.bat YuniqueAPI%V%
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 call create_app.bat YuniqueAPI%V% YuniqueAPI%V% %plmOnRootDir%\Software\%knightDir%\YuniqueAPI
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-
-call create_apool.bat YuniqueAPI%V%.SOAP
-IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
-call create_app.bat YuniqueAPI%V%.SOAP YuniqueAPI%V%.SOAP %plmOnRootDir%\Software\%knightDir%\Yunique.API.Soap
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 
 call create_apool.bat YuniqueAPI%V%.Rest

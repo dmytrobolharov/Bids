@@ -1,46 +1,67 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Color_PaletteSort.aspx.vb" Inherits="plmOnApp.Color_PaletteSort" %>
+
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Color_PaletteSort.aspx.vb"
+    Inherits="plmOnApp.Color_PaletteSort" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
-	<head runat="server">
-		<title runat="server" id="PageTitle">Palette</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
-        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
-         <script src="../System/Jscript/jquery-1.8.0.js"></script>
-        <script src="../System/Jscript/jquery.ui.core.js"></script>
-	    <script src="../System/Jscript/jquery.ui.widget.js"></script>
-	    <script src="../System/Jscript/jquery.ui.mouse.js"></script>
-	    <script src="../System/Jscript/jquery.ui.sortable.js"></script>
-        <script src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
-        <link href="../System/CSS/jquery-sortable.css" rel="stylesheet" />
-         <style type="text/css">
-            .dropimage
-            {
-            	background-image: url('../System/Icons/dragndrop.jpg');
-            	background-repeat:no-repeat;
-            	background-position:center;
-            	width: 10px;
-            }
-            #DataGrid1 td
-            {
-            	z-index:2;
-            }
-            #DataGrid1 td span
-            {
-            	z-index:1;
-            }
-        </style>
-         <style>
-	    li {cursor:url(../System/Cursor/openhand.cur), pointer} 
-	    #sortable { list-style-type: none; margin: 0; padding: 0; }
-	    #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: auto; height: auto; text-align: center; vertical-align:top; }
-	</style>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title runat="server" id="PageTitle">Palette</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
+    <script src="../System/Jscript/jquery-1.8.0.js"></script>
+    <script src="../System/Jscript/jquery.ui.core.js"></script>
+    <script src="../System/Jscript/jquery.ui.widget.js"></script>
+    <script src="../System/Jscript/jquery.ui.mouse.js"></script>
+    <script src="../System/Jscript/jquery.ui.sortable.js"></script>
+    <script src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+    <link href="../System/CSS/jquery-sortable.css" rel="stylesheet" />
+    <style type="text/css">
+        .dropimage
+        {
+            background-image: url('../System/Icons/dragndrop.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 10px;
+        }
+        #DataGrid1 td
+        {
+            z-index: 2;
+        }
+        #DataGrid1 td span
+        {
+            z-index: 1;
+        }
+    </style>
+    <style>
+        li
+        {
+            cursor: url(../System/Cursor/openhand.cur), pointer;
+        }
+        #sortable
+        {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        #sortable li
+        {
+            margin: 3px 3px 3px 0;
+            padding: 1px;
+            float: left;
+            width: auto;
+            height: auto;
+            text-align: center;
+            vertical-align: top;
+        }
+    </style>
     <script type="text/javascript">
         function btnClose_Click() {
             <%= strExitScript %>
@@ -240,30 +261,51 @@
 
 
         });
-        </script>
-	</head>
-	<body>
-	    <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
-		<form id="Form1" method="post" runat="server">
-            <table class="TableHeader" cellspacing="0" cellpadding="0" width="100%" border="0">
-	            <tr>
-		            <td align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td> 
-		            <td width="50"><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
-                    <td width="50"><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton></td>
-		            <td width="50">&nbsp;</td>
-		            <td align="right" width="75"><asp:label id="lblSortBy" Runat="server" CssClass="font"><b>&nbsp;Sort by:</b></asp:label></td>
-                    <td width="50"><asp:dropdownlist id="ddlSortBy" Runat="server"></asp:dropdownlist></td>
-                    <td width="50"><cc1:confirmedimagebutton id="btnSort" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
-		            <td>&nbsp;</td>
-	            </tr>
-            </table>
-          <!--  <table class="TableHeader" cellspacing="0" cellpadding="0" width="100%" border="0">
+    </script>
+</head>
+<body>
+    <div id="fixed_icons">
+        <a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help"
+            target="_blank" id="yHelp"></a>
+    </div>
+    <form id="Form1" method="post" runat="server">
+    <table class="TableHeader" cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr>
+            <td align="center" width="10">
+                <img height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
+            </td>
+            <td width="50">
+                <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+            </td>
+            <td width="50">
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();">
+                </cc1:ConfirmedImageButton>
+            </td>
+            <td width="50">
+                &nbsp;
+            </td>
+            <td align="right" width="75">
+                <asp:Label ID="lblSortBy" runat="server" CssClass="font"><b>&nbsp;Sort by:</b></asp:Label>
+            </td>
+            <td width="50">
+                <asp:DropDownList ID="ddlSortBy" runat="server">
+                </asp:DropDownList>
+            </td>
+            <td width="50">
+                <cc1:ConfirmedImageButton ID="btnSort" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+    <!--  <table class="TableHeader" cellspacing="0" cellpadding="0" width="100%" border="0">
 	            <tr>
 		            <td align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 		            <td class="fonthead" height="20"><asp:label id="lblHeader" runat="server" CssClass="fonthead" Text="Color List..."></asp:label></td>
 	            </tr>
-            </table>	-->		
-			<!--<table height="15" cellspacing="0" cellpadding="0" width="100%" bgcolor="white" border="0">
+            </table>	-->
+    <!--<table height="15" cellspacing="0" cellpadding="0" width="100%" bgcolor="white" border="0">
 				<tr>
 					<td><asp:placeholder id="plhSearchControlsHolder" runat="server" EnableViewState="False"></asp:placeholder></td>
 					<td width="100%" valign="top">
@@ -275,46 +317,34 @@
 						</table>
 					</td>
 				</tr>
-			</table>    -->        
-            <table cellspacing="0" cellpadding="0" width="100%" border="0">
-	            <tr valign="top">
-		            <td>
-			            
-            			
-			            <table width="100%" >
-			            <tr>
-			                <td>
-
-			                   <asp:Repeater runat="server" id="repeater1">
-                <HeaderTemplate>
-                    <div class="normal">
-                        <ul  id="sortable">
-                </HeaderTemplate> 
-                <ItemTemplate>
-                </ItemTemplate>
-                <FooterTemplate>
-                        </ul>
-                        </div>
-                 </FooterTemplate>
-            </asp:Repeater>
-            <input type="hidden" id="hdnChanged" name="hdnChanged" value="0" />
-            <input type="hidden" id="hdnSortOrder" name="hdnSortOrder" />
-
-                                <asp:label id="SortOrder" runat="server" Visible="False"></asp:label>
-			                    <input type="hidden" runat="server" id="hiddenCurrentPage"  value="0"/>
-			                </td>
-			            </tr>
-			            </table>
-            			
-		            </td>
-	            </tr>
-            </table>
-	
-			
-		</form>
-		
-            
-
-           
-	</body>
-</HTML>
+			</table>    -->
+    <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tr valign="top">
+            <td>
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <asp:Repeater runat="server" ID="repeater1">
+                                <HeaderTemplate>
+                                    <div class="normal">
+                                        <ul id="sortable">
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                </ItemTemplate>
+                                <FooterTemplate>
+                                    </ul> </div>
+                                </FooterTemplate>
+                            </asp:Repeater>
+                            <input type="hidden" id="hdnChanged" name="hdnChanged" value="0" />
+                            <input type="hidden" id="hdnSortOrder" name="hdnSortOrder" />
+                            <asp:Label ID="SortOrder" runat="server" Visible="False"></asp:Label>
+                            <input type="hidden" runat="server" id="hiddenCurrentPage" value="0" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

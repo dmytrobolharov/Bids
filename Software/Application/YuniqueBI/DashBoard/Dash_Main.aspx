@@ -1,4 +1,4 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Dash_Main.aspx.vb" Inherits="YuniqueBI.Dash_Main"%>
+<%@ Page Language="vb" AutoEventWireup="false" EnableEventValidation="false" Codebehind="Dash_Main.aspx.vb" Inherits="YuniqueBI.Dash_Main"%>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>

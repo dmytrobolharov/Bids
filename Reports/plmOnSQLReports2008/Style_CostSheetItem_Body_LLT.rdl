@@ -64,7 +64,7 @@
                                 <TextRun>
                                   <Value>=Fields!paramValue.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -116,7 +116,7 @@
                               <TextRun>
                                 <Value>=Fields!StyleCostingName.Value</Value>
                                 <Style>
-                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontFamily>Arial Unicode MS</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -167,7 +167,7 @@
                               <TextRun>
                                 <Value>=Fields!ColumnAlias.Value</Value>
                                 <Style>
-                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontFamily>Arial Unicode MS</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -196,7 +196,6 @@
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
             <FixedColumnHeaders>true</FixedColumnHeaders>
             <DataSetName>dsCostSheet</DataSetName>
-            <Left>0.33411in</Left>
             <Height>0.7in</Height>
             <Width>3in</Width>
             <Style>
@@ -211,9 +210,8 @@
         </ReportItems>
         <KeepTogether>true</KeepTogether>
         <Top>0.05382in</Top>
-        <Left>0.02922in</Left>
-        <Height>1.13541in</Height>
-        <Width>10.45444in</Width>
+        <Height>0.7in</Height>
+        <Width>10.75in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -228,46 +226,39 @@
       </Border>
     </Style>
   </Body>
-  <Width>10.63542in</Width>
+  <Width>10.75in</Width>
   <Page>
     <PageHeader>
       <Height>2.74875in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox1">
+        <Textbox Name="textbox5">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Style CostSheet</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
                     <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>20pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.125in</Top>
-          <Left>0.19915in</Left>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
-          <Width>9.9072in</Width>
+          <Width>10.75in</Width>
+          <ToolTip>##label##</ToolTip>
           <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -316,6 +307,15 @@
           <QueryParameter Name="@StyleCostingId">
             <Value>=Parameters!SCID.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@StyleID">
+            <Value>=Parameters!SID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SeasonYearID">
+            <Value>=Parameters!SYID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleCostingComparisonId">
+            <Value>=Parameters!SCCID.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
         <CommandText>rpx_StyleCostSheet_SELECT</CommandText>
@@ -355,6 +355,24 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SCID">
@@ -366,6 +384,25 @@
         </Values>
       </DefaultValue>
       <Prompt>Style Costing Id</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>Report Page ID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>SID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SYID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>SYID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SCCID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>SCCID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>

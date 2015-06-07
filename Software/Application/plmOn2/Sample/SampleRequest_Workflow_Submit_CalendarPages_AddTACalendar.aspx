@@ -1,6 +1,5 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="SampleRequest_Workflow_Submit_CalendarPages_AddTACalendar.aspx.vb" Inherits="plmOnApp.SampleRequest_Workflow_Submit_CalendarPages_AddTACalendar" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 	<head>
@@ -11,9 +10,11 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     	<script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .search-cell td {
             	vertical-align: top !important;
@@ -22,7 +23,6 @@
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
-		<wc1:Color_Wait ID="Color_Wait" runat="server" />
 		
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
@@ -83,7 +83,7 @@
 								<td width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" text="GO"></asp:button></td>
 							</tr>
 						</table>
-						<asp:DataGrid id="dgCalendar" runat="server" DataKeyField="TACalTemplateId" AllowSorting="False">
+						<asp:DataGrid id="dgCalendar" runat="server" DataKeyField="TACalTemplateId" AllowSorting="true">
 				            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 				            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 				            <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>

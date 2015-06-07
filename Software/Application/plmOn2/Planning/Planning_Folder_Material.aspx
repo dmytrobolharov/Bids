@@ -2,9 +2,8 @@
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register Src="Planning_Header.ascx" TagName="Planning_Header" TagPrefix="hc1" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_Material.aspx.vb" Inherits="plmOnApp.Planning_Folder_Material" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
@@ -14,8 +13,10 @@
         <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             a img {border:none; outline: none;}
             .search-cell td {
@@ -37,11 +38,16 @@
             }
         </style>
         <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script type="text/javascript">
+            function reloadParentPage() {
+                window.parent.reloadPage(window.location.href.replace('Planning_Folder_Material.aspx', 'Planning_FlashEdit_Material.aspx'));
+                return false;
+            }
+        </script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
             <Scripts>
                 <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
@@ -69,13 +75,14 @@
 					<td valign="top">
                         <cc1:BWImageButton id="btnImportMaterial" runat="server" CausesValidation="false"></cc1:BWImageButton>
                         <cc1:confirmedimagebutton id="btnMaterialAdd" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
-                        <cc1:confirmedimagebutton id="btnAllocation" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnAllocation" runat="server" Message="NONE" OnClientClick="return reloadParentPage()"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnMaterialDrop" runat="server" Message="NONE"></cc1:confirmedimagebutton>
                         <cc1:confirmedimagebutton id="btnSetActive" runat="server" ></cc1:confirmedimagebutton>
                         <cc1:ConfirmedImageButton ID="btnMaterialRemove" runat="server"></cc1:ConfirmedImageButton>
                         <cc1:ConfirmedImageButton ID="btnWhereUsed" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>  
                         <cc1:BWImageButton id="btnSort" runat="server" Message="NONE" ></cc1:BWImageButton>
+                        <cc1:confirmedimagebutton id="btnExcelExport" runat="server"  Message="NONE" OnClientClick="enable_close_link();"></cc1:confirmedimagebutton>
                     </td>
 					<td></td>
 				</tr>
@@ -107,7 +114,6 @@
 			</table>
             <hc1:Planning_Header ID="PlanningHeader" runat="server" />
             <br />
-            <%--<cc2:ystabview id="YSTabView1" runat="server"></cc2:ystabview>	--%>
 			<table cellspacing="1" cellpadding="0" width="100%" border="0">
 				<tr>
 					<td valign="top" width="100%">
@@ -131,7 +137,9 @@
                                 <td width="100" runat="server" id="tdCheckAll"><input type="checkbox" onclick="SelectAll(this, 'materialCheck')" /><%=GetSystemText("Select All")%></td>
 					            <td height="25">
 						            <div align="left">&nbsp;
-							            <asp:label id="lblCurrentIndex" Runat="server" Visible="False" Text="0"></asp:label></div>
+							            <asp:label id="lblCurrentIndex" Runat="server" Visible="False" Text="0"></asp:label>
+                                        <asp:Label ID="lblPageSize" Runat="server" Text="25" Visible="False"></asp:Label>
+                                    </div>
 					            </td>
 					            <td width="20" height="25">
 						            <div align="center"><asp:imagebutton id="btnImgFirst" runat="server" ImageUrl="../System/Icons/icon_first.gif"></asp:imagebutton></div>
@@ -150,7 +158,6 @@
 					            </td>
 					            <td height="25">
 						            <div align="left"><b><asp:label id="lblRecordCount" Runat="server" Visible="true"></asp:label>&nbsp;
-						                <%--<asp:Label ID="lblRecordsFound" runat="server" Text="Records Found"></asp:Label>--%>
 						                </b>
                                         <asp:HiddenField ID="hdnRecordCount" runat="server" Value='' />
                                     </div>
@@ -161,12 +168,6 @@
                                         <asp:ListItem Text="List View" Value="L"></asp:ListItem>
                                     </asp:RadioButtonList>
                                 </td>
-<%--					            <td height="25">
-						            <p align="right"><asp:dropdownlist id="ddlSortField" runat="server"></asp:dropdownlist><asp:dropdownlist id="ddlSortBy" runat="server">
-								            <asp:ListItem Value="ASC">ASC</asp:ListItem>
-								            <asp:ListItem Value="DESC">DESC</asp:ListItem>
-							            </asp:dropdownlist><asp:imagebutton id="btnSort" runat="server" ImageUrl="../System/Icons/icon_sort.gif"></asp:imagebutton></p>
-					            </td>--%>	
 								<TD  align="right"><asp:label id="lblRecordPerPage" runat="server" CssClass="fontHead"></asp:label></TD>
 								<TD width="25" align="right"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
 										<asp:ListItem Value="5">5</asp:ListItem>
@@ -188,7 +189,7 @@
                                 <asp:HiddenField ID="hdnDatalistContrainerWidth" runat="server" Value='<%# Eval("PlanningMaterialID") %>' />
                                 <asp:HiddenField ID="hdnDatalistItemWidth" runat="server" Value='<%# Eval("PlanningMaterialDrop") %>' />
                                 <asp:datalist id="DataList1" runat="server" RepeatLayout="Flow" EnableViewState="True" DataKeyField="MaterialID">
-	                                <ItemStyle BorderWidth="1px" BorderStyle="Solid" BackColor="White" BorderColor="Gainsboro" VerticalAlign="Top"></ItemStyle>
+	                                <ItemStyle HorizontalAlign="Left" BorderWidth="0px" BorderStyle="Solid" BorderColor="Gainsboro" VerticalAlign="Top" BackColor="White"></ItemStyle>
 	                                <ItemTemplate>
                                         <div style="float:left;">
                                             <asp:HiddenField ID="hdnPlanningMaterialID" runat="server" Value='<%# Eval("PlanningMaterialID") %>' />
@@ -203,11 +204,6 @@
 		                                                <asp:PlaceHolder ID="plhHeaderItem" runat="server"></asp:PlaceHolder>
 		                                                <br/>
                                                     </td>
-                                                    <%--<td>
-                                                        <asp:Label ID="lblColorCode" runat="server" Width="120" CssClass="font" /><br />
-                                                        <asp:Label ID="lblColorName" runat="server" Width="120" CssClass="font" />
-                                                        <asp:HiddenField ID="hdnColorPaletteID" runat="server" Value='<% Eval("ColorPaletteID") %>' />
-                                                    </td>--%>
                                                 </tr>
                                             </table>
                                         </div>
@@ -272,12 +268,6 @@
                 obj.style.display = 'none';
                 document.getElementById('imgBtnExp').style.display = 'block';
                 document.getElementById('divHeaderContent').style.display = 'none';
-                return false;
-            }
-
-            function reloadParentPage() {
-                var currentPageLocation = window.location.href;
-                window.parent.location.href = currentPageLocation.replace('Planning_Folder_Material.aspx', 'Planning_FlashEdit_Material.aspx');
                 return false;
             }
 

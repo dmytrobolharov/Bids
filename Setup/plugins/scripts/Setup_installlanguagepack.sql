@@ -1,7 +1,58 @@
+-------------------------------
+--- Restore Language Pack DB --
+-------------------------------
+DECLARE @FileList 
+TABLE
+(
+	[LogicalName] varchar(128),
+	[PhysicalName] varchar(128), 
+	[Type] varchar, 
+	[FileGroupName] varchar(128), 
+	[Size] varchar(128), 
+	[MaxSize] varchar(128), 
+	[FileId]varchar(128), 
+	[CreateLSN]varchar(128), 
+	[DropLSN]varchar(128), 
+	[UniqueId]varchar(128), 
+	[ReadOnlyLSN]varchar(128), 
+	[ReadWriteLSN]varchar(128), 
+	[BackupSizeInBytes]varchar(128), 
+	[SourceBlockSize]varchar(128), 
+	[FileGroupId]varchar(128), 
+	[LogGroupGUID]varchar(128), 
+	[DifferentialBaseLSN]varchar(128), 
+	[DifferentialBaseGUID]varchar(128), 
+	[IsReadOnly]varchar(128), 
+	[IsPresent]varchar(128), 
+	[TDEThumbprint]varchar(128)
+)
+DECLARE @Path varchar(1000)='$(BackupPath)'
+DECLARE @LogicalNameData varchar(128),@LogicalNameLog varchar(128)
+INSERT INTO @FileList
+EXEC('
+	RESTORE FILELISTONLY 
+	FROM DISK=''' +@Path+ '''
+   ')
+
+SELECT @LogicalNameData =  LogicalName FROM @FileList WHERE Type = 'D'
+SELECT @LogicalNameLog = LogicalName FROM @FileList WHERE Type = 'L'
+
+EXEC('
+	RESTORE DATABASE [PLMLanguagePack] 
+	FROM DISK = N''$(BackupPath)''
+	WITH FILE = 1, 
+	MOVE N''' + @LogicalNameData + ''' TO N''$(FinalDest)\LanguagePack.mdf'', 
+	MOVE N''' + @LogicalNameLog + ''' TO N''$(FinalDest)\LanguagePack.ldf'', 
+	NOUNLOAD, STATS = 10
+')
+GO
+
+USE $(TargetDB)
+GO
+
 -- ------------------------------------------------------------------------------------------------
 -- System Strings
 -- ------------------------------------------------------------------------------------------------
-
 IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = N'utx_Lang_SystemString_UPDATE')
    DROP PROCEDURE utx_Lang_SystemString_UPDATE
 GO                                
@@ -81,8 +132,6 @@ GO
 -- ------------------------------------------------------------------------------------------------
 -- User Strings
 -- ------------------------------------------------------------------------------------------------
-
-
 IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = N'utx_Lang_UserString_UPDATE')
    DROP PROCEDURE utx_Lang_UserString_UPDATE
 GO                                
@@ -159,7 +208,6 @@ GO
 -- ------------------------------------------------------------------------------------------------
 -- Button Strings
 -- ------------------------------------------------------------------------------------------------
-
 IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = N'utx_Lang_ButtonString_UPDATE')
    DROP PROCEDURE utx_Lang_ButtonString_UPDATE
 GO                                
@@ -234,7 +282,6 @@ GO
 -- ------------------------------------------------------------------------------------------------
 -- Strings
 -- ------------------------------------------------------------------------------------------------
-
 IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = N'utx_Lang_LocaleString_UPDATE')
    DROP PROCEDURE utx_Lang_LocaleString_UPDATE
 GO                                
@@ -447,10 +494,9 @@ CREATE PROCEDURE utx_Lang_LanguagePack_UPDATE
 GO
 
 exec utx_Lang_LanguagePack_UPDATE
-	@SrcDB = 'The_Source',
-	@DestDB = 'The_Dest'
+	@SrcDB = N'[PLMLanguagePack]',
+	@DestDB = N'$(TargetDB)'
 GO
-
 
 -- Clean up
 DROP PROCEDURE utx_Lang_SystemString_UPDATE
@@ -462,4 +508,13 @@ DROP PROCEDURE utx_Lang_LanguagePack_UPDATE
 DROP PROCEDURE utx_Lang_SystemString_INSERT
 DROP PROCEDURE utx_Lang_LocaleString_INSERT
 
+GO
+
+USE [master]
+GO
+
+DROP DATABASE [PLMLanguagePack]
+GO
+
 -- Done and Done :)
+

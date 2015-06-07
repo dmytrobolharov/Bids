@@ -10,10 +10,14 @@
     <title>Attachments</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
  <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
-    <form id="Form1" method="post" runat="server">
+    <form id="Form1" method="post" runat="server" defaultbutton="btnImgSearch">
     <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%"
         border="0" runat="server">
         <tr valign="middle">
@@ -321,7 +325,7 @@
                                         CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>'>
                                     </cc1:ConfirmedLinkButton>
                                     <asp:LinkButton ID="Linkbutton5" runat="Server" 
-                                        CommandName="download" OnClientClick="parent.dont_show_wait_next_time();"></asp:LinkButton>
+                                        CommandName="download" OnClientClick="dont_show_wait_twice();"></asp:LinkButton>
                                     <cc1:bwimagebutton id="btnActivityLog" runat="server" ></cc1:bwimagebutton>  
 
                                     <cc1:ConfirmedImageButton ID="btnEditCancel" runat="server" 

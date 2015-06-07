@@ -1,13 +1,17 @@
 <%@ Register TagPrefix="uc2" TagName="Style_Header" Src="Style_Header.ascx" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Image_Summary.aspx.vb" Inherits="plmOnApp.Style.Image.Style_Image_Summary" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Style</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -16,7 +20,7 @@
 				<tr valign="middle">
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td valign="middle" align="left">&nbsp;
-						<cc1:confirmedimagebutton id="btnBurn" runat="server"  Message="NONE" OnClientClick="btnBurn_Click()"></cc1:confirmedimagebutton>
+						<cc1:confirmedimagebutton id="btnBurn" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnNewTask" runat="server"  Message="NONE" OnClientClick="btnNewTask_Click()"></cc1:confirmedimagebutton>
 						<cc1:confirmedimagebutton id="btnNewIssue" runat="server" Message="NONE" OnClientClick="btnNewIssue_Click()" CausesValidation="False"></cc1:confirmedimagebutton>
                         <cc1:BWImageButton ID="btnPrint" runat="server"  />
@@ -332,10 +336,6 @@
 			</table>
 		</form>
         <script type="text/javascript">
-	        function btnBurn_Click() {
-		        <%= strBurnOpen %>
-                return false;
-            }
 	        function btnNewTask_Click() {
 		        <%= strNewTaskScript %>
                 return false;

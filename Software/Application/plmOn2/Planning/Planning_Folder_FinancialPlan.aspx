@@ -2,8 +2,8 @@
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YsTreeView" Assembly="YSTreeView" %>
 <%@ Register Src="Planning_Header.ascx" TagName="Planning_Header" TagPrefix="hc1" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_FinancialPlan.aspx.vb" Inherits="plmOnApp.Planning_Folder_FinancialPlan" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html>
 	<head>
         <meta http-equiv="X-UA-Compatible" content="IE=9" />
@@ -12,9 +12,11 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	    <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .fontRed A {COLOR: Red !important;}
             th.rgHeader {padding: 0 !important;}
@@ -23,10 +25,17 @@
             #FinancialPlanGrid td { border-color: #ccc; }
         </style>
 	</head>
+    <script language="javascript">
+        function RefreshParent() {
+            try {
+                parent.window.opener.parent.window.menu.location.href = parent.window.opener.parent.window.menu.location.href;
+                parent.window.opener.parent.window.main.location.href = parent.window.opener.parent.window.main.location.href;
+            } catch (e) { }
+        }
+    </script>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
         <Scripts>
@@ -54,6 +63,7 @@
 					<td>
 						<cc1:confirmedimagebutton id="btnEdit" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
+                        <cc1:confirmedimagebutton id="btnExcelExport" runat="server"  Message="NONE" OnClientClick="enable_close_link();"></cc1:confirmedimagebutton>
 					</td>
 				</TR>
 			</TABLE>
@@ -113,6 +123,38 @@
              }).remove();
         </script>
         <script type="text/javascript" language="javascript">
+            $(window).load(function () {
+                var hrefs = document.getElementsByTagName("a");
+                var nodesList = "";
+                for (var i = 0; i < hrefs.length; i++) {
+                    var ref = hrefs.item(i);
+                    if (nodesList == "") {
+                        if (ref.id.indexOf("_nav_") != -1) {
+                            var tmpList = "";
+                            tmpList = ref.href.substr(ref.href.indexOf("Planning_Folder_FinancialPlan.aspx?"))
+                            tmpList = tmpList.replace("Planning_Folder_FinancialPlan.aspx?", "");
+                            var tmpInd = tmpList.indexOf("&PLID");
+                            tmpList = tmpList.substring(0, tmpInd);
+                            nodesList = tmpList;
+                            break;
+                        }
+                    }
+
+                }
+                for (var i = 0; i < hrefs.length; i++) {
+                    var ref = hrefs.item(i);
+                    itemClass = ref.getAttribute("class");
+                    if (itemClass != null) {
+                        if (itemClass.indexOf("TreeView") != -1 && ref.id != "tv_1") {
+                            ref.href = ref.href + "&" + nodesList;
+                        }
+                        if (ref.id == "tv_1") {
+                            ref.href = ref.href.replace("&MC=1", "&MC=0")
+                        }
+                    }
+
+                }
+            });
             function ShowHeaderContent(obj) {
                 obj.style.display = 'none';
                 document.getElementById('imgBtnCol').style.display = 'block';

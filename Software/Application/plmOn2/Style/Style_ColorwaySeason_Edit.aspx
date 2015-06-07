@@ -14,8 +14,11 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -27,8 +30,8 @@
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td noWrap width="650">
 					    <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-					    <cc1:bwimagebutton id="btnSeason" runat="server" ></cc1:bwimagebutton>
-					    <cc1:bwimagebutton id="btnColor"  runat="server" ></cc1:bwimagebutton>
+					    <cc1:bwimagebutton id="btnSeason" runat="server" Visible="false"></cc1:bwimagebutton>
+					    <cc1:bwimagebutton id="btnColor"  runat="server" Visible="false"></cc1:bwimagebutton>
 					    <cc1:bwimagebutton id="btnSizeSort" runat="server"  Visible="false"></cc1:bwimagebutton>
 					    <cc1:bwimagebutton id="btnRemove" runat="server"  Visible="false"></cc1:bwimagebutton>
 					    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()" ></cc1:confirmedimagebutton>

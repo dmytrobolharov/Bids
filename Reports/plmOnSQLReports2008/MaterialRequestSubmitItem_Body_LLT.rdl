@@ -17,7 +17,7 @@
                           <TextRun>
                             <Value />
                             <Style>
-                              <FontFamily>Tahoma</FontFamily>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -72,7 +72,7 @@
                             <TextRun>
                               <Value>=First(Fields!DataColumnValue.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -119,7 +119,7 @@
                           <TextRun>
                             <Value>=Fields!DataColumnName.Value</Value>
                             <Style>
-                              <FontFamily>Tahoma</FontFamily>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -173,7 +173,7 @@
                           <TextRun>
                             <Value>=Fields!MaterialRequestSubmitItemID.Value</Value>
                             <Style>
-                              <FontFamily>Tahoma</FontFamily>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                             </Style>
                           </TextRun>
@@ -221,7 +221,7 @@
   <Width>11in</Width>
   <Page>
     <PageHeader>
-      <Height>3.3in</Height>
+      <Height>3.5in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -297,7 +297,7 @@
           <Width>10.75in</Width>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
           </Style>
         </Rectangle>

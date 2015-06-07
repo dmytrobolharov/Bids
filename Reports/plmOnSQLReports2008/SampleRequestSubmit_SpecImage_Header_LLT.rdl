@@ -13,9 +13,10 @@
                   <TextRun>
                     <Value>=First(Fields!HeadingStr.Value, "dsSampleRequestSubmit")</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Color>Gray</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -69,7 +70,7 @@
           </Textbox>
           <Image Name="imgLogo">
             <Source>External</Source>
-            <Value>logo.jpg</Value>
+            <Value>Yunique Logo.jpg</Value>
             <Sizing>FitProportional</Sizing>
             <Left>0.1in</Left>
             <Height>0.45in</Height>
@@ -86,8 +87,9 @@
                   <TextRun>
                     <Value>=First(Fields!StyleNo.Value, "dsStyleImage")</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>14pt</FontSize>
+                      <Color>Gray</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -116,8 +118,9 @@
                   <TextRun>
                     <Value>=First(Fields!SizeClass.Value, "dsStyleImage")</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>14pt</FontSize>
+                      <Color>Gray</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -172,7 +175,7 @@
         <Width>10.75in</Width>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
         </Style>
       </Rectangle>
@@ -203,7 +206,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -217,7 +220,7 @@
                           <ToolTip>##label##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -238,6 +241,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -249,7 +253,7 @@
                           <ToolTip>##data##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -318,7 +322,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -331,7 +335,7 @@
                           <ToolTip>##label##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -352,7 +356,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -363,7 +367,7 @@
                           <ToolTip>##data##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -431,7 +435,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -444,7 +448,7 @@
                           <ToolTip>##label##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -465,7 +469,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -476,7 +480,7 @@
                           <ToolTip>##data##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -523,18 +527,18 @@
         <DataElementOutput>ContentsOnly</DataElementOutput>
         <Top>0.625in</Top>
         <Left>0.125in</Left>
-        <Height>1.93056in</Height>
+        <Height>1.625in</Height>
         <Width>8.25in</Width>
         <ZIndex>1</ZIndex>
         <Style />
       </Rectangle>
       <Image Name="imgStyleImage">
         <Source>External</Source>
-        <Value>= First(Fields!QRPath.Value, "dsStyleImage")</Value>
+        <Value>= First(Fields!FilePath.Value, "dsStyleImage")</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.75in</Top>
         <Left>8.5in</Left>
-        <Height>1.80556in</Height>
+        <Height>1.5in</Height>
         <Width>2.375in</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -589,7 +593,7 @@
                             <TextRun>
                               <Value>Submit Status</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -631,7 +635,7 @@
                             <TextRun>
                               <Value>Due Date</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -673,7 +677,7 @@
                             <TextRun>
                               <Value>Received By</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -714,7 +718,7 @@
                             <TextRun>
                               <Value>Received Date</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -754,7 +758,7 @@
                             <TextRun>
                               <Value>Reviewed By</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -787,7 +791,7 @@
                             <TextRun>
                               <Value>Reviewed Date</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -820,7 +824,7 @@
                             <TextRun>
                               <Value>Approved By</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -854,7 +858,7 @@
                             <TextRun>
                               <Value>Approved Date</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -896,7 +900,7 @@
                             <TextRun>
                               <Value>Agent</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -943,7 +947,7 @@
                             <TextRun>
                               <Value>=Fields!StatusDescription.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -984,7 +988,7 @@
                             <TextRun>
                               <Value>=First(Fields!DueDate.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1024,7 +1028,7 @@
                             <TextRun>
                               <Value>=First(Fields!ReceivedBy.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1063,7 +1067,7 @@
                             <TextRun>
                               <Value>=First(Fields!ReceivedDate.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1101,7 +1105,7 @@
                             <TextRun>
                               <Value>=First(Fields!ReviewedBy.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1132,7 +1136,7 @@
                             <TextRun>
                               <Value>=First(Fields!ReviewedDate.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1163,7 +1167,7 @@
                             <TextRun>
                               <Value>=First(Fields!ApprovedBy.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1195,7 +1199,7 @@
                             <TextRun>
                               <Value>=First(Fields!ApprovedDate.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1235,7 +1239,7 @@
                             <TextRun>
                               <Value>=First(Fields!TradePartnerName.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1303,7 +1307,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsSampleRequestSubmit</DataSetName>
-        <Top>2.625in</Top>
+        <Top>2.5in</Top>
         <Left>0.125in</Left>
         <Height>0.3in</Height>
         <Width>10.75in</Width>
@@ -1357,7 +1361,7 @@
                             <TextRun>
                               <Value>Vendor By</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1390,7 +1394,7 @@
                             <TextRun>
                               <Value>Vendor Date</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1423,7 +1427,7 @@
                             <TextRun>
                               <Value>Received Weight</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1456,7 +1460,7 @@
                             <TextRun>
                               <Value>Vendor Weight</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1489,7 +1493,7 @@
                             <TextRun>
                               <Value>Ship Method</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1522,7 +1526,7 @@
                             <TextRun>
                               <Value>Tracking No.</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1555,7 +1559,7 @@
                             <TextRun>
                               <Value>Sample Size</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1589,7 +1593,7 @@
                             <TextRun>
                               <Value>Vendor</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1628,7 +1632,7 @@
                             <TextRun>
                               <Value>=First(Fields!VendorBy.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1659,7 +1663,7 @@
                             <TextRun>
                               <Value>=First(Fields!VendorDate.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1690,7 +1694,7 @@
                             <TextRun>
                               <Value>=First(Fields!ReceivedWeight.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1721,7 +1725,7 @@
                             <TextRun>
                               <Value>=First(Fields!VendorWeight.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1752,7 +1756,7 @@
                             <TextRun>
                               <Value>=First(Fields!ShipMethod.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1784,7 +1788,7 @@
                             <TextRun>
                               <Value>=First(Fields!TrackingNo.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1815,7 +1819,7 @@
                             <TextRun>
                               <Value>=First(Fields!SampleSize.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1848,7 +1852,7 @@
                             <TextRun>
                               <Value>=First(Fields!VendorName.Value)</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1907,7 +1911,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsSampleRequestSubmit</DataSetName>
-        <Top>3in</Top>
+        <Top>2.9in</Top>
         <Left>0.125in</Left>
         <Height>0.3in</Height>
         <Width>10.75in</Width>
@@ -1918,6 +1922,36 @@
           <PaddingRight>1pt</PaddingRight>
         </Style>
       </Tablix>
+      <Image Name="Image1">
+        <Source>External</Source>
+        <Value>Lines.jpg</Value>
+        <Sizing>Fit</Sizing>
+        <Top>0.635in</Top>
+        <Left>0.125in</Left>
+        <Height>0.06495in</Height>
+        <Width>27.305cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image2">
+        <Source>External</Source>
+        <Value>Line.jpg</Value>
+        <Sizing>Fit</Sizing>
+        <Top>2.3in</Top>
+        <Left>0.125in</Left>
+        <Height>0.04in</Height>
+        <Width>27.305cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
     <Height>3.43542in</Height>
     <Style />

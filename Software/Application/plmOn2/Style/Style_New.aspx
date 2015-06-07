@@ -1,14 +1,17 @@
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Style_New.aspx.vb" Inherits="plmOnApp.Style_New" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head runat="server">
     <title>Style New</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <script language="JavaScript">
 		    <!--
 
@@ -32,7 +35,6 @@
             target="_blank" id="yHelp"></a>
     </div>
     <form id="Form1" method="post" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%"
         border="0" runat="server">
         <tr valign="middle">
@@ -40,8 +42,8 @@
                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
             </td>
             <td>
-                <asp:ImageButton ID="btnSaveStyle" runat="server"></asp:ImageButton><cc1:ConfirmedImageButton
-                    ID="imgBtnNext" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <asp:ImageButton ID="btnSaveStyle" runat="server"></asp:ImageButton>
+                <cc1:ConfirmedImageButton ID="imgBtnNext" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click()">
                 </cc1:ConfirmedImageButton>
             </td>
@@ -90,6 +92,7 @@
                                     <asp:ListItem Value="10" Text="10"></asp:ListItem>
                                     <asp:ListItem Value="15" Text="15"></asp:ListItem>
                                     <asp:ListItem Value="20" Text="20"></asp:ListItem>
+                                    <asp:ListItem Value="500" Text="500"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                         </tr>

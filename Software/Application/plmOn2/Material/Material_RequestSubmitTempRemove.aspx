@@ -2,7 +2,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register TagPrefix="uc2" TagName="Material_Header" Src="Material_Header.ascx" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -12,13 +11,14 @@
 	<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-      <wc1:Color_Wait ID="Color_Wait" runat="server" />
         <table style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
 	        height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
 	        <tr>

@@ -1,9 +1,11 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Material_Group_Frame.aspx.vb" Inherits="plmOnApp.Material_Group_Frame" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Material</title>
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	<script language="JavaScript">
 	<!--
 

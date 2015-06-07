@@ -1,20 +1,23 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Planning_Folder_SKUPlan.aspx.vb" Inherits="plmOnApp.Planning_Folder_SKUPlan" %>
 <%@ Register Src="Planning_Header.ascx" TagName="Planning_Header" TagPrefix="hc1" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
     <title>Planning Style Configuration</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
-    <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/jquery-ui-1.10.3.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
     <script type="text/javascript" language="javascript" src="../System/Jscript/Custom.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .search-cell td {
             vertical-align: top !important;
@@ -58,6 +61,7 @@
                         <cc1:ConfirmedImageButton ID="btnBatchUpdate" runat="server" Message="NONE" Visible="True" CausesValidation="false">
                         </cc1:ConfirmedImageButton> 
                         <asp:ImageButton ID="btnInfo" runat="server" OnClientClick="showInfoDialog(); return false;" disabled="disabled" />                       
+                        <cc1:confirmedimagebutton id="btnExcelExport" runat="server"  Message="NONE" OnClientClick="enable_close_link();"></cc1:confirmedimagebutton>
                         <cc1:BWImageButton ID="btnChangeLog" runat="server" Visible="true" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;" />
                     </asp:Panel>
                 </td>
@@ -76,10 +80,8 @@
         <!-- For 'Info' button's sake -->
         <div id="divSKUHeader" style="display: none">
             <table id="Table1" cellspacing="0" cellpadding="0" width="100%" border="0" bgcolor="#ffffff">
-                <tr>
-                    <td>
-                        <asp:PlaceHolder ID="plhHeaderControl" runat="server"></asp:PlaceHolder>
-                    </td>
+                <tr style="white-space:nowrap;">
+                    <asp:PlaceHolder ID="plhHeaderControl" runat="server"></asp:PlaceHolder>
                 </tr>
             </table>
         </div>
@@ -305,8 +307,8 @@
                 autoOpen: false,
                 modal: true,
                 resizable: false,
-                height: 350,
-                width: 875,
+                height: 250,
+                width: 585,
                 title: "<%= strSKUHeaderName %>",
                 buttons: {}
             });

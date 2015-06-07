@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_Color_Import.aspx.vb" Inherits="plmOnApp.Planning_Folder_Color_Import" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Color Import</title>
@@ -8,6 +9,8 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .EmptyItemTemplate {display: none;}
             #tblSearch td {vertical-align: top;}
@@ -239,6 +242,17 @@
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
         <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet"></link>
         <script type="text/javascript" language="javascript">
+        
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+            function BeginRequestHandler(sender, args) {
+                show_wait_text();
+            }
+
+            function EndRequestHandler(sender, args) {
+                hide_wait_text();
+            }
 
             $(document).ready(function () {
                 $("#DataListExisting [id*=hdr]").css("white-space", "nowrap")

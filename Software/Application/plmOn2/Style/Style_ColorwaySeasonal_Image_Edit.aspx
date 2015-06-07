@@ -11,6 +11,10 @@
 		<title>Style</title>	
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -66,7 +70,7 @@
 			</table>
 			<table cellspacing="0" cellpadding="0" width="100%" border="0">
 			<tr>
-			<td>
+			<td valign="top">
 			<asp:datalist id="DataList1" runat="server" OnItemCommand="DataList1_ItemCommand"
 				OnItemDataBound="DataList1_ItemDataBound" DataKeyField="StyleDetailFormID" RepeatColumns="1"
 				RepeatDirection="Horizontal" EnableViewState="True">
@@ -74,7 +78,7 @@
 					VerticalAlign="Top" CssClass="font" BackColor="White">
 				</ItemStyle>
 				<AlternatingItemStyle HorizontalAlign="Left" BorderWidth="1px" BorderStyle="Solid" BorderColor="LightGray"
-					VerticalAlign="Top" CssClass="font" BackColor="AliceBlue">
+					VerticalAlign="Top" CssClass="font" BackColor="White">
 				</AlternatingItemStyle>	
 				<ItemTemplate>
 					<table style="border-color:silver" cellspacing="2" cellpadding="2" width="100%" border="0">
@@ -116,7 +120,7 @@
 					VerticalAlign="Top" CssClass="font" BackColor="White">
 				</ItemStyle>
 				<AlternatingItemStyle HorizontalAlign="Left" BorderWidth="1px" BorderStyle="Solid" BorderColor="LightGray"
-					VerticalAlign="Top" CssClass="font" BackColor="AliceBlue">
+					VerticalAlign="Top" CssClass="font" BackColor="White">
 				</AlternatingItemStyle>	
 				<ItemTemplate>
 					<table style="border-color:silver" cellspacing="2" cellpadding="2" width="100%" border="0">

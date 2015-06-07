@@ -1,6 +1,6 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Control_MaterialRequestWorkflow_List.aspx.vb" Inherits="plmOnApp.Control_MaterialRequestWorkflow_List" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Material Request Workflow</title>
@@ -10,8 +10,11 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
@@ -20,6 +23,8 @@
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					<TD width="80">
+                        <asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Visible="false"
+							Height="0px" />
                         <cc1:confirmedimagebutton id="btnNew" runat="server" Message="NONE"
 						></cc1:confirmedimagebutton></TD>
 					<td width="80"></td>
@@ -78,6 +83,21 @@
 				</TR>
 			</TABLE>
 			<asp:HiddenField ID="hdnXmlFiles" runat="server" />
+            <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                    var inputs = document.getElementsByTagName("input");
+                    for (var i = 0; i < inputs.length; i++) {
+                        if (inputs.item(i).type == "text") {
+                            $("#" + inputs.item(i).id).keydown(function (event) {
+                                if (event.keyCode == 13) {
+                                    __doPostBack('imgBtnSearch', 'OnClick');
+                                    return false;
+                                }
+                            });
+                        }
+                    };
+                });
+            </script>
 		</form>
 	</body>
 </HTML>

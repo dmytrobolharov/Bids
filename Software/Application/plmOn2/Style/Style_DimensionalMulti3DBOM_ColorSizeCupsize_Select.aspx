@@ -10,8 +10,11 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>	
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		<script language="javascript">
 
 //		    if (window.screen) {

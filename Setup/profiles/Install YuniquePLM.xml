@@ -33,7 +33,8 @@
         <node name="nDesktopShortcuts" text="" description="" plugin="CreateDesktopShortcuts" ensureVisible="true" />
         <node name="nInstallPlmOnServices" text="" description="" plugin="InstallPlmOnServices" />
         <node name="nInstallServiceBusService" text="" description="" plugin="InstallServiceBusService" />
-        <node name="nDatabaseServerRestoreDB" text="Install OoTB DB" description="" plugin="IntegrateDB" />
+        <!-- <node name="nDatabaseServerRestoreDB" text="Install OoTB DB" description="" plugin="IntegrateDB" /> -->
+		<node name="nDeployDACPackage" text="Install OoTB database" description="" plugin="DeployDACPackage" />
 	<node name="nConfigureSQLSession" text="" description="" plugin="ConfigureSQLSession" ensureVisible="true" />
         <node name="nConfigureFiles" text="" description="" plugin="ConfigureYPLMFiles"  ensureVisible="true" />
 	<node name="nMarkupToolConfigureFiles" text="" description="" plugin="MarkupToolConfigureFiles" />

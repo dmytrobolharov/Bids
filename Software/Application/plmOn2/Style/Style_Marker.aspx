@@ -14,9 +14,11 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -46,7 +48,7 @@
                 <cc1:bwimagebutton ID="btnAdd1" runat="server" Message="NONE" runat="server">
                 </cc1:bwimagebutton>
                 <cc1:BWImageButton ID="btnRemove" runat="server" Message="NONE" runat="server"></cc1:BWImageButton>
-                <cc1:bwimagebutton ID="btnAddBF" runat="server" Message="NONE" runat="server">
+                <cc1:bwimagebutton ID="btnAddBF" runat="server" Message="NONE" runat="server" Visible="false">
                 </cc1:bwimagebutton>&nbsp;&nbsp;&nbsp;
                 <asp:CheckBox valign="top" align="center" ID="chbImperial" AutoPostBack="true" runat="server"
                     Text="Imperial" CssClass="fontHead" />
@@ -66,6 +68,8 @@
         <PagerStyle Visible="False"></PagerStyle>
         <Columns>
             <asp:TemplateColumn>
+                <ItemStyle Wrap="True" Height="20px" Width="50px" CssClass="ItemTemplate" BorderWidth="1pt" BorderColor="Gainsboro" BorderStyle="Solid"></ItemStyle>
+                <HeaderStyle Wrap="True" CssClass="TableHeader" BorderColor="Gainsboro"  />
                 <HeaderTemplate>
                     <div align="center">
                         <asp:Label ID="lblLink" runat="server" CssClass="fontHead"><%#GetSystemText("L")%></asp:Label></div>
@@ -76,6 +80,8 @@
                 </ItemTemplate>
             </asp:TemplateColumn>
             <asp:TemplateColumn>
+                <ItemStyle Wrap="True" Height="20px" Width="50px" CssClass="ItemTemplate" BorderWidth="1pt" BorderColor="Gainsboro" BorderStyle="Solid"></ItemStyle>
+                <HeaderStyle Wrap="True" CssClass="TableHeader" BorderColor="Gainsboro"  />
                 <HeaderTemplate>
                     <div align="center">
                         <asp:Label ID="lblLinkBF" runat="server" CssClass="fontHead"><%#GetSystemText("LBF")%></asp:Label></div>

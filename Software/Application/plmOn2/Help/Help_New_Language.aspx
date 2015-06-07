@@ -8,6 +8,8 @@
 <head runat="server">
     <title></title>
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .col1
         {

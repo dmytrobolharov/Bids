@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="Style_Workflow.ascx.vb" Inherits="plmOnCustomControls.Style_Workflow" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register TagPrefix="cc2" Namespace="plmOnCustomControls.YSTab" Assembly="plmOnCustomControls" %>
+<%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
 
 <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">

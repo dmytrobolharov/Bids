@@ -13,8 +13,10 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
@@ -90,7 +92,7 @@
 						<table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">
 							<tr>
 								<td><asp:placeholder id="plhSearchControl" runat="server" EnableViewState="False"></asp:placeholder></td>
-								<td width="100%" vAlign="middle"><table height="45">
+								<td width="100%" vAlign="top"><table height="45">
 										<tr>
 											<td><asp:imagebutton id="imgBtnSearch" runat="server"  /></td>
 										</tr>

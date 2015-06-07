@@ -3,7 +3,6 @@
     <section name="SERVER" type="System.Configuration.NameValueFileSectionHandler, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   </configSections>
   <appSettings>
-    <add key="Encryption" value="FALSE"/>
     <add key="HostIP" value="$plmOnHTTPServerIP$"/>
     <add key="SiteID" value="$plmOnWSSiteId$"/>
     <add key="DatabaseServer" value="$plmOnDBConnectionString$" />
@@ -26,14 +25,12 @@
     <add key="CodrawMarkupServer" value="http://$plmOnHTTPServer$/$plmOnVDplmOnCodrawMarkup$" />
 
     <add key="ImageServer" value="http://$plmOnHTTPServer$/$plmOnVDImageServer$" />
-    <add key="DASHServer"  value="http://$plmOnHTTPServer$/$plmOnVDDashboard$" />
     <add key="TIMServer" value="http://$plmOnHTTPServer$/timOn" />
     <add key="SQLServerReport" value="http://$plmOnHTTPServer$/$plmOnVDplmOnReport$" />
     <add key="BIServer" value="http://$plmOnHTTPServer$/$plmOnVDYuniqueBI$" />
     <add key="SRMServer" value="http://$plmOnHTTPServer$/$plmOnVDsrmOn$" />
     <add key="SRMDownloadServer" value="http://$plmOnHTTPServer$/$plmOnVDsrmOnDownload$/$plmOnVDsrmOnDownloadFolder$/" />
     <add key="SRMDatabaseServer" value="$plmOnDBConnectionString$" />
-    <add key="TIMDatabaseServer" value="$plmOnDBConnectionString$" />
     <add key="CitrixServer" value="FALSE" />
     <add key="YuniqueToolkitServer" value="http://$plmOnHTTPServer$/$plmOnVDYuniqueToolkit$" />
 
@@ -43,9 +40,8 @@
     <add key="YuniqueToolkitSchemaQuickView" value="/ClientSetup/YuniquePLM.Toolkit.Portable.application" />
 
     <add key="YuniqueAppManagerServer" value="http://$plmOnHTTPServer$/$plmOnVDYuniqueAppManager$" />
-    <add key="YuniqueAppStoreServer" value="http://172.21.4.90/YuniqueAppStore" />
     <add key="RevealXMLFiles" value="TRUE" />
-	<add key="TechPackServiceTimeOut" value="6000000" />
+	
     <add key="PeerHostServer" value="127.0.0.1" />
     <add key="PeerHostPort" value="8008" />    
     <add key="IntellimasClientUrl" value="http://IntellimasDomain.com/IntellimasServer/clickoncedeploy/client.application?token=$token$&amp;module=RequestTracker" />

@@ -3,12 +3,14 @@
 <%@ Register TagPrefix="CuteWebUI" Namespace="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle">Attachments</title>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
       <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -195,7 +197,7 @@
 								<cc1:confirmedimagebutton id="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>' ImageUrl='<%#GetImagePath("btn_delete.gif", UserProperties.PrefLang) %>' CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>' >
 								</cc1:confirmedimagebutton>
 								<cc1:confirmedimagebutton id="Linkbutton5" runat="Server" ImageUrl='<%#GetImagePath("btn_download.gif", UserProperties.PrefLang) %>'
-									CommandName="download"></cc1:confirmedimagebutton>
+									CommandName="download" OnClientClick="dont_show_wait_twice();"></cc1:confirmedimagebutton>
 								<cc1:confirmedimagebutton id="btnEditCancel" runat="server" ImageUrl='<%#GetImagePath("btn_close.gif", UserProperties.PrefLang) %>' Message="NONE" CommandName="cancel"></cc1:confirmedimagebutton>															
 							</TD>
 							<TD>&nbsp;</TD>

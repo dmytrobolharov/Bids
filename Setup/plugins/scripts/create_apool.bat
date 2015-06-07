@@ -14,7 +14,7 @@ IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS SET w3svc/AppPools/%1/ManagedRuntimeVersion "v4.0"
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 
-CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS SET w3svc/AppPools/%1/Enable32BitAppOnWin64 "1"
+CSCRIPT %SYSTEMDRIVE%\Inetpub\AdminScripts\ADSUTIL.VBS SET w3svc/AppPools/%1/Enable32BitAppOnWin64 "0"
 IF %ERRORLEVEL% NEQ 0 goto ErrorLabel
 
 %systemroot%\system32\inetsrv\appcmd set config -section:applicationPools /[name='%1'].processModel.loadUserProfile:true

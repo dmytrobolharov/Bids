@@ -7,6 +7,8 @@
 <head runat="server">
     <title runat="server" id="PageTitle">Sourcing Delete</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -66,8 +68,8 @@
 			    if ( e.type=='checkbox' && e.name.indexOf("chkDelete") != -1 )
 			        e.checked= actVar ;
 		    }
-		}
-		</script>
+}
+        </script>
 		    
 		    
 		    

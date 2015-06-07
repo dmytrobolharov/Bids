@@ -14,8 +14,11 @@
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -26,9 +29,9 @@
 				<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 
 				<td nowrap="nowrap" width="650">
-				<cc1:confirmedimagebutton id="btnProcessDetailGoTo" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-				<cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>&nbsp;
-				<cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>&nbsp;	
+				<cc1:confirmedimagebutton id="btnProcessDetailGoTo" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton>
+				<cc1:confirmedimagebutton id="btnSave" runat="server" CausesValidation="True" Message="NONE"></cc1:confirmedimagebutton>&nbsp;
+				<cc1:confirmedimagebutton id="btnClose" runat="server" CausesValidation="False" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>&nbsp;	
                 <cc1:BWImageButton ID="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:BWImageButton>
 				</td>
 				<td class="FontHead" align="right" width="75"><!--&nbsp;<%=GetSystemText("Select Set")%>:--></td>
@@ -50,7 +53,7 @@
 		
     	<table cellspacing="2" cellpadding="0" width="100%" border="0">
 			<tr class="fontHead">
-				<td><cc1:confirmedimagebutton id="btnUnlink" runat="server" />&nbsp;<cc1:confirmedimagebutton id="btnImageRemove" runat="server"  /></td>
+				<td><cc1:confirmedimagebutton id="btnUnlink" runat="server" CausesValidation="False" />&nbsp;<cc1:confirmedimagebutton id="btnImageRemove" runat="server" CausesValidation="False"/></td>
 			</tr>
 		</table>
 
@@ -94,7 +97,7 @@
 						    <asp:ListItem Value="15">15</asp:ListItem>
 						    <asp:ListItem Value="20">20</asp:ListItem>
 					    </asp:dropdownlist></td>
-				    <td nowrap="nowrap"><cc1:confirmedimagebutton id="btnAdd" runat="server"  Message="NONE" />&nbsp;<cc1:bwimagebutton id="btnLink" runat="server"  />&nbsp;</td>
+				    <td nowrap="nowrap"><cc1:confirmedimagebutton id="btnAdd" runat="server" CausesValidation="False" Message="NONE" />&nbsp;<cc1:bwimagebutton id="btnLink" runat="server" CausesValidation="False" />&nbsp;</td>
 			    </tr>
 		    </table>       
         </td>

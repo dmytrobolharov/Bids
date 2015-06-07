@@ -11,6 +11,10 @@
 		<title>Style</title>	
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -22,6 +26,7 @@
 
 					<td noWrap width="650">
 					<cc1:confirmedimagebutton id="btnEdit" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+                    <cc1:bwimagebutton id="btnPrint" runat="server" ></cc1:bwimagebutton>
                     <cc1:bwimagebutton id="btnChangeLog" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75">&nbsp;<%=GetSystemText("Select Set")%>:</td>
@@ -97,7 +102,7 @@
 							</td>						
 						</tr>
 						<tr>
-							<td style="height:150; width:350px">
+							<td style="height:150; width:350px" valign="middle" align="center">
 								<div style="width:290px; height:290px;"><cc1:BWImageButton id="btnImgNewWindow" runat="server" 
 									CommandName="Window"></cc1:BWImageButton></div>
 							</td>
@@ -138,7 +143,7 @@
 							</td>						
 						</tr>
 						<tr>
-							<td style="height:150; width:350px">
+							<td style="height:150; width:350px" valign="middle" align="center">
 								<div style="width:290px; height:290px;"><cc1:BWImageButton id="btnImgNewWindow" runat="server" 
 									CommandName="Window"></cc1:BWImageButton></div>
 							</td>

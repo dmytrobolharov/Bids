@@ -10,7 +10,7 @@
 			<div align="left">&nbsp;
 				<asp:label id="lblCurrentIndex" Text="0" Visible="False" Runat="server"></asp:label><asp:label id="lblPageSize" Text="10" Visible="False" Runat="server">10</asp:label></div>
 		</td>
-        <td width="75" runat="server" id="tdThumbnail" visible="false">
+        <td width="100" runat="server" id="tdThumbnail" visible="false">
             <asp:CheckBox runat="server" id="chbThumbnail" AutoPostBack="true" />
         </td>
 		<td width="20"><asp:imagebutton id="btnImgFirst" OnClick="ShowFirstPage" runat="server"></asp:imagebutton></td>

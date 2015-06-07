@@ -7,12 +7,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
-		<form id="Form1" method="post" runat="server">
+		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
             <table class="TableHeader" cellspacing="0" cellpadding="0" width="100%" border="0">
 	            <tr>
 		            <td align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td> 
@@ -76,14 +78,17 @@
 			            <tr>
 			                <td>
 			                    <cc1:ScrollingGrid ID="sgColorPaletteGrid" runat="server" Width="800" ScrollBars="Auto" Height="600">
-                                    <asp:datagrid id="DataGrid1" runat="server"  EnableViewState="False" DataKeyField="ColorPaletteID">
+                                    <asp:datagrid id="DataGrid1" runat="server"  EnableViewState="true" DataKeyField="ColorPaletteID">
                                         <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate">
                                         </AlternatingItemStyle>
                                         <ItemStyle CssClass="ItemTemplate"></ItemStyle>
-                                        <headerStyle Height="25px" CssClass="tableheader"></headerStyle>
+                                        <headerStyle Height="25px" CssClass="TableHeader"></headerStyle>
                                         <PagerStyle Visible="False"></PagerStyle>
                                         <Columns>
                                             <asp:TemplateColumn>
+                                                <HeaderTemplate>
+                                                    <asp:CheckBox runat="server" ID="chkSelectAll" onclick="CheckAll(this);" />
+                                                </HeaderTemplate>
                                                 <ItemTemplate>
                                                     <asp:CheckBox runat="server" ID="chkDelete" />
                                                 </ItemTemplate>

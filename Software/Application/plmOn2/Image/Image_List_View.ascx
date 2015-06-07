@@ -53,7 +53,7 @@
                     </td>
                     <td width="25">
                         <asp:DropDownList ID="ps" runat="server" CssClass="fontHead">
-                            <asp:ListItem Value="0">All</asp:ListItem>
+                            <asp:ListItem Value="1000">All</asp:ListItem>
                             <asp:ListItem Value="5">5</asp:ListItem>
                             <asp:ListItem Value="10">10</asp:ListItem>
                             <asp:ListItem Value="15">15</asp:ListItem>

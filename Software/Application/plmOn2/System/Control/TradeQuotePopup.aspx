@@ -13,7 +13,8 @@
 		<script language="javascript">
 			function SelectWindowCustom(sValue,sTxtBox) 
 			{
-			opener.document.Form1[sTxtBox].value = sValue;
+			    opener.document.Form1[sTxtBox].value = sValue;
+			    opener.hide_wait_text();
 			self.close();
 			}
 		</script>

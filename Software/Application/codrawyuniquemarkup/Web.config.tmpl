@@ -15,17 +15,14 @@
       </sectionGroup>
     </configSections>
 
-
   <appSettings>
-    <add key="YuniqueDir" value="$plmOnStore$\Images\MAMAGI\" /> <!-- Configure this to point to the same location as IMAGEMAMAGI config value -->
-	<add key="Original_mamagi" value="Original/"/>
-    <add key="3D_mamagi" value="3D/"/>
-	<add key="Thumbnail_mamagi" value="Comments/Thumbnail/"/>
-    <add key="Comments_mamagi" value="Comments/"/>
+    <add key="SERVER" value="$plmOnConfig$\Config\server.config"/>
+    <add key="STORAGE" value="$plmOnConfig$\Config\storage.config"/>
   </appSettings>
 
   <connectionStrings>
 	<add name="YuniqueDatabase" connectionString="$plmOnDBConnectionString$" providerName="System.Data.SqlClient"/>
+	<add name="SQLCACHECONNECTION" connectionString="$plmOnDBConnectionString$" providerName="System.Data.SqlClient"/>
   </connectionStrings>
 
 	<system.web>

@@ -78,6 +78,7 @@
                                                       <TextRun>
                                                         <Value>Modified Date</Value>
                                                         <Style>
+                                                          <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -106,6 +107,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!MDate.Value</Value>
                                                         <Style>
+                                                          <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -136,6 +138,7 @@
                                                       <TextRun>
                                                         <Value>Description</Value>
                                                         <Style>
+                                                          <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -166,6 +169,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!Description.Value</Value>
                                                         <Style>
+                                                          <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -197,6 +201,7 @@
                                                       <TextRun>
                                                         <Value>Modified By</Value>
                                                         <Style>
+                                                          <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -226,6 +231,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!MUser.Value</Value>
                                                         <Style>
+                                                          <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>8pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -462,11 +468,12 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Attached Images</Value>
+                      <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                       <Style>
-                        <FontFamily>Tahoma</FontFamily>
+                        <FontFamily>Arial Unicode MS</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Color>Gray</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -495,7 +502,7 @@
           <Width>10.75in</Width>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
           </Style>
         </Rectangle>
@@ -567,11 +574,33 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_sampleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SRSID">
       <DataType>String</DataType>
       <Prompt>SampleRequestSubmitID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <EmbeddedImages>

@@ -6,6 +6,10 @@
 		<title><%= Me.strColorway %></title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -92,7 +96,7 @@
 			<asp:CheckBox ID="chkShowAll"  runat="server" AutoPostBack="true" Text="Show All" />
 			
 			<asp:datagrid id="dgColors" runat="server" DataKeyField="MaterialColorID" AutoGenerateColumns="False" ShowHeader="False" 
-			    AllowPaging="False" >
+			    AllowPaging="False">
 				<AlternatingItemStyle Height="20px" CssClass="font"></AlternatingItemStyle>
 				<ItemStyle Height="20px" CssClass="font"></ItemStyle>
 				<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>

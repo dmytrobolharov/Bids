@@ -117,7 +117,7 @@
                                                 <cc1:ConfirmedLinkButton ID="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>'
                                                     CommandName="delete" NAME="edit_btnDelete">
                                                 </cc1:ConfirmedLinkButton>
-                                                <asp:LinkButton ID="Linkbutton5" runat="Server" CommandName="download"></asp:LinkButton>
+                                                <asp:LinkButton ID="Linkbutton5" runat="Server" CommandName="download" OnClientClick="dont_show_wait_twice(); return true;"></asp:LinkButton>
                                                 <cc1:ConfirmedImageButton ID="btnEditCancel" runat="server" Message="NONE" CommandName="cancel"></cc1:ConfirmedImageButton>
                                             </td>
                                             <td>

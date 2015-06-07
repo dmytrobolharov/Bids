@@ -1,8 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Line_List_SKUPlan_Edit.aspx.vb" Inherits="plmOnApp.Line_List_SKUPlan_Edit" %>
-
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
 <head id="Head1" runat="server">
     <title>Planning SKU Plan</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
@@ -10,10 +9,12 @@
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
     <script type="text/javascript" language="javascript" src="../System/Jscript/Custom.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .search-cell td {
             vertical-align: top !important;
@@ -24,6 +25,26 @@
         .multi-sku {
         	background-color: yellow;
         }
+        #RadGridSKUItems_ctl00
+        {
+          /*  width: 100% !important; */
+        }
+        #RadGridSKUItems_ctl00_Pager
+        {
+            width: 100% !important;
+        }
+        th.rgHeaderYPLM, th.rgHeader {
+                padding: 0px 0px !important;
+        }
+        .wrappWord
+        {
+           /* word-wrap: break-word; !important; */
+           white-space: normal !important;
+        }
+        .ddCustomWidth
+        {
+            white-space:normal !important;
+        }
     </style>
 </head>
 <body>
@@ -31,7 +52,7 @@
         <a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank"
             id="yHelp"></a>
     </div>
-    <form id="form1" runat="server">
+    <form id="Form1" runat="server" defaultbutton="imgBtnSearch">
     <telerik:radscriptmanager id="RadScriptManager1" runat="server" enablepagemethods="true">
         <Scripts>
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
@@ -70,6 +91,7 @@
             </td>
         </tr>
     </table>
+    <div>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="border-bottom: orange thin solid;
         border-left-style: none; background-color: white">
         <tr>
@@ -127,12 +149,29 @@
     <div style="width: 100%">
         <asp:PlaceHolder runat="server" ID="plhSKUGrid"></asp:PlaceHolder>
     </div>
+    
+    </div>
     <div id="confirm-message" style="display: none;">
         <%= GetSystemText("You are about to make changes to the SKU Plan.") %>
         <br />
         <%= GetSystemText("Would you like to keep the Style SKU Pages in sync?")%>
     </div>
     <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('.rgCommandCell')[0].width = document.getElementById('RadGridSKUItems_GridData').offsetWidth
+            var radItems = document.getElementsByTagName('span')
+            for (var i = 0; i < radItems.length; i++) {
+                if (radItems[i].id.indexOf('RadGridSKUItems') != -1 && radItems[i].id.indexOf('lblLineFolderItemDropIcon') == -1 && radItems[i].id.indexOf('lblPageNumber') == -1) {
+                    radItems[i].style.display = "inline"
+                    radItems[i].className += "wrappWord"
+                }
+            }
+            var ddList = $('.ddCustomWidth')[0].children[0]
+            ddList.style.width = ""
+            /*document.getElementById('RadGridSKUItems_ctl00_Header').setAttribute("style", "width:100% !important") */
+
+
+        });
         function ColumnHidden(sender, eventArgs) {
             var tableColumns = $find("RadGridSKUItems").get_masterTableView().get_columns();
             var hiddenColumns = new Array();
@@ -202,7 +241,7 @@
 
             var changeGrid = $("#RadGridSKUItems");
             var windowHeight = $(window).height();
-            var formHeight = $("#form1").height();
+            var formHeight = $("#Form1").height();
             var minHeight = 100;
 
             // Calculating, how much free space we have on the window for grid area

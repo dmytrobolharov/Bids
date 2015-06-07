@@ -53,8 +53,8 @@
 			</asp:Panel>
 			<asp:datagrid id="DataGrid1" runat="server" Width="300px" BorderColor="#E0E0E0" BorderStyle="Solid"
 				BorderWidth="1px" PageSize="100" AutoGenerateColumns="False" DataKeyField="SampleRequestAMLMeasPomID">
-				<AlternatingItemStyle CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-				<ItemStyle CssClass="ItemTemplate"></ItemStyle>
+				<AlternatingItemStyle CssClass="AlternateItemTemplate" Font-Size="11px"></AlternatingItemStyle>
+				<ItemStyle CssClass="ItemTemplate" Font-Size="11px"></ItemStyle>
 				<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 				<Columns>
                     <asp:TemplateColumn ItemStyle-CssClass="dropimage">

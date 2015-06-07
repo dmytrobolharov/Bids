@@ -9,20 +9,24 @@
 <html>
 	<head>
 		<title runat="server" id="PageTitle"></title>
+        <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" >
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
-			<table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0"
+			 <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0"
 				runat="server">
-            <tr>
-                <td>
-                    &nbsp;
-              </td>
-            </tr>
-            </table>
+				<tr valign="middle">
+					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
+					<td noWrap width="650">					
+                    <cc1:bwimagebutton id="btnPrint" runat="server" ></cc1:bwimagebutton>
+					</td>					
+				</tr>
+			</table>
             <uc1:style_workflow_edit id="Style_Workflow_Edit1" runat="server"></uc1:style_workflow_edit>
 			<asp:panel id="pnlChange" runat="server">
 				<uc1:Style_Change_Alert id="Style_Change_Alert1" runat="server"></uc1:Style_Change_Alert>

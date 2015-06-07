@@ -15,8 +15,10 @@
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 
         <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery.tablescroll.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
@@ -78,131 +80,14 @@
 				AutoGenerateColumns="false"  DataKeyField="SampleRequestTradeID" AllowSorting="true" AllowPaging="true">
 				<AlternatingItemStyle BackColor="AliceBlue"></AlternatingItemStyle>
                 <PagerStyle visible="false"/>
-				<Columns > 
-   
-                    <asp:TemplateColumn >
+				<Columns>   
+                    <asp:TemplateColumn>
                         <HeaderStyle CssClass="TableHeader" />
                         <ItemTemplate>
                             <cc1:BWImageButton runat="server" ID="imgRedirect" ImageUrl="../System/icons/icon_search.gif" />
                          </ItemTemplate>
                     </asp:TemplateColumn>
-                    
-                    
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <asp:Label runat="server" ID="hAgent" CssClass="fontHead" ><%# GetSystemText("Agent")%></asp:Label>
-                        </HeaderTemplate>
-                        <ItemTemplate><asp:Label runat="server" ID="lblAgent" CssClass="font" ><%# Convert.ToString(DataBinder.Eval(Container.DataItem, "TradePartnerName"))%></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                                        
-                    <asp:TemplateColumn>
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate >
-                            <asp:Label runat="server" ID="hVendor" 
-                            CssClass="fontHead"  ><%#GetSystemText("Vendor")%></asp:Label>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label runat="server" ID="lblVendor" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "VendorName"))  %></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateColumn>
-
-                    <asp:TemplateColumn>
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate >
-                            <asp:LinkButton Width="100" CommandName="Sort" CommandArgument="NPM_AgentName" runat="server" ID="hPartnerAgent" 
-                            CssClass="fontHead"  ><%# GetSystemText("Agent")%></asp:LinkButton>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label Width="100" runat="server" ID="lblPartnerAgent" CssClass="font" ><%# Convert.ToString(DataBinder.Eval(Container.DataItem, "NPM_AgentName"))%></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateColumn>
-                    <asp:TemplateColumn>
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate >
-                            <asp:LinkButton Width="50" CommandName="Sort" CommandArgument="NPM_VendorName" runat="server" ID="hPartnerVendor" 
-                            CssClass="fontHead"  ><%# GetSystemText("Vendor")%></asp:LinkButton>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label Width="50" runat="server" ID="lblPartnerVendor" CssClass="font" ><%# Convert.ToString(DataBinder.Eval(Container.DataItem, "NPM_VendorName"))%></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateColumn>
-                    <asp:TemplateColumn>
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate >
-                            <asp:LinkButton Width="50" CommandName="Sort" CommandArgument="NPM_FactoryName" runat="server" ID="hPartnerFactory" 
-                            CssClass="fontHead"  ><%#GetSystemText("Factory")%></asp:LinkButton>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label Width="50" runat="server" ID="lblPartnerFactory" CssClass="font" ><%# Convert.ToString(DataBinder.Eval(Container.DataItem, "NPM_FactoryName"))%></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateColumn>
-
-
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <asp:LinkButton Width="50" CommandName="Sort" CommandArgument="StyleNo" runat="server" ID="hStyleNo" CssClass="fontHead" ><%#GetSystemText("StyleNo")%></asp:LinkButton>
-                        </HeaderTemplate>
-                        <ItemTemplate><asp:Label Width="50" runat="server" ID="lblStyleNo" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "StyleNo"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <asp:LinkButton Width="70" CommandName="Sort" CommandArgument="Description" runat="server" ID="hDescription" 
-                            CssClass="fontHead" ><%#GetSystemText("Description")%></asp:LinkButton>               
-                        </HeaderTemplate>
-                        <ItemTemplate><asp:Label Width="70" runat="server" ID="lblDescription" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "Description"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <asp:LinkButton Width="60" CommandName="Sort" CommandArgument="SizeClass" runat="server" ID="hSizeClass" CssClass="fontHead"  ><%#GetSystemText("SizeClass")%></asp:LinkButton>
-                        </HeaderTemplate>
-                        <ItemTemplate><asp:Label Width="60" runat="server" ID="lblSizeClass" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "SizeClass"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                    
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate><asp:LinkButton Width="50" CommandName="Sort" CommandArgument="StyleSetName" runat="server" ID="hStyleSet" CssClass="fontHead"  ><%#GetSystemText("StyleSet")%></asp:LinkButton></HeaderTemplate>
-                        <ItemTemplate><asp:Label Width="50" runat="server" ID="lblStyleSet" CssClass="font" ><%# Convert.toString (DataBinder.Eval(Container.DataItem, "StyleSetName"))  %></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate><asp:LinkButton Width="50" CommandName="Sort" CommandArgument="WorkFlowItemName" runat="server" ID="hWorkFlowItemName" CssClass="fontHead" ><%# GetSystemText("BOM")%></asp:LinkButton></HeaderTemplate>
-                        <ItemTemplate><asp:Label Width="50" runat="server" ID="lblWorkFlowItemName" CssClass="font" /></ItemTemplate>
-                    </asp:TemplateColumn>
-                    
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <asp:LinkButton Width="50" CommandName="Sort" CommandArgument="Dim1" runat="server" ID="hDim1" CssClass="fontHead"  ></asp:LinkButton>
-                         </HeaderTemplate>
-                        <ItemTemplate><asp:Label Width="50" runat="server" ID="lblDim1" CssClass="font" ></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                   
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <asp:LinkButton Width="50" CommandName="Sort" CommandArgument="Dim2" runat="server" ID="hDim2" CssClass="fontHead"  ><%#GetSystemText("Dim2")%></asp:LinkButton>
-                         </HeaderTemplate>
-                        <ItemTemplate><asp:Label Width="50" runat="server" ID="lblDim2" CssClass="font" ></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                   
-                    <asp:TemplateColumn >
-                        <HeaderStyle CssClass="TableHeader" />
-                        <HeaderTemplate>
-                            <asp:LinkButton Width="50" CommandName="Sort" CommandArgument="Dim3" runat="server" ID="hDim3" CssClass="fontHead"  ><%#GetSystemText("Dim3")%></asp:LinkButton>
-                         </HeaderTemplate>
-                        <ItemTemplate><asp:Label Width="50" runat="server" ID="lblDim3" CssClass="font" ></asp:Label></ItemTemplate>
-                    </asp:TemplateColumn>
-                    
-
 				</Columns>
-				
 			</asp:datagrid>			
 			
 			<br />

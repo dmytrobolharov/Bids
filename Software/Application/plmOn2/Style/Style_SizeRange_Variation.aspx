@@ -2,14 +2,16 @@
     Inherits="plmOnApp.Style_SizeRange_Variation" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
     <title>Select...</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .BOMColorwayList
         {
@@ -30,7 +32,6 @@
                 <cc1:ConfirmedImageButton ID="btnVariation" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnSaveMeasurements" runat="server" Message="NONE" />
-                <cc1:ConfirmedImageButton ID="btnLink" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                 <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
             </td>
         </tr>
@@ -558,54 +559,6 @@
                 </asp:DataList>
             </td>
             <td>
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;
-            </td>
-            <td>
-                &nbsp;
-            </td>
-            <td>
-                &nbsp;
-            </td>
-        </tr>
-    </table>
-
-    <table id="tbLinePlan" width="400" bgcolor="#ffffff" border="0" runat="server" class="CodeBlockRed">
-        <tr>
-            <td>
-                &nbsp;
-            </td>
-            <td>
-                &nbsp;
-            </td>
-            <td>
-                &nbsp;
-            </td>
-        </tr>
-        <tr runat="server" id="trLPAdd">
-            <td width="10">
-                &nbsp;
-            </td>
-            <td>
-                &nbsp;&nbsp;<asp:CheckBox ID="cbLinePlanSelect" runat="server" CssClass="fontHead"
-                    Text="AddStytleToLinePlan" />
-            </td>
-            <td width="50">
-                &nbsp;
-            </td>
-        </tr>
-        <tr runat="server" id="trLPSelect">
-            <td width="10">
-                &nbsp;
-            </td>
-            <td>
-                &nbsp;&nbsp;<asp:RadioButtonList ID="rbLinePlan" runat="server" CssClass="fontHead" />
-            </td>
-            <td width="50">
                 &nbsp;
             </td>
         </tr>

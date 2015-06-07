@@ -1,5 +1,5 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Media.aspx.vb" Inherits="plmOnApp.Style_Media"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Media</title>

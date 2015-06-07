@@ -1,19 +1,24 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_Color_Missing.aspx.vb" Inherits="plmOnApp.Planning_Folder_Color_Missing" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<title>Planning Color</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet"/>
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             a img {border:none; outline: none;}
             .search-cell td {
             	vertical-align: top !important;
             }
         </style>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -103,10 +108,14 @@
                                     </div>
 					            </td>
 					            <td height="25">
-						            <p align="right"><asp:dropdownlist id="ddlSortField" runat="server"></asp:dropdownlist><asp:dropdownlist id="ddlSortBy" runat="server">
+						            <div align="right">
+                                        <asp:dropdownlist id="ddlSortField" runat="server"></asp:dropdownlist>
+                                        <asp:dropdownlist id="ddlSortBy" runat="server">
 								            <asp:ListItem Value="ASC">ASC</asp:ListItem>
 								            <asp:ListItem Value="DESC">DESC</asp:ListItem>
-							            </asp:dropdownlist><asp:imagebutton id="btnSort" runat="server" ImageUrl="../System/Icons/icon_sort.gif"></asp:imagebutton></p>
+							            </asp:dropdownlist>
+                                        <asp:imagebutton id="btnSort" runat="server" ImageUrl="../System/Icons/icon_sort.gif"></asp:imagebutton>
+                                    </div>
 					            </td>
 				            </tr>
 			            </table>			            				

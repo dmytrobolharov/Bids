@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Control_ConstructionDetails_Subclass.aspx.vb" Inherits="plmOnApp.Control_ConstructionDetails_Subclass" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -8,19 +7,22 @@
     <title>Process Details Class</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-      <wc1:Color_Wait ID="Color_Wait" runat="server" />
 		<table class="TableHeader" cellspacing="0" cellpadding="0" width="100%" height="25" border="0">
 			<tr>
 				<td align="center" width="10">
 				    <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
 				</td>
 				<td>
+                    <asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
+							Height="0px" />
 				    <cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnSaveAsNew" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
-			        <cc1:confirmedimagebutton id="btnDelete" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+			        <cc1:confirmedimagebutton id="btnDelete" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
 				</td>
 			</tr>
 		</table>

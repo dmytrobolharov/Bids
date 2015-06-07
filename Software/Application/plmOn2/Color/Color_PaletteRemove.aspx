@@ -1,6 +1,5 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Color_PaletteRemove.aspx.vb" Inherits="plmOnApp.Color_PaletteRemove" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="uc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -9,11 +8,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
 	    <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server" defaultbutton = "ImgbtnSearch">
-        <uc1:Color_Wait ID="Color_Wait" runat="server" />
 
             <table class="TableHeader" cellspacing="0" cellpadding="0" width="100%" border="0">
 	            <tr>

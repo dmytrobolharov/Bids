@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Style_DimensionalBOM_BOMColorway.aspx.vb" Inherits="plmOnApp.Style.DimensionalBOM.Style_DimensionalBOM_BOMColorway" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<%@ Register src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -15,15 +14,15 @@
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/BOMColorway.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
     <form id="form1" method="post" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
-
          <telerik:RadScriptManager ID="RadScriptManager1" runat="server" >
             <Scripts>
                 <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
@@ -262,8 +261,9 @@
                         <asp:Label ID="lblActiveColorCode" runat="server" Width="100" CssClass="font" /> <br />
                         <asp:Label ID="lblActiveColorName" runat="server" Width="100" CssClass="font" /> <br />
                         <asp:HiddenField id="hdnActiveColorPaletteID" runat="server" EnableViewState="false"/>
+                        <asp:HiddenField id="hdnActiveColorEnabledInStyle" runat="server" EnableViewState="false" />
                     </div>
-                    <asp:ImageButton ID="btnMakeColorway" runat="server" OnClientClick="return confirmMakeColorway();"/>
+                    <asp:ImageButton ID="btnMakeColorway" runat="server" style="display: none;" OnClientClick="return confirmMakeColorway();"/>
                     <asp:ImageButton ID="btnClearActive" runat="server" OnClientClick="return clearActiveColor();" />
                 </td>
                 <td id="tbcTempColor" valign="top">
@@ -295,6 +295,7 @@
                                         <td>
                                             <asp:Label ID="lblColorCode" runat="server" Width="100" CssClass="font" /><br />
                                             <asp:Label ID="lblColorName" runat="server" Width="100" CssClass="font" />
+                                            <asp:HiddenField ID="hdnColorEnabledInStyle" runat="server" />
                                             <asp:HiddenField ID="hdnColorPaletteID" runat="server" />
                                         </td>
                                     </tr>
@@ -428,11 +429,9 @@
 
         function processQuickSearchAjaxRequest(sender, eventArgs) {
             show_wait_text();
-            busyBox.Show();
         }
 
         function processQuickSearchAjaxResponse(sender, eventArgs) {
-            busyBox.Hide();
             hide_wait_text();
         }
 
@@ -482,7 +481,7 @@
 
         /** Fills the active color info with blank spaces and empty guids **/
         function clearActiveColor() {
-            setActiveColor(strEmptyActiveImageLink, "","", strEmptyGuid);
+            setActiveColor(strEmptyActiveImageLink, "","", strEmptyGuid, 0);
             return false;
         }
 
@@ -493,6 +492,7 @@
             var strCurrentColorCode = $("#lblActiveColorCode").text();
             var strCurrentColorName = $("#lblActiveColorName").text();
             var strCurrentColorPaletteID = $("#hdnActiveColorPaletteID").val();
+            var strCurrentColorEnabledInStyle = $("#hdnActiveColorEnabledInStyle").val();
             var bUseActive;
             if ($("#chbUseActive").length > 0){
                 bUseActive = $("#chbUseActive")[0].checked;
@@ -506,7 +506,8 @@
                 imageSrc: strCurrentImageLink,
                 colorCode: strCurrentColorCode,
                 colorName: strCurrentColorName,
-                colorPaletteID: strCurrentColorPaletteID
+                colorPaletteID: strCurrentColorPaletteID,
+                colorEnabledInStyle: strCurrentColorEnabledInStyle
             };
 
             return activeColorInfo;
@@ -514,11 +515,26 @@
         }
 
         /** Fills Active Color with given info **/
-        function setActiveColor(strImageLink, strColorCode, strColorName, strColorPaletteID) {
+        function setActiveColor(strImageLink, strColorCode, strColorName, strColorPaletteID, iColorEnabledInStyle) {
+            
+            if (iColorEnabledInStyle == null)
+                iColorEnabledInStyle = 0;
+
             $("#imgActiveColor").attr('src', strImageLink);
             $("#lblActiveColorCode").text(strColorCode);
             $("#lblActiveColorName").text(strColorName);
             $("#hdnActiveColorPaletteID").val(strColorPaletteID);
+            $("#hdnActiveColorEnabledInStyle").val(iColorEnabledInStyle)
+
+            var btnMakeColorway = $("#btnMakeColorway");
+            if (iColorEnabledInStyle == 0) {
+                $(btnMakeColorway)[0].enabled = false;
+                $(btnMakeColorway)[0].style.display = "none";
+            }
+            else {
+                $(btnMakeColorway)[0].enabled = true;
+                $(btnMakeColorway)[0].style.display = "inline";
+            }
         }
 
         
@@ -530,8 +546,9 @@
             var strColorName = $currentColor.find("span[id*='lblColorName']").text();
             var strColorCode = $currentColor.find("span[id*='lblColorCode']").text();
             var strColorPaletteID = $currentColor.find("input[id*='hdnColorPaletteID']").val();
+            var iColorEnabledInStyle = $currentColor.find("input[id*='hdnColorEnabledInStyle']").val();
             // Setting the selected color as active
-            setActiveColor(strImageLink, strColorCode, strColorName, strColorPaletteID);
+            setActiveColor(strImageLink, strColorCode, strColorName, strColorPaletteID, iColorEnabledInStyle);
         }
 
         /** Confirmation windows **/
@@ -569,6 +586,10 @@
             var strImgLink = activeColorInfo.imageSrc;
             var strColorCode = activeColorInfo.colorCode;
             var strColorName = activeColorInfo.colorName;
+            var iColorEnabledInStyle = activeColorInfo.colorEnabledInStyle;
+
+            if (iColorEnabledInStyle == null || iColorEnabledInStyle == 0)
+                return false;
 
             if (strCurrentColorPaletteID == "" || strCurrentColorPaletteID == null || strCurrentColorPaletteID == strEmptyGuid) {
                 return false;
@@ -880,14 +901,12 @@
             if (eventControlID == '<%= drlColorSearch.UniqueID %>' || eventControlID == '<%= rlvTempColorsList.UniqueID %>' || eventControlID == '<%= btnClearTempArea.UniqueID %>') {
                 hideMaterialMenu();
                 show_wait_text();
-                busyBox.Show();
             }
         }
 
         function onAjaxResponseEnd(sender, eventArgs) {
             var eventControlID = eventArgs.get_eventTarget();
             if (eventControlID == '<%= rlvTempColorsList.UniqueID %>') {
-                busyBox.Hide();
                 hide_wait_text();
             }
             // Clearing the EVENTTARGET and EVENTARGUMENT from ajax postback, so we can verify if the next postback was caused by button or by the same control

@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Line_List_PlanningAllocation.aspx.vb" Inherits="plmOnApp.Line_List_PlanningAllocation" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
 <%@ Register Src="Line_List_Header.ascx" TagName="Header" TagPrefix="hc1" %>
 <%@ Register Src="Line_List_Folder_FlashEdit_Style.ascx" TagName="List" TagPrefix="lc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -11,16 +10,21 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
-    <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
-	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+    <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.0.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .StyleDiv {
-            width: 210px;
+            width: 210px !important;
+            vertical-align:top;
         }
         
         .drag-helper {        	
         	background-color: #fff;
+        	overflow:hidden !important;
+        	height: 395px !important;
         }
         
         .style-new {
@@ -29,7 +33,7 @@
         
         .style-info td {
         	border: 1px solid Gainsboro;
-        	white-space: nowrap;
+        	white-space: normal;
         }        
         
         .style-new .style-info .font {
@@ -201,9 +205,9 @@
                                             </tr>
                                         </table>
                                         <asp:DataGrid ID="DataGrid1" runat="server" DataKeyField="PlanningItemID">
-                                            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate draggable"></AlternatingItemStyle>
-                                            <ItemStyle CssClass="ItemTemplate draggable"></ItemStyle>
-                                            <HeaderStyle CssClass="TableHeader" Height="25px"></HeaderStyle>
+                                            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate draggable" VerticalAlign="Middle"></AlternatingItemStyle>
+                                            <ItemStyle HorizontalAlign="Left" BorderWidth="0px" BorderStyle="Solid" BorderColor="Gainsboro" VerticalAlign="Middle" BackColor="White" CssClass="ItemTemplate draggable StyleDiv"></ItemStyle>
+                                            <HeaderStyle CssClass="TableHeader" Height="25px" HorizontalAlign="Left"></HeaderStyle>
                                             <PagerStyle Visible="False"></PagerStyle>
                                             <Columns>
                                                 <asp:TemplateColumn ItemStyle-BorderColor="Gainsboro" ItemStyle-BorderWidth="1" ItemStyle-CssClass="font">
@@ -217,9 +221,11 @@
                                                             <table cellpadding="0" cellspacing="0" style="border: 1px solid Gainsboro;">
                                                                 <tr>
                                                                     <td>
-                                                                        <div style="width:200px; height: 200px;">
-                                                                            <input type="checkbox" class="remove-style" /><br />
-                                                                            <img src='<%# GetImageStreamPath(ImageWidth, Eval("DesignSketchVersion").ToString, Eval("DesignSketchID").ToString) %>' alt="" />
+                                                                        <div style="clear:both; width:200px; height:200px; margin-top:25px;">
+                                                                            <input type="checkbox" class="remove-style" />
+                                                                            <div style="width:100%; text-align:center;">
+                                                                                <img src='<%# GetImageStreamPath(ImageWidth, Eval("DesignSketchVersion").ToString, Eval("DesignSketchID").ToString) %>' alt="" />
+                                                                            </div>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -281,6 +287,17 @@
     <script type="text/javascript" src="../System/Jscript/jquery.ui.core.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>    
     <script type="text/javascript">
+
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+        function BeginRequestHandler(sender, args) {
+            show_wait_text();
+        }
+
+        function EndRequestHandler(sender, args) {
+            hide_wait_text();
+        }
 
         function checkAll(chkSelectAll) {
             $("#DataGrid1 [id*='chkSelect']").attr("checked", chkSelectAll.checked);
@@ -449,10 +466,18 @@
         function hideShowStylesInPalette() {
             $("#DataGrid1 [id*='hdnPlanningItemID']").each(function () {
                 if (($hdnPlanningItems.val().indexOf($(this).val()) != -1) && !($(this).closest(".drag-helper").hasClass("ui-draggable-dragging"))) {
-                    $(this).closest("tr").hide();
+                    var $element = $(this).closest("tr").find("input");
+                    if ($element.parent().find("div.planningItemFlagAdded").length == 0) {
+                        $element.parent().append('<div class="planningItemFlagAdded" style="color: green; padding: 2px;">Added</div>');
+                    }
+                    $element.hide();
                 }
                 if ($hdnPlanningItems.val().indexOf($(this).val()) == -1) {
-                    $(this).closest("tr").show();
+                    var $element = $(this).closest("tr").find("input");
+                    $.each($element.parent().find("div.planningItemFlagAdded"), function () {
+                        $(this).remove();
+                    });
+                    $element.show();
                 }
             });
         }
@@ -464,7 +489,10 @@
                 .each(function () {
                     addPlanningItem(this.value, $(this).closest("td").find(".drag-helper").clone());
                 });
-
+            var $chkSelectAll = $("#DataGrid1 [id*=chkSelectAll]");
+            if ($chkSelectAll.length != 0) {
+                $chkSelectAll[0].checked = false;
+            }
             return false;
         }
 
@@ -500,6 +528,7 @@
                     drop: function (event, ui) {                        
                         var planningItemID = $(ui.draggable).find("input[id*='hdnPlanningItemID']").val();
                         addPlanningItem(planningItemID, $(ui.draggable).find('.drag-helper').clone());
+                        
                     }
                 });
 

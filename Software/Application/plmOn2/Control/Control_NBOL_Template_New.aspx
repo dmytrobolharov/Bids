@@ -1,12 +1,13 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Control_NBOL_Template_New.aspx.vb" Inherits="plmOnApp.Control_NBOL_Template_New" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
 		<title>Control</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet"/>
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .rightAlign
             {
@@ -16,7 +17,6 @@
 </head>
 <body style="background-color: #ffffff;">
     <form id="form1" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
         <div>
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">

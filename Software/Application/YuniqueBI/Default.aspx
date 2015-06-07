@@ -51,8 +51,15 @@
 											<TABLE height="1" cellSpacing="0" cellPadding="0" width="100%" border="0" id="Table3">
 												<TBODY>
 													<TR>
-														<TD align="center" bgColor="#666666" height="80"><div align="right"><IMG src="System/Images/main_yunique.gif" width="300" height="75" id="imgYuniqueLogo" runat="server"></div>
+														<TD align="center" height="80"><div align="right" style="margin-right:10px;"><IMG src="System/Images/header_logo.png" width="186" height="68" id="imgYuniqueLogo" runat="server"></div>
 														</TD>
+													</TR>
+												</TBODY>
+											</TABLE>
+                                            <TABLE height="3" cellspacing="0" cellpadding="0" width="100%" border="0" id="Table12">
+												<TBODY>
+													<TR>
+														<TD align="right" bgColor="#666666" height="2"></TD>
 													</TR>
 												</TBODY>
 											</TABLE>
@@ -86,7 +93,7 @@
 														</TD>
 														<TD align="center" width="40"><BR>
 														</TD>
-														<TD runat="server" id="tdImageOn" noWrap align="left" width="60%" background="System/Images/main_bk_on.gif">
+														<TD runat="server" id="tdImageOn" noWrap align="left" width="60%" style="background-position:right; background-repeat:no-repeat;background-image:('System/Images/bi_bg.png')">
 															<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0" id="Table7">
 																<TBODY>
 																	<TR>

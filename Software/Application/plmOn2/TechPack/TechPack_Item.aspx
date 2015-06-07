@@ -15,6 +15,10 @@
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -35,7 +39,7 @@
 				</tr>
 			</table>
 			<uc1:style_header id="Style_Header1" runat="server"></uc1:style_header>
-			<table cellSpacing="0" cellPadding="0" width="100%" border="0">
+			<table cellSpacing="0" cellPadding="0" width="100%" border="0" bgColor="#ffffff">
 				<tr>
 					<td vAlign="top" width="300">
 						<TABLE class="TableHeader" height="25" cellSpacing="0" cellPadding="0" width="100%" border="0">
@@ -61,14 +65,14 @@
 								<td class="font" height="20">&nbsp;
 									<asp:label id="txtTechPackName" runat="server"></asp:label></td>
 							</tr>
-							<tr bgColor="#ffffff">
+							<!--<tr bgColor="#ffffff">
 								<td height="20">&nbsp;</td>
 								<td class="fontHead" height="20">
                                     <asp:Label ID="lblTP_Language" runat="server"></asp:Label>:
 								</td>
 								<td class="font" height="20">&nbsp;
 									<asp:label id="txtTechPackLanguage" runat="server"></asp:label></td>
-							</tr>
+							</tr>-->
 							<tr bgColor="#ffffff">
 								<td width="15" height="20">&nbsp;</td>
 								<td class="fontHead" width="100" height="20">

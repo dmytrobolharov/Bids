@@ -44,7 +44,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>2.44139in</Height>
+              <Height>2.2in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -57,7 +57,7 @@
                         </TablixColumns>
                         <TablixRows>
                           <TablixRow>
-                            <Height>2.44139in</Height>
+                            <Height>2.2in</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -83,23 +83,21 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Description:</Value>
+                                                    <Value>Final Name:</Value>
                                                     <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
-                                                      <FontSize>7pt</FontSize>
+                                                      <FontFamily>Arial Unicode MS</FontFamily>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
-                                                <Style>
-                                                  <TextAlign>Left</TextAlign>
-                                                </Style>
+                                                <Style />
                                               </Paragraph>
                                             </Paragraphs>
                                             <Top>1.75in</Top>
                                             <Left>0.125in</Left>
                                             <Height>0.125in</Height>
-                                            <Width>0.7in</Width>
+                                            <Width>0.75in</Width>
                                             <ZIndex>1</ZIndex>
                                             <ToolTip>##label##</ToolTip>
                                             <Style>
@@ -118,8 +116,8 @@
                                                   <TextRun>
                                                     <Value>=Fields!ImageDescription.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
-                                                      <FontSize>7pt</FontSize>
+                                                      <FontFamily>Arial Unicode MS</FontFamily>
+                                                      <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -130,140 +128,11 @@
                                             </Paragraphs>
                                             <rd:DefaultName>ImageDescription</rd:DefaultName>
                                             <Top>1.75in</Top>
-                                            <Left>0.85in</Left>
+                                            <Left>0.875in</Left>
                                             <Height>0.125in</Height>
                                             <Width>1.125in</Width>
                                             <ZIndex>2</ZIndex>
-                                            <Style>
-                                              <PaddingLeft>1pt</PaddingLeft>
-                                              <PaddingRight>1pt</PaddingRight>
-                                              <PaddingTop>1pt</PaddingTop>
-                                              <PaddingBottom>1pt</PaddingBottom>
-                                            </Style>
-                                          </Textbox>
-                                          <Textbox Name="textbox3">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>Image Type:</Value>
-                                                    <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
-                                                      <FontSize>7pt</FontSize>
-                                                      <FontWeight>Bold</FontWeight>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style>
-                                                  <TextAlign>Left</TextAlign>
-                                                </Style>
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <Top>1.875in</Top>
-                                            <Left>0.125in</Left>
-                                            <Height>0.125in</Height>
-                                            <Width>0.7in</Width>
-                                            <ZIndex>3</ZIndex>
-                                            <ToolTip>##label##</ToolTip>
-                                            <Style>
-                                              <PaddingLeft>1pt</PaddingLeft>
-                                              <PaddingRight>1pt</PaddingRight>
-                                              <PaddingTop>1pt</PaddingTop>
-                                              <PaddingBottom>1pt</PaddingBottom>
-                                            </Style>
-                                          </Textbox>
-                                          <Textbox Name="ImageType">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>=Fields!ImageType.Value</Value>
-                                                    <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
-                                                      <FontSize>7pt</FontSize>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style>
-                                                  <TextAlign>Left</TextAlign>
-                                                </Style>
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>ImageType</rd:DefaultName>
-                                            <Top>1.875in</Top>
-                                            <Left>0.85in</Left>
-                                            <Height>0.125in</Height>
-                                            <Width>1.125in</Width>
-                                            <ZIndex>4</ZIndex>
-                                            <Style>
-                                              <PaddingLeft>1pt</PaddingLeft>
-                                              <PaddingRight>1pt</PaddingRight>
-                                              <PaddingTop>1pt</PaddingTop>
-                                              <PaddingBottom>1pt</PaddingBottom>
-                                            </Style>
-                                          </Textbox>
-                                          <Textbox Name="Division">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>=Fields!Division.Value</Value>
-                                                    <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
-                                                      <FontSize>7pt</FontSize>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style>
-                                                  <TextAlign>Left</TextAlign>
-                                                </Style>
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>Division</rd:DefaultName>
-                                            <Top>2in</Top>
-                                            <Left>0.85in</Left>
-                                            <Height>0.125in</Height>
-                                            <Width>1.125in</Width>
-                                            <ZIndex>5</ZIndex>
-                                            <Style>
-                                              <PaddingLeft>2pt</PaddingLeft>
-                                              <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
-                                            </Style>
-                                          </Textbox>
-                                          <Textbox Name="textbox4">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>Division:</Value>
-                                                    <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
-                                                      <FontSize>7pt</FontSize>
-                                                      <FontWeight>Bold</FontWeight>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style>
-                                                  <TextAlign>Left</TextAlign>
-                                                </Style>
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <Top>2in</Top>
-                                            <Left>0.125in</Left>
-                                            <Height>0.125in</Height>
-                                            <Width>0.7in</Width>
-                                            <ZIndex>6</ZIndex>
-                                            <ToolTip>##label##</ToolTip>
+                                            <ToolTip>##data##</ToolTip>
                                             <Style>
                                               <PaddingLeft>1pt</PaddingLeft>
                                               <PaddingRight>1pt</PaddingRight>
@@ -273,7 +142,7 @@
                                           </Textbox>
                                         </ReportItems>
                                         <DataElementOutput>ContentsOnly</DataElementOutput>
-                                        <Height>2.375in</Height>
+                                        <Height>2.1in</Height>
                                         <Width>2in</Width>
                                         <Style>
                                           <Border>
@@ -346,7 +215,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>=Fields!Row.Value</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Arial Unicode MS</FontFamily>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style>
@@ -422,7 +293,7 @@
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>dsCustomerPresRpt</DataSetName>
-        <Height>2.625in</Height>
+        <Height>2.38361in</Height>
         <Width>2.03125in</Width>
         <Style />
       </Tablix>
@@ -444,20 +315,21 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>           Customer Presentation Report</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "ds_ReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
+                    <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>26pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.125in</Top>
-          <Height>0.57292in</Height>
+          <Top>0.05in</Top>
+          <Height>0.5in</Height>
           <Width>8.375in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
@@ -539,12 +411,21 @@
           <DataField>ImageSort</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ImageType">
-          <DataField>ImageType</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Division">
-          <DataField>Division</DataField>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ds_ReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select ReportPageDescription from rReportPageItem where ReportPageID=@RPID</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -554,6 +435,10 @@
     <ReportParameter Name="IC">
       <DataType>String</DataType>
       <Prompt>ImageCatalogID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

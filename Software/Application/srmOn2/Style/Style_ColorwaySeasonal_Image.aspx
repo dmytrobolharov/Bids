@@ -10,6 +10,8 @@
 	<head>
 		<title>Style</title>	
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -20,6 +22,7 @@
 
 					<td noWrap width="650">
 					<!--<cc1:confirmedimagebutton id="btnEdit" runat="server"  Message="NONE"></cc1:confirmedimagebutton>-->
+                    <cc1:bwimagebutton id="btnPrint" runat="server" ></cc1:bwimagebutton>
 					</td>
 					<td class="FontHead" align="right" width="75">&nbsp;<%=GetSystemText("Select Set")%>:</td>
 					<td width="40"><asp:dropdownlist id="dpStyleSet" runat="server" CssClass="font" DataTextField="Value" DataValueField="ID"

@@ -1,7 +1,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_Material_Missing.aspx.vb" Inherits="plmOnApp.Planning_Folder_Material_Missing" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<title>Planning Color</title>
@@ -9,10 +9,28 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>
         <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet"/>
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
-            a img {border:none; outline: none;}
-            .search-cell td {
+            a img 
+            {
+                border:none; outline: none;
+            }
+            
+            .search-cell td 
+            {
             	vertical-align: top !important;
+            }
+            
+            .cancelInlineBlock
+            {
+                display: inline !important;
+            }
+            
+            .cancelValignTop td
+            {
+                vertical-align: middle !important;
             }
         </style>
         <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
@@ -106,10 +124,14 @@
                                     </div>
 					            </td>
 					            <td height="25">
-						            <p align="right"><asp:dropdownlist id="ddlSortField" runat="server"></asp:dropdownlist><asp:dropdownlist id="ddlSortBy" runat="server">
+						            <div align="right">
+                                        <asp:dropdownlist id="ddlSortField" runat="server"></asp:dropdownlist>
+                                        <asp:dropdownlist id="ddlSortBy" runat="server">
 								            <asp:ListItem Value="ASC">ASC</asp:ListItem>
 								            <asp:ListItem Value="DESC">DESC</asp:ListItem>
-							            </asp:dropdownlist><asp:imagebutton id="btnSort" runat="server" ImageUrl="../System/Icons/icon_sort.gif"></asp:imagebutton></p>
+							            </asp:dropdownlist>
+                                        <asp:imagebutton id="btnSort" runat="server" ImageUrl="../System/Icons/icon_sort.gif"></asp:imagebutton>
+                                    </div>
 					            </td>
 				            </tr>
 			            </table>			            				
@@ -117,7 +139,17 @@
                         <ItemStyle BorderWidth="0px" BorderStyle="Solid" BackColor="white" BorderColor="Gainsboro" VerticalAlign="Top" Width="100%"></ItemStyle>
 	                    <ItemTemplate>
                             <table cellpadding="2" cellspacing="0" border="1" bordercolor="Gainsboro" width="100%">
-                                <tr><td colspan="2"><table cellspacing="0" cellpadding="0" border="0" width="40%"><tr><td><asp:PlaceHolder ID="plhHeaderItem" runat="server"></asp:PlaceHolder></td></tr></table></td></tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <table cellspacing="0" cellpadding="0" border="0" width="40%">
+                                            <tr>
+                                                <td class="cancelValignTop">
+                                                    <asp:PlaceHolder ID="plhHeaderItem" runat="server"></asp:PlaceHolder>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td width="<%=ImageWidth %>"><asp:Label align="left" ID="lblMaterialData" runat="server" AssociatedControlID="materialCheck" style="display:block;"><asp:CheckBox ID="materialCheck" runat="server" /></asp:Label></td>
                                     <td Width="100%">

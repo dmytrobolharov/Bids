@@ -3,8 +3,7 @@
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="TimeAction_Folder.aspx.vb"
    Inherits="plmOnApp.TimeAction_Folder" %>
 
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head runat="server">
    <title id="title" runat="server"></title>
@@ -22,7 +21,10 @@
    <link rel="stylesheet" type="text/css" href="../System/CSS/taCalendar/notifIt.css"> 
    <link rel="stylesheet" type="text/css" href="../System/CSS/taCalendar/taCalMain.css"> 
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body ms_positioning="GridLayout" style="background-color: #fff;">
     <form id="Form1" method="post" runat="server" onkeydown = "return (event.keyCode!=13)" >
@@ -32,7 +34,6 @@ runat="server">
 <tr valign="middle">
 <td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 <td>
-<wc1:Color_Wait ID="cwColorWait" runat="server" />
 <asp:ImageButton id="btnSave" runat="server" CssClass="inputYu"></asp:ImageButton>
                    <cc1:confirmedimagebutton id="btnDelete" runat="server" CausesValidation="False" CssClass="inputYu" ></cc1:confirmedimagebutton>
                      <cc1:bwimagebutton id="btnCopy" runat="server" CausesValidation="False" CssClass="inputYu"></cc1:bwimagebutton>
@@ -72,8 +73,6 @@ runat="server">
             </Windows>
         </telerik:RadWindowManager>      
 <script>
-    show_wait_text();
-    busyBox.Animate();
     function showTaskDetails(strTACalTemplateTaskID) {
         window.radopen("TimeAction_TemplateTask_Detail.aspx?TTID=" + strTACalTemplateTaskID,"MaterialColorsMenu");
     }
@@ -259,6 +258,7 @@ height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" borde
 		    <%= strExitScript %>
             return false;
         }
+        
     </script>
 </body>
 </html>

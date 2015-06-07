@@ -74,7 +74,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!ImageDescription.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontFamily>Arial Unicode MS</FontFamily>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -281,24 +281,25 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Design Detail</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
-                    <FontSize>26pt</FontSize>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>20pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.135in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
-          <Width>11in</Width>
+          <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -349,6 +350,23 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType><CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SID">
@@ -358,6 +376,10 @@
     <ReportParameter Name="SN">
       <DataType>Integer</DataType>
       <Prompt>StyleSet</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>Report Page ID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

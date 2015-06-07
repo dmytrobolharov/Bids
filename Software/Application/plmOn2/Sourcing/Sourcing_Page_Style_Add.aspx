@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Sourcing_Page_Style_Add.aspx.vb" Inherits="plmOnApp.Sourcing_Page_Style_Add" %>
 <%@ Register TagPrefix="cc3" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register TagPrefix="uc1" TagName="Sourcing_PageStyle_List_Image" Src="Sourcing_Page_Style_List_Image.ascx" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 
 
@@ -13,9 +12,12 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
              .imgContainer
             {
@@ -32,7 +34,6 @@
 </head>
 <body>
     <form id="form1" runat="server" defaultbutton="imgbtnSearch">
-     <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">

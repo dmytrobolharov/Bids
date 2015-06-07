@@ -8,6 +8,8 @@
 <head id="Head1" runat="server">
     <title runat="server" id="PageTitle">Attachments</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">

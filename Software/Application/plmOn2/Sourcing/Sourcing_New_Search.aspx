@@ -7,10 +7,19 @@
 <head runat="server">
 		<title>Save Search</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet"/>
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+        <script>
+        function btnClose_Click() {
+            <%= strExitScript %>
+            return false;
+        }
+        </script>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
+
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<tr vAlign="middle">
@@ -62,11 +71,5 @@
     
     </div>
     </form>
-    <script language="javascript">
-	    function btnClose_Click() {
-		    <%= strExitScript %>
-            return false;
-        }
-    </script>
 </body>
 </html>

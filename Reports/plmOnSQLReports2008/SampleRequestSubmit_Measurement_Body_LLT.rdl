@@ -843,11 +843,12 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Sample Appraisal</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
+                    <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -971,11 +972,33 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_SampleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SRSID">
       <DataType>String</DataType>
       <Prompt>Sample Request Submit Id</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>

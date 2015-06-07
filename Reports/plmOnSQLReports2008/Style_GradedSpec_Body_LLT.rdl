@@ -95,7 +95,7 @@
                                 <TextRun>
                                   <Value>POM</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -131,7 +131,7 @@
                                 <TextRun>
                                   <Value>Point of Measurement</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -167,7 +167,7 @@
                                 <TextRun>
                                   <Value>TOL</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Firebrick</Color>
@@ -204,7 +204,7 @@
                                 <TextRun>
                                   <Value>TOLN</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Firebrick</Color>
@@ -241,7 +241,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range0.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -277,7 +277,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range1.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -313,7 +313,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range2.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -349,7 +349,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range3.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -385,7 +385,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range4.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -421,7 +421,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range5.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -457,7 +457,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range6.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -493,7 +493,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range7.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -529,7 +529,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range8.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -565,7 +565,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range9.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -601,7 +601,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range10.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -637,7 +637,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range11.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -673,7 +673,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range12.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -709,7 +709,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range13.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -745,7 +745,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range14.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -781,7 +781,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range15.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -817,7 +817,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range16.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -853,7 +853,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range17.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -889,7 +889,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range18.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -925,7 +925,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Range19.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -966,7 +966,7 @@
                                 <TextRun>
                                   <Value>=Fields!POM.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1000,7 +1000,7 @@
                                 <TextRun>
                                   <Value>=Fields!PointMeasur.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1035,7 +1035,7 @@
                                 <TextRun>
                                   <Value>=Fields!TOL.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <Color>Firebrick</Color>
                                   </Style>
@@ -1070,7 +1070,7 @@
                                 <TextRun>
                                   <Value>=Fields!TOLN.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                     <Color>Firebrick</Color>
                                   </Style>
@@ -1105,7 +1105,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size0.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1140,7 +1140,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size1.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1174,7 +1174,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size2.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1208,7 +1208,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size3.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1242,7 +1242,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size4.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1276,7 +1276,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size5.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1310,7 +1310,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size6.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1344,7 +1344,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size7.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1378,7 +1378,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size8.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1412,7 +1412,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size9.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1446,7 +1446,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size10.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1480,7 +1480,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size11.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1514,7 +1514,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size12.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1548,7 +1548,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size13.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1582,7 +1582,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size14.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1616,7 +1616,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size15.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1650,7 +1650,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size16.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1684,7 +1684,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size17.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1718,7 +1718,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size18.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1752,7 +1752,7 @@
                                 <TextRun>
                                   <Value>=Fields!Size19.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -1919,7 +1919,7 @@
             <Height>0.3in</Height>
             <Width>10.75in</Width>
             <Style>
-              <FontFamily>Tahoma</FontFamily>
+              <FontFamily>Arial Unicode MS</FontFamily>
               <FontSize>8pt</FontSize>
             </Style>
           </Tablix>
@@ -1947,24 +1947,25 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Graded Spec</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
-                    <FontSize>26pt</FontSize>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.15in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
           <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -2431,6 +2432,23 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType><CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SID">
@@ -2440,6 +2458,10 @@
     <ReportParameter Name="SN">
       <DataType>Integer</DataType>
       <Prompt>StyleSet</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

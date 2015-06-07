@@ -1,5 +1,6 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder.aspx.vb" Inherits="plmOnApp.Planning_Folder" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle"></title>
@@ -22,15 +23,20 @@
 
 			function loadFirsOption() {
 			    if ('<%= strIsRedirect %>' == 1 && isFirstLoad == true) {
-			        window.top.main.location.href = window.top.menu.document.getElementById('tv_1').href;
+
+			        window.top.main.location.href = window.top.menu.document.getElementById('tv_1').href + '&UPDPR=<%=UPDPR%>';
                     isFirstLoad = false;
-			    }			    
-			}
+			    }
+            }
+
+            function reloadPage(url) {
+                window.location.href = url;
+            }
 		//-->
 		</script>
 	</HEAD>
 	<FRAMESET cols="250,*" bordercolor="#dbd7d0" id="frameset">
-		<FRAME SRC="<%=URLMenu%>" NAME="menu" id="menu" SCROLLING=no marginheight=0 marginwidth=0 onload="loadFirsOption()">
+		<FRAME SRC="<%=URLMenu%>" NAME="menu" id="menu" SCROLLING=auto marginheight=0 marginwidth=0 onload="loadFirsOption()">
 		<frame name="main" src="<%=URLMain%>" scrolling="auto" marginheight=0 marginwidth=0>
 	</FRAMESET>
 </HTML>

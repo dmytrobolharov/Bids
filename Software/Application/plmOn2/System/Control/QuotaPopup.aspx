@@ -29,6 +29,7 @@
                 <img alt="" height="15" src="../Images/bbTbSCnr.gif" width="3" />
             </td>
             <td width="100%">
+                <asp:ImageButton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Height="0px" Visible="false" />
                 <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="window.top.close();return false;"></cc1:confirmedimagebutton>
             </td>
             <td>

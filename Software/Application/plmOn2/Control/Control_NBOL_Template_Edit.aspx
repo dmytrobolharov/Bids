@@ -2,7 +2,6 @@
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -10,8 +9,11 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
     .rightAlign, .rightAlign input
     {
@@ -22,8 +24,7 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server" defaultbutton="btnSave">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
+    <form id="form1" runat="server" defaultbutton="imgBtnSearch">
     <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
         <Scripts>
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
@@ -42,7 +43,7 @@
         <CdnSettings TelerikCdn="Disabled" />
     </telerik:RadStyleSheetManager>
     <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />
-    <table id="Table1" class="TableHeader" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <table id="Table1" class="TableHeader TableFloatHeader" cellspacing="0" cellpadding="0" width="100%" border="0">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">
                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3"><asp:ImageButton ID="ImageButton2" runat="server"

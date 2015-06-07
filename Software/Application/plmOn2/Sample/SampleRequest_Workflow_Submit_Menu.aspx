@@ -15,6 +15,8 @@
         <style type="text/css">
              #imgContainer
             {
+            	width: 120px;
+            	height: 120px;
                 position:relative;
             }
             #imgContainer div 
@@ -23,6 +25,11 @@
                 left:0;
                 background-color: White;
                 visibility: hidden;
+            }
+            #imgContainer div img
+            {
+                width: 100%;
+                max-height: 100%;
             }
         </style>
 	</HEAD>
@@ -104,14 +111,18 @@
                 hasDesignBack = $("#imgDesignBack").attr("src").indexOf("00000000-0000-0000-0000-000000000000") == -1;
 
                 if (hasDesignBack) {
-                    width = Math.max($("#imgDesign").width(), $("#imgDesignBack").width());
-                    height = Math.max($("#imgDesign").height(), $("#imgDesignBack").height());
+                    width = Math.max($("#imgDesign").get(0).width, $("#imgDesignBack").get(0).width);
+                    height = Math.max($("#imgDesign").get(0).height, $("#imgDesignBack").get(0).height);
+                }
+                else {
+                    width = $("#imgDesign").get(0).width;
+                    height = $("#imgDesign").get(0).height;
                 }
 
-                else {
-                    width = $("#imgDesign").width();
-                    height = $("#imgDesign").height();
-                }
+                if (width == null || width == 0)
+                    width = 100;
+                if (height == null || height == 0)
+                    height = 100;
 
                 $("#imgContainer")
                     .mouseover(function () {

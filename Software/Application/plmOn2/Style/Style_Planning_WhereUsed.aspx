@@ -1,8 +1,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Planning_WhereUsed.aspx.vb" Inherits="plmOnApp.Style.Planning.Style_Planning_WhereUsed" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <%@ Register TagPrefix="telerik" Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Line</title>
@@ -12,9 +11,12 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .search-cell td {
             	vertical-align: top !important;
@@ -23,7 +25,6 @@
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
-		<wc1:Color_Wait ID="Color_Wait" runat="server" />
 		<asp:Panel runat="server" ID="pnlPerm" Visible=false>
 				<table style="height:50;" cellspacing="0" cellpadding="0" width="100%"  bgColor="#990000" border="1" borderColor="red">
 					<tr>
@@ -48,7 +49,19 @@
 					<td>&nbsp;<asp:label id="lblHeader" runat="server" Font-Names="Tahoma,Verdana" Font-Size="X-Large" ForeColor="#E0E0E0">Line Folder</asp:label></td>
 				</tr>
 			</table>
-			<TABLE class="TableHeader" height="25" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff"
+			
+            <table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">
+                <tr colspan="2"><td>&nbsp;</td></tr>
+                <tr>
+                    <td class="search-cell"><asp:placeholder id="plhSearchControl" runat="server" EnableViewState="False"></asp:placeholder></td>
+                    <td vAlign="top" width="100%">
+                        <table height="45">
+                            <tr><td><asp:imagebutton id="imgBtnSearch" runat="server"></asp:imagebutton></td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <TABLE class="TableHeader" height="25" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff"
 				border="0">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
@@ -77,18 +90,6 @@
 					<TD width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" text="GO"></asp:button></TD>
 				</TR>
 			</TABLE>
-            <table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">
-                <tr colspan="2"><td>&nbsp;</td></tr>
-                <tr>
-                    <td class="search-cell"><asp:placeholder id="plhSearchControl" runat="server" EnableViewState="False"></asp:placeholder></td>
-                    <td vAlign="top" width="100%">
-                        <table height="45">
-                            <tr><td><asp:imagebutton id="imgBtnSearch" runat="server"></asp:imagebutton></td></tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-
 			<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<TR vAlign="top">
 					<TD>
@@ -97,6 +98,9 @@
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
+                            <Columns>
+                                <asp:TemplateColumn Visible="false"></asp:TemplateColumn>
+                            </Columns>
 						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 				</TR>
 			</TABLE>

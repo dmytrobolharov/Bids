@@ -22,10 +22,12 @@
     <link href="../System/CSS/RadGrid.YPLM.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/RadComboBox.YPLM.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <script type="text/javascript"  language="javascript">
 //        function calendar(sTxtBoxName) {
 //            windowDatePicker = window.open("../System/Control/month_popup.aspx?txtbox=" + sTxtBoxName, "dp", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=200,height=180,left=375,top=200");
@@ -48,8 +50,8 @@
                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3" alt="" />
             </td>
             <td>
-                <cc1:ConfirmedImageButton ID="btnSaveStyle" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                 <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                <cc1:ConfirmedImageButton ID="btnSaveStyle" runat="server" CausesValidation="True" Message="NONE"></cc1:ConfirmedImageButton>
+                 <cc1:confirmedimagebutton id="btnClose" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton>
             </td>
         </tr>
     </table>
@@ -267,7 +269,7 @@
                                                                                             </asp:DropDownList>
                                                                                         </td>
                                                                                         <td>
-                                                                                            <cc1:ConfirmedImageButton ID="imgBtnAdd" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                                                                                            <cc1:ConfirmedImageButton ID="imgBtnAdd" runat="server" CausesValidation="False" Message="NONE"></cc1:ConfirmedImageButton>
                                                                                         </td>
                                                                                     </tr>
                                                                                 </table>
@@ -281,7 +283,7 @@
                                                                     <table id="TD_ImgFolder" cellspacing="1" cellpadding="0" border="0" runat="server">
                                                                         <tr bgcolor="#ffffff">
                                                                             <td>
-                                                                                <cc1:ConfirmedImageButton ID="btnDelete" runat="server" visible="false" Message="NONE"></cc1:ConfirmedImageButton>
+                                                                                <cc1:ConfirmedImageButton ID="btnDelete" runat="server" visible="false" CausesValidation="False" Message="NONE"></cc1:ConfirmedImageButton>
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -409,14 +411,14 @@
                                     <img alt="" height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
                                 </td>
                                 <td width="20">
-                                    <asp:ImageButton ID="imgBtnToggleOption" OnClientClick="return toggleSectionVisibility(this);" runat="server"
+                                    <asp:ImageButton ID="imgBtnToggleOption" OnClientClick="return toggleSectionVisibility(this);" runat="server" CausesValidation="False" 
                                         ImageUrl="../System/Icons/icon_Down.gif"></asp:ImageButton>
                                 </td>
                                 <td valign="middle" align="center" class="fonthead" style="padding: 0 10px;">
                                     <asp:Label ID="lblBOMOptions" runat="server" ><%= GetSystemText("Cost by Quantity Options")%> </asp:Label>
                                 </td>
                                 <td>
-                                    <asp:ImageButton ID="btnOptionAdd" runat="server" />
+                                    <asp:ImageButton ID="btnOptionAdd" runat="server" CausesValidation="False" />
                                    <!-- <asp:ImageButton ID="btnOptionSave" runat="server" />-->
                                 </td>
                                 <td valign="middle" class="fonthead" style="padding: 0 10px;">
@@ -425,7 +427,7 @@
              <td class="fonthead">  <asp:Label id="lblMinQNT" runat="server" Text=""><%= GetSystemText("Minimum Quantity")%></asp:Label>:&nbsp;&nbsp;</td>
              <td>  <asp:TextBox ID="txtMinQNT" runat="server" Width="40"></asp:TextBox>&nbsp;&nbsp;</td>
             
-             <td>  <cc1:confirmedimagebutton id="btnMinQNT" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+             <td>  <cc1:confirmedimagebutton id="btnMinQNT" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>
                </tr>
                </table>
                </td>
@@ -435,7 +437,7 @@
              <td class="fonthead">  <asp:Label id="lblMaxQNT" runat="server" text=""><%= GetSystemText("Maximum Quantity")%></asp:Label>:&nbsp;&nbsp;</td>
              <td>  <asp:TextBox ID="txtMaxQNT" runat="server" Width="40"></asp:TextBox>&nbsp;&nbsp;</td>
             
-             <td>  <cc1:confirmedimagebutton id="btnMaxQNT" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+             <td>  <cc1:confirmedimagebutton id="btnMaxQNT" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>
                </tr>
                </table>
                </td>
@@ -446,7 +448,7 @@
              <td class="fonthead">  <asp:Label id="lblCostQNT" runat="server" Text=""><%= GetSystemText("Partner Cost/Quantity")%></asp:Label>:&nbsp;&nbsp;</td>
              <td>  <asp:TextBox ID="txtCostQNT" runat="server" Width="40"></asp:TextBox>&nbsp;&nbsp;</td>
             
-             <td>  <cc1:confirmedimagebutton id="btnCostQNT" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+             <td>  <cc1:confirmedimagebutton id="btnCostQNT" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>
                </tr>
                </table>
 

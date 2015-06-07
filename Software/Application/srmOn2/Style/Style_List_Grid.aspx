@@ -12,6 +12,8 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -81,12 +83,20 @@
 								</td>
 							</tr>
 						</table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle CssClass="TableHeader" Height="25px"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
-						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
+                            <Columns>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate><%# GetSystemText("Image")%></HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:Image ID="imgDesignImageID" runat="server" ImageUrl='<%# GetImageStreamPath("50", Eval("DesignSketchVersion").ToString, Eval("DesignSketchID").ToString) %>' />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                            </Columns>
+						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False" Text="MDate desc"></asp:label></TD>
 				</TR>
 			</TABLE>
 		</form>

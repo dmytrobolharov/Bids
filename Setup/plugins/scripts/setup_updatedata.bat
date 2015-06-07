@@ -11,7 +11,6 @@ set pwd=%PLM.DBServer.SAPassword%
 set catalog=%PLM.DBServer.Catalog%
 
 set dbServer=%PLM.DBServer.ServerName%
-set dashFolder=plmOn%PLM.AppServer.SiteID%Dashboards
 set biFolder=YuniqueBI%PLM.AppServer.SiteID%
 set reportFolder=plmOn%PLM.AppServer.SiteID%Reports
 
@@ -19,7 +18,7 @@ set httpServer=%PLM.AppServer.ServerName%
 
 echo *********************************************************************
 echo Updating the data in the empty database.....
-echo setup_updatedata.bat %svr% %usr% %pwd% %catalog% %dbServer% %dashFolder% %biFolder% %reportFolder% %httpServer% >> cli.log
+echo setup_updatedata.bat %svr% %usr% %pwd% %catalog% %dbServer% %biFolder% %reportFolder% %httpServer% >> cli.log
 
 REM Thank M$
 shift
@@ -31,19 +30,6 @@ set rsServer=%biFolder%
 set rsvdir=%reportFolder%
 
 set V=%PLM.AppServer.SiteID%
-
-REM ==================================================
-REM Update Dashbord paths
-REM ==================================================
-
-echo UPDATE rDashFolderItem > update_data.sql
-echo   SET    DashFolderItemURL = '/%dashFolder%/' + DashFolderItemServerReportName; >> update_data.sql
-
-echo UPDATE rDashFolderItem >> update_data.sql
-echo   SET    DashFolderItemServerURL = 'http://%rsServer%/%rsvdir%'; >> update_data.sql
-
-echo UPDATE rDashFolderItem >> update_data.sql
-echo   SET    DashFolderItemServerFolderName = '%biFolder%'; >> update_data.sql
 
 REM ==================================================
 REM Update Report folder paths

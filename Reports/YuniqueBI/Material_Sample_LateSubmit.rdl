@@ -324,7 +324,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatDateTime(Fields!DueDate.Value, DateFormat.ShortDate) &amp; " (" &amp; Fields!Submit.Value.ToString &amp; ")" &amp; chr(10) &amp; Fields!TextMessage.Value</Value>
+                              <Value>= Fields!DueDateTxt.Value &amp; " (" &amp; Fields!Submit.Value.ToString &amp; ")" &amp; chr(10) &amp; Fields!TextMessage.Value</Value>
                               <Style>
                                 <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -358,7 +358,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -901,6 +900,10 @@
         </Field>
         <Field Name="Color">
           <DataField>Color</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DueDateTxt">
+          <DataField>DueDateTxt</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="VendorName">

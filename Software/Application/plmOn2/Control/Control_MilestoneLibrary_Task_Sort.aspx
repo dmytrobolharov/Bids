@@ -1,7 +1,7 @@
 ﻿<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Control_MilestoneLibrary_Task_Sort.aspx.vb" Inherits="plmOnApp.Control_MilestoneLibrary_Task_Sort" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
     <title>Sort</title>
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../System/CSS/jquery.ui.core.css" />
     <link rel="stylesheet" href="../System/CSS/jquery.ui.theme.css" />
     <link href="../System/CSS/jquery-sortable.css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.ui.core.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.ui.widget.js"></script>
@@ -22,6 +23,7 @@
     <script type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
             .dropimage
             {

@@ -1,15 +1,17 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Style_New_CopyMultiSelection_Final.aspx.vb" Inherits="plmOnApp.Style_New_CopyMultiSelection_Final" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
     <title></title>
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>    
     <script type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .multi-bubble .wf-label {
         	padding-top: 5px;
@@ -22,8 +24,10 @@
 		    runat="server">
 		    <tr valign="middle">
 			    <td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-			    <td><cc1:confirmedimagebutton id="btnSaveSet" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"
-					    CausesValidation="False"></cc1:confirmedimagebutton></td>
+			    <td>
+                    <cc1:confirmedimagebutton id="btnSaveSet" runat="server"  Message="NONE" disabled="true"></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()" CausesValidation="False" disabled="true"></cc1:confirmedimagebutton>
+                </td>
 		    </tr>
 	    </table>
 	    
@@ -160,6 +164,29 @@
         </asp:DataList>
     </form>
     <script type="text/javascript">
+
+        $(document).ready(function () {
+            try {
+                
+                // Add "disable" function
+                jQuery.fn.extend({
+                    disable: function (state) {
+                        return this.each(function () {
+                            if (this) {
+                                this.disabled = state;
+                            }
+                        });
+                    }
+                });
+
+                // Enable all disabled buttons which are disabled from the start
+                $("#toolbar input").disable(false);
+            }
+            catch (ex) {
+
+            }
+        });
+
         var frm = document.forms['form1'];
         function CheckAll(checkAllBox, name) {
             var actVar = checkAllBox.checked;
@@ -178,8 +205,8 @@
 
 
         window.onload = function () {
-            document.getElementById('drlSizeRange').disabled = true;
-            document.getElementById('drlSizeClass').disabled = true;
+            document.getElementById('drlSizeRangeId').disabled = true;
+            document.getElementById('drlSizeClassId').disabled = true;
             document.getElementById('drlCustomField3').value = "In Progress"
             document.getElementById('drlCustomField3').disabled = true;
         }

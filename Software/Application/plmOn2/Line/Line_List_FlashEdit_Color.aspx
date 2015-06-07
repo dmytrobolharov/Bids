@@ -2,22 +2,19 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="Line_List_Header" Src="Line_List_Header.ascx"%>
 <%@ Register TagPrefix="uc2" TagName="Line_List_FlashEdit_Color_StyleDetails" Src="Line_List_FlashEdit_Color_StyleDetails.ascx"%>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <html>
 	<head>
 		<title>Flash Edit Color</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
-        <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
         
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
-			
-			form {
-			margin-bottom: 0;
-			}
+			form {margin-bottom: 0;}
             .EmptyItemTemplate
             {
                 display: none;
@@ -39,11 +36,16 @@
             {
                 background-color: yellow;
             }
+            td .font
+            {
+                white-space: nowrap;
+                overflow:hidden;
+                text-overflow:ellipsis;
+            }
         </style>
 	</head>
 	<body style="background-color: White;">
 		<form id="Form1" method="post" runat="server">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" >
             <Scripts>
@@ -92,7 +94,7 @@
                     <asp:ImageButton id="btnAdd" runat="server" OnClientClick="addSelectedColors(); return false;" />
 					<asp:ImageButton id="btnRemove" runat="server" OnClientClick="removeColorwaysFromStyles(); return false;" />
                     <cc1:confirmedimagebutton id="btnColorDrop" runat="server" Message="NONE" />
-                    <cc1:ConfirmedImageButton ID="btnInfo" runat="server" Message="NONE" CausesValidation="false" onclientclick="javascript:showHeader();return false;"/>
+                    <cc1:ConfirmedImageButton ID="btnInfo" runat="server" Visible="False" Message="NONE" CausesValidation="false" onclientclick="javascript:showHeader();return false;"/>
 				    <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" />
                 </td>     
 		    </tr>
@@ -104,7 +106,7 @@
                 <!-- Left frame-->
                 <div style="overflow-y:scroll;width:100%;height:100%;" id="scrollDiv1">
                     <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelStyle" ClientEvents-OnRequestStart="onAjaxRequestStart"
-                        ClientEvents-OnResponseEnd="" Width="100%">
+                        ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="100%">
                         <div style="width:100%; height:100%; vertical-align: top;" id="StyleList" class="inner">
 			                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white" bgcolor="#ffffff">
 				                <tr>
@@ -205,10 +207,11 @@
                 </div>
                 </td>
 
-                <td width="30%">
+                <td valign="top" width="30%">
                 <!-- Right frame -->
                 <div style="overflow:scroll; width:100%;height:100%;" id="scrollDiv2">
-                    <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelColor" ClientEvents-OnRequestStart="" ClientEvents-OnResponseEnd="" Width="100%">
+                    <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelColor" ClientEvents-OnRequestStart="onAjaxRequestStart"
+                        ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="100%">
                         <div style="width:100%; height:100%;" id="ColorList" class="inner">
 
 			                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white" bgcolor="#ffffff">
@@ -334,16 +337,19 @@
                 <tr><td width="100%"><uc1:Line_List_Header ID="Line_List_Header" runat="server" /></td></tr>
 			</table>
         </div>
+
         <telerik:RadCodeBlock runat="server" ID="RadCodeBlock1">
             <div id="confirm-dialog" style="display: none;">
                 <%= GetSystemText("There are pending changes. Save before continuing?")%></div>
         </telerik:RadCodeBlock>
     </form>
+        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/underscore-min.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
-        <script language="javascript" type="text/javascript" src="../System/Jscript/colResizable-1.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery.ui.core.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../System/Jscript/colResizable-1.3.min.js"></script>
+                <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
         <script type="text/javascript" language="javascript">
             var frm = document.Form1;
             function CheckAllColors(checkAllBox) {
@@ -378,11 +384,12 @@
                 var buttonsToConfirm = ["imgBtnSearch", "btnRepageStyle", "btnImgNext", "btnImgPrevious", "btnImgLast", "btnImgFirst"],                            
                     confirmed = false;
 
-                window.onAjaxRequestStart = function(sender, eventArgs) {  
+                window.onAjaxRequestStart = function(sender, eventArgs) { 
+                    show_wait_text();
                     // if confirmed request or nonconfirmable button or no pending changes then proceed as is                          
                     if (confirmed || _.indexOf(buttonsToConfirm, eventArgs.get_eventTarget()) == -1 || !hasPendingChanges()) {
                         confirmed = false;
-                        if (eventArgs.get_eventTarget() == "btnSave") { var busyBox = new BusyBox("busyBox", 12, "busy_Layer_", ".gif", 120); show_wait_text(); busyBox.Show(); }
+                        if (eventArgs.get_eventTarget() == "btnSave") {  }
                         return true;
                     }
 
@@ -393,6 +400,7 @@
                     }
 
                     $("#confirm-dialog").dialog({
+                        open: hide_wait_text(),
                         title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
                         width: '400px',
                         resizable: false,
@@ -432,33 +440,28 @@
                 hide_wait_text();
             }
 
-            function showHeader() {
+                    function showHeader() {
 
-                var $confirmDialog = $("#headerModal");
-                //$confirmDialog.html(' <p> <%= GetSystemText("Enter Measurement name") %> </p>' +
-                // '<input type=text width="60px" name="name" id="name"');
-                $confirmDialog.dialog({
-                    autoOpen: false,
-                    modal: true,
-                    resizable: false,
-                    height: 350,
-                    width: 800,
-                    title: '<%= GetSystemText("Line List") %>'
-
-                });
-                $("#headerExp").hide();
-                $("#divHeaderContent").show();
-                $confirmDialog.dialog('open');
-                return false;
-            }
+                        var $confirmDialog = $("#headerModal");
+                        $confirmDialog.dialog({
+                            autoOpen: false,
+                            modal: true,
+                            resizable: false,
+                            width: 870,
+                            title: '<%= GetSystemText("Line List") %>'
+                
+                        });
+                        $("#headerExp").hide();
+                        $("#divHeaderContent").show();
+                        $confirmDialog.dialog('open');
+                        return false;
+                    }
 
             $(document).ready(function () {
                 //window.parent.document.getElementById('frameset').cols = "0%,*";
-				//alert($(window).height());
-				//alert($('.TableHeader').height());
 				var ieOffset = 0;
-				if ($.browser.msie) { 
-					ieOffset = 14;					
+				if (navigator.userAgent.toLowerCase().indexOf('msie') != -1) { 
+					ieOffset = 14;				
 				}
                 $("#resizableTable").height($(window).height() - 3 - 27 - ieOffset);
                 $("#resizableTable").colResizable({
@@ -606,6 +609,7 @@
                 }
 
                 document.getElementById("checkAllColors").checked = false;
+                document.getElementById("chkSelectAllStyles").checked = false;
             }
 
             /*

@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Sourcing_Page_SampleRequestNew_Main.aspx.vb" Inherits="plmOnApp.Sourcing_Page_SampleRequestNew_Main" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,10 +9,12 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" type="text/javascript" src="../System/Jscript/System.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .compliance-failed {
         	color: #f00;
@@ -23,7 +24,6 @@
 </head>
 <body>
     <form id="Form1" runat="server">
-     <wc1:Color_Wait ID="Color_Wait" runat="server" />
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
         <Scripts>
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
@@ -83,6 +83,32 @@
 				            </td>
 			            </tr>
 		            </table>
+                    <TABLE class="TableHeader" width="100%" height="25" border="0" cellPadding="0" cellSpacing="0"
+							bgcolor="#ffffff">
+							<TR vAlign="middle">
+								<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
+								<TD width="16"></TD>
+								<TD width="20"><asp:imagebutton id="btnImgFirst" runat="server" ImageUrl="../System/Icons/icon_first.gif"></asp:imagebutton></TD>
+								<TD width="20"><asp:imagebutton id="btnImgPrevious" runat="server" ImageUrl="../System/Icons/icon_Previous.gif"></asp:imagebutton></TD>
+								<TD align="center" width="125" nowrap><asp:label id="lblPageCount" runat="server" CssClass="fontHead"></asp:label></TD>
+								<TD width="20"><asp:imagebutton id="btnImgNext" runat="server" ImageUrl="../System/Icons/icon_next.gif"></asp:imagebutton></TD>
+								<TD width="20"><asp:imagebutton id="btnImgLast" runat="server" ImageUrl="../System/Icons/icon_last.gif"></asp:imagebutton></TD>
+								<TD width="10">&nbsp;</TD>
+								<TD nowrap><asp:label id="RecordCount" runat="server" CssClass="font"></asp:label></TD>
+								<TD align="right" class="fontHead"><asp:label id="lblRecordsPerPage" runat="server" CssClass="fontHead">Records per Page:</asp:label></TD>
+								<TD width="25"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
+										<asp:ListItem Value="5">5</asp:ListItem>
+										<asp:ListItem Value="10">10</asp:ListItem>
+										<asp:ListItem Value="15">15</asp:ListItem>
+										<asp:ListItem Value="20">20</asp:ListItem>
+										<asp:ListItem Value="25">25</asp:ListItem>
+										<asp:ListItem Value="30">30</asp:ListItem>
+										<asp:ListItem Value="40">40</asp:ListItem>
+										<asp:ListItem Value="50" Selected="True">50</asp:ListItem>
+									</asp:dropdownlist></TD>
+								<TD width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" text="GO"></asp:button></TD>
+							</TR>
+						</TABLE>
 		            <asp:datagrid id="dgStyleList" runat="server" AllowSorting="false" width="100%">
 			            <AlternatingItemStyle Height="20px" CssClass="ItemTemplate"></AlternatingItemStyle>
 			            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>

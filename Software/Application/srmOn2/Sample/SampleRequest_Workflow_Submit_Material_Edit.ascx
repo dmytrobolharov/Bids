@@ -45,28 +45,6 @@
 											    <cc1:BWImageButton id="imgDesign" runat="server"></cc1:BWImageButton>
 										    </ItemTemplate>
 									    </asp:TemplateColumn>
-									    <%--<asp:TemplateColumn>
-										    <HeaderStyle Width="200px" CssClass="TableHeader"></HeaderStyle>
-										    <HeaderTemplate>
-											    <div align="left">
-												    <asp:Label id="lblHeaderMaterial" runat="server"><%#GetSystemText("Material")%></asp:Label>
-											    </div>
-										    </HeaderTemplate>
-										    <ItemTemplate>
-											    <div align="left">
-												    <asp:Label id="txtMaterial" runat="server"><%#GetSystemText("Material")%></asp:Label>
-											    </div>
-										    </ItemTemplate>
-									    </asp:TemplateColumn>
-									    <asp:TemplateColumn>
-										    <HeaderStyle CssClass="TableHeader"></HeaderStyle>
-										    <HeaderTemplate>
-											    <asp:Label id="lblHeaderEndDate" runat="server"><%#GetSystemText("Status")%></asp:Label>
-										    </HeaderTemplate>
-										    <ItemTemplate>
-											    <asp:Label id="clblStatus" runat="server"></asp:Label>
-										    </ItemTemplate>
-									    </asp:TemplateColumn>--%>
 								    </Columns>
 							    </asp:datagrid></TD>
 					    </TR>
@@ -81,9 +59,9 @@
                             <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                         </td>
                         <td class="fontHead">
-                            <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False">
-                            </cc1:ConfirmedImageButton>
+                            <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:ConfirmedImageButton>
                             <cc1:ConfirmedImageButton ID="btnDeleteImage" runat="server"></cc1:ConfirmedImageButton>
+                            <cc1:BWImageButton ID="btn3DFiles" runat="server" CausesValidation="False" />
                         </td>
                     </tr>
                 </table>

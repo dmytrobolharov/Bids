@@ -42,7 +42,7 @@
                             <TextRun>
                               <Value>Component #</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -81,7 +81,7 @@
                             <TextRun>
                               <Value>Component</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -120,7 +120,7 @@
                             <TextRun>
                               <Value>Size</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -159,7 +159,7 @@
                             <TextRun>
                               <Value>Before Wash</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -198,7 +198,7 @@
                             <TextRun>
                               <Value>After Wash</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -237,7 +237,7 @@
                             <TextRun>
                               <Value>Tolerance +/-</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -276,7 +276,7 @@
                             <TextRun>
                               <Value>Notes</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -320,7 +320,7 @@
                             <TextRun>
                               <Value>=Fields!GridCustom1.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -354,7 +354,7 @@
                             <TextRun>
                               <Value>=Fields!StyleDetailCustom2.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -389,7 +389,7 @@
                             <TextRun>
                               <Value>=Fields!StyleDetailCustom3.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -423,7 +423,7 @@
                             <TextRun>
                               <Value>=Fields!StyleDetailCustom4.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -457,7 +457,7 @@
                             <TextRun>
                               <Value>=Fields!StyleDetailCustom5.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -491,7 +491,7 @@
                             <TextRun>
                               <Value>=Fields!StyleDetailCustom6.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -525,7 +525,7 @@
                             <TextRun>
                               <Value>=Fields!StyleDetailCustom7.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -595,7 +595,7 @@
         <Height>0.4in</Height>
         <Width>8.125in</Width>
         <Style>
-          <FontFamily>Tahoma</FontFamily>
+          <FontFamily>Arial Unicode MS</FontFamily>
           <FontSize>9pt</FontSize>
           <VerticalAlign>Middle</VerticalAlign>
         </Style>
@@ -618,27 +618,25 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Size Construction</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
+                    <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>26pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.125in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
           <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -736,6 +734,23 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType><CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SID">
@@ -745,6 +760,10 @@
     <ReportParameter Name="SN">
       <DataType>Integer</DataType>
       <Prompt>StyleSet</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

@@ -2,7 +2,7 @@
     Inherits="plmOnApp.Planning_Folder_Storyboards" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE html "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head id="Head1" runat="server">
     <title></title>
@@ -10,6 +10,10 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui-1.10.3.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <div id="fixed_icons">
@@ -78,14 +82,12 @@
                 &nbsp;
             </td>
             <td>
-                <asp:DataList ID="Datalist1" runat="server" Width="100%" GridLines="Both" RepeatDirection="Horizontal" Style="table-layout:fixed;"
-                    RepeatColumns="4" BackColor="White" BorderColor="Silver" BorderStyle="Solid"
+                <asp:DataList ID="Datalist1" runat="server" GridLines="Both" RepeatDirection="Horizontal" 
+                    BackColor="White" BorderColor="Silver" BorderStyle="Solid"
                     BorderWidth="1px" DataKeyField="ImageCatalogItemID" CssClass="font">
-                    <HeaderTemplate>
-                    </HeaderTemplate>
-                    <ItemStyle VerticalAlign="Top"></ItemStyle>
+                    <ItemStyle HorizontalAlign="Left" VerticalAlign="Top"></ItemStyle>
                     <ItemTemplate>
-                        <table width="100%">
+                        <table width="350px">
                             <tr>
                                 <td valign="top">
                                     <table width="100%">
@@ -108,8 +110,6 @@
                                     </table>
                                 </td>
                             </tr>
-                        </table>
-                        <table>
                             <tr>
                                 <td class="font">
                                     <asp:Label ID="lbImgDescription" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "ImageDescription") %>'
@@ -118,6 +118,7 @@
                                 </td>
                             </tr>
                         </table>
+                        
                         <asp:TextBox ID="txtImageID" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"ImageID")%>'
                             Visible="False">
                         </asp:TextBox>
@@ -128,7 +129,6 @@
                             Visible="False">
                         </asp:TextBox>
                     </ItemTemplate>
-                    <HeaderStyle HorizontalAlign="Left"></HeaderStyle>
                 </asp:DataList>
             </td>
         </tr>

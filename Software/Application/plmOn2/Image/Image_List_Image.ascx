@@ -53,7 +53,7 @@
             </div>
         </td>
         <td height="25">
-            <p align="right">
+            <div align="right">
                 <asp:DropDownList ID="ddlSortField" runat="server">
                 </asp:DropDownList>
                 <asp:DropDownList ID="ddlSortBy" runat="server">
@@ -61,7 +61,7 @@
                     <asp:ListItem Value="DESC">DESC</asp:ListItem>
                 </asp:DropDownList>
                 <asp:ImageButton ID="btnSort" runat="server" ImageUrl="../System/Icons/icon_sort.gif">
-                </asp:ImageButton></p>
+                </asp:ImageButton></div>
         </td>
     </tr>
 </table>

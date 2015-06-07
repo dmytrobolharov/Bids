@@ -1,6 +1,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Control_GRMeasurements_Template_Sort.aspx.vb" Inherits="plmOnApp.Control_GRMeasurements_Template_Sort" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Sort</title>
@@ -9,18 +9,21 @@
 		<meta content="JavaScript" name="vs_defaultClientScript">
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-         <link rel="stylesheet" href="../System/CSS/jquery.ui.core.css" />
-	<link rel="stylesheet" href="../System/CSS/jquery.ui.theme.css" />
+        <link rel="stylesheet" href="../System/CSS/jquery.ui.core.css" />
+    	<link rel="stylesheet" href="../System/CSS/jquery.ui.theme.css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 
         <script src="../System/Jscript/jquery-1.8.0.js"></script>
         <script src="../System/Jscript/jquery.ui.core.js"></script>
 	    <script src="../System/Jscript/jquery.ui.widget.js"></script>
 	    <script src="../System/Jscript/jquery.ui.mouse.js"></script>
 	    <script src="../System/Jscript/jquery.ui.sortable.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
         
         <link href="../System/CSS/jquery-sortable.css" rel="stylesheet" />
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 
         <style type="text/css">
             .dropimage

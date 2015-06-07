@@ -6,8 +6,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <HEAD>
 		<title runat="server" id="PageTitle">Size Class</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <%--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />--%>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 <body>
 		<form id="Form1" method="post" runat="server">

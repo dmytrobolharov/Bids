@@ -30,7 +30,7 @@
                     ID="RecordCount" runat="server" ></asp:Label></b></DIV>
 			</B></TD>
 		<TD height="25">
-			<P align="right"><asp:dropdownlist id="ddlSortField" runat="server"></asp:dropdownlist>
+			<P align="right" style="margin: 0px;"><asp:dropdownlist id="ddlSortField" runat="server"></asp:dropdownlist>
 				<asp:dropdownlist id="ddlSortBy" runat="server">
 					
 				</asp:dropdownlist>

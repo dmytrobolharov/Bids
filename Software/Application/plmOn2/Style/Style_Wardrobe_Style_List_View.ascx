@@ -50,6 +50,24 @@
 				<ItemStyle CssClass="ItemTemplate"></ItemStyle>
 				<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 				<PagerStyle Visible="False"></PagerStyle>
+                <Columns>
+                    <asp:TemplateColumn>
+                        <HeaderTemplate>
+                            <asp:CheckBox runat="server" ID="chbSelectAll" onclick="selectAll(this);" />
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <asp:CheckBox runat="server" ID="chbSelect" />
+                        </ItemTemplate>
+                    </asp:TemplateColumn>
+                    <asp:TemplateColumn>
+                        <HeaderTemplate>
+                            <%# GetSystemText("Image")%>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <asp:Image runat="server" ID="imgDesignImageID" ImageUrl='<%# GetImageStreamPath("50", Eval("DesignSketchVersion").ToString, Eval("DesignSketchID").ToString) %>' />
+                        </ItemTemplate>
+                    </asp:TemplateColumn>
+                </Columns>
 			</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></TD>
 	</TR>
 </TABLE>

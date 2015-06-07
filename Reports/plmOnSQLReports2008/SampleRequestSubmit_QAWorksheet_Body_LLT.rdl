@@ -66,7 +66,7 @@
                             <TextRun>
                               <Value>C</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -102,7 +102,7 @@
                             <TextRun>
                               <Value>POM</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -137,7 +137,7 @@
                             <TextRun>
                               <Value>Point of Measurement</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -173,7 +173,7 @@
                             <TextRun>
                               <Value>TOL</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>Firebrick</Color>
@@ -209,7 +209,7 @@
                             <TextRun>
                               <Value>=Fields!Size.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -243,7 +243,7 @@
                             <TextRun>
                               <Value>Smp1</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -278,7 +278,7 @@
                             <TextRun>
                               <Value>Smp2</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -313,7 +313,7 @@
                             <TextRun>
                               <Value>Smp3</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -348,7 +348,7 @@
                             <TextRun>
                               <Value>Smp4</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -383,7 +383,7 @@
                             <TextRun>
                               <Value>Smp5</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -418,7 +418,7 @@
                             <TextRun>
                               <Value>Smp6</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -453,7 +453,7 @@
                             <TextRun>
                               <Value>Smp7</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -488,7 +488,7 @@
                             <TextRun>
                               <Value>Smp8</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -523,7 +523,7 @@
                             <TextRun>
                               <Value>Smp9</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -558,7 +558,7 @@
                             <TextRun>
                               <Value>Smp10</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -639,7 +639,7 @@
                             <TextRun>
                               <Value>=Fields!POM.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -672,7 +672,7 @@
                             <TextRun>
                               <Value>=Fields!PointMeasur.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -707,7 +707,7 @@
                             <TextRun>
                               <Value>=Fields!TOL.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <Color>Firebrick</Color>
                               </Style>
@@ -741,7 +741,7 @@
                             <TextRun>
                               <Value>=Fields!Ask.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -774,7 +774,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag0.Value = 0, Fields!Spec0.Value, "&lt;" &amp; Fields!Spec0.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -807,7 +807,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag1.Value = 0, Fields!Spec1.Value, "&lt;" &amp; Fields!Spec1.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -840,7 +840,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag2.Value = 0, Fields!Spec2.Value, "&lt;" &amp; Fields!Spec2.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -873,7 +873,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag3.Value = 0, Fields!Spec3.Value, "&lt;" &amp; Fields!Spec3.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -906,7 +906,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag4.Value = 0, Fields!Spec4.Value, "&lt;" &amp; Fields!Spec4.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -939,7 +939,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag5.Value = 0, Fields!Spec5.Value, "&lt;" &amp; Fields!Spec5.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -972,7 +972,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag6.Value = 0, Fields!Spec6.Value, "&lt;" &amp; Fields!Spec6.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1005,7 +1005,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag7.Value = 0, Fields!Spec7.Value, "&lt;" &amp; Fields!Spec7.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1038,7 +1038,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag8.Value = 0, Fields!Spec8.Value, "&lt;" &amp; Fields!Spec8.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1071,7 +1071,7 @@
                             <TextRun>
                               <Value>=IIF(Fields!TolFlag9.Value = 0, Fields!Spec9.Value, "&lt;" &amp; Fields!Spec9.Value &amp; "&gt;")</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1237,11 +1237,12 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>QA Worksheet</Value>
+                      <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                       <Style>
-                        <FontFamily>Tahoma</FontFamily>
+                        <FontFamily>Arial Unicode MS</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Color>Gray</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1270,7 +1271,7 @@
           <Width>10.75in</Width>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
           </Style>
         </Rectangle>
@@ -1461,6 +1462,24 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_sampleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SRSID">
@@ -1470,6 +1489,10 @@
     <ReportParameter Name="SI">
       <DataType>Integer</DataType>
       <Prompt>SizeIndex</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <EmbeddedImages>

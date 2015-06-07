@@ -12,6 +12,8 @@
 		<meta content="JavaScript" name="vs_defaultClientScript">
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -152,7 +154,7 @@
 								<cc1:confirmedimagebutton id="edit_btnSave" runat="server" ImageUrl='<%# GetImagePath("btn_save.gif", SupplierProperties.SupplierPrefLang) %>' Message="NONE" CommandName="update"></cc1:confirmedimagebutton>								
 								<cc1:confirmedimagebutton id="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>' ImageUrl='<%# GetImagePath("btn_delete.gif", SupplierProperties.SupplierPrefLang) %>' CommandName="delete" NAME="edit_btnDelete">
 								</cc1:confirmedimagebutton>
-								<cc1:confirmedimagebutton id="edit_btnDownload" runat="Server" ImageUrl='<%# GetImagePath("btn_download.gif", SupplierProperties.SupplierPrefLang) %>'
+								<cc1:confirmedimagebutton id="edit_btnDownload" runat="Server" onClientClick="dont_show_wait_next_time();" ImageUrl='<%# GetImagePath("btn_download.gif", SupplierProperties.SupplierPrefLang) %>'
 									CommandName="download"></cc1:confirmedimagebutton>
 								<cc1:confirmedimagebutton id="btnEditCancel" runat="server" ImageUrl='<%# GetImagePath("btn_close.gif", SupplierProperties.SupplierPrefLang) %>' Message="NONE" CommandName="cancel"></cc1:confirmedimagebutton>															
 							</TD>

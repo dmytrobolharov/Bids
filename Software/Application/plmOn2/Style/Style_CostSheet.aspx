@@ -3,17 +3,18 @@
 <%@ Register TagPrefix="uc1" TagName="Style_Workflow" Src="Style_Workflow.ascx" %>
 <%@ Register TagPrefix="uc2" TagName="Style_Header" Src="Style_Header.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="Style_Comment" Src="Style_Comment.ascx" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <title>
     	
     </title>
@@ -126,7 +127,7 @@
 									    <asp:ListItem Value="40">40</asp:ListItem>
 									    <asp:ListItem Value="50" Selected="True">50</asp:ListItem>
 								    </asp:dropdownlist></td>
-							    <td width="10"><asp:button id="btnRepage" onclick="RePage" runat="server" CssClass="fontHead" ></asp:button></td>
+							    <td width="10"><asp:button id="btnRepage" runat="server" CssClass="fontHead" ></asp:button></td>
 						    </tr>
 					    </table>
 					    <table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">

@@ -13,9 +13,12 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">	
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             a img {outline:none; border:none;}
         </style>
@@ -264,7 +267,7 @@
                                                         <cc1:ConfirmedLinkButton ID="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>'
                                                             CommandName="delete" NAME="edit_btnDelete">
                                                         </cc1:ConfirmedLinkButton>
-                                                        <asp:LinkButton ID="Linkbutton5" runat="Server" CommandName="download"></asp:LinkButton>
+                                                        <asp:LinkButton ID="Linkbutton5" runat="Server" CommandName="download"  OnClientClick='dont_show_wait_twice();'></asp:LinkButton>
                                                         <cc1:ConfirmedImageButton ID="btnEditCancel" runat="server" Message="NONE" CommandName="cancel">
                                                         </cc1:ConfirmedImageButton>
                                                     </td>

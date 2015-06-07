@@ -16,9 +16,11 @@
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 	    <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             #DataGrid1 .TableHeader {background-repeat: repeat;}
             #DataGrid1 .TableHeaderGreen {background-repeat: repeat;}
@@ -159,8 +161,11 @@
 							<Columns>
                                 <asp:TemplateColumn HeaderStyle-CssClass="TableHeaderRed" ItemStyle-CssClass="TableHeaderRed" HeaderStyle-BorderWidth="0" ItemStyle-BorderWidth="0">
                                     <HeaderTemplate >
-                                        <input type="checkbox" onclick="SelectAll(this)" id="chkSelectAll" />
-                                    </HeaderTemplate>                                                   
+                                        <asp:CheckBox runat="server" onclick="SelectAll(this)" id="chkSelectAll" />
+                                    </HeaderTemplate>  
+                                    <ItemTemplate>
+                                        <asp:CheckBox class = "TableHeaderRed" runat="server" id="chbAMLMeasPOMId" />
+                                    </ItemTemplate>                                                 
                                 </asp:TemplateColumn>
                                 <asp:TemplateColumn>
 					                <HeaderTemplate>
@@ -357,13 +362,13 @@
                 .focus(function () {
                     searchFocus = true;
                 });
-		    });
+            });
         </script>		
 
         
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
         <script type="text/javascript" language="javascript">
-
+            
             function MeasUnLinkConfirm() {
 
                 var $confirmDialog = $("<div></div>");

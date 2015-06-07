@@ -1,11 +1,13 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Permission.aspx.vb" Inherits="plmOnApp.Style_Permission" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Permission.aspx.vb" Inherits="plmOnApp.Style_Permission" %>
 <%@ Register TagPrefix="uc1" TagName="Style_Header" Src="Style_Header.ascx" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Access Denied</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">

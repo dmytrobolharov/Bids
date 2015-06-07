@@ -15,7 +15,7 @@ TR.ItemTemplate
 TR.ItemTemplateMouseOver
 {
 	cursor:hand;
-	background-color: #508FE2;
+	background-color: #508FE2 !important;
 	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
 	color: white;
 	font-size: 11px;

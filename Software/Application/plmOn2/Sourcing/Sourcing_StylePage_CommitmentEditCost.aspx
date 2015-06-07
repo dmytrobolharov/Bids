@@ -14,10 +14,12 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
-    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="Form1" runat="server">
@@ -167,6 +169,10 @@
                         <td>
                             <asp:TextBox ID="txtCost" runat="server" Width="40"></asp:TextBox>&nbsp;&nbsp;
                         </td>
+                        <td> 
+                            <asp:CustomValidator id="PriceValidator1" ControlToValidate="txtCost" ClientValidationFunction="ValidatePrice" Display="Dynamic" 
+                                ErrorMessage="<IMG height='17' src='../System/Icons/icon_warning.gif' border='0'>" ToolTip="Invalid currency format!" runat="server"/>&nbsp;&nbsp;
+                        </td>
                         <td>
                             <cc1:ConfirmedImageButton ID="btnCost" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                         </td>
@@ -183,6 +189,15 @@
     </asp:DataGrid>
     <telerik:RadScriptBlock runat="server" ID="scriptblock">
         <script type="text/javascript">
+            function ValidatePrice(sender, args) {
+                var priceString = document.getElementById(sender.controltovalidate).value;
+                var regex = /<%= strRegExp %>/
+                if (regex.test(priceString)) {
+                    args.IsValid = true;
+                } else {
+                    args.IsValid = false;
+                }
+            }
             $(document).ready(function () {
                 
                 $("#CostDetail input").each(function () {

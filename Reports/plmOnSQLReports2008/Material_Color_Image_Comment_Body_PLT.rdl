@@ -7,9 +7,9 @@
         <Value>= First(Fields!FilePath.Value, "dsMaterialImage")</Value>
         <MIMEType>image/jpeg</MIMEType>
         <Sizing>FitProportional</Sizing>
-        <Top>1.875in</Top>
+        <Top>1.35069in</Top>
         <Left>0.125in</Left>
-        <Height>5.375in</Height>
+        <Height>5.5in</Height>
         <Width>8.25in</Width>
         <Style />
       </Image>
@@ -57,7 +57,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.75in</Height>
+                  <Height>1.25in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -70,7 +70,7 @@
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>1.75in</Height>
+                                <Height>1.25in</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -104,7 +104,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!ColorCode.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Tahoma</FontFamily>
+                                                          <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>6pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -133,7 +133,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!ColorName.Value</Value>
                                                         <Style>
-                                                          <FontFamily>Tahoma</FontFamily>
+                                                          <FontFamily>Arial Unicode MS</FontFamily>
                                                           <FontSize>6pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -156,7 +156,7 @@
                                               </Textbox>
                                             </ReportItems>
                                             <DataElementOutput>ContentsOnly</DataElementOutput>
-                                            <Height>1.75in</Height>
+                                            <Height>1.25in</Height>
                                             <Width>1.125in</Width>
                                             <Style />
                                           </Rectangle>
@@ -298,17 +298,14 @@
             <RepeatRowHeaders>true</RepeatRowHeaders>
             <KeepTogether>true</KeepTogether>
             <DataSetName>dsMaterialColor</DataSetName>
-            <PageBreak>
-              <BreakLocation>End</BreakLocation>
-            </PageBreak>
-            <Height>1.78125in</Height>
+            <Height>1.28125in</Height>
             <Width>1.19602in</Width>
             <Style />
           </Tablix>
         </ReportItems>
         <DataElementOutput>NoOutput</DataElementOutput>
-        <Left>0.375in</Left>
-        <Height>1.78125in</Height>
+        <Left>0.125in</Left>
+        <Height>1.28125in</Height>
         <Width>1.19602in</Width>
         <ZIndex>1</ZIndex>
         <Style />
@@ -347,7 +344,7 @@
                             <TextRun>
                               <Value>Material Comments</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -392,7 +389,7 @@
                             <TextRun>
                               <Value>=Fields!MaterialCommentStr.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -458,7 +455,7 @@
         </TablixRowHierarchy>
         <KeepTogether>true</KeepTogether>
         <DataSetName>dsMaterialComment</DataSetName>
-        <Top>7.375in</Top>
+        <Top>6.92014in</Top>
         <Left>0.125in</Left>
         <Height>0.3in</Height>
         <Width>8.24999in</Width>
@@ -466,15 +463,47 @@
         <Style />
       </Tablix>
     </ReportItems>
-    <Height>7.675in</Height>
+    <Height>7.22014in</Height>
     <Style />
   </Body>
   <Width>8.5in</Width>
   <Page>
     <PageHeader>
-      <Height>3.5in</Height>
+      <Height>3in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>MaterialName</Label>
+                  <Value>=First(Fields!MaterialName.Value, "dsMaterialColor")</Value>
+                  <Style>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>26pt</FontSize>
+                    <Color>Gray</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.05in</Top>
+          <Left>0.125in</Left>
+          <Height>0.5in</Height>
+          <Width>8.25in</Width>
+          <ToolTip>##data##</ToolTip>
+          <Style>
+            <VerticalAlign>Middle</VerticalAlign>
+          </Style>
+        </Textbox>
+      </ReportItems>
       <Style />
     </PageHeader>
     <PageFooter>
@@ -550,6 +579,10 @@
           <DataField>Sort</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="MaterialName">
+          <DataField>MaterialName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="dsMaterialComment">
@@ -574,11 +607,32 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="ds_ReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select ReportPageDescription from rReportPageItem where ReportPageID=@RPID</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="MTID">
       <DataType>String</DataType>
       <Prompt>MaterialID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

@@ -1,15 +1,19 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" Codebehind="FlashEdit_Style_Header_Search.aspx.vb" Inherits="plmOnApp.FlashEdit_Style_Header_Search" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Flash Edit</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
-		
+		<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <script type="text/javascript">
 
             function stopRKey(evt) {
@@ -19,6 +23,14 @@
             }
 
             document.onkeypress = stopRKey; 
+
+            $(document).ready(function () {                
+                Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(PageLoaded)
+            });
+
+            function PageLoaded(sender, args) {
+              disable_waittext_for_calendar();
+            }
 
         </script>		
         
@@ -58,7 +70,7 @@
 			            <table width="200" border="0" cellspacing="0" cellpadding="0" >
 				            <tr>
 				                <td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td>
-					            <td><asp:CheckBox valign="top" align="center" ID="chbBatchUpdate" autopostback="true" runat="server" Text="BatchUpdate" CssClass="fontHead" /></td>
+					            <td><asp:CheckBox valign="top" align="center" ID="chbBatchUpdate" autopostback="true" runat="server" Text="BatchUpdate" CssClass="fontHead" ValidationGroup="SEARCH" CausesValidation="true" /></td>
 				            </tr>
 			            </table>	
 					</td>
@@ -84,28 +96,30 @@
 						<table>
 							<tr>
 								<td>
-									<asp:imagebutton id="imgBtnSearch" runat="server" CausesValidation="false"></asp:imagebutton></td>
+									<asp:imagebutton id="imgBtnSearch" runat="server" CausesValidation="true" ValidationGroup="SEARCH"></asp:imagebutton></td>
 							</tr>
 						</table>
 					</td>
 				</tr>
 			</table>
 			
-			<asp:Panel  ID="pnlBatchUpdate" Visible="false" runat="server">
+            <asp:UpdatePanel ID="updBatchUpdate" runat="server">
+            <ContentTemplate>
+            <asp:Panel  ID="pnlBatchUpdate" Visible="false" runat="server">
 			    <table class="TableHeaderYellow" height="25" width="100%" border="0" cellspacing="0" cellpadding="0" >
 				    <tr valign="middle">
 				        <td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td>
 					    <td><asp:Label id="LabelEdit" runat="server" Font-Names="Tahoma,Verdana"  ></asp:Label></td>
 				    </tr>
 			    </table>
-			    <table cellSpacing="0" cellpadding="0" width="100%" bgcolor="#EEEB9F" border="0">
+			    <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#EEEB9F" border="0">
 				    <tr>
-					    <td><asp:placeholder id="plhEditControlsHolder" runat="server" 
-                                EnableViewState="False" ></asp:placeholder></td>					
+					    <td><asp:placeholder id="plhEditControlsHolder" runat="server" EnableViewState="False" ></asp:placeholder></td>					
 				    </tr>
 			    </table>
 			</asp:Panel>
-			
+            </ContentTemplate>
+            </asp:UpdatePanel>
 			
             <TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
 	            <TR vAlign="top">
@@ -115,7 +129,7 @@
 				            <TR vAlign="middle">
 					            <TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 					            <TD width="150">
-                                    <asp:CheckBox id="chbThumbnail" runat="server" AutoPostBack="true" />
+                                    <asp:CheckBox id="chbThumbnail" runat="server" AutoPostBack="true" CausesValidation="true" ValidationGroup="SEARCH" />
                                 </TD>
 					            <TD width="20"><asp:imagebutton id="btnImgFirst" runat="server"></asp:imagebutton></TD>
 					            <TD width="20"><asp:imagebutton id="btnImgPrevious" runat="server"></asp:imagebutton></TD>
@@ -135,7 +149,7 @@
 							            <asp:ListItem Value="40">40</asp:ListItem>
 							            <asp:ListItem Value="50" Selected="True">50</asp:ListItem>
 						            </asp:dropdownlist></TD>
-					            <TD width="10"><asp:button id="Button1" runat="server" CssClass="fontHead" CausesValidation="false"></asp:button></TD>
+					            <TD width="10"><asp:button id="Button1" runat="server" CssClass="fontHead"  CausesValidation="true" ValidationGroup="SEARCH"></asp:button></TD>
 				            </TR>
 			            </TABLE>
 			            <asp:datagrid id="DataGrid1" runat="server" AllowSorting="true" DataKeyField='<%#FlashEditTablePki()%>' >

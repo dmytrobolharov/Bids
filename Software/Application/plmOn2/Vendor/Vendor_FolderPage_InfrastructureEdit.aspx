@@ -1,11 +1,9 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Vendor_FolderPage_InfrastructureEdit.aspx.vb" Inherits="plmOnApp.Vendor_FolderPage_InfrastructureEdit" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="InfrastructureHeader" Src="Vendor_FolderPage_InfrastructureHeader.ascx" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Wait_Control" tagprefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <uc1:Wait_Control ID="Wait_Control" runat="server" />
 <head id="Head1" runat="server">
     <title runat="server" id="pgTitle">Infrastructure</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
@@ -13,12 +11,14 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="../System/CSS/jquery.ui.core.css" />
 	<link rel="stylesheet" href="../System/CSS/jquery.ui.theme.css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script src="../System/Jscript/jquery-1.8.0.js"></script>
 	<script src="../System/Jscript/jquery.ui.core.js"></script>
 	<script src="../System/Jscript/jquery.ui.widget.js"></script>
 	<script src="../System/Jscript/jquery.ui.mouse.js"></script>
 	<script src="../System/Jscript/jquery.ui.sortable.js"></script>
     <link href="../System/CSS/jquery-sortable.css" rel="stylesheet" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style>
 	    li {cursor:url(../System/Cursor/openhand.cur), pointer} 
 	    #sortable { list-style-type: none; margin: 0; padding: 0; }

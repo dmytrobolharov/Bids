@@ -5,7 +5,16 @@
       <section name="radScheduler" type="Telerik.Web.UI.RadSchedulerConfigurationSection, Telerik.Web.UI" allowDefinition="MachineToApplication" requirePermission="false"/>
       <section name="radCompression" type="Telerik.Web.UI.RadCompressionConfigurationSection, Telerik.Web.UI, PublicKeyToken=121fae78165ba3d4" allowDefinition="MachineToApplication" requirePermission="false"/>
     </sectionGroup>
+	<section name="ABCpdf9.Section" type="WebSupergoo.ABCpdf9.ConfigSection, ABCpdf" allowLocation="true"
+		allowDefinition="Everywhere" allowExeDefinition="MachineToLocalUser" overrideModeDefault="Allow"
+		restartOnExternalChanges="true" requirePermission="true" />
   </configSections>
+  <ABCpdf9.Section>
+	<Preferences>
+	  <clear />
+	  <add Key="TempDirectory" Value="$plmOnTemp$" />
+	</Preferences>
+  </ABCpdf9.Section>
   <system.web>
     <browserCaps>
       <!-- GECKO Based Browsers (Netscape 6+, Mozilla/Firebird, ...) //-->
@@ -90,7 +99,7 @@
         <add extension=".rdlc" type="Microsoft.Reporting.RdlBuildProvider, Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
       </buildProviders>
     </compilation>
-    <httpRuntime maxRequestLength="2097151" appRequestQueueLimit="100" executionTimeout="60000"/>
+    <httpRuntime requestValidationMode="2.0" maxRequestLength="204800" appRequestQueueLimit="100" executionTimeout="43200"/>
     <httpHandlers>
       <add path="Telerik.RadUploadProgressHandler.ashx" type="Telerik.Web.UI.Upload.RadUploadProgressHandler, Telerik.Web.UI" verb="*"/>
       <add path="Telerik.Web.UI.DialogHandler.aspx" type="Telerik.Web.UI.DialogHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" verb="*"/>
@@ -114,7 +123,7 @@
       <deny users="?"/>
       <allow users="*"/>
     </authorization>
-    <machineKey validationKey="485E6CEFE5928036A3B2294E4B2FE241FC4A4ABD85BBF2FA24781C1AA72555EA24699479F9B40D486DB6348D19D9AAEE708BCDBF2D4E2C991B0D35745F093459" decryptionKey="DCEA71851C38E5ACE0C82949AE63B58F8215BD44F73A50A329762FD89B5D607B" validation="SHA1" decryption="AES"/>
+    <machineKey validationKey="$plmValidationKey$" decryptionKey="$plmDecryptionKey$" validation="SHA1" decryption="AES"/>
     <sessionState mode="$SessionStateMode$" stateConnectionString="tcpip=127.0.0.1:42424" sqlConnectionString="$SessionStateSqlConnectionString$" cookieless="false" timeout="20"/>
     <globalization fileEncoding="utf-8" requestEncoding="utf-8" responseEncoding="utf-8" uiCulture="en-US" culture="en-US"/>
     <caching>
@@ -161,7 +170,7 @@
     <httpProtocol>
       <customHeaders>
         <clear/>
-        <add name="X-UA-Compatible" value="IE=EmulateIE7"/>
+        <add name="X-UA-Compatible" value="IE=EmulateIE8"/>
       </customHeaders>
     </httpProtocol>
     <!--  Warmup only applicable to Windows IIS 7.5 and up...  -->
@@ -232,11 +241,11 @@
     <add key="REPORTSERVER_ASPX" value="http://$plmOnHTTPServer$/$plmOnVDplmOnReport$"/>
     <!--CuteWebUI start-->
     <add key="CuteWebUI.AjaxUploader.TempDirectory" value="$plmOnTemp$"/>
-    <add key="CuteWebUI.AjaxUploader.GlobalMaxSizeKB" value="15000"/>
-    <add key="CuteWebUI.AjaxUploader.UploadSpeedKB" value="500"/>
+    <add key="CuteWebUI.AjaxUploader.GlobalMaxSizeKB" value="204800"/>
+    <add key="CuteWebUI.AjaxUploader.UploadSpeedKB" value="0"/>
     <!--CuteWebUI end-->
     <add key="Telerik.Web.UI.StyleSheetFolders" value="~/System/CSS/"/>
-    <add key="aspnet:MaxHttpCollectionKeys" value="10000"/>
+    <add key="aspnet:MaxHttpCollectionKeys" value="500000"/>
   </appSettings>
   <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">

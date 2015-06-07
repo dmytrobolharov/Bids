@@ -76,7 +76,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!MaterialDescription.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontFamily>Arial Unicode MS</FontFamily>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -281,24 +281,26 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Artwork</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
-                    <FontSize>26pt</FontSize>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.135in</Top>
+          <Top>0.05in</Top>
+          <Left>0.125in</Left>
           <Height>0.5in</Height>
-          <Width>11in</Width>
+          <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -332,6 +334,12 @@
           <QueryParameter Name="@FlagBOM">
             <Value>=Parameters!FDIM.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@SeasonYearID">
+            <Value>=Parameters!SYID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ReportTechPackID">
+            <Value>=Parameters!RTPID.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
         <CommandText>rpx_Style_MaterialArtwork_2_SELECT</CommandText>
@@ -350,7 +358,25 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FilePath">
-          <DataField>FilePath</DataField>
+          <DataField>Filepath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -367,7 +393,23 @@
     </ReportParameter>
     <ReportParameter Name="FDIM">
       <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
       <Prompt>DimensionalBOM</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SYID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Season Year ID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RTPID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Report Tech Pack ID</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

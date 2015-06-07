@@ -116,57 +116,61 @@ return false;
 if (key == 37 || key == 38 || key == 39 || key == 40 || key == 13){ 
 for (Index=1;Index<rowcount;Index++){ 
 for (childIndex=0;childIndex < tblGrid.rows[Index].cells.length; childIndex++){ 
-if (tblGrid.rows[Index].cells[childIndex].children[0] != null){ 
-if (tblGrid.rows[Index].cells[childIndex].children[0].id == TBID.id){ 
+	try{
+if (tblGrid.rows[Index].cells[childIndex].children[0].rows[0].cells[0].children[0] != null){ 
+if (tblGrid.rows[Index].cells[childIndex].children[0].rows[0].cells[0].children[0].id == TBID.id){ 
 if (key == 40 || key == 13){ 
 if (tblGrid.rows[Index + 1] != null){ 
-if (tblGrid.rows[Index + 1].cells[childIndex].children[0] != null){ 
-if (tblGrid.rows[Index + 1].cells[childIndex].children[0].type == 'text'){ 
-tblGrid.rows[Index + 1].cells[childIndex].children[0].focus(); 
-tblGrid.rows[Index + 1].cells[childIndex].children[0].select(); 
+if (tblGrid.rows[Index + 1].cells[childIndex].children[0].rows[0].cells[0].children[0] != null){ 
+if (tblGrid.rows[Index + 1].cells[childIndex].children[0].rows[0].cells[0].children[0].type == 'text'){ 
+tblGrid.rows[Index + 1].cells[childIndex].children[0].rows[0].cells[0].children[0].focus(); 
+tblGrid.rows[Index + 1].cells[childIndex].children[0].rows[0].cells[0].children[0].select(); 
 return false; 
 } } } } 
 if (key == 38){ 
 if (tblGrid.rows[Index - 1] != null){ 
-if (tblGrid.rows[Index - 1].cells[childIndex].children[0] != null){ 
-if (tblGrid.rows[Index - 1].cells[childIndex].children[0].type == 'text'){ 
-tblGrid.rows[Index - 1].cells[childIndex].children[0].focus(); 
-tblGrid.rows[Index - 1].cells[childIndex].children[0].select(); 
+if (tblGrid.rows[Index - 1].cells[childIndex].children[0].rows[0].cells[0].children[0] != null && Index-1 !=0 ){ 
+if (tblGrid.rows[Index - 1].cells[childIndex].children[0].rows[0].cells[0].children[0].type == 'text'){ 
+tblGrid.rows[Index - 1].cells[childIndex].children[0].rows[0].cells[0].children[0].focus(); 
+tblGrid.rows[Index - 1].cells[childIndex].children[0].rows[0].cells[0].children[0].select(); 
 return false; 
 } } } } 
 if (key == 37 && (childIndex != 0)) { 
-if ((tblGrid.rows[Index].cells[childIndex - 1].children[0]) != null) { 
-if (tblGrid.rows[Index].cells[childIndex - 1].children[0].type == 'text') { 
-if (tblGrid.rows[Index].cells[childIndex - 1].children[0].value != '') { 
-var cPos = getCaretPos(tblGrid.rows[Index].cells[childIndex - 1].children[0], 'left'); 
+if ((tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0]) != null) { 
+if (tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0].type == 'text') { 
+if (tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0].value != '') { 
+var cPos = getCaretPos(tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0], 'left'); 
 if (cPos) { 
-tblGrid.rows[Index].cells[childIndex - 1].children[0].focus(); 
+tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0].focus(); 
 return false; } 
 else { return false; }  } 
-tblGrid.rows[Index].cells[childIndex - 1].children[0].focus(); 
+tblGrid.rows[Index].cells[childIndex  - 1].children[0].rows[0].cells[0].children[0].focus(); 
 return false; 
 } } } 
 if (key == 39) { 
-if (tblGrid.rows[Index].cells[childIndex + 1] != null){ 
-if ((tblGrid.rows[Index].cells[childIndex + 1].children[0]) != null) { 
-if (tblGrid.rows[Index].cells[childIndex + 1].children[0].type == 'text') { 
-if (tblGrid.rows[Index].cells[childIndex + 1].children[0].value != '') { 
-var cPosR = getCaretPos(tblGrid.rows[Index].cells[childIndex + 1].children[0], 'right'); 
+if (tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0] != null){ 
+if ((tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0]) != null) { 
+if (tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0].type == 'text') { 
+if (tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0].value != '') { 
+var cPosR = getCaretPos(tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0], 'right'); 
 if (cPosR) { 
-tblGrid.rows[Index].cells[childIndex + 1].children[0].focus(); 
+tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0].focus(); 
 return false; } 
 else { return false; }  } 
-tblGrid.rows[Index].cells[childIndex + 1].children[0].focus(); 
+tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0].focus(); 
 return false; 
 } } } } 
-} } } } } } 
+} } }catch(e){ } 
+} 
+} } }
 function getCaretPos(control, way) { 
 var movement; 
 if (way == 'left') { movement = -1; } else { movement = 1; } 
 if (control.createTextRange) { 
+	console.log('controlIE - ', control);
 control.caretPos = document.selection.createRange().duplicate(); 
 if (control.caretPos.move('character', movement) != '') {return false;} else {return true;} 
-} } 
+}} 
 
 function arrowkeyPressed(TB, sctrlName, e)
 {
@@ -188,13 +192,14 @@ function arrowkeyPressed(TB, sctrlName, e)
 	if (key == 37 || key == 38 || key == 39 || key == 40 || key == 13) {
 		for (Index = 1; Index < rowcount; Index++) {
 			for (childIndex = 0; childIndex < tblGrid.rows[Index].cells.length; childIndex++) {
-				if (tblGrid.rows[Index].cells[childIndex].children[0] != null) {
-					if (tblGrid.rows[Index].cells[childIndex].children[0].id == TBID.id) {
+				try{
+				if (tblGrid.rows[Index].cells[childIndex].children[0].rows[0].cells[0].children[0] != null) {
+					if (tblGrid.rows[Index].cells[childIndex].children[0].rows[0].cells[0].children[0].id == TBID.id) {
 						if (key == 40 || key == 13) {
 							if (tblGrid.rows[Index + 1] != null) {
-								if (tblGrid.rows[Index + 1].cells[childIndex].children[0] != null) {
-									if (tblGrid.rows[Index + 1].cells[childIndex].children[0].type == 'text') {
-										tblGrid.rows[Index + 1].cells[childIndex].children[0].focus();										
+								if (tblGrid.rows[Index + 1].cells[childIndex].children[0].rows[0].cells[0].children[0] != null) {
+									if (tblGrid.rows[Index + 1].cells[childIndex].children[0].rows[0].cells[0].children[0].type == 'text') {
+										tblGrid.rows[Index + 1].cells[childIndex].children[0].rows[0].cells[0].children[0].focus();										
 										return false;
 									}
 								}
@@ -202,45 +207,46 @@ function arrowkeyPressed(TB, sctrlName, e)
 						}
 						if (key == 38) {
 							if (tblGrid.rows[Index - 1] != null) {
-								if (tblGrid.rows[Index - 1].cells[childIndex].children[0] != null) {
-									if (tblGrid.rows[Index - 1].cells[childIndex].children[0].type == 'text') {
-										tblGrid.rows[Index - 1].cells[childIndex].children[0].focus();										
+								if (tblGrid.rows[Index - 1].cells[childIndex].children[0].rows[0].cells[0].children[0] != null) {
+									if (tblGrid.rows[Index - 1].cells[childIndex].children[0].rows[0].cells[0].children[0].type == 'text') {
+										tblGrid.rows[Index - 1].cells[childIndex].children[0].rows[0].cells[0].children[0].focus();										
 										return false;
 									}
 								}
 							}
 						}
 						if (key == 37 && (childIndex != 0)) {
-							if ((tblGrid.rows[Index].cells[childIndex - 1].children[0]) != null) {
-								if (tblGrid.rows[Index].cells[childIndex - 1].children[0].type == 'text') {
-									if (tblGrid.rows[Index].cells[childIndex - 1].children[0].value != '') {
-										var cPos = getCaretPos(tblGrid.rows[Index].cells[childIndex - 1].children[0], 'left');
+							if ((tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0]) != null) {
+								
+								if (tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0].type == 'text') {
+									if (tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0].value != '') {
+										var cPos = getCaretPos(tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0], 'left');
 										if (cPos) {
-											tblGrid.rows[Index].cells[childIndex - 1].children[0].focus();
+											tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0].focus();
 											return false;
 										} else {
 											return false;
 										}
 									}
-									tblGrid.rows[Index].cells[childIndex - 1].children[0].focus();
+									tblGrid.rows[Index].cells[childIndex - 1].children[0].rows[0].cells[0].children[0].focus();
 									return false;
 								}
 							}
 						}
 						if (key == 39) {
-							if (tblGrid.rows[Index].cells[childIndex + 1] != null) {
-								if ((tblGrid.rows[Index].cells[childIndex + 1].children[0]) != null) {
-									if (tblGrid.rows[Index].cells[childIndex + 1].children[0].type == 'text') {
-										if (tblGrid.rows[Index].cells[childIndex + 1].children[0].value != '') {
-											var cPosR = getCaretPos(tblGrid.rows[Index].cells[childIndex + 1].children[0], 'right');
+							if (tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0] != null) {
+								if ((tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0]) != null) {
+									if (tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0].type == 'text') {
+										if (tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0].value != '') {
+											var cPosR = getCaretPos(tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0], 'right');
 											if (cPosR) {
-												tblGrid.rows[Index].cells[childIndex + 1].children[0].focus();
+												tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0].focus();
 												return false;
 											} else {
 												return false;
 											}
 										}
-										tblGrid.rows[Index].cells[childIndex + 1].children[0].focus();
+										tblGrid.rows[Index].cells[childIndex + 1].children[0].rows[0].cells[0].children[0].focus();
 										return false;
 									}
 								}
@@ -248,7 +254,9 @@ function arrowkeyPressed(TB, sctrlName, e)
 						}
 					}
 				}
-			}
+
+			}catch(e){}
+		}
 		}
 	}    
 }

@@ -26,7 +26,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!StyleNo.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -66,7 +66,7 @@
                                 <TextRun>
                                   <Value>="Dropped By " &amp; Fields!LineFolderItemDropUser.Value &amp; " - " &amp; FormatDateTime(Fields!LineFolderItemDropDate.Value,dateformat.ShortDate)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -129,7 +129,7 @@
                                 <TextRun>
                                   <Value>Style No:</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -166,7 +166,7 @@
                                 <TextRun>
                                   <Value>Description:</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -199,7 +199,7 @@
                                 <TextRun>
                                   <Value>Size Range:</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -233,7 +233,7 @@
                                 <TextRun>
                                   <Value>Main Material:</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -266,7 +266,7 @@
                                 <TextRun>
                                   <Value>Size Class:</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -299,7 +299,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!Description.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -329,7 +329,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!SizeRange.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -356,9 +356,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!MaterialName.Value)</Value>
+                                  <Value>=First(Fields!MaterialNo.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -390,7 +390,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!SizeClass.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -426,7 +426,6 @@
                         </BottomBorder>
                       </Style>
                     </Rectangle>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -478,9 +477,11 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Line List Report</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "ds_ReportName")</Value>
                   <Style>
+                    <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>24pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -490,7 +491,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>textbox22</rd:DefaultName>
-          <Top>0.11886in</Top>
+          <Top>0.1in</Top>
           <Left>0.125in</Left>
           <Height>0.45614in</Height>
           <Width>10.75in</Width>
@@ -581,12 +582,25 @@
           <DataField>SizeRange</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="MaterialName">
-          <DataField>MaterialName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="MaterialNo">
           <DataField>MaterialNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ds_ReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select ReportPageDescription from rReportPageItem where ReportPageID=@RPID</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -596,6 +610,10 @@
     <ReportParameter Name="LFID">
       <DataType>String</DataType>
       <Prompt>LineFolderID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

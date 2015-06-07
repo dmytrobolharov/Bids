@@ -109,8 +109,10 @@
 												<TD vAlign="middle" align="center" width="10">
                                                     <IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 												<TD class="fontHead">
-												<cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
-													<cc1:confirmedimagebutton id="btnDeleteImage" runat="server" ></cc1:confirmedimagebutton></TD>
+												    <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+													<cc1:confirmedimagebutton id="btnDeleteImage" runat="server" ></cc1:confirmedimagebutton>
+                                                    <cc1:BWImageButton ID="btn3DFiles" runat="server" CausesValidation="False" />
+                                                </TD>
 											</TR>
 										</TABLE>
 										<asp:datagrid id="dgFitImage" runat="server" AutoGenerateColumns="False" PageSize="100" BorderWidth="1px"
@@ -192,22 +194,26 @@
                 
 
 			</asp:panel></TD>
-		<TD vAlign="top" width="400" bgColor="#ffffff"><cc2:ystabview id="Ystabview3" runat="server"></cc2:ystabview><asp:panel id="pnlComment" runat="server">
-				<uc1:SampleRequest_Workflow_Submit_Comment id="SampleRequest_Workflow_Submit_Comment1" runat="server"></uc1:SampleRequest_Workflow_Submit_Comment>
-			</asp:panel><asp:panel id="pnlFitComment" runat="server">
-				<TABLE id="TB_FitComment" cellSpacing="0" cellPadding="0" width="400" border="0" runat="server">
-					<TR class="TableHeader">
-						<TD>&nbsp;
-							<asp:imagebutton id="btnComment1" runat="server" Visible="false"></asp:imagebutton></TD>
-					</TR>
-					<TR>
-						<TD bgColor="#ffffff"><BR>
-							<asp:label id="txt_FitComment" runat="server" CssClass="font"></asp:label><BR>
-							<BR>
-						</TD>
-					</TR>
-				</TABLE>
-			</asp:panel></TD>
+		<TD vAlign="top" width="400" bgColor="#ffffff"><cc2:ystabview id="Ystabview3" runat="server"></cc2:ystabview>
+                <ContentTemplate>
+                    <asp:panel id="pnlComment" runat="server">
+				        <uc1:SampleRequest_Workflow_Submit_Comment id="SampleRequest_Workflow_Submit_Comment1" runat="server"></uc1:SampleRequest_Workflow_Submit_Comment>
+			        </asp:panel>
+                    <asp:panel id="pnlFitComment" runat="server">
+				        <TABLE id="TB_FitComment" cellSpacing="0" cellPadding="0" width="400" border="0" runat="server">
+					        <TR class="TableHeader">
+						        <TD>&nbsp;
+							        <asp:imagebutton id="btnComment1" runat="server" Visible="false"></asp:imagebutton></TD>
+					        </TR>
+					        <TR>
+						        <TD bgColor="#ffffff"><BR>
+							        <asp:label id="txt_FitComment" runat="server" CssClass="font"></asp:label><BR>
+							        <BR>
+						        </TD>
+					        </TR>
+				        </TABLE>
+			        </asp:panel>        
+        </TD>
 		<TD vAlign="top" width="98%" bgColor="#ffffff"></TD>
 	</TR>
 </TABLE>

@@ -1,6 +1,8 @@
 ﻿<%@ Page CodeBehind="Material_Style_Artwork_Print.aspx.vb" Language="vb" AutoEventWireup="false" Inherits="plmOnApp.Material_Style_Artwork_Print" %>
 <HTML>
 	<HEAD>
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
 		<asp:datalist id="DataList1" RepeatColumns="3" RepeatDirection="Horizontal" runat="server" CssClass="none"

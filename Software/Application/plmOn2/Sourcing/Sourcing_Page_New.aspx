@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Sourcing_Page_New.aspx.vb" Inherits="plmOnApp.Sourcing_Page_New" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,6 +7,8 @@
     <title>Sourcing New</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -30,7 +31,6 @@
     </telerik:RadStyleSheetManager>
     <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />
 
-     <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">
@@ -38,7 +38,7 @@
             </td>
             <td>
                 <asp:ImageButton ID="btnSaveSourcing" runat="server"></asp:ImageButton>
-                <asp:ImageButton id="btnClose" runat="server" causesvalidation="False" OnClientClick="window.close();"></asp:ImageButton>
+                <asp:ImageButton id="btnClose" runat="server" causesvalidation="False" OnClientClick="top.window.close(); return false;"></asp:ImageButton>
             </td>
         </tr>
     </table>
@@ -146,7 +146,6 @@
                 }
                 $(hdnSelectedStyleCategories).val(strSelectedStyleCategories);
             }
-
         </script>
 
 </body>

@@ -8,8 +8,10 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />    
     <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" src="../system/jscript/ysbusyscript.js" type="text/javascript"></script>
     <script language="javascript" src="../system/jscript/underscore-min.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <script type="text/javascript">
         function GetRadWindow() {
             var oWindow = null; if (window.radWindow)

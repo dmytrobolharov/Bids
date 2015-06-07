@@ -17,6 +17,7 @@
                           <TextRun>
                             <Value>POM</Value>
                             <Style>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -52,6 +53,7 @@
                           <TextRun>
                             <Value>Description</Value>
                             <Style>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -87,6 +89,7 @@
                           <TextRun>
                             <Value>+Tol</Value>
                             <Style>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -122,6 +125,7 @@
                           <TextRun>
                             <Value>-Tol</Value>
                             <Style>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -155,7 +159,7 @@
               <Width>0.88021in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.85938in</Width>
+              <Width>1.25521in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -186,6 +190,7 @@
                                           <TextRun>
                                             <Value>=Fields!MeasValue.Value</Value>
                                             <Style>
+                                              <FontFamily>Arial Unicode MS</FontFamily>
                                               <FontSize>8pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -254,7 +259,10 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>0.85938in</Width>
+                            <Width>0.62761in</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>0.62761in</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
@@ -272,6 +280,7 @@
                                           <TextRun>
                                             <Value>=Fields!SampMeasValue.Value</Value>
                                             <Style>
+                                              <FontFamily>Arial Unicode MS</FontFamily>
                                               <FontSize>8pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -301,6 +310,48 @@
                                   </Textbox>
                                 </CellContents>
                               </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="SampVar">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=Fields!SampVar.Value</Value>
+                                            <Style>
+                                              <FontFamily>Arial Unicode MS</FontFamily>
+                                              <FontSize>8pt</FontSize>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Left</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>SampVar</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Color>LightGrey</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BottomBorder>
+                                        <Style>None</Style>
+                                      </BottomBorder>
+                                      <LeftBorder>
+                                        <Style>None</Style>
+                                      </LeftBorder>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                  <rd:Selected>true</rd:Selected>
+                                </CellContents>
+                              </TablixCell>
                             </TablixCells>
                           </TablixRow>
                         </TablixRows>
@@ -315,6 +366,7 @@
                               </GroupExpressions>
                             </Group>
                             <TablixMembers>
+                              <TablixMember />
                               <TablixMember />
                             </TablixMembers>
                           </TablixMember>
@@ -361,6 +413,7 @@
                               <TextRun>
                                 <Value>="Size "&amp;Fields!ColLabel.Value</Value>
                                 <Style>
+                                  <FontFamily>Arial Unicode MS</FontFamily>
                                   <FontSize>8pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
@@ -406,7 +459,10 @@
                         <TablixBody>
                           <TablixColumns>
                             <TablixColumn>
-                              <Width>0.85938in</Width>
+                              <Width>0.62761in</Width>
+                            </TablixColumn>
+                            <TablixColumn>
+                              <Width>0.62761in</Width>
                             </TablixColumn>
                           </TablixColumns>
                           <TablixRows>
@@ -430,6 +486,48 @@
                                         </Paragraph>
                                       </Paragraphs>
                                       <rd:DefaultName>Textbox9</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>LightGrey</Color>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <TopBorder>
+                                          <Style>None</Style>
+                                        </TopBorder>
+                                        <BottomBorder>
+                                          <Style>None</Style>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>Solid</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>Solid</Style>
+                                        </RightBorder>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Textbox7">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value />
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox7</rd:DefaultName>
                                       <Style>
                                         <Border>
                                           <Color>LightGrey</Color>
@@ -482,6 +580,7 @@
                                               <TextRun>
                                                 <Value>="Smp "&amp;Fields!SampleNo.Value</Value>
                                                 <Style>
+                                                  <FontFamily>Arial Unicode MS</FontFamily>
                                                   <FontSize>8pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
                                                 </Style>
@@ -522,6 +621,58 @@
                                   <TablixMembers>
                                     <TablixMember />
                                   </TablixMembers>
+                                </TablixMember>
+                                <TablixMember>
+                                  <TablixHeader>
+                                    <Size>0.18403in</Size>
+                                    <CellContents>
+                                      <Textbox Name="Textbox6">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>="Var "&amp;Fields!SampleNo.Value</Value>
+                                                <Style>
+                                                  <FontFamily>Arial Unicode MS</FontFamily>
+                                                  <FontSize>8pt</FontSize>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Left</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox6</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>None</Style>
+                                          </Border>
+                                          <TopBorder>
+                                            <Style>Solid</Style>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>White</Color>
+                                            <Style>None</Style>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Style>None</Style>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Style>Solid</Style>
+                                          </RightBorder>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixHeader>
                                 </TablixMember>
                               </TablixMembers>
                             </TablixMember>
@@ -576,6 +727,7 @@
                           <TextRun>
                             <Value>=Fields!RefCode.Value</Value>
                             <Style>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                             </Style>
                           </TextRun>
@@ -622,6 +774,7 @@
                               <TextRun>
                                 <Value>=Fields!POMDescription.Value</Value>
                                 <Style>
+                                  <FontFamily>Arial Unicode MS</FontFamily>
                                   <FontSize>8pt</FontSize>
                                 </Style>
                               </TextRun>
@@ -657,6 +810,7 @@
                                   <TextRun>
                                     <Value>=Fields!TolPlus.Value</Value>
                                     <Style>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                     </Style>
                                   </TextRun>
@@ -694,6 +848,7 @@
                                       <TextRun>
                                         <Value>=Fields!TolMinus.Value</Value>
                                         <Style>
+                                          <FontFamily>Arial Unicode MS</FontFamily>
                                           <FontSize>8pt</FontSize>
                                         </Style>
                                       </TextRun>
@@ -733,10 +888,10 @@
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>ds_QAWorksheet</DataSetName>
-        <Top>0.09028in</Top>
+        <Top>0.34028in</Top>
         <Left>0.0125in</Left>
         <Height>0.44098in</Height>
-        <Width>6.58042in</Width>
+        <Width>6.97625in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -749,10 +904,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-        <Height>0.58682in</Height>
+    <Height>0.78126in</Height>
     <Style />
   </Body>
-      <Width>10.75in</Width>
+  <Width>10.75in</Width>
   <Page>
     <PageHeader>
       <Height>3.15278in</Height>
@@ -798,11 +953,12 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>-QA Worksheet</Value>
+                      <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                       <Style>
-                        <FontFamily>Tahoma</FontFamily>
+                        <FontFamily>Arial Unicode MS</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Color>Gray</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -831,7 +987,7 @@
           <Width>10.75in</Width>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
           </Style>
         </Rectangle>
@@ -929,6 +1085,28 @@
           <DataField>SortID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="SampVar">
+          <DataField>SampVar</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_sampleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -936,6 +1114,10 @@
     <ReportParameter Name="SRSID">
       <DataType>String</DataType>
       <Prompt>Sample Request Submit ID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>

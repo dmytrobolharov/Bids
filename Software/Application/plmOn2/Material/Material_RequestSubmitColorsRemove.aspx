@@ -8,8 +8,11 @@
 	<title>Remove</title>
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -65,9 +68,7 @@
 								<td><asp:placeholder id="plhSearchControl" runat="server" EnableViewState="False"></asp:placeholder></td>
 								<td valign="top" width="100%">
 									<table height="45">
-										<tr>
-											<td><asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
-										</tr>
+										<tr><td><asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td></tr>
 									</table>
 								</td>
 							</tr>
@@ -75,26 +76,24 @@
 					</td>
 				</tr>	
 			</table>			
-          <cc1:ScrollingGrid ID="ScrollingGrid1" runat="server" Height="700px" Width="100%">
-                  <asp:datagrid id="DataGrid1" runat="server" AutoGenerateColumns="False" 
-                       DataKeyField="MaterialTradePartnerColorID" BorderStyle="Solid">
-                    <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate" BorderColor="#F0F0F0" BorderStyle="Solid"></AlternatingItemStyle>
-                    <ItemStyle Height="20px" CssClass="ItemTemplate" BorderColor="#F0F0F0" BorderStyle="Solid"></ItemStyle>
-                    <HeaderStyle Height="25px" CssClass="TableHeader" BorderColor="#F0F0F0" BorderStyle="Solid"></HeaderStyle>
-                    <Columns>
-                        <asp:TemplateColumn>
-	                        <HeaderTemplate>
-		                        <input type="checkbox" id="chkSelectChips" onclick="CheckAll(this,'chkChip');" runat="server" name="checkAll" />
-	                        </HeaderTemplate>
-	                        <ItemTemplate>
-		                        <asp:CheckBox id="chkChip" runat="server"></asp:CheckBox>
-                            </ItemTemplate>
-                        </asp:TemplateColumn>
-                    </Columns>
-                    <PagerStyle Visible="False"></PagerStyle>
-                </asp:datagrid>
-          </cc1:ScrollingGrid>
-          <asp:label id="SortOrder" runat="server" Visible="False"></asp:label>		
+            <asp:datagrid id="DataGrid1" runat="server" AutoGenerateColumns="False" 
+                DataKeyField="MaterialTradePartnerColorID" BorderStyle="Solid">
+            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate" BorderColor="#F0F0F0" BorderStyle="Solid"></AlternatingItemStyle>
+            <ItemStyle Height="20px" CssClass="ItemTemplate" BorderColor="#F0F0F0" BorderStyle="Solid"></ItemStyle>
+            <HeaderStyle Height="25px" CssClass="TableHeader" BorderColor="#F0F0F0" BorderStyle="Solid"></HeaderStyle>
+            <Columns>
+                <asp:TemplateColumn>
+	                <HeaderTemplate>
+		                <input type="checkbox" id="chkSelectChips" onclick="CheckAll(this,'chkChip');" runat="server" name="checkAll" />
+	                </HeaderTemplate>
+	                <ItemTemplate>
+		                <asp:CheckBox id="chkChip" runat="server"></asp:CheckBox>
+                    </ItemTemplate>
+                </asp:TemplateColumn>
+            </Columns>
+            <PagerStyle Visible="False"></PagerStyle>
+        </asp:datagrid>
+        <asp:label id="SortOrder" runat="server" Visible="False"></asp:label>		
     </form>
     <script type="text/javascript" language="javascript">
 	    var frm = document.form1 ;

@@ -11,11 +11,13 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="../System/CSS/jquery.ui.core.css" />
 	<link rel="stylesheet" href="../System/CSS/jquery.ui.theme.css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script src="../System/Jscript/jquery-1.8.0.js"></script>
 	<script src="../System/Jscript/jquery.ui.core.js"></script>
 	<script src="../System/Jscript/jquery.ui.widget.js"></script>
 	<script src="../System/Jscript/jquery.ui.mouse.js"></script>
 	<script src="../System/Jscript/jquery.ui.sortable.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <link href="../System/CSS/jquery-sortable.css" rel="stylesheet" />
     <style>
 	    li {cursor:url(../System/Cursor/openhand.cur), pointer} 

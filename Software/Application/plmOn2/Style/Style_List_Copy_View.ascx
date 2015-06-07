@@ -6,7 +6,7 @@
                 bgcolor="#ffffff" border="0">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
-					<TD width="16"><asp:checkbox id="cbThumbnail" AutoPostBack="True" runat="server"></asp:checkbox></TD>
+					<TD width="16"><asp:checkbox id="cbThumbnail" AutoPostBack="True" runat="server" CausesValidation="true"></asp:checkbox></TD>
 					<TD class="fontHead" width="100">
                         <asp:Label ID="lblThumbnail" runat="server" ></asp:Label></TD>
 					<TD width="20"><asp:imagebutton id="btnImgFirst" runat="server"></asp:imagebutton></TD>

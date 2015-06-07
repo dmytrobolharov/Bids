@@ -1,15 +1,19 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" Codebehind="FlashEdit_Search.aspx.vb" Inherits="plmOnApp.FlashEdit_Search" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Flash Edit</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
-		
+		<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <script type="text/javascript">
 
             function stopRKey(evt) {
@@ -98,11 +102,11 @@
 					            <TD width="16"></TD>
 					            <TD class="fontHead" width="25">
                                     </TD>
-					            <TD width="20"><asp:imagebutton id="btnImgFirst" runat="server"></asp:imagebutton></TD>
-					            <TD width="20"><asp:imagebutton id="btnImgPrevious" runat="server"></asp:imagebutton></TD>
+					            <TD width="20"><asp:imagebutton id="btnImgFirst" CausesValidation="False" runat="server"></asp:imagebutton></TD>
+					            <TD width="20"><asp:imagebutton id="btnImgPrevious" CausesValidation="False" runat="server"></asp:imagebutton></TD>
 					            <TD noWrap align="center" width="200"><asp:label id="lblPageCount" runat="server" CssClass="fontHead"></asp:label></TD>
-					            <TD width="20"><asp:imagebutton id="btnImgNext" runat="server"></asp:imagebutton></TD>
-					            <TD width="20"><asp:imagebutton id="btnImgLast" runat="server" ToolTip="Last"></asp:imagebutton></TD>
+					            <TD width="20"><asp:imagebutton id="btnImgNext" CausesValidation="False" runat="server"></asp:imagebutton></TD>
+					            <TD width="20"><asp:imagebutton id="btnImgLast" CausesValidation="False" runat="server" ToolTip="Last"></asp:imagebutton></TD>
 					            <TD width="10">&nbsp;</TD>
 					            <TD noWrap><asp:label id="RecordCount" runat="server" CssClass="font"></asp:label></TD>
 					            <TD class="fontHead" align="right" width="110"><asp:Label ID="lblRecordsPerPage" runat="server" ></asp:Label></TD>

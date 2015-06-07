@@ -1,5 +1,5 @@
-<%@ Control Language="vb" AutoEventWireup="false" Codebehind="Sourcing_Page_Style_List_View.ascx.vb" Inherits="plmOnApp.Sourcing_Page_Style_List_View" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
-
+<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="Sourcing_Page_Style_List_View.ascx.vb"
+    Inherits="plmOnApp.Sourcing_Page_Style_List_View" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <script type="text/javascript">
 
     var frm = document.forms['form1'];
@@ -17,46 +17,69 @@
     }
 
 </script>
-
-<table cellSpacing="0" cellPadding="0" width="100%" border="0">
-	<tr vAlign="top">
-		<td>
-			<table class="TableHeader" height="25" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff"
-				border="0">
-				<tr vAlign="middle">
-					<td vAlign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3" /></td>
-					<td width="16"><asp:checkbox id="cbThumbnail" AutoPostBack="true" runat="server"></asp:checkbox></td>
-					<td class="fontHead" width="100">
-                        <asp:Label ID="lblThumbnail" runat="server" ></asp:Label></td>
-					<td width="20"><asp:imagebutton id="btnImgFirst" runat="server"></asp:imagebutton></td>
-					<td width="20"><asp:imagebutton id="btnImgPrevious" runat="server"></asp:imagebutton></td>
-					<td noWrap align="center" width="125"><asp:label id="lblPageCount" runat="server" CssClass="fontHead"></asp:label></td>
-					<td width="20"><asp:imagebutton id="btnImgNext" runat="server"></asp:imagebutton></td>
-					<td width="20"><asp:imagebutton id="btnImgLast" runat="server" ToolTip="Last"></asp:imagebutton></td>
-					<td width="10">&nbsp;</td>
-					<td noWrap>
-                        <asp:label id="lblRecordCount" runat="server" CssClass="font"></asp:label>
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr valign="top">
+        <td>
+            <table class="TableHeader" height="25" cellspacing="0" cellpadding="0" width="100%"
+                bgcolor="#ffffff" border="0">
+                <tr valign="middle">
+                    <td valign="middle" align="center" width="10">
+                        <img height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
+                    </td>
+                    <td width="16">
+                        <asp:CheckBox ID="cbThumbnail" AutoPostBack="true" runat="server"></asp:CheckBox>
+                    </td>
+                    <td class="fontHead" width="100">
+                        <asp:Label ID="lblThumbnail" runat="server"></asp:Label>
+                    </td>
+                    <td width="20">
+                        <asp:ImageButton ID="btnImgFirst" runat="server"></asp:ImageButton>
+                    </td>
+                    <td width="20">
+                        <asp:ImageButton ID="btnImgPrevious" runat="server"></asp:ImageButton>
+                    </td>
+                    <td nowrap align="center" width="125">
+                        <asp:Label ID="lblPageCount" runat="server" CssClass="fontHead"></asp:Label>
+                    </td>
+                    <td width="20">
+                        <asp:ImageButton ID="btnImgNext" runat="server"></asp:ImageButton>
+                    </td>
+                    <td width="20">
+                        <asp:ImageButton ID="btnImgLast" runat="server" ToolTip="Last"></asp:ImageButton>
+                    </td>
+                    <td width="10">
+                        &nbsp;
+                    </td>
+                    <td nowrap>
+                        <asp:Label ID="lblRecordCount" runat="server" CssClass="font"></asp:Label>
                         <asp:HiddenField ID="hdnRecordCount" runat="server" Value='' />
                     </td>
-					<td class="fontHead" align="right" width="110"><asp:Label ID="lblRecordsPerPage" runat="server" ></asp:Label></td>
-					<td width="25"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
+                    <td class="fontHead" align="right" width="110">
+                        <asp:Label ID="lblRecordsPerPage" runat="server"></asp:Label>
+                    </td>
+                    <td width="25">
+                        <asp:DropDownList ID="ps" runat="server" CssClass="fontHead">
                             <asp:ListItem Value="5">5</asp:ListItem>
-							<asp:ListItem Value="10">10</asp:ListItem>
-							<asp:ListItem Value="15">15</asp:ListItem>
-							<asp:ListItem Value="20">20</asp:ListItem>
-							<asp:ListItem Value="25">25</asp:ListItem>
-							<asp:ListItem Value="30">30</asp:ListItem>
-							<asp:ListItem Value="40">40</asp:ListItem>
-							<asp:ListItem Value="50" Selected="true">50</asp:ListItem>
-						</asp:dropdownlist></td>
-					<td width="10"><asp:button id="btnGo" onclick="RePage" runat="server" CssClass="fontHead"></asp:button></td>
-				</tr>
-			</table>
-			<asp:datagrid id="DataGrid1" runat="server" DataKeyField="StyleID" EnableViewState="False" AllowSorting="true" AllowPaging="false">
-				<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-				<ItemStyle CssClass="ItemTemplate"></ItemStyle>
-				<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
-				<PagerStyle Visible="False"></PagerStyle>
+                            <asp:ListItem Value="10">10</asp:ListItem>
+                            <asp:ListItem Value="15">15</asp:ListItem>
+                            <asp:ListItem Value="20">20</asp:ListItem>
+                            <asp:ListItem Value="25">25</asp:ListItem>
+                            <asp:ListItem Value="30">30</asp:ListItem>
+                            <asp:ListItem Value="40">40</asp:ListItem>
+                            <asp:ListItem Value="50" Selected="true">50</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td width="10">
+                        <asp:Button ID="btnGo" OnClick="RePage" runat="server" CssClass="fontHead"></asp:Button>
+                    </td>
+                </tr>
+            </table>
+            <asp:DataGrid ID="DataGrid1" runat="server" DataKeyField="StyleID" EnableViewState="False"
+                AllowSorting="true" AllowPaging="false">
+                <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                <ItemStyle CssClass="ItemTemplate"></ItemStyle>
+                <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
+                <PagerStyle Visible="False"></PagerStyle>
                 <Columns>
                     <asp:TemplateColumn>
                         <HeaderTemplate>
@@ -74,14 +97,14 @@
                             <asp:Image ID="imgDesignSketchID" runat="server" ImageUrl='<%# GetImageStreamPath(50, Eval("DesignSketchVersion").ToString, Eval("DesignSketchID").ToString) %>' />
                         </ItemTemplate>
                     </asp:TemplateColumn>
-			    </Columns>
-			</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label>
+                </Columns>
+            </asp:DataGrid><asp:Label ID="SortOrder" runat="server" Visible="False"></asp:Label>
         </td>
-	</tr>
+    </tr>
 </table>
-<table borderColor="gainsboro" cellSpacing="1" cellPadding="0" border="0">
-	<tr>
-		<td vAlign="top">
+<table bordercolor="gainsboro" cellspacing="1" cellpadding="0" border="0">
+    <tr>
+        <td valign="top">
             <asp:PlaceHolder ID="plhStylesGrid" runat="server"></asp:PlaceHolder>
         </td>
     </tr>

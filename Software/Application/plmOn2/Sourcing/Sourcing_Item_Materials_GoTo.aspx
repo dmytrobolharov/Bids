@@ -8,6 +8,8 @@
     <title runat="server" id="PageTitle">Sourcing</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" /> 
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <script>
     function btnClose_Click() {
         <%= strExitScript %>

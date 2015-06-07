@@ -1,6 +1,6 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Image_Search_WhereUsed.aspx.vb" Inherits="plmOnApp.Image_Search_WhereUsed" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Image_Folder_WhereUsed</title>
@@ -9,7 +9,22 @@
 		
 		
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            .font
+            {
+                white-space:nowrap;    
+            }
+            .TableHeader
+            {
+                background-position :center;
+                background-color: White;
+            }
+        </style>
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -91,9 +106,8 @@
 						    <DIV align="center"><asp:imagebutton id="btnImgLast" runat="server" ImageUrl="../System/Icons/icon_last.gif"></asp:imagebutton></DIV>
 					    </TD>
 					    <TD height="25">
-						    <DIV align="left"><B><asp:label id="lblRecordCount" Runat="server" Visible="true"></asp:label>&nbsp;
-						        <asp:Label ID="lblRecordsFound" runat="server" Text="Records Found"></asp:Label>
-						        </B>
+						    <DIV align="left"><B><asp:Label ID="lblRecordsFound" runat="server" Text="Records Found"></asp:Label>
+						     </B>
                             </DIV>
 					    </TD>
 					    <TD height="25">

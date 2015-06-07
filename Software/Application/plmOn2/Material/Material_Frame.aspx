@@ -1,5 +1,5 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Material_Frame.aspx.vb" Inherits="plmOnApp.Material_Frame" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
     <title id="htmlHeader" runat="server" >Material</title>
@@ -7,7 +7,9 @@
     <meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">
     <meta name=vs_defaultClientScript content="JavaScript">
     <meta name=vs_targetSchema content="http://schemas.microsoft.com/intellisense/ie5">
-  </head>
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+</head>
 	<script language="JavaScript">
 	<!--
 

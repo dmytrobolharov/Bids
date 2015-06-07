@@ -1,7 +1,7 @@
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Menu.aspx.vb" Inherits="plmOnApp.Style_Menu" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls.YsTreeView" Assembly="YSTreeView" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 	 <title runat="server" id="PageTitle"></title>
@@ -128,18 +128,6 @@
 				<br>
 			</asp:Panel>
 			
-			<table class="TableHeaderOver" height="24" cellSpacing="0" cellpadding="0" width="100%"
-				border="0" id="tblQuotationH" runat="server">
-				<tr>
-					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td class="fontHead">
-						<DIV align="center">
-                            <asp:Label ID="lblQuotationH" runat="server" ></asp:Label></DIV>
-					</td>
-				</tr>
-			</table>
-			<cc1:ystreeview id="YSTreeView3" runat="server"></cc1:ystreeview>
-			<BR>
 			<table class="TableHeaderOver" id="tblSampleHeader" runat="server" height="24" cellSpacing="0" cellpadding="0"
 				width="100%" border="0">
 				<tr>

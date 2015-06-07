@@ -1,6 +1,6 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Material_Treatment_Select.aspx.vb" Inherits="plmOnApp.Material_Treatment_Select"   %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title><%= GetSystemText("Material Treatment")%></title>
@@ -10,7 +10,11 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
-		<script language="javascript">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+    	<script language="javascript">
 			function SelectColor(sColor,sTxtBox) 
 			{
 			opener.document.Form1[sTxtBox].value = sColor;

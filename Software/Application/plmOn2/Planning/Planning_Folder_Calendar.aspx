@@ -2,8 +2,8 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc3" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register Src="Planning_Header.ascx" TagName="Planning_Header" TagPrefix="hc1" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Line Plan Folder</title>
@@ -17,7 +17,11 @@
 	    <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
         <script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 
         <style type="text/css">
             th a img {
@@ -72,7 +76,6 @@
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
         <Scripts>
@@ -238,6 +241,7 @@
         </form>
         <script type="text/javascript" language="javascript">
             $(window).load(function () {
+                /*document.getElementById('ctrPlanSearch_ctrPlanningStyle_tdThumbnail').width = "120" */
                 if ('<%= strTab %>' == 'S') {
                     $("[id$=Datalist1] br").remove();
                     $("[id$=Datalist1] > span").wrap("<div></div>");

@@ -2,7 +2,7 @@
     Inherits="plmOnApp.Control_Care_Edit" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
     <title>Care Template</title>
@@ -13,6 +13,8 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body ms_positioning="GridLayout">
     <form id="Form1" method="post" runat="server">
@@ -24,9 +26,11 @@
             </td>
             <td>
                 <cc1:ConfirmedImageButton ID="btnSave" runat="server" 
-                    Message="NONE"></cc1:ConfirmedImageButton><cc1:ConfirmedImageButton ID="btmImgDeletePOM"
+                    Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:confirmedimagebutton id="btnSaveNew" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+                <cc1:ConfirmedImageButton ID="btmImgDeletePOM"
                         runat="server"  CausesValidation="false"></cc1:ConfirmedImageButton>
-                   <cc1:ConfirmedImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click()"
+                <cc1:ConfirmedImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click()"
                          Message="NONE" CausesValidation="false"></cc1:ConfirmedImageButton>
             </td>
             <td class="FontHead" align="right" width="75">

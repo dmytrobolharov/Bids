@@ -10,6 +10,7 @@
         <!--03--> <add key="ServerCulture" value="en-US" />
         <!--04--> <add key="SystemPreferredLanguage" value="TestLang" />
         <!--04a--><add key="TranslateDataReports" value="FALSE" />
+        <!--04b--><add key="TranslateDropdownLists" value="FALSE" />
         <!--05--> <add key="ServerTimeZone" value="0" />
         <!--05a--><add key="ServerTypeID" value="$plmOnServerTypeID$" /><!-- 0=Production, 1=Development, 2=Staging 3=Default -->
         <!--05b--><add key="ServerTypeName" value="$plmOnServerTypeName$" /><!--4 Char (MAX)-->
@@ -38,8 +39,6 @@
         <!--18b--><add key="LDAPSearchGroupNameAttributeOnly" value="FALSE" />
 
         <!--19--> <add key="UseRadGrid" value="FALSE" />
-        <!--20--> <add key="Audit_SPX_OVerrides" value="FALSE" />
-        <!--21--> <add key="plmOnIISDownload" value="FALSE" />
         <!--22--> <add key="MeasDecimalFormat" value="0.00" />
         <!--23--> <add key="BeforeTreatmentEnabled" value="TRUE" />
 		<!--24--> <add key="BingTranslation" value="$plmOnEnableBingTranslations$" />
@@ -49,8 +48,14 @@
 		<!--27--> <add key="EnableQuoteCalendar" value="TRUE" />
 		<!--28--> <add key="EnableCommitmentCalendar" value="TRUE" />
 		<!--29--> <add key="EnableServiceBus" value="FALSE" />
-    <!--30--> <add key="ServiceBusReceiverQueue" value="$plmOnServiceBusReceiverQueue$" />
+		<!--30--> <add key="ServiceBusReceiverQueue" value="$plmOnServiceBusReceiverQueue$" />
       
 		<!--31--> <add key="AllowPermissionsMigration" value="FALSE" />
+		
+		<!--32--> <add key="ImageExcelExportHeight" value="48.75" />
+		<!--33--> <add key="ImageExcelExportWidth" value="8.3625" />
+		
+		<!--34--> <add key="MaterialPaletteCheckDutyCategory" value="FALSE" />
+		<!--35--> <add key="DigitalAssetsViaHTTP" value="TRUE" />
     </appSettings>
 </configuration>

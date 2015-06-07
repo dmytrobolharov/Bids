@@ -2,8 +2,8 @@
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<%@ Register TagPrefix="cc3" Namespace="plmOnCustomControls.YSTab" Assembly="plmOnCustomControls" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -12,8 +12,10 @@
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .drag-helper {
         	display: none;
@@ -196,7 +198,7 @@
                                         <table cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td>
-                                                    <label style='<%# String.Format("background-image:url({0})", Eval("ColorImageUrl"))%>' class="color-chip">
+                                                    <label style='<%# String.Format("background-image:url({0})", GetColorStreamPath("50", Eval("ColorFolderId").ToString, Eval("ColorPaletteID").ToString))%>; background-position: center; background-repeat: no-repeat' class="color-chip">
                                                     <asp:CheckBox ID="chkSelect" runat="server" /></label>
                                                     <asp:HiddenField ID="hdnPlanningColorID" runat="server" Value='<%# Eval("PlanningColorID") %>' />
                                                     <asp:HiddenField ID="hdnColorPaletteID" runat="server" Value='<%# Eval("ColorPaletteID") %>' />
@@ -210,7 +212,7 @@
                             </td>
                         </tr>
                     </table>
-                    <cc3:YSTabView ID="YSTabView1" runat="server"></cc3:YSTabView>
+                    <cc2:YSTabView ID="YSTabView1" runat="server"></cc2:YSTabView>
                     <table height="15" cellspacing="0" cellpadding="0" width="100%" bgcolor="white" border="0" style="padding-top: 5px;">
                         <tr>
                             <td class="search-cell">
@@ -291,22 +293,7 @@
                     </table>
                     <asp:Panel ID="pnlStyles" runat="server">                     
                         <asp:PlaceHolder runat="server" ID="plhStylesGrid"></asp:PlaceHolder>
-                        <asp:DataGrid ID="dgStyles" runat="server" AllowSorting="True" DataKeyField="PlanningItemID" AllowPaging="true">
-                            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-                            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
-                            <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
-                            <PagerStyle Visible="False"></PagerStyle>
-                            <Columns>
-                                <asp:TemplateColumn>
-                                    <HeaderTemplate>
-                                        <input type="checkbox" id="checkAll" onclick="CheckAll(this, 'chkStyleSelect');" runat="server" name="checkAll" />
-                                    </HeaderTemplate>
-                                    <ItemTemplate>
-                                        <asp:CheckBox ID="chkStyleSelect" runat="server"></asp:CheckBox>
-                                    </ItemTemplate>
-                                </asp:TemplateColumn>                    
-                            </Columns>
-                        </asp:DataGrid><asp:Label ID="SortOrder" runat="server" Visible="False"></asp:Label>                    
+                        <asp:Label ID="SortOrder" runat="server" Visible="False"></asp:Label>                    
                     <asp:DataList ID="dlStyles" runat="server" DataKeyField="PlanningItemID" RepeatDirection="Horizontal" RepeatLayout="Table" RepeatColumns="<%#dlStylesColumnsCnt.ToString %>" ItemStyle-VerticalAlign="Top" ItemStyle-Width="<%#dlStylesColumnsWidth.ToString %>">
                         <ItemTemplate>
                             <table class="TableHeader" style="border: 1px solid #ccc;" cellspacing="0" cellpadding="0" width="100%">
@@ -348,22 +335,6 @@
                     </asp:Panel>
                     <asp:Panel runat="server" ID="pnlMaterial">
                         <asp:PlaceHolder runat="server" ID="plhMaterialsGrid"></asp:PlaceHolder>
-                        <asp:DataGrid ID="dgMaterials" runat="server" AllowSorting="True" DataKeyField="PlanningMaterialID" AllowPaging="true">
-                            <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
-                            <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
-                            <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
-                            <PagerStyle Visible="False"></PagerStyle>
-                            <Columns>
-                                <asp:TemplateColumn>
-                                    <HeaderTemplate>
-                                        <input type="checkbox" id="checkAll" onclick="CheckAll(this, 'chkMaterialSelect');" runat="server" name="checkAll" />
-                                    </HeaderTemplate>
-                                    <ItemTemplate>
-                                        <asp:CheckBox ID="chkMaterialSelect" runat="server"></asp:CheckBox>
-                                    </ItemTemplate>
-                                </asp:TemplateColumn>
-                            </Columns>
-                        </asp:DataGrid>
                         <asp:DataList ID="dlMaterials" runat="server" RepeatDirection="Horizontal" RepeatColumns="8" EnableViewState="True"
                             DataKeyField="PlanningMaterialID">
                             <ItemStyle BorderWidth="1px" BorderStyle="Solid" BackColor="White" BorderColor="Gainsboro" VerticalAlign="Top">
@@ -503,6 +474,18 @@
     <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" language="javascript">
+
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+        function BeginRequestHandler(sender, args) {
+            show_wait_text();
+        }
+
+        function EndRequestHandler(sender, args) {
+            hide_wait_text();
+        }
+
         var frm = document.forms['form1'];
         function CheckAll(checkAllBox, name) {
             var actVar = checkAllBox.checked;
@@ -525,7 +508,7 @@
         });
 
         function ReplaceButtonClick() {
-            if ($("#dlColors [id*='chkSelect']:checked").length > 0 & ($("#RadGridStyles [id*='columnSelectCheckBox']:checked").length > 0 || $("#dlStyles [id*='chkStyleSelect']").length > 0)) {
+            if ($("#dlColors [id*='chkSelect']:checked").length > 0 & ($("#RadGridStyles [id*='gcscRowSelectorSelectCheckBox']:checked").length > 0 || $("#dlStyles [id*='chkStyleSelect']").length > 0)) {
                 return true;
             }
             else {

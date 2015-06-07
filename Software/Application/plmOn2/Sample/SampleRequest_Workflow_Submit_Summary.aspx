@@ -14,8 +14,10 @@
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/mamagi.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" src='../System/Jscript/jquery-1.6.2.min.js'></script>
         <script language="javascript" src='../System/Jscript/mamagi/jquery.mamagi.yunique.js'></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
 	</HEAD>
 	<body onload="self.focus()">

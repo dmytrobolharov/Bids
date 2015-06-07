@@ -7,6 +7,8 @@
 		<meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">
 		<meta name="vs_defaultClientScript" content="JavaScript">
 		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		<style type="text/css">
 			.Header { FONT-SIZE: large; COLOR: #ffffff; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif }
 			.Label { FONT-WEIGHT: bold; FONT-SIZE: x-small; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif }

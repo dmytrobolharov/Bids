@@ -97,7 +97,7 @@
                             <TextRun>
                               <Value>= Fields!ImageKeywords.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -166,21 +166,22 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Image Catalog</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "ds_ReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
+                    <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>26pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.125in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
-          <Width>11in</Width>
+          <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
             <VerticalAlign>Middle</VerticalAlign>
@@ -226,12 +227,33 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="ds_ReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select ReportPageDescription from rReportPageItem where ReportPageID=@RPID</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="IC">
       <DataType>String</DataType>
       <Prompt>ImageCatalogID</Prompt>
     </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
+    </ReportParameter>  
   </ReportParameters>
   <EmbeddedImages>
     <EmbeddedImage Name="logo">

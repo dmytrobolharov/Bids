@@ -1,11 +1,9 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Planning_FlashEdit_Image.aspx.vb"
-    Inherits="plmOnApp.Planning_FlashEdit_Image" %>
-
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Planning_FlashEdit_Image.aspx.vb" Inherits="plmOnApp.Planning_FlashEdit_Image" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
 <%@ Register Src="Planning_Header.ascx" TagName="Header" TagPrefix="hc1" %>
 <%@ Register Src="Planning_Folder_FlashEdit_Style.ascx" TagName="Plan" TagPrefix="lc1" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title runat="server" id="pgTitle">Flash Edit Image</title>
@@ -13,7 +11,9 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-    <!--[if lt IE 9]>
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+	    <!--[if lt IE 9]>
 <style type="text/css">
     .StyleDiv { display: inline !imporant; }
 </style>   
@@ -21,7 +21,6 @@
 <style type="text/css">
     .marginCLS { margin-right: 3px; }
 </style>
-<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script> 
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -260,6 +259,7 @@
     </form>
     <script language="javascript" type="text/javascript" src="../System/Jscript/underscore-min.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script> 
     <script language="javascript" type="text/javascript" src="../System/Jscript/System.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
     <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
@@ -268,7 +268,16 @@
     <script src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
 
+        function BeginRequestHandler(sender, args) {
+            show_wait_text();
+        }
+
+        function EndRequestHandler(sender, args) {
+            hide_wait_text();
+        }
 
 
         /* Make GridArea div to take all the free height on the window, but no more */

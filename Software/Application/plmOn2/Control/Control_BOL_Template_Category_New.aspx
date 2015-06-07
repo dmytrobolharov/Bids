@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Control_BOL_Template_Category_New.aspx.vb" Inherits="plmOnApp.Control_BOL_Template_Category_New" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -13,8 +12,10 @@
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		
     <style type="text/css">
         .style4
@@ -73,7 +74,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
         <asp:Panel ID="pnlAddSave" runat="server">
 		 <table class="TableHeader" id="toolbar1" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
             <tr valign="middle">
@@ -184,6 +184,20 @@
 		</TABLE>
 				
     </div>
-	
+	<script type="text/javascript">
+	    jQuery(document).ready(function ($) {
+	        var inputs = document.getElementsByTagName("input");
+	        for (var i = 0; i < inputs.length; i++) {
+	            if (inputs.item(i).type == "text" && inputs.item(i).id != "txtNewCategory") {
+	                $("#" + inputs.item(i).id).keydown(function (event) {
+	                    if (event.keyCode == 13) {
+	                        __doPostBack('imgBtnSearch', 'OnClick');
+	                        return false;
+	                    }
+	                });
+	            }
+	        };
+	    });
+            </script>
 	 </form>
 </body>

@@ -46,16 +46,6 @@
                 </tr>
             </table>
             <asp:Panel ID="Panel1" runat="server">
-                <script language="javascript" type="text/javascript">
-                    function checkSubmit() {
-                        if (document.getElementById("<%=HFSubmitForm.ClientID %>").value == 1)
-                            return false;
-                        else {
-                            document.getElementById("<%=HFSubmitForm.ClientID %>").value = 1;
-                            return true;
-                        }
-                    }
-                </script>
                 <table height="25" cellspacing="0" cellpadding="0" width="100%" border="0">
                     <tr class="TableHeader">
                         <td valign="middle" align="center" width="10">
@@ -142,10 +132,9 @@
                                         <img height="15" src="../System/Images/bbTbSCnr.gif" width="3">
                                     </td>
                                     <td class="fontHead">
-                                        <cc1:BWImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False">
-                                        </cc1:BWImageButton>
-                                        <cc1:ConfirmedImageButton ID="btnDeleteImage" runat="server" >
-                                        </cc1:ConfirmedImageButton>
+                                        <cc1:BWImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
+                                        <cc1:ConfirmedImageButton ID="btnDeleteImage" runat="server" ></cc1:ConfirmedImageButton>
+                                        <cc1:BWImageButton ID="btn3DFiles" runat="server" CausesValidation="False" />
                                     </td>
                                 </tr>
                             </table>
@@ -266,7 +255,7 @@
                                                         <cc1:ConfirmedLinkButton ID="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>'
                                                             CommandName="delete" NAME="edit_btnDelete">
                                                         </cc1:ConfirmedLinkButton>
-                                                        <asp:LinkButton ID="Linkbutton5" runat="Server" CommandName="download"></asp:LinkButton>
+                                                        <asp:LinkButton ID="Linkbutton5" runat="Server" CommandName="download" OnClientClick="dont_show_wait_twice(); return true;"></asp:LinkButton>
                                                         <cc1:ConfirmedImageButton ID="btnEditCancel" runat="server" Message="NONE" CommandName="cancel">
                                                         </cc1:ConfirmedImageButton>
                                                     </td>

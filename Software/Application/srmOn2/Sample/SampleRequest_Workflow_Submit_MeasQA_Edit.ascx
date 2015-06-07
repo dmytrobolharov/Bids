@@ -112,8 +112,10 @@
 												<TD vAlign="middle" align="center" width="10">
                                                     <IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 												<TD class="fontHead">
-												<cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
-													<cc1:confirmedimagebutton id="btnDeleteImage" runat="server" ></cc1:confirmedimagebutton></TD>
+												    <cc1:ConfirmedImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+													<cc1:confirmedimagebutton id="btnDeleteImage" runat="server" ></cc1:confirmedimagebutton>
+                                                    <cc1:BWImageButton ID="btn3DFiles" runat="server" CausesValidation="False" />
+                                                </TD>
 											</TR>
 										</TABLE>
 										<asp:datagrid id="dgFitImage" runat="server" AutoGenerateColumns="False" PageSize="100" BorderWidth="1px"

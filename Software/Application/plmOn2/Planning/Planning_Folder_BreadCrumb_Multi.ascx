@@ -9,8 +9,8 @@
             <asp:ImageButton ID="imgBtnSearch" runat="server"></asp:ImageButton>
         </td>
         <td>
-            &nbsp;<asp:Label ID="lblRecordCount" runat="server" CssClass="fontHead" style="color: Red;"></asp:Label>&nbsp;
-            <asp:Label ID="lblRecordCountText" runat="server" CssClass="fontHead"></asp:Label>
+            &nbsp;<asp:Label ID="lblRecordCount" runat="server" CssClass="fontHead" style="color: Red;" Visible="false"></asp:Label>&nbsp;
+            <asp:Label ID="lblRecordCountText" runat="server" CssClass="fontHead" Visible="false"></asp:Label>
         </td>
     </tr>
 </table>

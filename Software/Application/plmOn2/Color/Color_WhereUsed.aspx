@@ -2,7 +2,6 @@
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<%@ Register TagPrefix="cc3" Namespace="plmOnCustomControls.YSTab" Assembly="plmOnCustomControls" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -11,9 +10,22 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(PageLoaded)
+        });
+        function PageLoaded(sender, args) {
+            disable_waittext_for_calendar();
+            hide_wait_text();
+        }    
+    </script>
     <style type="text/css">
         .drag-helper {
         	display: none;
@@ -33,6 +45,8 @@
         	display: block;
         	width: 50px;
         	height: 50px;
+        	background-repeat:no-repeat;
+        	background-position: center center;
         }
         
         .color-item {
@@ -149,8 +163,12 @@
         </StyleSheets>
         <CdnSettings TelerikCdn="Disabled" />
     </telerik:RadStyleSheetManager>
-    <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />
-    <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
+    <%--<telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />--%>
+    <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1">
+            <ClientEvents OnRequestStart="onAjaxRequestStart" OnResponseEnd="onAjaxResponseEnd" />
+        </telerik:RadAjaxManager>
+        
+        <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">
                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3" alt="" />
@@ -189,7 +207,7 @@
     </table>
     <div class="slider-container">
         <div class="slider-static" style="overflow: auto; height: 100%;">
-            <asp:UpdatePanel ID="upMain" runat="server" UpdateMode="Conditional" RenderMode="Inline">
+           <asp:UpdatePanel ID="upMain" runat="server" UpdateMode="Conditional" RenderMode="Inline">
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="btnColorClearAndSelect" />
                     <asp:AsyncPostBackTrigger ControlID="btnColorSelect" />
@@ -198,6 +216,8 @@
                     <asp:AsyncPostBackTrigger ControlID="btnRemove" />
                 </Triggers>
                 <ContentTemplate>
+                <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelStyle" ClientEvents-OnRequestStart="onAjaxRequestStart"
+                ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="98%">
                     <table style="border-bottom: orange thin solid; border-left-style: none; background-color: white" height="45"
                         cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
                         <tr>
@@ -208,7 +228,7 @@
                                         <table cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td>
-                                                    <label style='<%# String.Format("background-image:url({0})", Eval("ColorImageUrl"))%>' class="color-chip">
+                                                    <label style='<%# String.Format("background-image:url({0})", GetColorStreamPath("50", Eval("ColorFolderID").ToString, Eval("ColorPaletteID").ToString))%>' class="color-chip">
                                                         <asp:CheckBox ID="chkSelect" runat="server" /></label>
                                                     <asp:HiddenField ID="hdnColorPaletteID" runat="server" Value='<%# Eval("ColorPaletteID") %>' />
                                                 </td>
@@ -225,13 +245,14 @@
                             </td>
                         </tr>
                     </table>
-                    <cc3:YSTabView ID="YSTabView1" runat="server"></cc3:YSTabView>
+                    <cc2:YSTabView ID="YSTabView1" runat="server"></cc2:YSTabView>
+                    
                     <table height="15" cellspacing="0" cellpadding="0" width="100%" bgcolor="white" border="0" style="padding-top: 5px;">
                         <tr>
                             <td class="search-cell">
                                 <asp:PlaceHolder ID="plhControlsHolder" runat="server" EnableViewState="False"></asp:PlaceHolder>
                             </td>
-                            <td valign="middle" width="100%">
+                            <td valign="top" width="100%">
                                 <table id="Table3" height="45">
                                     <tr>
                                         <td valign="middle">
@@ -359,6 +380,7 @@
                     <asp:Panel runat="server" ID="pnlLinePlans">
                         <asp:PlaceHolder runat="server" ID="plhLinePlansGrid"></asp:PlaceHolder>                        
                     </asp:Panel>
+                    </telerik:RadAjaxPanel>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
@@ -432,7 +454,7 @@
                                                 <asp:Label ID="lblRecordsPerPage" runat="server"></asp:Label>
                                             </td>
                                         </tr>
-                                    </table>
+                                    </table>                                    
                                     <asp:DataGrid ID="dgColors" runat="server" DataKeyField="ColorPaletteID" BorderStyle="Solid" BorderWidth="1px"
                                         Width="100%" AllowPaging="true" EnableViewState="true">
                                         <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate draggable"></AlternatingItemStyle>
@@ -466,6 +488,19 @@
     <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" language="javascript">
+
+
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+        function BeginRequestHandler(sender, args) {
+            show_wait_text();
+        }
+
+        function EndRequestHandler(sender, args) {
+            hide_wait_text();
+        }
+
         var frm = document.forms['form1'];
         function CheckAll(checkAllBox, name) {
             var actVar = checkAllBox.checked;
@@ -488,7 +523,21 @@
         });
     </script>
     <script type="text/javascript" src="../System/Jscript/jquery.tablescroll.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" language="javascript">
+
+    (function(){
+                        var buttonsToConfirm = ["imgBtnSearch", "btnRepage", "btnImgNext", "btnImgPrevious", "btnImgLast", "btnImgFirst"],                            
+                            confirmed = false;
+
+                        window.onAjaxRequestStart = function(sender, eventArgs) {
+                            show_wait_text();  
+                        }
+                })();
+
+    function onAjaxResponseEnd(sender, eventArgs) {
+                        hide_wait_text();
+                        addScrollToTable();
+                    }
 
         $.fn.tableScroll.defaults =
         {
@@ -499,19 +548,18 @@
         };
 
         function addScrollToTable() {
-            var table = $("#dgColors");
+            var table = $("#dgColors").tableScroll();
             var head = document.createElement("thead");
             var body = table.find("tbody");
-            head.appendChild(table[0].rows[0]);
+            //head.appendChild(table[0].rows[0]);
             body.before(head);
             var tableHeight = $("#FloatDGMain").height() - 130;
             table.tableScroll({
                 height: tableHeight,
-                width: (tableHeight < table.height() ? table.width() - 16 : null)
+                //width: (tableHeight <= table.height() ? table.width() - 16 : null);
             });
         };
 
-        addScrollToTable();
 
         Sys.Application.add_load(WireEvents);
         $(WireEvents);
@@ -539,7 +587,7 @@
                 tolerance: 'intersect',
                 drop: function (event, ui) {                    
                     var ColorPaletteID = ui.draggable.find("[id*='hdnColorPaletteID']").val();
-                    <%= GetPostBackEventReference(btnColorSelect, "ColorPaletteID").Replace("'ColorPaletteID'", "ColorPaletteID") %>;
+                    <%= GetPostBackEventReference(btnColorSelect, "ColorPaletteID").Replace("'ColorPaletteID'", "ColorPaletteID") %>;                    
                 }
             });
             
@@ -582,6 +630,7 @@
             }
         }
 
+       
     </script>
 </body>
 </html>

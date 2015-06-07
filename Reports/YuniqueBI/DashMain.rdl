@@ -525,7 +525,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -761,9 +760,9 @@
     <DataSet Name="ds_plmOnURL">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT TOP 1 SettingValue AS plmOnURL
-FROM rReportSetting
-WHERE SettingType = 'plmOnServer'</CommandText>
+        <CommandText>SELECT TOP 1 AppSettingValue AS plmOnURL
+FROM sAppSetting
+WHERE AppSettingKey = 'HttpServer'</CommandText>
       </Query>
       <Fields>
         <Field Name="plmOnURL">

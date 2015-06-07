@@ -1,8 +1,8 @@
 ﻿<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Control Language="vb" AutoEventWireup="false" CodeBehind="Style_WorkFlowItem.ascx.vb" Inherits="plmOnApp.Style_WorkFlowItem" %>
 <link href="../System/CSS/jquery-ui.css" rel="stylesheet" type="text/css" />
-<script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
-<script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
 
 <table class="TableHeader" height="27" cellSpacing="0" cellpadding="0" width="100%" border="0">
 	<tr valign="middle">

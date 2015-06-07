@@ -9,10 +9,12 @@
     <title></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />    
-    <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="../System/Jscript/jquery.tablescroll.js"></script>
+    <%--<link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet" />--%>
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .RightAlign input
         {
@@ -67,7 +69,7 @@
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 							<PagerStyle Visible="False"></PagerStyle>
 							<Columns>
-							    <asp:TemplateColumn ItemStyle-BorderWidth="1">
+							    <asp:TemplateColumn ItemStyle-BorderWidth="1" ItemStyle-Width="20" HeaderStyle-Width="20">
 							        <HeaderTemplate>
 							            <asp:Image ID="Image1" runat="server" ImageUrl ="../System/Icons/icon_delete.gif" />
 							        </HeaderTemplate>
@@ -171,14 +173,14 @@
                 var table = $('#DataGrid1');
                 // Creating <thead> element for the first row
                 var head = document.createElement("thead");
-                var body = table.find("tbody");
+                var body = table.children("tbody");
                 head.appendChild(table[0].rows[0]);
                 var hdnBase = $("#hdnBaseCurrency").val();
                 if (hdnBase != "") {
                     $(table[0].rows[0]).find("input").each(function () {
                         $(this).width($(this).width() - 2);
                     });
-                    head.appendChild(table[0].rows[0]);
+                    //head.appendChild(table[0].rows[0]);
                 }
                 body.before(head);
                 // Adding the scrollbar
@@ -188,7 +190,7 @@
 
             });
         </script>
-        <script language="javascript">
+        <script type="text/javascript">
 	        function btnClose_Click() {
 		        <%= strExitScript %>
                 return false;

@@ -6,6 +6,8 @@
 <head id="Head1" runat="server">
     <title>Process Details Category</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 
 </head>
 <body>
@@ -20,7 +22,7 @@
 					<cc1:confirmedimagebutton id="btnSaveAsNew" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnAddclass" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 					<%--<cc1:confirmedimagebutton id="btnOrganize" runat="server" Message="NONE" ></cc1:confirmedimagebutton>--%>
-					<cc1:confirmedimagebutton id="btnDelete" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnDelete" runat="server" Message="NONE" CausesValidation="false"></cc1:confirmedimagebutton>
 				</td>
 			</tr>
 		</table>

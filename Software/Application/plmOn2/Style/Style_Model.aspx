@@ -16,9 +16,11 @@
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -93,7 +95,7 @@
                 <cc1:bwimagebutton ID="btnCreateModel" runat="server" Message="NONE" ></cc1:bwimagebutton>          	
                 <cc1:bwimagebutton ID="btnAdd1" runat="server" Message="NONE"></cc1:bwimagebutton>
                 <cc1:bwimagebutton ID="btnRemove" runat="server" Message="NONE"></cc1:bwimagebutton>
-                <cc1:bwimagebutton ID="btnAddBF" runat="server" Message="NONE"></cc1:bwimagebutton>&nbsp;&nbsp;&nbsp;
+                <cc1:bwimagebutton ID="btnAddBF" runat="server" Message="NONE" Visible="false"></cc1:bwimagebutton>&nbsp;&nbsp;&nbsp;
                 <asp:CheckBox valign="top" align="center" ID="chbImperial" autopostback="true"  runat="server" Text="Imperial" CssClass="fontHead" />
                 <asp:Image id="ImgWFLinked" runat="server" ImageUrl="../System/Icons/icon_link.gif" Visible="false"/>
                 <asp:Image id="ImgWFParent" runat="server" ImageUrl="../System/Icons/icon_parent_link.gif" Visible="false"/>

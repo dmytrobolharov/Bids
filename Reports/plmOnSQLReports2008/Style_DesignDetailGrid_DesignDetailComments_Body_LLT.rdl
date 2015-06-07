@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.41133in</Width>
+              <Width>2.4156in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.43459in</Width>
+              <Width>1.43886in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.4346in</Width>
+              <Width>1.43887in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.34448in</Width>
+              <Width>5.34875in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -33,7 +33,6 @@
                             <TextRun>
                               <Value>Feature Detail</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -72,7 +71,6 @@
                             <TextRun>
                               <Value>Measurement</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -111,7 +109,6 @@
                             <TextRun>
                               <Value>Stitch Type</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -150,7 +147,6 @@
                             <TextRun>
                               <Value>Comments</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -194,7 +190,6 @@
                             <TextRun>
                               <Value>=Fields!FeatureDetail.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -231,7 +226,6 @@
                             <TextRun>
                               <Value>=Fields!Measurement.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -268,7 +262,6 @@
                             <TextRun>
                               <Value>=Fields!StitchType.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -305,7 +298,6 @@
                             <TextRun>
                               <Value>=Fields!Comments.Value</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
@@ -364,15 +356,14 @@
         </TablixRowHierarchy>
         <DataSetName>dsDesignDetail</DataSetName>
         <Top>0.68333in</Top>
-        <Left>0.03125in</Left>
         <Height>0.4in</Height>
-        <Width>10.625in</Width>
+        <Width>10.64208in</Width>
         <Visibility>
           <Hidden>=IIF( First(Fields!FeatureDetail.Value, "dsDesignDetail") = "HideGrid", True, False)</Hidden>
         </Visibility>
         <DataElementOutput>NoOutput</DataElementOutput>
         <Style>
-          <FontFamily>Tahoma</FontFamily>
+          <FontFamily>Arial Unicode MS</FontFamily>
           <FontSize>9pt</FontSize>
           <VerticalAlign>Middle</VerticalAlign>
         </Style>
@@ -448,9 +439,7 @@
                                                 <TextRuns>
                                                   <TextRun>
                                                     <Value>=Fields!ImageDescription.Value</Value>
-                                                    <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
-                                                    </Style>
+                                                    <Style />
                                                   </TextRun>
                                                 </TextRuns>
                                                 <Style>
@@ -664,7 +653,6 @@
                             <TextRun>
                               <Value>Modified By</Value>
                               <Style>
-                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -688,7 +676,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -702,7 +689,6 @@
                             <TextRun>
                               <Value>Comments</Value>
                               <Style>
-                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -745,7 +731,6 @@
                             <TextRun>
                               <Value>=Fields!MUser.Value</Value>
                               <Style>
-                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
@@ -781,7 +766,6 @@
                             <TextRun>
                               <Value>=Fields!StyleComment.Value</Value>
                               <Style>
-                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
@@ -833,9 +817,8 @@
         <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>dsComments</DataSetName>
         <Top>0.06944in</Top>
-        <Left>0.01418in</Left>
         <Height>0.375in</Height>
-        <Width>10.64207in</Width>
+        <Width>10.64208in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -847,7 +830,7 @@
     <Height>6.23958in</Height>
     <Style />
   </Body>
-  <Width>10.77835in</Width>
+  <Width>10.75in</Width>
   <Page>
     <PageHeader>
       <Height>2.75in</Height>
@@ -861,24 +844,25 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Design Detail &amp; Grid</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
-                    <FontSize>26pt</FontSize>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.125in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
           <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -894,6 +878,8 @@
     <PageWidth>11in</PageWidth>
     <InteractiveHeight>11in</InteractiveHeight>
     <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.125in</LeftMargin>
+    <RightMargin>0.125in</RightMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -995,6 +981,23 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType><CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SID">
@@ -1004,6 +1007,10 @@
     <ReportParameter Name="SN">
       <DataType>Integer</DataType>
       <Prompt>StyleSet</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>ReportPageID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

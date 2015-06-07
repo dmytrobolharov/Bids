@@ -477,31 +477,33 @@
                   <Style>
                     <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>20pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=First(Fields!WorkflowItemName.Value, "DataSet_HeaderInfo") &amp; " - Metric"</Value>
+                  <Value>=First(Fields!WorkflowItemName.Value, "DataSet_HeaderInfo")</Value>
                   <Style>
                     <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>20pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.125in</Top>
-          <Left>5.69736cm</Left>
+          <Top>0.05in</Top>
+          <Left>0cm</Left>
           <Height>0.5in</Height>
-          <Width>6.73611in</Width>
+          <Width>10.75in</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -930,31 +932,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Rectangle Name="Rectangle2">
-          <KeepTogether>true</KeepTogether>
-          <Top>0.125in</Top>
-          <Height>0.5in</Height>
-          <Width>2.22917in</Width>
-          <ZIndex>13</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Rectangle>
-        <Rectangle Name="Rectangle3">
-          <KeepTogether>true</KeepTogether>
-          <Top>0.125in</Top>
-          <Left>22.84236cm</Left>
-          <Height>0.5in</Height>
-          <Width>1.75694in</Width>
-          <ZIndex>14</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Rectangle>
       </ReportItems>
       <Style>
         <Border>
@@ -991,14 +968,11 @@
       <Query>
         <DataSourceName>plmOn</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@StyleId">
-            <Value>=Parameters!SID.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@StyleSet">
-            <Value>=Parameters!SN.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@WorkflowItemId">
             <Value>=Parameters!WFIID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
@@ -1043,12 +1017,6 @@
       <Query>
         <DataSourceName>plmOn</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@StyleId">
-            <Value>=Parameters!SID.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@StyleSet">
-            <Value>=Parameters!SN.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@WorkflowItemId">
             <Value>=Parameters!WFIID.Value</Value>
           </QueryParameter>
@@ -1113,17 +1081,13 @@
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="SID">
-      <DataType>String</DataType>
-      <Prompt>Style Id</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="SN">
-      <DataType>String</DataType>
-      <Prompt>Style Set</Prompt>
-    </ReportParameter>
     <ReportParameter Name="WFIID">
       <DataType>String</DataType>
       <Prompt>Workflow Item Id</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>

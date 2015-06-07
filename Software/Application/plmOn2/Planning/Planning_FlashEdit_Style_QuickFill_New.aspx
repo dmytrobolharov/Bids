@@ -7,7 +7,9 @@
 <head runat="server">
 	<title></title>
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+	<script type="text/javascript">
         function GetRadWindow() {
             var oWindow = null; if (window.radWindow)
                 oWindow = window.radWindow; else if (window.frameElement.radWindow)

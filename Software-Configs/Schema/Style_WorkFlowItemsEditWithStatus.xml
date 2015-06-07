@@ -23,24 +23,24 @@
             enabled="true" Search="false" lookupquery="select WorkflowItemTypeId, ItemTypeLabel from pWorkflowItemType order by ItemTypeLabel" select="true" 
             textfield="ItemTypeLabel" ValueField="WorkflowItemTypeId" FilterField="MapId"  AutoPostBack="false" DefaultValue=""
 			ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="004" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
-        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+        <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Page Type Required!" />
 		<LookupTable XMLFileName="Lookup_pWorkFlowItemType.xml" ParentIDField="WorkflowItemTypeId" ChildIDField="WorkflowItemTypeId" />
     </column>
     <column TrackChange="true" Name="WorkFlowItemName" alias="Name" Type="textbox" datatype="string"
 		column="1" order="3" GridVisible="true" cellwidth="150px" GridWidth="200" Visible="true"
 		enabled="true"
 		ApiDataType="string" ApiVisible="true" ApiOrder="005" ApiRequired="false" ApiSearch="true" ApiSearchRequired="false" ApiSearchType="ALL">
-		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		<Validator Class="required" Type="" Minimum="" Maximum="" Text="Name Required!" />
 	</column>
-    <column TrackChange="true" Name="WorkStatus" alias="Status" Type="dropdownlist" datatype="query" column="2" order="04" GridVisible="true" cellwidth="150px" Visible="true"
+	<column TrackChange="true" Name="WorkStatus" alias="Status" Type="dropdownlist" datatype="query" column="2" order="04" GridVisible="true" cellwidth="150px" Visible="true"
             enabled="true" Search="false" lookupquery="SELECT WorkflowStatusID, WorkflowStatus FROM pWorkflowStatus WHERE Active = 1" select="true" textfield="WorkflowStatus" ValueField="WorkflowStatusID" AutoPostBack="false" DefaultValue=""
 			ApiDataType="string" ApiVisible="true" ApiOrder="006" ApiRequired="false" ApiSearch="true" ApiSearchRequired="false" ApiSearchType="ALL">
-        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+        <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="Status Required!" />
 		<LookupTable XMLFileName="Lookup_pWorkflowStatus.xml" ParentIDField="WorkStatus" ChildIDField="WorkflowStatusID" />
     </column>
 	<column TrackChange="true" Name="Sort" alias="Sort" Type="textbox" datatype="string" column="1" order="4" GridVisible="true" cellwidth="150px" GridWidth="70" Visible="true" enabled="true"
 		ApiDataType="string" ApiVisible="true" ApiOrder="007" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
-  		<Validator Class="Length" Type="" Minimum="0" Maximum="4" Text="Up to four symbols allowed!" /> 
+  		<Validator Class="validationexpression" Type="" Minimum="0" Maximum="4" ValidationExpression="[0-9]{0,4}" Text="Up to four numbers allowed!" /> 
   	</column>
     <column Name="CUser" alias="Created By" Type="label" datatype="string" column="3" order="19"
       GridVisible="false" cellwidth="150px" Visible="false" enabled="false"

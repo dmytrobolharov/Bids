@@ -72,6 +72,7 @@
                                               <TextRun>
                                                 <Value>=Fields!ColorName.Value</Value>
                                                 <Style>
+                                                  <FontFamily>Arial Unicode MS</FontFamily>
                                                   <FontSize>5pt</FontSize>
                                                 </Style>
                                               </TextRun>
@@ -98,6 +99,7 @@
                                               <TextRun>
                                                 <Value>=Fields!ColorCode.Value</Value>
                                                 <Style>
+                                                  <FontFamily>Arial Unicode MS</FontFamily>
                                                   <FontSize>5pt</FontSize>
                                                 </Style>
                                               </TextRun>
@@ -275,7 +277,7 @@
   <Width>8.25in</Width>
   <Page>
     <PageHeader>
-      <Height>2in</Height>
+      <Height>1.5in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -286,23 +288,25 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Color Folder</Value>
+                  <Label>ColorFolderDescription</Label>
+                  <Value>=First(Fields!ColorFolderDescription.Value, "dsColorPalette")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
+                    <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>26pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>textbox1</rd:DefaultName>
-          <Top>0.125in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
-          <Width>8.25in</Width>
-          <ToolTip>##label##</ToolTip>
+          <Width>8.10417in</Width>
+          <ToolTip>##data##</ToolTip>
           <Style>
             <VerticalAlign>Middle</VerticalAlign>
           </Style>
@@ -365,6 +369,27 @@
           <DataField>Sort</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="ColorFolderDescription">
+          <DataField>ColorFolderDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ds_ReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select ReportPageDescription from rReportPageItem where ReportPageID=@RPID</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -372,6 +397,10 @@
     <ReportParameter Name="CFID">
       <DataType>String</DataType>
       <Prompt>ColorFolderID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <EmbeddedImages>

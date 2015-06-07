@@ -2,17 +2,17 @@
     Inherits="plmOnApp.Control_ConstructionDetails_Feature" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-      <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <div>
         <table class="TableHeader" cellspacing="0" cellpadding="0" width="100%" border="0">
             <tr>
@@ -85,12 +85,21 @@
                                 <cc1:ConfirmedImageButton ID="btnImageRemove" runat="server" ToolTip="Delete Image File..." />
                                 <cc1:ConfirmedImageButton ID="btnUpdate" runat="server" Message="NONE" Visible="False">
                                 </cc1:ConfirmedImageButton>
+                                <asp:ImageButton ID="btnUpload" runat="server" Visible="false"/>
                                 <cc1:ConfirmedImageButton ID="btnCancelUpdate" runat="server" Message="NONE" Visible="False">
                                 </cc1:ConfirmedImageButton>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" class="font" width="50">
+                                <asp:Panel ID="pnlFileUpdateUpload" runat="server" Visible="false">
+                                    <div>  
+                                        <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachmentsUpdate" ManualStartUpload="False" AutoUseSystemTempFolder="False"
+                                            InsertButtonID="btnUpload" MultipleFilesUpload="false" MaxFilesLimit="1" ShowCheckBoxes="false" ShowFileIcons="false">
+                                        </CuteWebUI:UploadAttachments>
+                                        <br />
+                                    </div>
+                                </asp:Panel>
                                 <br />
                                 <cc1:BWImageButton ID="imgFeature" runat="server" />
                             </td>

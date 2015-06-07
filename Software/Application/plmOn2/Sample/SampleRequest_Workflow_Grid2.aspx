@@ -5,7 +5,6 @@
 <%@ Register TagPrefix="cc4" Namespace="Yunique.WebControls.YSCalendar" Assembly="YSCalendar" %>
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
     Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <HTML>
 	<HEAD>
@@ -28,8 +27,8 @@
         </style>
 	</HEAD>
 	<body>
-		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
-        <telerik:RadScriptManager ID="RadScriptManager1" runat="server" >
+		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch" defaultfocus="Form1">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
             <Scripts>
                 <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
                 <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js"></asp:ScriptReference>
@@ -47,7 +46,6 @@
             <CdnSettings TelerikCdn="Disabled" />
         </telerik:RadStyleSheetManager>
         <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 			<table height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
 				<tr>
 					<td>&nbsp;<asp:label id="lblHeader" runat="server" ForeColor="DarkGray" Font-Size="Large" Font-Names="Tahoma,Verdana"></asp:label></td>
@@ -292,8 +290,8 @@
             function viewerPropertyChanged(sender, e) {
                 if (e.get_propertyName() === "isLoading") {
                     var viewer = $find("ReportViewer1");
-                    if (viewer.get_isLoading() == false)
-                        disable_waittext_for_calendar();
+                    //if (viewer.get_isLoading() == false)
+                    //    disable_waittext_for_calendar();
                 }
             }
 

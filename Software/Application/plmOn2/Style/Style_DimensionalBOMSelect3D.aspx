@@ -11,9 +11,12 @@
 		<link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet"/>
 		<link href="../System/CSS/CheckListDropDown.css" type="text/css" rel="stylesheet"/>
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="../System/Jscript/arc90_multiselect.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		<script language="javascript" type="text/javascript">
 		    // change the default options for all multiselects
 		    a$.NO_SELECTION = 'No selection'; 	// TEXT for 'No selection' when nothing selected

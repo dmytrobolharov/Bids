@@ -2330,7 +2330,7 @@
         <DataSetName>ds_MaterialUsage</DataSetName>
         <Top>5.57167in</Top>
         <Height>1.25in</Height>
-        <Width>10.5in</Width>
+        <Width>10.49998in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2894,9 +2894,9 @@ ORDER BY Custom</CommandText>
     <DataSet Name="ds_plmOnURL">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT TOP 1 SettingValue AS plmOnURL
-FROM rReportSetting
-WHERE SettingType = 'plmOnServer'</CommandText>
+        <CommandText>SELECT TOP 1 AppSettingValue AS plmOnURL
+FROM sAppSetting
+WHERE AppSettingKey = 'HttpServer'</CommandText>
       </Query>
       <Fields>
         <Field Name="plmOnURL">

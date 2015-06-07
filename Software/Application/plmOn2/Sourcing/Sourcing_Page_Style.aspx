@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Sourcing_Page_Style.aspx.vb" Inherits="plmOnApp.Sourcing_Page_Style" %>
 <%@ Register TagPrefix="cc3" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register TagPrefix="uc1" TagName="Sourcing_PageStyle_List_Image" Src="Sourcing_Page_Style_List_Image.ascx" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register Src="Sourcing_Header.ascx" TagName="Sourcing_Header" TagPrefix="hc1" %>
 
@@ -13,8 +12,11 @@
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 
         <style type="text/css">
             th.rgHeaderYPLM, th.rgHeader {
@@ -37,7 +39,6 @@
 </head>
 <body>
     <form id="form1" runat="server" defaultbutton="imgbtnSearch">
-     <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table class="TableHeader" id="Table2" cellSpacing="0" cellpadding="0" width="100%" border="0"
 		runat="server">
 		<tr valign="middle">
@@ -57,21 +58,13 @@
     <table class="TableHeader CollapsibleHeader" height="25" cellspacing="0" cellpadding="0" width="100%"
         border="0">
         <tr>
-            <td valign="middle" align="center" width="10">
-                <img alt="" height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
-            </td>
-            <td width="20" valign="bottom">
-                <asp:ImageButton ID="imgBtnToggleBOMs" OnClientClick="return toggleSectionVisibility(this);" runat="server"
-                    ImageUrl="../System/Icons/icon_Next.gif"></asp:ImageButton>
-            </td>
-            <td width="100%" valign="center">
-                <asp:Label ID="lblBOM" runat="server" ><%= getSourcingHeaderName()  %></asp:Label>&nbsp;&nbsp;
-            </td>
+            <td>
+               <div>
+                  <hc1:sourcing_header id="Sourcing_Header" runat="server"></hc1:sourcing_header>
+               </div>
+            </td>            
         </tr>
-    </table>
-    <div class="Collapsible">
-        <hc1:sourcing_header id="Sourcing_Header" runat="server"></hc1:sourcing_header>
-    </div>
+    </table>   
 
     <!-- For comments ASCX, if there will be one -->
 
@@ -118,8 +111,7 @@
 
     </form>
     <script type="text/javascript">
-        function toggleSectionVisibility(sender) {
-            var collapsibleDiv = $(sender).closest(".CollapsibleHeader").nextAll(".Collapsible")[0];
+        function toggleSectionVisibility(sender) {            
             var hdnCollapsibleStatus = $(sender).siblings("input[id*='hdnIsExpanded']");
 
             if (collapsibleDiv != null) {
@@ -141,8 +133,7 @@
 
             return false;
         }
-
-        $(".Collapsible").hide();
+        
 
         function ColumnHidden(sender, eventArgs) {
             var tableColumns = $find("ctrGrid_RadGridStyles").get_masterTableView().get_columns();

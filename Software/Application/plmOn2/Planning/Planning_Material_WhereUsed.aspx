@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head runat="server">
     <title></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,8 +10,10 @@
     <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet"></link>
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .drag-helper {
         	display: none;
@@ -195,7 +197,7 @@
                                         <table cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td>
-                                                    <label style='<%# String.Format("background-image:url({0})", GetImageStreamPath("50", Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString))%>' class="material-chip">
+                                                    <label style='<%# String.Format("background-image:url({0})", GetImageStreamPath("50", Eval("MaterialImageVersion").ToString, Eval("MaterialImageID").ToString))%>; background-position: center; background-repeat: no-repeat;' class="material-chip">
                                                     <asp:CheckBox ID="chkSelect" runat="server" /></label>
                                                     <asp:HiddenField ID="hdnPlanningMaterialID" runat="server" Value='<%# Eval("PlanningMaterialID") %>' />
                                                     <asp:HiddenField ID="hdnMaterialID" runat="server" Value='<%# Eval("MaterialID") %>' />
@@ -455,6 +457,18 @@
     <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" language="javascript">
+
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+        function BeginRequestHandler(sender, args) {
+            show_wait_text();
+        }
+
+        function EndRequestHandler(sender, args) {
+            hide_wait_text();
+        }
+
         var frm = document.forms['form1'];
         function CheckAll(checkAllBox, name) {
             var actVar = checkAllBox.checked;
@@ -493,7 +507,7 @@
 
 
         function ReplaceButtonClick() {
-            if ($("#dlMaterials [id*='chkSelect']:checked").length > 0 & ($("#RadGridStyles [id*='columnSelectCheckBox']:checked").length > 0 || $("#dlStyles [id*='chkStyleSelect']").length > 0))
+            if ($("#dlMaterials [id*='chkSelect']:checked").length > 0 & ($("#RadGridStyles [id*='gcscRowSelectorSelectCheckBox']:checked").length > 0 || $("#dlStyles [id*='chkStyleSelect']").length > 0))
             {
                 return true;
             }

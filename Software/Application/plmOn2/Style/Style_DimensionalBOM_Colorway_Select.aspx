@@ -7,6 +7,8 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<script language="javascript" src="../system/jscript/ysbusyscript.js" type="text/javascript"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -99,9 +101,10 @@
 				<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 				<Columns>
 					<asp:TemplateColumn>
-						<ItemStyle Width="50px"></ItemStyle>
+                    	<ItemStyle Width="50px"></ItemStyle>
+                        <HeaderTemplate><%= GetSystemText("Color") %></HeaderTemplate>
 						<ItemTemplate>
-						    <cc1:confirmedimagebutton id="imgColor" runat="server"  CommandName="Select" Message="NONE" />
+						    <cc1:confirmedimagebutton id="imgColor" runat="server" CommandName="Select" Message="NONE" />
 							<input id="txtColorPaletteID" type="hidden" runat="server" />
 							<input type = "hidden" id ="hdnDescription" runat ="server" />
 							<asp:HiddenField runat="server" ID="hdnColorFolderId" Value="" />

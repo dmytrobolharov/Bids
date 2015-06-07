@@ -29,7 +29,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value &amp; ":"</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -64,6 +64,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -144,7 +145,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value &amp; ":"</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -178,7 +179,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -257,7 +258,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value &amp; ":"</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -291,7 +292,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -345,19 +346,20 @@
             <ZIndex>2</ZIndex>
             <Style />
           </Tablix>
-          <Rectangle Name="Rectangle2">
-            <KeepTogether>true</KeepTogether>
-            <Top>0.5in</Top>
-            <Height>0.02236in</Height>
+          <Image Name="Image2">
+            <Source>External</Source>
+            <Value>Line.jpg</Value>
+            <Sizing>Fit</Sizing>
+            <Top>0.36618in</Top>
+            <Height>0.04in</Height>
             <Width>10.75in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <BackgroundColor>#96c952</BackgroundColor>
             </Style>
-          </Rectangle>
+          </Image>
         </ReportItems>
         <DataElementOutput>ContentsOnly</DataElementOutput>
         <Top>0.64444in</Top>

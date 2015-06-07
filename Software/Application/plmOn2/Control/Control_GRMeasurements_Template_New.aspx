@@ -1,6 +1,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Control_GRMeasurements_Template_New.aspx.vb" Inherits="plmOnApp.Control_GRMeasurements_Template_New" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Style_Main</title>
@@ -9,9 +9,30 @@
 		<meta name="vs_defaultClientScript" content="JavaScript">
 		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
 		<link href="../System/CSS/Style.css" rel="stylesheet" type="text/css">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
+
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server" >
+        <Scripts>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js"></asp:ScriptReference>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js"></asp:ScriptReference>
+        </Scripts>
+        <CdnSettings TelerikCdn="Disabled" />
+    </telerik:RadScriptManager>
+    <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" Runat="server">
+        <StyleSheets>
+            <telerik:StyleSheetReference Path="../System/CSS/RadCalendar.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadComboBox.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadGrid.YPLM.css" />
+            <telerik:StyleSheetReference Path="../System/CSS/RadInput.YPLM.css" />
+        </StyleSheets>
+        <CdnSettings TelerikCdn="Disabled" />
+    </telerik:RadStyleSheetManager>
+
 			<TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<TR vAlign="middle">

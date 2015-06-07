@@ -3,7 +3,6 @@
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register TagPrefix="uc2" TagName="Style_Header" Src="Style_Header.ascx" %>
 <%@ Register TagPrefix="uc4" TagName="Style_MQE" Src="Style_DimensionalBOMMaterial_QuickSearchAdd.ascx" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -15,10 +14,26 @@
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
     <link type="text/css" rel="stylesheet" href="../System/CSS/jquery-ui.css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../System/Jscript/Custom.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+    <style type="text/css">
+        th.rgHeaderYPLME, th.rgHeaderYPLMGreenE, th.rgHeaderYPLMYellowE 
+        {
+            white-space: nowrap;
+            overflow: hidden; 
+            text-overflow: ellipsis;    
+        }
+        th.rgHeaderYPLME:hover, th.rgHeaderYPLMGreenE:hover, th.rgHeaderYPLMYellowE:hover 
+        {
+            background: #f0f0f0; 
+            white-space: normal;
+            overflow: visible;
+        }
+    </style>
     <!--[if IE]>
     <style type="text/css">
         #RadGridsummary thead th {
@@ -40,7 +55,6 @@
 <body>
 <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
     <form id="form1" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
      <telerik:RadScriptManager ID="RadScriptManager1" runat="server" >
         <Scripts>
             <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
@@ -58,7 +72,7 @@
         </StyleSheets>
         <CdnSettings TelerikCdn="Disabled" />
     </telerik:RadStyleSheetManager>
-    <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" ClientEvents-OnRequestStart="showWait()" ClientEvents-OnResponseEnd="hideWait()" />
+    <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" ClientEvents-OnRequestStart="show_wait_text()" ClientEvents-OnResponseEnd="hide_wait_text();" />
     <telerik:RadWindowManager ID="RadWindowManager1" runat="server">
         <Windows>
             <telerik:RadWindow ID="ConfigBOM" runat="server" Title="Configure BOM" Height="250px" 
@@ -206,6 +220,8 @@
         <br />
     </asp:Panel>
     <asp:PlaceHolder ID="PlaceHolderSummary" runat="server"></asp:PlaceHolder>
+    <asp:UpdatePanel ID="upTotalCost" runat="server">
+    <ContentTemplate>
     <table cellspacing="0" cellpadding="0" width="98%" border="0" runat="server" id="tblCost">
         <tr>
             <td align="left">
@@ -219,6 +235,8 @@
             </td>
         </tr> 
     </table>
+    </ContentTemplate>
+    </asp:UpdatePanel>
   <asp:Panel runat="server" ID="pnlPerm" Visible="false">
     <table style="height:50;" cellspacing="0" cellpadding="0" width="100%"  bgColor="#990000" border="1" borderColor="red">
         <tr>
@@ -443,7 +461,7 @@
             } 
             
             $(document).ready(function () {
-            if (!$.browser.msie) {
+            if (!window.top.$.browser.msie) {
                 $("#RadGridsummary_ctl00_Header .rgHeaderYPLME , #RadGridsummary_ctl00_Header .rgHeaderYPLMGreenE").each(function (i) {
                     var textWidth = getStringSize($(this)[0], $(this).text());
                     if (textWidth > $(this).innerWidth()) {
@@ -478,7 +496,7 @@
 
         /** Resizing BOM Grid to take all the free height on the screen **/
         Sys.Application.add_load(function () {
-
+            
             var changeGrid = $("#RadGridsummary");
             var windowHeight = $(window).height();
             var formHeight = $("#form1").height();
@@ -488,16 +506,16 @@
             var diff = windowHeight - (formHeight - changeGrid.height());
 
             if (diff > minHeight) {
-                changeGrid.height(diff);
+                changeGrid.height(diff-25);
             } else {
                 changeGrid.height(minHeight);
             }
 
             var grid = $find("RadGridsummary");
             if (grid) {
-                grid.GridDataDiv.style.height = (changeGrid.height() - 67) + "px";
+                grid.GridDataDiv.style.height = (changeGrid.height() - 67) + "px";//67
             }
-        })();
+        });
 
         (function ($) {
 
@@ -533,20 +551,12 @@
         }
 
         function reloadPage() {
+            __doPostBack('<%= upTotalCost.ID %>', '');
             var grid = $find("RadGridsummary");
             if (grid) {
                 grid.get_masterTableView().rebind();
             }
         }
-
-        function showWait() {
-            show_wait_text(); busyBox.Show();
-        }
-
-        function hideWait() {
-            busyBox.Hide(); hide_wait_text();
-        }
-
 
         function GridCreated(sender, eventArgs) {
         //gets the main table scrollArea HTLM element  
@@ -567,7 +577,7 @@
             }
         }
     }
-
+    $(".rgHeaderYPLMRedE").css( "white-space", "nowrap" );
         </script>           
     
 </body>

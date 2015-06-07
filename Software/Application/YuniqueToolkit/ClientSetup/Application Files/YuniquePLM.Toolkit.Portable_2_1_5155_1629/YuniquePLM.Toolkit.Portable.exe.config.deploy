@@ -20,6 +20,9 @@
             <setting name="UpgradeRequired" serializeAs="String">
                 <value>True</value>
             </setting>
+            <setting name="SavedLocFolder" serializeAs="String">
+                <value />
+            </setting>
         </YuniquePLM.Toolkit.Portable.Properties.Settings>
     </userSettings>
 </configuration>

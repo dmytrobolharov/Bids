@@ -14,7 +14,8 @@
 			<table id="Table3" height="45">
 				<tr>
 					<td>
-						<asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
+						<asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton>
+                    </td>
 				</tr>
 			</table>
 		</td>

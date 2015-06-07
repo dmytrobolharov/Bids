@@ -6,9 +6,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <HEAD>
 		<title runat="server" id="PageTitle">Alternates</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <%--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />--%>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	    <style type="text/css">
             .style1
             {

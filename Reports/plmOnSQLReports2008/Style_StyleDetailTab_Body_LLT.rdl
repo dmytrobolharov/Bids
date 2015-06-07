@@ -28,34 +28,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="txtHiddenTitle">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!StyleDetailTitle.Value,"dsTeckPackStyleDetail")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <Left>0.125in</Left>
-        <Height>0.125in</Height>
-        <Width>0.125in</Width>
-        <ZIndex>1</ZIndex>
-        <Visibility>
-          <Hidden>true</Hidden>
-        </Visibility>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
     <Height>5.75in</Height>
     <Style />
@@ -74,24 +46,25 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=ReportItems!txtHiddenTitle.Value</Value>
+                  <Value>=First(Fields!StyleDetailTitle.Value,"dsTeckPackStyleDetail")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
+                    <FontFamily>Arial Unicode MS</FontFamily>
                     <FontSize>24pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>textbox22</rd:DefaultName>
-          <Top>0.125in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
           <Width>11in</Width>
           <Style>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>

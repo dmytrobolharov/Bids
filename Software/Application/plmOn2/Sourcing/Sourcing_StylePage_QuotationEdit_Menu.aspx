@@ -13,8 +13,8 @@
     <style type="text/css">
     html, body , form {height:100%;}
     .wrapper {height:auto !important;min-height:100%;height:100%;}
-    .guarantor {height:240px;} 
-    .footer {position:relative;margin-top:-500px;height:230px;}
+    /*.guarantor {height:240px;} */
+    .footer {position:relative;margin-top:50px;height:230px;}
     
     </style>   
     <style type="text/css">
@@ -136,7 +136,7 @@
 
     <cc1:YsTreeView ID="YSTreeView1" runat="server"></cc1:YsTreeView>
     <div class="guarantor"></div>
-    </div>
+    
 
     <div id="styleImageDiv" class="footer">
    <table class="TableHeader" height="25" cellspacing="0" cellpadding="0" width="100%"
@@ -153,14 +153,15 @@
         <div align="center">
             <div id="imgContainer">
                 <div id="imgDesignBackContainer">
-                    <asp:Image runat="server" ID="styleImageBack" />
+                    <asp:Image runat="server" ID="styleImageBack" Height="250" />
                 </div>
                 <div id="imgDesignContainer">
-                    <asp:Image runat="server" ID="styleImage" />
+                    <asp:Image runat="server" ID="styleImage" Height="250" />
                 </div>
             </div>
         </div>
              <asp:placeholder id="plhStyleDescriptionControl" runat="server"></asp:placeholder>
+            </div>
             </div>
     </form>
 </body>

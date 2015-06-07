@@ -1,7 +1,7 @@
 ﻿<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-    <%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
+
         <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Planning_Folder_FinancialPlan_Edit.aspx.vb" Inherits="plmOnApp.Planning_Folder_FinancialPlan_Edit" %>
-            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                 <html>
                     <head id="Head1" runat="server">
                         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -9,6 +9,8 @@
                         <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
                         <link href="../System/CSS/jquery-ui-1.10.3.css" rel="stylesheet" type="text/css" />
                         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+                        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+                        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
                         <style type="text/css">
                         #divListPlanningDivisions .PlanningValuesGrid {
                             margin-bottom: 10px;
@@ -78,10 +80,17 @@
                          }
                         </style>
                     </head>
+                    <script language="javascript">
+                        function RefreshParent() {
+                            try {
+                                parent.window.opener.parent.window.menu.location.href = parent.window.opener.parent.window.menu.location.href;
+                                parent.window.opener.parent.window.main.location.href = parent.window.opener.parent.window.main.location.href;
+                            } catch (e) { }
+                        }
+                    </script>
                     <body onload="$('#frameset', window.parent.document).attr('cols', '0,*');">
                         <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
-                        <form id="form1" runat="server">
-                            <wc1:Color_Wait ID="Color_Wait" runat="server" />
+                        <form id="form1" runat="server" defaultbutton="imgBtnSearch">
                             <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
                                 <Scripts>
                                     <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
@@ -251,12 +260,12 @@
                                 <asp:RadioButtonList runat="server" ID="rblSeasonYears" DataTextField="SeasonYear" DataValueField="SeasonYearID">
                                 </asp:RadioButtonList>
                             </div>
-                            <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+                             <script type="text/javascript" src="../System/Jscript/Custom.js"></script>
+	                        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	                        <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
                             <script type="text/javascript" src="../System/Jscript/underscore-min.js"></script>
                             <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
                             <script type="text/javascript" src="../System/Jscript/jquery.format-1.3.min.js"></script>
-                            <script type="text/javascript" src="../System/Jscript/Custom.js"></script>
-	                        <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
                             <script type="text/javascript">
 
                             (function ($) {
@@ -394,7 +403,7 @@
         function getFloatValue(value) {
             var result = 0;
             if (typeof value !== typeof undefined && value !== false) {
-                result = parseFloat(value.toString().split(CurrencyDigitGroupingSymbol).join("").split(CurrencyDecimalSymbol).join("."))
+                result = parseFloat(value.toString().replace(/\s+/g, "").split(CurrencyDigitGroupingSymbol).join("").split(CurrencyDecimalSymbol).join("."))
             }
             return (isNaN(result) ? 0 : result);
         }
@@ -515,6 +524,10 @@
                 recomputeTopAndBottomValue($this, $this.parent().index(), numberOfDigits);
             }
         });
+        $(".PlanningValuesGrid input").filter('[class != value]').change(function(){
+            var info = getData($(this));
+            this.value = formatValue(getFloatValue(this.value), info);
+        });
         $(".PlanningValuesGrid input.value").change(function () {
             var $this = $(this),
                 info = getData($(this)),
@@ -543,6 +556,8 @@
                         $OverDevStyles = $this.siblings(":text");
 
                     $OverDevStyles.val(percentFormat(NoOfStyles == 0 ? 0 : getFloatValue(this.value, info) / NoOfStyles * 100));
+                    // reformat entered value
+                    this.value = formatValue(getFloatValue(this.value), info);
                 }
                 recomputeTopAndBottomValue($this, $this.parent().index(), 0, false, true)
             } else if (this.id.indexOf("10000000-0000-0000-0000-000000000000") != -1) {
@@ -562,8 +577,10 @@
                         $OverDevStylesParent = $OverDevStyles.siblings(":text");
                     //
                     var total = findTotal(info)[0];
-                    total.value = getSum(findBoxes(info).filter(":not(.percentbox)"));
+                    total.value = formatValue(getSum(findBoxes(info).filter(":not(.percentbox)")), info);
                     findBoxes(info).filter(".percentbox").each(recalculatePercent(total));
+                    // reformat entered value
+                    this.value = formatValue(getFloatValue(this.value), info);
                 }
                 recomputeTopAndBottomValue($this, $this.parent().index());
 
@@ -583,9 +600,11 @@
                 $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq($(findTotal(info)[0]).parent().index()).text(' ' + all.value)
             } else {
                 try {
+                    // reformat entered value
+                    this.value = formatValue(getFloatValue(this.value), info);
                     //if this field we can get with find total function
                     var total = findTotal(info)[0];
-                    total.value = getSum(findBoxes(info).filter(":not(.percentbox)"));
+                    total.value = formatValue(getSum(findBoxes(info).filter(":not(.percentbox)")), info);
                     findBoxes(info).filter(".percentbox").each(recalculatePercent(total));
                     $('#FinancialPlanGrid_GridFooter table tbody tr').find('td').eq($(findTotal(info)[0]).parent().index()).text(' ' + formatValue(getSum(findBoxes(info).filter(":not(.percentbox)")), info))
                 }
@@ -598,7 +617,7 @@
                 var retailUnits = $this.closest("tr").find("[id*='txt10000000-0000-0000-0000-000000000005']").val(),
             ecomUnits = $this.closest("tr").find("[id*='txt10000000-0000-0000-0000-000000000021']").val(),
             wholeSale = $this.closest("tr").find("[id*='txt10000000-0000-0000-0000-000000000004']").val(),
-            $totalProjectUnitsTxt = $this.closest("tr").find("[id*='10000000-0000-0000-0000-000000000022']");
+            $totalProjectUnitsTxt = $this.closest("tr").find("[id*='lbl10000000-0000-0000-0000-000000000022']");
                 var totalProjectUnits = getFloatValue(wholeSale) + getFloatValue(ecomUnits) + getFloatValue(retailUnits);
 
                 $totalProjectUnitsTxt.text(formatValue(totalProjectUnits, getData($totalProjectUnitsTxt)));
@@ -690,7 +709,7 @@
                     } else {
                         //loop all td to get values and get sum of all fields
                         $('#FinancialPlanGrid_GridData table tbody tr').each(function () {
-                            total += getFloatValue($(this).find('td').eq(position).find('span').html());
+                            total += getFloatValue($(this).find('td').eq(position).find('span').text());
                         });
                         //find header and then find proper column, then update it
                     }
@@ -957,9 +976,9 @@
             var elem = $(this);
             setTimeout(function () {
                 elem.select(); 
-            }, 0);
+            }, 10);
         });
-
+        
         /** Resizing Grid to take all the free height on the screen **/
         (function resizeGrid() {
 

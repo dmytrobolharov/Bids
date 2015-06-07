@@ -3,9 +3,8 @@
 <%@ Register TagPrefix="uc1" TagName="Material_WorkflowStatus" Src="Material_WorkflowStatus.ascx" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Material Image</title>
@@ -14,16 +13,14 @@
 		<meta content="JavaScript" name="vs_defaultClientScript">
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
      <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" encType="multipart/form-data" runat="server">
-			<!--
-
-			-->
-               <wc1:Color_Wait ID="Color_Wait" runat="server" />
 			<table height="25" cellSpacing="0" cellPadding="1" width="100%" border="0">
 				<tr class="TableHeader" bgColor="whitesmoke">
 					<td style="WIDTH: 11px" vAlign="middle" align="center" width="11"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
@@ -32,8 +29,10 @@
 							Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnSaveForm" runat="server"  Message="NONE"
 							CausesValidation="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnCreateNewImage" runat="server" 
 							Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnImageSelect" runat="server" 
-							Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnUpdate" runat="server"  Message="NONE"
-							Visible="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnCancelUpdate" runat="server"  Message="NONE"
+							Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+                            <cc1:confirmedimagebutton id="btnUpdate" runat="server"  Message="NONE"	Visible="False"></cc1:confirmedimagebutton>
+                            <asp:ImageButton ID="btnUpdateUpload" runat="server" Visible="false" />
+                            <cc1:confirmedimagebutton id="btnCancelUpdate" runat="server"  Message="NONE"
 							Visible="False"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnCopyImage" runat="server"  DESIGNTIMEDRAGDROP="18"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnDeleteImage" runat="server" 
 							CausesValidation="False"></cc1:confirmedimagebutton>
                             <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
@@ -41,6 +40,14 @@
 							CausesValidation="False"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
+            <asp:Panel ID="pnlFileUpdateUpload" runat="server" Visible="false">
+                <div>  
+                    <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachmentsUpdate" ManualStartUpload="False" AutoUseSystemTempFolder="False"
+                        InsertButtonID="btnUpdateUpload" MultipleFilesUpload="false" MaxFilesLimit="1" ShowCheckBoxes="false" ShowFileIcons="false">
+                    </CuteWebUI:UploadAttachments>
+                    <br />
+                </div>
+            </asp:Panel>
 			<table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="#cddeee" border="0">
 				<tr>
 					<td>&nbsp;</td>

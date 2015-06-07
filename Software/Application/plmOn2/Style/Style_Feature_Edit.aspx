@@ -3,14 +3,16 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Feature_Edit.aspx.vb" Inherits="plmOnApp.Style_Feature_Edit" %>
 <%@ Register TagPrefix="uc1" TagName="Style_Comment" Src="Style_Comment.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="Style_Header" Src="Style_Header.ascx" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Style Feature</title>
 		
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         
 	</head>
 	<body>

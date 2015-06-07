@@ -76,5 +76,8 @@
 </div>
 <script type="text/javascript">
     $(":text[id^=ctrCommitsEdit_DataList1]").change(function () { $(this).css("color", "red"); });
-    jQuery(document).ready(function ($) { $("#dtList").height($("#DimBOMEdit").height() - $("#tBatch").height() - $("#tBatchHeader").height() - $("#tSellAll").height() - $("#tSearch").height() - 10); });
+    jQuery(document).ready(function ($) {
+        $('#ctrCommitsEdit_lblQuantity').parent()[0].setAttribute('valign', 'top')
+        $('#ctrCommitsEdit_lblCost').parent()[0].setAttribute('valign', 'top')
+    $("#dtList").height($("#DimBOMEdit").height() - $("#tBatch").height() - $("#tBatchHeader").height() - $("#tSellAll").height() - $("#tSearch").height() - 10); });
 </script>

@@ -1,8 +1,7 @@
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Planning_Folder_Color_ColorReplace.aspx.vb" Inherits="plmOnApp.Planning_Folder_Color_ColorReplace" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head id="Head1" runat="server">
     <title><%= GetSystemText("Color Replace")%></title>
@@ -10,9 +9,11 @@
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet"></link>
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .color-chip {
         	display: block;
@@ -149,6 +150,18 @@
         <div id="dialog-message" style="display: none;"><p><%= GetSystemText("Please select colors to replace and a replacement color before clicking the replace color button")%></p></div>
         <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
         <script type="text/javascript">
+
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+            function BeginRequestHandler(sender, args) {
+                show_wait_text();
+            }
+
+            function EndRequestHandler(sender, args) {
+                hide_wait_text();
+            }
+            
             if ($("#dlColors [id*='chkSelect']").length == 1)
             {
                 $("#dlColors [id*='chkSelect']").attr("checked", "checked");

@@ -12,8 +12,10 @@
 
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="../System/Jscript/System.js"></script>
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 
 	</head>
 	<body>
@@ -153,8 +155,9 @@
 						</td>
 					</tr>
 				</table>
-			</asp:panel><asp:panel id="Panel2" runat="server" EnableViewState="TRUE">
-				<table height="25" cellspacing="0" cellpadding="1" width="100%" border="0">
+			</asp:panel>
+            <asp:panel id="PanelImg" runat="server" EnableViewState="TRUE">
+            <table height="25" cellspacing="0" cellpadding="1" width="100%" border="0">
 					<tr class="TableHeader" bgColor="whitesmoke">
 						<td style="WIDTH: 11px" valign="middle" align="center" width="11"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 						<td class="fonthead">
@@ -182,6 +185,47 @@
 				<uc1:Style_Header id="Style_Header1" runat="server"></uc1:Style_Header>
 				<BR>
 				<asp:placeholder id="pnlStyleComments2" runat="server"></asp:placeholder>
+                <asp:datalist id="DataListImg" runat="server" Width="100%" OnItemCommand="DataListImg_ItemCommand"
+				OnItemDataBound="DataListImg_ItemDataBound" DataKeyField="StyleDetailFormID" RepeatColumns="2"
+				RepeatDirection="Horizontal" EnableViewState="True">
+				<ItemStyle HorizontalAlign="Left" BorderWidth="1px" BorderStyle="Solid" BorderColor="LightGray"
+					VerticalAlign="Top" CssClass="font" BackColor="White">
+				</ItemStyle>
+				<AlternatingItemStyle HorizontalAlign="Left" BorderWidth="1px" BorderStyle="Solid" BorderColor="LightGray"
+					VerticalAlign="Top" CssClass="font" BackColor="AliceBlue">
+				</AlternatingItemStyle>	
+				<ItemTemplate>
+					<table style="border-color:silver" cellspacing="2" cellpadding="2" width="100%" border="0">
+					     <tr>
+					     <td>
+					        <asp:label id="lblHeader" runat="server" CssClass="fontHead"></asp:label>
+					     </td>
+					     </tr>
+						<tr>
+							<td align="left" valign="top">							
+					                  <cc1:bwimagebutton id="btnImageNew" runat="server" visible="false"></cc1:bwimagebutton>
+					                  <cc1:bwimagebutton id="btnImageSelect" runat="server" visible="false"></cc1:bwimagebutton>	
+								      <cc1:BWImageButton id="btnImageEdit" runat="server" CommandName="Window" visible="false"></cc1:BWImageButton>
+								</td>						
+							<td valign="top" style="height:150;" rowspan="2">	
+							  <input id="txtRecID" type="hidden" value='<%# DataBinder.Eval(Container.DataItem, "Rec_Id") %>' runat="server" />						   							
+								<input id="txtImageVersion" type="hidden" value='<%# DataBinder.Eval(Container.DataItem, "ImageVersion") %>' runat="server" />
+								<input id="txtImageID" type="hidden" value='<%# DataBinder.Eval(Container.DataItem, "ImageID") %>' runat="server" />
+							</td>						
+						</tr>
+						<tr>
+							<td style=" height:150; width:350px">
+								<cc1:BWImageButton id="btnImgNewWindow" runat="server" 
+									CommandName="Window" ></cc1:BWImageButton>
+							</td>
+						</tr>
+					</table>
+				</ItemTemplate>
+				<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+			</asp:datalist>
+            </asp:panel>
+            <asp:panel id="Panel2" runat="server" EnableViewState="TRUE">
+				
 				<table style="WIDTH: 1000px; HEIGHT: 360px" cellspacing="0" cellpadding="1" width="1000"
 					border="0">
 					<tr>

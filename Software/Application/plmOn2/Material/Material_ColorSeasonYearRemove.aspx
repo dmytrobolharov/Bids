@@ -6,8 +6,11 @@
 		<title>Palette</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -71,34 +74,24 @@
 				            </tr>
 			            </table>
             			
-			            <table width="100%" >
-			            <tr>
-			                <td>
-			                    <cc1:ScrollingGrid ID="sgColorPaletteGrid" runat="server" Width="800" ScrollBars="Auto" Height="600">
-                                    <asp:datagrid id="DataGrid1" runat="server"  EnableViewState="False" DataKeyField="MaterialColorID">
-                                        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate">
-                                        </AlternatingItemStyle>
-                                        <ItemStyle CssClass="ItemTemplate"></ItemStyle>
-                                        <headerStyle Height="25px" CssClass="tableheader"></headerStyle>
-                                        <PagerStyle Visible="False"></PagerStyle>
-                                        <Columns>
-                                            <asp:TemplateColumn>
-                                                <HeaderTemplate>
-                                                    <input type="checkbox" onclick="CheckAll(this)" id="chkSelectAll" />
-                                                </HeaderTemplate>
-                                                <ItemTemplate>
-                                                    <asp:CheckBox runat="server" ID="chkDelete" />
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
-                                        </Columns>
-                                    </asp:datagrid>
-                                </cc1:ScrollingGrid>
-                                <asp:label id="SortOrder" runat="server" Visible="False"></asp:label>
-			                    <input type="hidden" runat="server" id="hiddenCurrentPage"  value="0"/>
-			                </td>
-			            </tr>
-			            </table>
-            			
+                        <asp:datagrid id="DataGrid1" runat="server"  EnableViewState="False" DataKeyField="MaterialColorID">
+							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
+							<HeaderStyle CssClass="TableHeader" Height="25px"></HeaderStyle>
+                            <PagerStyle Visible="False"></PagerStyle>
+                            <Columns>
+                                <asp:TemplateColumn>
+                                    <HeaderTemplate>
+                                        <input type="checkbox" onclick="CheckAll(this)" id="chkSelectAll" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox runat="server" ID="chkDelete" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                            </Columns>
+                        </asp:datagrid>
+                        <asp:HiddenField ID="hdnSortOrder" runat="server" />
+                        <asp:HiddenField ID="hdnCurrentPage" runat="server" />
 		            </td>
 	            </tr>
             </table>

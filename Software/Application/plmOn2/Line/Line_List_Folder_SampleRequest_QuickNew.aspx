@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Line_List_Folder_SampleRequest_QuickNew.aspx.vb" Inherits="plmOnApp.Line_List_Folder_SampleRequest_QuickNew" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <%@ Register src="Line_List_Header.ascx" tagname="Header" tagprefix="hc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -17,8 +16,12 @@
         <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/RadComboBox.YPLM.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .slider-container {
             	position: relative;
@@ -72,7 +75,6 @@
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"></asp:ScriptManager>        
-         <wc1:Color_Wait ID="Color_Wait" runat="server" />
        
  <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%"
             border="0" runat="server">
@@ -83,6 +85,7 @@
             <td width="100%">
                 <cc1:confirmedimagebutton id="btnGenerate" runat="server" Message="NONE"></cc1:confirmedimagebutton>
                 <cc1:confirmedimagebutton id="btnShare" runat="server" Message="NONE" CausesValidation="true" ValidationGroup="TechPack"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnBatchUpdate" runat="server" Message="NONE"></cc1:confirmedimagebutton>
                 <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
             </td>
         </tr>
@@ -107,6 +110,15 @@
         </table>
 
         <hc1:Header id="LineHeader" runat="server"></hc1:Header>
+        <table class="TableHeaderYellow" height="25" width="100%" border="0" cellspacing="0" cellpadding="0" >
+			<tr valign="middle">
+				<td valign="middle" align="center" width="10"><img height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td>
+				<td><asp:Label id="LabelEdit" runat="server" Font-Names="Tahoma,Verdana"  ><%=GetSystemText("Flash Edit")%></asp:Label></td>
+			</tr>
+		</table>
+        <table cellSpacing="0" cellpadding="0" width="100%" bgcolor="#EEEB9F" border="0">
+			<tr><td><asp:placeholder id="plhBatchControlsHolder" runat="server" EnableViewState="False" ></asp:placeholder></td></tr>
+		</table>
         <div class="slider-container">
             <div class="slider-static" style="overflow:auto; height:100%;">
                 <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">

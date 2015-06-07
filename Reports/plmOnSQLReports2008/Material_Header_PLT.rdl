@@ -6,7 +6,7 @@
         <ReportItems>
           <Image Name="imgLogo">
             <Source>External</Source>
-            <Value>logo.jpg</Value>
+            <Value>Yunique Logo.jpg</Value>
             <Sizing>FitProportional</Sizing>
             <Height>0.45in</Height>
             <Width>3.025in</Width>
@@ -20,7 +20,7 @@
         <Width>8.25in</Width>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
         </Style>
       </Rectangle>
@@ -51,7 +51,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -65,7 +65,7 @@
                           <ToolTip>##label##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -86,6 +86,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -97,7 +98,7 @@
                           <ToolTip>##data##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -133,7 +134,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsStyleHeader1</DataSetName>
-            <Top>0.125in</Top>
+            <Top>0.13439in</Top>
             <Height>0.2in</Height>
             <Width>2.75in</Width>
             <Style>
@@ -166,7 +167,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -179,7 +180,7 @@
                           <ToolTip>##label##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -200,7 +201,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -211,7 +212,7 @@
                           <ToolTip>##data##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -247,7 +248,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsStyleHeader2</DataSetName>
-            <Top>0.125in</Top>
+            <Top>0.13439in</Top>
             <Left>2.75in</Left>
             <Height>0.2in</Height>
             <Width>2.75in</Width>
@@ -279,7 +280,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -292,7 +293,7 @@
                           <ToolTip>##label##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -313,7 +314,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -324,7 +325,7 @@
                           <ToolTip>##data##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -360,18 +361,45 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsStyleHeader3</DataSetName>
-            <Top>0.125in</Top>
+            <Top>0.13439in</Top>
             <Left>5.5in</Left>
             <Height>0.2in</Height>
             <Width>2.75in</Width>
             <ZIndex>2</ZIndex>
             <Style />
           </Tablix>
+          <Image Name="Image1">
+            <Source>External</Source>
+            <Value>Lines.jpg</Value>
+            <Sizing>Fit</Sizing>
+            <Height>0.06495in</Height>
+            <Width>8.25in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Image Name="Image2">
+            <Source>External</Source>
+            <Value>Line.jpg</Value>
+            <Sizing>Fit</Sizing>
+            <Top>0.37606in</Top>
+            <Height>0.04in</Height>
+            <Width>8.25in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
         </ReportItems>
         <DataElementOutput>ContentsOnly</DataElementOutput>
-        <Top>0.625in</Top>
+        <Top>0.61561in</Top>
         <Left>0.125in</Left>
-        <Height>1.5in</Height>
+        <Height>1.50939in</Height>
         <Width>8.25in</Width>
         <ZIndex>1</ZIndex>
         <Style />

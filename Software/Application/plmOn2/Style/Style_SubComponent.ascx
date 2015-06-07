@@ -3,7 +3,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
             
 <!--------------------------------------------------------->
-<asp:datagrid id="DataGrid1" runat="server" Width="100%" BorderColor="#cccccc" BorderWidth="1" >
+<asp:datagrid id="DataGrid1" runat="server" Width="100%" BorderColor="#cccccc" BorderWidth="1" AllowSorting="false" AllowPaging="false">
     <AlternatingItemStyle CssClass="ItemTemplate"></AlternatingItemStyle>
     <ItemStyle CssClass="ItemTemplate"></ItemStyle>
     <HeaderStyle width="50px" CssClass="fontHead"></HeaderStyle>

@@ -6,8 +6,12 @@
 		<title>POM Template</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
-         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
      <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -15,9 +19,8 @@
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellpadding="0" width="100%" border="0"
 				runat="server">
 				<tr valign="middle">
-					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px"
-							Height="0px"></asp:imagebutton></td>
-					<td width="80"><cc1:confirmedimagebutton id="btnImgClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"><asp:imagebutton id="btnInvSearch" runat="server" ImageUrl="../System/icons/1x1.gif" Width="0px" Height="0px"></asp:imagebutton></td>
+					<td width="80"><cc1:confirmedimagebutton id="btnImgClose" runat="server" OnClientClick="return btnClose_Click()"  Message="NONE"></cc1:confirmedimagebutton></td>
 					<td width="80"></td>
 					<td width="75">&nbsp;</td>
 					<td>&nbsp;</td>
@@ -76,7 +79,7 @@
 										<asp:label id="lblCopy" runat="server" CssClass="fontHead"><%#GetSystemText("Copy")%></asp:label>
 									</HeaderTemplate>
 									<ItemTemplate>
-										<cc1:confirmedimagebutton id="imgBtnCopy" runat="server"  Message='<%#GetSystemText("Are you sure you want to copy this template?")%>'
+										<cc1:confirmedimagebutton id="imgBtnCopy" runat="server"  Message='<%#GetSystemText("All poms will be deleted and this template will be copied. Are you sure you want to proceed?")%>'
 											  CommandName="Copy"></cc1:confirmedimagebutton>
 										<asp:TextBox id="txtStyleNo" runat="server" Visible="false" Text='<%# DataBinder.Eval(Container.DataItem, "POMType")%>'>
 										</asp:TextBox>
@@ -88,5 +91,13 @@
 				</tr>
 			</table>
 		</form>
+        <script type="text/javascript">
+	        function btnClose_Click() {
+	            window.location.href = "<%= strStyleMeasPageUrl %>";	            
+
+                return false;
+            }
+        
+        </script>
 	</body>
 </html>

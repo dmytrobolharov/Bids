@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="Style_Workflow_Edit.ascx.vb" Inherits="plmOnCustomControls.Style_Workflow_Edit" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register TagPrefix="cc2" Namespace="plmOnCustomControls.YSTab" Assembly="plmOnCustomControls" %>
+<%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 
 <script language="javascript">
     function calendar(sTxtBoxName) {

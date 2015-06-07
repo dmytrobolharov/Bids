@@ -1,14 +1,25 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Control_PredefinedTechPack_Add.aspx.vb" Inherits="plmOnApp.Control_PredefinedTechPack_Add" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		<title runat="server" id="PageTitle">Add Workflow Type</title>
 		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
 		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
 		<meta content="JavaScript" name="vs_defaultClientScript">
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <style>
+            #lstSelect::-webkit-scrollbar { width: 0 !important }
+            #lstSelected::-webkit-scrollbar { width: 0 !important }
+            #lstSelect{overflow: hidden; -ms-overflow-style: none; overflow: -moz-scrollbars-none;}
+            #lstSelected{overflow: hidden; -ms-overflow-style: none; overflow: -moz-scrollbars-none;}
+        </style>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -39,8 +50,12 @@
 								<TD width="10%"></TD>
 							</TR>
 							<TR>
-								<TD align="center" width="40%"><asp:listbox id="lstSelect" runat="server" BorderStyle="Outset" SelectionMode="Multiple" Height="445px"
-										Width="350px" CssClass="fonthead"></asp:listbox></TD>
+								<TD align="center" width="40%">
+                                <div id="scrollL" style="width:350px; height:425px; overflow:scroll; border:1px solid darkgrey; background-color:White;">
+                                    <asp:listbox id="lstSelect" runat="server"  SelectionMode="Multiple" CssClass="fonthead" style="overflow: hidden!important; border:hidden; height: 425px; width:350px; -webkit-overflow-scrolling:touch;" ></asp:listbox>
+                                    <div id="scrollhL" style='font-size: 1px'>&nbsp</div>
+                                </div>
+                                </TD>
 								<TD align="center" width="10%" class="fonthead">(+/-)<br>
 									<br>
 									<asp:imagebutton id="btnaddall" runat="server" ></asp:imagebutton><BR>
@@ -49,8 +64,12 @@
 									<asp:imagebutton id="btnremoveall" runat="server" ></asp:imagebutton><BR>
 								</TD>
 								<TD align="center" width="40%">
-									<asp:ListBox id="lstSelected" Width="350px" Height="445px" SelectionMode="Multiple" Runat="server"
-										CssClass="fonthead"></asp:ListBox></TD>
+                                    <div id="scrollR" style="width:350px; height:425px; overflow:scroll; border:1px solid darkgrey; background-color:White;">
+									    <asp:ListBox id="lstSelected" SelectionMode="Multiple" Runat="server"
+										CssClass="fonthead" style="overflow:hidden!important; border:hidden ; -webkit-overflow-scrolling:touch;" ></asp:ListBox>
+                                        <div id="scrollhR" style='font-size: 1px'>&nbsp</div>
+                                    </div>
+                                </TD>    
 								<TD align="center" width="10%" class="fonthead">
                                     <asp:Label ID="lblSort" runat="server"></asp:Label><br>
 									<br>
@@ -63,6 +82,56 @@
 				</TR>
 			</TABLE>
 		</form>
+        <div class="scrollSizeLeft" style="display:inline-block; visibility:hidden"></div>
+        <div class="scrollSizeRight" style="display:inline-block; visibility:hidden"></div>
+		<script>
+		    var strL = "";
+		    var strR = "";
+		    var objectL = document.getElementById('lstSelect');
+		    var objectR = document.getElementById('lstSelected');
+		    for (var childItem in objectL.childNodes) {
+		        if (objectL.childNodes[childItem].nodeType == 1) {
+		            var objL = $(objectL.childNodes[childItem]).text();
+		            if (objL.length > strL.length)
+		                strL = objL;
+		        }
+		    }
+		    for (var childItem in objectR.childNodes) {
+		        if (objectR.childNodes[childItem].nodeType == 1) {
+		            var objR = $(objectR.childNodes[childItem]).text();
+		            if (objR.length > strR.length)
+		                strR = objR;
+		        }
+		    }
+		    $('.scrollSizeLeft').text(strL);
+		    $('.scrollSizeRight').text(strR);
+		    var ua = window.navigator.userAgent;
+		    var msie = ua.indexOf("MSIE ");
+		    var isSafari = navigator.vendor.indexOf("Apple") == 0 && /\sSafari\//.test(navigator.userAgent); // true or false
+		    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+		        $('#lstSelect').css('height', $('#lstSelect option').size() * $('.scrollSizeLeft').outerHeight() + 30);
+		        $('#lstSelected').css('height', $('#lstSelected option').size() * $('.scrollSizeRight').outerHeight() + 30);
+		    } else if (isSafari) {
+		        $('#lstSelect').css('height', $('#lstSelect option').size() * ($('.scrollSizeLeft').outerHeight() + 1));
+		        $('#lstSelected').css('height', $('#lstSelected option').size() * ($('.scrollSizeRight').outerHeight() + 1));
+		    }
+		    else {
+		        $('#lstSelect').css('height', $('#lstSelect option').size() * $('#lstSelect option').outerHeight() + 30);
+		        $('#lstSelected').css('height', $('#lstSelected option').size() * $('#lstSelected option').outerHeight() + 30);
+		    }
+		    if ($('.scrollSizeRight').outerWidth() < 350) {
+		        $('#lstSelected').css('width', 350);
+		        document.getElementById("scrollR").style.overflowX = "hidden";
+		    }
+		    else
+		        $('#lstSelected').css('width', $('.scrollSizeRight').outerWidth() + 30);
+		    if ($('.scrollSizeLeft').outerWidth() < 350) {
+		        $('#lstSelect').css('width', 350);
+		        document.getElementById("scrollL").style.overflowX = "hidden";
+		    }
+		    else
+		        $('#lstSelect').css('width', $('.scrollSizeLeft').outerWidth() + 30);
+        </script>
         <script language="javascript">
 	        function btnClose_Click() {
 		        <%= strExitScript %>

@@ -1,6 +1,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_Style_Sort.aspx.vb" Inherits="plmOnApp.Planning_Folder_Style_Sort" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
@@ -26,6 +26,8 @@
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .dropimage
             {
@@ -34,11 +36,23 @@
             	background-position:center;
             	width: 10px;
             }
-
+            
 	        li {cursor:url(../System/Cursor/openhand.cur), pointer} 
 	        #sortable { list-style-type: none; margin: 0; padding: 0; }
 	        #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: auto; height: auto; text-align: center; vertical-align:top; }
-            
+            #sortable td .font
+            { 
+                  width: 100px;
+                  display: inline-block;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+            } 
+            .ui-sortable p
+            {
+                margin: 0px;
+                min-width: 150px;
+            }
         </style>
 
 	<script type="text/javascript">

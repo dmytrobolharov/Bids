@@ -4,9 +4,8 @@
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
 <%@ Register TagPrefix="uc1" TagName="Material_Header" Src="Material_Header.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="Material_WorkflowStatus" Src="Material_WorkflowStatus.ascx" %>
-<%--<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle">Attachments</title>
@@ -15,12 +14,13 @@
 		<meta content="JavaScript" name="vs_defaultClientScript">
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
      <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server">
-         <%--<wc1:Color_Wait ID="Color_Wait" runat="server" />--%>
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<tr vAlign="middle">
@@ -118,49 +118,6 @@
 					</TR>
 				</TABLE>
 			</asp:panel>
-			<%--<asp:Panel ID="pnlMulti" runat="server">
-        <div>
-            <button id='btnUpload' style="display: none;" onclick="Upload_Click();return false;">
-                Start Upload</button>
-                
-            <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachments1" ManualStartUpload="True"
-                OnAttachmentAdded="UploadAttachments1_AttachmentAdded" OnAttachmentCreated="UploadAttachments1_AttachmentCreated"
-                NumFilesShowCancelAll="1000" InsertText="Add files" TableHeaderTemplate="<td nowrap='nowrap'></td><td>Files</td><td>Description</td>">
-                <ItemTemplate>
-                    <table>
-                        <tr valign="middle">
-                            <td>
-                                <asp:TextBox runat="server" ID="textboxDesc" TextMode="MultiLine" />
-                            </td>
-                            <td>
-                                <asp:CheckBox ID="cbSharedNew" runat="server" Text="Share with Agent" ForeColor="Red" Font-Size="XX-Small" />
-                            </td>
-                        </tr>
-                    </table>
-                </ItemTemplate>
-            </CuteWebUI:UploadAttachments>
-            <br />
-            <table id='clientTable' style="display: none; font-size: 9pt; border-collapse: collapse"
-                border="1" cellspacing="0" cellpadding="5">
-                <tr>
-                    <td>
-                        <%#GetSystemText("FileName")%>
-                    </td>
-                    <td>
-                       <%#GetSystemText("Status")%>
-                    </td>
- 
-                </tr>
-            </table>
-            <br />
-            <asp:Button ID="ButtonDeleteAll" runat="server" Text="Delete All" OnClick="ButtonDeleteAll_Click"
-                Visible="False" />&nbsp;&nbsp;
-            <asp:Button runat="server" ID="buttonTell" Text="Save All" OnClick="buttonTell_Click"
-                OnClientClick="return buttonTell_Click()" Visible="False" />
-            <br />
-           
-        </div>
-    </asp:Panel>--%>
         <table bordercolor="#999999" cellspacing="0" cellpadding="0" width="100%" border="0">
 			<asp:datalist id="DataList1" runat="server" Width="100%" OnDeleteCommand="DataList_DeleteCommand"
 				OnCancelCommand="DataList_CancelCommand" OnUpdateCommand="DataList_UpdateCommand" OnEditCommand="DataList_EditCommand"
@@ -205,7 +162,7 @@
 								<cc1:ConfirmedLinkButton id="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>'  CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>' >
 								</cc1:ConfirmedLinkButton>
 								<asp:linkbutton id="Linkbutton5" runat="Server" 
-									CommandName="download"></asp:linkbutton>
+									CommandName="download" OnClientClick="dont_show_wait_twice();"></asp:linkbutton>
 								<cc1:confirmedimagebutton id="btnEditCancel" runat="server" Message="NONE" CommandName="cancel"></cc1:confirmedimagebutton>															
 							</TD>
 							<TD>&nbsp;</TD>

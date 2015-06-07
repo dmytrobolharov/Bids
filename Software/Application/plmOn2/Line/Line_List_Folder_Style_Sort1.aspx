@@ -1,7 +1,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Line_List_Folder_Style_Sort1.aspx.vb" Inherits="plmOnApp.Line_List_Folder_Style_Sort1" %>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Image Sort</title>
@@ -11,6 +10,8 @@
 		
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	    <style type="text/css">
             .style1
             {
@@ -26,7 +27,7 @@
 						<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3" /></TD>
 						<TD vAlign="middle" align="left" width="400">
 						<cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-						<cc1:confirmedimagebutton id="imgBtnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton></TD>
+						<cc1:confirmedimagebutton id="imgBtnClose" runat="server"  Message="NONE"></cc1:confirmedimagebutton></TD>
 						<TD></TD>
 					</TR>
 				</TBODY>
@@ -114,11 +115,5 @@
 				</tr>
 			</table>
 		</form>
-        <script language="javascript">
-	        function btnClose_Click() {
-		        <%= strExitScript %>
-                return false;
-            }
-        </script>
 	</body>
 </HTML>

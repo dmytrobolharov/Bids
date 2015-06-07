@@ -29,6 +29,7 @@
                         </Border>
                       </Style>
                     </Image>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -44,6 +45,7 @@
                                 <TextRun>
                                   <Value>Class</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>SemiBold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -76,6 +78,7 @@
                                 <TextRun>
                                   <Value>Subclass</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>SemiBold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -110,6 +113,7 @@
                                 <TextRun>
                                   <Value>Feature</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>SemiBold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -144,6 +148,7 @@
                                 <TextRun>
                                   <Value>Detail</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>SemiBold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -178,6 +183,7 @@
                                 <TextRun>
                                   <Value>User Def. 2</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>SemiBold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -212,6 +218,7 @@
                                 <TextRun>
                                   <Value>User Def. 3</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>SemiBold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -246,6 +253,7 @@
                                 <TextRun>
                                   <Value>User Def. 1</Value>
                                   <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>SemiBold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -279,7 +287,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Detail.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -309,7 +319,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!AuxField3.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -339,7 +351,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!AuxField2.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -369,7 +383,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!AuxField1.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -399,7 +415,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Level3Desc.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -429,7 +447,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Level2Desc.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -459,7 +479,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Level1Desc.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -506,6 +528,11 @@
               <Group Name="tblConstructionDetails">
                 <DataElementName>Detail</DataElementName>
               </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Sort.Value</Value>
+                </SortExpression>
+              </SortExpressions>
               <TablixMembers>
                 <TablixMember />
               </TablixMembers>
@@ -524,7 +551,7 @@
         <Height>4.4in</Height>
         <Width>10.66979in</Width>
         <Style>
-          <FontFamily>Tahoma</FontFamily>
+          <FontFamily>Arial Unicode MS</FontFamily>
           <FontSize>9pt</FontSize>
         </Style>
       </Tablix>
@@ -546,24 +573,25 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Process Details</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
-                    <FontSize>26pt</FontSize>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>20pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.125in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
           <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -647,6 +675,36 @@
           <DataField>AuxField3</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="AuxField4">
+          <DataField>AuxField4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AuxField5">
+          <DataField>AuxField5</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sort">
+          <DataField>Sort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -671,6 +729,10 @@
       <cl:ComponentMetadata xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition">
         <cl:ComponentId>80595923-467f-4a17-8da4-1b686c404d0f</cl:ComponentId>
       </cl:ComponentMetadata>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

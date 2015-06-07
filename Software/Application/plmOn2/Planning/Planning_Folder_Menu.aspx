@@ -1,7 +1,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls.YsTreeView" Assembly="YSTreeView" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_Menu.aspx.vb" Inherits="plmOnApp.Planning_Folder_Menu" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Production_Menu</title>
@@ -11,6 +11,7 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <script src="../System/Jscript/jquery-1.6.2.min.js" type="text/javascript"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
@@ -45,6 +46,16 @@
 			<cc1:YSTreeView id="YSTreeView1" runat="server"></cc1:YSTreeView>
 		</form>
         <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                var hrefs = document.getElementsByTagName("a");
+                for(var i = 0; i < hrefs.length; i++){
+                    var ref = hrefs.item(i);
+                    if (ref.id.indexOf("nav") != -1){
+                        ref.href = ref.href + "&SYID=" + <%= "'" & strSeasonYearID & "'" %>
+                        
+                    }
+                }
+            });
             function SeasonYearChanged(ddl) {
                 var strSeasonYear = document.getElementById(ddl.id).value;
                 var pos;

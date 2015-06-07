@@ -55,7 +55,8 @@
 			</asp:datagrid><asp:HiddenField id="SortOrder" runat="server"></asp:HiddenField></TD>
 	</TR>
 </TABLE>
-<input id="hiddenCurrentPage" type="hidden" value="0" name="hiddenCurrentPage" runat="server">&nbsp;&nbsp;
+<input id="hiddenCurrentPage" type="hidden" value="0" name="hiddenCurrentPage" runat="server">
+<input id="hiddenRecordPerPage" type="hidden" value="" name="hiddenRecordPerPage" runat="server">&nbsp;&nbsp;
     <script language="javascript" type="text/javascript"  >
 		var frm = document.Form1 ;
 		function CheckAll(checkAllBox) {

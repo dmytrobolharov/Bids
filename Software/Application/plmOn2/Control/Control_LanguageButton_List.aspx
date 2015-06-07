@@ -1,14 +1,16 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Control_LanguageButton_List.aspx.vb" Inherits="plmOnApp.Control_LanguageButton_List" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<HEAD>
 		<title>Control</title>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 
 		<script type="text/javascript" language="JavaScript">
 			<!--
@@ -51,24 +53,68 @@
                         Top="10px" Left="10px" 
                         Behaviors="Close, Move, Resize, Maximize"
                         IconUrl="../System/Icons/icon_table.gif"
-                        KeepInScreenBounds="true" Modal="true" />
+                        KeepInScreenBounds="true" Modal="true" OnClientClose="OnRadClosed" OnClientPageLoad="OnRadShown" />
                     <telerik:RadWindow ID="GenerateButtonDialog" runat="server" Title="Dev Generate Buttons" Height="700px"
                         Width="700px" ReloadOnShow="true" ShowContentDuringLoad="false" 
                         NavigateUrl="Control_LanguageButton_GenerateButton.aspx"
                         Top="10px" Left="10px" 
                         Behaviors="Close, Move, Resize, Maximize"
                         IconUrl="../System/Icons/icon_table.gif"
-                        KeepInScreenBounds="true" Modal="true" />
+                        KeepInScreenBounds="true" Modal="true" OnClientClose="OnRadClosed" OnClientPageLoad="OnRadShown" />
                 </Windows>
             </telerik:RadWindowManager>
 
             <script type="text/javascript">
                 //<![CDATA[
+
+                var radWnd;
+
                 function ShowSelectLanguagesForm() {
-                    window.radopen("Control_Language_SelectLanguages.aspx", "SelectLanguagesDialog");
+                    OpenWindod("Control_Language_SelectLanguages.aspx", "SelectLanguagesDialog");
                 }
+
                 function ShowGenerateButtonsForm() {
-                    window.radopen("Control_LanguageButton_GenerateButton.aspx", "GenerateButtonDialog");
+                    OpenWindod("Control_LanguageButton_GenerateButton.aspx", "GenerateButtonDialog");
+                }
+
+                function OpenWindod(url, title) {
+                    var oTop = document.body.scrollTop;
+                    document.body.scroll = "no";
+                    document.body.style.overflow = "hidden";
+                    document.body.scrollTop = oTop;
+
+                    radWnd = window.radopen(url, title);
+                }
+
+                function OnRadShown() {
+
+                    var radWndTop = 0;
+                    var radWndLeft = 0;
+                    var radWndWidth = 700;
+                    var radWndHeight = 700;
+
+                    var docWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                    var docHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+                    if (radWndWidth >= docWidth) {
+                        radWndWidth = docWidth;
+                    } else {
+                        radWndLeft = (docWidth / 2) - (radWndWidth / 2);
+                    }
+
+                    if (radWndHeight >= docHeight) {
+                        radWndHeight = docHeight;
+                    } else {
+                        radWndTop = (docHeight / 2) - (radWndHeight / 2);
+                    }
+
+                    radWnd.setSize(radWndWidth, radWndHeight);
+                    //radWnd.moveTo(radWndLeft, radWndTop);
+                }
+
+                function OnRadClosed() {
+                    document.body.style.overflow = "scroll";
+                    document.body.scroll = "yes";
                 }
                 //]]>
             </script>

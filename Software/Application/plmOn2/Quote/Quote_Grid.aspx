@@ -1,36 +1,35 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Quote_Grid.aspx.vb" Inherits="plmOnApp.Quote_Grid" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle">Quotation</title>
-		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
-		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
-		<meta content="JavaScript" name="vs_defaultClientScript">
-		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
-        <style type="text/css">
-            th.rgHeaderYPLM, th.rgHeader {
-                height: auto !important;
-            }
-        </style>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
-				<tr>
-					<td>&nbsp;<asp:Label id="lblHeader" runat="server" Font-Names="Tahoma,Verdana" Font-Size="X-Large" ForeColor="#E0E0E0">Quote Folder...</asp:Label></td>
-                </tr>
-                <tr class="TableHeader">
+		    <table class="TableHeader" id="toolbar" cellSpacing="0" cellpadding="0" width="100%" border="0" runat="server">
+			    <tr valign="middle">
+				    <td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
                     <td><cc1:confirmedimagebutton id="btnSaveSearch" runat="server" Message="NONE" AutoPostBack="TRUE" ></cc1:confirmedimagebutton></td>
-				</tr>
-			</table>
+			    </tr>
+		    </table>
+            <table id="tbHeader" runat="server" style="border-left-style: none; background-color: white" height="45" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
+                <tr>
+                    <td>
+                        &nbsp;<asp:Label ID="lblHeader" runat="server" ForeColor="#E0E0E0" Font-Size="X-Large" Font-Names="Tahoma,Verdana"><%=GetSystemText("Quote Folder") %>...</asp:Label>
+                    </td>
+                </tr>
+            </table>
 			<cc2:YSTabView id="YSTabView1" runat="server"></cc2:YSTabView>
 			<table cellSpacing="1" cellPadding="0" width="100%" border="0">
 				<tr>
@@ -41,7 +40,14 @@
 						<table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">
 							<tr>
 								<td><asp:placeholder id="plhSearchControl" runat="server"></asp:placeholder></td>
-								<td width="100%"><asp:imagebutton id="imgBtnSearch" runat="server" /></td>
+								<td width="100%" valign="top">
+                                    <table height="45">
+							            <tr>
+								            <td>
+									            <asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
+							            </tr>
+						            </table>
+                                </td>
 							</tr>
 						</table>
 

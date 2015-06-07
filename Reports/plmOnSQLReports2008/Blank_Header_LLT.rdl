@@ -6,12 +6,25 @@
         <ReportItems>
           <Image Name="imgLogo">
             <Source>External</Source>
-            <Value>logo.jpg</Value>
+            <Value>Yunique Logo.jpg</Value>
             <Sizing>FitProportional</Sizing>
-            <Left>0.1in</Left>
             <Height>0.45in</Height>
             <Width>3.025in</Width>
             <Style />
+          </Image>
+          <Image Name="Image1">
+            <Source>External</Source>
+            <Value>Lines.jpg</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.43505in</Top>
+            <Height>0.06495in</Height>
+            <Width>10.75in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
           </Image>
         </ReportItems>
         <DataElementOutput>ContentsOnly</DataElementOutput>
@@ -21,7 +34,7 @@
         <Width>10.75in</Width>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
         </Style>
       </Rectangle>

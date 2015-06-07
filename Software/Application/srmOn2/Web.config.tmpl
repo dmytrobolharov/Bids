@@ -93,7 +93,7 @@
   <applicationSettings>
     <srmOnApp.My.MySettings>
       <setting name="srmOnApp_SRMFileServices_SRMFileServices" serializeAs="String">
-        <value>http://$plmOnHTTPServer$/$plmOnVDFileServices$/srmFileServices.asmx</value>
+        <value>http://$plmOnHTTPServer$/$plmOnVDImageServer$/srmFileServices.asmx</value>
       </setting>
       <setting name="srmOnApp_ReportService2005_ReportingService2005" serializeAs="String">
         <value>http://$plmOnRSServer$/$plmOnRSVDir$/ReportService2005.asmx</value>
@@ -145,5 +145,10 @@
     <add key="SYSTEM" value="$plmOnConfig$\Config\system.config"/>
     <add key="ERRORMESSAGE" value="True"/>
     <add key="Telerik.Web.UI.StyleSheetFolders" value="~/System/CSS/"/>
+    <!--CuteWebUI start-->
+    <add key="CuteWebUI.AjaxUploader.TempDirectory" value="$plmOnTemp$"/>
+    <add key="CuteWebUI.AjaxUploader.GlobalMaxSizeKB" value="204800"/>
+    <add key="CuteWebUI.AjaxUploader.UploadSpeedKB" value="0"/>
+    <!--CuteWebUI end-->	
   </appSettings>
 </configuration>

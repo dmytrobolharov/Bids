@@ -85,7 +85,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!ColorCode.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontFamily>Arial Unicode MS</FontFamily>
                                                       <FontSize>7pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -108,7 +108,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!ColorName.Value</Value>
                                                     <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
+                                                      <FontFamily>Arial Unicode MS</FontFamily>
                                                       <FontSize>7pt</FontSize>
                                                     </Style>
                                                   </TextRun>

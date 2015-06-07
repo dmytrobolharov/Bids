@@ -10,8 +10,11 @@
 		<title>Style</title>	
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -28,13 +31,13 @@
 							<asp:ListItem Value="0">No</asp:ListItem>
 						</asp:dropdownlist></td>--%>
 					<td noWrap width="900"><cc1:confirmedimagebutton 
-					    id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-					    <cc1:confirmedimagebutton id="btnShowGrid" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-					    <cc1:confirmedimagebutton id="btnHideGrid" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+					    id="btnSave" runat="server" CausesValidation="True" Message="NONE"></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnShowGrid" CausesValidation="False" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+					    <cc1:confirmedimagebutton id="btnHideGrid"  CausesValidation="False" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
 					    <cc1:bwimagebutton id="btnImageNew" runat="server" ></cc1:bwimagebutton>
 					    <cc1:bwimagebutton id="btnImageSelect" runat="server" ></cc1:bwimagebutton>
 					    <cc1:bwimagebutton id="btnImageSort" runat="server" ></cc1:bwimagebutton>
-					    <cc1:confirmedimagebutton id="btnCopy" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:bwimagebutton 
+					    <cc1:confirmedimagebutton id="btnCopy" CausesValidation="False" runat="server"  Message="NONE"></cc1:confirmedimagebutton><cc1:bwimagebutton 
 					    id="btnImageRemove" runat="server" ></cc1:bwimagebutton><cc1:confirmedimagebutton 
 					    id="btnClose" runat="server"  Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 					    <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
@@ -61,8 +64,8 @@
 							<tr>
 								<td valign="middle"  width="5"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 								<td width="795">
-								    <cc1:confirmedimagebutton id="imgBtnTemplate" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
-								    <cc1:confirmedimagebutton id="btnDeleteTemplate" runat="server"  />
+								    <cc1:confirmedimagebutton id="imgBtnTemplate" CausesValidation="False" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+								    <cc1:confirmedimagebutton id="btnDeleteTemplate" CausesValidation="False" runat="server"  />
 								</td>
 							</tr>
 							<tr>
@@ -78,8 +81,11 @@
                                     <Columns>
                                         <asp:TemplateColumn HeaderStyle-BorderWidth="0" ItemStyle-BorderWidth="0">
                                             <HeaderTemplate >
-                                            <input type="checkbox" onclick="CheckAll(this)" id="chkSelectAll" />
-                                            </HeaderTemplate>                        
+                                                <input type="checkbox" onclick="CheckAll(this)" id="chkSelectAll" />
+                                            </HeaderTemplate>
+                                            <ItemTemplate>
+                                                <asp:CheckBox ID="chbStyleDesignDetailID" runat="server" />
+                                            </ItemTemplate>                        
                                         </asp:TemplateColumn>  
 <%--                                        <asp:TemplateColumn> 
                                             <HeaderTemplate> 

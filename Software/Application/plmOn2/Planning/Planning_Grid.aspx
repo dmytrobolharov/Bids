@@ -1,7 +1,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Grid.aspx.vb" Inherits="plmOnApp.Planning_Grid" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Line</title>
@@ -12,7 +11,9 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .search-cell td {
             	vertical-align: top !important;
@@ -22,7 +23,6 @@
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
-		<wc1:Color_Wait ID="Color_Wait" runat="server" />
 		<asp:Panel runat="server" ID="pnlPerm" Visible=false>
 				<table style="height:50;" cellspacing="0" cellpadding="0" width="100%"  bgColor="#990000" border="1" borderColor="red">
 					<tr>
@@ -85,7 +85,7 @@
 								<TD width="10">&nbsp;</TD>
 								<TD noWrap height="25"><div align="left"><b>
                                    <asp:label id="lblRecordCount" Visible="true" Runat="server"></asp:label>&nbsp;
-                                   <asp:label id="lblRecordFound" Runat="server" />
+                                   <asp:label id="lblRecordFound" Runat="server" Visible="false" />
                                  </b></div>
                                 </TD>	
 								<TD  width="110" align="right"><asp:label id="lblRecordPerPage" runat="server" CssClass="fontHead"></asp:label></TD>
@@ -131,7 +131,11 @@
                 <CdnSettings TelerikCdn="Disabled" />
             </telerik:RadStyleSheetManager>
             <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1" />
-
+            <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                top.window.dbody.main.scroll(0)
+                 });
+            </script>
 		</form>
 	</body>
 </HTML>

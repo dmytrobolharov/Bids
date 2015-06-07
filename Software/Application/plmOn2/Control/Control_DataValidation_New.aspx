@@ -1,11 +1,13 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Control_DataValidation_New.aspx.vb" Inherits="plmOnApp.Control_DataValidation_New" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
         <title runat="server" id="PageTitle">New Lookup Table</title>
         <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     </head>
     <body ms_positioning="GridLayout">
         <form id="Form1" method="post" runat="server">
@@ -70,7 +72,7 @@
                         </tr>
                     </table>
                 </td>
-                <td width="10%" bgcolor="#f5f5f5">
+                <td width="20%" bgcolor="#f5f5f5">
                     &nbsp;
                 </td>
             </tr>

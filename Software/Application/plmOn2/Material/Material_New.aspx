@@ -1,8 +1,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Material_New.aspx.vb" Inherits="plmOnApp.Material_New" enableViewState="False"%>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <HTML>
     <head runat="server">
         <title>New Material</title>
@@ -12,6 +11,7 @@
         <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
         <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <style type="text/css">
             .colors td {
             	padding: 2px;
@@ -45,11 +45,12 @@
         <script type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     </head>
 	<body MS_POSITIONING="GridLayout">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" >
             <Scripts>
                 <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
@@ -68,7 +69,7 @@
             <CdnSettings TelerikCdn="Disabled" />
         </telerik:RadStyleSheetManager>
         <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1">
-            <ClientEvents OnRequestStart="" OnResponseEnd="onAjaxResponseEnd" />
+            <ClientEvents OnRequestStart="onAjaxResponseStart" OnResponseEnd="onAjaxResponseEnd" />
             <AjaxSettings>
                 <telerik:AjaxSetting AjaxControlID="drlColorSearch">
                     <UpdatedControls>
@@ -217,7 +218,7 @@
                                                 </td>
                                             </tr>                                
                                         </table>
-                                        <div style="position:absolute; top:0; right:1px; font-weight:bold;" class="DeleteMarker"><asp:LinkButton style="text-decoration: none; cursor:pointer;" runat="server" CommandName="delete" OnClientClick="once_disable_wait_text=true" >X</asp:LinkButton></div>
+                                        <div style="position:absolute; top:0; right:1px; font-weight:bold;" class="DeleteMarker"><asp:LinkButton style="text-decoration: none; cursor:pointer;" runat="server" CommandName="delete" OnClientClick="dont_show_wait_next_time()" >X</asp:LinkButton></div>
                                     </ItemTemplate>
                                 </asp:DataList>
                             </ContentTemplate>
@@ -231,7 +232,7 @@
                                 </td>
                                 <td width="200px">
                                     <telerik:RadComboBox ID="drlSizeSearch" runat="server" Width="200" EnableLoadOnDemand="true" ShowMoreResultsBox="true"
-                                        EnableVirtualScrolling="true" AutoPostBack="true" Filter="Contains" HighlightTemplatedItems="true">
+                                        EnableVirtualScrolling="true" AutoPostBack="true" Filter="Contains" HighlightTemplatedItems="true" CausesValidation="false">
                                     </telerik:RadComboBox>
                                 </td>
                                 <td runat="server" id="tdAddSize" width="30px">
@@ -270,7 +271,7 @@
                                 </td>
                                 <td>
                                     <telerik:RadComboBox ID="drlTradePartnerSearch" runat="server" DropDownAutoWidth="Enabled" EnableLoadOnDemand="true" ShowMoreResultsBox="true"
-                                        EnableVirtualScrolling="true" AutoPostBack="true" Filter="Contains">
+                                        EnableVirtualScrolling="true" AutoPostBack="true" Filter="Contains" CausesValidation="false">
                                     </telerik:RadComboBox>
                                 </td>
                             </tr>                                             
@@ -299,6 +300,10 @@
 			</table>
 		</form>
         <script type="text/javascript">
+            
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+            var isHandleRequest = false;
+
             function UpdateColors() {
                 __doPostBack('<%= upColors.ID %>', '');
             }
@@ -307,9 +312,21 @@
                 __doPostBack('<%= upSize.ID %>', '');
             }
 
+            function onAjaxResponseStart(sender, eventArgs) {
+                $("#btnSaveMaterial").prop("disabled", true);
+            }
+
             function onAjaxResponseEnd(sender, eventArgs) {
+                isHandleRequest = true;
                 UpdateColors();
-               // UpdateSeasonYears();
+                // UpdateSeasonYears();
+            }
+
+            function EndRequestHandler(sender, args) {
+                if (isHandleRequest) {
+                    isHandleRequest = false;
+                    $("#btnSaveMaterial").prop("disabled", false);
+                }
             }
 
             function checkSize() {

@@ -1,68 +1,164 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Color_PaletteImageUpload.aspx.vb" Inherits="plmOnApp.Color_PaletteImageUpload" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Color_PaletteImageUpload.aspx.vb" Inherits="plmOnApp.Color_PaletteImageUpload" %>
+<%@ Register TagPrefix="CuteWebUI" Namespace="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title runat="server" id="PageTitle">Upload</title>
-    <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+<HTML>
+	<HEAD>
+		<title>New Image</title>
+		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+ 	   	<link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    		<script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <script>
         function btnClose_Click() {
             <%= strExitScript %>
             return false;
         }
    </script>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
+		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	</HEAD>
+	<body>
+		<form id="Form1" method="post" runat="server">
+			<TABLE class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
+				runat="server">
+				<tr vAlign="middle">
+					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
+					<td><cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnCreateNewImage" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:ConfirmedImageButton ID="btnAdd" runat="server" Message="NONE" Visible="False" CausesValidation="False"></cc1:ConfirmedImageButton>
+					<img alt='' runat="server" id="Img1" style="display: none;" onclick="Upload_Click();return false;" />
+					<asp:ImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click();"/>
+					</td>
+					<td width="75">&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</TABLE>
+			<table style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
+				height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
+				<tr>
+					<td>&nbsp;<asp:label id="lblImageHeader" runat="server" ForeColor="#E0E0E0" Font-Size="X-Large" Font-Names="Tahoma,Verdana">New Image...</asp:label></td>
+				</tr>
+			</table>
+		
+			
 
-		<table style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white"
-			height="35" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
-			<tr>
-			    <td width="20">&nbsp;</td>
-			    <td width="20">
-                    <img src="../System/Icons/icon_colorwheel.gif" /></td>
-				<td>&nbsp;<asp:label id="lblHeader" runat="server" Font-Names="Tahoma,Verdana" 
-                        Font-Size="Medium" ForeColor="Gray">Upload Color</asp:label></td>
-			</tr>
-		</table>   
-        <br />
-		<br />
-		<br />
-		<br />
-		<asp:panel id="pnlUpload" runat="server">
-			<BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px"> <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
-					<P><BR>
-						<SPAN class="fontHead"><asp:label id="lblSelectFileToUpload" runat="server" CssClass="fontHead">Select File to Upload...</asp:label> </SPAN>
-						<BR>
-						<BR>
-						<INPUT id="File1" type="file" name="file1" runat="server"></P>
-				</BLOCKQUOTE></BLOCKQUOTE><BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px"> <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
-					<P></P>
-				</BLOCKQUOTE></BLOCKQUOTE>
-		</asp:panel>
-		<br />
-		<br />
-		<br />
-		<br />
- 	    <table bgcolor="gainsboro" border="0" cellpadding="0" cellspacing="0" 
-            height="40" 
-            style="BORDER-TOP: gray thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: gainsboro" 
-            width="100%">
-            <tr>
-                <td align="center" width="50">
-                    &nbsp;</td>
-                <td align="center" width="300">
-                    <asp:ImageButton ID="btnSave" runat="server" />
-                    <asp:ImageButton ID="btnClose" runat="server" OnClientClick="return btnClose_Click();"/>
-                </td>
-                <td align="center">
-                    &nbsp;</td>
-            </tr>
-        </table>      
-    </div>
-    </form>
-</body>
-</html>
+			<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="100%" border="0">
+				<TR>
+					<TD width="900"><asp:placeholder id="plhControlsHolder" runat="server" EnableViewState="False"></asp:placeholder></TD>
+					<TD></TD>
+				</TR>
+			</TABLE>
+            <asp:panel id="pnlUpload" runat="server" Visible="false">
+                <table height="75" cellspacing="0" cellpadding="1" width="100%" border="0">
+                    <tr bgcolor="#ffffff">
+                        <td class="fontHead" width="150">
+                            &nbsp;<asp:Label ID="lblSelectFile" runat="server" Text="Select File to Upload..." />
+                        </td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                        <td class="fontHead" width="125">
+                            &nbsp;<asp:Label ID="lblImageFile" runat="server" Text="Image File"></asp:Label>
+                        </td>
+                        <td>
+                            &nbsp;
+                            <input id="File1" type="file" name="file1" runat="server">&nbsp;
+                        </td>
+                    </tr>
+                </table>
+		    </asp:panel>
+	<asp:Panel ID="pnlMulti" runat="server">
+        <div>  
+            <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachments1" ManualStartUpload="False" AutoUseSystemTempFolder="False"
+                OnAttachmentAdded="UploadAttachments1_AttachmentAdded" OnAttachmentCreated="UploadAttachments1_AttachmentCreated" OnFileValidating="UploadAttachments1_FileValidating"
+                NumFilesShowCancelAll="1000" TableHeaderTemplate="<td nowrap='nowrap'></td><td>Files</td><td>Description</td>" InsertButtonID="btnAdd">
+                <ItemTemplate>
+                    <table>
+                        <tr valign="middle">
+                            <td>
+                                <asp:TextBox runat="server" ID="textboxDesc" TextMode="MultiLine" />
+                            </td>
+                           
+                        </tr>
+                    </table>
+                </ItemTemplate>
+            </CuteWebUI:UploadAttachments>
+            <br />
+     <%--       <table id='clientTable' style="display: none; font-size: 9pt; border-collapse: collapse"
+                border="1" cellspacing="0" cellpadding="5">
+                <tr>
+                    <td>
+                        <%#GetSystemText("FileName")%>
+                    </td>
+                    <td>
+                        <%#GetSystemText("Status")%>
+                    </td>
+                </tr>
+            </table>--%>
+            <br />          
+            <br />
+        </div>
+    </asp:Panel>
+		</form>
+	</body>
+		<script type="text/javascript">
+		    //    var btnUpload = document.getElementById("btnUpload");
+		    //    var clientTable = document.getElementById("clientTable");
+		    var uploader = document.getElementById('<%=UploadAttachments1.ClientID %>');
+		    var btnSave = document.getElementById('<%=btnSave.ClientID %>');
+		    var btnSaveClicked = false;
+
+
+		    function Upload_Click() {
+		        uploader.startupload();
+
+		    }
+		    function btnSave_Click() {
+		        btnSaveClicked = true;
+		        var items = uploader.getitems();
+		        for (var i = 0; i < items.length; i++) {
+		            switch (items[i].Status) {
+		                case "Queue":
+		                case "Upload":
+		                    uploader.startupload();
+		                    return false;
+		            }
+		        }
+		        return true;
+		    }
+		    function CuteWebUI_AjaxUploader_OnPostback() {
+		        if (btnSaveClicked) {
+		            btnSave.click();
+		            return false;
+		        }
+		    }
+		    function CancelQueueItem(link) {
+		        var td = link.parentNode;
+		        var row = td.parentNode;
+		        var file = row._file;
+		        file.Cancel();
+		    }
+
+		    //prevent duplicated items
+		    function CuteWebUI_AjaxUploader_OnSelect(files) {
+		        var sames = [];
+		        var items = uploader.getitems();
+		        for (var i = 0; i < files.length; i++) {
+		            var file = files[i];
+		            var exists = false;
+		            for (var j = 0; j < items.length; j++) {
+		                var item = items[j];
+		                if (item.FileName == file.FileName) {
+		                    exists = true;
+		                }
+		            }
+		            if (exists) {
+		                sames.push(file.FileName);
+		                file.Cancel();
+		            }
+		        }
+		        if (sames.length > 0) {
+		            alert("These file(s) are already in the queue : \r\n\t" + sames.join('\r\n\t'));
+		        }
+		    }
+</script>
+</HTML>

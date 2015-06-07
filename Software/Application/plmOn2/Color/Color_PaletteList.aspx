@@ -1,7 +1,6 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Color_PaletteList.aspx.vb" Inherits="plmOnApp.Color_PaletteList" %>
 <%@ Register src="../System/Control/SystemPageActiveUser.ascx" tagname="SystemPageActiveUser" tagprefix="uc1" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="uc1" %>
 <%@ Register Src="Color_WorkflowStatus.ascx" TagName="Color_WorkflowStatus" TagPrefix="uc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,8 +9,11 @@
 		<title runat="server" id="PageTitle">Palette</title>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             th.rgHeaderYPLM, th.rgHeader {
                 padding: 0 0px !important;
@@ -20,7 +22,6 @@
 	</head>
 	<body>
 	    <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
-		 <uc1:Color_Wait ID="Color_Wait" runat="server" />
         
         <form id="Form1" method="post" runat="server">
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
@@ -56,6 +57,7 @@
 					<cc1:bwimagebutton id="btnColorRemove" runat="server"></cc1:bwimagebutton>
 					<cc1:confirmedimagebutton id="btnDeletePalette" runat="server" CausesValidation="False"></cc1:confirmedimagebutton>   
                     <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
+                    <cc1:confirmedimagebutton id="btnExcelExport" runat="server"  Message="NONE" OnClientClick="enable_close_link();"></cc1:confirmedimagebutton>
                     <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="False" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton>
                     </td>
 					<td width="75">&nbsp;</td>
@@ -132,7 +134,7 @@
                         <div align="left">
                             &nbsp;
                             <asp:Label ID="lblCurrentIndex" Runat="server" Text="0" Visible="False"></asp:Label>
-                            <asp:Label ID="lblPageSize" Runat="server" Text="25" Visible="False"></asp:Label>
+                            <asp:Label ID="lblPageSize" Runat="server" Text="24" Visible="False"></asp:Label>
                         </div>
                     </td>
                     <td height="25" width="20">
@@ -167,15 +169,28 @@
                         </asp:RadioButtonList>
                     </td>
                     <td height="25">
-                        <p align="right">
-                            <asp:DropDownList ID="ddlSortField" runat="server">
-                            </asp:DropDownList>
-                            <asp:DropDownList ID="ddlSortBy" runat="server">
-                            </asp:DropDownList>
-                            <asp:ImageButton ID="btnSort" runat="server" CausesValidation="false"
-                                ImageUrl="../System/Icons/icon_sort.gif" />
+                        <p align="right" style="margin: 0;">
+                            <span id="spanSortPanel" runat="server">
+                                <asp:DropDownList ID="ddlSortField" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlSortBy" runat="server"></asp:DropDownList>
+                                <asp:ImageButton ID="btnSort" runat="server" CausesValidation="false" ImageUrl="../System/Icons/icon_sort.gif" />
+                            </span>
                         </p>
                     </td>
+                    <span id="spanRecordsPerPage" runat="server">
+                    <TD class="fontHead" align="right"><asp:label id="lblRecordsPerPage" runat="server" CssClass="fontHead" Text="Records per Page:"></asp:label></TD>
+								<TD width="25"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
+										<asp:ListItem Value="5">5</asp:ListItem>
+										<asp:ListItem Value="10">10</asp:ListItem>
+										<asp:ListItem Value="15">15</asp:ListItem>
+										<asp:ListItem Value="20">20</asp:ListItem>
+										<asp:ListItem Value="25">25</asp:ListItem>
+										<asp:ListItem Value="30">30</asp:ListItem>
+										<asp:ListItem Value="40">40</asp:ListItem>
+										<asp:ListItem Value="50" Selected="True">50</asp:ListItem>
+									</asp:dropdownlist></TD>
+								<TD width="10"><asp:button id="btnRePage" onclick="RePage" runat="server" CssClass="fontHead" text="GO"></asp:button></TD>
+						</span>	
                 </tr>
             </table>
             <table border="0" bordercolor="gainsboro" cellpadding="0" cellspacing="1">

@@ -47,17 +47,17 @@
 		                                <asp:TemplateColumn >
 		                                    <ItemStyle Width="75" />
 			                                <ItemTemplate>
-			                                    <table cellSpacing="0" cellPadding="0" width="75" border="0" >
-			                                    <tr><td><table cellSpacing="0" cellPadding="0" width="25" border="0">
+			                                    <table cellspacing="0" cellpadding="0" width="75" border="0" >
+			                                    <tr><td><table cellspacing="0" cellpadding="0" width="25" border="0">
 					                                    <TR>
             					                        
 					                                       <td>
 							                                    <asp:Image id="imgExpSubCom" runat="server" ImageUrl="../System/Icons/icon_folderSelected.gif" ToolTip="..."/>
-							                                    <asp:Image  id="imgExpColCom" ImageUrl="../System/Icons/icon_folderDown.gif" runat="server" />
+							                                    <asp:Image id="imgExpColCom" ImageUrl="../System/Icons/icon_folderDown.gif" runat="server" />
 						                                    </td>
 					                                    </TR>
 				                                    </table>
-				                                    <table cellSpacing="0" cellPadding="0" width="25" border="0">
+				                                    <table cellspacing="0" cellpadding="0" width="25" border="0">
 					                                    <TR>
 						                                    <td>
 							                                    <cc1:BWImageButton id="imgDesign" runat="server"></cc1:BWImageButton></td>

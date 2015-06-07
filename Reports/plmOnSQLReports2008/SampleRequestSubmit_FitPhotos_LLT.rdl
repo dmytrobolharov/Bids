@@ -6,18 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.7319in</Width>
+              <Width>4in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.91146in</Height>
+              <Height>4.25in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Image Name="Image1">
                       <Source>External</Source>
                       <Value>=Fields!FilePath.Value</Value>
+                      <Sizing>FitProportional</Sizing>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -29,7 +30,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.48958in</Height>
+              <Height>0.5in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -42,6 +43,7 @@
                             <TextRun>
                               <Value>Modified By               </Value>
                               <Style>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -49,6 +51,7 @@
                             <TextRun>
                               <Value>=Fields!CUser.Value</Value>
                               <Style>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -61,6 +64,7 @@
                             <TextRun>
                               <Value>Modified Date            </Value>
                               <Style>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -68,6 +72,7 @@
                             <TextRun>
                               <Value>=Fields!CDate.Value</Value>
                               <Style>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -113,11 +118,10 @@
         </TablixRowHierarchy>
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <RepeatRowHeaders>true</RepeatRowHeaders>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>0.05556in</Top>
-        <Left>3.46875in</Left>
-        <Height>1.40104in</Height>
-        <Width>3.7319in</Width>
+        <DataSetName>dsFitPhoto</DataSetName>
+        <Left>3.375in</Left>
+        <Height>4.75in</Height>
+        <Width>4in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -178,11 +182,12 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fit Photos</Value>
+                      <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                       <Style>
-                        <FontFamily>Tahoma</FontFamily>
+                        <FontFamily>Arial Unicode MS</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Color>Gray</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -211,7 +216,7 @@
           <Width>10.75in</Width>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
           </Style>
         </Rectangle>
@@ -241,20 +246,16 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="dsFitPhoto">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@SRSID">
             <Value>=Parameters!SRSID.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@FDIM">
-            <Value>=Parameters!FDIM.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
-          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>rpx_Style_Header_Image_SELECT_FPComments</CommandText>
+        <CommandText>rpx_SampleRequestSubmit_FitPhotos_SELECT</CommandText>
       </Query>
       <Fields>
         <Field Name="FilePath">
@@ -271,6 +272,24 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_sampleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SRSID">
@@ -279,11 +298,9 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>SRSID</Prompt>
     </ReportParameter>
-    <ReportParameter Name="FDIM">
+    <ReportParameter Name="RPID">
       <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>FDIM</Prompt>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

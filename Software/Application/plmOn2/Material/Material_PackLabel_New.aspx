@@ -7,7 +7,9 @@
 <head runat="server">
     <title>New</title>
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">

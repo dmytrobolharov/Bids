@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Sourcing_Page_TradePartner.aspx.vb" Inherits="plmOnApp.Sourcing_Page_TradePartner" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <%@ Register src="Sourcing_Header.ascx" tagname="Sourcing_Header" tagprefix="hc1" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -9,12 +8,14 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server" defaultbutton="imgBtnSearch">
-     <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table class="TableHeader" id="Table1" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">
@@ -34,26 +35,17 @@
                 <asp:Label ID="lblHeader" runat="server" ForeColor="#E0E0E0" Font-Size="Large" Font-Names="Tahoma,Verdana"></asp:Label>
             </td>
         </tr>
-    </table>
-    
+    </table>    
     <table class="TableHeader CollapsibleHeader" height="25" cellspacing="0" cellpadding="0" width="100%"
         border="0">
-        <tr>
-            <td valign="middle" align="center" width="10">
-                <img alt="" height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
-            </td>
-            <td width="20">
-                <asp:ImageButton ID="imgBtnToggleBOMs" OnClientClick="return toggleSectionVisibility(this);" runat="server"
-                                        ImageUrl="../System/Icons/icon_Next.gif"></asp:ImageButton>
-            </td>
-             <td width="100%" valign="top">
-              <asp:Label id="lblBOM" runat="server"><%= getSourcingHeaderName()  %></asp:Label>&nbsp;&nbsp;
-             </td>
-        </tr>
-        </table>
-        <div class="Collapsible">
-                <hc1:Sourcing_Header id="Sourcing_Header" runat="server" ></hc1:Sourcing_Header>
-        </div>
+         <tr>
+            <td>
+                <div >
+                   <hc1:Sourcing_Header id="Sourcing_Header" runat="server" ></hc1:Sourcing_Header>
+                </div>
+            </td>           
+         </tr>
+        </table>       
     <table height="15" cellspacing="0" cellpadding="0" width="100%" bgcolor="white" border="0">
         <tr>
             <td>
@@ -134,8 +126,7 @@
     <script type="text/javascript">
         var frm = document.forms['form1'];
 
-        function toggleSectionVisibility(sender) {
-            var collapsibleDiv = $(sender).closest(".CollapsibleHeader").nextAll(".Collapsible")[0];
+        function toggleSectionVisibility(sender) {           
             var hdnCollapsibleStatus = $(sender).siblings("input[id*='hdnIsExpanded']");
 
             if (collapsibleDiv != null) {
@@ -170,8 +161,7 @@
                 }
             }
         });*/
-
-        $(".Collapsible").hide();
+        
     </script>
 </body>
 </html>

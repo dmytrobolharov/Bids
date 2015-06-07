@@ -1,6 +1,6 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Vendor_Template_Edit.aspx.vb" Inherits="plmOnApp.Vendor_Template_Edit" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle">Template</title>
@@ -10,8 +10,11 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
@@ -20,7 +23,7 @@
 				<tr vAlign="middle">
 					<td valign="middle" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td width="650">
-					<cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnSave" runat="server" CausesValidation="True" Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnSaveClose" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:bwimagebutton id="imgAdd" runat="server" ></cc1:bwimagebutton>
 					<cc1:confirmedimagebutton id="btnDelete" Message="NONE" causesvalidation="false" runat="server" ></cc1:confirmedimagebutton>
@@ -32,7 +35,7 @@
 								</b></asp:label><asp:dropdownlist id="ddlSortBy" Runat="server">
 							<asp:ListItem ></asp:ListItem>
 						</asp:dropdownlist></td>
-					<td valign="middle"><cc1:confirmedimagebutton id="btnSort" runat="server"  Message="NONE"></cc1:confirmedimagebutton></td>
+					<td valign="middle"><cc1:confirmedimagebutton id="btnSort" runat="server" CausesValidation="False" Message="NONE"></cc1:confirmedimagebutton></td>
 				</tr>
 			</table>
 			<table cellSpacing="2" cellPadding="0" width="100%" border="0">

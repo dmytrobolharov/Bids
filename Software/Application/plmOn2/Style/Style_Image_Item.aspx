@@ -2,13 +2,17 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
 <%@ Register TagPrefix="CuteWebUI" Namespace ="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title runat="server" id="PageTitle"></title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		<script type="text/javascript" language="javascript">
             function CheckDetails(con) {
                 if (Page_ClientValidate() == true) {
@@ -30,13 +34,13 @@
 			<!--
 
 			-->
-			<table height="25" cellSpacing="0" cellpadding="1" width="100%" border="0">
-				<tr class="TableHeader" bgColor="whitesmoke">
+			<table class="TableHeader" height="25" cellSpacing="0" cellpadding="1" width="100%" border="0">
+				<tr bgColor="whitesmoke">
 					<td style="WIDTH: 11px" valign="middle" align="center" width="11"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td class="fonthead"><cc1:confirmedimagebutton id="imgBtnFolderImage" runat="server" ToolTip="Edit Image ..." 
 							Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="imgBtnEditImage" runat="server" ToolTip="Edit Image File..." 
 							Message="NONE"></cc1:confirmedimagebutton><cc1:confirmedimagebutton id="btnSaveForm" runat="server"  Message="NONE"
-							CausesValidation="False"></cc1:confirmedimagebutton>	
+							CausesValidation="True"></cc1:confirmedimagebutton>	
 													
 							<img  id="btnhide" runat="server" style="display:none;" />
 														
@@ -50,6 +54,7 @@
 					        <img alt='' runat="server" id="Img1" style="display: none;" onclick="Upload_Click();return false;" />
 					
 							<cc1:confirmedimagebutton id="btnUpdate" runat="server"  Message="NONE" Visible="False"></cc1:confirmedimagebutton>
+                            <asp:ImageButton ID="btnUpload" runat="server" Visible="false"/>
 							<cc1:confirmedimagebutton id="btnCancelUpdate" runat="server"  Message="NONE" CausesValidation="False" Visible="False"></cc1:confirmedimagebutton>
                             <cc1:confirmedimagebutton id="imgBtnCopyImage" runat="server" ToolTip="Copy Image From..." DESIGNTIMEDRAGDROP="18" Message="Do you want to copy this image?"></cc1:confirmedimagebutton>
                             <cc1:confirmedimagebutton id="imgBtnDeleteImage" runat="server" ToolTip="Remove Image From Style..." Message="Do you want to remove this image?" CausesValidation="False"></cc1:confirmedimagebutton>
@@ -57,6 +62,14 @@
 					</td>
 				</tr>
 			</table>
+            <asp:Panel ID="pnlFileUpdateUpload" runat="server" Visible="false">
+                <div>  
+                    <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachmentsUpdate" ManualStartUpload="False" AutoUseSystemTempFolder="False"
+                        InsertButtonID="btnUpload" MultipleFilesUpload="false" MaxFilesLimit="1" ShowCheckBoxes="false" ShowFileIcons="false">
+                    </CuteWebUI:UploadAttachments>
+                    <br />
+                </div>
+            </asp:Panel>
 			<table id="Table1" cellSpacing="1" cellpadding="1" width="100%" bgColor="#ffffff" border="0">
 				<tr>
 					<td width="900"><asp:placeholder id="plhHeaderControl" runat="server"></asp:placeholder></td>
@@ -210,18 +223,23 @@
 
 
 			    function Upload_Click() {
-			        uploader.startupload();
+			        if (uploader) {
+			            uploader.startupload();
+			        }
 
 			    }
+
 			    function btnSave_Click() {
 			        btnSaveClicked = true;
-			        var items = uploader.getitems();
-			        for (var i = 0; i < items.length; i++) {
-			            switch (items[i].Status) {
-			                case "Queue":
-			                case "Upload":
-			                    uploader.startupload();
-			                    return false;
+			        if (uploader) {
+			            var items = uploader.getitems();
+			            for (var i = 0; i < items.length; i++) {
+			                switch (items[i].Status) {
+			                    case "Queue":
+			                    case "Upload":
+			                        uploader.startupload();
+			                        return false;
+			                }
 			            }
 			        }
 			        return true;
@@ -240,29 +258,34 @@
 			    }
 
 			    //prevent duplicated items
-			    function CuteWebUI_AjaxUploader_OnSelect(files) {
-			        var sames = [];
-			        var items = uploader.getitems();
-			        for (var i = 0; i < files.length; i++) {
-			            var file = files[i];
-			            var exists = false;
-			            for (var j = 0; j < items.length; j++) {
-			                var item = items[j];
-			                if (item.FileName == file.FileName) {
-			                    exists = true;
-			                }
-			            }
-			            if (exists) {
-			                sames.push(file.FileName);
-			                file.Cancel();
-			            }
-			        }
-			        if (sames.length > 0) {
-			            alert("These file(s) are already in the queue : \r\n\t" + sames.join('\r\n\t'));
-			        }
-			    }
+//			    function CuteWebUI_AjaxUploader_OnSelect(files) {
+//			        var sames = [];
+//			        if (uploader) {
+//			            try {
+//			                var items = uploader.getitems();
+//			                for (var i = 0; i < files.length; i++) {
+//			                    var file = files[i];
+//			                    var exists = false;
+//			                    for (var j = 0; j < items.length; j++) {
+//			                        var item = items[j];
+//			                        if (item.FileName == file.FileName) {
+//			                            exists = true;
+//			                        }
+//			                    }
+//			                    if (exists) {
+//			                        sames.push(file.FileName);
+//			                        file.Cancel();
+//			                    }
+//			                }
+//			                if (sames.length > 0) {
+//			                    alert("These file(s) are already in the queue : \r\n\t" + sames.join('\r\n\t'));
+//			                }
+//			            }
+//			            catch (ex) { }
+//			        }
+//			    }
 </script>
-<script language="javascript">
+<script type="text/javascript" language="javascript">
 	function btnClose_Click() {
 		<%= strExitScript %>
         return false;

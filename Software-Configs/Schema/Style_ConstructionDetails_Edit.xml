@@ -41,7 +41,7 @@
   </column>
   <column Name="Sort" alias="Sort" Type="textbox" datatype="string" column="1" order="06" GridVisible="true" GridOrder="05" cellwidth="20px" GridWidth="30" Visible="true" enabled="true"
             ApiDataType="string" ApiVisible="true" ApiOrder="006" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
-  		<Validator Class="" Type="" Minimum="" Maximum="" Text="" /> 
+  		<Validator Class="validationexpression" Type="" Minimum="" Maximum="" Text="No more than four of digits" Dataformat="" ValidationExpression="[0-9]{0,4}" C5ass="" GridHeaderCss="" FilterField="" GridOrder="" />
   	</column>
     <column Name="Level0Desc" alias="Category" Type="textbox" datatype="string" column="1" order="07" GridVisible="false" cellwidth="150px" GridWidth="80" Visible="false" enabled="false"
             ApiDataType="string" ApiVisible="true" ApiOrder="007" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">

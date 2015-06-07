@@ -14,8 +14,11 @@
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
     <link href="../System/CSS/jquery.tablescroll.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -181,8 +184,44 @@
                 // Adding the scrollbar
                 var tableWidth = table.width();
                 var tableHeight = $(window).height() - $("#form1").height() + table.height() - $(head).height() - 15;
-                table.tableScroll({ height: tableHeight});
+                table.tableScroll({ height: tableHeight });
 
+                $('#txtOperationCode').keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        __doPostBack('imgBtnSearch', 'OnClick');
+                        return false;
+                    }
+                });
+                $('#txtOperationName').keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        __doPostBack('imgBtnSearch', 'OnClick');
+                        return false;
+                    }
+                });
+                $('#txtOpCUser').keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        __doPostBack('imgBtnSearch', 'OnClick');
+                        return false;
+                    }
+                });
+                $('#txtOpMUser').keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        __doPostBack('imgBtnSearch', 'OnClick');
+                        return false;
+                    }
+                });
+                $('#drlMachineID').keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        __doPostBack('imgBtnSearch', 'OnClick');
+                        return false;
+                    }
+                });
+                $('#drlActive').keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        __doPostBack('imgBtnSearch', 'OnClick');
+                        return false;
+                    }
+                });
             });
         </script>
     </telerik:RadScriptBlock>

@@ -6,7 +6,9 @@
 		<title>POM Template</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
-         <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
      	<form id="Form1" method="post" runat="server">
@@ -62,7 +64,7 @@
 								<td width="100%"><asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
 							</tr>
 						</table>
-						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="POMTempID" AutoGenerateColumns="False">
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="POMTempID" AutoGenerateColumns="False" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
@@ -82,7 +84,7 @@
 								</asp:TemplateColumn>
 							</Columns>
 							<PagerStyle Visible="False"></PagerStyle>
-						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False"></asp:label></td>
+						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False" Text="POMType"></asp:label></td>
 				</tr>
 			</table>
 		</form>

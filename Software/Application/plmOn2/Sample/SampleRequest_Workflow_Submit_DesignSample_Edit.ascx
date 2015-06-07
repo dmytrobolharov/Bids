@@ -159,7 +159,7 @@
 					            <td width="20"><asp:imagebutton id="btnImgNext" runat="server"  ImageUrl="../System/Icons/icon_next_disable.gif"></asp:imagebutton></td>
 					            <td width="20"><asp:imagebutton id="btnImgLast" runat="server" ImageUrl="../System/Icons/icon_last_disable.gif"></asp:imagebutton></td>
 					            <td width="10">&nbsp;</td>
-					            <td nowrap><asp:label id="RecordCount" runat="server" CssClass="font"></asp:label></td>
+					            <td nowrap><asp:Label runat="server" ID="lblRecordsCount" ForeColor="Red" Font-Bold="true" CssClass="font">0</asp:Label> <asp:label id="RecordCount" runat="server" Font-Bold="true" CssClass="font"></asp:label></td>
 					            <td class="fontHead" align="right" width="110"><asp:Label ID="lblRecordsPerPage" runat="server" ></asp:Label></td>
 					            <td width="25"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
 							            <asp:ListItem Value="5">5</asp:ListItem>
@@ -252,9 +252,10 @@
 												<TD vAlign="middle" align="center" width="10">
                                                     <IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></TD>
 												<TD class="fontHead">
-												<cc1:BWImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
-													
-													<cc1:confirmedimagebutton id="btnDeleteImage" runat="server" ></cc1:confirmedimagebutton></TD>
+												    <cc1:BWImageButton ID="btnAttachMultipleFile" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
+													<cc1:confirmedimagebutton id="btnDeleteImage" runat="server" ></cc1:confirmedimagebutton>
+                                                    <cc1:BWImageButton ID="btn3DFiles" runat="server" CausesValidation="False" />
+                                                </TD>
 											</TR>
 										</TABLE>
 										<asp:datagrid id="dgFitImage" runat="server" AutoGenerateColumns="False" PageSize="100" BorderWidth="1px"

@@ -1,14 +1,17 @@
 <%@ Register TagPrefix="uc1" TagName="Style_Header" Src="Style_Header.ascx" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Revision.aspx.vb" Inherits="plmOnApp.Style_Revision" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Style_Revision</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+        
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -25,7 +28,7 @@
 					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 					<td>
 						<asp:imagebutton id="imgBtnSave" runat="server" ></asp:imagebutton>
-						<asp:imagebutton id="btnClose" runat="server" ></asp:imagebutton></td>
+						<asp:imagebutton id="btnClose" runat="server" CausesValidation="false"></asp:imagebutton></td>
 				</tr>
 			</table>
             
@@ -62,6 +65,13 @@
 									<asp:textbox id="txtStartDate" name="txtStartDate" runat="server" CssClass="font" Columns="10" MaxLength="10"></asp:textbox>
                                     <asp:HiddenField ID="hdnStartDate" runat="server" />
 									<A href="javascript:calendarpopup('txtStartDate',' <%= txtStartDate.Text %> ')" name="atxtStartDate" id="atxtStartDate"><IMG height="17" src="../System/icons/icon_calendar.gif" width="18" border="0"></A>
+                                    <asp:CustomValidator id="CustomValidator1"
+                                        ControlToValidate="txtStartDate"
+                                        ClientValidationFunction="ValidateDate"
+                                        Display="Dynamic"
+                                        ErrorMessage="<IMG height='17' src='../System/Icons/icon_warning.gif' border='0'>"
+                                        ToolTip="Please check the date!"
+                                        runat="server"/>
                                     <asp:label id="lblPlannedStart" runat="server" CssClass="font"></asp:label></td>                          
 							</tr>
 							<tr bgColor="#f2f2f9">
@@ -72,6 +82,13 @@
 									<asp:textbox id="txtDueDate" name="txtDueDate" runat="server" CssClass="font" Columns="10" MaxLength="10"></asp:textbox>
 									<asp:HiddenField ID="hdnDueDate" runat="server" />
                                     <A href="javascript:calendarpopup('txtDueDate',' <%= txtDueDate.Text %> ')" name="atxtDueDate" id="atxtDueDate"><IMG height="17" src="../System/Icons/icon_calendar.gif" width="18" border="0"></A>
+                                    <asp:CustomValidator id="CustomValidator2"
+                                        ControlToValidate="txtDueDate"
+                                        ClientValidationFunction="ValidateDate"
+                                        Display="Dynamic"
+                                        ErrorMessage="<IMG height='17' src='../System/Icons/icon_warning.gif' border='0'>"
+                                        ToolTip="Please check the date!"
+                                        runat="server"/>
                                     <asp:label id="lblPlannedEnd" runat="server" CssClass="font"></asp:label></td>
 							</tr>
 							<tr bgColor="#ffffff">
@@ -254,6 +271,18 @@
 				</tr>
 			</table>
 		</form>		
+        <script language="javascript">
+            function ValidateDate(sender, args) {
+
+                var dateString = document.getElementById(sender.controltovalidate).value;
+                var regex = /<%= strRegExp %>/
+                if (regex.test(dateString)) {
+                    args.IsValid = true;
+                } else {
+                    args.IsValid = false;
+                }
+            }
+        </script>
 			<script language="javascript"  type="text/javascript">
 			    function ShowGrid(opt) {
 			        var dv1, dv2;

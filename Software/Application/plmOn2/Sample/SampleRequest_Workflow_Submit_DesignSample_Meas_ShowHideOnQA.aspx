@@ -5,7 +5,9 @@
 	<head>
 		<title>Critical POM</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-	</head>
+	    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+    </head>
 	<body>
 		<form id="Form1" method="post" runat="server">
 			<table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0"

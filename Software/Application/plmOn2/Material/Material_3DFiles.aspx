@@ -4,9 +4,8 @@
 <%@ Register TagPrefix="CuteWebUI" Namespace="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
 <%@ Register TagPrefix="uc1" TagName="Material_WorkflowStatus" Src="Material_WorkflowStatus.ascx" %>
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
 
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -18,6 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" /> 
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .item-3d {
 	        display: inline-block;
@@ -25,40 +25,55 @@
 	        vertical-align: top;      
         }
     </style>     
-    <!--[if !IE]><!-->
-    <script type="text/javascript" src="../System/Jscript/jsc3d.min.js"></script>
-    <!--<![endif]-->
-    <!--[if IE]>
-	<script type="text/javascript" src="../System/Jscript/jsc3d_ie.min.js"></script>
-	<![endif]-->
+    <script type="text/javascript" src="../System/Jscript/jsc3d.js"></script>
+    <script type="text/javascript" src="../System/Jscript/jsc3d.webgl.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <script type="text/javascript">
         var toLoad = [];
-        function Load3DFile(canvas, url) {
-            toLoad.push({ canvas: canvas, url: url });
+        function Load3DFile(canvas, url, mtl) {
+            toLoad.push({ canvas: canvas, url: url, mtl: mtl });
         }
 
-        window.onload = function () {
-            for (var i = 0, len = toLoad.length; i < len; i++) {
-                var canvas = toLoad[i].canvas,
-                    url = toLoad[i].url;
+        function Load3D(i) {
 
-                setTimeout((function (canvas, url) {
-                    return function () {
-                        var viewer = new JSC3D.Viewer(canvas);
-                        viewer.setParameter('SceneUrl', url);
-                        viewer.setParameter('InitRotationX', 0);
-                        viewer.setParameter('InitRotationY', 0);
-                        viewer.setParameter('InitRotationZ', 0);
-                        viewer.setParameter('ModelColor', '#C5C5C5');
-                        viewer.setParameter('BackgroundColor1', '#FFFFFF');
-                        viewer.setParameter('BackgroundColor2', '#FFFFFF');
-                        viewer.setParameter('RenderMode', 'texturesmooth');
-                        viewer.init();
-                        viewer.update();
-                    }; 
-                })(canvas, url), i * 200);
+            if (i < toLoad.length) {
+                var viewer = new JSC3D.Viewer(toLoad[i].canvas);
+                viewer.setParameter('SceneUrl', toLoad[i].url);
+                viewer.setParameter('InitRotationX', 0);
+                viewer.setParameter('InitRotationY', 0);
+                viewer.setParameter('InitRotationZ', 0);
+                viewer.setParameter('ModelColor', '#C5C5C5');
+                viewer.setParameter('BackgroundColor1', '#FFFFFF');
+                viewer.setParameter('BackgroundColor2', '#FFFFFF');
+                viewer.setParameter('RenderMode', 'texturesmooth');
+                viewer.setParameter('MipMapping', JSC3D.PlatformInfo.supportWebGL ? 'off' : 'on');
+                viewer.setParameter('Renderer', 'webgl');
+                viewer.setParameter('MaterialUrl', toLoad[i].mtl);
+
+                viewer.onloadingstarted = function () {
+                    if (i == 0) { show_wait_text(); }
+                };
+
+                viewer.onloadingcomplete = function () {
+                    var scene = viewer.getScene();
+                    if (scene) {
+                        scene.forEachChild(function (mesh) {
+                            mesh.isDoubleSided = true;
+                        });
+                    }
+                    if (i == toLoad.length) { hide_wait_text(); }
+                    Load3D(i);
+                };
+
+                viewer.init();
+                viewer.update();
+                i++;
             }
-        }
+        };
+
+        window.onload = function () { Load3D(0); }
     </script>
 </head>
 <body>
@@ -67,7 +82,6 @@
             id="yHelp"></a>
     </div>
     <form id="form1" runat="server">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">
@@ -153,17 +167,10 @@
         <ItemTemplate>
             <table>
                 <tr>
-                    <td>
-                        <asp:LinkButton ID="btnAttEdit" runat="Server" Text='<IMG border="0" alt="edit" src="../System/Icons/icon_edit.gif">'
-                            CommandName="edit"></asp:LinkButton></td>
-                    <td>
-                        <asp:LinkButton ID="Linkbutton5" runat="Server" CommandName="download"></asp:LinkButton></td>
+                    <td><asp:LinkButton ID="btnAttEdit" runat="Server" Text='<IMG border="0" alt="edit" src="../System/Icons/icon_edit.gif">' CommandName="edit"></asp:LinkButton></td>
                 </tr>
             </table>
-            <canvas id="imageCanvas" runat="server" width="400" height="400"></canvas>
-            <script type="text/javascript">
-                Load3DFile(document.getElementById('<%#Container.FindControl("imageCanvas").ClientID %>'), 'Material_3DFiles.aspx?MTID=<%#strMaterialID%>&MDID=<%#Eval("MaterialDocumentID") %>&<%#Eval("MaterialDocumentName") %>');
-            </script>            
+            <canvas id="imageCanvas" runat="server" width="400" height="400"></canvas>            
             <table>
                 <tr>   
                     <td class="fontHead">
@@ -207,15 +214,12 @@
                         <cc1:ConfirmedLinkButton ID="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>'
                             CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>'>
                         </cc1:ConfirmedLinkButton>
-                        <asp:LinkButton ID="Linkbutton5" runat="Server" CommandName="download"></asp:LinkButton>
+                        <asp:LinkButton ID="Linkbutton5" runat="Server" CommandName="download" OnClientClick="dont_show_wait_next_time();"></asp:LinkButton>
                         <cc1:ConfirmedImageButton ID="btnEditCancel" runat="server" Message="NONE" CommandName="cancel"></cc1:ConfirmedImageButton>
                     </td>                    
                 </tr>
             </table>
             <canvas id="imageCanvas" runat="server" width="300" height="300"></canvas>
-            <script type="text/javascript">
-                Load3DFile(document.getElementById('<%#Container.FindControl("imageCanvas").ClientID %>'), 'Material_3DFiles.aspx?MTID=<%#strMaterialID%>&MDID=<%#Eval("MaterialDocumentID") %>&<%#Eval("MaterialDocumentName") %>');
-            </script>
             <table>
                 <tr>                    
                     <td class="fontHead" valign="top" width="100">

@@ -1,12 +1,14 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Quote_New.aspx.vb" Inherits="plmOnApp.Style.Quote.Style_Quote_New" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>New Quotation</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <script language="javascript" >
         function tradepopupwindow() {
             windowCustom = window.open('../System/Control/TradeQuotePopup.aspx?SID=<%= Request.QueryString("SID") %>&SDID=<%= Request.QueryString("SDID") %>',"TradeQuotePopup","toolbar=0,location=0,directories=0,status=1,menubar=0,scrollbars=1,resizable=1,width=800,height=600,left=50,top=50");
@@ -75,7 +77,7 @@
 												<td valign="top"><A href="javascript:tradepopupwindow()"><IMG src="../System/Icons/icon_windowpopup.gif" border="0"></A></td>
 											</tr>
 										</table>
-										<asp:TextBox id="hdnTradePartnerId" runat="server" Width="1px" Height="1px"></asp:TextBox></td>
+										<asp:TextBox id="hdnTradePartnerId" runat="server" Width="1px" Height="1px" style="display: none;"></asp:TextBox></td>
 									<td>
 										<asp:placeholder id="plhControlsHolder" runat="server"></asp:placeholder></td>
 								</tr>

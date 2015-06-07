@@ -6,8 +6,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title runat="server" id="PageTitle">Set RGB Color</title>
+    <script type="text/javascript" src="../System/Jscript/prototype.js"></script>
+    <script type="text/javascript" src="../System/Jscript/colormethods.js"></script>
+    <script type="text/javascript" src="../System/Jscript/colorvaluepicker.js"></script>
+    <script type="text/javascript" src="../System/Jscript/slider.js"></script>
+    <script type="text/javascript" src="../System/Jscript/colorpicker.js"></script>
     <link href="../System/CSS/Style.css" rel="stylesheet" type="text/css" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <div id="fixed_icons">
@@ -22,7 +29,7 @@
                 <img height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
             </td>
             <td>
-                <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
+                <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE" CausesValidation="false"></cc1:ConfirmedImageButton>
                 <asp:ImageButton ID="btnClose" runat="server" CausesValidation="false" OnClientClick="return btnClose_Click();"/>
             </td>
             <td>
@@ -56,11 +63,9 @@
                             <img height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
                         </td>
                         <td>
-                            <asp:RadioButtonList ID="rblColortype" runat="server" RepeatDirection="Horizontal"
-                                AutoPostBack="True">
-                                <asp:ListItem Text="RGB Colors" Value="1" Selected="True"></asp:ListItem>
-                                <asp:ListItem Text="Upload Image" Value="2"></asp:ListItem>
-                            </asp:RadioButtonList>
+                            <cc1:ConfirmedImageButton ID="btnSelectRGB" runat="server" Message="NONE" CausesValidation="false"/>
+                            <cc1:BWImageButton ID="btnCreateImage" runat="server" Message="NONE" CausesValidation="false"/>
+                            <cc1:BWImageButton ID="btnSelectImage" runat="server" Message="NONE" CausesValidation="false"/>
                         </td>
                         <td>
                             &nbsp;
@@ -190,33 +195,12 @@
                         <img src="../System/Images/map-brightness.png" />
                         <img src="../System/Images/map-hue.png" />
                     </div>
-                </asp:Panel>
-                <asp:Panel ID="pnlUpload" runat="server">
-                    <blockquote dir="ltr" style="margin-right: 0px">
-                        <blockquote dir="ltr" style="margin-right: 0px">
-                            <p>
-                                <br>
-                                <span class="fontHead">
-                                    <asp:Label ID="lblSelectFileToUpload" runat="server" CssClass="fontHead">Select File to Upload...</asp:Label>
-                                </span>
-                                <br>
-                                <br>
-                                <cc1:ConfirmedImageButton ID="btnAdd" runat="server" Message="NONE" Visible="true"
-                                    CausesValidation="False"></cc1:ConfirmedImageButton>
-                                <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachments1" ManualStartUpload="False"
-                                    AutoUseSystemTempFolder="False" OnPreRender="UploadAttachments1_PreRender" OnUploadCompleted="UploadAttachments1_UploadCompleted"
-                                    OnFileUploaded="UploadAttachments1_FileUploaded" OnFileValidating="UploadAttachments1_FileValidating" NumFilesShowCancelAll="1000"
-                                    InsertButtonID="btnAdd">
-                                </CuteWebUI:UploadAttachments>
-                            </p>
-                        </blockquote>
-                    </blockquote>
-                    <blockquote dir="ltr" style="margin-right: 0px">
-                        <blockquote dir="ltr" style="margin-right: 0px">
-                            <p>
-                            </p>
-                        </blockquote>
-                    </blockquote>
+                    <script type="text/javascript">
+                        Event.observe(window, 'load', function () {
+                            var sHex = '<% = Request.QueryString("HEX") %>';
+                            cp1 = new Refresh.Web.ColorPicker('cp1', { startHex: '' + sHex + '', startMode: 's' });
+                        });
+                    </script>
                 </asp:Panel>
             </td>
             <td valign="top" style="border: 1px solid #F0F0F0; margin: auto; padding: inherit;">
@@ -252,7 +236,7 @@
         </tr>
     </table>
      <script type="text/javascript" >
-         function navigate(obj) {
+        function navigate(obj) {
              var minRow = 3;
              var maxRow = obj.parentNode.parentNode.parentNode.rows.length + 1;
 
@@ -315,5 +299,20 @@
      
      </script>
     </form>
+
+     <script type="text/javascript">
+         try {
+             for (var i = 0, len = Page_Validators.length; i < len; i++) {
+                 Page_Validators[i].display = "Dynamic";
+                 Page_Validators[i].style.visibility = "visible";
+             }
+
+             Page_ClientValidate();
+
+             Page_BlockSubmit = false;
+             }
+            catch (e) {};
+     </script>
+
 </body>
 </html>

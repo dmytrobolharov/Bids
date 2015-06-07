@@ -1,5 +1,4 @@
 ﻿<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
 <%@ Register Src="Calendar_Header.ascx" TagName="Calendar_Header" TagPrefix="hc1" %>
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Calendar_Page_LineLists.aspx.vb" Inherits="plmOnApp.Calendar_Page_LineLists" %>
 
@@ -8,13 +7,14 @@
 <head id="Head1" runat="server">
     <title>Line List Historical Grid</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server" defaultbutton="imgBtnSearch">
-    <wc1:Color_Wait ID="Color_Wait" runat="server" />
     <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0" runat="server">
         <tr valign="middle">
             <td valign="middle" align="center" width="10">

@@ -18,18 +18,36 @@
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+    <style type="text/css">
+        th.rgHeaderYPLME, th.rgHeaderYPLMGreenE, th.rgHeaderYPLMYellowE 
+        {
+            white-space: nowrap;
+            overflow: hidden; 
+            text-overflow: ellipsis;    
+        }
+        th.rgHeaderYPLME:hover, th.rgHeaderYPLMGreenE:hover, th.rgHeaderYPLMYellowE:hover 
+        {
+            background: #f0f0f0; 
+            white-space: normal;
+            overflow: visible;
+        }
+    </style>
     <!--[if IE]>
     <style type="text/css">
-        thead th {
+        #RadGridsummary thead th {
         	padding: 2px 4px !important;
         }
         
         #RadGridsummary_GridData td, #RadGridColorMgmt_GridData td {
         	padding: 2px 4px !important;
         }
-        
+
+        .rgMasterTable { table-layout: fixed !important; }
+
         #RadGridsummary_GridHeader, #RadGridColorMgmt_GridHeader { margin-right: 0 !important; }
     </style>
     <![endif]-->
@@ -588,12 +606,12 @@
             var diff = windowHeight - (formHeight - changeGrid.height());
 
             if (diff > minHeight) {
-                changeGrid.height(diff);
+                changeGrid.height(diff - 25);
             } else {
                 changeGrid.height(minHeight);
             }
 
-            grid = $find("RadGridsummary");
+            var grid = $find("RadGridsummary");
             if (grid) {
                 grid.GridDataDiv.style.height = (changeGrid.height() - 67) + "px";
             }

@@ -7,6 +7,8 @@
 <head runat="server">
 	<title>Control Panel</title>
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,7 +20,7 @@
 				<td>
 				    <cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnSaveNew" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-					<cc1:confirmedimagebutton id="btnDelete" runat="server" ></cc1:confirmedimagebutton>
+					<cc1:confirmedimagebutton id="btnDelete" runat="server" CausesValidation="false"></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click()"></cc1:confirmedimagebutton>
 				</td>
 				<td class="FontHead" align="right" width="75"></td>

@@ -18,7 +18,7 @@
                 border="0">
 				<tr vAlign="middle">
 					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
-					<td width="16"><asp:checkbox id="cbThumbnail" AutoPostBack="true" runat="server"></asp:checkbox></td>
+					<td width="16"><asp:checkbox id="cbThumbnail" AutoPostBack="true" runat="server" CausesValidation="true"></asp:checkbox></td>
 					<td class="fontHead" width="100">
                         <asp:Label ID="lblThumbnail" runat="server" ></asp:Label></td>
 					<td width="20"><asp:imagebutton id="btnImgFirst" runat="server"></asp:imagebutton></td>

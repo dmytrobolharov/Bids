@@ -12,6 +12,8 @@
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
         .item-3d {
 	        display: inline-block;
@@ -19,19 +21,21 @@
 	        vertical-align: top;      
         }
     </style>     
-    <script type="text/javascript" src="../System/Jscript/jsc3d.min.js"></script>
+    <script type="text/javascript" src="../System/Jscript/jsc3d.js"></script>
+    <script type="text/javascript" src="../System/Jscript/jsc3d.webgl.js"></script>
     <script type="text/javascript">
         var toLoad = [];
-        function Load3DFile(canvas, url) {
-            toLoad.push({ canvas: canvas, url: url });
+        function Load3DFile(canvas, url, mtl) {
+            toLoad.push({ canvas: canvas, url: url, mtl: mtl });
         }
 
         window.onload = function () {
             for (var i = 0, len = toLoad.length; i < len; i++) {
                 var canvas = toLoad[i].canvas,
-                    url = toLoad[i].url;
+                    url = toLoad[i].url,
+                    mtl = toLoad[i].mtl;
 
-                setTimeout((function (canvas, url) {
+                setTimeout((function (canvas, url, mtl) {
                     return function () {
                         var viewer = new JSC3D.Viewer(canvas);
                         viewer.setParameter('SceneUrl', url);
@@ -42,10 +46,22 @@
                         viewer.setParameter('BackgroundColor1', '#FFFFFF');
                         viewer.setParameter('BackgroundColor2', '#FFFFFF');
                         viewer.setParameter('RenderMode', 'texturesmooth');
+                        viewer.setParameter('MipMapping', JSC3D.PlatformInfo.supportWebGL ? 'off' : 'on');
+                        viewer.setParameter('Renderer', 'webgl');
+                        viewer.setParameter('MaterialUrl', mtl);
                         viewer.init();
                         viewer.update();
-                    }; 
-                })(canvas, url), i * 200);
+
+                        viewer.onloadingcomplete = function () {
+                            var scene = viewer.getScene();
+                            if (scene) {
+                                scene.forEachChild(function (mesh) {
+                                    mesh.isDoubleSided = true;
+                                });
+                            }
+                        };
+                    };
+                })(canvas, url, mtl), i * 200);
             }
         }
     </script>
@@ -133,13 +149,10 @@
             <table>
                 <tr>
                     <td>
-                        <asp:LinkButton ID="btnDownload" runat="Server" CommandName="download"></asp:LinkButton></td>
+                        <asp:LinkButton ID="btnDownload" runat="Server" CommandName="download" OnClientClick="dont_show_wait_next_time();"></asp:LinkButton></td>
                 </tr>
             </table>
             <canvas id="imageCanvas" runat="server" width="400" height="400"></canvas>
-            <script type="text/javascript">
-                Load3DFile(document.getElementById('<%#Container.FindControl("imageCanvas").ClientID %>'), 'Material_3DFiles.aspx?MTID=<%#strMaterialID%>&MDID=<%#Eval("MaterialDocumentID") %>&<%#Eval("MaterialDocumentName") %>');
-            </script>            
             <table>
                 <tr>   
                     <td class="fontHead">

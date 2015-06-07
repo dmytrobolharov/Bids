@@ -1,5 +1,4 @@
 ﻿<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<%@ Register Src="../System/Control/WaitControl.ascx" TagName="Color_Wait" TagPrefix="wc1" %>
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Line_List_Historical_Grid.aspx.vb" Inherits="plmOnApp.Line_List_Historical_Grid" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -8,13 +7,15 @@
 <head runat="server">
     <title>Line List Historical Grid</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
     <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <wc1:color_wait id="Color_Wait" runat="server" />
+    <form id="form1" runat="server" defaultbutton="imgBtnSearch">
 
     <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
         <Scripts>
@@ -179,6 +180,10 @@
     </form>
 
     <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('#txtLineSubFolder6').parent()[0].setAttribute('valign', 'top')
+        });
+        
         var frm = document.forms['form1'];
         function CheckAll(checkAllBox) {
             var actVar = checkAllBox.checked;

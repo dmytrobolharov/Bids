@@ -6,8 +6,10 @@
         <ReportItems>
           <Image Name="imgLogo">
             <Source>External</Source>
-            <Value>logo.jpg</Value>
+            <Value>Yunique Logo.jpg</Value>
             <Sizing>FitProportional</Sizing>
+            <Top>0.08958in</Top>
+            <Left>0.025in</Left>
             <Height>0.45in</Height>
             <Width>3.025in</Width>
             <Style />
@@ -21,20 +23,21 @@
                   <TextRun>
                     <Value>=First(Fields!StyleNo.Value, "dsStyleImage")</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
-                      <FontSize>14pt</FontSize>
+                      <FontSize>12pt</FontSize>
+                      <Color>Gray</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>StyleNo</rd:DefaultName>
-            <Left>6.375in</Left>
-            <Height>0.25in</Height>
-            <Width>1.75in</Width>
+            <Top>0.37014in</Top>
+            <Left>3.1875in</Left>
+            <Height>0.2in</Height>
+            <Width>1.675in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <VerticalAlign>Bottom</VerticalAlign>
@@ -51,37 +54,68 @@
                   <TextRun>
                     <Value>=First(Fields!SizeClass.Value, "dsStyleImage")</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
-                      <FontSize>14pt</FontSize>
+                      <FontSize>12pt</FontSize>
+                      <Color>Gray</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>SizeClass</rd:DefaultName>
-            <Top>0.25in</Top>
-            <Left>6.375in</Left>
-            <Height>0.25in</Height>
-            <Width>1.75in</Width>
+            <Top>0.37014in</Top>
+            <Left>4.875in</Left>
+            <Height>0.2in</Height>
+            <Width>1.675in</Width>
             <ZIndex>2</ZIndex>
             <ToolTip>##data##</ToolTip>
             <Style>
+              <VerticalAlign>Bottom</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+          </Textbox>
+          <Textbox Name="SeasonYear">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!Season.Value, "dsStyleImage") &amp; " " &amp; First(Fields!Year.Value, "dsStyleImage")</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <Color>Gray</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>0.37014in</Top>
+            <Left>6.56667in</Left>
+            <Height>0.2in</Height>
+            <Width>1.675in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <VerticalAlign>Bottom</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
             </Style>
           </Textbox>
         </ReportItems>
         <DataElementOutput>ContentsOnly</DataElementOutput>
-        <Top>0.125in</Top>
-        <Left>0.125in</Left>
-        <Height>0.5in</Height>
-        <Width>8.125in</Width>
+        <Top>0.02986in</Top>
+        <Left>0.1in</Left>
+        <Height>0.58056in</Height>
+        <Width>8.25in</Width>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
         </Style>
       </Rectangle>
@@ -112,7 +146,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -126,7 +160,7 @@
                           <ToolTip>##label##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -158,7 +192,7 @@
                           <ToolTip>##data##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -194,11 +228,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsStyleHeader1</DataSetName>
-            <Top>0.125in</Top>
             <Height>0.2in</Height>
             <Width>2.7in</Width>
             <Style>
-              <FontFamily>Tahoma</FontFamily>
+              <FontFamily>Arial Unicode MS</FontFamily>
               <FontSize>8pt</FontSize>
             </Style>
           </Tablix>
@@ -227,7 +260,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -240,7 +273,7 @@
                           <ToolTip>##label##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -261,7 +294,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -272,7 +305,7 @@
                           <ToolTip>##data##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -308,7 +341,6 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsStyleHeader2</DataSetName>
-            <Top>0.125in</Top>
             <Left>2.7in</Left>
             <Height>0.2in</Height>
             <Width>2.8in</Width>
@@ -340,7 +372,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataHeader.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -353,7 +385,7 @@
                           <ToolTip>##label##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -374,7 +406,7 @@
                                 <TextRun>
                                   <Value>=Fields!DataValue.Value</Value>
                                   <Style>
-                                    <FontFamily>tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -385,7 +417,7 @@
                           <ToolTip>##data##</ToolTip>
                           <Style>
                             <Border>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -421,7 +453,6 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsStyleHeader3</DataSetName>
-            <Top>0.125in</Top>
             <Left>5.5in</Left>
             <Height>0.2in</Height>
             <Width>2.75in</Width>
@@ -430,15 +461,45 @@
           </Tablix>
         </ReportItems>
         <DataElementOutput>ContentsOnly</DataElementOutput>
-        <Top>0.625in</Top>
+        <Top>0.75in</Top>
         <Left>0.1in</Left>
-        <Height>1.775in</Height>
+        <Height>1.47098in</Height>
         <Width>8.25in</Width>
         <ZIndex>1</ZIndex>
         <Style />
       </Rectangle>
+      <Image Name="Image1">
+        <Source>External</Source>
+        <Value>Lines.jpg</Value>
+        <Sizing>Fit</Sizing>
+        <Top>0.65556in</Top>
+        <Left>0.1in</Left>
+        <Height>0.06495in</Height>
+        <Width>8.25in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image2">
+        <Source>External</Source>
+        <Value>Line.jpg</Value>
+        <Sizing>Fit</Sizing>
+        <Top>2.24042in</Top>
+        <Left>0.1in</Left>
+        <Height>0.04in</Height>
+        <Width>8.25in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
-    <Height>2.4in</Height>
+    <Height>2.35833in</Height>
     <Style />
   </Body>
   <Width>8.4in</Width>
@@ -599,6 +660,9 @@
           <QueryParameter Name="@StyleID">
             <Value>=Parameters!SID.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@SeasonYearID">
+            <Value>=Parameters!SYID.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
         <CommandText>rpx_Style_Header_Image_SELECT</CommandText>
@@ -624,6 +688,18 @@
           <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Season">
+          <DataField>Season</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QRPath">
+          <DataField>QRPath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -635,6 +711,11 @@
     <ReportParameter Name="DataXmlId">
       <DataType>String</DataType>
       <Prompt>DataXmlId</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SYID">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Season Year ID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

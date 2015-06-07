@@ -11,6 +11,8 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		<style type="text/css">.DataGridHeader { PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND-IMAGE: url(../System/Images/table_header.gif); PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BACKGROUND-REPEAT: repeat-x; FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;  TOP: expression(this.offsetParent.scrollTop) }
 	.DataGridControl { FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;  TOP: expression(this.offsetParent.scrollTop); BACKGROUND-COLOR: #f5f5f5 }
 		</style>

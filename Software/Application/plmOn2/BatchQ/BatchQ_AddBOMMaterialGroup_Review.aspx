@@ -9,8 +9,11 @@
     <title></title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />    
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -41,7 +44,7 @@
                 <td valign="middle" align="center" width="10" height="27">
                     <img height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
                 </td>
-                <td><asp:Label runat="server" ID="Label2"><%=Me.GetSystemText("Selected Material")%></asp:Label></td>
+                <td><asp:Label runat="server" ID="Label2"><%=Me.GetSystemText("Selected Material Group")%></asp:Label></td>
             </tr>
         </table>         
 

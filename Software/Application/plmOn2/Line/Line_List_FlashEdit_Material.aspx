@@ -3,17 +3,17 @@
 <%@ Register TagPrefix="hc1" TagName="Header" src="Line_List_Header.ascx"%>
 <%@ Register TagPrefix="uc1" TagName="Line_List_FlashEdit_Material_StyleDetails" Src="Line_List_FlashEdit_Material_StyleDetails.ascx"%>
 <%@ Register TagPrefix="uc2" TagName="Line_List_FlashEdit_Material_MaterialList" Src="Line_List_FlashEdit_Material_MaterialList.ascx"%>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Flash Edit Material</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
-			form {
-			margin-bottom: 0;
-			}
+			form {margin-bottom: 0;}
             .style-colors {
             	margin-left: 10px;
             }
@@ -57,7 +57,6 @@
         <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1">
             <ClientEvents OnRequestStart="onAjaxRequestStart" OnResponseEnd="onAjaxResponseEnd" />
         </telerik:RadAjaxManager>
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 
         <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="99%" border="0" height="30px">
 		    <tr valign="middle">
@@ -79,7 +78,7 @@
                 <td width="60%" valign="top">
                     <div style="overflow:scroll;width:100%;height:100%;" id="scrollDiv1">
                         <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelStyle" ClientEvents-OnRequestStart="onAjaxRequestStart"
-                            ClientEvents-OnResponseEnd="" Width="98%">
+                            ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="98%">
 			                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white" bgcolor="#ffffff">
 				                <tr>
 					                <td>&nbsp;<asp:Label id="lblStylesHeader" runat="server" Font-Names="Tahoma,Verdana" Font-Size="X-Large" ForeColor="#E0E0E0"></asp:Label></td>
@@ -150,7 +149,7 @@
 	                            </tr>
                             </table>
 
-                            <asp:DataList runat="server" ID="DataListStyles" DataKeyField="StyleID" RepeatLayout="Flow">
+                            <asp:DataList runat="server" ID="DataListStyles" DataKeyField="LineFolderItemID" RepeatLayout="Flow">
                                 <ItemStyle HorizontalAlign="Left" BorderWidth="1px" BorderStyle="Solid" BorderColor="Gainsboro" 
                                             VerticalAlign="Top" BackColor="White" CssClass="LineFolderStyle"></ItemStyle>
                                 <ItemTemplate>
@@ -214,7 +213,7 @@
                                                 </label>
                                             </td>
                                             <td>
-                                                <uc1:Line_List_FlashEdit_Material_StyleDetails EnableViewState="true" runat="server" ID="ctrStyleDetails" StyleID='<%# Eval("StyleID") %>' />
+                                                <uc1:Line_List_FlashEdit_Material_StyleDetails EnableViewState="true" runat="server" ID="ctrStyleDetails" StyleID='<%# Eval("StyleID") %>' SeasonYearID='<%# Eval("ColorwaySeasonYearID").ToString %>' />
                                                 <asp:PlaceHolder ID="plhDetailsControl" runat="server"></asp:PlaceHolder>
                                             </td>
                                         </tr>
@@ -229,7 +228,7 @@
                         <!-- Right frame -->
                         <div style="overflow:auto;width:100%;height:900px;" id="scrollDiv2">
                             <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelMaterial" ClientEvents-OnRequestStart="OnMaterialAjaxStart"
-                                ClientEvents-OnResponseEnd="" Width="98%">
+                                ClientEvents-OnResponseEnd="hide_wait_text" Width="98%">
 			                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white" bgcolor="#ffffff">
 				                       <tr>
 					                       <td><asp:Label id="lblMaterialsHeader" runat="server" Font-Names="Tahoma,Verdana" Font-Size="X-Large" ForeColor="#E0E0E0"></asp:Label></td>
@@ -258,14 +257,14 @@
         </form>
 
 		        <%--<script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>--%>
-                <%--<script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>--%>
+                <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
                 <%--<script language="javascript" type="text/javascript" src="../System/Jscript/System.js"></script>--%>
                 <script language="javascript" type="text/javascript" src="../System/Jscript/underscore-min.js"></script>
-                <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
+                <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
                 <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.ui.core.js"></script>
                 <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
                 <script language="javascript" type="text/javascript" src="../System/Jscript/colResizable-1.3.min.js"></script>
-                <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+                <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
             	<script type="text/javascript" language="javascript">
             	    var frm = document.Form1;
             	    function CheckAllColors(checkAllBox) {
@@ -295,7 +294,7 @@
             	        }
             	    }
 
-                    function OnMaterialAjaxStart() { hide_wait_text(); }
+                    function OnMaterialAjaxStart() { show_wait_text(); }
                     
             	    $(document).ready(function () {
 						var ieOffset = 0;
@@ -325,8 +324,7 @@
                             autoOpen: false,
                             modal: true,
                             resizable: false,
-                            height: 350,
-                            width: 800,
+                            width: 870,
                             title: '<%= GetSystemText("Line List") %>'
                 
                         });
@@ -366,7 +364,8 @@
                         var buttonsToConfirm = ["imgBtnSearch", "btnRepage", "btnImgNext", "btnImgPrevious", "btnImgLast", "btnImgFirst"],                            
                             confirmed = false;
 
-                        window.onAjaxRequestStart = function(sender, eventArgs) {  
+                        window.onAjaxRequestStart = function(sender, eventArgs) {
+                            show_wait_text();  
                             // if confirmed request or nonconfirmable button or no pending changes then proceed as is                          
                             if (confirmed || _.indexOf(buttonsToConfirm, eventArgs.get_eventTarget()) == -1 || !hasPendingChanges()) {
                                 confirmed = false;
@@ -380,6 +379,7 @@
                             }
 
                             $("#confirm-dialog").dialog({
+                                open: hide_wait_text(),
                                 title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
                                 width: '400px',
                                 resizable: false,
@@ -395,17 +395,16 @@
 
                         $("#btnClose").click(function(e) {
                             if (hasPendingChanges()) {
-                                $("#confirm-dialog").dialog({
-                                    title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
-                                    width: '400px',
-                                    resizable: false,
-                                    modal: true,
-                                    buttons: {
-                                        '<%= GetSystemText("Yes") %>': function() { <%= ClientScript.GetPostBackEventReference(btnClose, "SAVE") %>; },
-                                        '<%= GetSystemText("No") %>': function() { <%= ClientScript.GetPostBackEventReference(btnClose, "") %>; }
-                                    }
-                                });
-
+                               $("#confirm-dialog").dialog({
+                                title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
+                                width: '400px',
+                                resizable: false,
+                                modal: true,
+                                buttons: {
+                                    '<%= GetSystemText("Yes") %>': function() { <%= ClientScript.GetPostBackEventReference(btnClose, "SAVE") %>; },
+                                    '<%= GetSystemText("No") %>': function() { <%= ClientScript.GetPostBackEventReference(btnClose, "") %>; }
+                                }
+                            }); 
                                 e.preventDefault();
                             }
                         });
@@ -415,6 +414,7 @@
                         // Clearing the EVENTTARGET and EVENTARGUMENT from ajax postback, so we can verify if the next postback was caused by button or by the same control
                         Form1.__EVENTTARGET.value = ''
                         Form1.__EVENTARGUMENT.value = ''
+                        hide_wait_text();
                     }
 
             	    /*
@@ -472,7 +472,7 @@
                         var hdnSourceMaterials = $(styleCheckbox).siblings("input[id*='hdnSourceMaterials']"); // Materials, which were in the style the moment page came from server
                         var hdnAddedMaterials = $(styleCheckbox).siblings("input[id*='hdnAddedMaterials']"); // Materials, which were added to the style on the client-side
                         var hdnRemovedMaterials = $(styleCheckbox).siblings("input[id*='hdnRemovedMaterials']"); // Materials, which were removed from the style on the client-side
-                        
+                        var materialGroup = $('#ctrMaterialGridList_drlMaterialCoreID').val()
                         // If current material was just removed and not yet saved, we're just removing it from the list of removed items
                         var strStyleMaterials = hdnRemovedMaterials.val();
                         var arrStyleMaterials = strStyleMaterials.split(";");
@@ -500,9 +500,9 @@
 
                         // If the selected material was not already added to the style, adding it to the list of materials to be saved.
                         if (hdnAddedMaterials[0].value == "") {
-                            hdnAddedMaterials[0].value = materialInfo.materialID;
+                            hdnAddedMaterials[0].value = materialInfo.materialID + "|" + materialGroup;
                         } else {
-                            hdnAddedMaterials[0].value += ";" + materialInfo.materialID;
+                            hdnAddedMaterials[0].value += ";" + materialInfo.materialID + "|" + materialGroup;
                         }
                         return true;
                     }

@@ -1,16 +1,15 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Image_Catalog_Edit.aspx.vb" Inherits="plmOnApp.Image_Catalog_Edit" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Catalog</title>
-		
-		
-		
-		
+				
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 
 	</HEAD>
 	<body bgColor="#ffffff">
@@ -22,6 +21,7 @@
 					<td>
 					<cc1:confirmedimagebutton id="btnSave" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 					<cc1:confirmedimagebutton id="btnAddStyle" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
+                    <cc1:confirmedimagebutton id="btnUpload" runat="server" Message="NONE" ></cc1:confirmedimagebutton>
 					<cc1:bwimagebutton id="imgImageSort" runat="server" ></cc1:bwimagebutton>
 					<cc1:bwimagebutton id="btnPrint" runat="server" Message="NONE" ></cc1:bwimagebutton>
                     <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
@@ -54,14 +54,14 @@
 					<TD><asp:Label  id="lblImageSelected" runat="server">Image Selected...</asp:Label></TD>
 				</TR>
 			</TABLE>
-			<asp:datalist id="Datalist1" runat="server" Width="100%" GridLines="Both" RepeatDirection="Horizontal"
+			<asp:datalist id="Datalist1" runat="server" GridLines="Both" RepeatDirection="Horizontal"
 				RepeatColumns="4" BackColor="White" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"
 				Datakeyfield="ImageCatalogItemID" CssClass="font">
 				<HeaderTemplate>
 				</HeaderTemplate>
-				<ItemStyle Height='200' VerticalAlign="Top"></ItemStyle>
+				<ItemStyle Height='200' VerticalAlign="Bottom"></ItemStyle>
 				<ItemTemplate>
-					<TABLE width='<%# string.Concat(ImageWidth) %>'>
+					<TABLE width="100%" style="border-bottom:1px solid #f2f2f2" align="center" valign="middle">
 						<TR>
 							<TD vAlign="top">
 								<TABLE width="100%">
@@ -71,19 +71,55 @@
 								</TABLE>
 								<TABLE width="100%">
 									<TR>
-										<TD>
-											<cc1:confirmedimagebutton id=imgBtnEdit runat="server" Message="NONE" CommandName="Link">
+										<TD align="center" valign="middle">
+											<cc1:confirmedimagebutton id="imgBtnEdit" runat="server" Message="NONE" CommandName="Link">
 											</cc1:confirmedimagebutton></TD>
 									</TR>
 								</TABLE>
 							</TD>
 						</TR>
 					</TABLE>
-					<TABLE>
+					<TABLE width="100%">
+                        <tr>
+                            <TD class="font">
+								<asp:Label id=Label1 runat="server" Text="Image No." CssClass="fonthead">
+								</asp:Label>
+                            </TD>
+                            <td>
+                            <asp:Label id=Label4 runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "ImageNo") %>' Font-Size="11px">
+								</asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label id=Label5 runat="server" Text="Created Date" CssClass="fonthead">
+								</asp:Label>
+                            </td>
+                            <TD class="font">
+								<asp:Label id=Label2 runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "CDate") %>'>
+								</asp:Label>
+                            </TD>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label id=Label6 runat="server" Text="Modified Date" CssClass="fonthead">
+								</asp:Label>
+                            </td>
+                            <TD class="font">
+								<asp:Label id=Label3 runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "MDate") %>'>
+								</asp:Label>
+                            </TD>
+                        </tr>
 						<TR>
+                            <td>
+                                <asp:Label id=Label7 runat="server" Text="Description" CssClass="fonthead">
+								</asp:Label>
+                            </td>
 							<TD class="font">
-								<asp:Label id=lbImgDescription runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "ImageDescription") %>' CssClass="fonthead">
-								</asp:Label></TD>
+								<asp:Label id=lbImgDescription runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "ImageDescription") %>'>
+								</asp:Label>
+                            </TD>
+                            
 						</TR>
 					</TABLE>
 					<asp:Textbox id=txtImageID runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"ImageID")%>' Visible="False">

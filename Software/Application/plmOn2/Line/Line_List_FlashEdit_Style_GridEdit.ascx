@@ -59,7 +59,10 @@
                         </ItemTemplate>
                     </asp:TemplateColumn>
 				</Columns> 						
-			</asp:datagrid><asp:HiddenField id="SortOrder" runat="server"></asp:HiddenField></TD>
+			</asp:datagrid>
+            <asp:HiddenField id="SortOrder" runat="server"></asp:HiddenField>
+            <asp:HiddenField id="DefaultSortOrder" value="LineFolderItemSort, StyleNo, Description" runat="server"></asp:HiddenField>
+        </TD>
 	</TR>
 </TABLE>
 <input id="hiddenCurrentPage" type="hidden" value="0" name="hiddenCurrentPage" runat="server">&nbsp;&nbsp;

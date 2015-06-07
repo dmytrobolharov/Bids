@@ -4,7 +4,7 @@
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Sourcing_Documents_AttachFiles.aspx.vb"
     Inherits="plmOnApp.Sourcing_Documents_AttachFiles" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
     <title runat="server" id="PageTitle"></title>
@@ -14,6 +14,8 @@
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 
     <script language="javascript">
         function calendar(sTxtBoxName) {

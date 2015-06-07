@@ -22,7 +22,7 @@ INPUT, SELECT, TEXTAREA
 
 .LoginPage
 {
-	background-image: url(../Images/box_background.png);
+	background-image: url(../Images/login_bg.png);
 	background-repeat:no-repeat;
 }
 .LoginButton
@@ -770,4 +770,9 @@ background-Color:Silver ;
 #lblSourcingHeaderNew, 
 #lblHeaderNew{
 	color: #AFAFAF!important;
+}
+
+td {
+	border-collapse: separate;
+	border-color: #f2f2f2;
 }

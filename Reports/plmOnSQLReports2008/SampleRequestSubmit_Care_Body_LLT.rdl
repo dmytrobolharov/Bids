@@ -39,7 +39,7 @@
                             <TextRun>
                               <Value>Washing</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -76,7 +76,7 @@
                             <TextRun>
                               <Value>Cycle</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -113,7 +113,7 @@
                             <TextRun>
                               <Value>Bleaching</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -150,7 +150,7 @@
                             <TextRun>
                               <Value>Drying</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -187,7 +187,7 @@
                             <TextRun>
                               <Value>Ironing</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -224,7 +224,7 @@
                             <TextRun>
                               <Value>Dry Cleaning</Value>
                               <Style>
-                                <FontFamily>Tahoma</FontFamily>
+                                <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -418,7 +418,7 @@
                   <TextRun>
                     <Value>Care Instructions</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -450,7 +450,7 @@
                   <TextRun>
                     <Value>Washing</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -485,7 +485,7 @@
                   <TextRun>
                     <Value>= Trim(First(Fields!CareWash.Value, "dsStyleCare"))</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
@@ -522,7 +522,7 @@
                   <TextRun>
                     <Value>Cycle</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -556,7 +556,7 @@
                   <TextRun>
                     <Value>= Trim(First(Fields!CareCycle.Value, "dsStyleCare"))</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
@@ -592,7 +592,7 @@
                   <TextRun>
                     <Value>Bleaching</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -626,7 +626,7 @@
                   <TextRun>
                     <Value>= Trim(First(Fields!CareBleach.Value, "dsStyleCare"))</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
@@ -662,7 +662,7 @@
                   <TextRun>
                     <Value>Drying</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -696,7 +696,7 @@
                   <TextRun>
                     <Value>= Trim(First(Fields!CareDry.Value, "dsStyleCare"))</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
@@ -732,7 +732,7 @@
                   <TextRun>
                     <Value>Ironing</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -766,7 +766,7 @@
                   <TextRun>
                     <Value>= Trim(First(Fields!CareIron.Value, "dsStyleCare"))</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
@@ -802,7 +802,7 @@
                   <TextRun>
                     <Value>Dry Cleaning</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -836,7 +836,7 @@
                   <TextRun>
                     <Value>= Trim(First(Fields!CareDryClean.Value, "dsStyleCare"))</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
@@ -872,7 +872,7 @@
                   <TextRun>
                     <Value>Special Instructions</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -907,7 +907,7 @@
                   <TextRun>
                     <Value>= Trim(First(Fields!StyleCareInstruction.Value, "dsStyleCare"))</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
@@ -942,7 +942,7 @@
                   <TextRun>
                     <Value>Special</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -976,7 +976,7 @@
                   <TextRun>
                     <Value>= Trim(First(Fields!Special.Value, "dsStyleCare"))</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
@@ -1060,11 +1060,12 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Care</Value>
+                      <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                       <Style>
-                        <FontFamily>Tahoma</FontFamily>
+                        <FontFamily>Arial Unicode MS</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <Color>Gray</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1093,7 +1094,7 @@
           <Width>10.75in</Width>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
           </Style>
         </Rectangle>
@@ -1196,6 +1197,24 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rpx_sampleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SID">
@@ -1210,6 +1229,10 @@
       <DataType>String</DataType>
       <AllowBlank>true</AllowBlank>
       <Prompt>DataXmlId</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

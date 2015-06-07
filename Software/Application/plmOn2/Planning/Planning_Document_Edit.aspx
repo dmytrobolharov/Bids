@@ -2,9 +2,8 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="CuteWebUI" Namespace="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
-<%--<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>--%>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle">Attachments</title>
@@ -13,12 +12,13 @@
 		<meta content="JavaScript" name="vs_defaultClientScript">
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
-	</HEAD>
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+		</HEAD>
 	<body>
-     <form id="Form1" method="post" runat="server">
+     <form id="Form1" method="post" runat="server" defaultbutton="btnImgSearch">
       <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
-         <%--<wc1:Color_Wait ID="Color_Wait" runat="server" />--%>
 			<table class="TableHeader" id="toolbar" cellSpacing="0" cellPadding="0" width="100%" border="0"
 				runat="server">
 				<tr vAlign="middle">
@@ -65,8 +65,20 @@
 						<DIV align="center"><asp:imagebutton id="btnImgLast" runat="server" ImageUrl="../System/Icons/icon_last.gif"></asp:imagebutton></DIV>
 					</TD>
 					<TD>
-						<DIV align="left"><B><asp:label id="lblRecordCount" Runat="server" Visible="true"></asp:label>&nbsp;<asp:Label ID="lblRecordsFound" runat="server" Text="Records Found"></asp:Label></B></DIV>
+						<DIV align="left"><B><asp:label id="lblRecordCount" Runat="server" Visible="true" style="color:red"></asp:label>&nbsp;<asp:Label ID="lblRecordsFound" runat="server" Text="Records Found"></asp:Label></B></DIV>
 						</B></TD>
+                                <TD  align="right"><asp:label id="lblRecordPerPage" runat="server" CssClass="fontHead"></asp:label></TD>
+								<TD width="25" align="right"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
+										<asp:ListItem Value="5">5</asp:ListItem>
+										<asp:ListItem Value="10">10</asp:ListItem>
+										<asp:ListItem Value="15">15</asp:ListItem>
+										<asp:ListItem Value="20">20</asp:ListItem>
+										<asp:ListItem Value="25">25</asp:ListItem>
+										<asp:ListItem Value="30">30</asp:ListItem>
+										<asp:ListItem Value="40">40</asp:ListItem>
+										<asp:ListItem Value="50" Selected="True">50</asp:ListItem>
+									</asp:dropdownlist></TD>
+								<TD width="10" align="right"><asp:button id="btnGo" runat="server" CssClass="fontHead" text="GO"></asp:button></TD>
 				</TR>
 			</TABLE>
 			<asp:panel id="pnlNew" runat="server">
@@ -201,7 +213,7 @@
 								<cc1:ConfirmedLinkButton id="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>'  CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>' >
 								</cc1:ConfirmedLinkButton>
 								<asp:linkbutton id="Linkbutton5" runat="Server" 
-									CommandName="download"></asp:linkbutton>
+									CommandName="download" OnClientClick="dont_show_wait_twice();"></asp:linkbutton>
 								<cc1:confirmedimagebutton id="btnEditCancel" runat="server" Message="NONE" CommandName="cancel"></cc1:confirmedimagebutton>															
 							</TD>
 							<TD>&nbsp;</TD>

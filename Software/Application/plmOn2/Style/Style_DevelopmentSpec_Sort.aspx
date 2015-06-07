@@ -5,9 +5,12 @@
 	<head>
 		<title>Sort</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-1.6.2.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .dropimage
             {

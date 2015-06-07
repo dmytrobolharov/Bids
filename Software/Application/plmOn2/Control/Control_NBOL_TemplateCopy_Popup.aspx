@@ -11,10 +11,13 @@
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 
     <script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="Form1" method="post" runat="server">
@@ -44,7 +47,7 @@
     </table>
     <table cellspacing="0" cellpadding="0" width="100%" border="0">
         <tr valign="top">
-            <td>
+           <td>
                 <table class="TableHeader" height="25" cellspacing="0" cellpadding="0" width="100%"
                     bgcolor="#ffffff" border="0">
                     <tr valign="middle">
@@ -54,59 +57,53 @@
                         <td class="fontHead" width="10">
                             &nbsp;
                         </td>
-                        <td>
-                            <asp:Label ID="Label1" runat="server"></asp:Label>
+                        <td width="20">
+                            <asp:ImageButton ID="btnImgFirst" runat="server"></asp:ImageButton>
                         </td>
-                    </tr>
-                </table>
-            </td>
-            <td class="fontHead" width="10">
-                &nbsp;
-            </td>
-            <td width="20">
-                <asp:ImageButton ID="btnImgFirst" runat="server"></asp:ImageButton>
-            </td>
-            <td width="20">
-                <asp:ImageButton ID="btnImgPrevious" runat="server"></asp:ImageButton>
-            </td>
-            <td nowrap align="center" width="125">
-                <asp:Label ID="lblPageCount" runat="server" CssClass="fontHead"></asp:Label>
-            </td>
-            <td width="20">
-                <asp:ImageButton ID="btnImgNext" runat="server"></asp:ImageButton>
-            </td>
-            <td width="20">
-                <asp:ImageButton ID="btnImgLast" runat="server"></asp:ImageButton>
-            </td>
-            <td width="10">
-                &nbsp;
-            </td>
-            <td width="125">
-                <asp:Label ID="RecordCount" runat="server" CssClass="fontHead"></asp:Label>
-            </td>
-            <td class="fontHead" align="right" width="110">
-                <asp:Label ID="lblRecordsperPage" runat="server" Visible="true" Text="Records per Page:"></asp:Label>
-            </td>
-            <td width="25">
-                <asp:DropDownList ID="ps" runat="server" CssClass="fontHead">
-                    <asp:ListItem Value="5">5</asp:ListItem>
-                    <asp:ListItem Value="10">10</asp:ListItem>
-                    <asp:ListItem Value="15">15</asp:ListItem>
-                    <asp:ListItem Value="20">20</asp:ListItem>
-                    <asp:ListItem Value="25">25</asp:ListItem>
-                    <asp:ListItem Value="30">30</asp:ListItem>
-                    <asp:ListItem Value="40">40</asp:ListItem>
-                    <asp:ListItem Value="50" Selected="true">50</asp:ListItem>
-                    <asp:ListItem Value="75">75</asp:ListItem>
-                    <asp:ListItem Value="100">100</asp:ListItem>
-                </asp:DropDownList>
-            </td>
-            <td width="10">
-                <asp:Button ID="btnRepage" runat="server" CssClass="fontHead" Text="GO"></asp:Button>
-            </td>
-            <td>
-                &nbsp;
-            </td>
+                        <td width="20">
+                            <asp:ImageButton ID="btnImgPrevious" runat="server"></asp:ImageButton>
+                        </td>
+                        <td nowrap align="center" width="125">
+                            <asp:Label ID="lblPageCount" runat="server" CssClass="fontHead"></asp:Label>
+                        </td>
+                        <td width="20">
+                            <asp:ImageButton ID="btnImgNext" runat="server"></asp:ImageButton>
+                        </td>
+                        <td width="20">
+                            <asp:ImageButton ID="btnImgLast" runat="server"></asp:ImageButton>
+                        </td>
+                        <td width="10">
+                            &nbsp;
+                        </td>
+                        <td width="125">
+                            <asp:Label ID="RecordCount" runat="server" CssClass="fontHead"></asp:Label>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td class="fontHead" align="right" width="110">
+                            <asp:Label ID="lblRecordsperPage" runat="server" Visible="true" Text="Records per Page:"></asp:Label>
+                        </td>
+                        <td width="25" align="right">
+                            <asp:DropDownList ID="ps" runat="server" CssClass="fontHead">
+                                <asp:ListItem Value="5">5</asp:ListItem>
+                                <asp:ListItem Value="10">10</asp:ListItem>
+                                <asp:ListItem Value="15">15</asp:ListItem>
+                                <asp:ListItem Value="20">20</asp:ListItem>
+                                <asp:ListItem Value="25">25</asp:ListItem>
+                                <asp:ListItem Value="30">30</asp:ListItem>
+                                <asp:ListItem Value="40">40</asp:ListItem>
+                                <asp:ListItem Value="50" Selected="true">50</asp:ListItem>
+                                <asp:ListItem Value="75">75</asp:ListItem>
+                                <asp:ListItem Value="100">100</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                        <td width="10" align="right">
+                            <asp:Button ID="btnRepage" runat="server" CssClass="fontHead" Text="GO"></asp:Button>
+                        </td>
+                   </tr>
+              </table>
+         </td>
         </tr>
     </table>
     <table height="15" cellspacing="0" cellpadding="0" width="100%" bgcolor="white" border="0">

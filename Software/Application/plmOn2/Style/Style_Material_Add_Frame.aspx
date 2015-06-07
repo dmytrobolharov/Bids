@@ -7,6 +7,8 @@
 		<meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">
 		<meta name="vs_defaultClientScript" content="JavaScript">
 		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		<script language="JavaScript">
 			<!--
 
@@ -25,7 +27,7 @@
 
 
 	</HEAD>
-	<FRAMESET cols="150,*" framespacing="1" frameborder="no" bordercolor="#ebebeb" onload="self.focus()" onunload="reloadPage('<%=Request.QueryString("SDID")%>','<%=Request.QueryString("SID")%>','<%=Request.QueryString("SN")%>' , '<%=Request.QueryString("STP")%>', '<%=Request.QueryString("WFID")%>','<%=Request.QueryString("WFIID")%>')">
+	<FRAMESET cols="150,*" framespacing="1" frameborder="no" bordercolor="#ebebeb" onload="self.focus()" >
 		<FRAME name="menu" SRC="<%=URLMenu%>" SCROLLING="yes" marginheight=0 marginwidth=0 >
 		<frame name="main" src="<%=URLMain%>" scrolling="auto" marginheight=0 marginwidth=0 >
 	</FRAMESET>

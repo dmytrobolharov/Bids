@@ -63,8 +63,9 @@
 	<!--
         <node name="nDatabaseServerRestoreDB" text="" description="" plugin="RestoreInitialDatabase" />
 	-->
-        <node name="nDatabaseServerRestoreDB" text="" description="" plugin="IntegrateDB" />
-        <node name="nDatabaseServerAlterScripts" text="" description="" plugin="DBAlterScripts" />
+		<node name="nDeployDACPackage" text="" description="" plugin="DeployDACPackage" />
+        <!-- <node name="nDatabaseServerRestoreDB" text="" description="" plugin="IntegrateDB" /> -->
+        <!-- <node name="nDatabaseServerAlterScripts" text="" description="" plugin="DBAlterScripts" /> -->
         <node name="nDatabaseServerSynchData" text="" description="" plugin="SynchDatabaseData" />
         <node name="nInstallPlmOnServices" text="" description="" plugin="InstallPlmOnServices" />
         <!-- <node name="nDatabaseServerLanguagePack" text="" description="" plugin="InstallLanguagePack" enabled="false" ensureVisible="true"/> -->

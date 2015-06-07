@@ -183,7 +183,7 @@ function calendarRange(oAnchor, oTextbox) {
    this.y = coordinates.y; 
 
    
-   windowDatePicker = window.open("../System/Control/CalendarRangePopup.aspx?txtbox=" + oTextbox, "dp", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=300,height=200,screenX=" + this.x + ",left=" + this.x + ",screenY=" + this.y + ",top=" + this.y + ""); 
+   windowDatePicker = window.open("../System/Control/CalendarRangePopup.aspx?txtbox=" + oTextbox, "dp", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=300,height=210,screenX=" + this.x + ",left=" + this.x + ",screenY=" + this.y + ",top=" + this.y + "");
    windowDatePicker.focus();
 }
 

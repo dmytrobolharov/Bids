@@ -5,6 +5,10 @@
 		<title id="tlLinkFeature" runat="server">Link Feature</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -59,11 +63,29 @@
 			        <td width="100%"><asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
 		        </tr>
 	        </table>  
-	        <asp:datagrid id="DataGrid1" runat="server" AllowSorting="False" DataKeyField="Level3ID">
+	        <asp:datagrid id="DataGrid1" runat="server" AllowSorting="False" DataKeyField="Level3ID" AllowPaging="false">
 		        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 		        <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 		        <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 		        <PagerStyle Visible="False"></PagerStyle>
+                <Columns>
+                    <asp:TemplateColumn>
+                        <HeaderTemplate>
+                                <input type="checkbox" id="checkAll" onclick="CheckAll(this);" runat="server" name="checkAll" />
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <asp:CheckBox ID="chbLevel3ID" runat="server"></asp:CheckBox>
+                        </ItemTemplate>
+                    </asp:TemplateColumn>
+                    <asp:TemplateColumn>
+                        <HeaderTemplate>
+                            <%# GetSystemText("Image")%>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <cc1:BWImageButton ID="imgConstruction" runat="server" title="Click here to zoom it" ImageUrl='<%# GetImageStreamPath("CD", 50, Eval("ImageVersion").ToString, Eval("ImageID").ToString) %>'/>
+                        </ItemTemplate>
+                    </asp:TemplateColumn>
+                </Columns>
 	        </asp:datagrid>   
             <asp:label id="SortOrder" runat="server" Visible="False"></asp:label>
 		</form>

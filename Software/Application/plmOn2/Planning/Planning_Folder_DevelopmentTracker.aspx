@@ -3,8 +3,8 @@
 <%@ Register TagPrefix="cc3" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register Src="Planning_Header.ascx" TagName="Planning_Header" TagPrefix="hc1" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_Folder_DevelopmentTracker.aspx.vb" Inherits="plmOnApp.Planning_Folder_DevelopmentTracker" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Line Plan Folder</title>
@@ -18,7 +18,9 @@
         <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 
         <style type="text/css">
             th a img {
@@ -94,11 +96,12 @@
             }
         </style>
         <![endif]-->
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
 	</HEAD>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
 		<form id="Form1" method="post" runat="server">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 
         <telerik:radscriptmanager ID="RadScriptManager1" runat="server" 
             EnablePageMethods="true">
@@ -137,6 +140,7 @@
                         <cc1:confirmedimagebutton id="btnAutoGenerate" runat="server"></cc1:confirmedimagebutton>
                         <cc1:BWImageButton id="btnConfigure" runat="server" Message="NONE" ></cc1:BWImageButton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
+                        <cc1:confirmedimagebutton id="btnExcelExport" runat="server"  Message="NONE" OnClientClick="enable_close_link();"></cc1:confirmedimagebutton>
 					</td>
 				</TR>
 			</TABLE>
@@ -235,7 +239,6 @@
                 var strHiddenColumns = hiddenColumns.join();
                 PageMethods.SaveHiddenColumns('ctrPlanSearch_ctrPlanningStyle_RadGridStyles', '<%= aspxPageName & "?PLID=" & strPlanningId %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
             }
-
         </script>
 
         <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
@@ -411,6 +414,45 @@
                     divHeight = Math.max(divHeight, $(this).height());
                 });
                 $("[id$=Datalist1] > div").height(divHeight);
+                var hrefs = document.getElementsByTagName("a");
+                var ifSilh = <%= strTab %>
+                for(var i = 0; i < hrefs.length; i++){
+                    var ref = hrefs.item(i);
+                    if (ref.id.indexOf("_nav_") != -1){
+                        ref.href = ref.href + "&TB=" + ifSilh
+                        
+                    }
+                }
+                var hrefs2 = document.getElementsByTagName("a");
+                var nodesList = "";
+                for (var j = 0; j < hrefs2.length; j++) {
+                    var ref2 = hrefs2.item(j);
+                    if (nodesList == "") {
+                        if (ref2.id.indexOf("_nav_") != -1) {
+                            var tmpList = "";
+                            tmpList = ref2.href.substr(ref2.href.indexOf("Planning_Folder_DevelopmentTracker.aspx?"))
+                            tmpList = tmpList.replace("Planning_Folder_DevelopmentTracker.aspx?", "");
+                            var tmpInd = tmpList.indexOf("&PLID");
+                            tmpList = tmpList.substring(0, tmpInd);
+                            nodesList = tmpList;
+                            break;
+                        }
+                    }
+
+                }
+                for (var k = 0; k < hrefs2.length; k++) {
+                    var ref3 = hrefs2.item(k);
+                    itemClass = ref3.getAttribute("class");
+                    if (itemClass != null) {
+                        if (itemClass.indexOf("TreeView") != -1 && ref3.id != "tv_1") {
+                            ref3.href = ref3.href + "&" + nodesList;
+                        }
+                        if (ref.id == "tv_1") {
+                            ref.href = ref.href.replace("&MC=1", "&MC=0")
+                        }
+                    }
+
+                }
             });
         </script>
 	</body>

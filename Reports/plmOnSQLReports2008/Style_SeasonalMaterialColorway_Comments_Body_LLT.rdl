@@ -17,7 +17,7 @@
                           <TextRun>
                             <Value />
                             <Style>
-                              <FontFamily>Tahoma</FontFamily>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                               <Color>White</Color>
@@ -54,7 +54,7 @@
                           <TextRun>
                             <Value>Material Description</Value>
                             <Style>
-                              <FontFamily>Tahoma</FontFamily>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -100,7 +100,7 @@
                           <TextRun>
                             <Value>Placement</Value>
                             <Style>
-                              <FontFamily>Tahoma</FontFamily>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -134,7 +134,7 @@
                           <TextRun>
                             <Value>Qty</Value>
                             <Style>
-                              <FontFamily>Tahoma</FontFamily>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -168,7 +168,7 @@
                           <TextRun>
                             <Value>Size</Value>
                             <Style>
-                              <FontFamily>Tahoma</FontFamily>
+                              <FontFamily>Arial Unicode MS</FontFamily>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                             </Style>
@@ -217,7 +217,7 @@
                                 <TextRun>
                                   <Value>="(" &amp;  First(Fields!ColorCode.Value) &amp; ") " &amp; First(Fields!ColorName.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -309,7 +309,7 @@
                                     <Value>Style Combo :  </Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -320,7 +320,7 @@
                                     <Value>=Fields!MainColor.Value</Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Normal</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -332,7 +332,7 @@
 </Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Normal</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -343,7 +343,7 @@
                                     <Value>SAP Code       : </Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -354,7 +354,7 @@
                                     <Value xml:space="preserve"> </Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Normal</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -365,7 +365,7 @@
                                     <Value>=Fields!SAPCode.Value</Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Normal</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -377,7 +377,7 @@
 </Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Normal</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -388,7 +388,7 @@
                                     <Value>PLM Code       :  </Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -399,7 +399,7 @@
                                     <Value>=Fields!PLMCode.Value</Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Normal</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -411,7 +411,7 @@
 Prod Status   :  </Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -422,7 +422,7 @@ Prod Status   :  </Value>
                                     <Value>=Fields!ColorwayStatus.Value</Value>
                                     <Style>
                                       <FontStyle>Normal</FontStyle>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Normal</FontWeight>
                                       <TextDecoration>None</TextDecoration>
@@ -561,7 +561,7 @@ Prod Status   :  </Value>
                               <TextRun>
                                 <Value>=Fields!MaterialDescription.Value</Value>
                                 <Style>
-                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontFamily>Arial Unicode MS</FontFamily>
                                   <FontSize>8pt</FontSize>
                                 </Style>
                               </TextRun>
@@ -614,7 +614,7 @@ Prod Status   :  </Value>
                                   <TextRun>
                                     <Value>=Fields!Placement.Value</Value>
                                     <Style>
-                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontFamily>Arial Unicode MS</FontFamily>
                                       <FontSize>8pt</FontSize>
                                     </Style>
                                   </TextRun>
@@ -667,7 +667,7 @@ Prod Status   :  </Value>
                                       <TextRun>
                                         <Value>=Fields!Qty.Value</Value>
                                         <Style>
-                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontFamily>Arial Unicode MS</FontFamily>
                                           <FontSize>8pt</FontSize>
                                         </Style>
                                       </TextRun>
@@ -719,7 +719,7 @@ Prod Status   :  </Value>
                                           <TextRun>
                                             <Value>=Fields!MaterialSize.Value</Value>
                                             <Style>
-                                              <FontFamily>Tahoma</FontFamily>
+                                              <FontFamily>Arial Unicode MS</FontFamily>
                                               <FontSize>8pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -781,7 +781,7 @@ Prod Status   :  </Value>
         <Height>1.22223in</Height>
         <Width>5.96214in</Width>
         <Style>
-          <FontFamily>Tahoma</FontFamily>
+          <FontFamily>Arial Unicode MS</FontFamily>
           <FontSize>9pt</FontSize>
         </Style>
       </Tablix>
@@ -834,7 +834,6 @@ Prod Status   :  </Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1007,24 +1006,25 @@ Prod Status   :  </Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Colorway</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
-                    <FontSize>26pt</FontSize>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.135in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
           <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -1177,6 +1177,23 @@ Prod Status   :  </Value>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType><CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SID">
@@ -1190,6 +1207,10 @@ Prod Status   :  </Value>
     <ReportParameter Name="SYID">
       <DataType>String</DataType>
       <Prompt>SeasonYearID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

@@ -1,6 +1,5 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Line_List_Folder_Style_Sort.aspx.vb" Inherits="plmOnApp.Line_List_Folder_Style_Sort" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
@@ -23,9 +22,11 @@
 	    <script src="../System/Jscript/jquery.ui.sortable.js"></script>
         
         <link href="../System/CSS/jquery-sortable.css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
         <script src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .dropimage
             {
@@ -34,7 +35,10 @@
             	background-position:center;
             	width: 10px;
             }
-            
+            .ui-state-default
+            {
+                height: 252px !important;
+            }
         </style>
 
    

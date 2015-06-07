@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Downloads_Main.aspx.vb" Inherits="srmOnApp.Downloads_Main" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle">Compliance</title>
@@ -14,6 +14,8 @@
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
 		<form id="Form1" method="post" runat="server">
@@ -25,7 +27,7 @@
                             </td>
                             <td>
                                 <cc1:ConfirmedImageButton ID="btnSaveSearch" runat="server" Message="NONE" />
-                                <cc1:ConfirmedImageButton ID="btnDownload" runat="server" Message="NONE" />
+                                <cc1:ConfirmedImageButton ID="btnDownload" runat="server" Message="NONE" OnClientClick="dont_show_wait_next_time();"/>
                             </td>
                             <td>
                                 <asp:CheckBox ID="chbDownloadTechPacks" runat="server" Checked="true"/>

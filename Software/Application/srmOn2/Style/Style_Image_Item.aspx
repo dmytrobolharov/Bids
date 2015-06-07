@@ -1,12 +1,14 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Image_Item.aspx.vb" Inherits="srmOnApp.Style_Image_Item" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title runat="server" id="PageTitle"></title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 		<script type="text/javascript" language="javascript">
             function CheckDetails(con) {
                 if (Page_ClientValidate() == true) {
@@ -122,7 +124,10 @@
 								<tr bgColor="#ffffff">
 									<td style="WIDTH: 15px" width="16">&nbsp;</td>
 									<td class="fontHead" width="125">&nbsp;<asp:label id="lblImageFile" runat="server" CssClass="fontHead">Image File</asp:label></td>
-									<td>&nbsp; <INPUT id="File1" type="file" name="file1" runat="server">&nbsp;<INPUT id="btnImageUpload" type="submit" value="Upload" name="Upload" runat="server"></td>
+									<td>&nbsp; 
+                                        <input id="File1" type="file" name="file1" runat="server" />&nbsp;
+                                        <input id="btnImageUpload" type="submit" value="Upload" name="Upload" runat="server" />
+                                    </td>
 								</tr>
 							</table>
 						</asp:panel>&nbsp;&nbsp;&nbsp;<asp:checkbox id="cbImageLinked" runat="server" CssClass="fontred" Text=" Link Image to all size class <BR>"

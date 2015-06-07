@@ -7,9 +7,14 @@
         <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 	    <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />	
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            .searchTable td {vertical-align: top;}
+        </style>	
 	    <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
         <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
         <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>		
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -69,18 +74,17 @@
 								<TD width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" Text="GO"></asp:button></TD>
 							</TR>
 						</TABLE>
-						<table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">
-							<tr>
-								<td><asp:placeholder id="plhSearchControl" runat="server" EnableViewState="False"></asp:placeholder></td>
-								<td vAlign="top" width="100%">
-									<table height="45">
-										<tr>
-											<td><asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
+						<table class="searchTable" height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">
+                            <tr colspan="2"><td>&nbsp;</td></tr>
+                            <tr>
+                                <td><asp:placeholder id="plhSearchControl" runat="server" EnableViewState="False"></asp:placeholder></td>
+                                <td vAlign="top" width="100%">
+                                    <table height="45">
+                                        <tr><td><asp:imagebutton id="imgBtnSearch" runat="server"></asp:imagebutton></td></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
 						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="MaterialID" AllowSorting="true">
 							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 							<ItemStyle CssClass="ItemTemplate"></ItemStyle>

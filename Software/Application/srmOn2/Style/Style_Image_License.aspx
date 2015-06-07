@@ -14,9 +14,20 @@
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Menu.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
+       <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%" border="0"
+				runat="server">
+				<tr valign="middle">
+					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
+					<td noWrap width="650">					
+                    <cc1:bwimagebutton id="btnPrint" runat="server" ></cc1:bwimagebutton>
+					</td>					
+				</tr>
+			</table>
 			<uc1:style_workflow id="Style_Workflow1" runat="server"></uc1:style_workflow>
 			<uc2:style_header id=Style_Header1 runat="server" StyleID='<%Request("SID")%>'>
 			</uc2:style_header>

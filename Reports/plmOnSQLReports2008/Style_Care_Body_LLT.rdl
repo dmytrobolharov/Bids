@@ -13,7 +13,7 @@
                   <TextRun>
                     <Value>Special Instructions</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -46,7 +46,7 @@
                   <TextRun>
                     <Value>= Trim(First(Fields!SpecialInstruction.Value, "ds_CareSelect"))</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
@@ -96,7 +96,7 @@
                                 <TextRun>
                                   <Value>=Fields!Alias.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -130,7 +130,7 @@
                                 <TextRun>
                                   <Value>=Fields!CareInstruction.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -210,7 +210,7 @@
                   <TextRun>
                     <Value>Care Instructions</Value>
                     <Style>
-                      <FontFamily>Tahoma</FontFamily>
+                      <FontFamily>Arial Unicode MS</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -349,7 +349,7 @@
                                             <TextRun>
                                               <Value>=Fields!Alias.Value</Value>
                                               <Style>
-                                                <FontFamily>Tahoma</FontFamily>
+                                                <FontFamily>Arial Unicode MS</FontFamily>
                                                 <FontWeight>Bold</FontWeight>
                                               </Style>
                                             </TextRun>
@@ -553,31 +553,33 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="textbox22">
+        <Textbox Name="textbox11">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Care</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
-                    <FontSize>26pt</FontSize>
+                    <FontFamily>Arial Unicode MS</FontFamily>
+                    <FontSize>20pt</FontSize>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>textbox22</rd:DefaultName>
-          <Top>0.135in</Top>
+          <Top>0.05in</Top>
+          <Left>0.125in</Left>
           <Height>0.5in</Height>
-          <Width>11in</Width>
+          <Width>10.75in</Width>
+          <ToolTip>##label##</ToolTip>
           <Style>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -673,6 +675,23 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType><CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SID">
@@ -686,6 +705,10 @@
     <ReportParameter Name="DataXmlId">
       <DataType>String</DataType>
       <Prompt>DataXmlId</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

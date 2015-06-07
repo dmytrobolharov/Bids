@@ -1,6 +1,5 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Wardrobe_Style_Sort.aspx.vb" Inherits="plmOnApp.Style.Wardrobe.Style_Wardrobe_Style_Sort" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
@@ -11,10 +10,11 @@
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
              
-    <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
-    <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href="../System/CSS/jquery.ui.core.css" />
-	<link rel="stylesheet" href="../System/CSS/jquery.ui.theme.css" />
+        <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/Grid_Y.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="../System/CSS/jquery.ui.core.css" />
+	    <link rel="stylesheet" href="../System/CSS/jquery.ui.theme.css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 
         <script src="../System/Jscript/jquery-1.8.0.js"></script>
         <script src="../System/Jscript/jquery.ui.core.js"></script>
@@ -26,6 +26,7 @@
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery-ui-1.8.21.custom.min.js"></script>
         <script language="javascript" type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
         <script src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .dropimage
             {

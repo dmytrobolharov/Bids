@@ -13,7 +13,11 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</head>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -161,8 +165,8 @@
 			
 			
 			<asp:panel id="Panel2" runat="server">
-				<table id="Table1" height="25" cellspacing="0" cellpadding="1" width="100%" border="0">
-					<tr class="TableHeader" bgColor="whitesmoke">
+				<table class="TableHeader" id="Table1" height="25" cellspacing="0" cellpadding="1" width="100%" border="0">
+					<tr bgColor="whitesmoke">
 						<td style="WIDTH: 11px" valign="middle" align="center" width="11"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
 						<td class="fonthead">
 							<cc1:confirmedimagebutton id="imgBtnFolderImage" runat="server" Message="NONE" 
@@ -171,12 +175,12 @@
 								ToolTip="Edit Image File..." CausesValidation="False"></cc1:confirmedimagebutton>
 							<cc1:confirmedimagebutton id="btnSaveForm" runat="server" Message="NONE" 
 								CausesValidation="False"></cc1:confirmedimagebutton>
-							<cc1:confirmedimagebutton id="btnCreateNewImage" runat="server" Message="Are you sure you want to create new image?"
-								></cc1:confirmedimagebutton>
+							<cc1:confirmedimagebutton id="btnCreateNewImage" runat="server" Message="NONE"></cc1:confirmedimagebutton>
 							<cc1:confirmedimagebutton id="imgBtnImageSelect" runat="server" Message="NONE" 
 								CausesValidation="False"></cc1:confirmedimagebutton>
 							<cc1:confirmedimagebutton id="btnUpdate" runat="server" Message="NONE" 
 								CausesValidation="False" Visible="False"></cc1:confirmedimagebutton>
+                            <asp:ImageButton ID="btnUpload" runat="server" Visible="false"/>
 							<cc1:confirmedimagebutton id="btnCancelUpdate" runat="server" Message="NONE" 
 								CausesValidation="False" Visible="False"></cc1:confirmedimagebutton>
 							<cc1:confirmedimagebutton id="imgBtnCopyImage" runat="server" Message="Are you sure you want to copy this image?"
@@ -187,6 +191,14 @@
 								CausesValidation="False"></cc1:confirmedimagebutton></td>
 					</tr>
 				</table>
+                <asp:Panel ID="pnlFileUpdateUpload" runat="server" Visible="false">
+                    <div>  
+                        <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachmentsUpdate" ManualStartUpload="False" AutoUseSystemTempFolder="False"
+                            InsertButtonID="btnUpload" MultipleFilesUpload="false" MaxFilesLimit="1" ShowCheckBoxes="false" ShowFileIcons="false">
+                        </CuteWebUI:UploadAttachments>
+                        <br />
+                    </div>
+                </asp:Panel>
 				<table id="Table2" height="15" cellspacing="0" cellpadding="0" width="100%" bgColor="#cddeee"
 					border="0">
 					<tr>

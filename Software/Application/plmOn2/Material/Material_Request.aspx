@@ -1,9 +1,11 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Material_Request.aspx.vb" Inherits="plmOnApp.Material_Request" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<TITLE><%= GetSystemText("Material Request")%></TITLE>
-		<script language="JavaScript">
+		<link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+        <script language="JavaScript">
 		<!--
 			if (window.screen) {
 				var aw = screen.availWidth;

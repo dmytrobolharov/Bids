@@ -28,11 +28,11 @@
             <cc1:bwimagebutton id="btnDimView" visible="false" runat="server" ></cc1:bwimagebutton>            
 			<cc1:bwimagebutton id="btnPrint" runat="server" ></cc1:bwimagebutton>
 			<cc1:BWImageButton id="btnNewTask" runat="server"  Message="NONE"></cc1:BWImageButton>
-			<cc1:confirmedimagebutton id="btnTemplate" runat="server" Message="NONE" 
-				CausesValidation="False"></cc1:confirmedimagebutton>
-			<cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" 
-				CausesValidation="False"></cc1:BWImageButton>
+			<cc1:confirmedimagebutton id="btnTemplate" runat="server" Message="NONE" CausesValidation="False"></cc1:confirmedimagebutton>
+			<cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
             <cc1:BWImageButton ID="btnCopy" runat="server" Visible="false"></cc1:bwimagebutton>    
+            <cc1:BWImageButton ID="btnMultiUploadWin" runat="server"></cc1:BWImageButton>
+            <cc1:ConfirmedImageButton ID="btnClose" runat="server" CausesValidation="false" Message="NONE" OnClientClick="return btnClose_Click()"/>
             <cc1:ConfirmedImageButton ID="btnReplace" runat="server" Visible="false" Message="NONE" OnClientClick="return ShowSelectionDialog()"></cc1:ConfirmedImageButton>
             <cc1:confirmedimagebutton id="btnLinkWorkflowItem" OnClientClick="return WorkflowLinkPostBack();" runat="server"  Message="NONE" Visible="false"></cc1:confirmedimagebutton>
             <cc1:confirmedimagebutton id="btnUnLinkWorkflowItem" OnClientClick="return MeasUnLinkConfirm();" runat="server"  Message="NONE" Visible="false"></cc1:confirmedimagebutton>
@@ -126,3 +126,9 @@
         return false;
     }	    
 </script>   
+<script  language="javascript" type="text/javascript">
+            function btnClose_Click() {
+                <%= strExitScript %>
+                return false;
+            }
+</script>

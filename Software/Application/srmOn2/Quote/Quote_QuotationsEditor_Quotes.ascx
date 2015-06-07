@@ -87,6 +87,7 @@
         var tableHeight = $("#FloatDG").height() - $("#tButtons").height() -$("#tNavigate").height() - $("#tPlh").height() - $(head).height()-15;
         table.tableScroll({ height: tableHeight });
         $("#FloatDG").width($(".tablescroll").width()+20);
+        $(".tablescroll_wrapper").width($(".tablescroll_wrapper").width() + 2);
     };
 
 

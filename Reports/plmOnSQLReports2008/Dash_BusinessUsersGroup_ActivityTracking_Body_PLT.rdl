@@ -6396,8 +6396,14 @@ ORDER BY GroupSort</CommandText>
     <DataSet Name="ParamQuery_Year">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT DISTINCT   Custom AS YearValue	, Custom AS YearSort	, Custom AS YearLabel  FROM pYear UNION 
-                                  SELECT NULL, NULL,  'ALL'   ORDER BY YearSort ASC</CommandText>
+        <CommandText>SELECT DISTINCT
+	Custom AS YearValue,
+	Custom AS YearSort,
+	Custom AS YearLabel
+FROM pYear
+UNION 
+SELECT NULL, NULL, 'ALL' 
+ORDER BY YearSort ASC</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -6418,8 +6424,14 @@ ORDER BY GroupSort</CommandText>
     <DataSet Name="ParamQuery_Season">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT DISTINCT CustomField2 AS SeasonValue, CustomField2 AS SeanSortOrder, CustomField2 As SeasonLabel 
-                      FROM    pStyleHeader WHERE     (CustomField2 IS NOT NULL)  UNION SELECT     NULL, NULL, 'ALL'   ORDER BY SeanSortOrder</CommandText>
+        <CommandText>SELECT DISTINCT
+	Custom as SeasonValue, 
+	Custom as SeanSortOrder, 
+	Custom as SeasonLabel
+FROM pSeason
+UNION
+SELECT NULL, NULL, 'ALL' 
+ORDER BY SeanSortOrder ASC</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -6491,11 +6503,22 @@ ORDER BY GroupSort</CommandText>
     <DataSet Name="ParamQuery_UserID">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT DISTINCT  a.AssignedTo AS UserValue,  b.FirstName + ' ' + b.LastName AS UserSort,  b.FirstName + ' ' + b.LastName AS UserLabel
-                                     FROM pSampleRequestWorkflow a    LEFT OUTER JOIN Users b  ON  a.AssignedTo = b.UserId  
-                                     WHERE  (a.AssignedTo IS NOT NULL)       
-                                   UNION
-                             SELECT   NULL, NULL, 'ALL'    ORDER BY  UserSort</CommandText>
+        <CommandText>SELECT DISTINCT
+	U.UserId as UserValue,
+	U.FirstName + ' ' + U.LastName AS UserSort,
+	U.FirstName + ' ' + U.LastName AS UserLabel
+FROM pStyleWorkflow SW
+	INNER JOIN Users U ON U.UserId = SW.WorkAssignedTo
+UNION
+SELECT DISTINCT
+	U.UserId as UserValue,
+	U.FirstName + ' ' + U.LastName AS UserSort,
+	U.FirstName + ' ' + U.LastName AS UserLabel
+FROM pSampleRequestWorkflow SRW
+	INNER JOIN Users U ON U.UserId = SRW.AssignedTo
+UNION
+SELECT NULL, NULL, 'ALL'	
+ORDER BY  UserSort	</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>

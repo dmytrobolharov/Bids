@@ -14,8 +14,11 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             #DataGrid1 .TableHeader {background-repeat: repeat;}
             #DataGrid1 .TableHeaderGreen {background-repeat: repeat;}
@@ -62,6 +65,7 @@
 					        <td valign="middle" align="center" height="25" nowrap="nowrap">
 					            <asp:Panel runat="server" ID="pnlImageBtn" Visible="true">
     					            <asp:imagebutton ID="btn_update" runat="server" />
+                                    <asp:ImageButton ID="btn_upload" runat="server" Visible="false"/>
     					            <asp:imagebutton ID="btn_cancel" runat="server" />
                                     <asp:imagebutton ID="btn_createimage" runat="server" />
     					            <asp:imagebutton ID="btn_editimage" runat="server" />
@@ -72,6 +76,14 @@
 					        </td>
 				        </tr>
 			        </table>
+                    <asp:Panel ID="pnlFileUpdateUpload" runat="server" Visible="false">
+                        <div>  
+                            <CuteWebUI:UploadAttachments runat="server" ID="UploadAttachmentsUpdate" ManualStartUpload="False" AutoUseSystemTempFolder="False"
+                                InsertButtonID="btn_upload" MultipleFilesUpload="false" MaxFilesLimit="1" ShowCheckBoxes="false" ShowFileIcons="false">
+                            </CuteWebUI:UploadAttachments>
+                            <br />
+                        </div>
+                    </asp:Panel>
 			    </asp:Panel>          
                         			
 			<cc2:ystabview id="YSTabView2" runat="server"></cc2:ystabview>			     			

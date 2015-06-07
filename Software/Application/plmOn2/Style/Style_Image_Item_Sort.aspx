@@ -1,12 +1,15 @@
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_Image_Item_Sort.aspx.vb" Inherits="plmOnApp.Style.Image.Style_Image_Item_Sort" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Sort</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../System/Jscript/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery.tablednd.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             .dropimage
             {

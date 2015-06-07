@@ -324,7 +324,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatDateTime(Fields!DueDate.Value, DateFormat.ShortDate) &amp; " (" &amp; Fields!Submit.Value.ToString &amp; ")" &amp; chr(10) &amp; Fields!TextMessage.Value</Value>
+                              <Value>=IIF(IsNothing(Fields!DueDate.Value), "", FormatDateTime(Fields!DueDate.Value, DateFormat.ShortDate) &amp; " (" &amp; CStr(Fields!Submit.Value) &amp; ")" &amp; chr(10) &amp; Fields!TextMessage.Value)</Value>
                               <Style>
                                 <FontFamily>Arial Unicode MS</FontFamily>
                                 <FontSize>8pt</FontSize>

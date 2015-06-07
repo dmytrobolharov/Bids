@@ -7,6 +7,8 @@
 		<title id="tlAddRelationship" runat="server">Add Relationship</title>
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -60,11 +62,21 @@
 		        <td width="100%"><asp:imagebutton id="imgBtnSearch" runat="server" ></asp:imagebutton></td>
 	        </tr>
         </table>  
-        <asp:datagrid id="DataGrid1" runat="server" AllowSorting="False" DataKeyField="Level3ID">
+        <asp:datagrid id="DataGrid1" runat="server" AllowSorting="False" DataKeyField="TradePartnerID">
 	        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
 	        <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 	        <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
 	        <PagerStyle Visible="False"></PagerStyle>
+            <Columns>
+                <asp:TemplateColumn>
+                    <HeaderTemplate>
+                        <asp:CheckBox runat="server" ID="checkAll" onclick="CheckAll(this);" />
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <asp:CheckBox runat="server" ID="chbTradePartnerID" />
+                    </ItemTemplate>
+                </asp:TemplateColumn>
+            </Columns>
         </asp:datagrid>   
         <asp:label id="SortOrder" runat="server" Visible="False"></asp:label>		
 		

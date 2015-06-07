@@ -1,8 +1,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="Line_List_Folder_ViewStyle" Src="Line_List_Folder_ViewStyle.ascx" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Line_List_Folder_View.aspx.vb" Inherits="plmOnApp.Line_List_Folder_View" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>Line List Folder</title>
@@ -13,7 +12,11 @@
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/toastr.min.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
         <script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <!-- 
         Attention, developer!
         Datalist, for which we're generating style, is held in control, and this control -- in another control, so
@@ -74,7 +77,6 @@
 	</head>
 	<body>
 		<form id="Form1" method="post" runat="server">
-        <wc1:Color_Wait ID="Color_Wait" runat="server" />
 
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
         <Scripts>
@@ -114,6 +116,7 @@
 						<cc1:BWImageButton id="btnNewIssue" runat="server" Message="NONE" CausesValidation="False"></cc1:BWImageButton>
 						<cc1:bwimagebutton id="btnRemove" runat="server" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
                         <cc1:confirmedimagebutton id="btnDelete" runat="server" visible="false" Message="NONE" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:confirmedimagebutton>
+                         <cc1:confirmedimagebutton id="btnExcelExport" runat="server"  Message="NONE" OnClientClick="enable_close_link();"></cc1:confirmedimagebutton>
                         <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>
 					</td>
 				</TR>

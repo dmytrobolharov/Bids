@@ -1,6 +1,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls.YsTreeView" Assembly="YSTreeView" %>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Planning_FlashEdit_Style_QuickFill_Menu.aspx.vb" Inherits="plmOnApp.Planning_FlashEdit_Style_QuickFill_Menu" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title>Production_Menu</title>
@@ -15,7 +16,9 @@
 		<form id="Form1" method="post" runat="server">
 			<table class="TableHeader" height="25" cellSpacing="0" cellPadding="0" width="100%" border="0">
 				<tr>
-					<td vAlign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
+					<td vAlign="middle" align="left" width="10">
+                        <IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3" style="margin-left:5px">
+                    </td>
 				</tr>
 			</table>
 			<cc1:YSTreeView id="YSTreeView1" runat="server"></cc1:YSTreeView>

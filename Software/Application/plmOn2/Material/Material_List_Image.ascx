@@ -1,14 +1,12 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="Material_List_Image.ascx.vb" Inherits="plmOnApp.Material_List_Image" %>
 <%@ Register TagPrefix="ys001" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 
+<asp:HiddenField ID="hdnCurrentIndex" Value="0" runat="server" />
+<asp:HiddenField ID="hdnPageSize" Value="25" runat="server" />
 <table class="TableHeader" id="Table2" height="20" cellspacing="0" cellpadding="0" width="100%"
 	border="0">
 	<tr class="fontHead">
 		<td align="center" width="10" height="25"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"/></td>
-		<td height="25">
-			<div align="left">&nbsp;
-				<asp:label id="lblCurrentIndex" Text="0" Visible="False" Runat="server"></asp:label><asp:label id="lblPageSize" Text="24" Visible="False" Runat="server">25</asp:label></div>
-		</td>
 		<td width="20" height="25">
 			<div align="center"><asp:imagebutton id="btnImgFirst" runat="server" ImageUrl="../System/Icons/icon_first.gif"></asp:imagebutton></div>
 		</td>

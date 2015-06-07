@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title><%= GetSystemText("Material")%></title>
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 </head>
 
 	<frameset cols="400,400" frameborder="yes" bordercolor="#dbd7d0" >

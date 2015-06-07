@@ -35,7 +35,7 @@
                                 <TextRun>
                                   <Value>POM</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -73,7 +73,7 @@
                                 <TextRun>
                                   <Value>Point of Measurment</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -111,7 +111,7 @@
                                 <TextRun>
                                   <Value>=Fields!WashType.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Firebrick</Color>
@@ -150,7 +150,7 @@
                                 <TextRun>
                                   <Value>=First(Fields!SizeNo.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -192,7 +192,7 @@
                                 <TextRun>
                                   <Value>=Fields!POM.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -226,7 +226,7 @@
                                 <TextRun>
                                   <Value>=Fields!PointMeasur.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -263,7 +263,7 @@
                                 <TextRun>
                                   <Value>=IIF(Fields!WashType.Value = "TOL", Fields!TOL.Value, Fields!TOLN.Value)</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <Color>Firebrick</Color>
                                   </Style>
@@ -300,7 +300,7 @@
                                 <TextRun>
                                   <Value>=Fields!Spec.Value</Value>
                                   <Style>
-                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -364,7 +364,7 @@
               <Border>
                 <Style>Solid</Style>
               </Border>
-              <FontFamily>Tahoma</FontFamily>
+              <FontFamily>Arial Unicode MS</FontFamily>
               <FontSize>9pt</FontSize>
             </Style>
           </Tablix>
@@ -584,7 +584,7 @@
         <DataSetName>Comments</DataSetName>
         <Top>0.07056cm</Top>
         <Height>0.375in</Height>
-        <Width>10.75in</Width>
+        <Width>10.75001in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -596,7 +596,7 @@
     <Height>6.625in</Height>
     <Style />
   </Body>
-  <Width>10.75in</Width>
+  <Width>10.75001in</Width>
   <Page>
     <PageHeader>
       <Height>2.5in</Height>
@@ -610,24 +610,25 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Development Spec</Value>
+                  <Value>=First(Fields!ReportPageDescription.Value, "dsReportName")</Value>
                   <Style>
-                    <FontFamily>Tahoma</FontFamily>
-                    <FontSize>26pt</FontSize>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.135in</Top>
+          <Top>0.05in</Top>
           <Height>0.5in</Height>
           <Width>10.75in</Width>
           <ToolTip>##label##</ToolTip>
           <Style>
-            <VerticalAlign>Middle</VerticalAlign>
+            <VerticalAlign>Top</VerticalAlign>
           </Style>
         </Textbox>
       </ReportItems>
@@ -750,6 +751,23 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="dsReportName">
+      <Query>
+        <DataSourceName>plmOn</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@RPID">
+            <Value>=Parameters!RPID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType><CommandText>rpx_StyleReportName_SELECT</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ReportPageDescription">
+          <DataField>ReportPageDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="SID">
@@ -759,6 +777,10 @@
     <ReportParameter Name="SN">
       <DataType>Integer</DataType>
       <Prompt>StyleSet</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RPID">
+      <DataType>String</DataType>
+      <Prompt>RPID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>

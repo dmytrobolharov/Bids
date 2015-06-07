@@ -7,8 +7,11 @@
 <head id="Head1" runat="server">
     <title>Control Panel</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
     <style type="text/css">
     .rightAlign 
     {
@@ -49,7 +52,7 @@
                     <cc1:ConfirmedImageButton ID="btnSaveOnly" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnSave" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnSaveNew" runat="server" Message="NONE"></cc1:ConfirmedImageButton>
-                    <cc1:ConfirmedImageButton ID="btnDelete" runat="server"></cc1:ConfirmedImageButton>
+                    <cc1:ConfirmedImageButton ID="btnDelete" runat="server" CausesValidation="false"></cc1:ConfirmedImageButton>
                     <cc1:ConfirmedImageButton ID="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click()"></cc1:ConfirmedImageButton>
                 </td>
                 <td class="FontHead" align="right" width="75">
@@ -191,6 +194,22 @@
                     </asp:DropDownList>
                 </ItemTemplate>
             </asp:TemplateColumn>
+            <asp:TemplateColumn>
+                <HeaderStyle Width="120" HorizontalAlign="Center" />
+                <ItemStyle HorizontalAlign="Center" />
+                <HeaderTemplate><asp:Label ID="lblAutoSetSize" runat="server" Text='<%# GetSystemText("Auto Set Size") %>' ToolTip='<%# GetSystemText("Enable Auto Set Size") %>' ></asp:Label></HeaderTemplate>
+                <ItemTemplate>
+                    <asp:CheckBox ID="chkAutoSetSize" styletypeid='<%# Eval("StyleTypeID") %>' runat="server" Checked='<%# Eval("AutoSetSize") %>' />
+                </ItemTemplate>
+            </asp:TemplateColumn>
+            <asp:TemplateColumn>
+                <HeaderStyle Width="120" HorizontalAlign="Center" />
+                <ItemStyle HorizontalAlign="Center" />
+                <HeaderTemplate><asp:Label ID="lblShowLinePlanColors" runat="server" Text='<%# GetSystemText("Show Line Plan Colors") %>' ToolTip='<%# GetSystemText("Allow only colors that are the part of Line Plan") %>' ></asp:Label></HeaderTemplate>
+                <ItemTemplate>
+                    <asp:CheckBox ID="chkShowLinePlanColors" styletypeid='<%# Eval("StyleTypeID") %>' runat="server" Checked='<%# Eval("ShowLinePlanColors") %>' />
+                </ItemTemplate>
+            </asp:TemplateColumn>
         </Columns>
     </asp:DataGrid>
     <asp:Label ID="SortOrder" runat="server" Visible="False"></asp:Label>
@@ -297,21 +316,23 @@
 
     <script type="text/javascript" language="javascript">
         $("#DataGrid1 td:first").css({ border: 'none', visibility: 'hidden' });
-        $(".TableHeader input[id*=chkDimBOM]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkDimBOM]").attr('checked', this.checked); })
-        $(".TableHeader input[id*=chkDefaultBOMPage]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkDefaultBOMPage]").attr('checked', this.checked); })
-        $(".TableHeader input[id*=chkFillColorway]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkFillColorway]").attr('checked', this.checked); })
-        $(".TableHeader input[id*=chkActiveColor]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkActiveColor]").attr('checked', this.checked); })
-        $(".TableHeader input[id*=chkDimensionOptions]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkDimensionOptions]").attr('checked', this.checked); })
+        $(".TableHeader input[id*=chkDimBOM]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkDimBOM]").prop('checked', this.checked); })
+        $(".TableHeader input[id*=chkDefaultBOMPage]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkDefaultBOMPage]").prop('checked', this.checked); })
+        $(".TableHeader input[id*=chkFillColorway]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkFillColorway]").prop('checked', this.checked); })
+        $(".TableHeader input[id*=chkActiveColor]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkActiveColor]").prop('checked', this.checked); })
+        $(".TableHeader input[id*=chkDimensionOptions]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkDimensionOptions]").prop('checked', this.checked); })
+        $(".TableHeader input[id*=chkAutoSetSize]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkAutoSetSize]").prop('checked', this.checked); })
+        $(".TableHeader input[id*=chkShowLinePlanColors]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkShowLinePlanColors]").prop('checked', this.checked); })
 
         $("#DataGrid2 td:first").css({ border: 'none', visibility: 'hidden' });
-        $(".TableHeader input[id*=chkRestrictSize]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkRestrictSize]").attr('checked', this.checked); })
+        $(".TableHeader input[id*=chkRestrictSize]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkRestrictSize]").prop('checked', this.checked); })
 
         $("#DataGrid3 td:first").css({ border: 'none', visibility: 'hidden' });
-        $(".TableHeader input[id*=chkLockColorPalette]").change(function () { $("input[id*=chkLockColorPalette]").attr('checked', this.checked); })
-        $(".TableHeader input[id*=chkLockMaterialPalette]").change(function () { $("input[id*=chkLockMaterialPalette]").attr('checked', this.checked); })
+        $(".TableHeader input[id*=chkLockColorPalette]").change(function () { $("input[id*=chkLockColorPalette]").prop('checked', this.checked); })
+        $(".TableHeader input[id*=chkLockMaterialPalette]").change(function () { $("input[id*=chkLockMaterialPalette]").prop('checked', this.checked); })
 
         $("#DataGrid4 td:first").css({ border: 'none', visibility: 'hidden' });
-        $(".TableHeader input[id*=chkAvailible]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkAvailible]").attr('checked', this.checked); })
+        $(".TableHeader input[id*=chkAvailible]").change(function () { $("span[styletypeid='" + $(this).parent().attr("styletypeid") + "'] input[id*=chkAvailible]").prop('checked', this.checked); })
 
         function toggleRows(img, style_category) {
             if ($(img).closest("tr").nextUntil(".TableHeader").toggle().is(":visible")) {

@@ -11,8 +11,19 @@
 	<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
 	<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+    <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+    <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+    <style type="text/css">
+    #DataList1 td .font
+    {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    </style> 
 </head>
 <body>
     <form id="form1" runat="server">
@@ -151,7 +162,8 @@
         </telerik:RadPane>                
     </telerik:RadSplitter>				
     </div>
-        <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" Runat="server">
+    <input type="hidden" runat="server" id="hdnCurrentSelection"  value="0" />
+    <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" Runat="server">
                 <StyleSheets>
                     <telerik:StyleSheetReference Path="../System/CSS/RadCalendar.YPLM.css" />
                     <telerik:StyleSheetReference Path="../System/CSS/RadComboBox.YPLM.css" />
@@ -160,7 +172,6 @@
                 </StyleSheets>
                 <CdnSettings TelerikCdn="Disabled" />
             </telerik:RadStyleSheetManager>
-    <input type="hidden" runat="server" id="hdnCurrentSelection"  value="0" />
     </form>
     
     <script language='javascript'>
@@ -173,6 +184,15 @@
                 
                 e.name = 'rdb';
                
+            }
+        }
+
+        function SelectedAll(checkAllBox) {
+            var actVar = checkAllBox.checked;
+            for (i = 0; i < frm.length; i++) {
+                e = frm.elements[i];
+                if (e.type == 'checkbox' && e.name.indexOf('$chbSelected') != -1)
+                    e.checked = actVar;
             }
         }
   </script>

@@ -9,8 +9,8 @@
 			<DIV align="left">&nbsp;
 				<asp:label id="lblCurrentIndex" Text="0" Visible="False" Runat="server"></asp:label><!--<asp:label id="lblPageSize" Text="10" Visible="False" Runat="server">10</asp:label>--></DIV>
 		</TD>
-        <td width="75" runat="server" id="tdCheckAll"><asp:Label ID="lblSelectAllStyles" CssClass="fontHead" runat="server">Select All</asp:Label>&nbsp;<input id="chkSelectAllStyles" onclick="CheckAllStyles(this);" type="checkbox" name="checkAllStyles" /></td>
-        <td width="75" runat="server" id="tdThumbnail" visible="false">
+        <td width="100" runat="server" id="tdCheckAll"><input id="chkSelectAllStyles" onclick="CheckAllStyles(this);" type="checkbox" name="checkAllStyles" />&nbsp;<asp:Label ID="lblSelectAllStyles" CssClass="fontHead" runat="server"><%= GetSystemText("Select All")%></asp:Label></td>
+        <td width="100" runat="server" id="tdThumbnail" visible="false">
             <asp:CheckBox runat="server" id="chbThumbnail" AutoPostBack="true" />
         </td>
 		<TD width="20"><asp:imagebutton id="btnImgFirst" OnClick="ShowFirstPage" runat="server"></asp:imagebutton></TD>

@@ -3,7 +3,7 @@
 <%@ Register TagPrefix="CuteWebUI" Namespace="CuteWebUI" Assembly="CuteWebUI.AjaxUploader" %>
 <%@ Register TagPrefix="ycl" Namespace="Yunique.Core.Library" Assembly="Yunique.Core" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
 	<HEAD>
 		<title runat="server" id="PageTitle">Attachments</title>
@@ -12,7 +12,9 @@
 		<meta content="JavaScript" name="vs_defaultClientScript">
 		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body>
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
@@ -44,7 +46,7 @@
 					<TD width="10"><asp:imagebutton id="btnImgSearch" runat="server" ImageUrl="../System/Icons/icon_search.gif"></asp:imagebutton></TD>
 					<TD>
 						<DIV align="left">&nbsp;
-							<asp:label id="lblCurrentIndex" Runat="server" Visible="False" Text="0"></asp:label><asp:label id="lblPageSize" Runat="server" Visible="False" Text="24"></asp:label></DIV>
+							<asp:label id="lblPageSize" Runat="server" Visible="False" Text="24"></asp:label></DIV>
 					</TD>
 					<TD width="20">
 						<DIV align="center"><asp:imagebutton id="btnImgFirst" runat="server" ImageUrl="../System/Icons/icon_first.gif"></asp:imagebutton></DIV>
@@ -196,7 +198,7 @@
 							<TD width="500">
 								<cc1:confirmedimagebutton id="edit_btnSave" runat="server"  Message="NONE" Visible='<%# ShowHideSaveBtn() %>' CommandName="update"></cc1:confirmedimagebutton>								
 								<cc1:ConfirmedLinkButton id="edit_btnDelete" runat="Server" Message='<%#GetSystemText("Are you sure you want to Delete this file?")%>'  CommandName="delete" NAME="edit_btnDelete" Visible='<%# ShowHideDeleteBtn() %>' ></cc1:ConfirmedLinkButton>
-								<asp:linkbutton id="btnDownload" runat="Server" CommandName="download" OnClientClick="parent.dont_show_wait_next_time();" ></asp:linkbutton>
+								<asp:linkbutton id="btnDownload" runat="Server" CommandName="download" OnClientClick="dont_show_wait_twice();" ></asp:linkbutton>
 								<cc1:confirmedimagebutton id="btnEditCancel" runat="server" Message="NONE" CommandName="cancel"></cc1:confirmedimagebutton>															
 							</TD>
 							<TD>&nbsp;</TD>

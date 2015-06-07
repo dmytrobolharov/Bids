@@ -1,3 +1,6 @@
+NB:  The files in this folder are a duplicate of those in the x86 folder
+	They remain here for backwards compat.
+
 
 Create a folder "plmOnMS" on WINDOWS directory and move files to directory
 

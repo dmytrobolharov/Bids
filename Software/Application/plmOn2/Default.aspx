@@ -97,7 +97,7 @@
                                                         </TD>
 														<TD align="center" height="80"><div align="right">
                                                             <br /><br />
-                                                            <img src="System/Images/yunique_logo.png" width="271" id="imgYuniqueLogo" 
+                                                            <img src="System/Images/login_logo.png" width="204" id="imgYuniqueLogo" 
                                                                 runat="server"></div>
 														</TD>
 														<TD width="55">&nbsp;</TD>
@@ -117,8 +117,8 @@
 																		</TD>
 																	</TR>--%>
 																	<TR>
-																		<TD align="center" style="width: 321px; height: 200px" >
-                                                                            <img alt="" src="System/Images/NewLogo.png"  style="width: 200px;"/>
+																		<TD align="center" style="width: 367px; height: 200px" >
+                                                                            <img alt="" src="System/Images/login_main.png"  style="width: 367px;"/>
                                                                         </TD>
 																	</TR>
 																	<TR>

@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Sourcing_StylePage_NewQuotationsQuickLibrary.aspx.vb" Inherits="plmOnApp.Sourcing_StylePage_NewQuotationsQuickLibrary" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="cc2" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
-<%@ Register src="../System/Control/WaitControl.ascx" tagname="Color_Wait" tagprefix="wc1" %>
 <%@ Register src="Sourcing_Header.ascx" tagname="Sourcing_Header" tagprefix="hc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
@@ -15,12 +14,14 @@
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
 		<LINK href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
-		<form id="Form1" method="post" runat="server">
-         <wc1:Color_Wait ID="Color_Wait" runat="server" />
+		<form id="Form1" method="post" runat="server" defaultbutton="imgBtnSearch">
        
  <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="100%"
             border="0" runat="server">
@@ -30,7 +31,7 @@
             </td>
             <td width="100%">
                 <cc1:confirmedimagebutton id="btnGenerate" runat="server" Message="NONE"></cc1:confirmedimagebutton>
-                <cc1:confirmedimagebutton id="btnShare" runat="server" Message="NONE" CausesValidation="true" ValidationGroup="TechPack"></cc1:confirmedimagebutton>
+                <cc1:confirmedimagebutton id="btnShare" runat="server" Message="NONE" CausesValidation="true"></cc1:confirmedimagebutton>
                 <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" CausesValidation="false" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton>
             </td>
             <td>

@@ -7,11 +7,18 @@
 		<title runat="server" id="PageTitle">Palette</title>
 		<LINK href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css">
             th.rgHeaderYPLM, th.rgHeader {
                 padding: 0 0px !important;
+            }
+            .TableHeader
+            {
+                background-position: center;
             }
         </style>
 	</HEAD>
@@ -148,7 +155,7 @@
                         </asp:RadioButtonList>
                     </td>
                     <td height="25">
-                        <p align="right">
+                        <p align="right" style="margin: auto;">
                             <asp:DropDownList ID="ddlSortField" runat="server">
                             </asp:DropDownList>
                             <asp:DropDownList ID="ddlSortBy" runat="server">
@@ -157,6 +164,20 @@
                                 ImageUrl="../System/Icons/icon_sort.gif" />
                         </p>
                     </td>
+                    <span id="spanRecordsPerPage" runat="server">
+                    <TD class="fontHead" align="right"><asp:label id="lblRecordsPerPage" runat="server" CssClass="fontHead" Text="Records per Page:"></asp:label></TD>
+						<TD width="25"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead">
+										<asp:ListItem Value="5">5</asp:ListItem>
+										<asp:ListItem Value="10">10</asp:ListItem>
+										<asp:ListItem Value="15">15</asp:ListItem>
+										<asp:ListItem Value="20">20</asp:ListItem>
+										<asp:ListItem Value="25">25</asp:ListItem>
+										<asp:ListItem Value="30">30</asp:ListItem>
+										<asp:ListItem Value="40">40</asp:ListItem>
+										<asp:ListItem Value="50" Selected="True">50</asp:ListItem>
+									</asp:dropdownlist></TD>
+						<TD width="10"><asp:button id="btnRePage" onclick="RePage" runat="server" CssClass="fontHead" text="GO"></asp:button></TD>
+					</span>	
                 </tr>
             </table>
             <table border="0" bordercolor="gainsboro" cellpadding="0" cellspacing="1">

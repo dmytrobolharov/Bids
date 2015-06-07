@@ -3340,8 +3340,18 @@ ORDER BY StatusOrder</CommandText>
     <DataSet Name="ParamQuery_Season">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT DISTINCT CustomField2 AS SeasonValue, CustomField2 AS SeanSortOrder, CustomField2 As SeasonLabel 
-                      FROM    pStyleHeader WHERE     (CustomField2 IS NOT NULL)  UNION SELECT     NULL, NULL, 'ALL'   ORDER BY SeanSortOrder</CommandText>
+        <CommandText>SELECT DISTINCT Custom AS SeasonValue
+	, Custom AS SeanSortOrder
+	, Custom AS SeasonLabel
+FROM pSeason
+WHERE (Custom IS NOT NULL)
+
+UNION
+
+SELECT NULL
+	, NULL
+	, 'ALL'
+ORDER BY SeanSortOrder</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -3433,11 +3443,20 @@ ORDER BY StatusOrder</CommandText>
     <DataSet Name="ParamQuery_UserID">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT DISTINCT  a.AssignedTo AS UserValue,  b.FirstName + ' ' + b.LastName AS UserSort,  b.FirstName + ' ' + b.LastName AS UserLabel
-                                     FROM pSampleRequestWorkflow a    LEFT OUTER JOIN Users b  ON  a.AssignedTo = b.UserId  
-                                     WHERE  (a.AssignedTo IS NOT NULL)       
-                                   UNION
-                             SELECT   NULL, NULL, 'ALL'    ORDER BY  UserSort</CommandText>
+        <CommandText>SELECT DISTINCT a.WorkAssignedTo AS UserValue
+	, b.FirstName + ' ' + b.LastName AS UserSort
+	, b.FirstName + ' ' + b.LastName AS UserLabel
+FROM pStyleWorkflow a
+LEFT OUTER JOIN Users b ON a.WorkAssignedTo = b.UserId
+WHERE (a.WorkAssignedTo IS NOT NULL)
+
+UNION
+
+SELECT NULL
+	, NULL
+	, 'ALL'
+ORDER BY UserSort
+</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
