@@ -31,7 +31,7 @@
                                                
 			                                            <tr>
 			                                                <td width="18"><asp:CheckBox ID="chkDeleteFile" runat="server" /></td> 
-			                                                <td width="18"><asp:ImageButton runat="server" ID="btnDownload" ImageUrl="../System/Icons/icon_file.gif" CommandName="download" /></td>
+			                                                <td width="18"><asp:ImageButton runat="server" ID="btnDownload" OnClientClick="dont_show_wait_next_time(); return False;" ImageUrl="../System/Icons/icon_file.gif" CommandName="download" /></td>
 			                                                <td><asp:Label id="lblDescription" runat="server" Font-Size="10pt" ForeColor="Black"></asp:Label></td>
 			                                            </tr>
 			                                            <tr>

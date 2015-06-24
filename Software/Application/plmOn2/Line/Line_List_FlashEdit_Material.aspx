@@ -557,7 +557,8 @@
             	        for (var i = 0; i < selectedStyles.length; i++) {
             	            selectedStyles[i].checked = false;
                         }
-
+                        var selectedAllMaterials = materialList.find("input[id*='chkSelectAll']:checked");
+                        if(selectedAllMaterials[0]){selectedAllMaterials[0].checked = false;}
             	        document.getElementById("chkSelectAllStyles").checked = false;
             	    }
 

@@ -24,7 +24,7 @@
 				runat="server">
 				<TR vAlign="middle">
 					<TD vAlign="middle" align="center" width="10"><IMG height="15" src="../Images/bbTbSCnr.gif" width="3"></TD>
-					<TD><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"></cc1:confirmedimagebutton></TD>
+					<TD><cc1:confirmedimagebutton id="btnSave" runat="server"  Message="NONE"  ValidationGroup="Group1"></cc1:confirmedimagebutton></TD>
 				</TR>
 			</TABLE>
 			<TABLE cellSpacing="1" cellPadding="1" width="100%" border="0" bgColor="#ffffff">
@@ -54,6 +54,8 @@
 						<HeaderStyle Width="100px"></HeaderStyle>
 						<ItemTemplate>
     						<asp:TextBox id="txtContentPerc" runat="Server" MaxLength="4" Columns="10"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtContentPerc" Display="Static" ErrorMessage="*" ValidationExpression="^\d+$" runat="server" ValidationGroup="Group1" />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Numbers only" ControlToValidate="txtContentPerc" ValidationExpression="^\d+$" ValidationGroup="Group1">*</asp:RegularExpressionValidator>
 						</ItemTemplate>
 					</asp:TemplateColumn>
 					<asp:TemplateColumn HeaderText="Content Type">

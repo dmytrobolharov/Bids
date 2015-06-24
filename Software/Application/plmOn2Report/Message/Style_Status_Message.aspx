@@ -14,7 +14,7 @@
 				<tr>
 					<td><asp:Label ID="lblStyleStatus" CssClass="fonthead" runat="server">Style Status Notification</asp:Label>
 					</td>
-					<td align="right"><IMG height="35" src="../logo.jpg"></td>
+					<td align="right"><IMG height="35" src="../logo.png"></td>
 				</tr>
 			</table>
 			<table width="800" border="0" cellspacing="0" cellpadding="0">

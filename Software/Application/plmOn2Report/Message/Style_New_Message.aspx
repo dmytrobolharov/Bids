@@ -15,7 +15,7 @@
 					<td>
 						<asp:Label id="lblHeader" runat="server" Font-Size="Large"></asp:Label>
 					</td>
-					<td align="right"><IMG src="../logo.jpg"></td>
+					<td align="right"><IMG src="../logo.png"></td>
 				</tr>
 			</table>
 			<table width="800" border="0" cellspacing="0" cellpadding="0">

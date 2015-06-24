@@ -197,7 +197,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Size Range:</Value>
+                                  <Value EvaluationMode="Constant">Size Class:</Value>
                                   <Style>
                                     <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -231,7 +231,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Main Material:</Value>
+                                  <Value EvaluationMode="Constant">Size Range:</Value>
                                   <Style>
                                     <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -264,7 +264,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Size Class:</Value>
+                                  <Value EvaluationMode="Constant">Main Material:</Value>
                                   <Style>
                                     <FontFamily>Arial Unicode MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -327,7 +327,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!SizeRange.Value)</Value>
+                                  <Value>=First(Fields!SizeClass.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial Unicode MS</FontFamily>
                                   </Style>
@@ -356,7 +356,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!MaterialNo.Value)</Value>
+                                  <Value>=First(Fields!SizeRange.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial Unicode MS</FontFamily>
                                   </Style>
@@ -388,7 +388,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!SizeClass.Value)</Value>
+                                  <Value>=First(Fields!MaterialNo.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial Unicode MS</FontFamily>
                                   </Style>

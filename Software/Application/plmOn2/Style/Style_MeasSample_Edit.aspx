@@ -65,67 +65,7 @@
 					        <ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
 					        <HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
 					        
-					  </asp:datagrid>	
-					
-				<%--	<asp:datagrid id="DataGrid1" runat="server" DataKeyField="AMLMeasPOMId" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px"
-							PageSize="100" AutoGenerateColumns="False" OnItemDataBound="ItemDataBoundEventHandler" Width="100%">
-							<AlternatingItemStyle Height="20px" BackColor="AliceBlue"></AlternatingItemStyle>
-							<ItemStyle Height="20px" CssClass="font" BackColor="White"></ItemStyle>
-							<HeaderStyle Height="20px" CssClass="TableHeader"></HeaderStyle>
-							<Columns>		
-							    <asp:TemplateColumn>
-									<HeaderTemplate>										
-											<asp:Label id="lblHeaderPOMRow" style="display:none" Width="0px" runat="server"></asp:Label>										
-									</HeaderTemplate>
-									<ItemTemplate>																					
-											<asp:Label id="lblPOMRow" style="display:none" runat="server" Width="0px" ></asp:Label>										
-									</ItemTemplate>
-								</asp:TemplateColumn>						
-								<asp:TemplateColumn>
-									<HeaderTemplate>										
-											<asp:Label id="lblHeaderPOM" runat="server">POM</asp:Label>										
-									</HeaderTemplate>
-									<ItemTemplate>																					
-											<asp:Label id="lblRefcode" runat="server" ></asp:Label>										
-									</ItemTemplate>
-								</asp:TemplateColumn>
-								<asp:TemplateColumn>
-									<HeaderTemplate>									    
-										<asp:Label id="lblHeaderPointMeasur" runat="server">Description</asp:Label>									    
-									</HeaderTemplate>
-									<ItemTemplate>									    
-										<asp:Label id="lblDescription"  runat="Server"></asp:Label>										
-									</ItemTemplate>
-								</asp:TemplateColumn>
-								<asp:TemplateColumn>									
-									<HeaderTemplate>										
-											<asp:Label id="lblHeaderTOL" runat="server">+Tol</asp:Label>
-									</HeaderTemplate>
-									<ItemTemplate>										
-											<asp:Label id="lblTolPlus"  runat="server" Columns="5" MaxLength="10"></asp:Label>
-									</ItemTemplate>
-								</asp:TemplateColumn>
-								<asp:TemplateColumn>									
-									<HeaderTemplate>										
-											<asp:Label id="lblHeaderTOLN" runat="server">-Tol</asp:Label>
-									</HeaderTemplate>
-									<ItemTemplate>										
-											<asp:Label id="lblTolMinus" Width="100px" runat="server" Columns="5" MaxLength="10"></asp:Label>
-									</ItemTemplate>
-								</asp:TemplateColumn>								
-								<asp:TemplateColumn>
-								    <HeaderStyle CssClass="TableHeaderGreen"></HeaderStyle>
-								    <ItemStyle CssClass="TableHeaderGreen"></ItemStyle>
-									<HeaderTemplate>										
-											<asp:Label id="lblSampleHeader" runat="server" />
-									</HeaderTemplate>
-									<ItemTemplate>										
-											<asp:TextBox id="txtIncr" runat="Server" Width="50px" BorderWidth="1px" BorderStyle="Solid" BorderColor="#E0E0E0"
-												MaxLength="10" columns="5"></asp:TextBox>
-									</ItemTemplate>
-								</asp:TemplateColumn>								
-							</Columns>
-						</asp:datagrid>--%>
+					  </asp:datagrid>
 						</td>
 				</tr>
 			</table>

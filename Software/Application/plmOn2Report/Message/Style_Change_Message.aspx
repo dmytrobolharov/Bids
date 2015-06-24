@@ -17,7 +17,7 @@
 				<tr>
 					<td><asp:Label ID="lblStyleChange" runat="server">Style Change Notification</asp:Label>
 					</td>
-					<td align="right"><IMG height="35" src="../logo.jpg"></td>
+					<td align="right"><IMG height="35" src="../logo.png"></td>
 				</tr>
 			</table>
 			<table cellSpacing="0" cellPadding="0" width="800" border="0">

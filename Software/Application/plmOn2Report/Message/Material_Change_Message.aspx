@@ -17,7 +17,7 @@
 				<tr>
 					<td><asp:Label ID="lblStyleChange" runat="server">Material Change Notification</asp:Label>
 					</td>
-					<td align="right"><img height="35" src="../logo.jpg"></td>
+					<td align="right"><img height="35" src="../logo.png"></td>
 				</tr>
 			</table>
 			<table cellspacing="0" cellpadding="0" width="800" border="0">

@@ -5,7 +5,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title runat="server" id="pgTitle">Flash Edit Image</title>
     <link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
     <link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
@@ -46,18 +46,18 @@
         <CdnSettings TelerikCdn="Disabled" />
     </telerik:RadStyleSheetManager>
     <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1">
-        <ClientEvents OnRequestStart="" OnResponseEnd="onAjaxResponseEnd" />
+        <ClientEvents OnRequestStart="onAjaxRequestStart" OnResponseEnd="onAjaxResponseEnd" />
         <AjaxSettings>
                 <telerik:AjaxSetting AjaxControlID="btnSave">
                     <UpdatedControls>
                         <telerik:AjaxUpdatedControl ControlID="RadAjaxPanelStyle" />
                     </UpdatedControls>
                 </telerik:AjaxSetting>
-                <telerik:AjaxSetting AjaxControlID="RadAjaxPanelStyle">
+                <%--<telerik:AjaxSetting AjaxControlID="RadAjaxPanelStyle">
                     <UpdatedControls>
                         <telerik:AjaxUpdatedControl ControlID="RadAjaxPanelStyle" />
                     </UpdatedControls>
-                </telerik:AjaxSetting>
+                </telerik:AjaxSetting>--%>
             </AjaxSettings>
     </telerik:RadAjaxManager>
     <table class="TableHeader" height="27" cellspacing="0" cellpadding="0" width="100%"
@@ -85,7 +85,7 @@
             <td width="60%" valign="top">
                 <div style="overflow: scroll; width: 100%; height: 100%;" id="scrollDiv1">
                     <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelStyle" ClientEvents-OnRequestStart="onAjaxRequestStart"
-                        ClientEvents-OnResponseEnd="" Width="98%">
+                        ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="98%">
                         <div style="width: 100%; height: 100%" class="inner">
                             <table style="border-bottom: orange thin solid; border-left-style: none; background-color: white"
                                 height="45" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
@@ -104,8 +104,8 @@
             </td>
             <td width="40%" valign="top">
                 <div style="overflow: auto; width: 100%; height: 900px;" id="scrollDiv2">
-                    <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanel2" ClientEvents-OnRequestStart=""
-                        ClientEvents-OnResponseEnd="" Width="98%">
+                    <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanel2" ClientEvents-OnRequestStart="onAjaxRequestStart"
+                        ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="98%">
                             <div style="width: 97%; height: 100%" class="inner">
                                 <table style="border-bottom: orange thin solid; border-left-style: none; background-color: white"
                                     height="45" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" border="0">
@@ -268,18 +268,16 @@
     <script src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>
     <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript">
-        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
-        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+//        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+//        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
 
-        function BeginRequestHandler(sender, args) {
-            show_wait_text();
-        }
+//        function BeginRequestHandler(sender, args) {
+//            show_wait_text();
+//        }
 
-        function EndRequestHandler(sender, args) {
-            hide_wait_text();
-        }
-
-
+//        function EndRequestHandler(sender, args) {
+//            hide_wait_text();
+//        }
         /* Make GridArea div to take all the free height on the window, but no more */
         $(document).ready(function () {
             
@@ -348,7 +346,8 @@
                                     "ctrPlanSearch$ctrPlanning$btnImgPrevious", "ctrPlanSearch$ctrPlanning$btnImgLast", "ctrPlanSearch$ctrPlanning$btnImgFirst"],
                 confirmed = false;
 
-            window.onAjaxRequestStart = function(sender, eventArgs) {                  
+            window.onAjaxRequestStart = function(sender, eventArgs) { 
+                show_wait_text();                 
                 // if confirmed request or nonconfirmable button or no pending changes then proceed as is                          
                 if (confirmed || _.indexOf(buttonsToConfirm, eventArgs.get_eventTarget()) == -1 || !hasPendingChanges()) {
                     confirmed = false;
@@ -362,6 +361,7 @@
                 }
 
                 $("#confirm-dialog").dialog({
+                    open: hide_wait_text(),
                     title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
                     width: '400px',
                     resizable: false,
@@ -392,13 +392,13 @@
                 }
             });
         })();
-
         function onAjaxResponseEnd(sender, eventArgs) {
 
             // Clearing the EVENTTARGET and EVENTARGUMENT from ajax postback, so we can verify if the next postback was caused by button or by the same control
+            hide_wait_text();
             form1.__EVENTTARGET.value = ''
             form1.__EVENTARGUMENT.value = ''
-            $("input[id*='hdnNewImageID']").val("");
+            //$("input[id*='hdnNewImageID']").val("");
         }
 
         function removeImage(obj) {

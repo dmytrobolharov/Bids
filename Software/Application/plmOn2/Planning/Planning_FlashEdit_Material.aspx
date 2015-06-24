@@ -73,6 +73,13 @@
         </telerik:RadStyleSheetManager>
         <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1">
             <ClientEvents OnRequestStart="onAjaxRequestStart" OnResponseEnd="onAjaxResponseEnd" />
+            <AjaxSettings>
+                <telerik:AjaxSetting AjaxControlID="btnSave">
+                    <UpdatedControls>
+                        <telerik:AjaxUpdatedControl ControlID="RadAjaxPanelStyle" />
+                    </UpdatedControls>
+                </telerik:AjaxSetting>
+            </AjaxSettings>
         </telerik:RadAjaxManager>
 
         <table class="TableHeader" id="toolbar" cellspacing="0" cellpadding="0" width="99%" border="0" height="30px">
@@ -95,7 +102,7 @@
                 <td width="60%" valign="top">
                     <div style="overflow:scroll;width:100%;height:100%;" id="scrollDiv1">
                         <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelStyle" ClientEvents-OnRequestStart="onAjaxRequestStart"
-                            ClientEvents-OnResponseEnd="" Width="98%">
+                            ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="98%">
 			                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white" bgcolor="#ffffff">
 				                <tr>
 					                <td>&nbsp;<asp:Label id="lblStylesHeader" runat="server" Font-Names="Tahoma,Verdana" Font-Size="X-Large" ForeColor="#E0E0E0"></asp:Label></td>
@@ -238,8 +245,8 @@
                 <td width="40%" valign="top">
                         <!-- Right frame -->
                         <div style="overflow:auto;width:100%;height:900px;" id="scrollDiv2">
-                            <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelMaterial" ClientEvents-OnRequestStart="OnMaterialAjaxStart"
-                                ClientEvents-OnResponseEnd="" Width="98%">
+                            <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelMaterial" ClientEvents-OnRequestStart="onAjaxRequestStart"
+                                ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="98%">
 			                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white" bgcolor="#ffffff">
 				                       <tr>
 					                       <td><asp:Label id="lblMaterialsHeader" runat="server" Font-Names="Tahoma,Verdana" Font-Size="X-Large" ForeColor="#E0E0E0"></asp:Label></td>
@@ -275,16 +282,16 @@
                     }).remove();
                 </script>
             	<script type="text/javascript" language="javascript">
-                Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
-                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+//                Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+//                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
 
-                function BeginRequestHandler(sender, args) {
-                    show_wait_text();
-                }
+//                function BeginRequestHandler(sender, args) {
+//                    show_wait_text();
+//                }
 
-                function EndRequestHandler(sender, args) {
-                    hide_wait_text();
-                }
+//                function EndRequestHandler(sender, args) {
+//                    hide_wait_text();
+//                }
 
             	    var frm = document.Form1;
             	    function CheckAllColors(checkAllBox) {
@@ -377,10 +384,11 @@
                     };
 
                     (function(){
-                        var buttonsToConfirm = ["imgBtnSearch", "btnRepage", "btnImgNext", "btnImgPrevious", "btnImgLast", "btnImgFirst"],                            
-                            confirmed = false;
+                        buttonsToConfirm = buttonsToConfirm.concat(["imgBtnSearch", "btnRepage", "btnImgNext", "btnImgPrevious", "btnImgLast", "btnImgFirst"]);
+                        var confirmed = false;
 
-                        window.onAjaxRequestStart = function(sender, eventArgs) {  
+                        window.onAjaxRequestStart = function(sender, eventArgs) {
+                            show_wait_text();  
                             // if confirmed request or nonconfirmable button or no pending changes then proceed as is                          
                             if (confirmed || _.indexOf(buttonsToConfirm, eventArgs.get_eventTarget()) == -1 || !hasPendingChanges()) {
                                 confirmed = false;
@@ -394,6 +402,7 @@
                             }
 
                             $("#confirm-dialog").dialog({
+                                open: hide_wait_text(),
                                 title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
                                 width: '400px',
                                 resizable: false,
@@ -430,6 +439,7 @@
 
                     function onAjaxResponseEnd(sender, eventArgs) {
                         // Clearing the EVENTTARGET and EVENTARGUMENT from ajax postback, so we can verify if the next postback was caused by button or by the same control
+                        hide_wait_text();
                         Form1.__EVENTTARGET.value = ''
                         Form1.__EVENTARGUMENT.value = ''
                     }
@@ -574,7 +584,8 @@
             	        for (var i = 0; i < selectedStyles.length; i++) {
             	            selectedStyles[i].checked = false;
                         }
-
+                        var selectedAllMaterials = materialList.find("input[id*='chkSelectAll']:checked");
+                        if(selectedAllMaterials[0]){selectedAllMaterials[0].checked = false;}
             	        document.getElementById("chkSelectAllStyles").checked = false;
             	    }
 

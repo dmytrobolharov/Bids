@@ -21,7 +21,7 @@
 					<td><FONT size="5">
                         <asp:Label ID="lblHeader" runat="server" ></asp:Label></FONT>&nbsp;
 					</td>
-					<td align="right"><IMG height="35" src="../logo.jpg"></td>
+					<td align="right"><IMG height="35" src="../logo.png"></td>
 				</tr>
 			</table>
 			<BR>

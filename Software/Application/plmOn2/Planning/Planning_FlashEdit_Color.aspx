@@ -105,7 +105,7 @@
                 <!-- Left frame-->
                 <div style="overflow-y:scroll;width:100%;height:100%;overflow-x:hidden;" id="scrollDiv1">
                     <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelStyle" ClientEvents-OnRequestStart="onAjaxRequestStart"
-                        ClientEvents-OnResponseEnd="" Width="100%">
+                        ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="100%">
                         <div style="width:100%; height:100%; vertical-align: top;" id="StyleList" class="inner">
 			                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white" bgcolor="#ffffff">
 				                <tr>
@@ -207,7 +207,8 @@
                 <td width="35%" height="100%">
                 <!-- Right frame -->
                 <div style="overflow-y:scroll;width:100%;height:100%;overflow-x:hidden;" id="scrollDiv2">
-                    <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelColor" ClientEvents-OnRequestStart="" ClientEvents-OnResponseEnd="" Width="100%">
+                    <telerik:RadAjaxPanel runat="server" ID="RadAjaxPanelColor" ClientEvents-OnRequestStart="onAjaxRequestStart"
+                        ClientEvents-OnResponseEnd="onAjaxResponseEnd" Width="100%">
                         <div style="width:100%; height:100%;" id="ColorList" class="inner">
 
 			                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white" bgcolor="#ffffff">
@@ -298,29 +299,29 @@
                                 </tr>
 			                </table>
 
-                                <asp:datalist id="DataListColors" runat="server" EnableViewState="True" RepeatDirection="Horizontal" RepeatLayout="Flow" DataKeyField="ColorPaletteID" CellPadding="3">
+                            <asp:datalist id="DataListColors" runat="server" EnableViewState="True" RepeatDirection="Horizontal" RepeatLayout="Flow" DataKeyField="ColorPaletteID" CellPadding="3">
 					            <ItemStyle BorderWidth="1" BorderStyle="Solid" BorderColor="Gainsboro" Width="180" VerticalAlign="Top"></ItemStyle>
-					                <ItemTemplate>
-					                    <TABLE height="60" width="180" cellSpacing="0" cellPadding="0" border="0" id="singleColorChip" class="<%#draggableClass%>">
-					                        <TR valign="top">
-                                                <td align="center" valign="middle" width="60">
-                                                    <table width="50" height="50"  cellSpacing="0" cellPadding="0" border="0">
-                                                        <tr>
-                                                            <td  width="50" height="50" runat="server" id="tdColorImage" align="left" valign="top">
-                                                                <label style="width:100%; height:100%; display:block;">
-					                                                <asp:CheckBox ID="chkSelectColor" Runat="server"></asp:CheckBox>
-                                                                    <asp:HiddenField ID="hdnColorPaletteID" runat="server" />
-                                                                </label>
-					                                        </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td valign="middle" width="120"> 
-					                                <asp:PlaceHolder ID="pnlHeader" runat="server" ></asp:PlaceHolder>
-				                                </td>
-					                        </TR>
-					                    </TABLE>
-					                </ItemTemplate>
+					            <ItemTemplate>
+					                <TABLE height="60" width="180" cellSpacing="0" cellPadding="0" border="0" id="singleColorChip" class="<%#draggableClass%>">
+					                    <TR valign="top">
+                                            <td align="center" valign="middle" width="60">
+                                                <table width="50" height="50"  cellSpacing="0" cellPadding="0" border="0">
+                                                    <tr>
+                                                        <td  width="50" height="50" runat="server" id="tdColorImage" align="left" valign="top">
+                                                            <label style="width:100%; height:100%; display:block;">
+					                                            <asp:CheckBox ID="chkSelectColor" Runat="server"></asp:CheckBox>
+                                                                <asp:HiddenField ID="hdnColorPaletteID" runat="server" />
+                                                            </label>
+					                                    </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td valign="middle" width="120"> 
+					                            <asp:PlaceHolder ID="pnlHeader" runat="server" ></asp:PlaceHolder>
+				                            </td>
+					                    </TR>
+					                </TABLE>
+					            </ItemTemplate>
 				            </asp:datalist>
 
                         </div>
@@ -346,17 +347,18 @@
         <script type="text/javascript" src="../System/Jscript/jquery.ui.core.js"></script>
         <script type="text/javascript" src="../System/Jscript/jquery.ui.touch-punch.min.js"></script>        
         <script type="text/javascript" language="javascript">
-            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
-            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
-            
-            function BeginRequestHandler(sender, args) {
-                show_wait_text();
-            }
-            
-            function EndRequestHandler(sender, args) {
-                hide_wait_text();
-            }
+//            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+//            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+//            
+//            function BeginRequestHandler(sender, args) {
+//                show_wait_text();
+//            }
+//            
+//            function EndRequestHandler(sender, args) {
+//                hide_wait_text();
+//            }
 
+            var arrayObject = [];
             var frm = document.Form1;
             function CheckAllColors(checkAllBox) {
                 var actVar = checkAllBox.checked;
@@ -387,16 +389,16 @@
 
                 return _.chain(changes).map(removeSeparator).compact().some().value();
             };
-
+            //var buttonsToConfirm = [];
             (function(){
-                var buttonsToConfirm = ["imgBtnSearch", "btnRepageStyle", "btnImgNext", "btnImgPrevious", "btnImgLast", "btnImgFirst"],                            
-                    confirmed = false;
-
-                window.onAjaxRequestStart = function(sender, eventArgs) {
-                    // if confirmed request or nonconfirmable button or no pending changes then proceed as is                       
+                buttonsToConfirm = buttonsToConfirm.concat(["imgBtnSearch", "btnRepageStyle", "btnImgNext", "btnImgPrevious", "btnImgLast", "btnImgFirst"]);
+                    var confirmed = false;
+                    window.onAjaxRequestStart = function(sender, eventArgs) { 
+                    show_wait_text();
+                    // if confirmed request or nonconfirmable button or no pending changes then proceed as is                          
                     if (confirmed || _.indexOf(buttonsToConfirm, eventArgs.get_eventTarget()) == -1 || !hasPendingChanges()) {
                         confirmed = false;
-                        if (eventArgs.get_eventTarget() == "btnSave") { show_wait_text(); }
+                        if (eventArgs.get_eventTarget() == "btnSave") {  }
                         return true;
                     }
 
@@ -407,6 +409,7 @@
                     }
 
                     $("#confirm-dialog").dialog({
+                        open: hide_wait_text(),
                         title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
                         width: '400px',
                         resizable: false,
@@ -677,7 +680,7 @@
                     $(".draggable").draggable({
                         helper: 'clone',
                         snap: '.ui-droppable',
-                        snapMode: 'outer',
+                        //snapMode: 'outer',
                         appendTo: '#drag-holder',
                         delay: 0,
                         distance: 5

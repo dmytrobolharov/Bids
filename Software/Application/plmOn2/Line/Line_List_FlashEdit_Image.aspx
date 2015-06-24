@@ -53,11 +53,11 @@
                         <telerik:AjaxUpdatedControl ControlID="RadAjaxPanelStyle" />
                     </UpdatedControls>
                 </telerik:AjaxSetting>
-                <telerik:AjaxSetting AjaxControlID="RadAjaxPanelStyle">
+                <%--<telerik:AjaxSetting AjaxControlID="RadAjaxPanelStyle">
                     <UpdatedControls>
                         <telerik:AjaxUpdatedControl ControlID="RadAjaxPanelStyle" />
                     </UpdatedControls>
-                </telerik:AjaxSetting>
+                </telerik:AjaxSetting>--%>
             </AjaxSettings>
     </telerik:RadAjaxManager>
     <table class="TableHeader" height="27" cellspacing="0" cellpadding="0" width="100%"
@@ -360,6 +360,7 @@
                 }
 
                 $("#confirm-dialog").dialog({
+                    open: hide_wait_text(),
                     title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
                     width: '400px',
                     resizable: false,
@@ -376,7 +377,6 @@
             $("#btnClose").click(function(e) {
                 if (hasPendingChanges()) {
                     $("#confirm-dialog").dialog({
-                        open: hide_wait_text(),
                         title: '<%= GetSystemText("Save pending changes before proceeding?") %>',
                         width: '400px',
                         resizable: false,
@@ -397,7 +397,7 @@
             // Clearing the EVENTTARGET and EVENTARGUMENT from ajax postback, so we can verify if the next postback was caused by button or by the same control
             form1.__EVENTTARGET.value = ''
             form1.__EVENTARGUMENT.value = ''
-            $("input[id*='hdnNewImageID']").val("");
+            //$("input[id*='hdnNewImageID']").val("");
             hide_wait_text();
         }
 
