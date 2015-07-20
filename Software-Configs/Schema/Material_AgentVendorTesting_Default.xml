@@ -1,0 +1,53 @@
+<Table Name="pMaterialTradePartnerTestingSubmit" formcolumns="1" gridcolumns="" FormSQL="SELECT * FROM vwx_Material_AgentVendorTestingSubmit_SELECT"
+	GridReadSQL="SELECT * FROM vwx_Material_AgentVendorTestingSubmit_SELECT" GridSQL="SELECT  * FROM vwx_Material_AgentVendorTestingSubmit_SELECT">
+	
+	<column Name="MaterialTradePartnerTestingSubmitID" PK="true" alias="MaterialTradePartnerTestingSubmitID"
+		Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false"
+		GridWidth="100" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="MaterialTradePartnerVendorID" alias="MaterialTradePartnerVendorID"
+		Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false"
+		GridWidth="100" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	
+		
+	<column Name="Submit" alias="Submit #" Type="label" datatype="string" column="1" order="2"
+		GridVisible="true" cellwidth="60" GridWidth="60" Visible="false" enabled="true" GridOrder="03">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="TestingTypeID" alias="Testing Type" Type="dropdownlist" datatype="query" column="1" order="1" 
+		GridVisible="true" cellwidth="100" GridWidth="100" lookupquery="SELECT TestingTypeID, TestingType FROM pMaterialTradePartnerTestingType ORDER BY TestingType" 
+		Visible="true" enabled="true" textfield="TestingType" ValueField="TestingTypeID" select="true" AutoPostBack="false"  GridOrder="3" CacheTableName="pMaterialTradePartnerTestingType">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	
+	<column Name="Status" alias="Submit Status" Type="dropdownlist" datatype="query" column="1" order="1" 
+		GridVisible="true" cellwidth="100" GridWidth="100" lookupquery="SELECT StatusID, Status FROM pMaterialTradePartnerTestingStatus ORDER BY Status" 
+		Visible="true" enabled="true" textfield="Status" ValueField="StatusID" select="true" AutoPostBack="false"  GridOrder="3" CacheTableName="pMaterialTradePartnerTestingStatus" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="3" order="19" GridOrder="1"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="3" order="20" GridOrder="1"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="3" order="21" GridOrder="1"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false" GridWidth="100">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="3" order="22" GridOrder="1"
+		GridVisible="true" cellwidth="150" Visible="false" enabled="false" GridWidth="100">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+</Table>

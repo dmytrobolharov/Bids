@@ -1,0 +1,44 @@
+<Table Name="pWorkFlowItem" formcolumns="1" gridcolumns="" FormSQL="spx_WorkFlowItemList_SELECT"
+	GridReadSQL="spx_WorkFlowItemList_SELECT" GridSQL="spx_WorkFlowItemList_SELECT">
+    <column Name="WorkFlowItemID" PK="true" alias="WorkFlowItemID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="false" column="1" order="1">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="StyleID" alias="StyleID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="false" column="1" order="1">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="WorkflowID" alias="WorkflowID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="false" column="1" order="2">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="ItemTypeLabel" alias="Page Type" Type="label" datatype="string"
+		column="1" order="3" GridVisible="true" cellwidth="150px" GridWidth="200" Visible="true"
+		enabled="true">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="WorkFlowItemName" alias="Name" Type="label" datatype="string"
+		column="1" order="3" GridVisible="true" cellwidth="150px" GridWidth="200" Visible="true"
+		enabled="true">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="Custom" alias="Status" Type="label" datatype="string"
+		column="1" order="3" GridVisible="true" cellwidth="150px" GridWidth="150" Visible="true"
+		enabled="true">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column TrackChange="true" Name="Sort" alias="Sort" Type="textbox" datatype="string" column="1" order="4" GridVisible="true" cellwidth="150px" GridWidth="70" Visible="true" enabled="true">
+        <Validator Class="" Type="" Minimum="0" Maximum="4" Text="" />
+    </column>
+    <column Name="CUser" alias="Created By" Type="label" datatype="string" column="3" order="19"
+      GridVisible="false" cellwidth="150px" Visible="false" enabled="false">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="CDate" alias="Created Date" Type="calendarbox" datatype="datetime" column="3"
+      order="20" GridVisible="false" cellwidth="150px" Visible="false" enabled="false">
+      <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+    </column>
+</Table>

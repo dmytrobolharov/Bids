@@ -1,0 +1,17 @@
+<Table Name="INFORMATION_SCHEMA.ROUTINES" formcolumns="1" gridcolumns=""
+       DataKeyField="ROUTINE_NAME" SortOrder=""
+       PageSize="25" GridHeight="400" ViewMode="ByRow" SaveMode="ByPage" AutoSizeInReadMode="true"
+       AllowColumnReordering="false" AllowGrouping="false" ShowGroupFooter="false"
+       AllowSorting="true" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="false" AllowPaging="true" AllowFiltering="false"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false"
+       AllowRowSelect="true" AllowMultiRowSelect="false"
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="false"
+       FormSQL="SELECT * FROM INFORMATION_SCHEMA.ROUTINES"
+	     GridReadSQL="SELECT * FROM INFORMATION_SCHEMA.ROUTINES"
+       GridSQL="SELECT * FROM INFORMATION_SCHEMA.ROUTINES">
+  <column Name="ROUTINE_NAME" PK="true" alias="Stored Procedure Name" Type="label" datatype="string" column="1" order="001" 
+          GridVisible="true" enabled="true" cellwidth="150px" Visible="true" GridOrder="001">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+</Table>

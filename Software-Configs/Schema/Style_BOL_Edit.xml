@@ -1,0 +1,92 @@
+<Table Name="pStyleBOLPageOperations" formcolumns="1" gridcolumns="" FormSQL="pStyleBOLPageOperations"
+	GridReadSQL="pStyleBOLPageOperations" GridSQL="pStyleBOLPageOperations">
+	<column Name="PageOperationId" PK="true" alias="PageOperationId"  Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="false" GridWidth="300" GridOrder="1" GridSearch="false"
+		column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="StyleID" alias="StyleID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="1" GridSearch="false" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="isLinked" alias="Linked" Type="checkbox" datatype="integer"  cellwidth="150px" column="1" order="6" GridVisible="false" Visible="false" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Sort" alias="Sort" Type="textbox" datatype="string" column="1" order="5" GridVisible="true" cellwidth="20px" GridWidth="30" Visible="true" enabled="true">
+  		<Validator Class="" Type="" Minimum="" Maximum="" Text="" /> 
+  	</column>	
+	<column Name="OperationId" PK="true" alias="OperationID"  Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="false" GridWidth="300" GridOrder="1" GridSearch="false"
+		column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="MacroId" PK="true" alias="MacroId"  Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="false" GridWidth="300" GridOrder="1" GridSearch="false"
+		column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="ImageID" PK="true" alias="ImageID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="4">
+  		<Validator Class="" Type="" Minimum="" Maximum="" Text="" /> 
+  	</column>
+	<column Name="Code" alias="Code" aliasCSS="" Type="textbox" datatype="string" classCSS="fonthead" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="70" GridSearch="true" column="1" order="1">
+		<Validator Class="required" Type="" Minimum="1" Maximum="200" Text="" />
+	</column>
+	<column Name="Name" alias="Name" aliasCSS="" Type="textbox" datatype="string" classCSS="fonthead" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="100" GridSearch="true" column="1" order="1">
+		<Validator Class="required" Type="" Minimum="1" Maximum="200" Text="" />
+	</column>
+
+	<column Name="MachineId" alias="Machine" Type="dropdownlist" datatype="query" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="100" GridSearch="true" column="1" order="1"
+		lookupquery="SELECT '00000000-0000-0000-0000-000000000000' as MachineId, '' as MachineCode union SELECT MachineId, MachineCode FROM pBOLMachines WHERE Active=1" select="false" textfield="MachineCode" addNullField="False"
+		ValueField="MachineId" DefaultValue="" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+
+	<column Name="BaseRateId" alias="Base Rate Type" Type="dropdownlist" datatype="query" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="100" GridSearch="true" column="1" order="1"
+		lookupquery="SELECT '00000000-0000-0000-0000-000000000000' as BaseRateTypeId, '' as RateName union SELECT BaseRateTypeId, RateName FROM pBOLBaseRateType" select="false" textfield="RateName" 
+		ValueField="BaseRateTypeId" DefaultValue="" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	
+	<column Name="SAM" alias="SAH/SAM" aliasCSS="" Type="textbox" datatype="string" classCSS="fonthead" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="50" GridSearch="true" column="1" order="1">
+		<Validator Class="decimal" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Coef" alias="Coef" aliasCSS="" Type="textbox" datatype="string" classCSS="fonthead" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="50" GridSearch="true" column="1" order="1">
+		<Validator Class="decimal" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="Adj" alias="%" aliasCSS="" Type="textbox" datatype="string" classCSS="fonthead" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="50" GridSearch="true" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="Total" alias="Total time" aliasCSS="" Type="label" datatype="string" classCSS="fonthead" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="50" GridSearch="true" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="Comments" alias="Comments" Type="memobox"
+		datatype="string" column="1" order="3" GridVisible="true" cellwidth="200px" GridWidth="250"
+		Visible="true" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="1" order="3"
+		GridVisible="false" cellwidth="150px" Visible="true" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="1" order="3"
+		GridVisible="false" cellwidth="150px" Visible="true" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="1" order="3"
+		GridVisible="false" cellwidth="150px" Visible="true" enabled="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="1" order="3"
+		GridVisible="false" cellwidth="150px" Visible="true" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

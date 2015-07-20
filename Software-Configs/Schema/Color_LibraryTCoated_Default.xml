@@ -1,0 +1,36 @@
+<table Name="PantoneCoated" formcolumns="3" gridcolumns="" FormSQL="SELECT * FROM PantoneCoated"
+	GridReadSQL="SELECT * FROM PantoneCoated"
+	GridSQL="SELECT * FROM PantoneCoated">
+
+	<column Name="BookOrder" PK="true" alias="BookOrder" Type="label" datatype="string"
+		  enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		  GridOrder="1" GridSearch="true" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Active" PK="true" alias="Active" Type="label" datatype="string"
+	  enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+	  GridOrder="1" GridSearch="true" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<!--
+	  <column Name="ColorImagePath" alias="Color" Type="label" datatype="string" column="1" order="6" GridVisible="true"
+			  cellwidth="20px" GridWidth="20" Visible="false" enabled="false" GridOrder="101">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	  </column>
+	-->
+	<column Name="PANTONEColor" alias="PANTONE Color" Type="textbox" datatype="string"
+		  column="1" order="6" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" GridOrder="102"
+		  AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="PANTONEName" alias="PANTONE Name" Type="textbox" datatype="string"
+		column="1" order="6" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" GridOrder="103"
+		AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="PANTONEType" alias="PANTONE Type" Type="textbox" datatype="string"
+		  column="1" order="6" GridVisible="false" cellwidth="150px" Visible="false" enabled="true" GridOrder="102"
+		  AutoPostBack="false" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</table>

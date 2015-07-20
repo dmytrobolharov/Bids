@@ -1,0 +1,1316 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_1f19fb6d" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610_PROJ" schemaname="dbo" >
+		<table name="iCustom1" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomKey" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="TableRelation" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Icon" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CustomSort" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="BrandID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_iCustom1" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+		</table>
+		<table name="pAMLMeasHdr" >
+			<column name="AMLMeasHdrId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Workflowid" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CompanyId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="PDMPageId" type="int" length="10" decimal="0" jt="4" />
+			<column name="CompanyName" type="nvarchar" length="60" decimal="0" jt="12" />
+			<column name="PDMCompanyId" type="int" length="10" decimal="0" jt="4" />
+			<column name="IsRelative" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="IsNegative" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="IsMetric" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="SizeClass" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="SizeClassId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeClassCode" type="int" length="10" decimal="0" jt="4" />
+			<column name="SizeRange" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeRangeCode" type="int" length="10" decimal="0" jt="4" />
+			<column name="ProductType" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ProductTypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ProductTypeCode" type="int" length="10" decimal="0" jt="4" />
+			<column name="BaseSizeGrdCol" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="SelectedRange" type="nvarchar" length="500" decimal="0" jt="12" />
+			<column name="MeasRowCnt" type="int" length="10" decimal="0" jt="4" />
+			<column name="HaveHistory" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="HistoryMsg" type="text" length="2147483647" decimal="0" jt="-1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="WorkFlowItemId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_pAMLMeasHdr" unique="PRIMARY_KEY" >
+				<column name="AMLMeasHdrId" />
+			</index>
+			<index name="IX_pAMLMeasHdr" unique="NORMAL" >
+				<column name="WorkFlowItemId" />
+			</index>
+			<index name="IX_pAMLMeasHdr_1" unique="NORMAL" >
+				<column name="Workflowid" />
+				<column name="WorkFlowItemId" />
+			</index>
+			<index name="idx_pAMLMeasHdr" unique="NORMAL" >
+				<column name="StyleId" />
+			</index>
+			<fk name="FK_pAMLMeasHdr_SizeClass" to_schema="dbo" to_table="pSizeClass" >
+				<fk_column name="SizeClassId" pk="CustomID" />
+			</fk>
+			<fk name="FK_pAMLMeasHdr_SizeRange" to_schema="dbo" to_table="pSizeRange" >
+				<fk_column name="SizeRangeId" pk="CustomId" />
+			</fk>
+			<fk name="fk_pamlmeashdr_pstyleheader" to_schema="dbo" to_table="pStyleHeader" >
+				<fk_column name="StyleId" pk="StyleID" />
+			</fk>
+		</table>
+		<table name="pAMLMeasIGC" >
+			<column name="AMLMeasIGCId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="AMLMeasHdrId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="AMLMeasPOMId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="PDMPageId" type="int" length="10" decimal="0" jt="4" />
+			<column name="POM_Row" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="WSRowId" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="SizeCol" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Incr" type="numeric" length="18" decimal="4" jt="2" >
+				<defo>0</defo>
+			</column>
+			<column name="Grade" type="numeric" length="18" decimal="4" jt="2" >
+				<defo>0</defo>
+			</column>
+			<column name="ConvGrade" type="numeric" length="18" decimal="4" jt="2" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pAMLMeasIGC" unique="PRIMARY_KEY" >
+				<column name="AMLMeasIGCId" />
+			</index>
+			<index name="IX_AmlMeasIGC_1" unique="NORMAL" >
+				<column name="AMLMeasHdrId" />
+			</index>
+			<fk name="fk_pamlmeasigc_pamlmeashdr" virtual="y" to_schema="dbo" to_table="pAMLMeasHdr" >
+				<fk_column name="AMLMeasHdrId" pk="AMLMeasHdrId" />
+			</fk>
+			<fk name="fk_pamlmeasigc_pamlmeaspom" virtual="y" to_schema="dbo" to_table="pAMLMeasPOM" >
+				<fk_column name="AMLMeasPOMId" pk="AMLMeasPOMId" />
+			</fk>
+		</table>
+		<table name="pAMLMeasLbl" >
+			<column name="AMLMeasLblId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="AMLMeasHdrId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="PDMPageId" type="int" length="10" decimal="0" jt="4" />
+			<column name="SizeRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeRangeDetailId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeCol" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="MeasLbl" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="IsVisible" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="IsSample" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="MeasDesc" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MeasLblDesc" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pAMLMeasLbl" unique="PRIMARY_KEY" >
+				<column name="AMLMeasLblId" />
+			</index>
+			<index name="IX_pAMLMeasLbl" unique="NORMAL" >
+				<column name="AMLMeasHdrId" />
+			</index>
+			<fk name="FK_pAMLMeasLbl_SizeRange" to_schema="dbo" to_table="pSizeRange" >
+				<fk_column name="SizeRangeId" pk="CustomId" />
+			</fk>
+			<fk name="fk_pamlmeaslbl_pamlmeashdr" virtual="y" to_schema="dbo" to_table="pAMLMeasHdr" >
+				<fk_column name="AMLMeasHdrId" pk="AMLMeasHdrId" />
+			</fk>
+		</table>
+		<table name="pAMLMeasPOM" >
+			<column name="AMLMeasPOMId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="AMLMeasHdrId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="PDMPageId" type="int" length="10" decimal="0" jt="4" />
+			<column name="GRPOMCompanyId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMGuidId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMAlternatesId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POM_Row" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="RefCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Description" type="nvarchar" length="204" decimal="0" jt="12" />
+			<column name="TolPlus" type="numeric" length="18" decimal="4" jt="2" >
+				<defo>0</defo>
+			</column>
+			<column name="TolMinus" type="numeric" length="18" decimal="4" jt="2" >
+				<defo>0</defo>
+			</column>
+			<column name="TolPlusConv" type="numeric" length="18" decimal="4" jt="2" >
+				<defo>0</defo>
+			</column>
+			<column name="TolMinusConv" type="numeric" length="18" decimal="4" jt="2" >
+				<defo>0</defo>
+			</column>
+			<column name="Flag4QA" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="WSRowId" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="SortId" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="VideoSerialnumber" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ImageSerialnumber" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ImageId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="How2MeasText" type="nvarchar" length="500" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="IsLinked" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Critical" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="How2MeasName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="FabricType" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="IsLength" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="IsWidth" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ShrinkX" type="numeric" length="18" decimal="4" jt="2" />
+			<column name="ShrinkY" type="numeric" length="18" decimal="4" jt="2" />
+			<column name="CADModelId" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="BeforeTreat" type="numeric" length="18" decimal="4" jt="2" />
+			<index name="PK_pAMLMeasPOM" unique="PRIMARY_KEY" >
+				<column name="AMLMeasPOMId" />
+			</index>
+			<index name="IX_pAMLMeasPOM" unique="NORMAL" >
+				<column name="AMLMeasHdrId" />
+			</index>
+			<index name="IX_pAMLMeasPOM_1" unique="NORMAL" >
+				<column name="POM_Row" />
+			</index>
+			<index name="IX_pAMLMeasPOM_2" unique="NORMAL" >
+				<column name="AMLMeasHdrId" />
+				<column name="POM_Row" />
+			</index>
+			<index name="idx_pAMLMeasPOM" unique="NORMAL" >
+				<column name="POMAlternatesId" />
+			</index>
+			<fk name="fk_pamlmeaspom_pamlmeashdr" to_schema="dbo" to_table="pAMLMeasHdr" >
+				<fk_column name="AMLMeasHdrId" pk="AMLMeasHdrId" />
+			</fk>
+			<fk name="fk_pamlmeaspom_alternates" to_schema="dbo" to_table="pGRMeasurementsPOMAlternates" >
+				<fk_column name="POMAlternatesId" pk="POMAlternatesId" />
+			</fk>
+		</table>
+		<table name="pGRMPOMTemplateDivisions" >
+			<column name="GRMPOMTemplateDivisionID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="GRMPOMTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="DivisionID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<index name="PK_GRMPOMTemplateDivision" unique="PRIMARY_KEY" >
+				<column name="GRMPOMTemplateDivisionID" />
+			</index>
+			<fk name="FK_GRMPOMTemplateDivision_Template" to_schema="dbo" to_table="pGRMeasurementsPOMTemplate" delete_action="cascade" >
+				<fk_column name="GRMPOMTemplateID" pk="POMTempID" />
+			</fk>
+			<fk name="fk_pgrmpomtemplatedivisions" virtual="y" to_schema="dbo" to_table="iCustom1" >
+				<fk_column name="DivisionID" pk="CustomID" />
+			</fk>
+			<fk name="fk_pgrmpomtemplatedivisions_template" virtual="y" to_schema="dbo" to_table="pGRMeasurementsPOMTemplate" >
+				<fk_column name="GRMPOMTemplateID" pk="POMTempID" />
+			</fk>
+		</table>
+		<table name="pGRMeasurementsAlternates" >
+			<column name="AlternatesId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="AlternatesCode" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="AlternatesDesc" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Muser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pGRMeasurementsAlternates" unique="PRIMARY_KEY" >
+				<column name="AlternatesId" />
+			</index>
+		</table>
+		<table name="pGRMeasurementsClassRange" >
+			<column name="ClassRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="SizeClassId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="SizeRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="SizeClass" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="SizeRange" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="IsLinked" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pGRMeasurementsClassRange" unique="PRIMARY_KEY" >
+				<column name="ClassRangeId" />
+			</index>
+			<index name="IX_pGRMeasurementsClassRange" unique="NORMAL" >
+				<column name="SizeClass" />
+				<column name="SizeRange" />
+			</index>
+			<index name="IX_pGRMeasurementsClassRange_SizeClassID" unique="NORMAL" >
+				<column name="SizeClassId" />
+				<column name="SizeRangeId" />
+			</index>
+			<fk name="FK_pGRMeasurementsClassRange_SizeClass" to_schema="dbo" to_table="pSizeClass" >
+				<fk_column name="SizeClassId" pk="CustomID" />
+			</fk>
+			<fk name="FK_pGRMeasurementsClassRange_SizeRange" to_schema="dbo" to_table="pSizeRange" >
+				<fk_column name="SizeRangeId" pk="CustomId" />
+			</fk>
+		</table>
+		<table name="pGRMeasurementsPOM" >
+			<column name="POMId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="POMCode" type="nvarchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="POMDesc" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="How2MeasName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="How2MeasText" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="ImageId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Muser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pGRMeasurementsPOM" unique="PRIMARY_KEY" >
+				<column name="POMId" />
+			</index>
+		</table>
+		<table name="pGRMeasurementsPOMAlternates" >
+			<column name="MeasPOMAltId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="POMAlternatesId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="POMId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="AlternatesId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="POMCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMDesc" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="AlternatesCode" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="AlternatesDesc" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="POMSort" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="AlternateSort" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ImageId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="How2MeasName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="How2MeasText" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="IsLinked" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Cuser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pGRMeasurementsPOMAlternates_MeasPOMAltId" unique="PRIMARY_KEY" >
+				<column name="MeasPOMAltId" />
+			</index>
+			<index name="IX_pGRMeasurementsPOMAlternates_POMId" unique="NORMAL" >
+				<column name="POMId" />
+			</index>
+			<index name="idx_pGRMeasurementsPOMAlternates" unique="NORMAL" >
+				<column name="AlternatesId" />
+			</index>
+			<index name="Pk_pGRMeasurementsPOMAlternates" unique="UNIQUE" >
+				<column name="POMAlternatesId" />
+			</index>
+			<fk name="fk_pgrmeasurementspomalternates" to_schema="dbo" to_table="pGRMeasurementsAlternates" >
+				<fk_column name="AlternatesId" pk="AlternatesId" />
+			</fk>
+			<fk name="fk_pgrmeasurementspomalternates_pom" to_schema="dbo" to_table="pGRMeasurementsPOM" >
+				<fk_column name="POMId" pk="POMId" />
+			</fk>
+		</table>
+		<table name="pGRMeasurementsPOMTemplate" >
+			<column name="POMTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="POMTempGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="POMType" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="POMTypeDescription" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SpecSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="SizeClassId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="SizeRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="ClassRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="SizeClass" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="SizeRange" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ClassRange" type="nvarchar" length="610" decimal="0" jt="12" />
+			<column name="SampleSize" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomField1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size0" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size1" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size2" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size3" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size4" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size5" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size6" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size7" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size8" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size9" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size10" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size11" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size12" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size13" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size14" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size15" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size16" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size17" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size18" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size19" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size20" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size21" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size22" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size23" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size24" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size25" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size26" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size27" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size28" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size29" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size30" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size31" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size32" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size33" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size34" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size35" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size36" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size37" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size38" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size39" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size40" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size41" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size42" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size43" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size44" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size45" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size46" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size47" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size48" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="Size49" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Linked" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_pGRMeasurementsPOMTemplate" unique="PRIMARY_KEY" >
+				<column name="POMTempID" />
+			</index>
+			<index name="IX_pGRMeasurementsPOMTemplate_POMTempGroupID" unique="NORMAL" >
+				<column name="POMTempGroupID" />
+			</index>
+			<fk name="FK_pGRMeasurementsPOMTemplate_ClassRange" to_schema="dbo" to_table="pGRMeasurementsClassRange" >
+				<fk_column name="ClassRangeId" pk="ClassRangeId" />
+			</fk>
+			<fk name="FK_pGRMeasurementsPOMTemplate_SizeClass" to_schema="dbo" to_table="pSizeClass" >
+				<fk_column name="SizeClassId" pk="CustomID" />
+			</fk>
+			<fk name="FK_pGRMeasurementsPOMTemplate_SizeRange" to_schema="dbo" to_table="pSizeRange" >
+				<fk_column name="SizeRangeId" pk="CustomId" />
+			</fk>
+		</table>
+		<table name="pGRMeasurementsPOMTemplateGroup" >
+			<column name="POMTempGroupItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="POMTempGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="POMTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="POMType" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="POMTypeDescription" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeClassId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ClassRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeClass" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="SizeRange" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ClassRange" type="nvarchar" length="610" decimal="0" jt="12" />
+			<column name="Relative" type="int" length="10" decimal="0" jt="4" />
+			<column name="Negative" type="int" length="10" decimal="0" jt="4" />
+			<column name="Metric" type="int" length="10" decimal="0" jt="4" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pGRMeasurementsPOMTemplateGroup" unique="PRIMARY_KEY" >
+				<column name="POMTempGroupItemID" />
+			</index>
+			<index name="IX_pGRMeasurementsPOMTemplateGroup_POMTempGroupID" unique="NORMAL" >
+				<column name="POMTempGroupID" />
+				<column name="SizeClassId" />
+			</index>
+			<index name="idx_pGRMeasurementsPOMTemplateGroup" unique="NORMAL" >
+				<column name="POMTempID" />
+			</index>
+			<fk name="FK_pGRMeasurementsPOMTemplateGroup_ClassRange" to_schema="dbo" to_table="pGRMeasurementsClassRange" >
+				<fk_column name="ClassRangeId" pk="ClassRangeId" />
+			</fk>
+			<fk name="FK_pGRMeasurementsPOMTemplateGroup_SizeClass" to_schema="dbo" to_table="pSizeClass" >
+				<fk_column name="SizeClassId" pk="CustomID" />
+			</fk>
+			<fk name="FK_pGRMeasurementsPOMTemplateGroup_SizeRange" to_schema="dbo" to_table="pSizeRange" >
+				<fk_column name="SizeRangeId" pk="CustomId" />
+			</fk>
+			<fk name="fk_pgrmeasurementspomtemplategroup_pomtemp" to_schema="dbo" to_table="pGRMeasurementsPOMTemplate" >
+				<fk_column name="POMTempID" pk="POMTempID" />
+			</fk>
+		</table>
+		<table name="pGRMeasurementsPOMTemplateItem" >
+			<column name="POMTempItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="POMTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="POMTempGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="POMID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="AlternatesId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMAlternatesID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeclassID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeRangeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ClassRangeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SampleSizeRangeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="FitComID" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Critical" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="IsOnQA" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="IsLinked" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="POMCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMDesc" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="AlternatesCode" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="AlternatesDesc" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="How2MeasText" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="How2MeasName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="POMSort" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="AlternatesSort" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TolPlus" type="numeric" length="18" decimal="4" jt="2" />
+			<column name="TolMinus" type="numeric" length="18" decimal="4" jt="2" />
+			<column name="Incr0" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr1" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr2" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr3" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr4" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr5" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr6" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr7" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr8" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr9" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr10" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr11" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr12" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr13" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr14" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr15" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr16" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr17" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr18" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr19" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr20" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr21" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr22" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr23" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr24" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr25" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr26" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr27" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr28" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr29" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr30" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr31" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr32" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr33" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr34" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr35" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr36" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr37" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr38" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr39" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr40" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr41" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr42" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr43" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr44" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr45" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr46" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr47" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr48" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="Incr49" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Change" type="int" length="10" decimal="0" jt="4" />
+			<column name="Sort" type="nvarchar" length="4" decimal="0" jt="12" />
+			<column name="CopyPOMTempItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Conv" type="numeric" length="18" decimal="4" jt="2" />
+			<column name="TempCopyPOMTempItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="NonWashTolPlus" type="numeric" length="18" decimal="4" jt="2" />
+			<column name="NonWashTolMinus" type="numeric" length="18" decimal="4" jt="2" />
+			<column name="bKey" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempItemGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pGRMeasurementsPOMTemplateItem" unique="PRIMARY_KEY" >
+				<column name="POMTempItemID" />
+			</index>
+			<index name="IX_pGRMeasurementsPOMTemplateItem_POMTempGroupID" unique="NORMAL" >
+				<column name="POMTempGroupID" />
+			</index>
+			<index name="idx_pGRMeasurementsPOMTemplateItem" unique="NORMAL" >
+				<column name="POMID" />
+			</index>
+			<index name="idx_pGRMeasurementsPOMTemplateItem_0" unique="NORMAL" >
+				<column name="AlternatesId" />
+			</index>
+			<fk name="FK_pGRMeasurementsPOMTemplateItem_ClassRange" to_schema="dbo" to_table="pGRMeasurementsClassRange" >
+				<fk_column name="ClassRangeID" pk="ClassRangeId" />
+			</fk>
+			<fk name="FK_pGRMeasurementsPOMTemplateItem_POMTemplate" to_schema="dbo" to_table="pGRMeasurementsPOMTemplate" delete_action="cascade" >
+				<fk_column name="POMTempID" pk="POMTempID" />
+			</fk>
+			<fk name="FK_pGRMeasurementsPOMTemplateItem_SizeClass" to_schema="dbo" to_table="pSizeClass" >
+				<fk_column name="SizeclassID" pk="CustomID" />
+			</fk>
+			<fk name="FK_pGRMeasurementsPOMTemplateItem_SizeRange" to_schema="dbo" to_table="pSizeRange" >
+				<fk_column name="SizeRangeID" pk="CustomId" />
+			</fk>
+			<fk name="fk_pgrmeasurementspomtemplateitem_pom" to_schema="dbo" to_table="pGRMeasurementsPOM" >
+				<fk_column name="POMID" pk="POMId" />
+			</fk>
+			<fk name="fk_pgrmeasurementspomtemplateitem_alt" to_schema="dbo" to_table="pGRMeasurementsAlternates" >
+				<fk_column name="AlternatesId" pk="AlternatesId" />
+			</fk>
+		</table>
+		<table name="pSizeClass" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Custom" type="nvarchar" length="400" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomKey" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="NewStyle" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="TableRelation" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SpecConversion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleCosting" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_pSizeClass" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+		</table>
+		<table name="pSizeRange" >
+			<column name="CustomId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="SizeRangeCode" type="nvarchar" length="400" decimal="0" jt="12" mandatory="y" />
+			<column name="SizeRangeKey" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="Size0" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size11" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size12" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size13" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size14" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size15" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size16" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size17" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size18" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size19" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Sel0" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel1" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel2" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel3" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel4" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel5" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel6" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel7" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel8" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel9" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel10" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel11" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel12" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel13" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel14" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel15" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel16" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel17" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel18" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel19" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CustomM" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomW" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomS" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomH" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomSH" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomG" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomHG" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomL" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomC" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Size20" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size21" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size22" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size23" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size24" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size25" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size26" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size27" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size28" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size29" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size30" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size31" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size32" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size33" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size34" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size35" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size36" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size37" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size38" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size39" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size40" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size41" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size42" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size43" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size44" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size45" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size46" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size47" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size48" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size49" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Sel20" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel21" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel22" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel23" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel24" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel25" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel26" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel27" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel28" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel29" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel30" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel31" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel32" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel33" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel34" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel35" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel36" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel37" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel38" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel39" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel40" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel41" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel42" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel43" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel44" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel45" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel46" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel47" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel48" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel49" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="SizeDesc0" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc11" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc12" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc13" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc14" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc15" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc16" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc17" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc18" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc19" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc20" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc21" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc22" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc23" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc24" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc25" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc26" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc27" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc28" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc29" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc30" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc31" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc32" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc33" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc34" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc35" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc36" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc37" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc38" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc39" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc40" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc41" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc42" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc43" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc44" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc45" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc46" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc47" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc48" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc49" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pSizeRange" unique="PRIMARY_KEY" >
+				<column name="CustomId" />
+			</index>
+		</table>
+		<table name="pStyleHeader" >
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleMasterID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleType" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="WorkflowType" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="RefNo" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="StyleNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempID" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="CustomerNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="DevelopmentID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DevelopmentNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="ConceptID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ConceptNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="SpecNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Description" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCategory" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeClass" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="SizeRange" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="TechPackId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TechPackDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="DueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="RecDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Customer" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Buyer" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Designer" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="SampleMaker" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="PatternMaker" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ProductionManager" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="TechnicalDesigner" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleStatus" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleLocation" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="WashType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pitch" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialImageVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="MaterialNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="POMTempGroupID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempGroupID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempGroupID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempGroupID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion1" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMTempID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion2" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMTempID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion3" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMTempID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion4" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleMaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="TechSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ConceptSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="TechSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ConceptSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ColorSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchVersion1" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchVersion2" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchVersion3" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchVersion4" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchVersion1" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchVersion2" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchVersion3" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchVersion4" type="int" length="10" decimal="0" jt="4" />
+			<column name="Markup" type="numeric" length="18" decimal="0" jt="2" />
+			<column name="TargetPrice" type="money" length="19" decimal="4" jt="3" />
+			<column name="SellingPrice" type="money" length="19" decimal="4" jt="3" />
+			<column name="CustomField1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField11" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField12" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField13" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField14" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField15" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Pc1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pc2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pc3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pc4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Change" type="int" length="10" decimal="0" jt="4" />
+			<column name="Action" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="NoColorCombo" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleDetail" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="StyleDetail1" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="StyleAttribute" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="StyleDetail2" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="LinePlanSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="LinePlanID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomField16" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField17" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField18" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField19" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField20" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField21" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField22" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField23" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField24" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField25" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField26" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField27" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField28" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField29" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField30" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PackagingNo" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="StyleCopyID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleStatusID" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="BodyID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleLinkID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialCoreID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ProdDev" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="HeaderLocked" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="CustomField31" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField32" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField33" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField34" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField35" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField36" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField37" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField38" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField39" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField40" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Distribution" type="int" length="10" decimal="0" jt="4" />
+			<column name="IntroSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="UserCID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="UserMID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignSketchBackID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="DesignSketchBackVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="OwnerGroup" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="PlannedDueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="PlannedStartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ScheduleBy" type="char" length="1" decimal="0" jt="1" />
+			<column name="EnforceDependency" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="WorkflowTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DivisionID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleThemeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SubCategoryId" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="EnableProductPages" type="int" length="10" decimal="0" jt="4" />
+			<column name="SizeClassId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK__pStyleHeader__371114F6" unique="PRIMARY_KEY" >
+				<column name="StyleID" />
+			</index>
+			<index name="IX_pStyleHeader_DesignSketchBackID" unique="NORMAL" >
+				<column name="DesignSketchBackID" />
+			</index>
+			<index name="IX_pStyleHeader_DesignSketchID" unique="NORMAL" >
+				<column name="DesignSketchID" />
+			</index>
+			<index name="IX_pStyleHeader_DevelopmentID" unique="NORMAL" >
+				<column name="DevelopmentID" />
+			</index>
+			<index name="IX_pStyleHeader_DivisionID" unique="NORMAL" >
+				<column name="DivisionID" />
+				<column name="StyleType" />
+				<column name="StyleCategory" />
+			</index>
+			<index name="IX_pStyleHeader_StyleNo" unique="NORMAL" >
+				<column name="StyleNo" />
+			</index>
+			<index name="IX_pStyleHeader_StyleType" unique="NORMAL" >
+				<column name="StyleType" />
+			</index>
+		</table>
+	</schema>
+	<layout id="Layout_19420601" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="pSizeClass" color="bfd4f5" x="1125" y="690" />
+		<entity schema="dbo" name="pStyleHeader" color="bfd4f5" x="1305" y="570" >
+			<column name="StyleID" />
+		</entity>
+		<entity schema="dbo" name="pGRMeasurementsPOMAlternates" color="c8f5bf" x="45" y="420" />
+		<entity schema="dbo" name="pAMLMeasPOM" color="bfd4f5" x="945" y="690" />
+		<entity schema="dbo" name="pGRMeasurementsPOMTemplateGroup" color="c8f5bf" x="645" y="420" />
+		<entity schema="dbo" name="pGRMeasurementsAlternates" color="c8f5bf" x="510" y="180" />
+		<entity schema="dbo" name="pGRMeasurementsPOMTemplateItem" color="f5ddbf" x="1905" y="675" >
+			<column name="POMTempItemID" />
+			<column name="POMTempID" />
+			<column name="SizeclassID" />
+			<column name="SizeRangeID" />
+			<column name="ClassRangeID" />
+			<column name="POMTempGroupID" />
+			<column name="POMID" />
+			<column name="AlternatesId" />
+			<column name="POMAlternatesID" />
+			<column name="ImageId" />
+			<column name="SampleSizeRangeID" />
+			<column name="FitComID" />
+			<column name="Critical" />
+			<column name="IsOnQA" />
+			<column name="IsLinked" />
+			<column name="POMCode" />
+			<column name="POMDesc" />
+			<column name="AlternatesCode" />
+			<column name="AlternatesDesc" />
+			<column name="How2MeasText" />
+			<column name="How2MeasName" />
+			<column name="POMSort" />
+			<column name="AlternatesSort" />
+			<column name="Active" />
+			<column name="TolPlus" />
+			<column name="TolMinus" />
+			<column name="Incr0" />
+			<column name="Incr1" />
+			<column name="CDate" />
+			<column name="CUser" />
+			<column name="MDate" />
+			<column name="MUser" />
+			<column name="Change" />
+			<column name="Sort" />
+			<column name="CopyPOMTempItemID" />
+			<column name="Conv" />
+			<column name="TempCopyPOMTempItemID" />
+			<column name="NonWashTolPlus" />
+			<column name="NonWashTolMinus" />
+			<column name="bKey" />
+			<column name="POMTempItemGroupID" />
+		</entity>
+		<entity schema="dbo" name="pAMLMeasLbl" color="bfd4f5" x="1305" y="255" />
+		<entity schema="dbo" name="pGRMPOMTemplateDivisions" color="f5ddbf" x="1410" y="990" />
+		<entity schema="dbo" name="iCustom1" color="f5ddbf" x="1560" y="645" />
+		<entity schema="dbo" name="pSizeRange" color="c8f5bf" x="480" y="750" >
+			<column name="CustomId" />
+		</entity>
+		<entity schema="dbo" name="pGRMeasurementsPOM" color="c8f5bf" x="315" y="150" />
+		<entity schema="dbo" name="pGRMeasurementsClassRange" color="c8f5bf" x="285" y="435" />
+		<entity schema="dbo" name="pAMLMeasHdr" color="bfd4f5" x="975" y="75" />
+		<entity schema="dbo" name="pGRMeasurementsPOMTemplate" color="f5ddbf" x="1800" y="45" >
+			<column name="POMTempID" />
+			<column name="POMTempGroupID" />
+			<column name="POMTempVersion" />
+			<column name="POMType" />
+			<column name="POMTypeDescription" />
+			<column name="SpecSketchID" />
+			<column name="SpecSketchVersion" />
+			<column name="SizeClassId" />
+			<column name="SizeRangeId" />
+			<column name="ClassRangeId" />
+			<column name="SizeClass" />
+			<column name="SizeRange" />
+			<column name="ClassRange" />
+			<column name="SampleSize" />
+			<column name="CustomField1" />
+			<column name="CustomField2" />
+			<column name="CustomField3" />
+			<column name="CustomField4" />
+			<column name="CustomField5" />
+			<column name="Size0" />
+			<column name="Size1" />
+			<column name="Size2" />
+			<column name="CUser" />
+			<column name="CDate" />
+			<column name="MDate" />
+			<column name="MUser" />
+			<column name="Sort" />
+			<column name="Active" />
+			<column name="Linked" />
+		</entity>
+		<entity schema="dbo" name="pAMLMeasIGC" color="bfd4f5" x="1350" y="690" />
+		<group name="Style - Measurements" color="99ff99" >
+			<entity schema="dbo" name="pGRMeasurementsPOM" />
+			<entity schema="dbo" name="pSizeClass" />
+			<entity schema="dbo" name="pStyleHeader" />
+			<entity schema="dbo" name="pAMLMeasHdr" />
+			<entity schema="dbo" name="pGRMeasurementsPOMAlternates" />
+			<entity schema="dbo" name="pAMLMeasPOM" />
+			<entity schema="dbo" name="pGRMeasurementsPOMTemplateGroup" />
+			<entity schema="dbo" name="pGRMeasurementsAlternates" />
+			<entity schema="dbo" name="pGRMeasurementsPOMTemplateItem" />
+			<entity schema="dbo" name="pAMLMeasIGC" />
+			<entity schema="dbo" name="pGRMeasurementsClassRange" />
+			<entity schema="dbo" name="pAMLMeasLbl" />
+			<entity schema="dbo" name="pGRMPOMTemplateDivisions" />
+			<entity schema="dbo" name="iCustom1" />
+			<entity schema="dbo" name="pSizeRange" />
+			<entity schema="dbo" name="pGRMeasurementsPOMTemplate" />
+		</group>
+	</layout>
+</project>

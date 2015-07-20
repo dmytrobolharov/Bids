@@ -1,0 +1,81 @@
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="TradeQuotePopup.aspx.vb" Inherits="plmOnApp.TradeQuotePopup" %>
+<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+	    <title runat="server" id="PageTitle">Agent</title>		
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<LINK href="../CSS/Style.css" type="text/css" rel="stylesheet">
+		<LINK href="../CSS/Grid.css" type="text/css" rel="stylesheet">
+		<script language="javascript">
+			function SelectWindowCustom(sValue,sTxtBox) 
+			{
+			    opener.document.Form1[sTxtBox].value = sValue;
+			    opener.hide_wait_text();
+			self.close();
+			}
+		</script>
+	</HEAD>
+	<body MS_POSITIONING="GridLayout">
+		<form id="Form1" method="post" runat="server">
+			<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
+				<tr>
+					<td>&nbsp;<asp:label id="lblHeader" runat="server" ForeColor="#E0E0E0" Font-Size="Large" Font-Names="Tahoma,Verdana"><%# Yunique.Core.Library.ConfigHandler.GetAppSettings(Yunique.Core.Library.ConfigHandler.AppSettings("TRADEPARTNER"))("TradePartnerVendor") %></asp:label></td>
+				</tr>
+			</table>
+			<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
+				<TR vAlign="top">
+					<TD>
+						<table>
+							<tr>
+								<TD width="10">&nbsp;</TD>
+								<TD width="20"><asp:imagebutton id="btnImgFirst" runat="server"></asp:imagebutton></TD>
+								<TD width="20"><asp:imagebutton id="btnImgPrevious" runat="server"></asp:imagebutton></TD>
+								<TD noWrap align="center" width="100"><asp:label id="lblPageCount" runat="server" CssClass="fontHead"></asp:label></TD>
+								<TD width="20"><asp:imagebutton id="btnImgNext" runat="server"></asp:imagebutton></TD>
+								<TD width="20"><asp:imagebutton id="btnImgLast" runat="server"></asp:imagebutton></TD>
+								<TD width="10">&nbsp;</TD>
+								<TD noWrap><asp:label id="RecordCount" runat="server" CssClass="font"></asp:label></TD>
+								<TD width="50">&nbsp;</TD>
+								<TD class="fontHead" noWrap><asp:Label ID="lblRecordsperPage" runat="server" Visible="true" Text="Records per Page:"></asp:Label></TD>
+								<TD width="10"><asp:dropdownlist id="ps" runat="server" CssClass="fontHead" Visible="true">
+										<asp:ListItem Value="5">5</asp:ListItem>
+										<asp:ListItem Value="10">10</asp:ListItem>
+										<asp:ListItem Value="15">15</asp:ListItem>
+										<asp:ListItem Value="20">20</asp:ListItem>
+										<asp:ListItem Value="25">25</asp:ListItem>
+										<asp:ListItem Value="30">30</asp:ListItem>
+										<asp:ListItem Value="40">40</asp:ListItem>
+										<asp:ListItem Value="50" Selected="True">50</asp:ListItem>
+										<asp:ListItem Value="75">75</asp:ListItem>
+										<asp:ListItem Value="100">100</asp:ListItem>
+									</asp:dropdownlist></TD>
+								<TD width="10"><asp:button id="Button1" onclick="RePage" runat="server" CssClass="fontHead" text="GO" Visible="true"></asp:button></TD>
+								<TD>&nbsp;</TD>
+							</tr>
+						</table>
+						<table height="15" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">
+							<tr>
+								<td><asp:placeholder id="plhSearchControl" runat="server"></asp:placeholder></td>
+								<td width="100%" vAlign="top"><table height="45">
+										<tr>
+											<td><asp:imagebutton id="imgBtnSearch" runat="server"  /></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						<asp:datagrid id="DataGrid1" runat="server" DataKeyField="TradePartnerID" AllowSorting="true">
+							<AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+							<ItemStyle CssClass="ItemTemplate"></ItemStyle>
+							<HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
+							<PagerStyle Visible="False"></PagerStyle>
+						</asp:datagrid><asp:label id="SortOrder" runat="server" Visible="False" Text="TradePartnerCode, TradePartnerName"></asp:label></TD>
+				</TR>
+			</TABLE>
+		</form>
+	</body>
+</HTML>

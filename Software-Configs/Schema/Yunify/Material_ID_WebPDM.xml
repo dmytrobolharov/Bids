@@ -1,0 +1,5 @@
+<generator>
+   <table name="pMaterial" codecolumn="MaterialNo" idcolumn="MaterialID" spacecolumn="5"> 
+	  <column name="" lookupSpace="" lookupNull=""  order="1"/> 
+   </table>
+</generator>

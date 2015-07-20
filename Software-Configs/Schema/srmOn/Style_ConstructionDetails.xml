@@ -1,0 +1,90 @@
+<Table Name="pConPageDetail" formcolumns="1" gridcolumns="" 
+       DataKeyField="ConstructionDetailID" SortOrder="Sort ASC"
+       PageSize="10" GridHeight="400" ViewMode="ByRow" SaveMode="ByPage" AutoSizeInReadMode="true"
+       AllowColumnReordering="true" AllowGrouping="false" ShowGroupFooter="false"
+       AllowSorting="true" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="true" AllowPaging="false" AllowFiltering="false"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false" 
+       AllowRowSelect="false" AllowMultiRowSelect="false" 
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="false" 
+       FormSQL="spx_ConstructionDetails_SELECT"
+	     GridReadSQL="spx_ConstructionDetails_SELECT" 
+       GridSQL="spx_ConstructionDetails_SELECT">
+	<column Name="ConstructionDetailID" PK="true" alias="ConstructionDetailID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="01" GridSearch="false" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  <column Name="Linked" alias="" Type="staticimage" datatype="string" column="1" order="0"
+  GridVisible="false" cellwidth="10px" Visible="false" enabled="false" DefaultValue="../System/Icons/icon_link.gif" lookupquery=""
+  select="false" textfield="" ValueField="" AutoPostBack="false" GridWidth="55" GridOrder="02">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ImageID" PK="true" alias="" Type="bwimagebutton" datatype="string" enabled="false" 
+          Visible="false" cellwidth="120px" GridVisible="false" GridWidth="55" GridOrder="03" column="1" order="0">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="StyleID" alias="StyleID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="04" GridSearch="false" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Sort" alias="Sort" Type="textbox" datatype="string" column="1" order="5" GridOrder="05" GridVisible="false" cellwidth="150px" GridWidth="70" Visible="false" enabled="false">
+  		<Validator Class="" Type="" Minimum="" Maximum="" Text="" /> 
+  	</column>
+ 	<column Name="OrigOperationSN" alias="OrigOperationSN" Type="textbox" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="4" GridOrder="06">
+  		<Validator Class="" Type="" Minimum="" Maximum="" Text="" /> 
+  	</column>
+	<column Name="Level1Desc" alias="Class" Type="textbox" datatype="string"
+		column="1" order="6" GridVisible="true" cellwidth="150px" GridWidth="80" Visible="true"
+    GridOrder="07" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Level2Desc" alias="Subclass" Type="textbox" datatype="string"
+		column="1" order="7" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true"
+    GridOrder="08" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Level3Desc" alias="Feature" Type="textbox" datatype="string"
+		column="1" order="8" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true"
+    GridOrder="09" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Detail" alias="Detail" Type="memobox"
+		datatype="string" column="1" order="3" GridVisible="true" cellwidth="200px" GridWidth="250"
+		Visible="true" enabled="true" GridOrder="10" Wrap="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField1" alias="User Defined 1" Type="textbox" datatype="string"
+		column="1" order="6" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true"
+    GridOrder="11" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField2" alias="User Defined 2" Type="textbox" datatype="string"
+		column="1" order="7" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true"
+    GridOrder="12" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField3" alias="User Defined 3" Type="textbox" datatype="string"
+		column="1" order="8" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true"
+    GridOrder="13" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField4" alias="User Defined 4" Type="textbox" datatype="string"
+		column="1" order="9" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true"
+    GridOrder="14" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField5" alias="User Defined 5" Type="textbox" datatype="string"
+		column="1" order="10" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true"
+    GridOrder="15" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<!-- <column Name="Linked" alias="Linked" Type="dropdownlist" datatype="query" column="1" order="11"
+		GridVisible="false" GridWidth="75" cellwidth="10px" Visible="false" enabled="false" lookupquery="SELECT CustomKey, Custom FROM pActive"
+	select="true" textfield="Custom" ValueField="CustomKey" AutoPostBack="false" GridOrder="16">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column> -->
+
+</Table>

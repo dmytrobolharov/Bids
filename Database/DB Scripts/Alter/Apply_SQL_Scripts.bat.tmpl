@@ -1,0 +1,21 @@
+@echo off
+
+REM !!! Edit These !!!
+set datasource=localhost
+set catalog=plmOn_3
+set user=sa
+set pwd=accessJED1
+
+set logFile=log.%datasource%.%catalog%.txt
+del %logfile%
+
+echo "=================================================" >> %logFile%
+echo "Server:   %datasource%" >> %logFile%
+echo "Catalog:  %catalog%" >> %logFile%
+echo "Date:     %date%" >> %logfile%
+echo "Time:     %time%" >> %logfile%
+echo "=================================================" >> %logFile%
+
+forfiles -m *.sql -c "CMD /C Run_A_Script.bat %datasource% %catalog% %user% %pwd% @FILE >> %logFile%"
+
+

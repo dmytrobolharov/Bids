@@ -1,0 +1,86 @@
+.TopGroup
+{
+  background-color:#DBD7D0; 
+  border-width:1px; 
+  border-color:gray; 
+  border-style:solid;
+  cursor:default; 
+}
+
+.MenuGroup
+{
+  border-width:1px; 
+  border-color:#7E7E81; 
+  border-style:solid;
+  font-family:MS Sans Serif; 
+  font-size:12px; 
+  border-width:1px; 
+  cursor:default; 
+  filter:progid:DXImageTransform.Microsoft.Shadow(color='gray', Direction=135, Strength=2); 
+}
+
+.MenuGroupItem
+{
+  color:black; 
+  font-family:MS Sans Serif; 
+  font-size:12px; 
+  cursor:default;
+}
+
+.TopMenuItem
+{
+  background-color:#DBD7D0; 
+  color:black; 
+  font-family:MS Sans Serif; 
+  font-size:12px; 
+  border-width:1px; 
+  border-color:#DBD7D0; 
+  border-style:solid;
+  padding:2px;
+  padding-left:10px;
+  padding-right:10px;
+  cursor:default; 
+}
+
+.TopMenuItemOver 
+{
+  background-color:#C2C5C8; 
+  color:black; 
+  font-family:MS Sans Serif; 
+  font-size:12px; 
+  border-width:1px; 
+  border-color:#A6A8B2; 
+  border-style:solid;
+  padding:2px;
+  padding-left:10px;
+  padding-right:10px;
+  cursor:default; 
+}
+
+.MenuItem
+{
+  color:black; 
+  font-family:MS Sans Serif; 
+  font-size:9px; 
+  padding:5px;
+  padding-left:10px;
+  padding-right:10px;
+  cursor:default; 
+}
+
+.MenuItemOver 
+{
+  background-color: #ECF2FE;
+  color:black; 
+  font-family:MS Sans Serif; 
+  font-size:9px; 
+  padding:5px;
+  padding-left:10px;
+  padding-right:10px;
+  cursor:default;
+}
+
+.MenuBreak
+{
+  margin-left:27px; 
+}

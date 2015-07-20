@@ -1,0 +1,9 @@
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pLineFolder' AND COLUMN_NAME = 'PlanningID')
+BEGIN
+	ALTER TABLE pLineFolder ADD PlanningID UNIQUEIDENTIFIER
+END
+GO
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES ('DB_Version', '0.5.0000', '06380', GetDate())
+GO

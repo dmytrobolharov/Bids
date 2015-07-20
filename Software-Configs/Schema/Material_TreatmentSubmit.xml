@@ -1,0 +1,65 @@
+<table Name="pMaterialTradePartnerTestingSubmit" formcolumns="5" gridcolumns="1" FormSQL="SELECT * FROM pMaterialTradePartnerTestingSubmit" GridReadSQL="SELECT * FROM pMaterialTradePartnerTestingSubmit" GridSQL="SELECT * FROM pMaterialTradePartnerTestingSubmit">
+	<column Name="MaterialTradePartnerTestingSubmitID" PK="true" alias="MaterialTradePartnerTestingSubmitID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="50" GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="01" cssClass="font">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialID" PK="true" alias="MaterialID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="50" GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="01" cssClass="font">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialTradePartnerTestingStatus" alias="Submit Status" Type="dropdownlist" datatype="query" column="1" order="1" GridVisible="true" GridHeaderCss="TableHeaderRed" GridRowCss="TableHeaderGreen" cellwidth="125" GridWidth="125" lookupquery="SELECT StatusID, Status FROM pMaterialTradePartnerTestingStatus ORDER BY StatusID" Visible="true" enabled="true" textfield="Status" ValueField="StatusID" select="true" AutoPostBack="false" GridOrder="3" cssClass="font">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="DueDate" alias="Due Date" Type="calendarbox" datatype="datetime" column="1" order="5" GridVisible="false" cellwidth="75" Visible="true" enabled="true" GridWidth="100" GridHeaderCss="TableHeaderRed">
+    <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+	</column>
+	<column Name="RecBy" alias="Received By" Type="textbox" datatype="string" column="1" order="5" GridVisible="false" cellwidth="125" Visible="true" enabled="true" GridWidth="125" GridHeaderCss="TableHeader">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="RecDate" alias="Received Date" Type="calendarbox" datatype="datetime" column="1" order="5" GridVisible="false" cellwidth="75" Visible="true" enabled="true" GridWidth="100" GridHeaderCss="TableHeader">
+    <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+	</column>
+	<column Name="RecWeight" alias="Received Weight" Type="textbox" datatype="string" column="1" order="5" GridVisible="false" cellwidth="100" Visible="true" enabled="true" GridWidth="100" GridHeaderCss="TableHeader">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="VendorName" alias="Vendor By" Type="textbox" datatype="string" column="2" order="5" GridVisible="false" cellwidth="125" Visible="true" enabled="true" GridWidth="125" GridHeaderCss="TableHeaderYellow">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="VendorDate" alias="Vendor Date" Type="calendarbox" datatype="datetime" column="2" order="5" GridVisible="false" cellwidth="75" Visible="true" enabled="true" GridWidth="100" GridHeaderCss="TableHeaderYellow">
+    <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+	</column>
+	<column Name="RecCarrier" alias="Ship Method" Type="dropdownlist" datatype="query" column="2" order="1" GridVisible="true" GridHeaderCss="TableHeaderYellow" GridRowCss="TableHeaderGreen" cellwidth="125" GridWidth="125" lookupquery="SELECT StatusID, Status FROM pMaterialTradePartnerTestingStatus ORDER BY StatusID" Visible="true" enabled="true" textfield="Status" ValueField="StatusID" select="true" AutoPostBack="false" GridOrder="3" cssClass="font">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="RecTrackNo" alias="Tracking #" Type="textbox" datatype="string" column="2" order="5" GridVisible="false" cellwidth="100" Visible="true" enabled="true" GridWidth="100" GridHeaderCss="TableHeaderYellow">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="VendorWeight" alias="Vendor Weight" Type="textbox" datatype="string" column="2" order="5" GridVisible="false" cellwidth="85" Visible="true" enabled="true" GridWidth="85" GridHeaderCss="TableHeaderYellow">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="RevBy" alias="Reviewed By" Type="textbox" datatype="string" column="3" order="5" GridVisible="false" cellwidth="125" Visible="true" enabled="true" GridWidth="125" GridHeaderCss="TableHeaderBlue">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="RevDate" alias="Reviewed Date" Type="calendarbox" datatype="datetime" column="3" order="5" GridVisible="false" cellwidth="75" Visible="true" enabled="true" GridWidth="100" GridHeaderCss="TableHeaderBlue">
+    <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+	</column>
+	<column Name="EndBy" alias="Approved By" Type="textbox" datatype="string" column="3" order="5" GridVisible="false" cellwidth="125" Visible="true" enabled="true" GridWidth="125" GridHeaderCss="TableHeaderGreen">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="EndDate" alias="Approved Date" Type="calendarbox" datatype="datetime" column="3" order="5" GridVisible="false" cellwidth="75" Visible="true" enabled="true" GridWidth="100" GridHeaderCss="TableHeaderGreen">
+    <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+	</column>
+	<column Name="FinalDate" alias="Final Date" Type="label" datatype="datetime" column="3" order="5" GridVisible="false" cellwidth="75" Visible="true" enabled="true" GridWidth="100" GridHeaderCss="TableHeaderRed">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="1" order="4" GridVisible="false" cellwidth="100" Visible="false" enabled="false" GridWidth="100" GridHeaderCss="TableHeader">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="1" order="5" GridVisible="false" cellwidth="100" Visible="false" enabled="false" GridWidth="100" GridHeaderCss="TableHeader">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="1" order="6" GridVisible="false" cellwidth="100" Visible="false" enabled="false" GridWidth="100" GridHeaderCss="TableHeader">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="1" order="7" GridVisible="false" cellwidth="100" Visible="false" enabled="false" GridWidth="100" GridHeaderCss="TableHeader">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</table>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<configuration>
+<configSections>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+        <section name="YuniquePLM.Toolkit.Portable.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+    </sectionGroup>
+</configSections>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup>
+    <userSettings>
+        <YuniquePLM.Toolkit.Portable.Properties.Settings>
+            <setting name="LastUsedServerName" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ServerSettings" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="SavedJobsFolder" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="UpgradeRequired" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="SavedLocFolder" serializeAs="String">
+                <value />
+            </setting>
+        </YuniquePLM.Toolkit.Portable.Properties.Settings>
+    </userSettings>
+</configuration>

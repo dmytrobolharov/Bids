@@ -1,0 +1,28 @@
+
+On Error Resume Next
+
+Set oFileSys = WScript.CreateObject("Scripting.FileSystemObject")
+sRoot = "$plmOnTemp$"				'Path root to look for files
+today = Date
+nMaxFileAge = 14					'Files older than this (in days) will be deleted
+
+DeleteFiles(sRoot)
+
+Function DeleteFiles(ByVal sFolder)
+
+	Set oFolder = oFileSys.GetFolder(sFolder)
+	Set aFiles = oFolder.Files
+	Set aSubFolders = oFolder.SubFolders
+
+	For Each file in aFiles
+		dFileCreated = FormatDateTime(file.DateCreated, "2")
+		If DateDiff("d", dFileCreated, today) > nMaxFileAge Then
+			file.Delete(True)
+		End If
+	Next
+
+	For Each folder in aSubFolders
+		DeleteFiles(folder.Path)
+	Next
+
+End Function

@@ -1,0 +1,52 @@
+<Table Name="uTradePartnerVendor" formcolumns="3" gridcolumns=""
+       DataKeyField="TradePartnerVendorID, TradePartnerID,SourcingTradePartnerID" SortOrder=""
+       PageSize="50" GridHeight="200" GridWidth="900" ViewMode="ByRow" SaveMode="ByPage"
+       AutoSizeInReadMode="false" TableWidthMode=""
+       AllowColumnReordering="false" AllowGrouping="false" ShowGroupFooter="false"
+       AllowSorting="true" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="false" AllowPaging="false" AllowFiltering="false"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false"
+       AllowRowSelect="false" AllowMultiRowSelect="false"
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="true"
+       ItemStyleCssClassEditMode="" AlternatingItemStyleCssClassEditMode=""
+       FormSQL="SELECT * FROM vwx_Sourcing_AgentVendor_SEL"
+       GridReadSQL="SELECT * FROM vwx_Sourcing_AgentVendor_SEL"
+       GridSQL="SELECT * FROM vwx_Sourcing_AgentVendor_SEL">	
+		<column Name="TradePartnerVendorID" PK="true" alias="TradePartnerVendorID" Type="label" datatype="string" enabled="false"
+			Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" GridOrder="1"
+			column="1" order="1">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+  <column Name="SourcingHeaderID" PK="true" alias="SourcingHeaderID" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" GridOrder="1"
+		column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+		<column Name="TradePartnerCode" alias="Agent Code" Type="textbox" datatype="string" column="1"
+			order="2" GridVisible="true" GridWidth="100" enabled="true" cellwidth="150px" Visible="true" GridOrder="1">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="VendorCode" alias="Vendor Code" Type="textbox" datatype="string" column="1"
+			order="2" GridVisible="true" GridWidth="100" enabled="true" cellwidth="150px" Visible="true" GridOrder="1">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="TradePartnerName" alias="Agent Name" Type="textbox" datatype="string" column="1"
+			order="2" GridVisible="true" GridWidth="250" enabled="true" cellwidth="150px" Visible="true" GridOrder="2">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		
+		<column Name="VendorName" alias="Vendor Name" Type="textbox" datatype="string" column="1"
+			order="2" GridVisible="true" GridWidth="250" enabled="true" cellwidth="150px" Visible="true" GridOrder="2">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="TradePartnerActive" alias="Agent Active" Type="dropdownlist" datatype="query" column="1" order="3"
+			GridVisible="true" GridWidth="100" cellwidth="150px" Visible="true" enabled="true" lookupquery="SELECT CustomKey, Custom FROM pActive"
+			select="true" textfield="Custom" ValueField="CustomKey" AutoPostBack="false" GridOrder="3" DefaultValue="1">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="TradePartnerVendorActive" alias="Vendor Active" Type="dropdownlist" datatype="query" column="1" order="3"
+			GridVisible="true" GridWidth="100" cellwidth="150px" Visible="true" enabled="true" lookupquery="SELECT CustomKey, Custom FROM pActive"
+			select="true" textfield="Custom" ValueField="CustomKey" AutoPostBack="false" GridOrder="3" DefaultValue="1">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+	</Table>

@@ -1,0 +1,30 @@
+<setup>
+
+  <!-- The Task Tree  
+    o Build a complete tree here
+    o Each plugin gets loaded exactly once, will only be bound to the LAST node it's 
+        name is found in
+    o Typical node looks like so:
+          <node name="nUsers" text="" description="" plugin="CreateUsersAndGroups" />
+      name: name of node in tree
+      text: visible text in tree (overrides plugin.text)
+      description: tooltip (overrides plugin.description)
+      plugin: the plugin to bind here 
+		This is also the DLL name without extension.
+		By convention the dll should expose the same name via its NAME property
+      
+    o Optional node attribute: ensureVisible (boolean)
+  -->
+  <TaskTree>
+    <node name="nInstallEverything" text="Complete Installation" description="Installs everything." >
+
+      <node name="nAppServer" text="Pass #1" description="" >        
+        <node name="nReportingDash" text="" description="" plugin="ReportServerInstallDash"  ensureVisible="true" />
+        <node name="nReportingReport" text="" description="" plugin="ReportServerInstallReports"  ensureVisible="true" />
+        <node name="nReportingBI" text="" description="" plugin="ReportServerInstallBI" ensureVisible="true" />
+     </node>
+
+    </node>
+  </TaskTree>
+
+</setup>

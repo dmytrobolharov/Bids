@@ -1,0 +1,128 @@
+-- exec sp_changedbowner @loginame = 'sa' 
+-- ******************************************************************************************** */
+-- * GERBER TECHNOLOGY                                                                          */
+-- *                                                                                            */
+-- * YuniquePLM                                                                                 */
+-- * Alter Script                                                                               */
+-- * Database:                                                                                  */
+-- * 11 June 2010                                                                               */
+-- *                                                                                            */
+-- * Copyright (c) 2002-2010 Gerber Technology, Inc.  All rights reserved.                      */
+-- * This information is confidential and proprietary.  You may not disseminate it              */
+-- * to any other party without the express written consent of Gerber Technology, Inc.          */
+-- *                                                                                            */
+-- ******************************************************************************************** */
+-- ******************************************************************************************** */
+-- COMMENTS
+--
+-- Script drop all rowguid columns for all table not starting with ASP. We dont't replicate ASP* tables.
+-- Then it adds a uniqueidentifier column in for all NON ASP net tables and makes it the rowguid column.
+-- Rowguid column needs to be unique and is used by replication.
+--
+
+BEGIN
+         DECLARE @vTableName        varchar(100),
+                 @ColumnName        varchar(100),
+                 @IsRowGuid         int,
+                 @vSQL              varchar(2000)
+
+         DECLARE Table2Process INSENSITIVE CURSOR
+                 FOR SELECT table_name
+                       FROM information_schema.tables
+                      WHERE table_type <> 'VIEW'
+                      AND Table_Name not like 'ASP%'
+                     ORDER BY 1
+             FOR READ ONLY
+
+
+	  DECLARE Guid2Process INSENSITIVE CURSOR
+                 FOR SELECT o.name as [Table_Name], 
+                            c.name as [Column_Name],
+                            COLUMNPROPERTY(o.id, c.name,'IsRowGuidCol') [IsRowGuidCol]
+	               FROM syscolumns c
+		             inner join sysobjects o on o.id = c.id 			
+                      WHERE COLUMNPROPERTY(o.id, c.name, 'IsRowGuidCol') = 1
+                      AND o.name not like 'ASP%'
+                     ORDER BY 1
+          FOR READ ONLY
+
+          OPEN Guid2Process
+
+          FETCH NEXT FROM Guid2Process INTO @vTableName,@ColumnName,@IsRowGuid
+
+          WHILE @@FETCH_STATUS = 0
+            BEGIN
+
+                 SET @vSQL = null
+                 SET @VSQL = 'ALTER TABLE ' + @vTableName + ' ALTER COLUMN ' + @ColumnName + ' DROP ROWGUIDCOL'
+                 EXEC (@vSQL)
+                 -- PRINT 'Statment: ' + @vSQL
+                 FETCH NEXT FROM Guid2Process INTO @vTableName,@ColumnName,@IsRowGuid
+            END
+
+               CLOSE Guid2Process
+	  DEALLOCATE Guid2Process
+
+           OPEN Table2Process 
+
+           FETCH NEXT FROM Table2Process INTO @vTableName
+
+           WHILE @@FETCH_STATUS = 0
+            BEGIN
+
+                  SET @vSQL = null
+                  SET @vSQL = 'ALTER TABLE ' + @vTableName + ' ADD ReplRowGuid uniqueidentifier DEFAULT newid()'
+                  EXEC (@vSQL)
+                  -- PRINT 'Statment: ' + @vSQL
+
+                  IF @@error <> 0
+                     BEGIN
+                           PRINT 'Statment Failed: ' + @vSQL
+                           goto error
+                     END
+
+                  SET @vSQL = null
+                  SET @vSQL = 'UPDATE ' + @vTableName + ' SET ReplRowGuid = newid()'
+                  EXEC (@vSQL)
+                  -- PRINT 'Statment: ' + @vSQL
+
+                  IF @@error <> 0
+                     BEGIN
+                           PRINT 'Statment Failed: ' + @vSQL
+                           goto error
+                     END
+
+
+                  SET @vSQL = null
+                  SET @vSQL = 'ALTER TABLE ' + @vTableName + ' ALTER COLUMN ReplRowGuid uniqueidentifier not null'
+                  EXEC (@vSQL)
+                  --PRINT 'Statment: ' + @vSQL
+
+                  IF @@error <> 0
+                     BEGIN
+                           PRINT 'Statment Failed: ' + @vSQL
+                           goto error
+                     END
+
+
+                  SET @vSQL = null
+                  SET @VSQL = 'ALTER TABLE ' + @vTableName + ' ALTER COLUMN ReplRowGuid ADD ROWGUIDCOL'
+                  
+                  EXEC (@vSQL)
+                  --PRINT 'Statment: ' + @vSQL
+
+                  IF @@error <> 0
+                     BEGIN
+                           PRINT 'Statment Failed: ' + @vSQL
+                           goto error
+                     END
+
+              FETCH NEXT FROM Table2Process INTO @vTableName
+            END
+
+error:
+        CLOSE Table2Process
+	DEALLOCATE Table2Process
+bottom:
+END
+GO

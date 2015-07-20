@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_2deabcab" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610" schemaname="dbo" >
+		<table name="pStyleBOMDimType" >
+			<column name="DimTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="DimTypeName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="DimTypeDesc" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="DimType" type="int" length="10" decimal="0" jt="4" />
+			<column name="DimTypePkID" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="DimTypeXmlSearch" type="varchar" length="400" decimal="0" jt="12" />
+			<column name="DimTypeXmlForm" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="DimTypeXmlGrid" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="DimTypeUrl" type="varchar" length="400" decimal="0" jt="12" />
+			<column name="DimTypeTable" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="DimTypeSPX" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="DimTypeHdrSPX" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="DimTypeText" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="DimTypeValue" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="DimTypeFilter" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pStyleBOMDimType" unique="PRIMARY_KEY" >
+				<column name="DimTypeID" />
+			</index>
+			<index name="IX_pStyleBOMDimType_DimTypeName" unique="NORMAL" >
+				<column name="DimTypeName" />
+			</index>
+		</table>
+		<table name="pStyleBOMDimension" >
+			<column name="StyleBOMDimensionID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="WorkFlowID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="WorkFlowItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ItemDim1TypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim2TypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim3TypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim1TypeName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ItemDim2TypeName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ItemDim3TypeName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Comments" type="nvarchar" length="510" decimal="0" jt="12" />
+			<column name="ImageId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="IsAvgQuantity" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="AverageCost" type="decimal" length="19" decimal="3" jt="3" />
+			<column name="StyleBOMDimensionCopyMasterID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ExchangeRateItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pStyleBOMDimension" unique="PRIMARY_KEY" >
+				<column name="StyleBOMDimensionID" />
+			</index>
+			<index name="IX_pStyleBOMDimension_05" unique="NORMAL" >
+				<column name="WorkFlowItemID" />
+				<column name="StyleID" />
+				<column name="StyleSet" />
+				<column name="WorkFlowID" />
+			</index>
+			<index name="IX_pStyleBOMDimension_StyleID" unique="NORMAL" >
+				<column name="StyleID" />
+			</index>
+			<index name="IX_pStyleBOMDimension_WorkflowItemID" unique="NORMAL" >
+				<column name="WorkFlowItemID" />
+			</index>
+		</table>
+		<table name="pStyleBOMDimensionItem" >
+			<column name="StyleBOMDimensionItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleBOMDimensionID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="WorkFlowID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="WorkFlowItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ItemDim1TypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim2TypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim3TypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim1Id" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim2Id" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim3Id" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim1Name" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ItemDim2Name" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ItemDim3Name" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ItemDim1Sort" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ItemDim2Sort" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ItemDim3Sort" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ItemDim1Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="ItemDim2Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="ItemDim3Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="Comments" type="nvarchar" length="510" decimal="0" jt="12" />
+			<column name="ImageId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Amlmeashdrid" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Sizerangeid" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pStyleBOMDimensionItem" unique="PRIMARY_KEY" >
+				<column name="StyleBOMDimensionItemID" />
+			</index>
+			<index name="IX_pStyleBOMDimensionItem_StyleBOMDimensionID" unique="NORMAL" >
+				<column name="StyleBOMDimensionID" />
+				<column name="StyleID" />
+			</index>
+			<index name="IX_pStyleBOMDimensionItem_StyleBOMDimensionID_Dim2" unique="NORMAL" >
+				<column name="StyleBOMDimensionID" />
+				<column name="ItemDim2Id" />
+			</index>
+			<index name="IX_pStyleBOMDimensionItem_StyleBOMDimensionID_Dim3" unique="NORMAL" >
+				<column name="StyleBOMDimensionID" />
+				<column name="ItemDim3Id" />
+			</index>
+			<index name="IX_pStyleBOMDimensionItem_WorkflowItemID" unique="NORMAL" >
+				<column name="WorkFlowItemID" />
+			</index>
+			<index name="Pk_pStyleBOMDimensionItem_0" unique="UNIQUE" >
+				<column name="ItemDim1Id" />
+			</index>
+			<index name="Pk_pStyleBOMDimensionItem_1" unique="UNIQUE" >
+				<column name="ItemDim2Id" />
+			</index>
+			<index name="Pk_pStyleBOMDimensionItem_2" unique="UNIQUE" >
+				<column name="ItemDim3Id" />
+			</index>
+		</table>
+		<table name="pStyleSKUItem" >
+			<column name="StyleSKUItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="WorkflowItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleSKUTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleBOMDimensionID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim1TypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim2TypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim3TypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="PlanningID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="PlanningSKUHeaderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LineFolderSKUHeaderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pStyleSKUItem" unique="PRIMARY_KEY" >
+				<column name="StyleSKUItemID" />
+			</index>
+			<index name="IX_pStyleSKUItem_PlanningSKUHeaderID" unique="NORMAL" >
+				<column name="PlanningSKUHeaderID" />
+			</index>
+			<index name="IX_pStyleSKUItem_StyleBOMDimensionID" unique="NORMAL" >
+				<column name="StyleBOMDimensionID" />
+			</index>
+			<index name="IX_pStyleSKUItem_WorkflowItemID" unique="NORMAL" >
+				<column name="WorkflowItemID" />
+			</index>
+			<index name="idx_pStyleSKUItem" unique="NORMAL" >
+				<column name="StyleSKUTemplateID" />
+			</index>
+			<index name="idx_pStyleSKUItem_0" unique="NORMAL" >
+				<column name="ItemDim1TypeID" />
+			</index>
+			<index name="idx_pStyleSKUItem_1" unique="NORMAL" >
+				<column name="ItemDim2TypeID" />
+			</index>
+			<index name="idx_pStyleSKUItem_2" unique="NORMAL" >
+				<column name="ItemDim3TypeID" />
+			</index>
+			<fk name="Fk_pStyleSKUItem" to_schema="dbo" to_table="pWorkFlowItem" >
+				<fk_column name="WorkflowItemID" pk="WorkFlowItemID" />
+			</fk>
+			<fk name="Fk_pStyleSKUItem_0" to_schema="dbo" to_table="pStyleBOMDimension" >
+				<fk_column name="StyleBOMDimensionID" pk="StyleBOMDimensionID" />
+			</fk>
+			<fk name="Fk_pStyleSKUItem_1" to_schema="dbo" to_table="pStyleSKUTemplate" >
+				<fk_column name="StyleSKUTemplateID" pk="StyleSKUTemplateID" />
+			</fk>
+			<fk name="Fk_pStyleSKUItem_2" to_schema="dbo" to_table="pStyleBOMDimType" >
+				<fk_column name="ItemDim1TypeID" pk="DimTypeID" />
+			</fk>
+			<fk name="Fk_pStyleSKUItem_3" to_schema="dbo" to_table="pStyleBOMDimType" >
+				<fk_column name="ItemDim2TypeID" pk="DimTypeID" />
+			</fk>
+			<fk name="Fk_pStyleSKUItem_4" to_schema="dbo" to_table="pStyleBOMDimType" >
+				<fk_column name="ItemDim3TypeID" pk="DimTypeID" />
+			</fk>
+		</table>
+		<table name="pStyleSKUItems" >
+			<column name="StyleSKUItemsID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleSKUItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim1ID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim2ID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ItemDim3ID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Delivery1StatusID" type="int" length="10" decimal="0" jt="4" />
+			<column name="Delivery2StatusID" type="int" length="10" decimal="0" jt="4" />
+			<column name="Delivery3StatusID" type="int" length="10" decimal="0" jt="4" />
+			<column name="Delivery1WSUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Delivery2WSUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Delivery3WSUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Delivery1RUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Delivery2RUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Delivery3RUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Delivery1EUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Delivery2EUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Delivery3EUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TotalWSUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TotalRUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TotalEUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TotalUnits" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_pStyleSKUItems" unique="PRIMARY_KEY" >
+				<column name="StyleSKUItemsID" />
+			</index>
+			<index name="IX_pStyleSKUItems_StyleSKUItemID" unique="NORMAL" >
+				<column name="StyleSKUItemID" />
+			</index>
+			<index name="idx_pStyleSKUItems" unique="NORMAL" >
+				<column name="ItemDim1ID" />
+			</index>
+			<index name="idx_pStyleSKUItems_0" unique="NORMAL" >
+				<column name="ItemDim2ID" />
+			</index>
+			<index name="idx_pStyleSKUItems_1" unique="NORMAL" >
+				<column name="ItemDim3ID" />
+			</index>
+			<fk name="Fk_pStyleSKUItems" to_schema="dbo" to_table="pStyleSKUItem" >
+				<fk_column name="StyleSKUItemID" pk="StyleSKUItemID" />
+			</fk>
+			<fk name="Fk_pStyleSKUItems_1" to_schema="dbo" to_table="pStyleBOMDimensionItem" >
+				<fk_column name="ItemDim2ID" pk="ItemDim2Id" />
+			</fk>
+			<fk name="Fk_pStyleSKUItems_2" to_schema="dbo" to_table="pStyleBOMDimensionItem" >
+				<fk_column name="ItemDim3ID" pk="ItemDim3Id" />
+			</fk>
+			<fk name="Fk_pStyleSKUItems_0" to_schema="dbo" to_table="pStyleBOMDimensionItem" >
+				<fk_column name="ItemDim1ID" pk="ItemDim1Id" />
+			</fk>
+		</table>
+		<table name="pStyleSKUTemplate" >
+			<column name="StyleSKUTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="TemplateName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="FlashEditSchema" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="SearchSchema" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="GridSchema" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="Active" type="bit" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_pStyleSKUTemplate" unique="PRIMARY_KEY" >
+				<column name="StyleSKUTemplateID" />
+			</index>
+		</table>
+		<table name="pWorkFlowItem" >
+			<column name="WorkFlowItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="WorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="WorkflowItemTypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="WorkFlowItemName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Sort" type="nvarchar" length="4" decimal="0" jt="12" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" />
+			<column name="RepRowGuidColID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StatusID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="WorkStart" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="WorkDue" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="WorkAssignedTo" type="int" length="10" decimal="0" jt="4" />
+			<column name="WorkStatus" type="int" length="10" decimal="0" jt="4" />
+			<column name="WorkEscalateTo" type="int" length="10" decimal="0" jt="4" />
+			<column name="StyleSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="WorkflowItemMasterID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ActualStart" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ActualEnd" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pWorkFlowItem" unique="PRIMARY_KEY" >
+				<column name="WorkFlowItemID" />
+				<column name="StyleID" />
+			</index>
+			<index name="IDX_StyleId" unique="NORMAL" >
+				<column name="StyleID" />
+			</index>
+			<index name="IDX_WorkFlowId" unique="NORMAL" >
+				<column name="WorkflowID" />
+			</index>
+			<index name="IDX_WorkflowItemTypeId" unique="NORMAL" >
+				<column name="WorkflowItemTypeId" />
+			</index>
+			<index name="IX_pWorkFlowItem_StyleSeasonYearID" unique="NORMAL" >
+				<column name="StyleSeasonYearID" />
+			</index>
+			<index name="IX_pWorkFlowItem_WirkflowItemMasterID" unique="NORMAL" >
+				<column name="WorkflowItemMasterID" />
+			</index>
+			<index name="Pk_pWorkFlowItem_0" unique="UNIQUE" >
+				<column name="WorkFlowItemID" />
+			</index>
+		</table>
+	</schema>
+	<layout id="Layout_2ad2d8f6" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="pStyleSKUItem" color="bfd4f5" x="315" y="45" >
+			<column name="StyleSKUItemID" />
+			<column name="WorkflowItemID" />
+			<column name="StyleSKUTemplateID" />
+			<column name="StyleBOMDimensionID" />
+			<column name="ItemDim1TypeID" />
+			<column name="ItemDim2TypeID" />
+			<column name="ItemDim3TypeID" />
+		</entity>
+		<entity schema="dbo" name="pStyleSKUTemplate" color="bfd4f5" x="45" y="135" >
+			<column name="StyleSKUTemplateID" />
+		</entity>
+		<entity schema="dbo" name="pStyleBOMDimension" color="bfd4f5" x="45" y="210" >
+			<column name="StyleBOMDimensionID" />
+		</entity>
+		<entity schema="dbo" name="pWorkFlowItem" color="c0d4f3" x="45" y="45" >
+			<column name="WorkFlowItemID" />
+			<column name="StyleID" />
+		</entity>
+		<entity schema="dbo" name="pStyleBOMDimensionItem" color="c0d4f3" x="795" y="45" >
+			<column name="StyleBOMDimensionItemID" />
+			<column name="ItemDim1Id" />
+			<column name="ItemDim2Id" />
+			<column name="ItemDim3Id" />
+		</entity>
+		<entity schema="dbo" name="pStyleSKUItems" color="bfd4f5" x="585" y="45" >
+			<column name="StyleSKUItemsID" />
+			<column name="StyleSKUItemID" />
+			<column name="ItemDim1ID" />
+			<column name="ItemDim2ID" />
+			<column name="ItemDim3ID" />
+		</entity>
+		<entity schema="dbo" name="pStyleBOMDimType" color="c0d4f3" x="585" y="210" >
+			<column name="DimTypeID" />
+		</entity>
+		<group name="Style - SKU" color="c4e0f9" >
+			<entity schema="dbo" name="pWorkFlowItem" />
+			<entity schema="dbo" name="pStyleSKUItem" />
+			<entity schema="dbo" name="pStyleSKUTemplate" />
+			<entity schema="dbo" name="pStyleBOMDimension" />
+			<entity schema="dbo" name="pStyleSKUItems" />
+			<entity schema="dbo" name="pStyleBOMDimensionItem" />
+			<entity schema="dbo" name="pStyleBOMDimType" />
+		</group>
+	</layout>
+</project>

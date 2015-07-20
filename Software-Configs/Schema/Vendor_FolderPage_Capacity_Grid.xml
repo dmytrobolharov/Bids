@@ -1,0 +1,20 @@
+﻿<table Name="uTradePartnerCapacityItem" formcolumns="3" gridcolumns="" FormSQL="spx_uTradePartnerCapacityItem_SelectTemp" GridReadSQL="spx_uTradePartnerCapacityItem_SelectTemp" GridSQL="spx_uTradePartnerCapacityItem_SelectTemp">
+  <column Name="TradePartnerCapacityItemID" PK="true" alias="TradePartnerCapacityItemID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" GridOrder="1" GridSearch="true" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="TradePartnerCapacityID" PK="true" alias="TradePartnerCapacityID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" GridOrder="1" GridSearch="true" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="TradePartnerProductTypeId" PK="true" alias="TradePartnerProductTypeId" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" GridOrder="1" GridSearch="true" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="TradePartnerId" PK="true" alias="TradePartnerId" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" GridOrder="1" GridSearch="true" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="StyleCategoryId" PK="true" alias="StyleCategoryId" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" GridOrder="1" GridSearch="true" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>  
+  <column Name="CategoryName" alias="Product" Type="label" datatype="string" column="1" order="6" GridVisible="true" cellwidth="150px" Visible="true" enabled="false" GridOrder="100" AutoPostBack="false" Search="false" GridWidth="100">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>  
+</table>

@@ -1,0 +1,151 @@
+<Table Name="pConPageDetail" formcolumns="1" gridcolumns=""
+       DataKeyField="ConstructionDetailID" SortOrder="Sort ASC"
+       PageSize="10" GridHeight="400" ViewMode="ByRow" SaveMode="ByPage" AutoSizeInReadMode="true"
+       AllowColumnReordering="false" AllowGrouping="false" ShowGroupFooter="false"
+       AllowSorting="true" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="false" AllowPaging="false" AllowFiltering="false"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false"
+       AllowRowSelect="true" AllowMultiRowSelect="true"
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="true"
+       FormSQL="spx_ConstructionDetails_SELECT"
+	     GridReadSQL="spx_ConstructionDetails_SELECT"
+       GridSQL="spx_ConstructionDetails_SELECT"
+       ApiSQL="spx_ConstructionDetails_SELECT" ApiWhereClause="" ApiOrderBy="">
+	<column Name="ConstructionDetailID" PK="true" alias="ConstructionDetailID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="01" GridSearch="false" column="1" order="01"
+            ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="001" ApiRequired="true" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="StyleID" alias="StyleID" Type="textbox" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100"
+		GridOrder="02" GridSearch="false" column="1" order="02"
+            ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="002" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+ 	<column Name="OrigOperationSN" alias="OrigOperationSN" Type="textbox" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" GridOrder="03" column="1" order="03"
+            ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="003" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" >
+  		<Validator Class="" Type="" Minimum="" Maximum="" Text="" /> 
+  	</column>
+  <column Name="Linked" alias="" Type="staticimage" datatype="string" column="1" order="04"
+    GridVisible="false" cellwidth="10px" Visible="true" enabled="false" DefaultValue="../System/Icons/icon_link.gif" lookupquery=""
+    select="false" textfield="" ValueField="" AutoPostBack="false" GridWidth="10" GridOrder="04"
+            ApiDataType="int" ApiVisible="true" ApiOrder="004" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <lookuptable XMLFileName="Lookup_pActive.xml" ParentIDField="Linked" ChildIDField="CustomKey" />
+  </column>
+  <column Name="ImageID" PK="true" alias="" Type="bwimagebutton" datatype="string" enabled="false"
+        Visible="true" cellwidth="55px" GridVisible="false" GridWidth="64" GridOrder="05" column="1" order="05"
+            ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="005" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Sort" alias="Sort" Type="textbox" datatype="string" column="1" order="06" GridVisible="true" GridOrder="05" cellwidth="20px" GridWidth="30" Visible="true" enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="006" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+  		<Validator Class="validationexpression" Type="" Minimum="" Maximum="" Text="No more than four of digits" Dataformat="" ValidationExpression="[0-9]{0,4}" C5ass="" GridHeaderCss="" FilterField="" GridOrder="" />
+  	</column>
+    <column Name="Level0Desc" alias="Category" Type="textbox" datatype="string" column="1" order="07" GridVisible="false" cellwidth="150px" GridWidth="80" Visible="false" enabled="false"
+            ApiDataType="string" ApiVisible="true" ApiOrder="007" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text=""/>
+    </column>  	
+	<column Name="Level1Desc" alias="Class" Type="textbox" datatype="string"
+		column="1" order="08" GridVisible="true" cellwidth="80px" GridWidth="80" GridOrder="06" Visible="true"
+		enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="008" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Level2Desc" alias="Subclass" Type="textbox" datatype="string"
+		column="1" order="09" GridVisible="true" cellwidth="100px" GridWidth="100" GridOrder="07" Visible="true"
+		enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="009" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Level3Desc" alias="Feature" Type="textbox" datatype="string"
+		column="1" order="10" GridVisible="true" cellwidth="100px" GridWidth="100" GridOrder="08" Visible="true"
+		enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="010" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Detail" alias="Detail" Type="memobox"
+		datatype="string" column="1" order="11" GridVisible="true" cellwidth="250px" GridWidth="250" GridOrder="09"
+  Visible="true" enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="011" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField1" alias="User Defined 1" Type="textbox" datatype="string"
+		column="1" order="12" GridVisible="true" cellwidth="100px" GridWidth="100" GridOrder="11" Visible="true"
+		enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="012" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField2" alias="User Defined 2" Type="textbox" datatype="string"
+		column="1" order="13" GridVisible="true" cellwidth="100px" GridWidth="100" GridOrder="12" Visible="true"
+		enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="013" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField3" alias="User Defined 3" Type="textbox" datatype="string"
+		column="1" order="14" GridVisible="true" cellwidth="100px" GridWidth="100" GridOrder="13" Visible="true"
+		enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="014" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField4" alias="User Defined 4" Type="textbox" datatype="string"
+		column="1" order="15" GridVisible="true" cellwidth="100px" GridWidth="100" GridOrder="14" Visible="true"
+		enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="015" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AuxField5" alias="User Defined 5" Type="textbox" datatype="string"
+		column="1" order="16" GridVisible="true" cellwidth="100px" GridWidth="100" GridOrder="15" Visible="true"
+		enabled="true"
+            ApiDataType="string" ApiVisible="true" ApiOrder="016" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL" TrackChange="TRUE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+  <column Name="WorkflowID" alias="WorkflowID" Type="label" datatype="string" column="1" order="17" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="017" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    <lookuptable XMLFileName="Lookup_pWorkflow.xml" ParentIDField="WorkFlowID" ChildIDField="WorkflowId" />
+  </column>
+  <column Name="StyleSet" alias="StyleSet" Type="label" datatype="int" column="1" order="18" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="int" ApiVisible="true" ApiOrder="018" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Level0ID" alias="Level0ID" Type="label" datatype="string" column="1" order="19" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="019" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Level1ID" alias="Level1ID" Type="label" datatype="string" column="1" order="20" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="020" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Level2ID" alias="Level2ID" Type="label" datatype="string" column="1" order="21" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="021" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Level3ID" alias="Level3ID" Type="label" datatype="string" column="1" order="22" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="022" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="CUser" alias="CUser" Type="label" datatype="string" column="1" order="23" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="023" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="CDate" alias="CDate" Type="label" datatype="datetime" column="1" order="24" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="datetime" ApiVisible="true" ApiOrder="024" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="MUser" alias="MUser" Type="label" datatype="string" column="1" order="25" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="string" ApiVisible="true" ApiOrder="025" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="MDate" alias="MDate" Type="label" datatype="datetime" column="1" order="26" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="datetime" ApiVisible="true" ApiOrder="026" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="WorkFlowItemId" alias="WorkFlowItemId" Type="label" datatype="string" column="1" order="27" GridVisible="false" cellwidth="150px" GridWidth="100" Visible="false" GridOrder="15" enabled="false"
+          ApiDataType="uniqueidentifier" ApiVisible="true" ApiOrder="027" ApiRequired="false" ApiSearch="false" ApiSearchRequired="false" ApiSearchType="ALL">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+
+</Table>

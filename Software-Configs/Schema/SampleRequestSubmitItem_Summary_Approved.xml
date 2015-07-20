@@ -1,0 +1,43 @@
+<Table Name="pSampleRequestTrade" formcolumns="2" gridcolumns="" FormSQL="SELECT * FROM vwx_SampleRequestSubmitItemSummary_SEL" 
+       GridReadSQL="SELECT * FROM vwx_SampleRequestSubmitItemSummary_SEL" GridSQL="SELECT * FROM vwx_SampleRequestSubmitItemSummary_SEL">
+
+  <!-- BEGIN- REQUIRED FIELDS DONT CHANGE IT -->	
+	<column Name="SampleRequestSubmitID" PK="true" alias="SampleRequestSubmitID" Type="label" datatype="string" enabled="false" 
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  <!-- END- REQUIRED FIELDS DONT CHANGE IT -->
+
+  <column Name="DueDate" alias="Due" Type="label" datatype="string" column="1" order="1" GridVisible="true" 
+          cellwidth="150px" Visible="true" enabled="true" GridWidth="100" GridHeaderCss="TableHeaderRed" >
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+
+	<column Name="VendorDate" alias="Vendor" Type="label" datatype="string" column="1" order="1" GridVisible="true" 
+          cellwidth="150px" Visible="true" 
+          enabled="true" GridWidth="100" GridHeaderCss="TableHeaderYellow" >
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+
+	<column Name="RecDate" alias="Recvd" Type="label" datatype="string" column="1" order="1" GridVisible="true" 
+          cellwidth="150px" Visible="true" 
+          enabled="true" GridWidth="100" GridHeaderCss="TableHeaderBlue" >
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<!--column Name="EndDate" alias="Aprvd" Type="label" datatype="string" column="1" order="1" GridVisible="true" 
+          cellwidth="150px" Visible="true" 
+          enabled="true" GridWidth="100" GridHeaderCss="TableHeaderGreen" >
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="MUser" alias="MUser" Type="label" datatype="string" column="2" order="1" GridVisible="true" 
+          cellwidth="150px" Visible="true" 
+          enabled="true" GridWidth="100" GridHeaderCss="TableHeaderYellow" >
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column-->
+
+	
+	
+</Table>

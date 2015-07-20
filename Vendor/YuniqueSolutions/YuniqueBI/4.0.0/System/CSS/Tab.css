@@ -1,0 +1,136 @@
+.Level1TabGroup
+{
+  background-color:white;
+  background-image:url(../icons/bg.gif);
+  cursor:default;
+}
+
+.Level1TabBreak
+{
+
+  cursor:default;
+}
+
+.Level1Tab
+{
+  color:black;
+  font-family:verdana; 
+  font-size:11px; 
+  border:1px;
+  border-style:solid;
+  border-color:#808080;
+  padding:4px;
+  padding-left:10px;
+  padding-right:30px;
+  cursor:hand;
+}
+
+.Level1TabOver 
+{
+  color:black;
+  font-family:verdana; 
+  font-size:11px; 
+  text-decoration:underline;
+  border:1px;
+  border-style:solid;
+  border-color:#808080;
+  padding:4px;
+  padding-left:10px;
+  padding-right:30px;
+  cursor:hand;
+}
+
+.Level1TabSelected 
+{
+  background-image:url(../icons/bg_rev.gif);
+  color:black;
+  font-family:verdana; 
+  font-size:11px; 
+  border:1px;
+  border-style:solid;
+  border-color:#808080;
+  border-bottom-color:#D4D4D4;
+  padding:4px;
+  padding-left:10px;
+  padding-right:30px;
+  position:relative;
+  z-index:1;
+  cursor:default;
+}
+
+.Level1TabSelectedOver
+{
+  background-image:url(../icons/bg_rev.gif);
+  color:black;
+  font-family:verdana; 
+  font-size:11px; 
+  border:1px;
+  border-style:solid;
+  border-color:#808080;
+  border-bottom-color:#D4D4D4;
+  padding:4px;
+  padding-left:10px;
+  padding-right:30px;
+  position:relative;
+  z-index:10;
+  cursor:default;
+}
+
+.Level2TabGroup
+{
+  background-color:white;
+  background-image:url(../icons/bg.gif);
+  border:1px;
+  border-style:solid;
+  border-color:#808080;
+  cursor:default;
+}
+
+.Level2Tab
+{
+  font-family:verdana; 
+  font-size:10px; 
+  padding:5px;
+  padding-right:10px;
+  cursor:hand;
+}
+
+.Level2TabOver
+{
+  font-family:verdana; 
+  font-size:10px; 
+  text-decoration:underline;
+  padding:5px;
+  padding-right:10px;
+  cursor:hand;
+}
+
+.Level2TabSelected
+{
+  font-family:verdana; 
+  font-size:10px; 
+  text-decoration:underline;
+  padding:5px;
+  padding-right:10px;
+  cursor:default;
+}
+
+.Level2TabSelectedOver
+{
+  font-family:verdana; 
+  font-size:10px; 
+  text-decoration:underline;
+  padding:5px;
+  padding-right:10px;
+  cursor:default;
+}
+
+
+.Placeholder
+{
+  background-color:black;
+  border:1px;
+  border-style:solid;
+  border-color:black;
+  cursor:default;
+}

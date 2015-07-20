@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table Name="pColorFolder" formcolumns="3" gridcolumns="" DataKeyField="ColorFolderID" SortOrder="Active DESC" PageSize="20" GridHeight="" ViewMode="ByRow" SaveMode="ByPage" AutoSizeInReadMode="true" AllowColumnReordering="true" AllowGrouping="true" ShowGroupFooter="false" AllowSorting="true" AllowMultiColumnSorting="true" FrozenColumnCount="0" AllowKeyboardSupport="true" AllowPaging="true" AllowFiltering="true" AllowScrolling="true" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false" AllowRowSelect="true" AllowMultiRowSelect="false" AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="false" FormSQL="SELECT * FROM vwx_ColorFolder_SEL" GridReadSQL="SELECT * FROM vwx_ColorFolder_SEL" GridSQL="SELECT  * FROM vwx_ColorFolder_SEL">
+  <column Name="ColorFolderID" PK="true" alias="ColorFolder ID" Type="label" datatype="string" enabled="false" Visible="FALSE" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ColorFolderID" alias="&lt;input type='checkbox' onclick='SelectAll(this)' id='chkSelectAll' /&gt;" Type="checkbox" datatype="string" column="1" order="1" GridVisible="true" cellwidth="150px" GridWidth="25" Visible="true" enabled="true">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ColorTypeID" alias="Color Type" Type="label" datatype="query" column="1" gridorder="10" GridVisible="false" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT ColorTypeID, ColorTypeDescription FROM pColorType ORDER BY ColorTypeDescription" select="true" ValueField="ColorTypeID" textfield="ColorTypeDescription" AutoPostBack="false" GridOrder="003">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="StyleColorway" PK="true" alias="StyleColorway" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false" GridWidth="100" GridOrder="003" GridSearch="true" column="1" order="1" gridorder="01">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ColorFolderDescription" alias="Palette Name" Type="label" datatype="string" column="1" order="8" GridVisible="True" cellwidth="150px" GridWidth="200" Visible="True" enabled="True" GridOrder="004">
+    <Validator Class="required" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ColorSubFolder1" alias="Division" Type="label" datatype="string" column="1" order="2" GridVisible="true" cellwidth="150px" AutoPostBack="false" Search="true" lookupquery="SELECT * FROM iCustom1 div INNER JOIN fnx_Permissions_GetGuidProductTypePermissions('##TEAMID##', 26) access ON access.ProductTypeId = div.CustomID AND access.PermissionRoleID &gt; 0 ORDER BY CustomKey" select="true" textfield="Custom" ValueField="Custom" Visible="true" enabled="true" GridOrder="006">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <!--	<column Name="ColorSubFolder4" alias="Label" Type="dropdownlist" datatype="string" column="1"
+		gridorder="9" GridVisible="true" cellwidth="125px" Visible="true" enabled="true" Search="false"
+		lookupquery="SELECT CustomKey, Custom FROM iCustom2 ORDER BY CustomKey" select="true" textfield="Custom"
+		ValueField="Custom" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+
+	<column Name="ColorSubFolder5" alias="Product Category" Type="dropdownlist" datatype="string" column="1"
+			gridorder="10" GridVisible="True" cellwidth="200px" Visible="true" enabled="true" Search="false"
+			lookupquery="SELECT CustomKey, Custom FROM iCustom3 ORDER BY CustomKey" select="true" textfield="Custom"
+			ValueField="Custom" AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>-->
+  <column Name="ColorSubFolder8" alias="NA" Type="label" datatype="string" column="1" order="10" GridVisible="false" cellwidth="150px" Visible="false" enabled="false" GridOrder="007">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="ColorSubFolder9" alias="NA" Type="label" datatype="string" column="1" order="11" GridVisible="false" cellwidth="150px" Visible="false" enabled="false" GridOrder="007">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="CUser" alias="Created By" Type="label" datatype="string" column="2" order="19" GridVisible="true" cellwidth="100px" Visible="false" enabled="true" GridOrder="008">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="1" order="20" GridVisible="true" cellwidth="150px" Visible="false" enabled="false" GridOrder="008">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="MUser" alias="Modified By" Type="label" datatype="string" column="1" order="21" GridVisible="true" cellwidth="150px" Visible="false" enabled="false" GridOrder="009">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="1" order="22" GridVisible="true" cellwidth="150px" Visible="false" enabled="false" dataformat="" GridOrder="009">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Active" alias="Active" Type="dropdownlist" datatype="query" column="3" order="1" GridVisible="false" cellwidth="100px" Visible="true" enabled="true" lookupquery="SELECT CustomKey, Custom FROM pActive" select="true" textfield="Custom" ValueField="CustomKey" defaultValue="1" AutoPostBack="false" GridOrder="010">
+    <Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+</table>

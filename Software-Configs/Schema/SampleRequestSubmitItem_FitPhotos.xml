@@ -1,0 +1,46 @@
+
+<Table Name="SampleRequestSubmitFitPhotos" formcolumns="3" gridcolumns="" 
+		FormSQL="SELECT * FROM vwx_SampleRequestSubmitFitPhotos_Select" 
+        GridReadSQL="SELECT * FROM vwx_SampleRequestSubmitFitPhotos_Select" GridSQL="SELECT * FROM vwx_SampleRequestSubmitFitPhotos_Select"
+>
+	
+	<column Name="FitPhotoId" PK="true" alias="FitPhotoId" Type="label" datatype="string" enabled="true" Visible="true" cellwidth="150px" GridVisible="false" GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	
+	<column Name="sImage" alias="Photo" Type="label" datatype="String" column="1" order="7" GridVisible="true" cellwidth="200px" 
+		GridWidth="150" Visible="true" enabled="true" GridOrder="106" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="FitPhotoDescription" alias="Comments" Type="label" datatype="String" column="1" order="7" GridVisible="true" 
+		Visible="true" enabled="true" GridOrder="106"  cellwidth="200px" width="400">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+		
+	<column Name="Sort" alias="Sort Order" Type="textbox" datatype="string" column="1" order="7" GridOrder="106"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="true"  GridWidth="50"	select="true" >
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="CUser" alias="Created By" Type="label" datatype="String" column="1" order="7" GridVisible="true" cellwidth="125px" 
+		GridWidth="125" Visible="true" enabled="false" GridOrder="106" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="CDate" alias="Created Date" Type="label" datatype="DateTime" column="1" order="7" GridVisible="true" cellwidth="125px" 
+		GridWidth="125" Visible="true" enabled="false" GridOrder="106" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="MUser" alias="Modified By" Type="label" datatype="String" column="1" order="7" GridVisible="true" cellwidth="125px" 
+		GridWidth="125" Visible="true" enabled="false" GridOrder="106" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="DateTime" column="1" order="7" GridVisible="true" cellwidth="125px" 
+		GridWidth="125" Visible="true" enabled="false" GridOrder="106" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+			
+</Table>	

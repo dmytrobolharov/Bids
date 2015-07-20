@@ -1,0 +1,109 @@
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Color_Calendars.aspx.vb" Inherits="plmOnApp.Color_Calendars" %>
+<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
+<%@ Register TagPrefix="uc1" TagName="Color_Header" Src="Color_Header.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+	<head>
+		<title>Style_Schedule</title>
+		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
+		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
+		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
+        <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
+		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+	</head>
+	<body>
+    <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>
+		<form id="Form1" method="post" runat="server">
+			<table class="TableHeader" id="toolbar" cellSpacing="0" cellpadding="0" width="100%" border="0" >
+				<tr valign="middle">
+					<td valign="middle" align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
+					<td>
+                        <cc1:confirmedimagebutton id="btnSaveSet" runat="server" Message="NONE"></cc1:confirmedimagebutton>
+                        <cc1:bwimagebutton id="btnAddCalendar" visible="true" runat="server" ></cc1:bwimagebutton>
+                        <cc1:confirmedimagebutton id="btnRemoveCalendar" runat="server"></cc1:confirmedimagebutton>
+                        <cc1:confirmedimagebutton id="btnClose" runat="server" Message="NONE" OnClientClick="return btnClose_Click();"></cc1:confirmedimagebutton>
+                        <cc1:bwimagebutton id="btnChangeLog" runat="server"  CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"></cc1:bwimagebutton>             
+                    </td>
+				</tr>
+			</table>
+            <table height="10" cellSpacing="0" cellPadding="0" width="100%" bgColor="#cddeee" border="0">
+				<tr>
+					<td></td>
+				</tr>
+			</table>
+			<table style="BORDER-BOTTOM: orange thin solid; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: white" 
+                height="45" cellSpacing="0" cellPadding="0" width="100%" bgColor="#ffffff" border="0">
+				<tr>
+					<td>&nbsp;<asp:label id="lblColorCalendar" runat="server" ForeColor="#E0E0E0" Font-Size="X-Large" Font-Names="Tahoma,Verdana"></asp:label></td>
+				</tr>
+			</table>
+			<uc1:Color_Header id="Color_Header1" runat="server" IsCollapsible="true" IsCollapsed="true"></uc1:Color_Header>
+           
+            <table height="27" cellSpacing="0" cellpadding="0" width="100%" border="0">
+                <tr valign="middle">
+                    <td valign="middle" align="center" width="10">
+                        <asp:PlaceHolder ID="plhWorkflowControls" runat="server"></asp:PlaceHolder>
+                    </td>                                       
+                    <td valign="top" class="center">
+                        <table cellspacing="0" cellpadding="0" width="75" style="border:none;">
+                            <tbody></tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+			
+			<asp:panel id="Panel1" runat="server">
+				<table class="TableHeader" height="27" cellSpacing="0" cellpadding="0" width="100%" border="0">
+					<tr valign="middle">
+						<td valign="middle" align="center" width="10">
+                            <IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>
+						<td valign="middle" align="left">&nbsp;</td>
+					</tr>
+				</table>
+				
+				<asp:datagrid id="dgWorkflowSet1" runat="server" DataKeyField="ColorFolderID" AllowSorting="False">
+				    <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+				    <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
+				    <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
+				    <PagerStyle Visible="False"></PagerStyle>
+				    <Columns>
+				    	<asp:TemplateColumn>
+							<HeaderStyle Height="20px" Width="20px" CssClass="TableHeader"></HeaderStyle>
+							<ItemTemplate>
+								<asp:Image id="imgStatus" runat="server"></asp:Image>
+							</ItemTemplate>
+						</asp:TemplateColumn>
+				    </Columns>
+                </asp:datagrid>
+			</asp:panel>
+			
+			
+			</form>
+
+            <script>
+                if (!$("#drlColorTACalendarID").val())
+                {
+                    $("#gotoCalendar").css('display', 'none')
+                }
+
+                var goToCalendar = function () {
+                    var tCalReferenceId = $("#drlColorTACalendarID").val()
+                    //if (tCalReferenceId)
+                    var newWin = window.open("../TimeAction/TimeAction_Frame.aspx?TID=" + tCalReferenceId, "_blank", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=200,height=180,left=375,top=200");
+                    newWin.focus();
+                }
+
+                function btnClose_Click() {
+                    <%= strExitScript %>
+                    return false;
+                }
+            </script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<Table Name="uTradePartnerRelationship" formcolumns="3" 
+       DataKeyField="TradePartnerRelationshipID"
+       PageSize="10" GridHeight="400" GridWidth="600" ViewMode="ByRow" SaveMode="ByPage" AutoSizeInReadMode="false"
+       AllowColumnReordering="true" AllowGrouping="true" ShowGroupFooter="false"
+       AllowSorting="true" AllowMultiColumnSorting="false" FrozenColumnCount="0"
+       AllowKeyboardSupport="true" AllowPaging="false" AllowFiltering="false"
+       AllowScrolling="false" AllowRowDraggingReadMode="false" AllowRowDraggingEditMode="false" 
+       AllowRowSelect="true" AllowMultiRowSelect="false" 
+       AddCheckboxRowSelectColumnReadMode="false" AddCheckboxRowSelectColumnEditMode="false" 
+    gridcolumns="" FormSQL="spx_TradePartnerRelationship_SELECT"
+	GridReadSQL="spx_TradePartnerRelationship_SELECT" GridSQL="spx_TradePartnerRelationship_SELECT">
+	<column Name="TradePartnerRelationshipID" PK="true" alias="TradePartnerRelationshipID" Type="label" datatype="string"
+		enabled="false" Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100"
+		GridOrder="1" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="TradePartnerName" alias="Company Name" Type="label" datatype="string" column="1"		
+		order="1" GridVisible="true" enabled="true" cellwidth="150px" GridWidth="150" Visible="true" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+    <column Name="CountryName" alias="Country" Type="label" datatype="string" column="1"
+		order="1" GridVisible="true" enabled="true" cellwidth="150px" GridWidth="100" Visible="true" GridOrder="1">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+    <column Name="TradePartnerRelationshipTypeName" alias="Type" Type="label" datatype="string" column="1"
+       order="1" GridVisible="true" enabled="true" cellwidth="50px" GridWidth="100" Visible="true" GridOrder="1">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+</Table>

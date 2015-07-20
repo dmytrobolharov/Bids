@@ -1,0 +1,51 @@
+.BOMColorChip
+{
+	float: left;
+	border: 1px solid gainsboro;
+}
+
+.ui-draggable-dragging
+{
+	background-color: #fff;	
+}
+
+div.ColorInfo
+{
+	margin: 15px 0px 10px 0px;
+}
+
+table.ColorInfo
+{
+	float: left;
+	border: 1px solid gainsboro;
+}
+
+.ColorInfo span
+{
+	margin: 2px 0px 2px 0px;
+}
+
+div.MaterialMenu 
+{
+	display: none; 
+	z-index: 10; 
+	position: absolute; 
+	background-color: White;
+}
+
+input.MaterialMenu
+{
+	border: 1px solid gainsboro;
+	background-color: transparent;
+}
+
+input.MaterialMenu:hover 
+{
+	background-color: rgb(220,220,220);
+}
+
+#RadGridColorMgmt .HUI td
+{
+	border: none !important;
+	padding: 1px !important;
+}

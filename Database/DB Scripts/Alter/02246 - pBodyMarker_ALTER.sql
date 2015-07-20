@@ -1,0 +1,32 @@
+Alter table pBodyMarker alter column Marker_Name nvarchar(64)
+Alter table pBodyMarker alter column Location nvarchar(510)
+Alter table pBodyMarker alter column Marker_Description nvarchar(510)
+Alter table pBodyMarker alter column Marker_CrOpId nvarchar(100)
+Alter table pBodyMarker alter column Marker_RevOp1 nvarchar(100)
+Alter table pBodyMarker alter column CUser nvarchar(200)
+Alter table pBodyMarker alter column MUser nvarchar(200)
+Alter table pBodyMarker alter column Marker_RevOp2 nvarchar(100)
+Alter table pBodyMarker alter column Marker_Message nvarchar(100)
+Alter table pBodyMarker alter column Marker_Image_Name nvarchar(510)
+Alter table pBodyMarker alter column Marker_Comments nvarchar(max)
+Alter table pBodyMarker alter column Category nvarchar(100)
+Alter table pBodyMarker alter column SubCat nvarchar(100)
+Alter table pBodyMarker alter column SubCatType nvarchar(100)
+Alter table pBodyMarker alter column Class nvarchar(100)
+Alter table pBodyMarker alter column UserDefined1 nvarchar(100)
+Alter table pBodyMarker alter column UserDefined2 nvarchar(100)
+Alter table pBodyMarker alter column UserDefined3 nvarchar(100)
+Alter table pBodyMarker alter column UserDefined4 nvarchar(100)
+Alter table pBodyMarker alter column UserDefined5 nvarchar(100)
+Alter table pBodyMarker alter column Sizes nvarchar(4000)
+Alter table pBodyMarker alter column PlotFileLocation nvarchar(510)
+Alter table pBodyMarker alter column NotchFile nvarchar(100)
+Alter table pBodyMarker alter column AnnotationFile nvarchar(100)
+
+
+IF(NOT EXISTS(SELECT * FROM sVersion WHERE LastScriptRun='02246'))
+BEGIN
+	INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+	VALUES     ('DB_Version', '4.1.0000', '02246', GetDate())
+END	
+GO

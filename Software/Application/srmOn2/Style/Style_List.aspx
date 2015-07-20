@@ -1,0 +1,20 @@
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Style_List.aspx.vb" Inherits="srmOnApp.Style_List" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<TITLE runat="server" id="PageTitle">Style</TITLE>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<script language="JavaScript"><!--
+		function reloadPage() {
+			parent.opener.location = "../Desktop/Default.aspx";
+		}
+		//--></script> 
+	</HEAD>
+	<FRAMESET cols="150,*" frameborder="yes" bordercolor="#dbd7d0">
+		<FRAME SRC="<%=URLMenu%>" NAME="smenu" SCROLLING=no marginheight=0 marginwidth=0 >
+		<frame name="smain" src="<%=URLMain%>" scrolling="auto" marginheight=0 marginwidth=0 >
+	</FRAMESET>
+</HTML>

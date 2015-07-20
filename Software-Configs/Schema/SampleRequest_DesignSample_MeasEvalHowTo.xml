@@ -1,0 +1,32 @@
+<Table Name="pMSEvalPom" formcolumns="3" gridcolumns="" 
+		FormSQL="spx_SampleRequest_MeasHowTo_SELECT" 
+        GridReadSQL="spx_SampleRequest_MeasHowTo_SELECT" GridSQL="spx_SampleRequest_MeasHowTo_SELECT">
+  <column Name="SampleRequestAMLMeasPOMId" PK="true" alias="SampleRequestAMLMeasPOMId" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>  
+  <column Name="SampleRequestAMLMeasHdrId"  alias="SampleRequestAMLMeasHdrId" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="AMLMeasHdrId" alias="AMLMeasHdrId" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="000" GridOrder="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>  
+  <column Name="Refcode" alias="POM" Type="label" datatype="String" column="1" order="2" GridVisible="true" cellwidth="150px" 
+		GridWidth="75" Visible="true" enabled="false" GridOrder="106" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="Description" alias="Description" Type="label" datatype="String" column="1" order="2" GridVisible="true" cellwidth="150px" 
+		GridWidth="75" Visible="true" enabled="false" GridOrder="106" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>		
+	<column Name="How2MeasText" alias="How To Measure" Type="label" datatype="String" column="1" order="2" GridVisible="true" cellwidth="450px" 
+		GridWidth="450px" Visible="true" enabled="false" GridOrder="106" >
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+  <column Name="HowToImage" alias="How To Image" Type="label" datatype="String" column="1" order="2" GridVisible="true" cellwidth="450px"
+		GridWidth="75" Visible="true" enabled="false" GridOrder="106" >
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+</Table>	

@@ -1,0 +1,62 @@
+BEGIN
+        DECLARE @SizeRange         nvarchar(60),
+                @vSQL              varchar(4000)
+
+         DECLARE SizeRange2Process INSENSITIVE CURSOR
+                 FOR SELECT DISTINCT SizeRange
+                       FROM pgrsizerange
+              FOR READ ONLY
+
+           OPEN SizeRange2Process 
+
+           FETCH NEXT FROM SizeRange2Process INTO @SizeRange
+
+           WHILE @@FETCH_STATUS = 0
+            BEGIN
+                
+                 SET @vSQL = ''
+                 SET @vSQL = 'INSERT INTO pGRSizeRange (SizeClassGuidId,SizeRangeId,SizeRange,SizeClassId,SizeName1'
+                 SET @vSQL = @vSQL + ',SizeName2,SizeName3,SizeName4,SizeName5,SizeName6,SizeName7,SizeName8,SizeName9,SizeName10,SizeName11'
+                 SET @vSQL = @vSQL + ',SizeName12,SizeDesc1,SizeDesc2,SizeDesc3,SizeDesc4,SizeDesc5,SizeDesc6,SizeDesc7,SizeDesc8,SizeDesc9'
+                 SET @vSQL = @vSQL + ',SizeDesc10,SizeDesc11,SizeDesc12,SizeName13,SizeDesc13,SizeName14,SizeDesc14,SizeName15,SizeDesc15'
+                 SET @vSQL = @vSQL + ',SizeName16,SizeDesc16,SizeName17,SizeDesc17,SizeName18,SizeDesc18,SizeName19,SizeDesc19,SizeName20'
+                 SET @vSQL = @vSQL + ',SizeDesc20,SizeName21,SizeDesc21,SizeName22,SizeDesc22,SizeName23,SizeDesc23,SizeName24,SizeDesc24'
+                 SET @vSQL = @vSQL + ',SizeName25,SizeDesc25,SizeName26,SizeDesc26,SizeName27,SizeDesc27,SizeName28,SizeDesc28,SizeName29'
+                 SET @vSQL = @vSQL + ',SizeDesc29,SizeName30,SizeDesc30,SizeName31,SizeDesc31,SizeName32,SizeDesc32,SizeName33,SizeDesc33'
+                 SET @vSQL = @vSQL + ',SizeName34,SizeDesc34,SizeName35,SizeDesc35,SizeName36,SizeDesc36,SizeName37,SizeDesc37,SizeName38'
+                 SET @vSQL = @vSQL + ',SizeDesc38,SizeName39,SizeDesc39,SizeName40,SizeDesc40,SizeName41,SizeDesc41,SizeName42,SizeDesc42'
+                 SET @vSQL = @vSQL + ',SizeName43,SizeDesc43,SizeName44,SizeDesc44,SizeName45,SizeDesc45,SizeName46,SizeDesc46,SizeName47'
+                 SET @vSQL = @vSQL + ',SizeDesc47,SizeName48,SizeDesc48,CUser,CDate,Muser,MDate) '
+                 SET @vSQL = @vSQL + 'SELECT TOP 1 '''
+                 SET @vSQL = @vSQL + '00000000-0000-0000-0000-000000000000'''
+                 SET @vSQL = @vSQL +  ',SizeRangeId,SizeRange,SizeClassId,SizeName1'
+                 SET @vSQL = @vSQL + ',SizeName2,SizeName3,SizeName4,SizeName5,SizeName6,SizeName7,SizeName8,SizeName9,SizeName10,SizeName11'
+                 SET @vSQL = @vSQL + ',SizeName12,SizeDesc1,SizeDesc2,SizeDesc3,SizeDesc4,SizeDesc5,SizeDesc6,SizeDesc7,SizeDesc8,SizeDesc9'
+                 SET @vSQL = @vSQL + ',SizeDesc10,SizeDesc11,SizeDesc12,SizeName13,SizeDesc13,SizeName14,SizeDesc14,SizeName15,SizeDesc15'
+                 SET @vSQL = @vSQL + ',SizeName16,SizeDesc16,SizeName17,SizeDesc17,SizeName18,SizeDesc18,SizeName19,SizeDesc19,SizeName20'
+                 SET @vSQL = @vSQL + ',SizeDesc20,SizeName21,SizeDesc21,SizeName22,SizeDesc22,SizeName23,SizeDesc23,SizeName24,SizeDesc24'
+                 SET @vSQL = @vSQL + ',SizeName25,SizeDesc25,SizeName26,SizeDesc26,SizeName27,SizeDesc27,SizeName28,SizeDesc28,SizeName29'
+                 SET @vSQL = @vSQL + ',SizeDesc29,SizeName30,SizeDesc30,SizeName31,SizeDesc31,SizeName32,SizeDesc32,SizeName33,SizeDesc33'
+                 SET @vSQL = @vSQL + ',SizeName34,SizeDesc34,SizeName35,SizeDesc35,SizeName36,SizeDesc36,SizeName37,SizeDesc37,SizeName38'
+                 SET @vSQL = @vSQL + ',SizeDesc38,SizeName39,SizeDesc39,SizeName40,SizeDesc40,SizeName41,SizeDesc41,SizeName42,SizeDesc42'
+                 SET @vSQL = @vSQL + ',SizeName43,SizeDesc43,SizeName44,SizeDesc44,SizeName45,SizeDesc45,SizeName46,SizeDesc46,SizeName47'
+                 SET @vSQL = @vSQL + ',SizeDesc47,SizeName48,SizeDesc48,CUser,CDate,Muser,MDate '
+                 SET @vSQL = @vSQL + ' FROM pGRSizeRange '
+                 SET @vSQL = @vSQL + ' WHERE SizeRange = ''' + @SizeRange + ''''
+
+                 -- PRINT 'Statment: ' + @vSQL
+
+                 EXEC (@vSQL)
+                 
+                 IF @@error <> 0
+                      BEGIN
+                         PRINT @vSQL + ' Failed'
+                         goto error
+                      END                
+                 FETCH NEXT FROM SizeRange2Process INTO @SizeRange
+            END
+
+error:
+        CLOSE  SizeRange2Process
+	DEALLOCATE  SizeRange2Process
+END

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_119ed327" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610_PROJ" schemaname="dbo" >
+		<table name="pControlPanel" >
+			<column name="ControlPanelID" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ControlPanelName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ControlPanelDescription" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ControlPanelOrder" type="int" length="10" decimal="0" jt="4" />
+			<column name="ControlPanelIdSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ControlPanelSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ControlPanelSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ControlPanelTableName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ControlPanelUrl" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ControlPanelEditSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SPXLogicInsert" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SPXLogicUpdate" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ControlPanelTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ControlPanelRepId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="IsDataValidation" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK__pControlPanel__02091B31" unique="PRIMARY_KEY" >
+				<column name="ControlPanelID" />
+			</index>
+			<index name="idx_pControlPanel" unique="NORMAL" >
+				<column name="ControlPanelTypeID" />
+			</index>
+			<fk name="fk_pcontrolpanel" to_schema="dbo" to_table="pControlPanelType" >
+				<fk_column name="ControlPanelTypeID" pk="ControlPanelTypeID" />
+			</fk>
+		</table>
+		<table name="pControlPanelType" >
+			<column name="ControlPanelTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="ControlPanelTypeName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ControlPanelTypeDescription" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="varchar" length="5" decimal="0" jt="12" />
+			<index name="PK_pControlPanelType" unique="PRIMARY_KEY" >
+				<column name="ControlPanelTypeID" />
+			</index>
+		</table>
+	</schema>
+	<layout id="Layout_269fe58e" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="pControlPanel" color="bfd4f5" x="435" y="45" />
+		<entity schema="dbo" name="pControlPanelType" color="bfd4f5" x="45" y="105" />
+		<group name="Control Panel" color="ccffff" >
+			<entity schema="dbo" name="pControlPanelType" />
+			<entity schema="dbo" name="pControlPanel" />
+		</group>
+	</layout>
+</project>

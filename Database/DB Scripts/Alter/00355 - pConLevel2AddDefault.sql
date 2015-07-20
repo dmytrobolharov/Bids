@@ -1,0 +1,1 @@
+alter table pConLevel2 add constraint DF_pConLevel2_Level2ID default newid() for Level2ID

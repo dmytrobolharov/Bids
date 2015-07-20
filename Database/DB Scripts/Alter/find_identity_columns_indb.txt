@@ -1,0 +1,21 @@
+--
+-- 1st query just tables with identity columns
+--
+
+select TABLE_NAME
+from INFORMATION_SCHEMA.COLUMNS 
+where TABLE_SCHEMA = 'dbo' 
+and COLUMNPROPERTY(object_id(TABLE_NAME), COLUMN_NAME, 'IsIdentity') = 1 
+order by TABLE_NAME 
+go
+
+--
+-- 2nd query the table along with the column name that is the identity column.
+--
+
+select TABLE_NAME + '.' + COLUMN_NAME, TABLE_NAME 
+from INFORMATION_SCHEMA.COLUMNS 
+where TABLE_SCHEMA = 'dbo' 
+and COLUMNPROPERTY(object_id(TABLE_NAME), COLUMN_NAME, 'IsIdentity') = 1 
+order by TABLE_NAME 
+go

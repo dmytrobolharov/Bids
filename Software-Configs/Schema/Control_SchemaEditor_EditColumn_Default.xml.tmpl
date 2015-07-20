@@ -1,0 +1,31 @@
+﻿<table Name="sSchemaFileTableColumn" formcolumns="1" gridcolumns="" 
+       FormSQL="SELECT * FROM sSchemaFileTableColumn" 
+       GridReadSQL="SELECT * FROM sSchemaFileTableColumn" 
+       GridSQL="SELECT * FROM sSchemaFileTableColumn">
+  <column Name="Name" PK="true" alias="Name"  Type="label" datatype="string" select="true" enabled="true" Visible="false" cellwidth="300px" 
+          GridVisible="true" GridWidth="300" GridOrder="001" GridSearch="false" column="1" order="001">
+        <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+    </column>
+  <column Name="PK" PK="false" alias="PK" Type="dropdownlist" datatype="query" select="true" enabled="true" Visible="true" cellwidth="300px" 
+          GridVisible="true" GridWidth="300" GridOrder="002" GridSearch="false" column="1" order="002"
+          lookupquery="SELECT ItemValue AS ItemKey, ItemValue FROM dvtTrueFalse ORDER BY ItemSort" 
+          textfield="ItemKey" ValueField="ItemValue" AutoPostBack="false" AddNullField="true" DefaultValue="false" Search="false">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Alias" PK="false" alias="Alias" Type="textbox" datatype="string" select="true" enabled="true" Visible="true" cellwidth="300px" 
+          GridVisible="true" GridWidth="300" GridOrder="003" GridSearch="false" column="1" order="003">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Type" PK="false" alias="Column Type" Type="dropdownlist" datatype="query" select="true" enabled="true" Visible="true" cellwidth="300px" 
+          GridVisible="true" GridWidth="300" GridOrder="004" column="1" order="004" 
+          lookupquery="SELECT ColumnTypeName AS ColumnTypeID, ColumnTypeName FROM dColumnType ORDER BY ColumnTypeName" 
+          textfield="ColumnTypeName" ValueField="ColumnTypeID" AutoPostBack="false" AddNullField="false" DefaultValue="label" Search="false">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="DataType" PK="false" alias="Data Type" Type="dropdownlist" datatype="query" select="true" enabled="true" Visible="true" cellwidth="300px" 
+          GridVisible="true" GridWidth="300" GridOrder="005" column="1" order="005" 
+          lookupquery="SELECT ColumnDataTypeName AS ColumnDataTypeID, ColumnDataTypeName FROM dColumnDataType ORDER BY ColumnDataTypeName" 
+          textfield="ColumnDataTypeName" ValueField="ColumnDataTypeID" AutoPostBack="false" AddNullField="false" Search="false">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+</table>

@@ -1,0 +1,2 @@
+INSERT INTO Mapping(Map, MapDetail, MapUrl, MapEditUrl, MapEmlUrl, MapFolder, Sort)
+VALUES     ('40000000-0000-0000-0000-000000000018', 'Design Detail 2', 'Style_DesignDetailForm.aspx', 'Style_DesignDetailForm_Edit.aspx', 'Style_DesignDetailForm_Eml.aspx', 'StyleFolder', 'A05')

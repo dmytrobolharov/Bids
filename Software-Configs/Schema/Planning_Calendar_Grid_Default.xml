@@ -1,0 +1,55 @@
+<Table Name="pPlanningTACalendar" formcolumns="1" gridcolumns="" 
+       FormSQL="spx_Planning_SKUHeader_SELECT" 
+       GridReadSQL="spx_Planning_SKUHeader_SELECT" 
+       GridSQL="spx_Planning_SKUHeader_SELECT">
+	
+	<column Name="PlanningTACalendarID" PK="true" alias="PlanningTACalendarID" Type="textbox" datatype="string"
+          column="1" order="3" GridVisible="false" cellwidth="150px" GridWidth="150" Visible="false"
+          enabled="true" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+    <column Name="TACalTemplateName" alias="Name" Type="textbox" datatype="string"
+          column="1" order="3" GridVisible="true" cellwidth="150px" GridWidth="150" Visible="true"
+          enabled="true" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="TACalTemplateDescription" alias="Description" Type="label" select="true"
+			cellwidth="100px" datatype="string" column="1" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="2">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>	
+	<column Name="Divisions" alias="Division" Type="label" select="true"
+			cellwidth="100px" datatype="string" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="3">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Active" alias="Active" Type="dropdownlist" select="true"
+			cellwidth="100px" datatype="query" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="SELECT * FROM pActive" textfield="Custom" ValueField="CustomKey" AutoPostBack="FALSE" GridOrder="4">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="SeasonYearId" alias="Season/Year" Type="dropdownlist" datatype="query" column="2" order="2" enabled="true" Visible="true" cellwidth="100px" GridVisible="true" GridWidth="75" lookupquery="SELECT SeasonYearID, SeasonYear FROM vwx_SeasonYear_SEL WHERE Active = 1" select="true" ValueField="SeasonYearID" textfield="SeasonYear" AutoPostBack="false" GridOrder="3">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" Dataformat="" ValidationExpression="" C5ass="" GridHeaderCss="" FilterField="" GridOrder="" />
+		<LookupTable XMLFileName="Lookup_SeasonYear.xml" ParentIDField="SeasonYearId" ChildIDField="SeasonYearID" />
+	</column>
+	<column Name="CUser" alias="Created By" Type="label" select="true"
+			cellwidth="100px" datatype="string" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="5">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" select="true"
+			cellwidth="100px" datatype="datetime" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="6">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" select="true"
+			cellwidth="100px" datatype="string" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="7">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" select="true"
+			cellwidth="100px" datatype="datetime" column="2" order="2" GridVisible="true" GridWidth="100" Visible="true"
+			enabled="true" lookupquery="" textfield="" ValueField="" AutoPostBack="FALSE" GridOrder="8">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

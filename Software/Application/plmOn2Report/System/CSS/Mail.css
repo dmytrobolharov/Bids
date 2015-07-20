@@ -1,0 +1,142 @@
+/* Default CSS Stylesheet for a new Web Application project */
+
+BODY
+{
+	BACKGROUND-COLOR: #F5F5F5;
+	FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 11px;
+	border : 0px none;
+	margin : 0px;
+	border-right: 0;
+	border-bottom: 0;
+	border-left: 0;
+	border-top: 0;
+}
+
+
+INPUT, SELECT, TEXTAREA
+{
+	FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+H1, H2, H3, H4, H5, TH, THEAD, TFOOT
+{
+    COLOR: #003366;
+}
+H1	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	2em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H2	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1.75em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H3	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1.58em;
+	font-weight:	500;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H4	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1.33em;
+	font-weight:	500;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H5, DT	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H6	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	.8em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}		
+
+A:link	{	
+	text-decoration:	none;
+	color: Black;
+	}	
+		
+A:visited	{	
+	text-decoration:	none;
+	color: Black;
+	}	
+		
+A:active	{	
+	text-decoration:	none;
+	color:	#333399;
+	}	
+		
+A:hover	{	
+	text-decoration:	underline;
+	color: Red;
+	}
+
+.inputBlue
+{
+	FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 11px;  
+	COLOR: White;
+	background-color: #6495ED;
+}
+	
+.fontHead
+{
+    FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;  
+	COLOR: Black;
+}
+.font
+{
+    FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px; 
+    COLOR: Black;
+}
+.fontRed
+{
+    FONT-FAMILY: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px; 
+    COLOR: Red;
+}
+
+

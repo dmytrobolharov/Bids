@@ -1,0 +1,15 @@
+--
+--
+--	A DB reflecting all changes in TRUNK
+--	up to and including script #345
+--	can be found here:
+-- 		\\bagile\CD-ROMs\YuniquePLM\CD-Supplements\YuniquePLM-4.0\Database
+--
+--	Grab a copy and restore it to wherever you like.
+--
+--	Please use the DB Project in:
+--		$Gerber\YuniquePLM\Trunk\Database\DB Projects\YuniqueDB
+--	
+--	To make further DB alterations.
+--
+--

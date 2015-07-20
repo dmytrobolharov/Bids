@@ -1,0 +1,123 @@
+.taskTypeYunique select{
+    width: 60px;
+}
+
+.taskYunique{
+    width: 180px;
+}
+
+.hideColumn{
+    width: 25px;
+    height: 25px;
+    color:red;
+}
+
+.multiselect {
+    position: absolute;
+    z-index: 9999;
+    background-color: white;
+    width:150px;
+    height:140px;
+    border:solid 1px #c0c0c0;
+    overflow:auto;
+}
+
+.multiselect label {
+    display:block;
+    width:10px;
+}
+
+span.k-combobox{
+    width: 140px;
+}
+span.k-datepicker{
+    width: 120px;
+}
+
+.form{
+    display: none;
+}
+.yuniqueButtonHeader{
+    background-image:url(../css/images/table_header.gif);
+    background-repeat: repeat-x;
+    height: 30px;
+}
+.deleteTemplate{
+    width: 189px;
+}
+.resEdit {
+    padding: 15px;
+}
+span.k-dropdown{
+    width: 189px;
+}
+span.typeYunique.k-dropdown{
+    width: 90px;
+}
+
+.resLine {
+    width: 95%;
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid #d0d0d0;
+}
+
+body {
+}
+
+html *
+{
+    font-family: Tahoma,Geneva,Arial,Helvetica,sans-serif !important;
+}
+.ganttButtonBar h1{
+    color: #000000;
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 10px;
+}
+
+
+.taskNoteTextArea{
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10px;
+width: 450px;
+height: 200px;
+resize: none;
+}
+
+.taskNoteSave{
+text-align: right;
+margin-right: 13px;
+}
+.taskNoteSaveBnt{
+    font-size: 50%;
+    margin-right: 4px;
+}
+.disabledDay{
+    /*display: block;*/
+    /*overflow: hidden;*/
+    /*min-height: 22px;*/
+    /*line-height: 22px;*/
+    /*padding: 0 .45em 0 .1em;*/
+    color: red;
+    cursor: default;
+    opacity: 0.5;
+}
+.disabledDayClicked{
+    display: block;
+    overflow: hidden;
+    min-height: 1.8333em;
+    line-height: 1.8333em;
+    padding: 0 .45em 0 .1em;
+}
+
+.groupNameColor{
+    border-color:transparent;
+    background-color:transparent;
+}
+
+.groupItem{
+  margin-left: 10px;
+}

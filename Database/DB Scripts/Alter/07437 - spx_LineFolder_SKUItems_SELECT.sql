@@ -1,0 +1,121 @@
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[spx_LineFolder_SKUItems_SELECT]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[spx_LineFolder_SKUItems_SELECT]
+GO
+
+CREATE PROCEDURE [dbo].[spx_LineFolder_SKUItems_SELECT]
+	@LineFolderID UNIQUEIDENTIFIER,
+	@LineFolderSKUHeaderID UNIQUEIDENTIFIER,
+	@SearchCond NVARCHAR(MAX) = '',
+	@SelectedDimensions as NVARCHAR(200) = '',
+	@DimensionValue as NVARCHAR(MAX) = ''
+AS
+BEGIN
+	
+	-- SKU plan from planning
+	IF EXISTS(SELECT * FROM pPlanningSKUHeader WHERE PlanningSKUHeaderID = @LineFolderSKUHeaderID)
+	BEGIN
+		EXEC spx_LineFolder_SKUItems_FromPlanning_SELECT
+			@LineFolderID = @LineFolderID,
+			@PlanningSKUHeaderID = @LineFolderSKUHeaderID,
+			@SearchCond = @SearchCond,
+			@SelectedDimensions = @SelectedDimensions,
+			@DimensionValue = @DimensionValue
+		
+		RETURN
+	END	
+
+	-- update style sku items
+	DECLARE @WFIs TABLE(ROW INT IDENTITY(1, 1), WorkflowItemID UNIQUEIDENTIFIER)
+	
+	INSERT INTO @WFIs(WorkflowItemID)
+	SELECT ssi.WorkflowItemID 
+	FROM pStyleSKUItem ssi
+	WHERE ssi.LineFolderSKUHeaderID = @LineFolderSKUHeaderID
+
+	DECLARE @ROW INT = 1,
+			@TOTAL INT = (SELECT COUNT(*) FROM @WFIs);
+		
+	WHILE @ROW <= @TOTAL
+	BEGIN
+		DECLARE @WorkflowItemID UNIQUEIDENTIFIER = (SELECT WorkflowItemID FROM @WFIs WHERE ROW = @ROW)
+				
+		exec spx_StyleSKUItems_Logic_UPDATE @WorkflowItemID = @WorkflowItemID
+	
+		SET @ROW = @ROW + 1
+	END
+	
+	DECLARE @SKUHeaderDimTypeList NVARCHAR(MAX)	
+	
+	SELECT @SKUHeaderDimTypeList = COALESCE(@SKUHeaderDimTypeList + ',', '') + 
+	'NULL AS [' + CAST(lfshdt.LineFolderSKUHeaderDimTypeID AS NVARCHAR(50)) + ']'
+	FROM pLineFolderSKUHeaderDimType lfshdt
+	INNER JOIN pLineFolderSKUHeader lfsh ON lfshdt.LineFolderSKUHeaderID = lfsh.LineFolderSKUHeaderID
+	WHERE lfsh.LineFolderSKUHeaderID = @LineFolderSKUHeaderID ORDER BY Position
+	
+	;WITH dims as (
+		SELECT sbdi.StyleBOMDimensionID, V.* FROM pStyleBOMDimensionItem sbdi		
+		CROSS APPLY (VALUES (ItemDim1Id, ItemDim1Name, ItemDim1Active, ItemDim1TypeId, ItemDim1Sort),
+							(ItemDim2Id, ItemDim2Name, ItemDim2Active, ItemDim2TypeId, ItemDim2Sort),
+							(ItemDim3Id, ItemDim3Name, ItemDim3Active, ItemDim3TypeId, ItemDim3Sort))
+						   V(DimID,      DimName,      DimActive,      ItemDmTypeID,   DimSort)
+		LEFT JOIN dbo.fnx_Split(@SelectedDimensions, ',') sd ON V.ItemDmTypeID = sd.value
+		WHERE V.DimActive = 1
+			AND (sd.value IS NULL OR sd.value IS NOT NULL AND V.DimName LIKE '%' + @DimensionValue + '%')
+	)
+	SELECT sh.StyleID, sh.StyleNo, ssis.*, 
+		d.Custom AS DivisionName, st.StyleTypeDescription,
+		sc.StyleCategory, sbc.Custom AS SubCategory,
+		ssi.ItemDim1TypeID, ssi.ItemDim2TypeID, ssi.ItemDim3TypeID, ssi.WorkflowItemID,
+		sh.DivisionID, sh.StyleType, sh.StyleCategory AS StyleCategoryId, sh.SubCategoryId, d.BrandID,
+		'<img src="' + REPLACE(dbo.fnx_GetStreamingImageSmallPath(sh.DesignSketchID, sh.DesignSketchVersion), '?S=500', '?S=50') + '" alt="" />' AS Thumbnail,
+		CASE WHEN lfi.LineFolderItemDrop IN ('1', 'Yes') THEN 1 ELSE 0 END AS LineFolderItemDrop,
+		CASE WHEN lfi.LineFolderItemDrop IN ('1', 'Yes') THEN '<img src="../System/Icons/icon_drop.gif" alt="" />' ELSE '' END AS LineFolderItemDropIcon,	
+		dims1.DimName as ItemDim1Name,
+		dims2.DimName as ItemDim2Name,
+		dims3.DimName as ItemDim3Name
+	INTO #tmpItems
+	FROM pLineFolderItem lfi
+	INNER JOIN pStyleHeader sh ON lfi.StyleID = sh.StyleID
+	LEFT JOIN vwx_Division_SEL d ON sh.DivisionID = d.CustomID
+	LEFT JOIN pStyleType st ON sh.StyleType = st.StyleTypeID
+	LEFT JOIN pStyleCategory sc ON sh.StyleCategory = sc.StyleCategoryId
+	LEFT JOIN pSubCategory sbc ON UPPER(CAST(sh.SubCategoryID AS NVARCHAR(40))) = UPPER(CAST(sbc.CustomID AS NVARCHAR(40)))
+	INNER JOIN pStyleSeasonYear ssy ON lfi.StyleSeasonYearID = ssy.StyleSeasonYearID
+	INNER JOIN pLineFolderSKUHeader lfsh ON lfi.LineFolderID = lfsh.LineFolderID
+	INNER JOIN pStyleSKUItem ssi ON lfsh.LineFolderSKUHeaderID = ssi.LineFolderSKUHeaderID
+	INNER JOIN pWorkFlowItem wfi ON ssi.WorkflowItemID = wfi.WorkFlowItemID AND lfi.StyleSeasonYearID = wfi.StyleSeasonYearID
+	INNER JOIN pStyleSKUItems ssis ON ssi.StyleSKUItemID = ssis.StyleSKUItemID
+	LEFT JOIN dims dims1 ON ssi.StyleBOMDimensionID = dims1.StyleBOMDimensionID
+		AND ssis.ItemDim1ID = dims1.DimID
+	LEFT JOIN dims dims2 ON ssi.StyleBOMDimensionID = dims2.StyleBOMDimensionID
+		AND ssis.ItemDim2ID = dims2.DimID
+	LEFT JOIN dims dims3 ON ssi.StyleBOMDimensionID = dims3.StyleBOMDimensionID
+		AND ssis.ItemDim3ID = dims3.DimID
+	WHERE lfsh.LineFolderSKUHeaderID = @LineFolderSKUHeaderID
+		AND (ssis.ItemDim1ID  IS NULL OR ssis.ItemDim1ID IS NOT NULL AND dims1.DimID IS NOT NULL)
+		AND (ssis.ItemDim2ID  IS NULL OR ssis.ItemDim2ID IS NOT NULL AND dims2.DimID IS NOT NULL)
+		AND (ssis.ItemDim3ID  IS NULL OR ssis.ItemDim3ID IS NOT NULL AND dims3.DimID IS NOT NULL)
+	ORDER BY sh.StyleNo, dims1.DimSort, dims2.DimSort, dims3.DimSort
+	
+	EXEC('SELECT ' + @SKUHeaderDimTypeList + ', * FROM #tmpItems ' + @SearchCond)
+	
+	DROP TABLE #tmpItems
+	
+END
+
+
+
+
+
+
+
+
+
+
+
+GO
+
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES ('DB_Version', '0.5.0000', '07437', GetDate())
+GO

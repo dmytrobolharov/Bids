@@ -1,0 +1,38 @@
+<table Name="pSampleRequestCommentTemplate" formcolumns="1" gridcolumns="" FormSQL="SELECT CustomID, CustomKey, CustomName, CustomDescription, CustomSort, Active, CUser, CDate, MUser, MDate FROM pSampleRequestCommentTemplate WHERE Active = 1 ORDER BY CustomSort"
+	GridReadSQL="SELECT CustomID, CustomKey, CustomName, CustomDescription, CustomSort, Active, CUser, CDate, MUser, MDate FROM pSampleRequestCommentTemplate WHERE Active = 1 ORDER BY CustomSort" 
+	   GridSQL="SELECT CustomID, CustomKey, CustomName, CustomDescription, CustomSort, Active, CUser, CDate, MUser, MDate FROM pSampleRequestCommentTemplate WHERE Active = 1 ORDER BY CustomSort">
+
+	<column Name="CustomID" PK="true" alias="CustomID" Type="label" datatype="string" enabled="false"
+	        Visible="false" cellwidth="150px" Search="false" GridVisible="false" GridWidth="100"
+	        column="1" gridorder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CustomName" alias="Comment Name"  Type="textbox" datatype="string" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="100" GridOrder="1" GridSearch="true"
+		column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="Division Code Required!" />
+	</column>
+	<column Name="CustomDescription" alias="Comment Description" Type="textbox" datatype="string" enabled="true"
+		Visible="true" cellwidth="150px" GridVisible="true" GridWidth="300" GridOrder="1" GridSearch="true"
+		column="1" order="1">
+		<Validator Class="Required" Type="" Minimum="" Maximum="" Text="Division Name Required!" />
+	</column>
+	<!--
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="1" order="4"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="true" GridOrder="4">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="label" datatype="datetime" column="1" order="5"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="true" GridOrder="5">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="1" order="6"
+		GridVisible="true" cellwidth="150px" Visible="false" enabled="false" GridOrder="6">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="1" order="7"
+		GridVisible="true" cellwidth="150px" Visible="true" enabled="true" GridOrder="7">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	-->
+</table>

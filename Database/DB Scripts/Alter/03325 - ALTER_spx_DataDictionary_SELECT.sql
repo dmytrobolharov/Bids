@@ -1,0 +1,98 @@
+-- ******************************************************************************************** */
+-- * GERBER TECHNOLOGY                                                                          */
+-- *                                                                                            */
+-- * YuniquePLM                                                                                 */
+-- * Alter Script                                                                               */
+-- * Database:                                                                                  */
+-- * 10 April 2012                                                                              */
+-- *                                                                                            */
+-- * Copyright (c) 2002-2012 Gerber Technology, Inc.  All rights reserved.                      */
+-- * This information is confidential and proprietary.  You may not disseminate it              */
+-- * to any other party without the express written consent of Gerber Technology, Inc.          */
+-- *                                                                                            */
+-- ******************************************************************************************** */
+-- ******************************************************************************************** */
+-- COMMENTS
+--
+--
+--
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET NOCOUNT ON
+GO
+
+
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE SPECIFIC_NAME = N'spx_DataDictionary_SELECT')
+   DROP PROCEDURE spx_DataDictionary_SELECT
+GO
+
+CREATE PROCEDURE [dbo].[spx_DataDictionary_SELECT] 
+(
+    @ColumnID uniqueidentifier = NULL,
+    @ExcludeCoreColumns int = NULL,
+    @ExcludeCustomColumns int = NULL
+)
+AS
+
+BEGIN
+
+    IF @ColumnID IS NULL
+    BEGIN
+
+		IF @ExcludeCoreColumns IS NULL
+		BEGIN
+			SET @ExcludeCoreColumns = 0
+		END
+
+		IF @ExcludeCustomColumns IS NULL
+		BEGIN
+			SET @ExcludeCustomColumns = 0
+		END
+
+		DECLARE @CoreColumns int
+		DECLARE @CustomColumns int
+		
+		IF @ExcludeCoreColumns = 0
+			SET @CoreColumns = 1
+		ELSE
+			SET @CoreColumns = 0
+
+		IF @ExcludeCustomColumns = 0
+			SET @CustomColumns = 0
+		ELSE
+			SET @CustomColumns = 1
+
+        SELECT dd.*, cdt.ColumnDataTypeName, ct.ColumnTypeName
+        FROM dDataDictionary dd
+        INNER JOIN dColumnType ct ON dd.ColumnTypeID = ct.ColumnTypeID
+        INNER JOIN dColumnDataType cdt ON dd.ColumnDataTypeID = cdt.ColumnDataTypeID
+        WHERE CoreColumn = @CoreColumns OR CoreColumn = @CustomColumns
+        ORDER BY dd.ColumnAlias
+
+    END
+
+    ELSE
+    BEGIN
+
+        SELECT dd.*, cdt.ColumnDataTypeName, ct.ColumnTypeName
+        FROM dDataDictionary dd
+        INNER JOIN dColumnType ct ON dd.ColumnTypeID = ct.ColumnTypeID
+        INNER JOIN dColumnDataType cdt ON dd.ColumnDataTypeID = cdt.ColumnDataTypeID
+        WHERE dd.ColumnID = @ColumnID
+
+    END
+
+END
+GO
+
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES              ('DB_Version', '5.0.0000', '03325', GetDate())
+GO
+
+SET NOCOUNT Off
+GO

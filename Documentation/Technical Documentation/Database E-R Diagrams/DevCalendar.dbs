@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_23502dc4" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610" schemaname="dbo" >
+		<table name="iCustom1" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomKey" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="TableRelation" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Icon" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CustomSort" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="BrandID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_iCustom1" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+		</table>
+		<table name="pImageWorkflowTemplateItem" >
+			<column name="ImageWorkflowTemplateItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageWorkflowTemplateItemName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageWorkflowTemplateItemDesc" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="ImageWorkflowTemplateItemURL" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pImageWorkflowTemplateItem" unique="PRIMARY_KEY" >
+				<column name="ImageWorkflowTemplateItemID" />
+			</index>
+		</table>
+		<table name="pMaterialRequestWorkflow" >
+			<column name="MaterialRequestWorkflowID" type="varchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="MaterialRequestWorkflow" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowSort" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="WorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="GroupID" type="char" length="1" decimal="0" jt="1" />
+			<column name="GroupName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Days" type="int" length="10" decimal="0" jt="4" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestWorkflowItemSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowControlSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowColor" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="MaterialRequestSubmitHeaderPrintSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitBodyPrintSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowRepId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestWorkflowGUIDID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<index name="PK_pMaterialRequestWorkflow" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestWorkflowID" />
+			</index>
+			<index name="idx_pMaterialRequestWorkflow" unique="UNIQUE" >
+				<column name="MaterialRequestWorkflowGUIDID" />
+			</index>
+		</table>
+		<table name="pMaterialTemplatePage" >
+			<column name="MaterialTemplatePageID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialTemplatePageName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MaterialTemplatePageDesc" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="MaterialTemplatePageURL" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="Sort" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pMaterialTemplatePage" unique="PRIMARY_KEY" >
+				<column name="MaterialTemplatePageID" />
+			</index>
+		</table>
+		<table name="pSampleWorkflow" >
+			<column name="SampleWorkflowID" type="nvarchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="SampleWorkflow" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="WorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="GroupID" type="nvarchar" length="1" decimal="0" jt="12" />
+			<column name="GroupName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Days" type="int" length="10" decimal="0" jt="4" />
+			<column name="Active" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SampleWorkflowSort" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="AllowUpdateGradeRules" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="SampleWorkflowRepId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="SampleWorkflowGUID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<index name="PK__pSampleWorkflow__17786E0C" unique="PRIMARY_KEY" >
+				<column name="SampleWorkflowID" />
+			</index>
+			<index name="idx_pSampleWorkflow" unique="UNIQUE" >
+				<column name="WorkflowID" />
+			</index>
+		</table>
+		<table name="pSeasonYear" >
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Season" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Year" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrentSeason" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SAPCode" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUSTOM" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="SeasonOrder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_pSeasonYear" unique="PRIMARY_KEY" >
+				<column name="SeasonYearID" />
+			</index>
+		</table>
+		<table name="pTACalHoliday" >
+			<column name="TACalHolidayId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="TACalHolidayDate" type="date" length="10" decimal="0" jt="91" />
+			<column name="TACalHolidayName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="TACalHolidayCountry" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="InternalHoliday" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" mandatory="y" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" >
+				<defo>&#039;System&#039;</defo>
+			</column>
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" mandatory="y" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" >
+				<defo>&#039;System&#039;</defo>
+			</column>
+			<index name="PK_pTACalHoliday" unique="PRIMARY_KEY" >
+				<column name="TACalHolidayId" />
+			</index>
+		</table>
+		<table name="pTACalReference" >
+			<column name="TACalReferenceId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="TACalTemplateId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TACalReferenceTypeId" type="int" length="10" decimal="0" jt="4" />
+			<column name="ReferenceId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_pTACalReference" unique="PRIMARY_KEY" >
+				<column name="TACalReferenceId" />
+			</index>
+			<index name="IX_pTACalReference_ReferenceId" unique="NORMAL" >
+				<column name="ReferenceId" />
+			</index>
+			<index name="IX_pTACalReference_TACalTemplateID_ReferenceID" unique="NORMAL" >
+				<column name="TACalTemplateId" />
+				<column name="ReferenceId" />
+			</index>
+			<index name="IX_pTACalReference_TACalTemplateId_TACalReferenceTypeId" unique="NORMAL" >
+				<column name="TACalTemplateId" />
+				<column name="TACalReferenceTypeId" />
+			</index>
+			<fk name="FK_pTACalReference_pTACalTemplate" to_schema="dbo" to_table="pTACalTemplate" >
+				<fk_column name="TACalTemplateId" pk="TACalTemplateId" />
+			</fk>
+		</table>
+		<table name="pTACalReferenceTask" >
+			<column name="TACalRefTaskId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="TACalReferenceId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TACalTemplateTaskId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TaskRevisedlStart" type="date" length="10" decimal="0" jt="91" />
+			<column name="TaskRevisedEnd" type="date" length="10" decimal="0" jt="91" />
+			<column name="TaskActualStart" type="date" length="10" decimal="0" jt="91" />
+			<column name="TaskActualEnd" type="date" length="10" decimal="0" jt="91" />
+			<column name="TaskAssignedToId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TaskStatusId" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_pTACalReferenceTask" unique="PRIMARY_KEY" >
+				<column name="TACalRefTaskId" />
+			</index>
+			<index name="IX_pTACalReferenceTask_TACalReferenceId" unique="NORMAL" >
+				<column name="TACalReferenceId" />
+			</index>
+			<index name="IX_pTACalReferenceTask_TACalTemplateTaskID" unique="NORMAL" >
+				<column name="TACalTemplateTaskId" />
+			</index>
+			<fk name="FK_pTACalReferenceTask_pTACalReference" to_schema="dbo" to_table="pTACalReference" >
+				<fk_column name="TACalReferenceId" pk="TACalReferenceId" />
+			</fk>
+			<fk name="FK_pTACalReferenceTask_pTACalTemplateTask" to_schema="dbo" to_table="pTACalTemplateTask" >
+				<fk_column name="TACalTemplateTaskId" pk="TACalTemplateTaskId" />
+			</fk>
+		</table>
+		<table name="pTACalStatus" >
+			<column name="StatusID" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="StatusName" type="nvarchar" length="256" decimal="0" jt="12" mandatory="y" />
+			<index name="PK_pTACalStatus" unique="PRIMARY_KEY" >
+				<column name="StatusID" />
+			</index>
+		</table>
+		<table name="pTACalTemplate" >
+			<column name="TACalTemplateId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="TACalTemplateName" type="nvarchar" length="100" decimal="0" jt="12" mandatory="y" />
+			<column name="TACalTemplateDescription" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="SeasonYearId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TACalTemplatePlanStart" type="date" length="10" decimal="0" jt="91" />
+			<column name="TACalTemplatePlanEnd" type="date" length="10" decimal="0" jt="91" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="TACalTemplateDuration" type="nvarchar" length="2000" decimal="0" jt="12" />
+			<index name="PK_pTACalTemplate" unique="PRIMARY_KEY" >
+				<column name="TACalTemplateId" />
+			</index>
+			<index name="idx_pTACalTemplate" unique="NORMAL" >
+				<column name="SeasonYearId" />
+			</index>
+			<fk name="Fk_pTACalTemplate" to_schema="dbo" to_table="pSeasonYear" >
+				<fk_column name="SeasonYearId" pk="SeasonYearID" />
+			</fk>
+		</table>
+		<table name="pTACalTemplateDivision" >
+			<column name="TACalTemplateDivisionID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="DivisionID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="TACalTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<index name="PK_pTACalTemplateDivision" unique="PRIMARY_KEY" >
+				<column name="TACalTemplateDivisionID" />
+			</index>
+			<index name="IX_pTACalTemplateDivision_DivisionID" unique="NORMAL" >
+				<column name="DivisionID" />
+			</index>
+			<index name="IX_pTACalTemplateDivision_TACalTemplateId" unique="NORMAL" >
+				<column name="TACalTemplateID" />
+			</index>
+			<fk name="fk_ptacaltemplatedivision_ptacaltemplate" to_schema="dbo" to_table="pTACalTemplate" delete_action="cascade" >
+				<fk_column name="TACalTemplateID" pk="TACalTemplateId" />
+			</fk>
+			<fk name="Fk_pTACalTemplateDivision" to_schema="dbo" to_table="iCustom1" >
+				<fk_column name="DivisionID" pk="CustomID" />
+			</fk>
+		</table>
+		<table name="pTACalTemplateTask" >
+			<column name="TACalTemplateTaskId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="TACalTemplateId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TaskId" type="int" length="10" decimal="0" jt="4" />
+			<column name="TaskDepId" type="int" length="10" decimal="0" jt="4" />
+			<column name="TaskDepTypeId" type="int" length="10" decimal="0" jt="4" />
+			<column name="TaskPlanStart" type="date" length="10" decimal="0" jt="91" />
+			<column name="TaskPlanEnd" type="date" length="10" decimal="0" jt="91" />
+			<column name="TaskTypeId" type="int" length="10" decimal="0" jt="4" />
+			<column name="TaskWorkflowId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TaskName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="TaskDuration" type="int" length="10" decimal="0" jt="4" />
+			<column name="TaskAssignedToId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="TaskProgress" type="decimal" length="6" decimal="2" jt="3" />
+			<column name="startIsMilestone" type="int" length="10" decimal="0" jt="4" />
+			<column name="endIsMilestone" type="int" length="10" decimal="0" jt="4" />
+			<column name="level" type="int" length="10" decimal="0" jt="4" />
+			<column name="New" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="CarryOver" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TaskNote" type="nvarchar" length="2000" decimal="0" jt="12" />
+			<column name="TaskStatus" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_pTACalTemplateTask" unique="PRIMARY_KEY" >
+				<column name="TACalTemplateTaskId" />
+			</index>
+			<fk name="FK_pTACalTemplateTask_pTACalStatus" to_schema="dbo" to_table="pTACalStatus" update_action="cascade" >
+				<fk_column name="TaskStatus" pk="StatusID" />
+			</fk>
+			<fk name="FK_pTACalTemplateTask_pTACalTemplate" to_schema="dbo" to_table="pTACalTemplate" >
+				<fk_column name="TACalTemplateId" pk="TACalTemplateId" />
+			</fk>
+			<fk name="FK_pTACalTemplateTask_pTATaskType" to_schema="dbo" to_table="pTATaskType" >
+				<fk_column name="TaskTypeId" pk="TATaskTypeId" />
+			</fk>
+			<fk name="FK_pTACalTemplateTask_pTATaskWorkflow" to_schema="dbo" to_table="pTATaskWorkflow" >
+				<fk_column name="TaskWorkflowId" pk="TATaskWorkflowId" />
+			</fk>
+		</table>
+		<table name="pTACalTemplateTaskDep" >
+			<column name="TACalTemplateTaskDep" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="TACalTemplateTaskParentId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TACalTemplateTaskChildId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="TATaskDepTypeId" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pTACalTemplateTaskDep" unique="PRIMARY_KEY" >
+				<column name="TACalTemplateTaskDep" />
+			</index>
+			<index name="IX_pTACalTemplateTaskdep_ChildID" unique="NORMAL" >
+				<column name="TACalTemplateTaskChildId" />
+				<column name="TACalTemplateTaskParentId" />
+			</index>
+			<index name="idx_pTACalTemplateTaskDep" unique="NORMAL" >
+				<column name="TACalTemplateTaskChildId" />
+			</index>
+			<fk name="FK_pTACalTemplateTaskDep_pTACalTemplateTask" to_schema="dbo" to_table="pTACalTemplateTask" >
+				<fk_column name="TACalTemplateTaskParentId" pk="TACalTemplateTaskId" />
+			</fk>
+			<fk name="Fk_pTACalTemplateTaskDep" to_schema="dbo" to_table="pTACalTemplateTask" >
+				<fk_column name="TACalTemplateTaskChildId" pk="TACalTemplateTaskId" />
+			</fk>
+		</table>
+		<table name="pTATaskType" >
+			<column name="TATaskTypeId" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="TATaskTypeName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pTATaskType" unique="PRIMARY_KEY" >
+				<column name="TATaskTypeId" />
+			</index>
+		</table>
+		<table name="pTATaskWorkflow" >
+			<column name="TATaskWorkflowId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="TACalReferenceTypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="WorkflowId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="WorkflowName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="WorkflowFolder" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="WorkflowSchemaGrid" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="WorkflowSchemaSearchGrid" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_pTATaskWorkflow" unique="PRIMARY_KEY" >
+				<column name="TATaskWorkflowId" />
+			</index>
+			<index name="Pk_pTATaskWorkflow_0" unique="UNIQUE" >
+				<column name="WorkflowId" />
+			</index>
+			<fk name="Fk_pTATaskWorkflow" to_schema="dbo" to_table="pMaterialTemplatePage" >
+				<fk_column name="WorkflowId" pk="MaterialTemplatePageID" />
+			</fk>
+			<fk name="Fk_pTATaskWorkflow_0" to_schema="dbo" to_table="pMaterialRequestWorkflow" >
+				<fk_column name="WorkflowId" pk="MaterialRequestWorkflowGUIDID" />
+			</fk>
+			<fk name="Fk_pTATaskWorkflow_1" to_schema="dbo" to_table="pSampleWorkflow" >
+				<fk_column name="WorkflowId" pk="WorkflowID" />
+			</fk>
+			<fk name="Fk_pTATaskWorkflow_2" to_schema="dbo" to_table="pWorkflow" >
+				<fk_column name="WorkflowId" pk="WorkflowID" />
+			</fk>
+			<fk name="Fk_pTATaskWorkflow_3" to_schema="dbo" to_table="pImageWorkflowTemplateItem" >
+				<fk_column name="WorkflowId" pk="ImageWorkflowTemplateItemID" />
+			</fk>
+		</table>
+		<table name="pWorkflow" >
+			<column name="WorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="Workflow" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="WorkDays" type="int" length="10" decimal="0" jt="4" />
+			<column name="WorkAlert" type="int" length="10" decimal="0" jt="4" />
+			<column name="WorkflowSort" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="Body" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="WorkflowTypeID" type="varchar" length="1" decimal="0" jt="12" mandatory="y" >
+				<defo>&#039;D&#039;</defo>
+			</column>
+			<index name="PK__pWorkflow__797309D9" unique="PRIMARY_KEY" >
+				<column name="WorkflowID" />
+			</index>
+		</table>
+	</schema>
+	<layout id="Layout_45231ce" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="pTACalTemplateTask" color="bfd4f5" x="585" y="45" >
+			<column name="TACalTemplateTaskId" />
+			<column name="TACalTemplateId" />
+			<column name="TaskTypeId" />
+			<column name="TaskWorkflowId" />
+			<column name="TaskStatus" />
+		</entity>
+		<entity schema="dbo" name="iCustom1" color="c0d4f3" x="45" y="150" >
+			<column name="CustomID" />
+		</entity>
+		<entity schema="dbo" name="pTACalTemplate" color="c8f5bf" x="330" y="135" >
+			<column name="TACalTemplateId" />
+			<column name="SeasonYearId" />
+		</entity>
+		<entity schema="dbo" name="pTACalReference" color="c8f5bf" x="330" y="45" >
+			<column name="TACalReferenceId" />
+			<column name="TACalTemplateId" />
+		</entity>
+		<entity schema="dbo" name="pTATaskType" color="bfd4f5" x="330" y="225" >
+			<column name="TATaskTypeId" />
+		</entity>
+		<entity schema="dbo" name="pTACalStatus" color="bfd4f5" x="585" y="180" >
+			<column name="StatusID" />
+		</entity>
+		<entity schema="dbo" name="pTACalReferenceTask" color="bfd4f5" x="885" y="45" >
+			<column name="TACalRefTaskId" />
+			<column name="TACalReferenceId" />
+			<column name="TACalTemplateTaskId" />
+		</entity>
+		<entity schema="dbo" name="pSampleWorkflow" color="c0d4f3" x="45" y="300" >
+			<column name="SampleWorkflowID" />
+			<column name="WorkflowID" />
+		</entity>
+		<entity schema="dbo" name="pMaterialRequestWorkflow" color="c0d4f3" x="45" y="390" >
+			<column name="MaterialRequestWorkflowID" />
+			<column name="MaterialRequestWorkflowGUIDID" />
+		</entity>
+		<entity schema="dbo" name="pMaterialTemplatePage" color="c0d4f3" x="45" y="480" >
+			<column name="MaterialTemplatePageID" />
+		</entity>
+		<entity schema="dbo" name="pWorkflow" color="c0d4f3" x="330" y="480" >
+			<column name="WorkflowID" />
+		</entity>
+		<entity schema="dbo" name="pTACalTemplateDivision" color="c8f5bf" x="45" y="45" />
+		<entity schema="dbo" name="pSeasonYear" color="c0d4f3" x="45" y="225" >
+			<column name="SeasonYearID" />
+		</entity>
+		<entity schema="dbo" name="pTACalTemplateTaskDep" color="c8f5bf" x="855" y="150" >
+			<column name="TACalTemplateTaskDep" />
+			<column name="TACalTemplateTaskParentId" />
+			<column name="TATaskDepTypeId" />
+			<column name="TACalTemplateTaskChildId" />
+		</entity>
+		<entity schema="dbo" name="pTACalHoliday" color="c8f5bf" x="885" y="360" />
+		<entity schema="dbo" name="pTATaskWorkflow" color="bfd4f5" x="330" y="300" >
+			<column name="TATaskWorkflowId" />
+			<column name="WorkflowId" />
+		</entity>
+		<entity schema="dbo" name="pImageWorkflowTemplateItem" color="c0d4f3" x="585" y="480" >
+			<column name="ImageWorkflowTemplateItemID" />
+		</entity>
+		<group name="Dev Calendar" color="c4e0f9" >
+			<entity schema="dbo" name="pTACalTemplateTask" />
+			<entity schema="dbo" name="iCustom1" />
+			<entity schema="dbo" name="pTACalTemplate" />
+			<entity schema="dbo" name="pTACalReference" />
+			<entity schema="dbo" name="pTATaskType" />
+			<entity schema="dbo" name="pSeasonYear" />
+			<entity schema="dbo" name="pTACalStatus" />
+			<entity schema="dbo" name="pTACalReferenceTask" />
+			<entity schema="dbo" name="pTACalTemplateTaskDep" />
+			<entity schema="dbo" name="pTACalTemplateDivision" />
+			<entity schema="dbo" name="pTATaskWorkflow" />
+			<entity schema="dbo" name="pTACalHoliday" />
+			<entity schema="dbo" name="pSampleWorkflow" />
+			<entity schema="dbo" name="pMaterialRequestWorkflow" />
+			<entity schema="dbo" name="pMaterialTemplatePage" />
+			<entity schema="dbo" name="pWorkflow" />
+			<entity schema="dbo" name="pImageWorkflowTemplateItem" />
+		</group>
+	</layout>
+</project>

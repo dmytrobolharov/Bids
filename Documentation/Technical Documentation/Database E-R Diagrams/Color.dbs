@@ -1,0 +1,1371 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_3a8f1a50" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610_PROJ" schemaname="dbo" >
+		<table name="ColorLibrary" >
+			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="PantoneType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="PantoneNumber" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="PantoneName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="C" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="M" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="Y" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="K" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="R" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="G" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="B" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="H" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="S" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="L" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="LAB_L" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_A" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_B" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Hex" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Active" type="bit" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="150" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="150" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorSource" type="nvarchar" length="150" decimal="0" jt="12" />
+			<column name="ColorLibraryTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorLibraryID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageVersion" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK__ColorLibrary__26DAAD2D" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="IX_ColorLibrary_ColorLibraryTypeID" unique="NORMAL" >
+				<column name="ColorLibraryTypeID" />
+				<column name="ColorLibraryID" />
+			</index>
+			<fk name="ColorType" virtual="y" to_schema="dbo" to_table="ColorType" >
+				<fk_column name="ColorLibraryTypeID" pk="ColorLibraryTypeID" />
+			</fk>
+		</table>
+		<table name="ColorLibraryCoated" >
+			<column name="BookOrder" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Page" type="float" length="53" decimal="0" jt="8" />
+			<column name="PageRow" type="float" length="53" decimal="0" jt="8" />
+			<column name="PageColumn" type="float" length="53" decimal="0" jt="8" />
+			<column name="PANTONEColor" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEName" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEType" type="nvarchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo>N&#039;PANTONE COATED&#039;</defo>
+			</column>
+			<column name="CIELab_D50_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="aRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="ColorLibraryTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>&#039;00000000-0000-0000-0000-0000000000e)&#039;</defo>
+			</column>
+			<index name="PK_ColorLibraryCoated" unique="PRIMARY_KEY" >
+				<column name="BookOrder" />
+			</index>
+			<fk name="ColorType_0" virtual="y" to_schema="dbo" to_table="ColorType" >
+				<fk_column name="ColorLibraryTypeID" pk="ColorLibraryTypeID" />
+			</fk>
+		</table>
+		<table name="ColorLibraryPantonePNCoated" >
+			<column name="BookOrder" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Page" type="float" length="53" decimal="0" jt="8" />
+			<column name="PageRow" type="float" length="53" decimal="0" jt="8" />
+			<column name="PageColumn" type="float" length="53" decimal="0" jt="8" />
+			<column name="PANTONEColor" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEName" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEType" type="nvarchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo>N&#039;PANTONE Pastels &amp; Neons COATED&#039;</defo>
+			</column>
+			<column name="CIELab_D50_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="aRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="ColorLibraryTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>&#039;00000000-0000-0000-0000-0000000000g)&#039;</defo>
+			</column>
+			<index name="PK_ColorLibraryPantonePNCoated" unique="PRIMARY_KEY" >
+				<column name="BookOrder" />
+			</index>
+			<fk name="ColorType_1" virtual="y" to_schema="dbo" to_table="ColorType" >
+				<fk_column name="ColorLibraryTypeID" pk="ColorLibraryTypeID" />
+			</fk>
+		</table>
+		<table name="ColorLibraryPantonePNUncoated" >
+			<column name="BookOrder" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Page" type="float" length="53" decimal="0" jt="8" />
+			<column name="PageRow" type="float" length="53" decimal="0" jt="8" />
+			<column name="PANTONEColor" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEName" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEType" type="nvarchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo>N&#039;PANTONE Pastels &amp; Neons UNCOATED&#039;</defo>
+			</column>
+			<column name="CIELab_D50_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="aRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="ColorLibraryTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>&#039;00000000-0000-0000-0000-0000000000f)&#039;</defo>
+			</column>
+			<index name="PK_ColorLibraryPantonePNUncoated" unique="PRIMARY_KEY" >
+				<column name="BookOrder" />
+			</index>
+			<fk name="ColorType_2" virtual="y" to_schema="dbo" to_table="ColorType" >
+				<fk_column name="ColorLibraryTypeID" pk="ColorLibraryTypeID" />
+			</fk>
+		</table>
+		<table name="ColorLibraryPending" >
+			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorCode" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorSource" type="nvarchar" length="150" decimal="0" jt="12" />
+			<column name="ColorNotes" type="ntext" length="1073741823" decimal="0" jt="-1" />
+			<column name="ColorPaletteCustom1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom5" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom6" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom7" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom8" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom9" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom10" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorImage" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="ColorImageType" type="varchar" length="5" decimal="0" jt="12" mandatory="y" >
+				<defo>&#039;0&#039;</defo>
+			</column>
+			<column name="Hex" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="R" type="int" length="10" decimal="0" jt="4" />
+			<column name="G" type="int" length="10" decimal="0" jt="4" />
+			<column name="B" type="int" length="10" decimal="0" jt="4" />
+			<column name="C" type="int" length="10" decimal="0" jt="4" />
+			<column name="M" type="int" length="10" decimal="0" jt="4" />
+			<column name="Y" type="int" length="10" decimal="0" jt="4" />
+			<column name="K" type="int" length="10" decimal="0" jt="4" />
+			<column name="H" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="S" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="L" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="LAB_L" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_A" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_B" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Change" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Action" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="SystemServerStorageID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ColorLibraryID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorClassID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="isUpload" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageVersion" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_ColorLibraryPending" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="IX_ColorLibraryPending_ColorFolderID" unique="NORMAL" >
+				<column name="ColorFolderID" />
+				<column name="CUser" />
+				<column name="isUpload" />
+			</index>
+			<fk name="pColorClass" virtual="y" to_schema="dbo" to_table="pColorClass" >
+				<fk_column name="ColorClassID" pk="ColorClassID" />
+			</fk>
+			<fk name="pColorFolder" virtual="y" to_schema="dbo" to_table="pColorFolder" >
+				<fk_column name="ColorFolderID" pk="ColorFolderID" />
+			</fk>
+			<fk name="pColorPalette_0" virtual="y" to_schema="dbo" to_table="pColorPalette" >
+				<fk_column name="ColorPaletteID" pk="ColorPaletteID" />
+			</fk>
+		</table>
+		<table name="ColorLibraryTCX" >
+			<column name="BookOrder" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Page" type="float" length="53" decimal="0" jt="8" />
+			<column name="PageRow" type="float" length="53" decimal="0" jt="8" />
+			<column name="PageColumn" type="float" length="53" decimal="0" jt="8" />
+			<column name="PANTONEColor" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEName" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEType" type="nvarchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo>N&#039;PANTONE TCX&#039;</defo>
+			</column>
+			<column name="CIELab_D50_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="aRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_ColorLibraryTCX" unique="PRIMARY_KEY" >
+				<column name="BookOrder" />
+			</index>
+		</table>
+		<table name="ColorLibraryTPX" >
+			<column name="BookOrder" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Page" type="float" length="53" decimal="0" jt="8" />
+			<column name="PageRow" type="float" length="53" decimal="0" jt="8" />
+			<column name="PANTONEColor" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEName" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEType" type="nvarchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo>N&#039;PANTONE TPX&#039;</defo>
+			</column>
+			<column name="CIELab_D50_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="aRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_ColorLibraryTPX" unique="PRIMARY_KEY" >
+				<column name="BookOrder" />
+			</index>
+		</table>
+		<table name="ColorLibraryUncoated" >
+			<column name="BookOrder" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Page" type="float" length="53" decimal="0" jt="8" />
+			<column name="PageRow" type="float" length="53" decimal="0" jt="8" />
+			<column name="PANTONEColor" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEName" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEType" type="nvarchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo>N&#039;PANTONE UNCOATED&#039;</defo>
+			</column>
+			<column name="CIELab_D50_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="aRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_HTML" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="ColorLibraryTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>&#039;00000000-0000-0000-0000-0000000000d)&#039;</defo>
+			</column>
+			<index name="PK_ColorLibraryUncoated" unique="PRIMARY_KEY" >
+				<column name="BookOrder" />
+			</index>
+			<fk name="ColorType_3" virtual="y" to_schema="dbo" to_table="ColorType" >
+				<fk_column name="ColorLibraryTypeID" pk="ColorLibraryTypeID" />
+			</fk>
+		</table>
+		<table name="ColorType" >
+			<column name="ColorLibraryTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorType" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="StyleColorway" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="ColorLibrarySchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ColorLibrarySearchSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ColorLibraryItemSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="ColorTypeName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CorpColor" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_ColorType" unique="PRIMARY_KEY" >
+				<column name="ColorLibraryTypeID" />
+			</index>
+		</table>
+		<table name="Users" >
+			<column name="UserId" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="UserCode" type="nvarchar" length="6" decimal="0" jt="12" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="FirstName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MiddleName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="LastName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Title" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Birthday" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Company" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Street1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Street2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="City" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="State" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Zip" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Country" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Phone" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Fax" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Mobile" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="UserName" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="PassWord" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Email" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContactName1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Admin" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="PublicAccess" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TradePartner" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="LastUpdate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSION" type="int" length="10" decimal="0" jt="4" />
+			<column name="SESSIONDATE" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSIONOS" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="SCREENWIDTH" type="int" length="10" decimal="0" jt="4" />
+			<column name="SCREENHEIGHT" type="int" length="10" decimal="0" jt="4" />
+			<column name="FULLNAME" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="USERDIR" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="MAILADDR" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="MAXSIZE" type="int" length="10" decimal="0" jt="4" />
+			<column name="MAXMSGS" type="int" length="10" decimal="0" jt="4" />
+			<column name="FLAGS" type="int" length="10" decimal="0" jt="4" />
+			<column name="TYPE" type="int" length="10" decimal="0" jt="4" />
+			<column name="IP" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Picture" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="A_CompanyFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TeamFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TradingFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ColorFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ImageFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TemplateFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_DesignFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_CatalogFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_WorkflowFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ExternalAccess" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleHeader" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleMaterial" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleArtwork" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleLicensee" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleColorway" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleDesignDetail" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleDevelopmentSpec" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleGradeMeasurment" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ProductionRequest" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="D_Desktop" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CalendarTemplateID" type="int" length="10" decimal="0" jt="4" />
+			<column name="ActivationID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ReadOnly" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SystemClientID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="ServerLocationID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="Division" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="JobRole" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Location" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Floor" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MachineType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContractType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContractEnd" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Menswear" type="int" length="10" decimal="0" jt="4" />
+			<column name="Womenswear" type="int" length="10" decimal="0" jt="4" />
+			<column name="Accessories" type="int" length="10" decimal="0" jt="4" />
+			<column name="Divisionless" type="int" length="10" decimal="0" jt="4" />
+			<column name="Prorsum" type="int" length="10" decimal="0" jt="4" />
+			<column name="UnLockHeader" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PreferredLang" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="UserProductAttributeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="AvatarImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DashFolderItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Intellimas" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="AdobePluginAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="evmOnAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Gerber" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="DeskTopID" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK__Users__6D0DFE4B" unique="PRIMARY_KEY" >
+				<column name="UserId" />
+			</index>
+			<index name="IX_Users_05" unique="NORMAL" >
+				<column name="Active" />
+				<column name="Title" />
+				<column name="FULLNAME" />
+			</index>
+			<index name="IX_Users_06" unique="NORMAL" >
+				<column name="UserId" />
+				<column name="FirstName" />
+				<column name="LastName" />
+				<column name="Email" />
+			</index>
+			<index name="IX_Users_TeamID" unique="UNIQUE" >
+				<column name="TeamID" />
+			</index>
+		</table>
+		<table name="pColorActivityType" >
+			<column name="ColorActivityTypeId" type="varchar" length="2" decimal="0" jt="12" mandatory="y" />
+			<column name="ColorActivityTypeName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorActivityTypeMsg" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorActivityTypeRepId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<index name="PK_pColorActivityType" unique="PRIMARY_KEY" >
+				<column name="ColorActivityTypeId" />
+			</index>
+		</table>
+		<table name="pColorClass" >
+			<column name="ColorClassID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorClassDisplayID" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="ColorClassName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorClassSort" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="ColorClassDefault" type="int" length="10" decimal="0" jt="4" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pColorClass" unique="PRIMARY_KEY" >
+				<column name="ColorClassID" />
+			</index>
+		</table>
+		<table name="pColorFolder" >
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorFolderDescription" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorSubFolder1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorSubFolder2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorSubFolder3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorSubFolder4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorSubFolder5" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorSubFolder6" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorSubFolder7" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorSubFolder8" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorSubFolder9" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MChange" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="StyleColorway" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SystemServerStorageID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="ColorTypeID" type="int" length="10" decimal="0" jt="4" />
+			<column name="ColorTypeSort" type="varchar" length="5" decimal="0" jt="12" />
+			<index name="PK__pColorFolder__60924D76" unique="PRIMARY_KEY" >
+				<column name="ColorFolderID" />
+			</index>
+			<index name="IX_pColorFolder_ColorTypeID" unique="NORMAL" >
+				<column name="ColorTypeID" />
+			</index>
+			<fk name="fk_pcolorfolder_pcolortype" to_schema="dbo" to_table="pColorType" >
+				<fk_column name="ColorTypeID" pk="ColorTypeID" />
+			</fk>
+		</table>
+		<table name="pColorFolderActivity" >
+			<column name="ColorFolderActivityID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartner" type="int" length="10" decimal="0" jt="4" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorActivity" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ActivityType" type="varchar" length="2" decimal="0" jt="12" />
+			<index name="PK_pColorActivity" unique="PRIMARY_KEY" >
+				<column name="ColorFolderActivityID" />
+			</index>
+			<index name="idx_pColorFolderActivity" unique="NORMAL" >
+				<column name="TeamID" />
+			</index>
+			<fk name="pColorFolder_0" virtual="y" to_schema="dbo" to_table="pColorFolder" >
+				<fk_column name="ColorFolderID" pk="ColorFolderID" />
+			</fk>
+			<fk name="pColorPalette_1" virtual="y" to_schema="dbo" to_table="pColorPalette" >
+				<fk_column name="ColorPaletteID" pk="ColorPaletteID" />
+			</fk>
+			<fk name="fk_pcolorfolderactivity_users" to_schema="dbo" to_table="Users" >
+				<fk_column name="TeamID" pk="TeamID" />
+			</fk>
+		</table>
+		<table name="pColorFolderChange" >
+			<column name="ColorFolderChangeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorFolderChangeNo" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="ColorFolderStatus" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="ColorFolderWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorFolderChangeNotifyTo" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ColorFolderChangeType" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorFolderChangeDescription" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ColorFolderChangeBy" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorFolderChangeDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ActiveID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>&#039;{00000000-0000-0000-0000-000000000000}&#039;</defo>
+			</column>
+			<column name="Active" type="bit" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="RepRowGuidColID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<index name="PK_pColorFolderChange" unique="PRIMARY_KEY" >
+				<column name="ColorFolderChangeID" />
+				<column name="ColorFolderChangeNo" />
+			</index>
+			<index name="idx_pColorFolderChange" unique="NORMAL" >
+				<column name="ColorFolderWorkflowID" />
+			</index>
+			<fk name="pColorFolder_1" virtual="y" to_schema="dbo" to_table="pColorFolder" >
+				<fk_column name="ColorFolderID" pk="ColorFolderID" />
+			</fk>
+			<fk name="fk_pcolorfolderchange" to_schema="dbo" to_table="pColorFolderWorkflowPage" >
+				<fk_column name="ColorFolderWorkflowID" pk="ColorFolderWorkflowID" />
+			</fk>
+		</table>
+		<table name="pColorFolderSeasonYear" >
+			<column name="ColorFolderSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pColorFolderSeasonYear" unique="PRIMARY_KEY" >
+				<column name="ColorFolderSeasonYearID" />
+			</index>
+			<index name="IX_pColorFolderSeasonYear_ColorFolderID" unique="NORMAL" >
+				<column name="ColorFolderID" />
+			</index>
+			<index name="idx_pColorFolderSeasonYear" unique="NORMAL" >
+				<column name="SeasonYearID" />
+			</index>
+			<fk name="pColorFolder_2" virtual="y" to_schema="dbo" to_table="pColorFolder" >
+				<fk_column name="ColorFolderID" pk="ColorFolderID" />
+			</fk>
+			<fk name="fk_pcolorfolderseasonyear" to_schema="dbo" to_table="pSeasonYear" >
+				<fk_column name="SeasonYearID" pk="SeasonYearID" />
+			</fk>
+		</table>
+		<table name="pColorFolderWorkflowPage" >
+			<column name="ColorFolderWorkflowPageID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorFolderWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="WorkStart" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="WorkDue" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="WorkAssignedTo" type="int" length="10" decimal="0" jt="4" />
+			<column name="WorkStatus" type="int" length="10" decimal="0" jt="4" />
+			<column name="WorkStatusDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ActualStart" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ActualEnd" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Sort" type="nvarchar" length="4" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pColorFolderWorkflowPage" unique="PRIMARY_KEY" >
+				<column name="ColorFolderWorkflowPageID" />
+			</index>
+			<index name="IX_pColorFolderWorkflowPage_ColorFolderID" unique="NORMAL" >
+				<column name="ColorFolderID" />
+				<column name="ColorFolderWorkflowID" />
+			</index>
+			<index name="Pk_pColorFolderWorkflowPage_0" unique="UNIQUE" >
+				<column name="ColorFolderWorkflowID" />
+			</index>
+			<fk name="pColorFolder_3" virtual="y" to_schema="dbo" to_table="pColorFolder" >
+				<fk_column name="ColorFolderID" pk="ColorFolderID" />
+			</fk>
+		</table>
+		<table name="pColorGroup" >
+			<column name="ColorGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="ColorGroupName" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Sort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CustomField1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_pColorGroupID" unique="PRIMARY_KEY" >
+				<column name="ColorGroupID" />
+			</index>
+		</table>
+		<table name="pColorHistory" >
+			<column name="ColorHistoryID" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pColorHistory" unique="PRIMARY_KEY" >
+				<column name="ColorHistoryID" />
+			</index>
+			<index name="IX_pColorHistory_TeamID" unique="NORMAL" >
+				<column name="TeamID" />
+				<column name="CDate" />
+			</index>
+			<index name="idx_pColorHistory" unique="NORMAL" >
+				<column name="TeamID" />
+			</index>
+			<fk name="pColorFolder_4" virtual="y" to_schema="dbo" to_table="pColorFolder" >
+				<fk_column name="ColorFolderID" pk="ColorFolderID" />
+			</fk>
+			<fk name="fk_pcolorhistory_users" to_schema="dbo" to_table="Users" >
+				<fk_column name="TeamID" pk="TeamID" />
+			</fk>
+		</table>
+		<table name="pColorLibraryAEGlobal" >
+			<column name="BookOrder" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="PantoneColor" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PantoneName" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PantoneType" type="nvarchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo>N&#039;A&amp;E Global Color Card&#039;</defo>
+			</column>
+			<column name="sRGB_D65_2_R" type="int" length="10" decimal="0" jt="4" />
+			<column name="sRGB_D65_2_G" type="int" length="10" decimal="0" jt="4" />
+			<column name="sRGB_D65_2_B" type="int" length="10" decimal="0" jt="4" />
+			<column name="sRGB_HTML" type="varchar" length="6" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_pColorLibraryAEGlobal" unique="PRIMARY_KEY" >
+				<column name="BookOrder" />
+			</index>
+		</table>
+		<table name="pColorLibraryAESuperBrite" >
+			<column name="BookOrder" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="PantoneColor" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PantoneName" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PantoneType" type="nvarchar" length="255" decimal="0" jt="12" mandatory="y" >
+				<defo>N&#039;A&amp;E Super Brite&#039;</defo>
+			</column>
+			<column name="IBMColorNumber" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="sRGB_D65_2_R" type="int" length="10" decimal="0" jt="4" />
+			<column name="sRGB_D65_2_G" type="int" length="10" decimal="0" jt="4" />
+			<column name="sRGB_D65_2_B" type="int" length="10" decimal="0" jt="4" />
+			<column name="sRGB_HTML" type="varchar" length="6" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_pColorLibraryAESuperBrite" unique="PRIMARY_KEY" >
+				<column name="BookOrder" />
+			</index>
+		</table>
+		<table name="pColorLibraryTN" >
+			<column name="BookOrder" type="float" length="53" decimal="0" jt="8" mandatory="y" />
+			<column name="PANTONEColor" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="PANTONEName" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="CIELab_D50_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D50_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D50_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_2_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_2_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_L" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_A" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_C" type="float" length="53" decimal="0" jt="8" />
+			<column name="CIELab_D65_10_H" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_X" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Y" type="float" length="53" decimal="0" jt="8" />
+			<column name="XYZ_D65_10_Z" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="sRGB_HTML" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="aRGB_D65_2_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_R" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_G" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_D65_2_PERC_B" type="float" length="53" decimal="0" jt="8" />
+			<column name="aRGB_HTML" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="PANTONEType" type="nchar" length="255" decimal="0" jt="1" mandatory="y" />
+			<index name="PK_pColorLibraryTN" unique="PRIMARY_KEY" >
+				<column name="BookOrder" />
+			</index>
+		</table>
+		<table name="pColorPalette" >
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorCode" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorSource" type="nvarchar" length="150" decimal="0" jt="12" />
+			<column name="ColorNotes" type="ntext" length="1073741823" decimal="0" jt="-1" />
+			<column name="Hex" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="R" type="int" length="10" decimal="0" jt="4" />
+			<column name="G" type="int" length="10" decimal="0" jt="4" />
+			<column name="B" type="int" length="10" decimal="0" jt="4" />
+			<column name="C" type="int" length="10" decimal="0" jt="4" />
+			<column name="M" type="int" length="10" decimal="0" jt="4" />
+			<column name="Y" type="int" length="10" decimal="0" jt="4" />
+			<column name="K" type="int" length="10" decimal="0" jt="4" />
+			<column name="H" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="S" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="L" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="LAB_L" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_A" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_B" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="150" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="150" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Change" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Action" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="ColorImage" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="ColorImageType" type="varchar" length="5" decimal="0" jt="12" mandatory="y" >
+				<defo>&#039;0&#039;</defo>
+			</column>
+			<column name="CopyColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SystemServerStorageID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="ColorPaletteCustom1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom5" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom6" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom7" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom8" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom9" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorPaletteCustom10" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Status" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorLibraryID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorClassID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageVersion" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK__pColorPalette__2B9F624A" unique="PRIMARY_KEY" >
+				<column name="ColorPaletteID" />
+			</index>
+			<index name="IX_pColorPalette_07" unique="NORMAL" >
+				<column name="ColorLibraryID" />
+				<column name="ColorFolderID" />
+			</index>
+			<index name="IX_pColorPalette_ColorFolderID" unique="NORMAL" >
+				<column name="ColorFolderID" />
+			</index>
+			<fk name="pColorClass_0" virtual="y" to_schema="dbo" to_table="pColorClass" >
+				<fk_column name="ColorClassID" pk="ColorClassID" />
+			</fk>
+			<fk name="pColorFolder_5" virtual="y" to_schema="dbo" to_table="pColorFolder" >
+				<fk_column name="ColorFolderID" pk="ColorFolderID" />
+			</fk>
+		</table>
+		<table name="pColorPaletteComment" >
+			<column name="ColorPaletteCommentID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CTeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ColorPaletteComment" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<index name="PK_pColorPaletteComment" unique="PRIMARY_KEY" >
+				<column name="ColorPaletteCommentID" />
+			</index>
+			<index name="idx_pColorPaletteComment" unique="NORMAL" >
+				<column name="CTeamID" />
+			</index>
+			<fk name="pColorPalette_2" virtual="y" to_schema="dbo" to_table="pColorPalette" >
+				<fk_column name="ColorPaletteID" pk="ColorPaletteID" />
+			</fk>
+			<fk name="fk_pcolorpalettecomment_users" to_schema="dbo" to_table="Users" >
+				<fk_column name="CTeamID" pk="TeamID" />
+			</fk>
+		</table>
+		<table name="pColorPaletteDocument" >
+			<column name="ColorPaletteDocumentID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Description" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="DocumentName" type="nvarchar" length="500" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pColorPaletteDocument" unique="PRIMARY_KEY" >
+				<column name="ColorPaletteDocumentID" />
+			</index>
+			<fk name="pColorPalette_3" virtual="y" to_schema="dbo" to_table="pColorPalette" >
+				<fk_column name="ColorPaletteID" pk="ColorPaletteID" />
+			</fk>
+		</table>
+		<table name="pColorPaletteSeasonYear" >
+			<column name="ColorPaletteSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="ColorSeason" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ColorYear" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrentSeason" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_pColorPaletteSeasonYear" unique="PRIMARY_KEY" >
+				<column name="ColorPaletteSeasonYearID" />
+			</index>
+			<index name="IX_pColorPaletteSeasonYear_ColorPaletteID" unique="NORMAL" >
+				<column name="ColorPaletteID" />
+				<column name="SeasonYearID" />
+			</index>
+			<index name="IX_pColorPaletteSeasonYear_SeasonYearID" unique="NORMAL" >
+				<column name="SeasonYearID" />
+			</index>
+			<fk name="pColorFolder_6" virtual="y" to_schema="dbo" to_table="pColorFolder" >
+				<fk_column name="ColorFolderID" pk="ColorFolderID" />
+			</fk>
+			<fk name="pColorPalette_4" virtual="y" to_schema="dbo" to_table="pColorPalette" >
+				<fk_column name="ColorPaletteID" pk="ColorPaletteID" />
+			</fk>
+			<fk name="fk_pcolorpaletteseasonyear" to_schema="dbo" to_table="pSeasonYear" >
+				<fk_column name="SeasonYearID" pk="SeasonYearID" />
+			</fk>
+		</table>
+		<table name="pColorType" >
+			<column name="pColorTypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ColorTypeID" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ColorTypeDescription" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorFolderSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorFolderSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorPaletteSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorPaletteItemSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorPaletteSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorPaletteImageSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Sort" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CorpColor" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="ColorLibraryTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorPaletteGridSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorPaletteGridSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorFolderHeaderSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorFolderPrintSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ColorPaletteSchemaImageSearch" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pColorType" unique="PRIMARY_KEY" >
+				<column name="pColorTypeId" />
+			</index>
+			<index name="IX_pColorType_ColorTypeID" unique="NORMAL" >
+				<column name="ColorTypeID" />
+				<column name="CorpColor" />
+			</index>
+			<index name="Pk_pColorType_0" unique="UNIQUE" >
+				<column name="ColorTypeID" />
+			</index>
+			<fk name="ColorType_4" virtual="y" to_schema="dbo" to_table="ColorType" >
+				<fk_column name="ColorLibraryTypeID" pk="ColorLibraryTypeID" />
+			</fk>
+		</table>
+		<table name="pSeasonYear" >
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Season" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Year" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrentSeason" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SAPCode" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUSTOM" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="SeasonOrder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_pSeasonYear" unique="PRIMARY_KEY" >
+				<column name="SeasonYearID" />
+			</index>
+		</table>
+	</schema>
+	<layout id="Layout_12e37cd8" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="ColorLibraryTCX" color="f5ddbf" x="1365" y="300" >
+			<column name="BookOrder" />
+		</entity>
+		<entity schema="dbo" name="pSeasonYear" color="c0d4f3" x="630" y="60" />
+		<entity schema="dbo" name="ColorLibrary" color="bfd4f5" x="1065" y="390" />
+		<entity schema="dbo" name="ColorLibraryTPX" color="f5ddbf" x="1365" y="390" >
+			<column name="BookOrder" />
+		</entity>
+		<entity schema="dbo" name="pColorLibraryTN" color="f5ddbf" x="1365" y="480" >
+			<column name="BookOrder" />
+		</entity>
+		<entity schema="dbo" name="pColorFolder" color="bfbff5" x="60" y="390" />
+		<entity schema="dbo" name="pColorGroup" color="f5ddbf" x="615" y="690" />
+		<entity schema="dbo" name="pColorActivityType" color="f5ddbf" x="615" y="930" />
+		<entity schema="dbo" name="ColorType" color="c8f5bf" x="1290" y="60" />
+		<entity schema="dbo" name="ColorLibraryCoated" color="bfd4f5" x="1590" y="75" >
+			<column name="BookOrder" />
+			<column name="ColorLibraryTypeID" />
+		</entity>
+		<entity schema="dbo" name="pColorLibraryAESuperBrite" color="bfd4f5" x="1545" y="180" />
+		<entity schema="dbo" name="pColorLibraryAEGlobal" color="bfbff5" x="795" y="60" />
+		<entity schema="dbo" name="ColorLibraryPantonePNCoated" color="bfd4f5" x="960" y="60" >
+			<column name="BookOrder" />
+			<column name="ColorLibraryTypeID" />
+		</entity>
+		<entity schema="dbo" name="ColorLibraryPantonePNUncoated" color="bfd4f5" x="960" y="180" >
+			<column name="BookOrder" />
+			<column name="ColorLibraryTypeID" />
+		</entity>
+		<entity schema="dbo" name="ColorLibraryUncoated" color="bfd4f5" x="960" y="285" >
+			<column name="BookOrder" />
+			<column name="ColorLibraryTypeID" />
+		</entity>
+		<entity schema="dbo" name="pColorHistory" color="bfbff5" x="450" y="165" />
+		<entity schema="dbo" name="pColorFolderChange" color="bfbff5" x="75" y="45" />
+		<entity schema="dbo" name="pColorFolderWorkflowPage" color="bfbff5" x="645" y="390" />
+		<entity schema="dbo" name="pColorPalette" color="d2bff5" x="345" y="405" />
+		<entity schema="dbo" name="pColorType" color="f5ddbf" x="585" y="1125" />
+		<entity schema="dbo" name="ColorLibraryPending" color="c8f5bf" x="45" y="900" />
+		<entity schema="dbo" name="pColorFolderSeasonYear" color="bfbff5" x="360" y="45" />
+		<entity schema="dbo" name="pColorClass" color="d2bff5" x="360" y="1395" />
+		<entity schema="dbo" name="pColorPaletteComment" color="d2bff5" x="105" y="1725" />
+		<entity schema="dbo" name="pColorPaletteSeasonYear" color="d2bff5" x="600" y="1560" />
+		<entity schema="dbo" name="pColorFolderActivity" color="d2bff5" x="600" y="1830" />
+		<entity schema="dbo" name="pColorPaletteDocument" color="d2bff5" x="345" y="1680" />
+		<entity schema="dbo" name="Users" color="c0d4f3" x="990" y="900" >
+			<column name="UserId" />
+			<column name="TeamID" />
+		</entity>
+		<group name="Color Library" color="ccffff" >
+			<entity schema="dbo" name="pColorLibraryAEGlobal" />
+			<entity schema="dbo" name="ColorLibraryPantonePNCoated" />
+			<entity schema="dbo" name="ColorLibraryPantonePNUncoated" />
+			<entity schema="dbo" name="ColorLibraryUncoated" />
+			<entity schema="dbo" name="ColorLibraryCoated" />
+			<entity schema="dbo" name="ColorLibraryTCX" />
+			<entity schema="dbo" name="ColorType" />
+			<entity schema="dbo" name="pColorLibraryAESuperBrite" />
+			<entity schema="dbo" name="ColorLibrary" />
+			<entity schema="dbo" name="ColorLibraryTPX" />
+			<entity schema="dbo" name="pColorLibraryTN" />
+			<entity schema="dbo" name="ColorLibraryPending" />
+			<entity schema="dbo" name="pSeasonYear" />
+			<entity schema="dbo" name="pColorFolderSeasonYear" />
+			<entity schema="dbo" name="pColorPalette" />
+			<entity schema="dbo" name="pColorFolderActivity" />
+			<entity schema="dbo" name="pColorPaletteDocument" />
+			<entity schema="dbo" name="pColorPaletteSeasonYear" />
+			<entity schema="dbo" name="pColorPaletteComment" />
+			<entity schema="dbo" name="pColorFolderChange" />
+			<entity schema="dbo" name="pColorFolder" />
+			<entity schema="dbo" name="pColorHistory" />
+			<entity schema="dbo" name="Users" />
+			<entity schema="dbo" name="pColorFolderWorkflowPage" />
+			<entity schema="dbo" name="pColorGroup" />
+			<entity schema="dbo" name="pColorActivityType" />
+			<entity schema="dbo" name="pColorType" />
+			<entity schema="dbo" name="pColorClass" />
+		</group>
+	</layout>
+</project>

@@ -1,0 +1,37 @@
+<table Name="pStyleMaterials" Table="pLinePlanItem" formcolumns="1" gridcolumns="1" RepeatColumns="5" 
+    RepeatDirection="h" ImageSize="150"
+	FormSQL="SELECT * FROM vmx_LinePlanItem_StyleMaterial_SELECT" 
+    GridSQL="SELECT * FROM vmx_LinePlanItem_StyleMaterial_SELECT" 
+    selectsql="SELECT * FROM vmx_LinePlanItem_StyleMaterial_SELECT" >
+	
+	<column Name="StyleMaterialID" PK="true" alias="StyleMaterialID" Type="label" datatype="string" enabled="true" sorting="false"
+		visible="false" cellwidth="150" GridVisible="False" GridWidth="100" column="1" order="1">
+	</column>
+
+	<column Name="StyleNo" PK="false" alias="StyleNo" Type="label" datatype="string" enabled="true" visible="true" 
+	    cellwidth="150" GridVisible="true" GridWidth="100" column="1" order="2" gridorder="1" sorting="true">
+	</column>
+
+	<column Name="MaterialName" PK="false" alias="MaterialName" Type="label" datatype="datetime" enabled="false" visible="true" 
+	    dataformat="#shortdatetime#" cellwidth="250" GridVisible="true" GridWidth="250" column="1" order="4" gridorder="1" sorting="true">
+	</column>
+
+	<column Name="MaterialNo" PK="false" alias="MaterialNo" Type="label" datatype="string" enabled="true" visible="true" 
+	    cellwidth="300" GridVisible="true" GridWidth="300" column="1" order="10" gridorder="10" sorting="true">
+	</column>
+		
+	<column Name="UOM" PK="false" alias="UOM" Type="label" datatype="string" enabled="true" visible="true" 
+	    cellwidth="150" GridVisible="true" GridWidth="100" column="1" order="2" gridorder="1" sorting="true">
+	</column>
+
+	<column Name="Qty" PK="false" alias="Qty" Type="label" datatype="string" enabled="true" visible="true" 
+	    cellwidth="150" GridVisible="true" GridWidth="100" column="1" order="2" gridorder="1" sorting="true">
+	</column>
+	
+	<column Name="MaterialPrice" PK="false" alias="MaterialPrice" Type="label" datatype="string" enabled="true" visible="true" 
+	    cellwidth="150" GridVisible="true" GridWidth="100" column="1" order="2" gridorder="1" sorting="true">
+	</column>
+	
+	
+
+</table>

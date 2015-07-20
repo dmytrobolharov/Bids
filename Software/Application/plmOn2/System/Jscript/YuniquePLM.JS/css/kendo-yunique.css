@@ -1,0 +1,169 @@
+.k-alt{
+     background-color:#F0F8FF;
+ }
+
+.k-header{
+    background-image: url(../img/table_header.gif);
+    background-repeat: repeat-x;
+}
+
+.k-header a.k-link{
+    font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+
+
+
+/*Pager*/
+
+/*.k-pager-wrap>.k-link {*/
+/*float: left;*/
+/*margin: 0 .08333em;*/
+/*cursor: pointer;*/
+/*text-align: center;*/
+/*border: none;*/
+/*}*/
+
+
+.k-pager-numbers .k-link,
+.k-pager-numbers .k-link:hover,
+.k-pager-numbers .k-state-selected{
+    border-radius: 0;
+}
+
+.k-pager-wrap > .k-link {
+    border-radius: 0;
+}
+
+
+.k-link:hover{
+    cursor: pointer;
+}
+
+.k-widget.k-dropdown.k-header{
+    border-radius: 0;
+}
+
+.k-dropdown-wrap{                               
+    border-radius: 0;
+}
+
+
+.k-state-selected, .k-state-selected:link, .k-state-selected:visited, .k-list>.k-state-selected, .k-list>.k-state-highlight, .k-panel>.k-state-selected, .k-ghost-splitbar-vertical, .k-ghost-splitbar-horizontal, .k-draghandle.k-state-selected:hover, .k-scheduler .k-scheduler-toolbar .k-state-selected, .k-scheduler .k-today.k-state-selected, .k-marquee-color {
+    color: #fff;
+    background-color: grey;
+    border-color: darkgray;
+}
+
+.k-menu.k-header, .k-menu .k-item {
+    border-color: #c5c5c5;
+}
+
+ul.k-header{
+    background-image: none;
+    background-color: #fff;
+}
+
+.listViewContainer{
+    height: 100%;
+}
+.product {
+    float: left;
+    min-height: 300px;
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 250px;
+    padding: 0;
+    background-color: white;
+    border: 1px solid;
+    border-color: #ccc;
+    box-shadow:  0 0 10px rgba(0,0,0,0.5);
+}
+.description{
+    margin-top: 10px;
+}
+.cdate{
+    font-size: 0.8em;
+    width: 100%;
+    cursor: default;
+}
+.cdate td{
+    width: 50%;
+
+}
+.cdate .text{
+    width: 100px;
+    white-space: nowrap;
+    display:block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mdate{
+    font-size: 0.7em;
+    margin-top: 10px;
+}
+
+
+.info{
+    position: absolute;
+    bottom: 0px;
+}
+
+.savePanel{
+    border-width: 0 0 1px;
+    background-image: url(../img/table_header.gif);
+    background-repeat: repeat-x;
+    height: 25px;
+    width: 100%;
+}
+
+.icon-popup{
+    background-image: url(../img/icon_popup.gif);
+    height: 15px;
+    width: 16px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+
+}
+
+.icon-where{
+    background-image: url(../img/icon_where.gif);
+    height: 16px;
+    width: 16px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+
+}
+
+.bottomInfo{
+    border: 1px solid;
+    border-color: #ccc;
+}
+.bottomInfo table{
+    width: 100%;
+}
+
+.buttonsTop{
+    position: absolute;
+    top:0px;
+}
+
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.yunique-grid table{
+	font-size: 11px;!important
+}
+
+.yunique-grid .k-grid-content tr{
+    height: 27px;!important
+}

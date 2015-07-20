@@ -1,0 +1,11 @@
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pImageWorkflowPage' AND COLUMN_NAME = 'ActualStart')
+	ALTER TABLE pImageWorkflowPage ADD ActualStart DATETIME NULL
+GO
+
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pImageWorkflowPage' AND COLUMN_NAME = 'ActualEnd')
+	ALTER TABLE pImageWorkflowPage ADD ActualEnd DATETIME NULL
+GO
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES ('DB_Version', '0.5.0000', '08724', GetDate())	
+GO

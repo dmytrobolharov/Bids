@@ -1,0 +1,6 @@
+<generator>
+	<table name="pImage" codecolumn="ImageNo" idcolumn="ImageID" spacecolumn="2">
+		<column name="" lookup="" lookupId="" lookupSelect="" lookupSpace="IMG" lookupNull="XXX" order="001" />
+		<column name="autoid" lookup="" lookupId="" lookupSelect="" lookupSpace="" lookupNull="??" order="003" />
+	</table>
+</generator>

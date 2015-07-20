@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.GerberTechnology.com/YuniqueAPI" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.GerberTechnology.com/YuniqueAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.GerberTechnology.com/YuniqueAPI">
+      <s:element name="GetStyleTechPack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSClientName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="styleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reportTechPackFolderId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="asyncEnable" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportLogEnable" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStyleTechPackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStyleTechPackResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSampleTechPack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSClientName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="styleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reportTechPackFolderId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="asyncEnable" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportLogEnable" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSampleTechPackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSampleTechPackResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechPackBatchQueue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSClientName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BatchQueueJobId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="teamId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechPackBatchQueueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTechPackBatchQueueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStyleTechPackSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStyleTechPack" />
+  </wsdl:message>
+  <wsdl:message name="GetStyleTechPackSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStyleTechPackResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSampleTechPackSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSampleTechPack" />
+  </wsdl:message>
+  <wsdl:message name="GetSampleTechPackSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSampleTechPackResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTechPackBatchQueueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTechPackBatchQueue" />
+  </wsdl:message>
+  <wsdl:message name="GetTechPackBatchQueueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTechPackBatchQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStyleTechPackHttpGetIn">
+    <wsdl:part name="WSClientName" type="s:string" />
+    <wsdl:part name="WSClientPassword" type="s:string" />
+    <wsdl:part name="teamId" type="s:string" />
+    <wsdl:part name="styleId" type="s:string" />
+    <wsdl:part name="reportTechPackFolderId" type="s:string" />
+    <wsdl:part name="asyncEnable" type="s:string" />
+    <wsdl:part name="reportLogEnable" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStyleTechPackHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSampleTechPackHttpGetIn">
+    <wsdl:part name="WSClientName" type="s:string" />
+    <wsdl:part name="WSClientPassword" type="s:string" />
+    <wsdl:part name="teamId" type="s:string" />
+    <wsdl:part name="styleId" type="s:string" />
+    <wsdl:part name="reportTechPackFolderId" type="s:string" />
+    <wsdl:part name="asyncEnable" type="s:string" />
+    <wsdl:part name="reportLogEnable" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSampleTechPackHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTechPackBatchQueueHttpGetIn">
+    <wsdl:part name="WSClientName" type="s:string" />
+    <wsdl:part name="WSClientPassword" type="s:string" />
+    <wsdl:part name="BatchQueueJobId" type="s:string" />
+    <wsdl:part name="teamId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTechPackBatchQueueHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStyleTechPackHttpPostIn">
+    <wsdl:part name="WSClientName" type="s:string" />
+    <wsdl:part name="WSClientPassword" type="s:string" />
+    <wsdl:part name="teamId" type="s:string" />
+    <wsdl:part name="styleId" type="s:string" />
+    <wsdl:part name="reportTechPackFolderId" type="s:string" />
+    <wsdl:part name="asyncEnable" type="s:string" />
+    <wsdl:part name="reportLogEnable" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStyleTechPackHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSampleTechPackHttpPostIn">
+    <wsdl:part name="WSClientName" type="s:string" />
+    <wsdl:part name="WSClientPassword" type="s:string" />
+    <wsdl:part name="teamId" type="s:string" />
+    <wsdl:part name="styleId" type="s:string" />
+    <wsdl:part name="reportTechPackFolderId" type="s:string" />
+    <wsdl:part name="asyncEnable" type="s:string" />
+    <wsdl:part name="reportLogEnable" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSampleTechPackHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTechPackBatchQueueHttpPostIn">
+    <wsdl:part name="WSClientName" type="s:string" />
+    <wsdl:part name="WSClientPassword" type="s:string" />
+    <wsdl:part name="BatchQueueJobId" type="s:string" />
+    <wsdl:part name="teamId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTechPackBatchQueueHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="TechPackServiceSoap">
+    <wsdl:operation name="GetStyleTechPack">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;big&gt;This method will generate a tech pack to the local folder&lt;/big&gt;&lt;ul&gt;&lt;li&gt;User.TeamID (GUID): User ID requesting the tech pack&lt;/li&gt;&lt;li&gt;rReportTechPackFolder.ReportTechPackFolderID (GUID): Select predefined tech pack type&lt;/li&gt;&lt;li&gt;asyncEnable (Boolean): It will enable async calls to generate PDF&lt;/li&gt;&lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetStyleTechPackSoapIn" />
+      <wsdl:output message="tns:GetStyleTechPackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleTechPack">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;big&gt;This method will generate a tech pack to the local folder&lt;/big&gt;&lt;ul&gt;&lt;li&gt;User.TeamID (GUID): User ID requesting the tech pack&lt;/li&gt;&lt;li&gt;rReportTechPackFolder.ReportTechPackFolderID (GUID): Select predefined tech pack type&lt;/li&gt;&lt;li&gt;asyncEnable (Boolean): It will enable async calls to generate PDF&lt;/li&gt;&lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetSampleTechPackSoapIn" />
+      <wsdl:output message="tns:GetSampleTechPackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechPackBatchQueue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;big&gt;This method will generate a tech packs from batch queue&lt;/big&gt;&lt;ul&gt;&lt;li&gt;User.TeamID (GUID): User ID requesting the tech pack&lt;/li&gt;&lt;li&gt;BatchQueueJobID (GUID): Batch Queue Job ID &lt;/li&gt;&lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetTechPackBatchQueueSoapIn" />
+      <wsdl:output message="tns:GetTechPackBatchQueueSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TechPackServiceHttpGet">
+    <wsdl:operation name="GetStyleTechPack">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;big&gt;This method will generate a tech pack to the local folder&lt;/big&gt;&lt;ul&gt;&lt;li&gt;User.TeamID (GUID): User ID requesting the tech pack&lt;/li&gt;&lt;li&gt;rReportTechPackFolder.ReportTechPackFolderID (GUID): Select predefined tech pack type&lt;/li&gt;&lt;li&gt;asyncEnable (Boolean): It will enable async calls to generate PDF&lt;/li&gt;&lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetStyleTechPackHttpGetIn" />
+      <wsdl:output message="tns:GetStyleTechPackHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleTechPack">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;big&gt;This method will generate a tech pack to the local folder&lt;/big&gt;&lt;ul&gt;&lt;li&gt;User.TeamID (GUID): User ID requesting the tech pack&lt;/li&gt;&lt;li&gt;rReportTechPackFolder.ReportTechPackFolderID (GUID): Select predefined tech pack type&lt;/li&gt;&lt;li&gt;asyncEnable (Boolean): It will enable async calls to generate PDF&lt;/li&gt;&lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetSampleTechPackHttpGetIn" />
+      <wsdl:output message="tns:GetSampleTechPackHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechPackBatchQueue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;big&gt;This method will generate a tech packs from batch queue&lt;/big&gt;&lt;ul&gt;&lt;li&gt;User.TeamID (GUID): User ID requesting the tech pack&lt;/li&gt;&lt;li&gt;BatchQueueJobID (GUID): Batch Queue Job ID &lt;/li&gt;&lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetTechPackBatchQueueHttpGetIn" />
+      <wsdl:output message="tns:GetTechPackBatchQueueHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TechPackServiceHttpPost">
+    <wsdl:operation name="GetStyleTechPack">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;big&gt;This method will generate a tech pack to the local folder&lt;/big&gt;&lt;ul&gt;&lt;li&gt;User.TeamID (GUID): User ID requesting the tech pack&lt;/li&gt;&lt;li&gt;rReportTechPackFolder.ReportTechPackFolderID (GUID): Select predefined tech pack type&lt;/li&gt;&lt;li&gt;asyncEnable (Boolean): It will enable async calls to generate PDF&lt;/li&gt;&lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetStyleTechPackHttpPostIn" />
+      <wsdl:output message="tns:GetStyleTechPackHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleTechPack">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;big&gt;This method will generate a tech pack to the local folder&lt;/big&gt;&lt;ul&gt;&lt;li&gt;User.TeamID (GUID): User ID requesting the tech pack&lt;/li&gt;&lt;li&gt;rReportTechPackFolder.ReportTechPackFolderID (GUID): Select predefined tech pack type&lt;/li&gt;&lt;li&gt;asyncEnable (Boolean): It will enable async calls to generate PDF&lt;/li&gt;&lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetSampleTechPackHttpPostIn" />
+      <wsdl:output message="tns:GetSampleTechPackHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechPackBatchQueue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;big&gt;This method will generate a tech packs from batch queue&lt;/big&gt;&lt;ul&gt;&lt;li&gt;User.TeamID (GUID): User ID requesting the tech pack&lt;/li&gt;&lt;li&gt;BatchQueueJobID (GUID): Batch Queue Job ID &lt;/li&gt;&lt;/ul&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetTechPackBatchQueueHttpPostIn" />
+      <wsdl:output message="tns:GetTechPackBatchQueueHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TechPackServiceSoap" type="tns:TechPackServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStyleTechPack">
+      <soap:operation soapAction="http://www.GerberTechnology.com/YuniqueAPI/GetStyleTechPack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleTechPack">
+      <soap:operation soapAction="http://www.GerberTechnology.com/YuniqueAPI/GetSampleTechPack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechPackBatchQueue">
+      <soap:operation soapAction="http://www.GerberTechnology.com/YuniqueAPI/GetTechPackBatchQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TechPackServiceSoap12" type="tns:TechPackServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStyleTechPack">
+      <soap12:operation soapAction="http://www.GerberTechnology.com/YuniqueAPI/GetStyleTechPack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleTechPack">
+      <soap12:operation soapAction="http://www.GerberTechnology.com/YuniqueAPI/GetSampleTechPack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechPackBatchQueue">
+      <soap12:operation soapAction="http://www.GerberTechnology.com/YuniqueAPI/GetTechPackBatchQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TechPackServiceHttpGet" type="tns:TechPackServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetStyleTechPack">
+      <http:operation location="/GetStyleTechPack" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleTechPack">
+      <http:operation location="/GetSampleTechPack" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechPackBatchQueue">
+      <http:operation location="/GetTechPackBatchQueue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TechPackServiceHttpPost" type="tns:TechPackServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetStyleTechPack">
+      <http:operation location="/GetStyleTechPack" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleTechPack">
+      <http:operation location="/GetSampleTechPack" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechPackBatchQueue">
+      <http:operation location="/GetTechPackBatchQueue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TechPackService">
+    <wsdl:port name="TechPackServiceSoap" binding="tns:TechPackServiceSoap">
+      <soap:address location="http://localhost/yuniqueapi/techpackservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TechPackServiceSoap12" binding="tns:TechPackServiceSoap12">
+      <soap12:address location="http://localhost/yuniqueapi/techpackservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TechPackServiceHttpGet" binding="tns:TechPackServiceHttpGet">
+      <http:address location="http://localhost/yuniqueapi/techpackservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TechPackServiceHttpPost" binding="tns:TechPackServiceHttpPost">
+      <http:address location="http://localhost/yuniqueapi/techpackservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,20 @@
+<Table Name="vwx_Material_AgentVendorLabDip_SELECT" formcolumns="3" gridcolumns="" FormSQL="SELECT * FROM vwx_Material_AgentVendorLabDip_SELECT" GridReadSQL="SELECT * FROM vwx_Material_AgentVendorLabDip_SELECT" GridSQL="SELECT * FROM vwx_Material_AgentVendorLabDip_SELECT">
+	<column Name="MaterialTradePartnerLabDipSubmitID" PK="true" alias="MaterialTradePartnerLabDipSubmitID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="False" GridWidth="100" GridOrder="1" column="1" order="1" gridorder="5">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialId" alias="MaterialId" Type="label" datatype="string" enabled="false" Visible="FALSE" cellwidth="150px" GridVisible="False" GridWidth="100" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="TradePartnerID" alias="Agent" Type="dropdownlist" lookupquery="SELECT TradepartnerID, TradePartnerName FROM uTradePartner WHERE Active = 1 ORDER BY TradePartnerName " select="true" datatype="string" column="1" gridorder="1" GridVisible="False" cellwidth="150px" cssClass="fontRed" Visible="true" enabled="true" textfield="TradePartnerName" ValueField="TradePartnerID" AutoPostBack="true" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="TradePartnerVendorID" alias="Vendor" Type="dropdownlist" lookupquery="SELECT TradepartnerVendorID, VendorName FROM uTradePartnerVendor WHERE Active = 1 ORDER BY VendorName " select="true" datatype="string" column="1" gridorder="2" GridVisible="False" cellwidth="150px" cssClass="fontRed" Visible="true" enabled="true" textfield="VendorName" ValueField="TradePartnerVendorID" AutoPostBack="false" LinkedCol="TradePartnerID" Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialTradePartnerLabDipSeason" alias="Season" Type="dropdownlist" select="true" cellwidth="150px" datatype="string" column="1" gridorder="3" GridVisible="true" Visible="true" enabled="true" lookupquery="SELECT Custom, Custom AS CustomName FROM pSeason ORDER BY CustomKey" textfield="Custom" ValueField="Custom" AutoPostBack="false" Search="false" cssClass="inputBlue">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialTradePartnerLabDipYear" alias="Year" Type="dropdownlist" datatype="string" column="1" gridorder="4" GridVisible="true" cellwidth="150px" Visible="true" enabled="true" Search="false" lookupquery="SELECT Custom, Custom AS CustomName FROM pYear  ORDER BY CustomKey" select="true" textfield="Custom" ValueField="Custom" AutoPostBack="false" LinkedCol="CustomField3">
+		<Validator Class="dropdown" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

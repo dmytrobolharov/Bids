@@ -1,0 +1,106 @@
+<Table Name="pQuoteFolder" formcolumns="3" gridcolumns="" FormSQL="SELECT dbo.pQuoteFolder.QuoteFolderID, dbo.pQuoteFolder.QuoteFolderNo, dbo.pQuoteFolder.QuoteFolderType, dbo.pQuoteFolder.QuoteStartDate, fnx_FORMAT_date_simple(dbo.pQuoteFolder.QuoteDueDate), dbo.pQuoteFolder.QuoteFolderStatus, dbo.pQuoteFolder.QuoteGroupCost, dbo.pQuoteFolder.QuoteCustomField1, dbo.pQuoteFolder.QuoteCustomField2, dbo.pQuoteFolder.QuoteCustomField3, dbo.pQuoteFolder.QuoteCustomField4, dbo.pQuoteFolder.QuoteCustomField5, dbo.pQuoteFolder.QuoteCustomField6, dbo.pQuoteFolder.QuoteCustomField7, dbo.pQuoteFolder.QuoteCustomField8, dbo.pQuoteFolder.QuoteCustomField9, dbo.pQuoteFolder.QuoteCustomField10, dbo.pQuoteFolderItemTeam.StyleID, dbo.pQuoteFolderItemTeam.TeamID, dbo.pQuoteFolderItemTeam.QuoteFolderItemStatus, dbo.pQuoteFolderItemTeam.TradePartner, dbo.pQuoteFolderItemTeam.EstimatedCostType, dbo.pQuoteFolderItemTeam.EstimatedCost, dbo.pQuoteFolderItemTeam.EstimatedCostCur, dbo.pQuoteFolderItemTeam.VendorCostType, dbo.pQuoteFolderItemTeam.VendorCost, dbo.pQuoteFolderItemTeam.VendorCostCur, dbo.pQuoteFolderItemTeam.FinalCostType, dbo.pQuoteFolderItemTeam.FinalCost, dbo.pQuoteFolderItemTeam.FinalCostCur, dbo.pQuoteFolderItemTeam.CustomField1, dbo.pQuoteFolderItemTeam.CustomField2, dbo.pQuoteFolderItemTeam.CustomField3, dbo.pQuoteFolderItemTeam.CustomField4, dbo.pQuoteFolderItemTeam.CustomField5, dbo.pQuoteFolderItemTeam.CustomField6, dbo.pQuoteFolderItemTeam.CustomField7, dbo.pQuoteFolderItemTeam.CustomField8, dbo.pQuoteFolderItemTeam.CustomField9, dbo.pQuoteFolderItemTeam.CustomField10, dbo.pQuoteFolderItemTeam.CustomField11, dbo.pQuoteFolderItemTeam.CustomField12, dbo.pQuoteFolderItemTeam.CustomField13, dbo.pQuoteFolderItemTeam.CustomField14, dbo.pQuoteFolderItemTeam.CustomField15, dbo.pQuoteFolderItemTeam.CUser, dbo.pQuoteFolderItemTeam.CDate, dbo.pQuoteFolderItemTeam.MUser, dbo.pQuoteFolderItemTeam.MDate, dbo.pQuoteFolderItemTeam.QuoteFolderTeamID, dbo.Users.CompanyFROM dbo.pQuoteFolder INNER JOINdbo.pQuoteFolderItemTeam ON dbo.pQuoteFolder.QuoteFolderID = dbo.pQuoteFolderItemTeam.QuoteFolderID INNER JOINdbo.Users ON dbo.pQuoteFolderItemTeam.TeamID = dbo.Users.TeamID "
+	GridReadSQL="SELECT dbo.pQuoteFolder.QuoteFolderID, dbo.pQuoteFolder.QuoteFolderNo, dbo.pQuoteFolder.QuoteFolderType, dbo.pQuoteFolder.QuoteStartDate, fnx_FORMAT_date_simple(dbo.pQuoteFolder.QuoteDueDate), dbo.pQuoteFolder.QuoteFolderStatus, dbo.pQuoteFolder.QuoteGroupCost, dbo.pQuoteFolder.QuoteCustomField1, dbo.pQuoteFolder.QuoteCustomField2, dbo.pQuoteFolder.QuoteCustomField3, dbo.pQuoteFolder.QuoteCustomField4, dbo.pQuoteFolder.QuoteCustomField5, dbo.pQuoteFolder.QuoteCustomField6, dbo.pQuoteFolder.QuoteCustomField7, dbo.pQuoteFolder.QuoteCustomField8, dbo.pQuoteFolder.QuoteCustomField9, dbo.pQuoteFolder.QuoteCustomField10, dbo.pQuoteFolderItemTeam.StyleID, dbo.pQuoteFolderItemTeam.TeamID, dbo.pQuoteFolderItemTeam.QuoteFolderItemStatus, dbo.pQuoteFolderItemTeam.TradePartner, dbo.pQuoteFolderItemTeam.EstimatedCostType, dbo.pQuoteFolderItemTeam.EstimatedCost, dbo.pQuoteFolderItemTeam.EstimatedCostCur, dbo.pQuoteFolderItemTeam.VendorCostType, dbo.pQuoteFolderItemTeam.VendorCost, dbo.pQuoteFolderItemTeam.VendorCostCur, dbo.pQuoteFolderItemTeam.FinalCostType, dbo.pQuoteFolderItemTeam.FinalCost, dbo.pQuoteFolderItemTeam.FinalCostCur, dbo.pQuoteFolderItemTeam.CustomField1, dbo.pQuoteFolderItemTeam.CustomField2, dbo.pQuoteFolderItemTeam.CustomField3, dbo.pQuoteFolderItemTeam.CustomField4, dbo.pQuoteFolderItemTeam.CustomField5, dbo.pQuoteFolderItemTeam.CustomField6, dbo.pQuoteFolderItemTeam.CustomField7, dbo.pQuoteFolderItemTeam.CustomField8, dbo.pQuoteFolderItemTeam.CustomField9, dbo.pQuoteFolderItemTeam.CustomField10, dbo.pQuoteFolderItemTeam.CustomField11, dbo.pQuoteFolderItemTeam.CustomField12, dbo.pQuoteFolderItemTeam.CustomField13, dbo.pQuoteFolderItemTeam.CustomField14, dbo.pQuoteFolderItemTeam.CustomField15, dbo.pQuoteFolderItemTeam.CUser, dbo.pQuoteFolderItemTeam.CDate, dbo.pQuoteFolderItemTeam.MUser, dbo.pQuoteFolderItemTeam.MDate, dbo.pQuoteFolderItemTeam.QuoteFolderTeamID, dbo.Users.CompanyFROM dbo.pQuoteFolder INNER JOINdbo.pQuoteFolderItemTeam ON dbo.pQuoteFolder.QuoteFolderID = dbo.pQuoteFolderItemTeam.QuoteFolderID INNER JOINdbo.Users ON dbo.pQuoteFolderItemTeam.TeamID = dbo.Users.TeamID "
+	GridSQL="SELECT dbo.pQuoteFolder.QuoteFolderID, dbo.pQuoteFolder.QuoteFolderNo, dbo.pQuoteFolder.QuoteFolderType, dbo.pQuoteFolder.QuoteStartDate, fnx_FORMAT_date_simple(dbo.pQuoteFolder.QuoteDueDate), dbo.pQuoteFolder.QuoteFolderStatus, dbo.pQuoteFolder.QuoteGroupCost, dbo.pQuoteFolder.QuoteCustomField1, dbo.pQuoteFolder.QuoteCustomField2, dbo.pQuoteFolder.QuoteCustomField3, dbo.pQuoteFolder.QuoteCustomField4, dbo.pQuoteFolder.QuoteCustomField5, dbo.pQuoteFolder.QuoteCustomField6, dbo.pQuoteFolder.QuoteCustomField7, dbo.pQuoteFolder.QuoteCustomField8, dbo.pQuoteFolder.QuoteCustomField9, dbo.pQuoteFolder.QuoteCustomField10, dbo.pQuoteFolderItemTeam.StyleID, dbo.pQuoteFolderItemTeam.TeamID, dbo.pQuoteFolderItemTeam.QuoteFolderItemStatus, dbo.pQuoteFolderItemTeam.TradePartner, dbo.pQuoteFolderItemTeam.EstimatedCostType, dbo.pQuoteFolderItemTeam.EstimatedCost, dbo.pQuoteFolderItemTeam.EstimatedCostCur, dbo.pQuoteFolderItemTeam.VendorCostType, dbo.pQuoteFolderItemTeam.VendorCost, dbo.pQuoteFolderItemTeam.VendorCostCur, dbo.pQuoteFolderItemTeam.FinalCostType, dbo.pQuoteFolderItemTeam.FinalCost, dbo.pQuoteFolderItemTeam.FinalCostCur, dbo.pQuoteFolderItemTeam.CustomField1, dbo.pQuoteFolderItemTeam.CustomField2, dbo.pQuoteFolderItemTeam.CustomField3, dbo.pQuoteFolderItemTeam.CustomField4, dbo.pQuoteFolderItemTeam.CustomField5, dbo.pQuoteFolderItemTeam.CustomField6, dbo.pQuoteFolderItemTeam.CustomField7, dbo.pQuoteFolderItemTeam.CustomField8, dbo.pQuoteFolderItemTeam.CustomField9, dbo.pQuoteFolderItemTeam.CustomField10, dbo.pQuoteFolderItemTeam.CustomField11, dbo.pQuoteFolderItemTeam.CustomField12, dbo.pQuoteFolderItemTeam.CustomField13, dbo.pQuoteFolderItemTeam.CustomField14, dbo.pQuoteFolderItemTeam.CustomField15, dbo.pQuoteFolderItemTeam.CUser, dbo.pQuoteFolderItemTeam.CDate, dbo.pQuoteFolderItemTeam.MUser, dbo.pQuoteFolderItemTeam.MDate, dbo.pQuoteFolderItemTeam.QuoteFolderTeamID, dbo.Users.CompanyFROM dbo.pQuoteFolder INNER JOINdbo.pQuoteFolderItemTeam ON dbo.pQuoteFolder.QuoteFolderID = dbo.pQuoteFolderItemTeam.QuoteFolderID INNER JOINdbo.Users ON dbo.pQuoteFolderItemTeam.TeamID = dbo.Users.TeamID ">
+	<column Name="QuoteFolderTeamID" PK="true" alias="QuoteFolderTeamID" Type="label" datatype="string"
+		enabled="false" Visible="FALSE" cellwidth="150px" GridVisible="FALSE" GridWidth="100"
+		column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="StyleID" PK="true" alias="StyleID" Type="label" datatype="string" enabled="false"
+		Visible="FALSE" cellwidth="150px" GridVisible="FALSE" GridWidth="100" column="1" order="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteFolderType" alias="Quote Type" Type="dropdownlist" lookupquery="SELECT QuoteType, QuoteType AS QuoteTypeName FROM pQuoteFolderType ORDER BY QuoteFolderOrder "
+		select="true" datatype="string" column="2" order="1" GridVisible="true" cellwidth="150px"
+		Visible="TRUE" enabled="TRUE" textfield="QuoteType" ValueField="QuoteType" AutoPostBack="false"
+		Search="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField1" alias="Quote Name" Type="textbox" datatype="string" column="1"
+		order="8" GridVisible="TRUE" cellwidth="150px" GridWidth="200" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="Company" alias="Trade Partner" Type="textbox" datatype="string" column="1"
+		order="8" GridVisible="TRUE" cellwidth="150px" GridWidth="200" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField2" alias="CustomField2" Type="textbox" datatype="string" column="1"
+		order="9" GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField3" alias="CustomField3" Type="textbox" datatype="string" column="2"
+		order="10" GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField4" alias="CustomField4" Type="textbox" datatype="string" column="3"
+		order="11" GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField5" alias="CustomField5" Type="dropdownlist" datatype="string"
+		column="2" order="12" GridVisible="FALSE" cellwidth="150px" lookupquery="SELECT SourceID, Source FROM pSource ORDER BY SourceID  "
+		Visible="FALSE" enabled="FALSE" textfield="Source" ValueField="SourceID" select="true"
+		AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField6" alias="CustomField6" Type="dropdownlist" datatype="string"
+		column="2" order="12" GridVisible="FALSE" cellwidth="150px" lookupquery="SELECT SourceID, Source FROM pSource ORDER BY SourceID "
+		Visible="FALSE" enabled="FALSE" textfield="Source" ValueField="SourceID" select="true"
+		AutoPostBack="false">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField7" alias="CustomField7" Type="textbox" datatype="string" column="2"
+		order="14" GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField8" alias="CustomField8" Type="currencybox" datatype="string"
+		column="2" order="15" GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField9" alias="CustomField9" Type="currencybox" datatype="string"
+		column="3" order="16" GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteCustomField10" alias="CustomField10" Type="textbox" datatype="string"
+		column="1" order="17" GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteGroupCost" alias="Group Cost" Type="textbox" datatype="string" column="1"
+		order="8" GridVisible="TRUE" cellwidth="150px" GridWidth="75" Visible="true" enabled="true">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteFolderItemStatus" alias="Status" Type="textbox" datatype="string" column="1"
+		order="8" GridVisible="TRUE" cellwidth="150px" GridWidth="200" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="QuoteDueDate" alias="Due Date" Type="calendarbox" datatype="datetime" column="1"
+		order="4" GridVisible="true" cellwidth="125px" GridWidth="" Visible="true" enabled="true"
+		GridOrder="5">
+    <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+	</column>
+	<column Name="VendorCost" alias="Vendor Cost" Type="textbox" datatype="currency" column="1"
+		order="4" GridVisible="true" cellwidth="125px" GridWidth="" Visible="true" enabled="true"
+		GridOrder="5">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="FinalCost" alias="Final Cost" Type="textbox" datatype="currency" column="1"
+		order="4" GridVisible="true" cellwidth="125px" GridWidth="" Visible="true" enabled="true"
+		GridOrder="5">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CUser" alias="Created By" Type="label" datatype="string" column="3" order="19"
+		GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="CDate" alias="Created Date" Type="calendarbox" datatype="datetime" column="3"
+		order="20" GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+    <Validator Class="date" Dataformat="#shortdate#" Type="" Minimum="" Maximum="" Text="Check Date format !"/>
+	</column>
+	<column Name="MUser" alias="Modified By" Type="label" datatype="string" column="3" order="21"
+		GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MDate" alias="Modified Date" Type="label" datatype="datetime" column="3" order="22"
+		GridVisible="FALSE" cellwidth="150px" Visible="FALSE" enabled="FALSE">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

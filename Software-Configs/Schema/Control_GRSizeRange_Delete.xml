@@ -1,0 +1,17 @@
+<Table Name="pGRSizeRange" formcolumns="3" gridcolumns="" FormSQL="spx_pGRSizeRangeDetail_SELECT"
+	GridReadSQL="spx_pGRSizeRangeDetail_SELECT" 
+	GridSQL="spx_pGRSizeRangeDetail_SELECT">
+	
+	<column Name="SizeRangeId" PK="true" alias="SizeRangeId" Type="label"
+		datatype="string" enabled="false" Visible="false" cellwidth="150px" 		GridVisible="False"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="SizeRange" alias="Size Range" Type="label"
+		datatype="string" enabled="true" Visible="true" cellwidth="250px" 			GridVisible="True"
+		GridWidth="100" column="1" order="1" GridOrder="1">
+		<Validator Class="" Type="" Minimum="" Maximum="60" Text="" />
+	</column>
+
+	
+</Table>

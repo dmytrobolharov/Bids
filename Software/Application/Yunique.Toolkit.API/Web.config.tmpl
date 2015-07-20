@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <connectionStrings>
+    <add name="SQLCACHECONNECTION" connectionString="$plmOnDBConnectionString$" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  
+  <system.web>
+    <compilation debug="true" targetFramework="4.0" />
+    <httpRuntime requestValidationMode="2.0" executionTimeout="999999" maxRequestLength="2000000000" />
+    <httpHandlers>
+      <add path="*" type="ServiceStack.WebHost.Endpoints.ServiceStackHttpHandlerFactory, ServiceStack" verb="*" />
+    </httpHandlers>
+    <identity impersonate="true" userName="$plmOnUser$" password="$plmOnUserPassword$"/>
+    <caching>
+      <sqlCacheDependency enabled="true" pollTime="6000">
+        <databases>
+          <add name="plmOnDB" connectionStringName="SQLCACHECONNECTION"/>
+        </databases>
+      </sqlCacheDependency>
+    </caching>
+  </system.web>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true">
+      <remove name="WebDAVModule" />
+    </modules>
+    <validation validateIntegratedModeConfiguration="false" />
+    <handlers>
+      <add path="*" name="ServiceStack.Factory" type="ServiceStack.WebHost.Endpoints.ServiceStackHttpHandlerFactory, ServiceStack" verb="*" preCondition="integratedMode" resourceType="Unspecified" allowPathInfo="true" />
+    </handlers>
+	
+	<security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="2000000000" />
+      </requestFiltering>
+    </security>
+	
+<!--
+    <httpProtocol>
+      <customHeaders>
+        <add name="Access-Control-Allow-Origin" value="*"/>
+        <add name="Access-Control-Allow-Headers" value="X-XSRF-TOKEN, TS, PLMUsername, Content-Type, Accept, Signature, KeyID, WSClientID"/>
+        <add name="Access-Control-Allow-Methods" value="GET, POST, PUT, DELETE, OPTIONS"/>
+      </customHeaders>
+    </httpProtocol>
+-->
+
+  </system.webServer>
+
+  <appSettings>
+    <add key="AppSettingGroupID" value="$AppSettingGroupID$"/>
+    <add key="SERVER" value="server.config"/>
+    <add key="MAIL" value="mail.config"/>
+    <add key="IMAGE" value="image.config"/>
+    <add key="COLOR" value="color.config"/>
+    <add key="BODY" value="body.config"/>
+    <add key="STORAGE" value="storage.config"/>
+    <add key="STORAGE-SRMON" value="storage-srmOn.config"/>
+    <add key="LICENSE" value="license.config"/>
+    <add key="MATERIAL" value="material.config"/>
+    <add key="FLASHEDIT" value="flashedit.config"/>
+    <add key="STYLE" value="style.config"/>
+    <add key="LINELIST" value="linelist.config"/>
+    <add key="REPORT" value="report.config"/>
+    <add key="TRADEPARTNER" value="tradepartner.config"/>
+    <add key="COMPLIANCE" value="compliance.config"/>
+    <add key="SYSTEM" value="system.config"/>
+    <add key="LINEPLAN" value="lineplan.config"/>
+    <add key="AdminName" value="$plmOnAdminName$"/>
+    <add key="AdminMail" value="$plmOnAdminMail$"/>
+    <add key="REPORTSERVER" value="http://$plmOnRSServer$/$plmOnRSVDir$?/$plmOnRSReportFolder$"/>
+    <add key="MATERIALDUPLICATE" value="False"/>
+    <add key="MATERIALTYPEDEFAULT" value="10"/>
+    <add key="ERRORMESSAGE" value="TRUE"/>
+    <add key="STYLEDUPLICATE" value="TRUE"/>
+    <add key="STYLENOGENERATOR" value="TRUE"/>
+    <add key="CONCEPTDUPLICATE" value="FALSE"/>
+    <add key="REPORTSERVER_ASPX" value="http://$plmOnHTTPServer$/$plmOnVDplmOnReport$"/>
+    <add key="PROFILER" value="FALSE"/>
+    <!--CuteWebUI start-->
+    <add key="CuteWebUI.AjaxUploader.TempDirectory" value="$plmOnTemp$"/>
+    <add key="CuteWebUI.AjaxUploader.GlobalMaxSizeKB" value="10000"/>
+    <add key="CuteWebUI.AjaxUploader.UploadSpeedKB" value="20"/>
+    <!--CuteWebUI end-->
+    <add key="Telerik.Web.UI.StyleSheetFolders" value="~/System/CSS/"/>
+    <add key="aspnet:MaxHttpCollectionKeys" value="2001"/>
+  </appSettings>
+</configuration>

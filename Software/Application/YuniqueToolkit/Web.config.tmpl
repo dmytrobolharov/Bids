@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="telerik.web.ui">
+      <section name="radScheduler" type="Telerik.Web.UI.RadSchedulerConfigurationSection, Telerik.Web.UI" allowDefinition="MachineToApplication" requirePermission="false"/>
+      <section name="radCompression" type="Telerik.Web.UI.RadCompressionConfigurationSection, Telerik.Web.UI, PublicKeyToken=121fae78165ba3d4" allowDefinition="MachineToApplication" requirePermission="false"/>
+    </sectionGroup>
+  </configSections>
+  <system.web>
+    <browserCaps>
+      <!-- GECKO Based Browsers (Netscape 6+, Mozilla/Firebird, ...) //-->
+      <case match="^Mozilla/5\.0 \([^)]*\) (Gecko/[-\d]+)? (?'type'[^/\d]*)([\d]*)/(?'version'(?'major'\d+)(?'minor'\.\d+)(?'letters'\w*)).*">
+                browser=Gecko
+                type=${type}
+                frames=true
+                tables=true
+                cookies=true
+                javascript=true
+                javaapplets=true
+                ecmascriptversion=1.5
+                w3cdomversion=1.0
+                css1=true
+                css2=true
+                xml=true
+                tagwriter=System.Web.UI.HtmlTextWriter
+                <case match="rv:(?'version'(?'major'\d+)(?'minor'\.\d+)(?'letters'\w*))">
+                    version=${version}
+                    majorversion=${major}
+                    minorversion=${minor}
+                    <case match="^b" with="${letters}">
+                        beta=true
+                    </case>
+        </case>
+      </case>
+      <!-- AppleWebKit Based Browsers (Safari...) //-->
+      <case match="AppleWebKit/(?'version'(?'major'\d)(?'minor'\d+)(?'letters'\w*))">
+                browser=AppleWebKit
+                version=${version}
+                majorversion=${major}
+                minorversion=0.${minor}
+                frames=true
+                tables=true
+                cookies=true
+                javascript=true
+                javaapplets=true
+                ecmascriptversion=1.5
+                w3cdomversion=1.0
+                css1=true
+                css2=true
+                xml=true
+                tagwriter=System.Web.UI.HtmlTextWriter
+                <case match="AppleWebKit/(?'version'(?'major'\d)(?'minor'\d+)(?'letters'\w*))( \(KHTML, like Gecko\) )?(?'type'[^/\d]*)/.*$">
+                    type=${type}
+                </case>
+      </case>
+      <!-- Konqueror //-->
+      <case match="Konqueror/(?'version'(?'major'\d+)(?'minor'\.\d+)(?'letters'));\w*(?'platform'[^\)]*)">
+                browser=Konqueror
+                version=${version}
+                majorversion=${major}
+                minorversion=${minor}
+                platform=${platform}
+                type=Konqueror
+                frames=true
+                tables=true
+                cookies=true
+                javascript=true
+                javaapplets=true
+                ecmascriptversion=1.5
+                w3cdomversion=1.0
+                css1=true
+                css2=true
+                xml=true
+                tagwriter=System.Web.UI.HtmlTextWriter
+            </case>
+    </browserCaps>
+    <pages validateRequest="false" enableEventValidation="false" controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID">
+      <controls>
+        <add tagPrefix="telerik" namespace="Telerik.Web.UI" assembly="Telerik.Web.UI"/>
+      </controls>
+    </pages>
+    <compilation defaultLanguage="vb" debug="true" targetFramework="4.0">
+      <assemblies>
+        <add assembly="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+        <add assembly="System.Runtime.Remoting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+      </assemblies>
+    </compilation>
+    <httpRuntime requestValidationMode="2.0" maxRequestLength="2097151" appRequestQueueLimit="100" executionTimeout="60000"/>
+    <httpHandlers>
+      <add path="Telerik.RadUploadProgressHandler.ashx" type="Telerik.Web.UI.Upload.RadUploadProgressHandler, Telerik.Web.UI" verb="*"/>
+      <add path="Telerik.Web.UI.DialogHandler.aspx" type="Telerik.Web.UI.DialogHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" verb="*"/>
+      <add path="Telerik.Web.UI.SpellCheckHandler.axd" type="Telerik.Web.UI.SpellCheckHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" verb="*"/>
+      <add path="ChartImage.axd" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" validate="false" verb="*"/>
+      <add path="Telerik.Web.UI.WebResource.axd" type="Telerik.Web.UI.WebResource, Telerik.Web.UI" verb="*" validate="false"/>
+    </httpHandlers>
+    <httpModules>
+      <add name="RadUploadModule" type="Telerik.Web.UI.RadUploadHttpModule, Telerik.Web.UI"/>
+      <add name="RadCompression" type="Telerik.Web.UI.RadCompression"/>
+    </httpModules>
+    <identity impersonate="true" userName="$plmOnUser$" password="$plmOnUserPassword$"/>
+    <trace enabled="false" mostRecent="true" requestLimit="100" pageOutput="false" traceMode="SortByTime" localOnly="false"/>
+    <customErrors mode="Off"/>
+    <authentication mode="Forms">
+      <forms name=".YSFORM" loginUrl="Default.aspx" protection="All" path="/" timeout="600"/>
+    </authentication>
+    <authorization>
+      <deny users="?"/>
+      <allow users="*"/>
+    </authorization>
+    <machineKey validationKey="$plmValidationKey$" decryptionKey="$plmDecryptionKey$" validation="SHA1" decryption="AES"/>
+    <sessionState mode="$SessionStateMode$" stateConnectionString="tcpip=127.0.0.1:42424" sqlConnectionString="$SessionStateSqlConnectionString$" cookieless="false" timeout="20"/>
+    <globalization fileEncoding="utf-8" requestEncoding="utf-8" responseEncoding="utf-8" uiCulture="en-US" culture="en-US"/>
+    <caching>
+      <sqlCacheDependency enabled="true" pollTime="6000">
+        <databases>
+          <add name="plmOnDB" connectionStringName="SQLCACHECONNECTION"/>
+        </databases>
+      </sqlCacheDependency>
+    </caching>
+  </system.web>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false"/>
+    <modules>
+      <remove name="RadCompression"/>
+      <add name="RadCompression" type="Telerik.Web.UI.RadCompression"/>
+      <remove name="RadUploadModule"/>
+      <add name="RadUploadModule" type="Telerik.Web.UI.RadUploadHttpModule, Telerik.Web.UI" preCondition="managedHandler"/>
+    </modules>
+    <handlers>
+      <remove name="ChartImage.axd_*"/>
+      <remove name="ChartImage_axd"/>
+      <remove name="Telerik.Web.UI.SpellCheckHandler.axd_*"/>
+      <remove name="Telerik_Web_UI_SpellCheckHandler_axd"/>
+      <remove name="Telerik.Web.UI.DialogHandler.aspx_*"/>
+      <remove name="Telerik_Web_UI_DialogHandler_aspx"/>
+      <remove name="Telerik.RadUploadProgressHandler.ashx_*"/>
+      <remove name="Telerik_RadUploadProgressHandler_ashx"/>
+      <remove name="Telerik.Web.UI.WebResource.axd_*"/>
+      <remove name="Telerik_Web_UI_WebResource_axd"/>
+      <add name="ChartImage.axd_*" path="ChartImage.axd" type="Telerik.Web.UI.ChartHttpHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" verb="*" preCondition="integratedMode"/>
+      <add name="Telerik.Web.UI.SpellCheckHandler.axd_*" path="Telerik.Web.UI.SpellCheckHandler.axd" verb="*" type="Telerik.Web.UI.SpellCheckHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" preCondition="integratedMode"/>
+      <add name="Telerik.Web.UI.DialogHandler.aspx_*" path="Telerik.Web.UI.DialogHandler.aspx" verb="*" type="Telerik.Web.UI.DialogHandler, Telerik.Web.UI, Culture=neutral, PublicKeyToken=121fae78165ba3d4" preCondition="integratedMode"/>
+      <add name="Telerik.RadUploadProgressHandler.ashx_*" path="Telerik.RadUploadProgressHandler.ashx" verb="*" type="Telerik.Web.UI.Upload.RadUploadProgressHandler, Telerik.Web.UI" preCondition="integratedMode"/>
+      <add name="Telerik.Web.UI.WebResource.axd_*" path="Telerik.Web.UI.WebResource.axd" verb="*" type="Telerik.Web.UI.WebResource, Telerik.Web.UI" preCondition="integratedMode"/>
+    </handlers>
+    <security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="100000000"/>
+      </requestFiltering>
+    </security>
+    <httpProtocol>
+      <customHeaders>
+        <clear/>
+        <add name="X-UA-Compatible" value="IE=EmulateIE7"/>
+      </customHeaders>
+    </httpProtocol>
+    <!--  Warmup only applicable to Windows IIS 7.5 and up...  -->
+    <!-- 
+    <httpWarmup>
+      <requests>
+        <add requestUrl="http://$plmOnHTTPServer$/$plmOnVDplmOn$" allowedResponseCodes="200-399" warmupContext="" sendMode="Asynchronous"/>
+      </requests>
+    </httpWarmup>
+        -->
+  </system.webServer>
+  <connectionStrings>
+    <add name="SQLCACHECONNECTION" connectionString="$plmOnDBConnectionString$" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  <system.net>
+    <connectionManagement>
+      <add address="*" maxconnection="100"/>
+    </connectionManagement>
+  </system.net>
+  <location path="default.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="error.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="password.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <appSettings>
+    <add key="AppSettingGroupID" value="$AppSettingGroupID$"/>
+    <add key="SERVER" value="$plmOnConfig$\Config\server.config"/>
+    <add key="MAIL" value="$plmOnConfig$\Config\mail.config"/>
+    <add key="IMAGE" value="$plmOnConfig$\Config\image.config"/>
+    <add key="COLOR" value="$plmOnConfig$\Config\color.config"/>
+    <add key="BODY" value="$plmOnConfig$\Config\body.config"/>
+    <add key="STORAGE" value="$plmOnConfig$\Config\storage.config"/>
+    <add key="LICENSE" value="$plmOnConfig$\Config\license.config"/>
+    <add key="MATERIAL" value="$plmOnConfig$\Config\material.config"/>
+    <add key="FLASHEDIT" value="$plmOnConfig$\Config\flashedit.config"/>
+    <add key="STYLE" value="$plmOnConfig$\Config\style.config"/>
+    <add key="LINELIST" value="$plmOnConfig$\Config\linelist.config"/>
+    <add key="REPORT" value="$plmOnConfig$\Config\report.config"/>
+    <add key="TRADEPARTNER" value="$plmOnConfig$\Config\tradepartner.config"/>
+    <add key="COMPLIANCE" value="$plmOnConfig$\Config\compliance.config"/>
+    <add key="SYSTEM" value="$plmOnConfig$\Config\system.config"/>
+    <add key="LINEPLAN" value="$plmOnConfig$\Config\lineplan.config"/>
+    <add key="AdminName" value="$plmOnAdminName$"/>
+    <add key="AdminMail" value="$plmOnAdminMail$"/>
+    <add key="REPORTSERVER" value="http://$plmOnRSServer$/$plmOnRSVDir$?/$plmOnRSReportFolder$"/>
+    <add key="MATERIALDUPLICATE" value="False"/>
+    <add key="MATERIALTYPEDEFAULT" value="10"/>
+    <add key="ERRORMESSAGE" value="TRUE"/>
+    <add key="STYLEDUPLICATE" value="TRUE"/>
+    <add key="STYLENOGENERATOR" value="TRUE"/>
+    <add key="CONCEPTDUPLICATE" value="FALSE"/>
+    <add key="REPORTSERVER_ASPX" value="http://$plmOnHTTPServer$/$plmOnVDplmOnReport$"/>
+    <add key="aspnet:MaxHttpCollectionKeys" value="100000"/>
+    <add key="Telerik.Web.UI.StyleSheetFolders" value="~/System/CSS/"/>
+  </appSettings>
+</configuration>

@@ -1,0 +1,3 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="Vendor_FolderPage_PartnerAccessType.ascx.vb" Inherits="plmOnApp.Vendor_FolderPage_PartnerAccessType" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
+<asp:Label ID="lblShared" runat="server" style="color:Red;"></asp:Label><asp:DropDownList ID="ddlPartnerAccessType" AutoPostBack="true" runat="server" />

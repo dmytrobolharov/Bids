@@ -1,0 +1,6 @@
+<generator>
+	<table name="pColorPalette" codecolumn="ColorCode" idcolumn="ColorPaletteID" spacecolumn="10">
+		<column name="" lookup="" lookupId="" lookupSelect="" lookupSpace="CLR" lookupNull="??" order="001" />
+		<column name="AUTOID" lookup="" lookupId="" lookupSelect="" lookupSpace="" lookupNull="??" order="002" />
+	</table>
+</generator>

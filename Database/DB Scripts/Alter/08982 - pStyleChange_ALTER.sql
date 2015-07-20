@@ -1,0 +1,10 @@
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pStyleChange' AND COLUMN_NAME = 'WorkflowItemID')
+BEGIN
+	ALTER TABLE pStyleChange ADD WorkflowItemID UNIQUEIDENTIFIER NULL
+END
+
+GO
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES ('DB_Version', '6.0.0000', '08982', GetDate())
+GO

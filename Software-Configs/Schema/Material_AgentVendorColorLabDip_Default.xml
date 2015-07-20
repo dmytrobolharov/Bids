@@ -1,0 +1,31 @@
+<Table Name="pMaterialTradePartnerLabDipSubmit" formcolumns="3" gridcolumns="" FormSQL="SELECT * FROM pMaterialTradePartnerLabDipSubmit"
+	GridReadSQL="SELECT * FROM pMaterialTradePartnerLabDipSubmit" GridSQL="SELECT  * FROM pMaterialTradePartnerLabDipSubmit">
+	<column Name="MaterialTradePartnerLabDipSubmitID" PK="true" alias="MaterialTradePartnerLabDipSubmitID"
+		Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false"
+		GridWidth="100" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialTradePartnerColorID" PK="true" alias="MaterialTradePartnerColorID"
+		Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false"
+		GridWidth="100" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialTradePartnerLabDipID" PK="true" alias="MaterialTradePartnerLabDipID"
+		Type="label" datatype="string" enabled="false" Visible="false" cellwidth="150px" GridVisible="false"
+		GridWidth="100" column="1" order="1" GridOrder="01">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="MaterialTradePartnerLabDipStatus" alias="Submit Status" Type="Dropdownlist" datatype="query" column="1" order="2"
+		GridVisible="true" cellwidth="150px" GridWidth="150" Visible="true" enabled="true" GridOrder="03">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="AssignedTo" alias="Color Name" Type="Assigned To" datatype="string" column="1" order="2"
+		GridVisible="true" cellwidth="150px" GridWidth="150" Visible="true" enabled="true" GridOrder="03">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+	<column Name="DueDate" alias="DueDate" Type="textbox" datatype="string"
+		column="1" order="2" GridVisible="true" cellwidth="150px" GridWidth="100" Visible="true"
+		enabled="true" GridOrder="03">
+		<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+	</column>
+</Table>

@@ -1,0 +1,97 @@
+.Underlined td
+{
+	border-bottom-style: Solid;
+	border-bottom-width: 2px;
+	border-bottom-color: #000;
+}
+
+input[type=text]
+{
+
+font:bold 20px;
+border-width: 3px;
+background-color: #FFFACD;
+color:#0000FF;
+}
+
+
+
+input[readonly]
+{
+background-color: white;
+color:black;
+font:bold 20px;
+border-width: 1px;
+
+
+
+}
+
+span[readonly]
+{
+color:#555;
+font:bold 20px;
+}
+
+.Underlined td td
+{
+	border-bottom-style: hidden;
+	border-bottom-width: 0px;
+}
+                       
+.UnitDelimiter
+{
+	background-color: #C2C1BA;
+}
+
+td.CheckboxColumn
+{
+	width: 3%;
+}
+
+td.AttributesItem
+{
+	width: 36%;
+}
+
+td.AttributesItemShort
+{
+	width: 33%;
+}
+
+td.SystemCostsheetHeader
+{
+	font-style: italic;
+	width: 16%;
+}
+
+td.SystemCostsheetItem, td.CostsheetItem, td.CostsheetHeader
+{
+	width: 16%;
+}
+
+tr.TableHeaderGreen td.SystemCostsheetItem,
+tr.TableHeaderGreen td.SystemCostsheetHeader
+{
+	background-image: none;
+	background-color: #a0bf92;
+}
+tr.TableHeaderYellow td.SystemCostsheetItem
+{
+	background-image: none;
+	background-color: #f8f69e;
+}
+
+tr.TableHeader td.SystemCostsheetItem
+{
+	background-image: none;
+	background-color: #c1cce1
+}
+
+#GridArea
+{
+	width: 1120px; 
+	height: 500px; 
+	overflow: auto; 
+	position: relative;
+}

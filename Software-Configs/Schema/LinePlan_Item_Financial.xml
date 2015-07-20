@@ -1,0 +1,29 @@
+<NewDataSet>
+	<Table Name="pLinePlanBusiness" formcolumns="1" gridcolumns="" FormSQL="SELECT * FROM vwx_LinePlanFinancial_SEL" GridReadSQL=" SELECT * FROM vwx_LinePlanFinancial_SEL" GridSQL=" SELECT * FROM vwx_LinePlanFinancial_SEL">
+		<column Name="LinePlanID" PK="true" alias="LinePlanID" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="50px" Search="false" GridVisible="false" GridWidth="100" column="1" gridorder="1">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="LinePlanTemplateItemId" PK="true" alias="LinePlanTemplateItemId" Type="label" datatype="string" enabled="false" Visible="false" cellwidth="50px" Search="false" GridVisible="false" GridWidth="100" column="1" gridorder="1">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="LinePlanAttributeText" alias="Category" Type="label" datatype="string" column="1" gridorder="4" GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="LinePlanBus1" alias="# of Styles" Type="textbox" datatype="string" column="1" gridorder="5" GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="LinePlanBus2" alias="# of Color" Type="textbox" datatype="string" column="1" gridorder="5" GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="LinePlanBus3" alias="Markup %" Type="textbox" datatype="string" column="1" gridorder="7" GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="LinePlanBus4" alias="TG Retail $" Type="textbox" datatype="string" column="1" gridorder="5" GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+		<column Name="LinePlanBus5" alias="TG Margin %" Type="textbox" datatype="string" column="1" gridorder="5" GridVisible="true" cellwidth="50px" GridWidth="75" Visible="true" enabled="true" Search="true">
+			<Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+		</column>
+	</Table>
+</NewDataSet>
+

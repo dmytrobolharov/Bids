@@ -1,0 +1,31 @@
+
+<Table Name="dbo.Cad_Model_Details" formcolumns="3" gridcolumns="1" FormSQL=""
+	GridReadSQL="" GridSQL="">
+
+  <column Name="" PK="true" alias="ID" Type="label" datatype="string" enabled="false"
+		Visible="false" cellwidth="100px" GridOrder="1" GridSearch="false" GridVisible="false" GridWidth="100"
+		column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Path"  alias="Path:" Type="label" datatype="string" enabled="true"
+		Visible="true" cellwidth="100px" GridOrder="1" GridSearch="true" GridVisible="false" GridWidth="150"
+		column="1" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Name" alias="Folder" Type="dropdownlist" datatype="string" column="2" order="1" GridVisible="true" cellwidth="250px"
+  lookupquery="select  * from $LinkedServer$.$LinkedServerCatalog$.dbo.Cad_Cats where parentid = 2 and level1 = 1"
+   Visible="true" enabled="true" textfield="Name" ValueField="CADCatId" select="true" AutoPostBack="true" GridWidth="75">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+  <column Name="Model_Code"  alias="Model Code" Type="textbox" datatype="string" enabled="true"
+		Visible="false" cellwidth="100px" GridOrder="1" GridSearch="true" GridVisible="false" GridWidth="100"
+		column="3" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+
+  <column Name="Model_Name" alias="Model Name" Type="textbox" datatype="string" enabled="true"
+ Visible="true" cellwidth="100px" Search="false" GridVisible="true" GridWidth="100" column="3" order="1">
+    <Validator Class="" Type="" Minimum="" Maximum="" Text="" />
+  </column>
+
+</Table>

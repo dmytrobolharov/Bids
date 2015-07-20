@@ -1,0 +1,6 @@
+<generator>
+	<table name="pStyleHeader" codecolumn="StyleNo" idcolumn="StyleID" spacecolumn="2">
+		<column name="CustomField3" lookup="SELECT Custom, CustomKey FROM iCustom3" lookupId="Custom" lookupSelect="CustomKey" lookupSpace="" lookupNull="_" order="001" />
+		<column name="CustomField4" lookup="SELECT Custom, CustomKey FROM iCustom4" lookupId="Custom" lookupSelect="Custom" lookupSpace="" lookupNull="_" order="002" />
+	</table>
+</generator>

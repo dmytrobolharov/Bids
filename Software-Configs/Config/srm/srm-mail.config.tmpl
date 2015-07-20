@@ -1,0 +1,38 @@
+<configuration>
+	<configSections>
+		<section name="MAIL" type="System.Configuration.NameValueFileSectionHandler, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	</configSections>
+	<appSettings>
+		<add key="Encryption" value="FALSE" />
+		<add key="SMTPQUEUE" value="TRUE" />
+		<add key="SMTPSecure" value="FALSE" />
+		<add key="SMTPServer" value="$plmOnSMTPServer$" />
+		<add key="SMTPPORT" value="$plmOnSMTPPort$" />
+		<add key="SMTPUserName" value="$plmOnSMTPUser$" />
+		<add key="SMTPPassword" value="$plmOnSMTPPassword$" />
+    <add key="SMTPQueuePath" value="$plmOnSMTPQueueFolder$" />
+
+    <add key="EMAILFromAddress" value="$plmOnSMTPFromAddr$" />
+
+		<add key="EMAILUserTemplate" value="epassword_user.html" />
+		<add key="EMAILRequestPasswordTemplate" value="epassword_request.html" />
+		<add key="EMAILRequestPasswordNoActiveTemplate" value="epassword_request_noactive.html" />
+		<add key="EMAILErrorTemplate" value="epassword_error.html" />
+
+		<add key="EMAILPartnerTemplate" value="epassword_partner.html" />
+		<add key="EMAILRequestPasswordPartnerTemplate" value="epassword_partner_request.html" />
+		<add key="EMAILRequestPasswordPartnerNoActiveTemplate" value="epassword_partner_request_noactive.html" />
+		<add key="EMAILRequestPasswordPartnerNoSrmOnAccessTemplate" value="epassword_partner_request_nosrmonaccess.html" />
+		<add key="EMAILChangeNotificationTemplate" value="change_notification.html" />
+		<add key="EMAILChangeLogBatchNotificationTemplate" value="change_notification_batch.html" />
+
+		<add key="DEFAULTMAILSERVERTYPE" value="POP3" />
+		<add key="DEFAULTINCOMINGSERVER" value="WINDU" />
+		<add key="DEFAULTINCOMINGPORT" value="110" />
+		<add key="DEFAULTOUTCOMINGSERVER" value="WINDU" />
+		<add key="DEFAULTOUTCOMINGPORT" value="25" />
+		<add key="DEFAULTMAILSERVERTIMEOUT" value="60" />
+		<add key="DEFAULTLEAVESERVERCOPY" value="TRUE" />
+		<add key="DEFAULTMAILTEMPLATE" value="$plmOnConfig$\Template" />
+  </appSettings>
+</configuration>

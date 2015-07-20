@@ -1,0 +1,9 @@
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pTATaskWorkflow' AND COLUMN_NAME = 'Active')
+BEGIN
+	ALTER TABLE pTATaskWorkflow ADD Active INT NOT NULL DEFAULT 1
+END
+GO
+
+INSERT INTO sVersion(AppName, Version, LastScriptRun, TimeStamp)
+VALUES ('DB_Version', '0.5.0000', '08476', GetDate())
+GO

@@ -1,0 +1,1 @@
+delete from AspNet_SqlCacheTablesForChangeNotification

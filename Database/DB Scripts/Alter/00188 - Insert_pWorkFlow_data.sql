@@ -1,0 +1,2 @@
+INSERT INTO pWorkflow (WorkflowID, Workflow, WorkDays, WorkAlert, WorkflowSort, CUser, CDate, MUser, MDate, Active, Body, WorkflowTypeID)
+VALUES     ('40000000-0000-0000-0000-000000000018', 'Design Detail 2', 5, 10, 6, NULL, NULL, NULL, NULL, 'True', 0, 'D')
