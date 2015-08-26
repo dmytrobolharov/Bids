@@ -102,7 +102,7 @@
                         <table cellSpacing="0" cellPadding="0" border="0">
 			                <tr vAlign="top">
 				                <td>
-					                <asp:DataGrid id="dgCompare" runat="server" AllowSorting="true">
+					                <asp:DataGrid id="dgCompare" runat="server" AllowSorting="true" >
 						                <AlternatingItemStyle Height="20px" CssClass="ItemTemplate"></AlternatingItemStyle>
 						                <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
 						                <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
@@ -281,7 +281,8 @@
                 setTimeout(function () { document.getElementById(focusedControlId).focus(); }, 1);
             }
         });
-
+          
+        
 	</script>    
 
 </body>

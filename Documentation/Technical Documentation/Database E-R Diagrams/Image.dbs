@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_32d3dfc1" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610_PROJ" schemaname="dbo" >
+		<table name="Users" >
+			<column name="UserId" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="UserCode" type="nvarchar" length="6" decimal="0" jt="12" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="FirstName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MiddleName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="LastName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Title" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Birthday" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Company" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Street1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Street2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="City" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="State" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Zip" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Country" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Phone" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Fax" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Mobile" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="UserName" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="PassWord" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Email" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContactName1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Admin" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="PublicAccess" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TradePartner" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="LastUpdate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSION" type="int" length="10" decimal="0" jt="4" />
+			<column name="SESSIONDATE" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSIONOS" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="SCREENWIDTH" type="int" length="10" decimal="0" jt="4" />
+			<column name="SCREENHEIGHT" type="int" length="10" decimal="0" jt="4" />
+			<column name="FULLNAME" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="USERDIR" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="MAILADDR" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="MAXSIZE" type="int" length="10" decimal="0" jt="4" />
+			<column name="MAXMSGS" type="int" length="10" decimal="0" jt="4" />
+			<column name="FLAGS" type="int" length="10" decimal="0" jt="4" />
+			<column name="TYPE" type="int" length="10" decimal="0" jt="4" />
+			<column name="IP" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Picture" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="A_CompanyFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TeamFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TradingFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ColorFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ImageFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TemplateFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_DesignFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_CatalogFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_WorkflowFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ExternalAccess" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleHeader" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleMaterial" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleArtwork" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleLicensee" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleColorway" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleDesignDetail" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleDevelopmentSpec" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleGradeMeasurment" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ProductionRequest" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="D_Desktop" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CalendarTemplateID" type="int" length="10" decimal="0" jt="4" />
+			<column name="ActivationID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ReadOnly" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SystemClientID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="ServerLocationID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="Division" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="JobRole" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Location" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Floor" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MachineType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContractType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContractEnd" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Menswear" type="int" length="10" decimal="0" jt="4" />
+			<column name="Womenswear" type="int" length="10" decimal="0" jt="4" />
+			<column name="Accessories" type="int" length="10" decimal="0" jt="4" />
+			<column name="Divisionless" type="int" length="10" decimal="0" jt="4" />
+			<column name="Prorsum" type="int" length="10" decimal="0" jt="4" />
+			<column name="UnLockHeader" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PreferredLang" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="UserProductAttributeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="AvatarImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DashFolderItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Intellimas" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="AdobePluginAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="evmOnAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Gerber" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="DeskTopID" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK__Users__6D0DFE4B" unique="PRIMARY_KEY" >
+				<column name="UserId" />
+			</index>
+			<index name="IX_Users_05" unique="NORMAL" >
+				<column name="Active" />
+				<column name="Title" />
+				<column name="FULLNAME" />
+			</index>
+			<index name="IX_Users_06" unique="NORMAL" >
+				<column name="UserId" />
+				<column name="FirstName" />
+				<column name="LastName" />
+				<column name="Email" />
+			</index>
+			<index name="IX_Users_TeamID" unique="UNIQUE" >
+				<column name="TeamID" />
+			</index>
+		</table>
+		<table name="pImage" >
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempID" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="WorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageCode" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="ImageDescription" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageKeywords" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ImageLocation" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ImageDateLastAccessed" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageDateLastModified" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageFile" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageFileType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ImageSize" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="ImageType" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMainFolder" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageUserFolder" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder5" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder6" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder7" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder8" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder9" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder10" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder11" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder12" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder13" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder14" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder15" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder16" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder17" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder18" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder19" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder20" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder21" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder22" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder23" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder24" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder25" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageCopyID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageCopyVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ImageCopyUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageCopyDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Version" type="int" length="10" decimal="0" jt="4" />
+			<column name="ImageAttribute" type="varchar" length="8000" decimal="0" jt="12" />
+			<column name="SystemServerStorageID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="ImageMultiPage" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ImageWorkflowTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Unversioned" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK__pImage__38DA2D2E" unique="PRIMARY_KEY" >
+				<column name="ImageID" />
+			</index>
+			<index name="IX_pImage_ImageSubFolder1" unique="NORMAL" >
+				<column name="ImageSubFolder1" />
+			</index>
+			<fk name="pImageType" virtual="y" to_schema="dbo" to_table="pImageType" >
+				<fk_column name="ImageTypeID" pk="ImageTypeID" />
+			</fk>
+			<fk name="pImageWorkflowTemplate" virtual="y" to_schema="dbo" to_table="pImageWorkflowTemplate" >
+				<fk_column name="ImageWorkflowTemplateID" pk="ImageWorkflowTemplateID" />
+			</fk>
+		</table>
+		<table name="pImageAttribute" >
+			<column name="ImageAttributeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageAttributeTableID" type="int" length="10" decimal="0" jt="4" />
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageAttributeText" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageAttributeValue" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Sort" type="nvarchar" length="50" decimal="0" jt="12" />
+			<index name="PK_pImageAttribute" unique="PRIMARY_KEY" >
+				<column name="ImageAttributeID" />
+			</index>
+			<fk name="pImage" virtual="y" to_schema="dbo" to_table="pImage" >
+				<fk_column name="ImageID" pk="ImageID" />
+			</fk>
+			<fk name="pImageAttributeTable" virtual="y" to_schema="dbo" to_table="pImageAttributeTable" >
+				<fk_column name="ImageAttributeTableID" pk="ImageAttributeTableID" />
+			</fk>
+		</table>
+		<table name="pImageAttributeTable" >
+			<column name="ImageAttributeTableID" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ImageAttributeTableName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageAttributeXML" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ImageAttributeTable" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="ImageAttributeText" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageAttributeValue" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="Sort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="ImageAttributeTableRepId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<index name="PK_pImageAttributeTable" unique="PRIMARY_KEY" >
+				<column name="ImageAttributeTableID" />
+			</index>
+		</table>
+		<table name="pImageCatalog" >
+			<column name="ImageCatalogID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageCatalogNo" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="CatalogName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CatalogDescription" type="nvarchar" length="250" decimal="0" jt="12" />
+			<column name="CatalogCustomField1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CatalogCustomField2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CatalogCustomField3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CatalogCustomField4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CatalogCustomField5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CatalogCustomField6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CatalogCustomField7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CatalogCustomField8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CatalogCustomField9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CatalogCustomField10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="ImageMultiPage" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="PlanningID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK__pImageCatalog__17043817" unique="PRIMARY_KEY" >
+				<column name="ImageCatalogID" />
+			</index>
+		</table>
+		<table name="pImageCatalogItem" >
+			<column name="ImageCatalogItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageCatalogID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ImageSort" type="nvarchar" length="6" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK__pImageCatalogIte__2882FE7D" unique="PRIMARY_KEY" >
+				<column name="ImageCatalogItemID" />
+			</index>
+			<index name="IX_pImageCatalogItem_ImageCatalogID" unique="NORMAL" >
+				<column name="ImageCatalogID" />
+			</index>
+			<index name="IX_pImageCatalogItem_ImageID" unique="NORMAL" >
+				<column name="ImageID" />
+			</index>
+			<fk name="pImage_1" virtual="y" to_schema="dbo" to_table="pImage" >
+				<fk_column name="ImageID" pk="ImageID" />
+			</fk>
+			<fk name="pImageCatalog" virtual="y" to_schema="dbo" to_table="pImageCatalog" >
+				<fk_column name="ImageCatalogID" pk="ImageCatalogID" />
+			</fk>
+		</table>
+		<table name="pImageCatalogItemStatus" >
+			<column name="ImageCatalogStatusID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageCatalogID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageCatalogItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageCatalogStatusDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ImageCatalogStatus" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK__pImageCatalogIte__707E9C7C" unique="PRIMARY_KEY" >
+				<column name="ImageCatalogStatusID" />
+			</index>
+			<fk name="pImage_2" virtual="y" to_schema="dbo" to_table="pImage" >
+				<fk_column name="ImageID" pk="ImageID" />
+			</fk>
+			<fk name="pImageCatalog_0" virtual="y" to_schema="dbo" to_table="pImageCatalog" >
+				<fk_column name="ImageCatalogID" pk="ImageCatalogID" />
+			</fk>
+			<fk name="pImageCatalogItem" virtual="y" to_schema="dbo" to_table="pImageCatalogItem" >
+				<fk_column name="ImageCatalogItemID" pk="ImageCatalogItemID" />
+			</fk>
+		</table>
+		<table name="pImageCatalogPrint" >
+			<column name="ImageCatalogPrintID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageCatalogPrintName" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="ImageCatalogPrintDescription" type="varchar" length="500" decimal="0" jt="12" />
+			<column name="ImageCatalogPrintURL" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="ImageCatalogPrintActive" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="ImageCatalogPrintSort" type="int" length="10" decimal="0" jt="4" />
+			<column name="ImageCatalogPrintType" type="nvarchar" length="25" decimal="0" jt="12" />
+			<index name="PK_pImageCatalogPrint" unique="PRIMARY_KEY" >
+				<column name="ImageCatalogPrintID" />
+			</index>
+		</table>
+		<table name="pImageCatalogTeam" >
+			<column name="ImageCatalogTeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageCatalogID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageCatalogStatus" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartner" type="nvarchar" length="2" decimal="0" jt="12" />
+			<column name="ImageCatalogSubject" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageCatalogMessage" type="ntext" length="1073741823" decimal="0" jt="-1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK__pImageCatalogTea__405A880E" unique="PRIMARY_KEY" >
+				<column name="ImageCatalogTeamID" />
+			</index>
+			<index name="idx_pImageCatalogTeam" unique="NORMAL" >
+				<column name="TeamID" />
+			</index>
+			<fk name="pImageCatalog_1" virtual="y" to_schema="dbo" to_table="pImageCatalog" >
+				<fk_column name="ImageCatalogID" pk="ImageCatalogID" />
+			</fk>
+			<fk name="fk_pimagecatalogteam_users" to_schema="dbo" to_table="Users" >
+				<fk_column name="TeamID" pk="TeamID" />
+			</fk>
+		</table>
+		<table name="pImageChange" >
+			<column name="ImageChangeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageChangeNo" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="ImageStatus" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="ImageWorkflowTemplateItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageChangeNotifyTo" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ImageChangeType" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageChangeDescription" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ImageChangeBy" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageChangeDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ActiveID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>&#039;{00000000-0000-0000-0000-000000000000}&#039;</defo>
+			</column>
+			<column name="Active" type="bit" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="RepRowGuidColID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<index name="PK_pImageChange" unique="PRIMARY_KEY" >
+				<column name="ImageChangeID" />
+				<column name="ImageChangeNo" />
+			</index>
+			<fk name="pImage_3" virtual="y" to_schema="dbo" to_table="pImage" >
+				<fk_column name="ImageID" pk="ImageID" />
+			</fk>
+			<fk name="pImageWorkflowTemplateItem" virtual="y" to_schema="dbo" to_table="pImageWorkflowTemplateItem" >
+				<fk_column name="ImageWorkflowTemplateItemID" pk="ImageWorkflowTemplateItemID" />
+			</fk>
+		</table>
+		<table name="pImageComment" >
+			<column name="ImageCommentID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageCatalogID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CUser" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ImageComment" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="CTeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK__pImageComment__1EA559DF" unique="PRIMARY_KEY" >
+				<column name="ImageCommentID" />
+			</index>
+			<index name="IX_pImageComment_ImageID" unique="NORMAL" >
+				<column name="ImageID" />
+				<column name="ImageCatalogID" />
+				<column name="MDate" />
+			</index>
+			<index name="idx_pImageComment" unique="NORMAL" >
+				<column name="ImageID" />
+			</index>
+			<index name="idx_pImageComment_0" unique="NORMAL" >
+				<column name="TeamID" />
+			</index>
+			<fk name="pImageCatalog_2" virtual="y" to_schema="dbo" to_table="pImageCatalog" >
+				<fk_column name="ImageCatalogID" pk="ImageCatalogID" />
+			</fk>
+			<fk name="fk_pimagecomment_pimage" to_schema="dbo" to_table="pImage" >
+				<fk_column name="ImageID" pk="ImageID" />
+			</fk>
+			<fk name="fk_pimagecomment_users" to_schema="dbo" to_table="Users" >
+				<fk_column name="TeamID" pk="TeamID" />
+			</fk>
+		</table>
+		<table name="pImageFileType" >
+			<column name="ImageFileTypeID" type="nvarchar" length="3" decimal="0" jt="12" mandatory="y" />
+			<column name="ImageFileType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ImageFileName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ImageFileThumb" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ImageFileExtension" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="ImageSafeConvertion" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="ImageSafeExtension" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="ImageFileTypeRepId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<index name="PK_pImageFileType" unique="PRIMARY_KEY" >
+				<column name="ImageFileTypeID" />
+			</index>
+		</table>
+		<table name="pImageFileTypeSupport" >
+			<column name="ImageFileTypeSupportID" type="nvarchar" length="3" decimal="0" jt="12" mandatory="y" />
+			<column name="ImageFileTypeID" type="nvarchar" length="3" decimal="0" jt="12" mandatory="y" />
+			<column name="ImageFileType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="ImageFileTypeSupportRepId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<index name="PK_pImageFileTypeSupport" unique="PRIMARY_KEY" >
+				<column name="ImageFileTypeSupportID" />
+			</index>
+			<fk name="pImageFileType" virtual="y" to_schema="dbo" to_table="pImageFileType" >
+				<fk_column name="ImageFileTypeID" pk="ImageFileTypeID" />
+			</fk>
+		</table>
+		<table name="pImageHistory" >
+			<column name="ImageHistoryID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pImageHistory" unique="PRIMARY_KEY" >
+				<column name="ImageHistoryID" />
+			</index>
+			<index name="IX_pImageHistory_TeamID" unique="NORMAL" >
+				<column name="TeamID" />
+				<column name="ImageID" />
+			</index>
+			<index name="idx_pImageHistory" unique="NORMAL" >
+				<column name="TeamID" />
+			</index>
+			<fk name="pImage_5" virtual="y" to_schema="dbo" to_table="pImage" >
+				<fk_column name="ImageID" pk="ImageID" />
+			</fk>
+			<fk name="fk_pimagehistory_users" to_schema="dbo" to_table="Users" >
+				<fk_column name="TeamID" pk="TeamID" />
+			</fk>
+		</table>
+		<table name="pImageMultiPage" >
+			<column name="ImageMultiPageID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageNo" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="ImageMultiPage1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage5" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage6" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage7" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage8" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage9" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage10" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage11" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage12" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage13" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage14" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage15" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage16" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage17" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage18" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage19" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage20" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage21" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage22" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage23" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage24" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMultiPage25" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pImageMultiPage" unique="PRIMARY_KEY" >
+				<column name="ImageMultiPageID" />
+			</index>
+			<fk name="pImage_6" virtual="y" to_schema="dbo" to_table="pImage" >
+				<fk_column name="ImageID" pk="ImageID" />
+			</fk>
+		</table>
+		<table name="pImageType" >
+			<column name="ImageTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageClass" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="ImageType" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ImageSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImagePrintSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageIDSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageOrder" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="ImageItemSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="srmOnAccess" type="int" length="10" decimal="0" jt="4" />
+			<column name="ImageColorSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pImageType" unique="PRIMARY_KEY" >
+				<column name="ImageTypeID" />
+			</index>
+		</table>
+		<table name="pImageWFValidation" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="WorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="CustomKey" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Min" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="Max" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="ByColorway" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="ByArtwork" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="plmOn" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="srmOn" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="Sort" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="IsFrontBackWF" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_pImageWFValidation" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+			<index name="IX_pImageWFValidation_WorkflowID" unique="NORMAL" >
+				<column name="WorkflowID" />
+			</index>
+		</table>
+		<table name="pImageWebPart" >
+			<column name="ImageWebPartID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK__pImageWebPart__599B3724" unique="PRIMARY_KEY" >
+				<column name="ImageWebPartID" />
+			</index>
+			<index name="idx_pImageWebPart" unique="NORMAL" >
+				<column name="TeamID" />
+			</index>
+			<fk name="pImage_7" virtual="y" to_schema="dbo" to_table="pImage" >
+				<fk_column name="ImageID" pk="ImageID" />
+			</fk>
+			<fk name="fk_pimagewebpart_users" to_schema="dbo" to_table="Users" >
+				<fk_column name="TeamID" pk="TeamID" />
+			</fk>
+		</table>
+		<table name="pImageWorkflowPage" >
+			<column name="ImageWorkflowPageID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageWorkflowTemplateItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageWorkflowTemplateEntryID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="WorkStart" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="WorkDue" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="WorkAssignedTo" type="int" length="10" decimal="0" jt="4" />
+			<column name="WorkStatus" type="int" length="10" decimal="0" jt="4" />
+			<column name="WorkStatusDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Sort" type="nvarchar" length="4" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ActualStart" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ActualEnd" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pImageWorkflowPage" unique="PRIMARY_KEY" >
+				<column name="ImageWorkflowPageID" />
+			</index>
+			<index name="IX_pImageWorkflowPage_ImageID" unique="NORMAL" >
+				<column name="ImageID" />
+			</index>
+			<fk name="pImage_8" virtual="y" to_schema="dbo" to_table="pImage" >
+				<fk_column name="ImageID" pk="ImageID" />
+			</fk>
+			<fk name="pImageWorkflowTemplateEntry" virtual="y" to_schema="dbo" to_table="pImageWorkflowTemplateEntry" >
+				<fk_column name="ImageWorkflowTemplateEntryID" pk="ImageWorkflowTemplateEntryID" />
+			</fk>
+			<fk name="pImageWorkflowTemplateItem_0" virtual="y" to_schema="dbo" to_table="pImageWorkflowTemplateItem" >
+				<fk_column name="ImageWorkflowTemplateItemID" pk="ImageWorkflowTemplateItemID" />
+			</fk>
+		</table>
+		<table name="pImageWorkflowTemplate" >
+			<column name="ImageWorkflowTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageWorkflowTemplateName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageWorkflowTemplateDesc" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pImageWorkflowTemplate" unique="PRIMARY_KEY" >
+				<column name="ImageWorkflowTemplateID" />
+			</index>
+		</table>
+		<table name="pImageWorkflowTemplateEntry" >
+			<column name="ImageWorkflowTemplateEntryID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageWorkflowTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="ImageWorkflowTemplateItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="Sort" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pImageWorkflowTemplateEntry" unique="PRIMARY_KEY" >
+				<column name="ImageWorkflowTemplateEntryID" />
+			</index>
+			<fk name="pImageWorkflowTemplate_0" virtual="y" to_schema="dbo" to_table="pImageWorkflowTemplate" >
+				<fk_column name="ImageWorkflowTemplateID" pk="ImageWorkflowTemplateID" />
+			</fk>
+			<fk name="pImageWorkflowTemplateItem_1" virtual="y" to_schema="dbo" to_table="pImageWorkflowTemplateItem" >
+				<fk_column name="ImageWorkflowTemplateItemID" pk="ImageWorkflowTemplateItemID" />
+			</fk>
+		</table>
+		<table name="pImageWorkflowTemplateItem" >
+			<column name="ImageWorkflowTemplateItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageWorkflowTemplateItemName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageWorkflowTemplateItemDesc" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="ImageWorkflowTemplateItemURL" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pImageWorkflowTemplateItem" unique="PRIMARY_KEY" >
+				<column name="ImageWorkflowTemplateItemID" />
+			</index>
+		</table>
+	</schema>
+	<layout id="Layout_1372fa3b" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="pImageAttribute" color="bfd4f5" x="1335" y="780" />
+		<entity schema="dbo" name="pImageAttributeTable" color="bfd4f5" x="1530" y="780" />
+		<entity schema="dbo" name="pImageMultiPage" color="c8f5bf" x="405" y="60" />
+		<entity schema="dbo" name="pImageWorkflowTemplateItem" color="bfd4f5" x="1425" y="360" />
+		<entity schema="dbo" name="pImageType" color="c8f5bf" x="45" y="735" />
+		<entity schema="dbo" name="pImageChange" color="c8f5bf" x="420" y="795" />
+		<entity schema="dbo" name="pImage" color="c8f5bf" x="60" y="450" >
+			<column name="ImageID" />
+			<column name="ImageTypeID" />
+			<column name="ImageWorkflowTemplateID" />
+		</entity>
+		<entity schema="dbo" name="pImageCatalogPrint" color="bfbff5" x="705" y="75" />
+		<entity schema="dbo" name="pImageWFValidation" color="bfbff5" x="1005" y="60" />
+		<entity schema="dbo" name="pImageFileTypeSupport" color="f5ddbf" x="2160" y="45" />
+		<entity schema="dbo" name="pImageCatalog" color="f5ddbf" x="1755" y="120" />
+		<entity schema="dbo" name="pImageCatalogItem" color="f5ddbf" x="2010" y="465" />
+		<entity schema="dbo" name="pImageCatalogItemStatus" color="f5ddbf" x="2070" y="810" />
+		<entity schema="dbo" name="pImageWebPart" color="c8f5bf" x="240" y="795" />
+		<entity schema="dbo" name="pImageComment" color="f5ddbf" x="1890" y="720" />
+		<entity schema="dbo" name="pImageCatalogTeam" color="bfbff5" x="1500" y="60" />
+		<entity schema="dbo" name="pImageWorkflowPage" color="bfd4f5" x="690" y="345" />
+		<entity schema="dbo" name="pImageWorkflowTemplate" color="bfd4f5" x="1020" y="720" />
+		<entity schema="dbo" name="pImageHistory" color="c8f5bf" x="150" y="75" />
+		<entity schema="dbo" name="pImageWorkflowTemplateEntry" color="bfd4f5" x="1050" y="375" />
+		<entity schema="dbo" name="pImageFileType" color="f5ddbf" x="2175" y="300" />
+		<entity schema="dbo" name="Users" color="c0d4f3" x="870" y="990" >
+			<column name="UserId" />
+			<column name="TeamID" />
+		</entity>
+		<group name="Image Folder" color="ccffff" >
+			<entity schema="dbo" name="pImageAttribute" />
+			<entity schema="dbo" name="pImageAttributeTable" />
+			<entity schema="dbo" name="pImageMultiPage" />
+			<entity schema="dbo" name="pImageWorkflowTemplateItem" />
+			<entity schema="dbo" name="pImageWorkflowTemplateEntry" />
+			<entity schema="dbo" name="pImageType" />
+			<entity schema="dbo" name="pImageChange" />
+			<entity schema="dbo" name="pImage" />
+			<entity schema="dbo" name="pImageCatalogPrint" />
+			<entity schema="dbo" name="pImageWFValidation" />
+			<entity schema="dbo" name="pImageFileTypeSupport" />
+			<entity schema="dbo" name="pImageFileType" />
+			<entity schema="dbo" name="pImageCatalog" />
+			<entity schema="dbo" name="pImageCatalogItem" />
+			<entity schema="dbo" name="pImageCatalogItemStatus" />
+			<entity schema="dbo" name="Users" />
+			<entity schema="dbo" name="pImageHistory" />
+			<entity schema="dbo" name="pImageWebPart" />
+			<entity schema="dbo" name="pImageComment" />
+			<entity schema="dbo" name="pImageCatalogTeam" />
+			<entity schema="dbo" name="pImageWorkflowPage" />
+			<entity schema="dbo" name="pImageWorkflowTemplate" />
+		</group>
+	</layout>
+</project>

@@ -55,7 +55,6 @@
         </td>
     </tr>
 </table>
-<cc2:YSTabView id="YSTabView1" runat="server"></cc2:YSTabView>
 <table class='<%=GetTableHeaderClass() %>' height="25" cellspacing="0" cellpadding="0" width="100%" border="0">
 	<tr>
 		<td align="center" width="10"><IMG height="15" src="../System/Images/bbTbSCnr.gif" width="3"></td>

@@ -116,7 +116,7 @@
         }
 
         function GetClientColorStreamPath(ColorFolderID, ColorPaletteID) {
-            return '<%=GetColorStreamPath("25", "{{ColorFolderID}}", "{{ColorPaletteID}}") %>'.replace("{{ColorFolderID}}", ColorFolderID).replace("{{ColorPaletteID}}", ColorPaletteID);
+            return '<%=GetColorStreamPath("25", "00000000-0000-0000-0000-000000000000", "10000000-0000-0000-0000-000000000001") %>'.replace("00000000-0000-0000-0000-000000000000", ColorFolderID).replace("10000000-0000-0000-0000-000000000001", ColorPaletteID);
         }
 
         function allComboBoxes() {            

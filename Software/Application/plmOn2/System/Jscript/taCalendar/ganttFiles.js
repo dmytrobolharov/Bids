@@ -3651,6 +3651,7 @@ function createGannt(templateId, ganntHeight, ganntWidth) {
 				Page_ClientValidate();
                 event.preventDefault();
                 if(Page_IsValid){
+                    $("#btnSave").prop('disabled', true);
                     saveFunc()
                 }else{
                     toastr.error(Yunique.Data.getTranslatedString(TranslationData,'Error! Please fill necessary fields'));

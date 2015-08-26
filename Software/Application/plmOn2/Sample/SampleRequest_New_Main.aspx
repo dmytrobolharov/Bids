@@ -262,10 +262,9 @@
 						</asp:datagrid>
 
 
-        <input id="hidBOMDimensionId" type="hidden" name="hidBOMDimensionId" width="20" runat="server" />
+        <asp:HiddenField id="hdnBOMDimensionId" runat="server" />
         <asp:Panel ID="pnlDimType" runat="server">
-        <table class="TableHeader" height="27" cellspacing="0" cellpadding="0" width="100%"
-        border="0">
+        <table class="TableHeader" height="27" cellspacing="0" cellpadding="0" width="100%" border="0">
         <tr >
             <td valign="middle" align="center" width="10">
                 <img alt="" height="15" src="../System/Images/bbTbSCnr.gif" width="3" />
@@ -280,6 +279,7 @@
         </tr>
         </table>
         <asp:Panel id="tblDim1" runat="server">
+        <asp:HiddenField id="hdnDim1" runat="server" />
          <table  cellspacing="1" cellpadding="1" width="100%">
             <tr class="TableHeader">
                 <td>
@@ -302,6 +302,7 @@
         </table>
         </asp:Panel>
         <asp:Panel id="tblDim2" runat="server">
+        <asp:HiddenField id="hdnDim2" runat="server" />
         <table  cellspacing="1" cellpadding="1" width="100%">
             <tr class="TableHeader">
                 <td>
@@ -324,6 +325,7 @@
         </table>
         </asp:Panel>
         <asp:Panel id="tblDim3" runat="server">
+        <asp:HiddenField id="hdnDim3" runat="server" />
         <table  cellspacing="1" cellpadding="1" width="100%">
             <tr class="TableHeader">
                 <td>

@@ -1,0 +1,134 @@
+-- ******************************************************************************************** */
+-- * GERBER TECHNOLOGY                                                                          */
+-- *                                                                                            */
+-- * YuniquePLM                                                                                 */
+-- * Alter Script                                                                               */
+-- * Database:                                                                                  */
+-- * 17 June 2015                                                                               */
+-- *                                                                                            */
+-- * Copyright (c) 2002-2015 Gerber Technology, Inc.  All rights reserved.                      */
+-- * This information is confidential and proprietary.  You may not disseminate it              */
+-- * to any other party without the express written consent of Gerber Technology, Inc.          */
+-- *                                                                                            */
+-- ******************************************************************************************** */
+-- ******************************************************************************************** */
+-- COMMENTS:
+--
+--
+--
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET NOCOUNT ON
+GO
+
+
+IF (OBJECT_ID('tgx_PPFThumbnails_INSERT', 'TR') IS NOT NULL)
+BEGIN
+	DROP TRIGGER [dbo].[tgx_PPFThumbnails_INSERT]
+END
+GO
+
+CREATE TRIGGER [dbo].[tgx_PPFThumbnails_INSERT]
+ON [dbo].[PPFThumbnails]
+AFTER INSERT 
+AS
+BEGIN
+	DECLARE @PKFields xml
+	SET @PKFields = (SELECT [ImageSerialNumber]
+					FROM INSERTED
+					FOR XML PATH('Record'), ROOT('PPFThumbnails'))
+
+	IF @PKFields IS NOT NULL
+	BEGIN
+		--INSERT INTO Yunify(TableName, PKFields, CRUDType)
+		--VALUES ('PPFThumbnails', @PKFields, 'C')
+
+		DECLARE @FieldValues xml
+		SET @FieldValues = (SELECT PPFThumbnails.*
+							FROM PPFThumbnails, inserted
+							WHERE PPFThumbnails.ImageSerialNumber = inserted.ImageSerialNumber
+							FOR XML PATH('Record'), ROOT('PPFThumbnails'))
+
+		IF @FieldValues IS NOT NULL
+		BEGIN
+			INSERT INTO Yunify(TableName, PKFields, FieldValues, CRUDType)
+			VALUES ('PPFThumbnails', @PKFields , @FieldValues, 'C')
+		END
+	END
+END
+GO
+
+
+IF (OBJECT_ID('tgx_PPFThumbnails_UPDATE', 'TR') IS NOT NULL)
+BEGIN
+	DROP TRIGGER [dbo].[tgx_PPFThumbnails_UPDATE]
+END
+GO
+
+CREATE TRIGGER [dbo].[tgx_PPFThumbnails_UPDATE]
+ON [dbo].[PPFThumbnails]
+AFTER UPDATE
+AS
+BEGIN
+	DECLARE @PKFields xml
+	SET @PKFields = (SELECT [ImageSerialNumber]
+					FROM INSERTED
+					FOR XML PATH('Record'), ROOT('PPFThumbnails'))
+
+	IF @PKFields IS NOT NULL
+	BEGIN
+		--INSERT INTO Yunify(TableName, PKFields, CRUDType)
+		--VALUES ('PPFThumbnails', @PKFields, 'U')
+
+		DECLARE @FieldValues xml
+		SET @FieldValues = (SELECT PPFThumbnails.*
+							FROM PPFThumbnails, inserted
+							WHERE PPFThumbnails.ImageSerialNumber = inserted.ImageSerialNumber
+							FOR XML PATH('Record'), ROOT('PPFThumbnails'))
+
+		IF @FieldValues IS NOT NULL
+		BEGIN
+			INSERT INTO Yunify(TableName, PKFields, FieldValues, CRUDType)
+			VALUES ('PPFThumbnails', @PKFields , @FieldValues, 'U')
+		END
+	END
+END
+GO
+
+
+IF (OBJECT_ID('tgx_PPFThumbnails_DELETE', 'TR') IS NOT NULL)
+BEGIN
+	DROP TRIGGER [dbo].[tgx_PPFThumbnails_DELETE]
+END
+GO
+
+CREATE TRIGGER [dbo].[tgx_PPFThumbnails_DELETE]
+ON [dbo].[PPFThumbnails]
+AFTER DELETE
+AS
+BEGIN
+	DECLARE @PKFields xml
+	SET @PKFields = (SELECT [ImageSerialNumber]
+					FROM DELETED
+					FOR XML PATH('Record'), ROOT('PPFThumbnails'))
+
+	IF @PKFields IS NOT NULL
+	BEGIN
+		--INSERT INTO Yunify(TableName, PKFields, CRUDType)
+		--VALUES ('PPFThumbnails', @PKFields, 'D')
+
+		DECLARE @FieldValues xml
+		SET @FieldValues = NULL
+
+		INSERT INTO Yunify(TableName, PKFields, FieldValues, CRUDType)
+		VALUES ('PPFThumbnails', @PKFields , @FieldValues, 'D')
+	END
+END
+GO
+
+SET NOCOUNT OFF
+GO

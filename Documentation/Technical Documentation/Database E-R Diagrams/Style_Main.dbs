@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_1dc4dbd6" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610" schemaname="dbo" >
+		<table name="iCustom1" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomKey" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="TableRelation" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Icon" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CustomSort" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="BrandID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_iCustom1" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+		</table>
+		<table name="pImage" >
+			<column name="ImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ImageNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempID" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="WorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageCode" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="ImageDescription" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageKeywords" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ImageLocation" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ImageDateLastAccessed" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageDateLastModified" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageFile" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageFileType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ImageSize" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="ImageType" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageMainFolder" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageUserFolder" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder5" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder6" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder7" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder8" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder9" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder10" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder11" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder12" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder13" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder14" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder15" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder16" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder17" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder18" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder19" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder20" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder21" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder22" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder23" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder24" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageSubFolder25" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ImageCopyID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ImageCopyVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ImageCopyUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ImageCopyDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Version" type="int" length="10" decimal="0" jt="4" />
+			<column name="ImageAttribute" type="varchar" length="8000" decimal="0" jt="12" />
+			<column name="SystemServerStorageID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="ImageMultiPage" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ImageWorkflowTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Unversioned" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK__pImage__38DA2D2E" unique="PRIMARY_KEY" >
+				<column name="ImageID" />
+			</index>
+			<index name="IX_pImage_ImageSubFolder1" unique="NORMAL" >
+				<column name="ImageSubFolder1" />
+			</index>
+			<index name="Pk_pImage" unique="UNIQUE" >
+				<column name="Version" />
+			</index>
+		</table>
+		<table name="pSeasonYear" >
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Season" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Year" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrentSeason" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SAPCode" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUSTOM" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="SeasonOrder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_pSeasonYear" unique="PRIMARY_KEY" >
+				<column name="SeasonYearID" />
+			</index>
+		</table>
+		<table name="pSizeClass" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Custom" type="nvarchar" length="400" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomKey" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="NewStyle" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="TableRelation" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SpecConversion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleCosting" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_pSizeClass" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+		</table>
+		<table name="pSizeRange" >
+			<column name="CustomId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="SizeRangeCode" type="nvarchar" length="400" decimal="0" jt="12" mandatory="y" />
+			<column name="SizeRangeKey" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="Size0" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size11" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size12" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size13" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size14" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size15" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size16" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size17" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size18" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size19" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Sel0" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel1" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel2" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel3" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel4" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel5" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel6" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel7" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel8" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel9" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel10" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel11" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel12" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel13" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel14" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel15" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel16" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel17" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel18" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel19" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CustomM" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomW" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomS" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomH" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomSH" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomG" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomHG" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomL" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomC" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Size20" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size21" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size22" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size23" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size24" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size25" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size26" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size27" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size28" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size29" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size30" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size31" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size32" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size33" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size34" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size35" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size36" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size37" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size38" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size39" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size40" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size41" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size42" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size43" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size44" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size45" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size46" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size47" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size48" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Size49" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Sel20" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel21" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel22" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel23" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel24" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel25" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel26" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel27" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel28" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel29" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel30" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel31" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel32" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel33" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel34" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel35" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel36" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel37" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel38" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel39" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel40" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel41" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel42" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel43" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel44" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel45" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel46" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel47" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel48" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="Sel49" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="SizeDesc0" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc11" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc12" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc13" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc14" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc15" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc16" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc17" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc18" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc19" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc20" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc21" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc22" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc23" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc24" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc25" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc26" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc27" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc28" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc29" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc30" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc31" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc32" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc33" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc34" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc35" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc36" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc37" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc38" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc39" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc40" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc41" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc42" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc43" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc44" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc45" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc46" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc47" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc48" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SizeDesc49" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pSizeRange" unique="PRIMARY_KEY" >
+				<column name="CustomId" />
+			</index>
+		</table>
+		<table name="pStyleCategory" >
+			<column name="StyleCategoryId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleCategory" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="CustomReport" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleCategoryCode" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CustomRelationId" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCategorySort" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleCategoryFabricRequired" type="int" length="10" decimal="0" jt="4" />
+			<column name="StyleCategoryContainerCost" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleCategoryFreightType" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCategoryCustom0" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleCategoryCustom1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleCategoryCustom2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleCategoryCustom3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleCategoryCustom4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleCategoryCustom5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleCategoryCustom6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleCategoryCustom7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Sort" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="StyleCategorySchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleCategoryLining" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CustomReportCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<index name="PK_pStyleCategory_1" unique="PRIMARY_KEY" >
+				<column name="StyleCategoryId" />
+			</index>
+		</table>
+		<table name="pStyleHeader" >
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleMasterID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleType" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="WorkflowType" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="RefNo" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="StyleNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempID" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="CustomerNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="DevelopmentID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DevelopmentNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="ConceptID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ConceptNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="SpecNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Description" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCategory" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeClass" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="SizeRange" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="TechPackId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TechPackDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="DueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="RecDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Customer" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Buyer" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Designer" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="SampleMaker" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="PatternMaker" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ProductionManager" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="TechnicalDesigner" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleStatus" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleLocation" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="WashType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pitch" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialImageVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="MaterialNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="POMTempGroupID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempGroupID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempGroupID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempGroupID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion1" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMTempID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion2" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMTempID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion3" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMTempID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion4" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleMaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="TechSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ConceptSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="TechSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ConceptSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ColorSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchVersion1" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchVersion2" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchVersion3" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchVersion4" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchVersion1" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchVersion2" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchVersion3" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchVersion4" type="int" length="10" decimal="0" jt="4" />
+			<column name="Markup" type="numeric" length="18" decimal="0" jt="2" />
+			<column name="TargetPrice" type="money" length="19" decimal="4" jt="3" />
+			<column name="SellingPrice" type="money" length="19" decimal="4" jt="3" />
+			<column name="CustomField1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField11" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField12" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField13" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField14" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField15" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Pc1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pc2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pc3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pc4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Change" type="int" length="10" decimal="0" jt="4" />
+			<column name="Action" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="NoColorCombo" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleDetail" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="StyleDetail1" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="StyleAttribute" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="StyleDetail2" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="LinePlanSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="LinePlanID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomField16" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField17" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField18" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField19" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField20" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField21" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField22" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField23" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField24" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField25" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField26" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField27" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField28" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField29" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField30" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PackagingNo" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="StyleCopyID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleStatusID" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="BodyID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleLinkID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialCoreID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ProdDev" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="HeaderLocked" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="CustomField31" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField32" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField33" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField34" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField35" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField36" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField37" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField38" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField39" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField40" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Distribution" type="int" length="10" decimal="0" jt="4" />
+			<column name="IntroSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="UserCID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="UserMID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignSketchBackID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="DesignSketchBackVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="OwnerGroup" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="PlannedDueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="PlannedStartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ScheduleBy" type="char" length="1" decimal="0" jt="1" />
+			<column name="EnforceDependency" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="WorkflowTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DivisionID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleThemeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SubCategoryId" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="EnableProductPages" type="int" length="10" decimal="0" jt="4" />
+			<column name="SizeClassId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK__pStyleHeader__371114F6" unique="PRIMARY_KEY" >
+				<column name="StyleID" />
+			</index>
+			<index name="IX_pStyleHeader_DesignSketchBackID" unique="NORMAL" >
+				<column name="DesignSketchBackID" />
+			</index>
+			<index name="IX_pStyleHeader_DesignSketchID" unique="NORMAL" >
+				<column name="DesignSketchID" />
+			</index>
+			<index name="IX_pStyleHeader_DevelopmentID" unique="NORMAL" >
+				<column name="DevelopmentID" />
+			</index>
+			<index name="IX_pStyleHeader_DivisionID" unique="NORMAL" >
+				<column name="DivisionID" />
+				<column name="StyleType" />
+				<column name="StyleCategory" />
+			</index>
+			<index name="IX_pStyleHeader_StyleNo" unique="NORMAL" >
+				<column name="StyleNo" />
+			</index>
+			<index name="IX_pStyleHeader_StyleType" unique="NORMAL" >
+				<column name="StyleType" />
+			</index>
+			<index name="idx_pStyleHeader" unique="NORMAL" >
+				<column name="DivisionID" />
+			</index>
+			<index name="idx_pStyleHeader_0" unique="NORMAL" >
+				<column name="StyleCategory" />
+			</index>
+			<index name="idx_pStyleHeader_1" unique="NORMAL" >
+				<column name="SizeClassId" />
+			</index>
+			<index name="idx_pStyleHeader_2" unique="NORMAL" >
+				<column name="SizeRangeId" />
+			</index>
+			<index name="idx_pStyleHeader_3" unique="NORMAL" >
+				<column name="IntroSeasonYearID" />
+			</index>
+			<index name="idx_pStyleHeader_4" unique="NORMAL" >
+				<column name="DesignSketchVersion" />
+			</index>
+			<index name="idx_pStyleHeader_5" unique="NORMAL" >
+				<column name="DesignSketchBackVersion" />
+			</index>
+			<fk name="Fk_pStyleHeader" to_schema="dbo" to_table="pStyleType" >
+				<fk_column name="StyleType" pk="StyleTypeID" />
+			</fk>
+			<fk name="Fk_pStyleHeader_0" to_schema="dbo" to_table="iCustom1" >
+				<fk_column name="DivisionID" pk="CustomID" />
+			</fk>
+			<fk name="Fk_pStyleHeader_1" to_schema="dbo" to_table="pStyleCategory" >
+				<fk_column name="StyleCategory" pk="StyleCategoryId" />
+			</fk>
+			<fk name="Fk_pStyleHeader_2" to_schema="dbo" to_table="pSizeClass" >
+				<fk_column name="SizeClassId" pk="CustomID" />
+			</fk>
+			<fk name="Fk_pStyleHeader_3" to_schema="dbo" to_table="pSizeRange" >
+				<fk_column name="SizeRangeId" pk="CustomId" />
+			</fk>
+			<fk name="Fk_pStyleHeader_4" to_schema="dbo" to_table="pSeasonYear" >
+				<fk_column name="IntroSeasonYearID" pk="SeasonYearID" />
+			</fk>
+			<fk name="Fk_pStyleHeader_5" to_schema="dbo" to_table="pImage" >
+				<fk_column name="DesignSketchBackID" pk="ImageID" />
+			</fk>
+			<fk name="Fk_pStyleHeader_6" to_schema="dbo" to_table="pImage" >
+				<fk_column name="DesignSketchID" pk="ImageID" />
+			</fk>
+			<fk name="Fk_pStyleHeader_7" to_schema="dbo" to_table="pImage" >
+				<fk_column name="DesignSketchVersion" pk="Version" />
+			</fk>
+			<fk name="Fk_pStyleHeader_8" to_schema="dbo" to_table="pImage" >
+				<fk_column name="DesignSketchBackVersion" pk="Version" />
+			</fk>
+		</table>
+		<table name="pStyleSeasonYear" >
+			<column name="StyleSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="StyleNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleSeason" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleYear" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrentSeason" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="LinePlanID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MostLikelyVendor" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" />
+			<column name="TACalReferenceId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pStyleSeasonYear" unique="PRIMARY_KEY" >
+				<column name="StyleSeasonYearID" />
+			</index>
+			<index name="IX_pStyleSeasonYear" unique="NORMAL" >
+				<column name="StyleID" />
+				<column name="SeasonYearID" />
+			</index>
+			<index name="IX_pStyleSeasonYear_SeasonYearID" unique="NORMAL" >
+				<column name="SeasonYearID" />
+			</index>
+			<fk name="pSeasonYear" virtual="y" to_schema="dbo" to_table="pSeasonYear" >
+				<fk_column name="SeasonYearID" pk="SeasonYearID" />
+			</fk>
+			<fk name="pStyleHeader" virtual="y" to_schema="dbo" to_table="pStyleHeader" >
+				<fk_column name="StyleID" pk="StyleID" />
+			</fk>
+		</table>
+		<table name="pStyleType" >
+			<column name="StyleTypeID" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="StyleTypeDescription" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleType" type="nvarchar" length="1" decimal="0" jt="12" />
+			<column name="StyleTypeOrder" type="int" length="10" decimal="0" jt="4" />
+			<column name="StyleIDSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleDevelopmentIDSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleHeaderSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleSchemaSearch" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleSchemaPrint" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleSchemaGroupPrint" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleTypeClass" type="varchar" length="1" decimal="0" jt="12" />
+			<column name="StyleSourcing" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleSourcingSearch" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleSourcingPrint" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ConceptSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ConceptHeaderSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ConceptSchemaListItem" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ConceptCostSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ConceptPlanSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="SampleSelectHeader" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleTypeCode" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleWorkflowSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleWorkflowItemSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleTypeLinePlanID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Custom" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="SampleSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleNonApparel" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="LineListSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleTypeRepId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleSchemaCoverPrint" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleTypeTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="StyleSchemaImageSearch" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PlanningMaterialWhereUsedStyleSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PlanningMaterialWhereUsedStyleSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PlanningColorWhereUsedStyleSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PlanningColorWhereUsedStyleSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PlanningItemSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PlanningItemSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StylePagesWorkflowSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StylePagesWorkflowItemSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialWhereUsedStyleSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialWhereUsedStyleSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PlanningItemCalendarSearchSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PlanningItemCalendarSchema" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK__pStyleType__2AEB3533" unique="PRIMARY_KEY" >
+				<column name="StyleTypeID" />
+			</index>
+		</table>
+	</schema>
+	<layout id="Layout_6ef8a14" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="pStyleType" color="c8f5bf" x="45" y="120" >
+			<column name="StyleTypeID" />
+		</entity>
+		<entity schema="dbo" name="iCustom1" color="bfd4f5" x="45" y="195" >
+			<column name="CustomID" />
+		</entity>
+		<entity schema="dbo" name="pSeasonYear" color="bfd4f5" x="525" y="165" >
+			<column name="SeasonYearID" />
+		</entity>
+		<entity schema="dbo" name="pStyleSeasonYear" color="bfd4f5" x="495" y="315" >
+			<column name="StyleSeasonYearID" />
+			<column name="SeasonYearID" />
+			<column name="StyleID" />
+		</entity>
+		<entity schema="dbo" name="pSizeRange" color="bfd4f5" x="45" y="345" >
+			<column name="CustomId" />
+		</entity>
+		<entity schema="dbo" name="pImage" color="bfd4f5" x="555" y="45" >
+			<column name="ImageID" />
+			<column name="Version" />
+		</entity>
+		<entity schema="dbo" name="pStyleCategory" color="c8f5bf" x="45" y="45" >
+			<column name="StyleCategoryId" />
+		</entity>
+		<entity schema="dbo" name="pSizeClass" color="bfd4f5" x="165" y="345" >
+			<column name="CustomID" />
+		</entity>
+		<entity schema="dbo" name="pStyleHeader" color="c8f5bf" x="240" y="45" >
+			<column name="StyleID" />
+			<column name="StyleCategory" />
+			<column name="DesignSketchID" />
+			<column name="DesignSketchVersion" />
+			<column name="IntroSeasonYearID" />
+			<column name="DesignSketchBackID" />
+			<column name="DesignSketchBackVersion" />
+			<column name="DivisionID" />
+			<column name="SizeClassId" />
+			<column name="SizeRangeId" />
+			<column name="StyleType" />
+		</entity>
+		<group name="Style - Main" color="c4e0f9" >
+			<entity schema="dbo" name="pStyleHeader" />
+			<entity schema="dbo" name="pStyleType" />
+			<entity schema="dbo" name="iCustom1" />
+			<entity schema="dbo" name="pSeasonYear" />
+			<entity schema="dbo" name="pStyleSeasonYear" />
+			<entity schema="dbo" name="pSizeRange" />
+			<entity schema="dbo" name="pImage" />
+			<entity schema="dbo" name="pStyleCategory" />
+			<entity schema="dbo" name="pSizeClass" />
+		</group>
+	</layout>
+</project>

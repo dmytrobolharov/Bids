@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_136b1881" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610" schemaname="dbo" >
+		<table name="rReportSrmFolder" >
+			<column name="ReportSrmFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ReportSrmFolderName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ReportSrmFolderSort" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="ReportSrmFolderActive" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_ReportSrmFolder" unique="PRIMARY_KEY" >
+				<column name="ReportSrmFolderID" />
+			</index>
+		</table>
+		<table name="rReportSrmFolderItem" >
+			<column name="ReportSrmFolderItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="ReportSrmFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ReportSrmFolderItemName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ReportSrmFolderItemUrl" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ReportSrmFolderItemIcon" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ReportSrmFolderItemSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="ReportSrmFolderItemActive" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_ReportSrmFolderItem" unique="PRIMARY_KEY" >
+				<column name="ReportSrmFolderItemID" />
+			</index>
+			<index name="idx_rReportSrmFolderItem" unique="NORMAL" >
+				<column name="ReportSrmFolderID" />
+			</index>
+			<fk name="Fk_rReportSrmFolderItem" to_schema="dbo" to_table="rReportSrmFolder" >
+				<fk_column name="ReportSrmFolderID" pk="ReportSrmFolderID" />
+			</fk>
+		</table>
+		<table name="sSystemServerSetting" >
+			<column name="SystemServerID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="SystemServerName" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="SystemServerDescription" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="PLMDatabaseServer" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="SRMDatabaseServer" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ReportDatabaseServer" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="SyncServerPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="FileWebServiceUrl" type="varchar" length="200" decimal="0" jt="12" />
+			<index name="PK_sSystemServerSetting" unique="PRIMARY_KEY" >
+				<column name="SystemServerID" />
+			</index>
+		</table>
+		<table name="sSystemServerStorageSetting" >
+			<column name="SystemServerStorageID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="SystemServerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SyncPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="TempPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ImageEditPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ImageVersionPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ImageThumbPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ImageTemplatePath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ImagePoMPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ImageCarePath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ImagePackagingPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="CompliancePath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ImageWebServerUrl" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ColorPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="StylePath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="TechPackPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="QuotePath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="SamplePath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrentServerStorage" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="XmlSchemaPath" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LineListPath" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PlanningPath" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_sSystemServerStorageSetting" unique="PRIMARY_KEY" >
+				<column name="SystemServerStorageID" />
+			</index>
+			<index name="idx_sSystemServerStorageSetting" unique="NORMAL" >
+				<column name="SystemServerID" />
+			</index>
+			<fk name="Fk_sSystemServerStorageSetting" to_schema="dbo" to_table="sSystemServerSetting" >
+				<fk_column name="SystemServerID" pk="SystemServerID" />
+			</fk>
+		</table>
+		<table name="uTradePartner" >
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="TradePartnerCode" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="TradePartnerName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Address1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Address2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="City" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="State" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="PostalCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Country" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="PhoneNumber" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="FaxNumber" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Username" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="Password" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Comments" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="CostingTypeID" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="TradePartnerType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="TradePartnerClass" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="TradePartnerCommision" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="TradePartnerLCRequired" type="int" length="10" decimal="0" jt="4" />
+			<column name="IPADDRESS" type="varchar" length="25" decimal="0" jt="12" />
+			<column name="SESSION" type="int" length="10" decimal="0" jt="4" />
+			<column name="SESSIONDATE" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSIONOS" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="SrmOnAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="ActivationID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Custom1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SystemServerID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="Fabric" type="int" length="10" decimal="0" jt="4" />
+			<column name="Trim" type="int" length="10" decimal="0" jt="4" />
+			<column name="FG" type="int" length="10" decimal="0" jt="4" />
+			<column name="Mill" type="int" length="10" decimal="0" jt="4" />
+			<column name="CurrencyType" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Freight" type="decimal" length="18" decimal="6" jt="3" >
+				<defo>0</defo>
+			</column>
+			<column name="Duty" type="decimal" length="18" decimal="6" jt="3" >
+				<defo>0</defo>
+			</column>
+			<column name="HKFreight" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="HKDuty" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="USFreight" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="USDuty" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="TradePartnerRelationshipType" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Direct" type="int" length="10" decimal="0" jt="4" />
+			<column name="Laboratory" type="int" length="10" decimal="0" jt="4" />
+			<column name="TradePartnerStatusID" type="int" length="10" decimal="0" jt="4" />
+			<column name="DefaultCurrency" type="nvarchar" length="5" decimal="0" jt="12" />
+			<index name="PK_uTradePartner" unique="PRIMARY_KEY" >
+				<column name="TradePartnerID" />
+			</index>
+			<index name="IX_uTradePartner_05" unique="NORMAL" >
+				<column name="TradePartnerRelationshipType" />
+				<column name="Active" />
+				<column name="TradePartnerName" />
+			</index>
+			<index name="idx_uTradePartner" unique="NORMAL" >
+				<column name="SystemServerID" />
+			</index>
+			<fk name="Fk_uTradePartner" to_schema="dbo" to_table="sSystemServerSetting" >
+				<fk_column name="SystemServerID" pk="SystemServerID" />
+			</fk>
+		</table>
+		<table name="uTradePartnerContact" >
+			<column name="TradePartnerContactID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="FirstName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MiddleName" type="nvarchar" length="2" decimal="0" jt="12" />
+			<column name="LastName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Title" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="PhoneNumber" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MobileNumber" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Email" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="IPADDRESS" type="varchar" length="25" decimal="0" jt="12" />
+			<column name="SESSION" type="int" length="10" decimal="0" jt="4" />
+			<column name="SESSIONDATE" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSIONOS" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="PreferredLang" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Intellimas" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_uTradePartnerContact" unique="PRIMARY_KEY" >
+				<column name="TradePartnerContactID" />
+			</index>
+			<index name="IX_uTradepartnerContact_TradePartnerID" unique="NORMAL" >
+				<column name="TradePartnerID" />
+			</index>
+			<fk name="Fk_uTradePartnerContact" to_schema="dbo" to_table="uTradePartner" >
+				<fk_column name="TradePartnerID" pk="TradePartnerID" />
+			</fk>
+		</table>
+	</schema>
+	<layout id="Layout_3aa0d14d" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="sSystemServerSetting" color="c0d4f3" x="45" y="135" >
+			<column name="SystemServerID" />
+		</entity>
+		<entity schema="dbo" name="uTradePartnerContact" color="bfd4f5" x="285" y="45" >
+			<column name="TradePartnerContactID" />
+			<column name="TradePartnerID" />
+		</entity>
+		<entity schema="dbo" name="sSystemServerStorageSetting" color="c0d4f3" x="270" y="135" >
+			<column name="SystemServerStorageID" />
+			<column name="SystemServerID" />
+		</entity>
+		<entity schema="dbo" name="rReportSrmFolderItem" color="c0d4f3" x="285" y="225" >
+			<column name="ReportSrmFolderItemID" />
+			<column name="ReportSrmFolderID" />
+		</entity>
+		<entity schema="dbo" name="rReportSrmFolder" color="c0d4f3" x="45" y="225" >
+			<column name="ReportSrmFolderID" />
+		</entity>
+		<entity schema="dbo" name="uTradePartner" color="bfd4f5" x="45" y="45" >
+			<column name="TradePartnerID" />
+			<column name="SystemServerID" />
+		</entity>
+		<group name="srmOn" color="c4e0f9" >
+			<entity schema="dbo" name="uTradePartner" />
+			<entity schema="dbo" name="sSystemServerSetting" />
+			<entity schema="dbo" name="uTradePartnerContact" />
+			<entity schema="dbo" name="sSystemServerStorageSetting" />
+			<entity schema="dbo" name="rReportSrmFolderItem" />
+			<entity schema="dbo" name="rReportSrmFolder" />
+		</group>
+	</layout>
+</project>

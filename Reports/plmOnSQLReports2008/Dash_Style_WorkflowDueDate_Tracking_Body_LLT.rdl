@@ -1095,7 +1095,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Constant">Seasonal Style Tracking Report - with 7 Day Reminder</Value>
+                      <Value >Seasonal Style Tracking Report - with 7 Day Reminder</Value>
                       <Style>
                         <FontFamily>Arial Unicode MS</FontFamily>
                         <FontSize>26pt</FontSize>

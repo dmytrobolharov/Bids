@@ -4,20 +4,27 @@
 <HTML>
 	<head>
 		<title>Material Add</title>
-		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
-		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
-		<meta content="JavaScript" name="vs_defaultClientScript">
-		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR"/>
+		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE"/>
+		<meta content="JavaScript" name="vs_defaultClientScript"/>
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
 		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
         <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
-		<script language="javascript" src="../System/Jscript/Custom.js"></script>
-		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+		<script language="javascript" type="text/javascript" src="../System/Jscript/Custom.js"></script>
+		<script language="javascript" type="text/javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
         <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+        <style type="text/css">        
+              #DataGrid1 td span {	           	            
+                white-space: nowrap;
+                text-overflow: ellipsis !important;
+                overflow: hidden !important;
+                }        
+        </style>
 	</head>
 	<body MS_POSITIONING="GridLayout">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>

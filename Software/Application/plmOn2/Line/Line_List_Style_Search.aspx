@@ -9,9 +9,10 @@
 		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
 		<link href="../System/CSS/Tree.css" type="text/css" rel="stylesheet">
         <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
-        <link href="../System/CSS/jquery-ui.css" type="text/css" rel="stylesheet" />
+        <link href="../System/CSS/jquery-ui-1.10.3.css" type="text/css" rel="stylesheet" />
 		<script language="javascript" src="../System/Jscript/YSCalendarFunctions.js"></script>
         <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
         <script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
         <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
         <style type="text/css"">
@@ -226,10 +227,38 @@
 	                </TR>
                 </TABLE>
                 <input id="hiddenCurrentPage" type="hidden" value="0" name="hiddenCurrentPage" runat="server" />&nbsp;&nbsp;
+                <div id="mbom-styles-dialog">                
+                    <asp:DataGrid ID="dgMBOMStyles" runat="server" AllowSorting="false" DataKeyField="StyleID" AllowPaging="false" EnableViewState="true">
+                        <AlternatingItemStyle Height="20px" CssClass="AlternateItemTemplate"></AlternatingItemStyle>
+                        <ItemStyle Height="20px" CssClass="ItemTemplate"></ItemStyle>
+                        <HeaderStyle Height="25px" CssClass="TableHeader"></HeaderStyle>
+                        <PagerStyle Visible="False"></PagerStyle>
+                        <Columns>
+                            <asp:TemplateColumn Visible="false"></asp:TemplateColumn>
+                        </Columns>
+                    </asp:DataGrid>
+                </div>
             </asp:Panel>
-
-          
+            <script type="text/javascript" src="../System/Jscript/jquery-ui-1.10.3.custom.min.js"></script>
+            <script type="text/javascript">
+                function showMBomStylesDialog() {
+                    $("#mbom-styles-dialog").dialog({
+                        autoOpen: true,
+                        modal: true,
+                        resizable: true,
+                        draggable: false,
+                        appendTo: 'form',
+                        title: '<%= GetSystemText("Select BOM for styles") & "..." %>',
+                        width: 'auto',
+                        buttons: {
+                            '<%= GetSystemText("Save") %>': function () { <%= ClientScript.GetPostBackEventReference(New PostBackOptions(btnNew, "mbom") with {.PerformValidation = True}) %>; },
+                            '<%= GetSystemText("Cancel") %>': function () { $(this).dialog("close"); $('#dgMBOMStyles').remove(); }
+                        }
+                    });
+                }
+            </script>
 		</form>
+        
         <script type="text/javascript">
             function ColumnHidden(sender, eventArgs) {
                 var tableColumns = $find("RadGridStyles").get_masterTableView().get_columns();
@@ -242,6 +271,7 @@
                 var strHiddenColumns = hiddenColumns.join();
                 PageMethods.SaveHiddenColumns('RadGridStyles', '<%= aspxPageName %>', strHiddenColumns, '<%= UserProperties.TeamID %>', '<%= UserProperties.Username %>');
             }
+
             function ColumnShown(sender, eventArgs) {
                 var tableColumns = $find("RadGridStyles").get_masterTableView().get_columns();
                 var hiddenColumns = new Array();

@@ -2812,6 +2812,10 @@ Yunique.Core
 </member><member name="F:Yunique.Core.UI.RadGridControlTemplate.m_strDBConn">
 	<summary>
 	</summary>
+</member><member name="F:Yunique.Core.UI.RadGridControlTemplate.m_blnOpenedConnectionMyself">
+	<summary>
+	</summary>
+	<remarks></remarks>
 </member><member name="F:Yunique.Core.UI.RadGridControlTemplate.m_drRow">
 	<summary>
 	</summary>
@@ -2934,6 +2938,11 @@ Yunique.Core
 </member><member name="F:Yunique.Core.UI.RadGridControlTemplate.m_blnTranslateDopdownLists">
 	<summary>
  Indicates if Dropdown lists will be translated.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Yunique.Core.UI.RadGridControlTemplate.m_blnSkipDataTranslation">
+	<summary>
+ Do we skip the translation of the data for this column?
  </summary>
 	<remarks></remarks>
 </member><member name="P:Yunique.Core.UI.RadGridControlTemplate.PreferredLanguage">
@@ -3127,6 +3136,12 @@ Yunique.Core
  Sets a value indicating whether strings should be HtmlEncoded when displayed.
  </summary>
 	<value><c>true</c> if strings should be HtmlEncoded when displayed; otherwise, <c>false</c>.</value>
+	<remarks></remarks>
+</member><member name="P:Yunique.Core.UI.RadGridControlTemplate.SkipDataTranslation">
+	<summary>
+ Sets a value indicating whether we skip the translation of the data for this column.
+ </summary>
+	<value><c>true</c> if data should not be translated; otherwise, <c>false</c>.</value>
 	<remarks></remarks>
 </member><member name="M:Yunique.Core.UI.RadGridControlTemplate.#ctor(System.String,System.String)">
 	<summary>
@@ -6640,6 +6655,16 @@ Yunique.Core
 </member><member name="F:Yunique.Core.UI.FormHandler.m_blnEnableTrackChange">
 	<summary>
 	</summary>
+</member><member name="F:Yunique.Core.UI.FormHandler.m_blnSkipLabelTranslation">
+	<summary>
+ Do we skip the translation of the label for this column?
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Yunique.Core.UI.FormHandler.m_blnSkipDataTranslation">
+	<summary>
+ Do we skip the translation of the data for this column?
+ </summary>
+	<remarks></remarks>
 </member><member name="F:Yunique.Core.UI.FormHandler.strLookupQuery">
 	<summary>
 	</summary>
@@ -7559,7 +7584,15 @@ Yunique.Core
 	<param name="colControls">The col controls.</param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:Yunique.Core.UI.FormHandler.GetSearchSqlCommand(System.Collections.Specialized.StringCollection)">
+</member><member name="M:Yunique.Core.UI.FormHandler.GetSelectedValueDropDownListRad(System.Web.UI.WebControls.PlaceHolder,System.String,System.String)">
+	<summary>
+ Gets the selected value.
+ </summary>
+	<param name="plhControl">The control.</param>
+	<param name="strField">The field.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Yunique.Core.UI.FormHandler.GetSearchSqlCommand(System.Collections.Specialized.StringCollection,System.Web.UI.WebControls.PlaceHolder)">
 	<summary>
  Gets the search SQL command.
  </summary>
@@ -7816,12 +7849,24 @@ Yunique.Core
 </member><member name="F:Yunique.Core.UI.DropDown.m_SPXOverride">
 	<summary>
 	</summary>
+</member><member name="F:Yunique.Core.UI.DropDown.m_L10n">
+	<summary>
+	</summary>
+</member><member name="F:Yunique.Core.UI.DropDown.m_PrefLang">
+	<summary>
+	</summary>
 </member><member name="M:Yunique.Core.UI.DropDown.GetSPX(System.String)">
 	<summary>
  Gets the SPX.
  </summary>
 	<param name="strSPX">The STR SPX.</param>
 	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Yunique.Core.UI.DropDown.PreferredLanguage">
+	<summary>
+ Sets the preferred language.
+ </summary>
+	<value>The preferred language.</value>
 	<remarks></remarks>
 </member><member name="M:Yunique.Core.UI.DropDown.CustomerDropDown(System.Web.UI.WebControls.DropDownList,System.String)">
 	<summary>
@@ -7983,6 +8028,11 @@ Yunique.Core
  </summary>
 	<param name="DropDownName">Name of the drop down.</param>
 	<param name="SelectValue">The select value.</param>
+	<remarks></remarks>
+</member><member name="M:Yunique.Core.UI.DropDown.Finalize">
+	<summary>
+ Allows an <see cref="T:System.Object"/> to attempt to free resources and perform other cleanup operations before the <see cref="T:System.Object"/> is reclaimed by garbage collection.
+ </summary>
 	<remarks></remarks>
 </member><member name="T:Yunique.Core.UI.DropDown">
 	<summary>
@@ -8490,6 +8540,11 @@ Yunique.Core
  Indicates if Dropdown lists will be translated.
  </summary>
 	<remarks></remarks>
+</member><member name="F:Yunique.Core.UI.DataGridTemplateHandler.m_blnSkipDataTranslation">
+	<summary>
+ Do we skip the translation of the data for this column?
+ </summary>
+	<remarks></remarks>
 </member><member name="P:Yunique.Core.UI.DataGridTemplateHandler.DropDownReader">
 	<summary>
  Sets a value indicating whether [drop down reader].
@@ -8675,6 +8730,12 @@ Yunique.Core
  Sets a value indicating whether strings should be HtmlEncoded when displayed.
  </summary>
 	<value><c>true</c> if strings should be HtmlEncoded when displayed; otherwise, <c>false</c>.</value>
+	<remarks></remarks>
+</member><member name="P:Yunique.Core.UI.DataGridTemplateHandler.SkipDataTranslation">
+	<summary>
+ Sets a value indicating whether we skip the translation of the data for this column.
+ </summary>
+	<value><c>true</c> if data should not be translated; otherwise, <c>false</c>.</value>
 	<remarks></remarks>
 </member><member name="M:Yunique.Core.UI.DataGridTemplateHandler.#ctor(System.String,System.String)">
 	<summary>

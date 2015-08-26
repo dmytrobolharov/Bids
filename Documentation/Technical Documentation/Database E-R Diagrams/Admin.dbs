@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_249091ea" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610_PROJ" schemaname="dbo" >
+		<table name="Users" >
+			<column name="UserId" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="UserCode" type="nvarchar" length="6" decimal="0" jt="12" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="FirstName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MiddleName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="LastName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Title" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Birthday" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Company" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Street1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Street2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="City" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="State" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Zip" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Country" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Phone" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Fax" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Mobile" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="UserName" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="PassWord" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Email" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContactName1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Admin" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="PublicAccess" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TradePartner" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="LastUpdate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSION" type="int" length="10" decimal="0" jt="4" />
+			<column name="SESSIONDATE" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSIONOS" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="SCREENWIDTH" type="int" length="10" decimal="0" jt="4" />
+			<column name="SCREENHEIGHT" type="int" length="10" decimal="0" jt="4" />
+			<column name="FULLNAME" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="USERDIR" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="MAILADDR" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="MAXSIZE" type="int" length="10" decimal="0" jt="4" />
+			<column name="MAXMSGS" type="int" length="10" decimal="0" jt="4" />
+			<column name="FLAGS" type="int" length="10" decimal="0" jt="4" />
+			<column name="TYPE" type="int" length="10" decimal="0" jt="4" />
+			<column name="IP" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Picture" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="A_CompanyFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TeamFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TradingFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ColorFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ImageFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TemplateFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_DesignFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_CatalogFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_WorkflowFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ExternalAccess" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleHeader" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleMaterial" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleArtwork" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleLicensee" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleColorway" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleDesignDetail" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleDevelopmentSpec" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleGradeMeasurment" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ProductionRequest" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="D_Desktop" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CalendarTemplateID" type="int" length="10" decimal="0" jt="4" />
+			<column name="ActivationID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ReadOnly" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SystemClientID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="ServerLocationID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="Division" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="JobRole" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Location" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Floor" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MachineType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContractType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContractEnd" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Menswear" type="int" length="10" decimal="0" jt="4" />
+			<column name="Womenswear" type="int" length="10" decimal="0" jt="4" />
+			<column name="Accessories" type="int" length="10" decimal="0" jt="4" />
+			<column name="Divisionless" type="int" length="10" decimal="0" jt="4" />
+			<column name="Prorsum" type="int" length="10" decimal="0" jt="4" />
+			<column name="UnLockHeader" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PreferredLang" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="UserProductAttributeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="AvatarImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DashFolderItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Intellimas" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="AdobePluginAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="evmOnAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Gerber" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="DeskTopID" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK__Users__6D0DFE4B" unique="PRIMARY_KEY" >
+				<column name="UserId" />
+			</index>
+			<index name="IX_Users_05" unique="NORMAL" >
+				<column name="Active" />
+				<column name="Title" />
+				<column name="FULLNAME" />
+			</index>
+			<index name="IX_Users_06" unique="NORMAL" >
+				<column name="UserId" />
+				<column name="FirstName" />
+				<column name="LastName" />
+				<column name="Email" />
+			</index>
+			<index name="IX_Users_TeamID" unique="UNIQUE" >
+				<column name="TeamID" />
+			</index>
+			<index name="idx_Users" unique="NORMAL" >
+				<column name="ServerLocationID" />
+			</index>
+			<index name="idx_Users_0" unique="NORMAL" >
+				<column name="PreferredLang" />
+			</index>
+			<fk name="fk_users_ssystemserversetting" to_schema="dbo" to_table="sSystemServerSetting" >
+				<fk_column name="ServerLocationID" pk="SystemServerID" />
+			</fk>
+			<fk name="fk_users_ssystemculture" to_schema="dbo" to_table="sSystemCulture" >
+				<fk_column name="PreferredLang" pk="CultureName" />
+			</fk>
+		</table>
+		<table name="sPermissionFolder" >
+			<column name="PermissionFolderId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="PermissionFolderTypeId" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="GroupId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="PermissionFolderNotLocked" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_sPermissionFolder" unique="PRIMARY_KEY" >
+				<column name="PermissionFolderId" />
+			</index>
+			<index name="IX_sPermissionFolder_PermissionFolderTypeID" unique="NORMAL" >
+				<column name="PermissionFolderTypeId" />
+			</index>
+			<index name="idx_sPermissionFolder" unique="NORMAL" >
+				<column name="GroupId" />
+			</index>
+			<fk name="FK_sPermissionFolder_sPermissionFolderType" to_schema="dbo" to_table="sPermissionFolderType" >
+				<fk_column name="PermissionFolderTypeId" pk="PermissionFolderTypeId" />
+			</fk>
+			<fk name="fk_spermissionfolder_ugroup" to_schema="dbo" to_table="uGroup" >
+				<fk_column name="GroupId" pk="GroupID" />
+			</fk>
+		</table>
+		<table name="sPermissionFolderType" >
+			<column name="PermissionFolderTypeId" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="PermissionFolderTypeName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_sPermissionFolderType" unique="PRIMARY_KEY" >
+				<column name="PermissionFolderTypeId" />
+			</index>
+		</table>
+		<table name="sPermissionProductType" >
+			<column name="PermissionProductTypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="PermissionFolderId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="PermissionProductTypeMapId" type="int" length="10" decimal="0" jt="4" />
+			<column name="PermissionProductTypeNotLocked" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="GroupId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="PermissionProductTypeName" type="nvarchar" length="256" decimal="0" jt="12" />
+			<index name="PK_sPermissionProductType" unique="PRIMARY_KEY" >
+				<column name="PermissionProductTypeId" />
+			</index>
+			<index name="IX_sPermissionProductType_GroupID" unique="NORMAL" >
+				<column name="GroupId" />
+				<column name="PermissionFolderId" />
+			</index>
+			<index name="IX_sPermissionProductType_PermissionProductTypeMapId" unique="NORMAL" >
+				<column name="PermissionProductTypeMapId" />
+			</index>
+			<index name="idx_sPermissionProductType" unique="NORMAL" >
+				<column name="GroupId" />
+			</index>
+			<fk name="FK_sPermissionProductType_sPermissionFolder" to_schema="dbo" to_table="sPermissionFolder" >
+				<fk_column name="PermissionFolderId" pk="PermissionFolderId" />
+			</fk>
+			<fk name="FK_sPermissionProductType_sPermissionProductTypeMap1" to_schema="dbo" to_table="sPermissionProductTypeMap" >
+				<fk_column name="PermissionProductTypeMapId" pk="PermissionProductTypeMapId" />
+			</fk>
+			<fk name="fk_spermissionproducttype" to_schema="dbo" to_table="uGroup" >
+				<fk_column name="GroupId" pk="GroupID" />
+			</fk>
+		</table>
+		<table name="sPermissionProductTypeMap" >
+			<column name="PermissionProductTypeMapId" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="PermissionFolderTypeId" type="int" length="10" decimal="0" jt="4" />
+			<column name="GuidProductTypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="IntProductTypeId" type="int" length="10" decimal="0" jt="4" />
+			<column name="StrProductTypeId" type="nvarchar" length="100" decimal="0" jt="12" />
+			<index name="PK_sPermissionProductTypeMap" unique="PRIMARY_KEY" >
+				<column name="PermissionProductTypeMapId" />
+			</index>
+			<index name="idx_sPermissionProductTypeMap" unique="NORMAL" >
+				<column name="PermissionFolderTypeId" />
+			</index>
+			<fk name="fk_spermissionproducttypemap" to_schema="dbo" to_table="sPermissionFolderType" >
+				<fk_column name="PermissionFolderTypeId" pk="PermissionFolderTypeId" />
+			</fk>
+		</table>
+		<table name="sPermissionRole" >
+			<column name="PermissionRoleId" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="PermissionRoleCode" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="PermissionRoleName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<index name="PK_sPermissionRole" unique="PRIMARY_KEY" >
+				<column name="PermissionRoleId" />
+			</index>
+		</table>
+		<table name="sPermissionWorkflow" >
+			<column name="PermissionWorkflowId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="PermissionFolderId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="PermissionProductTypeId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="PermissionProductTypeMapId" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="GroupId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="WorkflowId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="PermissionRoleId" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PermissionView" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PermissionCreate" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PermissionRemove" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PermissionModify" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PermissionDelete" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PermissionPrint" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="PermissionWorkflowName" type="nvarchar" length="256" decimal="0" jt="12" />
+			<column name="ParentWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_sPermissionWorkflow" unique="PRIMARY_KEY" >
+				<column name="PermissionWorkflowId" />
+			</index>
+			<index name="IX_sPermissionWorkflow_GroupID" unique="NORMAL" >
+				<column name="GroupId" />
+			</index>
+			<index name="IX_sPermissionWorkflow_PermissionFolderId" unique="NORMAL" >
+				<column name="PermissionFolderId" />
+				<column name="GroupId" />
+			</index>
+			<index name="IX_sPermissionWorkflow_PermissionProductTypeID" unique="NORMAL" >
+				<column name="PermissionProductTypeId" />
+			</index>
+			<index name="idx_sPermissionWorkflow" unique="NORMAL" >
+				<column name="PermissionFolderId" />
+			</index>
+			<fk name="FK_sPermissionWorkflow_sPermissionProductTypeMap" to_schema="dbo" to_table="sPermissionProductTypeMap" >
+				<fk_column name="PermissionProductTypeMapId" pk="PermissionProductTypeMapId" />
+			</fk>
+			<fk name="FK_sPermissionWorkflow_sPermissionRole" to_schema="dbo" to_table="sPermissionRole" >
+				<fk_column name="PermissionRoleId" pk="PermissionRoleId" />
+			</fk>
+			<fk name="fk_spermissionworkflow" to_schema="dbo" to_table="sPermissionProductType" >
+				<fk_column name="PermissionProductTypeId" pk="PermissionProductTypeId" />
+			</fk>
+			<fk name="fk_spermissionworkflow_folder" to_schema="dbo" to_table="sPermissionFolder" >
+				<fk_column name="PermissionFolderId" pk="PermissionFolderId" />
+			</fk>
+			<fk name="fk_spermissionworkflow_ugroup" to_schema="dbo" to_table="uGroup" >
+				<fk_column name="GroupId" pk="GroupID" />
+			</fk>
+		</table>
+		<table name="sSystemButtons" >
+			<column name="SystemButtonID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="ButtonIcon" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ButtonType" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="DesignString" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="da_DK" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="de_DE" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="en_US" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="en_GB" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="en_CA" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="fr_FR" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="fr_CA" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="es_ES" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="es_MX" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="hi_IN" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="it_IT" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="ja_JA" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="ko_KR" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="nl_NL" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="pl_PL" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="pt_PT" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="pt_BR" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="ru_RU" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="sv_FI" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="sv_SE" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="tr_TR" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="zh_CHS" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="zh_CHT" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="el_GR" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="nb_NO" type="nvarchar" length="30" decimal="0" jt="12" />
+			<column name="en_AU" type="nvarchar" length="30" decimal="0" jt="12" />
+			<index name="PK_sSystemButtons" unique="PRIMARY_KEY" >
+				<column name="SystemButtonID" />
+			</index>
+		</table>
+		<table name="sSystemCulture" >
+			<column name="CultureIndentifierID" type="varchar" length="6" decimal="0" jt="12" mandatory="y" />
+			<column name="CultureName" type="varchar" length="6" decimal="0" jt="12" />
+			<column name="CultureCountry" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="CultureLanguage" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Unicode" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="DecimalValidationRegEx" type="nvarchar" length="512" decimal="0" jt="12" />
+			<column name="DateValidationRegEx" type="nvarchar" length="1024" decimal="0" jt="12" />
+			<column name="CurrencyValidationRegEx" type="nvarchar" length="512" decimal="0" jt="12" />
+			<column name="DateShortFormat" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="DateLongFormat" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="TimeShortFormat" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="TimeLongFormat" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="NumberDecimalSymbol" type="nchar" length="1" decimal="0" jt="1" />
+			<column name="NumberDigitGroupingSymbol" type="nchar" length="1" decimal="0" jt="1" />
+			<column name="CurrencySymbol" type="nchar" length="1" decimal="0" jt="1" />
+			<column name="CurrencyDecimalSymbol" type="nchar" length="1" decimal="0" jt="1" />
+			<column name="CurrencyDigitGroupingSymbol" type="nchar" length="1" decimal="0" jt="1" />
+			<column name="DateTimeShortFormat" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="DateTimeLongFormat" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CurrencyFormat" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="PercentFormat" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="PercentValidationRegEx" type="nvarchar" length="512" decimal="0" jt="12" />
+			<column name="DecimalFormat" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="SystemCultureId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<index name="PK_sSystemCulture" unique="PRIMARY_KEY" >
+				<column name="CultureIndentifierID" />
+			</index>
+			<index name="IX_sSystemCulture_SystemCultureId" unique="NORMAL" >
+				<column name="SystemCultureId" />
+			</index>
+			<index name="Pk_sSystemCulture_0" unique="UNIQUE" >
+				<column name="CultureName" />
+			</index>
+		</table>
+		<table name="sSystemPageStrings" >
+			<column name="sSystemPageString" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="FormName" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="SystemStringID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_sSystemPageStrings" unique="PRIMARY_KEY" >
+				<column name="sSystemPageString" />
+			</index>
+			<index name="sSystemPageStrings_FormName" unique="NORMAL" >
+				<column name="FormName" />
+			</index>
+			<index name="idx_sSystemPageStrings" unique="NORMAL" >
+				<column name="SystemStringID" />
+			</index>
+			<fk name="fk_ssystempagestrings" to_schema="dbo" to_table="sSystemStrings" >
+				<fk_column name="SystemStringID" pk="SystemStringID" />
+			</fk>
+		</table>
+		<table name="sSystemServerSetting" >
+			<column name="SystemServerID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="SystemServerName" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="SystemServerDescription" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="PLMDatabaseServer" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="SRMDatabaseServer" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="ReportDatabaseServer" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="SyncServerPath" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="FileWebServiceUrl" type="varchar" length="200" decimal="0" jt="12" />
+			<index name="PK_sSystemServerSetting" unique="PRIMARY_KEY" >
+				<column name="SystemServerID" />
+			</index>
+		</table>
+		<table name="sSystemStrings" >
+			<column name="SystemStringID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="DesignString" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="da_DK" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="de_DE" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_US" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_GB" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_CA" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="fr_FR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="fr_CA" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="es_ES" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="es_MX" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="hi_IN" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="it_IT" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ja_JA" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ko_KR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="nl_NL" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="pl_PL" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="pt_PT" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="pt_BR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ru_RU" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="sv_FI" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="sv_SE" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="tr_TR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="zh_CHS" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="zh_CHT" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="el_GR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="nb_NO" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_AU" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<index name="PK_sSystemStrings" unique="PRIMARY_KEY" >
+				<column name="SystemStringID" />
+			</index>
+		</table>
+		<table name="sUserDropDownStrings" >
+			<column name="UserDropDownStringID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="DesignString" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="da_DK" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="de_DE" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_US" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_GB" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_CA" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="fr_FR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="fr_CA" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="es_ES" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="es_MX" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="hi_IN" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="it_IT" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ja_JA" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ko_KR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="nl_NL" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="pl_PL" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="pt_PT" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="pt_BR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ru_RU" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="sv_FI" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="sv_SE" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="tr_TR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="zh_CHS" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="zh_CHT" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="el_GR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="nb_NO" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_AU" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_sUserDropDownStrings" unique="PRIMARY_KEY" >
+				<column name="UserDropDownStringID" />
+			</index>
+		</table>
+		<table name="sUserDropDownXMLStrings" >
+			<column name="UserDropDownXMLStringID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="XMLName" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="UserDropDownStringID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_sUserDropDownXMLStrings" unique="PRIMARY_KEY" >
+				<column name="UserDropDownXMLStringID" />
+			</index>
+			<index name="idx_sUserDropDownXMLStrings" unique="NORMAL" >
+				<column name="UserDropDownStringID" />
+			</index>
+			<fk name="fk_suserdropdownxmlstrings" to_schema="dbo" to_table="sUserDropDownStrings" >
+				<fk_column name="UserDropDownStringID" pk="UserDropDownStringID" />
+			</fk>
+		</table>
+		<table name="sUserStrings" >
+			<column name="UserStringID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="DesignString" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="da_DK" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="de_DE" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_US" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_GB" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_CA" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="fr_FR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="fr_CA" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="es_ES" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="es_MX" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="hi_IN" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="it_IT" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ja_JA" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ko_KR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="nl_NL" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="pl_PL" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="pt_PT" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="pt_BR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ru_RU" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="sv_FI" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="sv_SE" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="tr_TR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="zh_CHS" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="zh_CHT" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="el_GR" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="nb_NO" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="en_AU" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<index name="PK_sUserStrings" unique="PRIMARY_KEY" >
+				<column name="UserStringID" />
+			</index>
+		</table>
+		<table name="sUserXMLStrings" >
+			<column name="UserXMLStringID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="XMLName" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="UserStringID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_sUserXMLStrings" unique="PRIMARY_KEY" >
+				<column name="UserXMLStringID" />
+			</index>
+			<index name="idx_sUserXMLStrings" unique="NORMAL" >
+				<column name="UserStringID" />
+			</index>
+			<fk name="fk_suserxmlstrings" to_schema="dbo" to_table="sUserStrings" >
+				<fk_column name="UserStringID" pk="UserStringID" />
+			</fk>
+		</table>
+		<table name="uGroup" >
+			<column name="GroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="GroupName" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="Sort" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="GroupDescription" type="nvarchar" length="500" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ReadOnly" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="WorkflowGroupID" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<index name="PK_uGroup" unique="PRIMARY_KEY" >
+				<column name="GroupID" />
+			</index>
+		</table>
+		<table name="uUserGroup" >
+			<column name="UserGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="GroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_uUserGroup" unique="PRIMARY_KEY" >
+				<column name="UserGroupID" />
+			</index>
+			<index name="IX_uUserGroup_GroupID" unique="NORMAL" >
+				<column name="GroupID" />
+			</index>
+			<index name="IX_uUserGroup_TeamID" unique="NORMAL" >
+				<column name="TeamID" />
+			</index>
+			<fk name="fk_uusergroup_users" to_schema="dbo" to_table="Users" >
+				<fk_column name="TeamID" pk="TeamID" />
+			</fk>
+			<fk name="fk_uusergroup_ugroup" to_schema="dbo" to_table="uGroup" >
+				<fk_column name="GroupID" pk="GroupID" />
+			</fk>
+		</table>
+		<table name="uUserSetting" >
+			<column name="UserSettingID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="SettingSection" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="SettingKey" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="SettingValue" type="varbinary(max)" decimal="0" jt="-3" />
+			<index name="PK_uUserSetting" unique="PRIMARY_KEY" >
+				<column name="UserSettingID" />
+			</index>
+			<index name="UC_uUserSetting_Composite" unique="UNIQUE" >
+				<column name="TeamID" />
+				<column name="SettingSection" />
+				<column name="SettingKey" />
+			</index>
+			<index name="idx_uUserSetting" unique="NORMAL" >
+				<column name="TeamID" />
+			</index>
+			<fk name="fk_uusersetting_users" to_schema="dbo" to_table="Users" >
+				<fk_column name="TeamID" pk="TeamID" />
+			</fk>
+		</table>
+	</schema>
+	<layout id="Layout_83849dd" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="uGroup" color="bfbff5" x="510" y="795" />
+		<entity schema="dbo" name="uUserGroup" color="bfbff5" x="435" y="390" />
+		<entity schema="dbo" name="sSystemCulture" color="c8f5bf" x="270" y="735" />
+		<entity schema="dbo" name="sSystemServerSetting" color="f5ddbf" x="45" y="705" />
+		<entity schema="dbo" name="Users" color="c8f5bf" x="90" y="390" >
+			<column name="UserId" />
+		</entity>
+		<entity schema="dbo" name="sPermissionProductType" color="bfd4f5" x="870" y="675" />
+		<entity schema="dbo" name="sPermissionRole" color="bfbff5" x="1110" y="1275" />
+		<entity schema="dbo" name="sPermissionFolder" color="bfd4f5" x="870" y="360" />
+		<entity schema="dbo" name="sPermissionWorkflow" color="bfbff5" x="870" y="1065" />
+		<entity schema="dbo" name="sPermissionProductTypeMap" color="bfd4f5" x="1170" y="630" />
+		<entity schema="dbo" name="sSystemButtons" color="c8f5bf" x="1980" y="180" />
+		<entity schema="dbo" name="sUserStrings" color="c8f5bf" x="1665" y="195" />
+		<entity schema="dbo" name="sUserDropDownXMLStrings" color="f5ddbf" x="1440" y="975" />
+		<entity schema="dbo" name="sUserXMLStrings" color="f5ddbf" x="1650" y="975" />
+		<entity schema="dbo" name="sSystemStrings" color="f5ddbf" x="1815" y="195" />
+		<entity schema="dbo" name="sSystemPageStrings" color="c8f5bf" x="1830" y="975" />
+		<entity schema="dbo" name="sPermissionFolderType" color="bfd4f5" x="870" y="45" />
+		<entity schema="dbo" name="sUserDropDownStrings" color="f5ddbf" x="1440" y="195" />
+		<entity schema="dbo" name="uUserSetting" color="bfbff5" x="75" y="180" />
+		<group name="Permissions" color="ccccff" >
+			<entity schema="dbo" name="sPermissionProductType" />
+			<entity schema="dbo" name="sPermissionRole" />
+			<entity schema="dbo" name="sPermissionFolder" />
+			<entity schema="dbo" name="sPermissionFolderType" />
+			<entity schema="dbo" name="sPermissionWorkflow" />
+			<entity schema="dbo" name="sPermissionProductTypeMap" />
+		</group>
+		<group name="Translations" color="ccffcc" >
+			<entity schema="dbo" name="sSystemButtons" />
+			<entity schema="dbo" name="sUserStrings" />
+			<entity schema="dbo" name="sUserDropDownXMLStrings" />
+			<entity schema="dbo" name="sUserXMLStrings" />
+			<entity schema="dbo" name="sSystemStrings" />
+			<entity schema="dbo" name="sSystemPageStrings" />
+			<entity schema="dbo" name="sUserDropDownStrings" />
+		</group>
+		<group name="Users and Groups" color="ccffff" >
+			<entity schema="dbo" name="uGroup" />
+			<entity schema="dbo" name="uUserGroup" />
+			<entity schema="dbo" name="sSystemCulture" />
+			<entity schema="dbo" name="sSystemServerSetting" />
+			<entity schema="dbo" name="Users" />
+			<entity schema="dbo" name="uUserSetting" />
+		</group>
+	</layout>
+</project>

@@ -2,6 +2,7 @@
 <%@ Register TagPrefix="cc3" Namespace="Yunique.WebControls.YSTab" Assembly="YSTab" %>
 <%@ Register TagPrefix="cc1" Namespace="Yunique.WebControls" Assembly="YSWebControls" %>
 <%@ Register TagPrefix="uc1" TagName="Style_List_Image" Src="Style_List_Image.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="ImageHeader" Src="../Image/Image_Header.ascx" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
@@ -37,7 +38,7 @@
 			</table>
 			<table id="tbImage" runat="server" bordercolor='#CCCCCC' border="1" cellpadding="0" cellspacing="0" >
 				<tr><td ><asp:Image id="imgDesign" runat="server" /></td></tr>
-				<tr><td> <asp:PlaceHolder ID="pnlHeader" runat="server" ></asp:PlaceHolder></td></tr>
+				<tr><td><uc1:ImageHeader runat="server" ID="ctrImageHeader" /></td></tr>
 			</table>
 			<br />
 			<cc3:YSTabView id="YSTabView1" runat="server"></cc3:YSTabView>

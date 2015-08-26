@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_1cdb78af" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610" schemaname="dbo" >
+		<table name="pStyleColorway" >
+			<column name="StyleColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" />
+			<column name="StyleColorStandardID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleColorNo" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleColorName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MainColor" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Sort" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Version" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CopyStyleColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SAPCode" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleColorDelivery1" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleColorDelivery2" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleColorDelivery3" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleColorDelivery4" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="PLMCode" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleColorStatus" type="int" length="10" decimal="0" jt="4" >
+				<defo>100</defo>
+			</column>
+			<column name="CustomField1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Units" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="Yunique" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="MaterialCoreColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleColorwayLinkID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignImageFrontID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="DesignImageFrontVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="DesignImageBackID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="DesignImageBackVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_pStyleColorway" unique="PRIMARY_KEY" >
+				<column name="StyleColorID" />
+			</index>
+			<index name="IX_pStyleColorway_ColorPaletteID" unique="NORMAL" >
+				<column name="ColorPaletteID" />
+			</index>
+			<index name="IX_pStyleColorway_StyleID" unique="NORMAL" >
+				<column name="StyleID" />
+			</index>
+		</table>
+		<table name="pStyleColorwaySeasonYear" >
+			<column name="StyleColorwaySeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleColorwayID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleColorDelivery1" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>900</defo>
+			</column>
+			<column name="StyleColorDelivery2" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>900</defo>
+			</column>
+			<column name="StyleColorDelivery3" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>900</defo>
+			</column>
+			<column name="StyleColorDelivery4" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>900</defo>
+			</column>
+			<column name="StyleColorStatus" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>900</defo>
+			</column>
+			<column name="Units" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="CustomField1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ColorType" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="SampleStatus" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>900</defo>
+			</column>
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="StyleColorDelivery5" type="int" length="10" decimal="0" jt="4" />
+			<column name="Locked" type="int" length="10" decimal="0" jt="4" />
+			<column name="StyleColorwayLinkID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignImageFrontID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="DesignImageFrontVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="DesignImageBackID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="DesignImageBackVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" />
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pStyleColorwaySeasonYear" unique="PRIMARY_KEY" >
+				<column name="StyleColorwaySeasonYearID" />
+			</index>
+			<index name="IX_pStyleColorwaySeasonYear" unique="NORMAL" >
+				<column name="StyleSeasonYearID" />
+				<column name="StyleID" />
+			</index>
+			<index name="IX_pStyleColorwaySeasonYear_StyleColorwayID" unique="NORMAL" >
+				<column name="StyleColorwayID" />
+			</index>
+			<index name="IX_pStyleColorwaySeasonYear_StyleID" unique="NORMAL" >
+				<column name="StyleID" />
+				<column name="StyleSeasonYearID" />
+			</index>
+			<index name="idx_pStyleColorwaySeasonYear" unique="NORMAL" >
+				<column name="StyleSeasonYearID" />
+			</index>
+			<fk name="Fk_pStyleColorwaySeasonYear" to_schema="dbo" to_table="pStyleColorway" >
+				<fk_column name="StyleColorwayID" pk="StyleColorID" />
+			</fk>
+			<fk name="Fk_pStyleColorwaySeasonYear_0" to_schema="dbo" to_table="pStyleSeasonYear" >
+				<fk_column name="StyleSeasonYearID" pk="StyleSeasonYearID" />
+			</fk>
+			<fk name="Fk_pStyleColorwaySeasonYear_1" virtual="y" to_schema="dbo" to_table="vwx_StyleBOMColor_SeasonalActivity_SEL" >
+				<fk_column name="StyleColorwayID" pk="StyleColorID" />
+			</fk>
+			<fk name="Fk_pStyleColorwaySeasonYear_2" virtual="y" to_schema="dbo" to_table="vwx_StyleBOMColor_SeasonalActivity_SEL" >
+				<fk_column name="StyleSeasonYearID" pk="StyleSeasonYearID" />
+			</fk>
+		</table>
+		<table name="pStyleSeasonYear" >
+			<column name="StyleSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="StyleNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleSeason" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleYear" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrentSeason" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="LinePlanID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MostLikelyVendor" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" />
+			<column name="TACalReferenceId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pStyleSeasonYear" unique="PRIMARY_KEY" >
+				<column name="StyleSeasonYearID" />
+			</index>
+			<index name="IX_pStyleSeasonYear" unique="NORMAL" >
+				<column name="StyleID" />
+				<column name="SeasonYearID" />
+			</index>
+			<index name="IX_pStyleSeasonYear_SeasonYearID" unique="NORMAL" >
+				<column name="SeasonYearID" />
+			</index>
+		</table>
+		<view name="vwx_StyleBOMColor_SeasonalActivity_SEL" >
+			<view_script><![CDATA[
+CREATE VIEW [dbo].[vwx_StyleBOMColor_SeasonalActivity_SEL]
+AS
+SELECT wfi.StyleSeasonYearID, V.DimID AS StyleColorID, MAX(V.DimActive) AS ColorActive 
+FROM pStyleBOMDimensionItem sbdi
+INNER JOIN pWorkFlowItem wfi ON sbdi.WorkFlowItemID = wfi.WorkFlowItemID
+CROSS APPLY (VALUES (sbdi.ItemDim1TypeId, sbdi.ItemDim1Id, ItemDim1Active),
+					(sbdi.ItemDim2TypeId, sbdi.ItemDim2Id, ItemDim2Active),
+					(sbdi.ItemDim3TypeId, sbdi.ItemDim3Id, ItemDim3Active))
+				   V(DimTypeID, DimID, DimActive)
+INNER JOIN pStyleBOMDimType sbdt ON V.DimTypeID = sbdt.DimTypeID
+WHERE UPPER(LTRIM(RTRIM(sbdt.DimTypeName))) = 'COLOR' AND V.DimID IS NOT NULL
+GROUP BY wfi.StyleSeasonYearID, V.DimID
+
+]]></view_script>
+			<column name="ColorActive" type="int" />
+			<column name="StyleColorID" type="uniqueidentifier" />
+			<column name="StyleSeasonYearID" type="uniqueidentifier" />
+		</view>
+	</schema>
+	<layout id="Layout_d93f3f5" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="pStyleColorwaySeasonYear" color="bfd4f5" x="390" y="45" >
+			<column name="StyleColorwaySeasonYearID" />
+			<column name="StyleSeasonYearID" />
+			<column name="StyleColorwayID" />
+		</entity>
+		<entity schema="dbo" name="pStyleSeasonYear" color="bfd4f5" x="675" y="45" >
+			<column name="StyleSeasonYearID" />
+		</entity>
+		<entity schema="dbo" name="pStyleColorway" color="bfd4f5" x="825" y="45" >
+			<column name="StyleColorID" />
+		</entity>
+		<entity schema="dbo" name="vwx_StyleBOMColor_SeasonalActivity_SEL" color="bfd4f5" x="45" y="45" />
+		<group name="Style - Attribute" color="c4e0f9" >
+			<entity schema="dbo" name="pStyleColorwaySeasonYear" />
+			<entity schema="dbo" name="vwx_StyleBOMColor_SeasonalActivity_SEL" />
+			<entity schema="dbo" name="pStyleSeasonYear" />
+			<entity schema="dbo" name="pStyleColorway" />
+		</group>
+	</layout>
+</project>

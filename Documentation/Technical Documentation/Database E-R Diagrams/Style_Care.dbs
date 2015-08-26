@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_d82a466" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610" schemaname="dbo" >
+		<table name="pActive" >
+			<column name="CustomKey" type="nvarchar" length="10" decimal="0" jt="12" mandatory="y" />
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomBoolean" type="int" length="10" decimal="0" jt="4" />
+			<column name="Active" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CustomId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<index name="PK_pActive" unique="PRIMARY_KEY" >
+				<column name="CustomKey" />
+			</index>
+			<index name="Pk_pActive_0" unique="UNIQUE" >
+				<column name="CustomBoolean" />
+			</index>
+		</table>
+		<table name="pStyleCare" >
+			<column name="StyleCareId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleCareMasterId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" />
+			<column name="StyleCareWash" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCycle" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareBleach" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareDry" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareIron" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareDryClean" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareSpecial" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom5" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom6" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom7" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom8" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom9" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom10" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareInstruction" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>1</defo>
+			</column>
+			<column name="StyleCareWashFlag" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>1</defo>
+			</column>
+			<column name="StyleCareCycleFlag" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>1</defo>
+			</column>
+			<column name="StyleCareBleachFlag" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>1</defo>
+			</column>
+			<column name="StyleCareDryFlag" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>1</defo>
+			</column>
+			<column name="StyleCareIronFlag" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>1</defo>
+			</column>
+			<column name="StyleCareDryCleanFlag" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_pStyleCare" unique="PRIMARY_KEY" >
+				<column name="StyleCareId" />
+			</index>
+			<index name="pStyleCare_Index" unique="NORMAL" >
+				<column name="StyleId" />
+				<column name="StyleSet" />
+			</index>
+			<index name="idx_pStyleCare" unique="NORMAL" >
+				<column name="StyleCareMasterId" />
+			</index>
+			<index name="idx_pStyleCare_0" unique="NORMAL" >
+				<column name="StyleCareWash" />
+			</index>
+			<index name="idx_pStyleCare_1" unique="NORMAL" >
+				<column name="StyleCareCycle" />
+			</index>
+			<index name="idx_pStyleCare_2" unique="NORMAL" >
+				<column name="StyleCareBleach" />
+			</index>
+			<index name="idx_pStyleCare_3" unique="NORMAL" >
+				<column name="StyleCareDry" />
+			</index>
+			<index name="idx_pStyleCare_4" unique="NORMAL" >
+				<column name="StyleCareIron" />
+			</index>
+			<index name="idx_pStyleCare_5" unique="NORMAL" >
+				<column name="StyleCareDryClean" />
+			</index>
+			<index name="idx_pStyleCare_6" unique="NORMAL" >
+				<column name="StyleCareSpecial" />
+			</index>
+			<index name="idx_pStyleCare_7" unique="NORMAL" >
+				<column name="Active" />
+			</index>
+			<fk name="pStyleHeader" virtual="y" to_schema="dbo" to_table="pStyleHeader" >
+				<fk_column name="StyleId" pk="StyleID" />
+			</fk>
+			<fk name="Fk_pStyleCare" to_schema="dbo" to_table="pStyleDevelopmentItem" >
+				<fk_column name="StyleCareMasterId" pk="StyleDevelopmentID" />
+			</fk>
+			<fk name="Fk_pStyleCare_0" to_schema="dbo" to_table="pStyleCareWash" >
+				<fk_column name="StyleCareWash" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pStyleCare_1" to_schema="dbo" to_table="pStyleCareCycle" >
+				<fk_column name="StyleCareCycle" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pStyleCare_2" to_schema="dbo" to_table="pStyleCareBleach" >
+				<fk_column name="StyleCareBleach" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pStyleCare_3" to_schema="dbo" to_table="pStyleCareDry" >
+				<fk_column name="StyleCareDry" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pStyleCare_4" to_schema="dbo" to_table="pStyleCareIron" >
+				<fk_column name="StyleCareIron" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pStyleCare_5" to_schema="dbo" to_table="pStyleCareDryClean" >
+				<fk_column name="StyleCareDryClean" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pStyleCare_6" to_schema="dbo" to_table="pStyleCareSpecial" >
+				<fk_column name="StyleCareSpecial" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pStyleCare_7" to_schema="dbo" to_table="pActive" >
+				<fk_column name="Active" pk="CustomKey" />
+			</fk>
+		</table>
+		<table name="pStyleCareBleach" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomImage" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pStyleCareBleach" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+			<index name="idx_pStyleCareBleach" unique="UNIQUE" >
+				<column name="CustomKey" />
+			</index>
+		</table>
+		<table name="pStyleCareCycle" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomImage" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pStyleCareCycle" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+			<index name="idx_pStyleCareCycle" unique="UNIQUE" >
+				<column name="CustomKey" />
+			</index>
+		</table>
+		<table name="pStyleCareDry" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomImage" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pStyleCareDry" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+			<index name="idx_pStyleCareDry" unique="UNIQUE" >
+				<column name="CustomKey" />
+			</index>
+		</table>
+		<table name="pStyleCareDryClean" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomImage" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pStyleCareDryClean" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+			<index name="idx_pStyleCareDryClean" unique="UNIQUE" >
+				<column name="CustomKey" />
+			</index>
+		</table>
+		<table name="pStyleCareIron" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomImage" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pStyleCareIron" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+			<index name="idx_pStyleCareIron" unique="UNIQUE" >
+				<column name="CustomKey" />
+			</index>
+		</table>
+		<table name="pStyleCareSpecial" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomImage" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pStyleCareSpecial" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+			<index name="idx_pStyleCareSpecial" unique="UNIQUE" >
+				<column name="CustomKey" />
+			</index>
+		</table>
+		<table name="pStyleCareTemplateItem" >
+			<column name="StyleCareTemplateItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" />
+			<column name="TemplateCareID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TemplateCareItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TemplateCareTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CustomKey" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Sort" type="char" length="10" decimal="0" jt="1" />
+			<index name="PK_pStyleCareTemplateItem" unique="PRIMARY_KEY" >
+				<column name="StyleCareTemplateItemID" />
+			</index>
+			<fk name="pStyleHeader_0" virtual="y" to_schema="dbo" to_table="pStyleHeader" >
+				<fk_column name="StyleID" pk="StyleID" />
+			</fk>
+		</table>
+		<table name="pStyleCareWash" >
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="Custom" type="nvarchar" length="200" decimal="0" jt="12" mandatory="y" />
+			<column name="CustomImage" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pStyleCareWash" unique="PRIMARY_KEY" >
+				<column name="CustomID" />
+			</index>
+			<index name="Pk_pStyleCareWash_0" unique="UNIQUE" >
+				<column name="CustomKey" />
+			</index>
+		</table>
+		<table name="pStyleCareXML" >
+			<column name="XmlID" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" />
+			<column name="SchemaXML" type="xml" length="1073741823" decimal="0" jt="-1" />
+			<fk name="pStyleHeader_1" virtual="y" to_schema="dbo" to_table="pStyleHeader" >
+				<fk_column name="StyleID" pk="StyleID" />
+			</fk>
+		</table>
+		<table name="pStyleDevelopmentItem" >
+			<column name="StyleDevelopmentItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleDevelopmentID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeRange" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Variation" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="StyleDevelopmentName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Sort" type="int" length="10" decimal="0" jt="4" />
+			<column name="SizeRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pStyleDevelopmentItem" unique="PRIMARY_KEY" >
+				<column name="StyleDevelopmentItemID" />
+			</index>
+			<index name="IX_pStyleDevelopmentItem_StyleDevelopmentID" unique="UNIQUE" >
+				<column name="StyleDevelopmentID" />
+			</index>
+			<index name="IX_pStyleDevelopmentItem_StyleID" unique="NORMAL" >
+				<column name="StyleID" />
+			</index>
+			<fk name="Fk_pStyleDevelopmentItem" to_schema="dbo" to_table="pStyleHeader" >
+				<fk_column name="StyleID" pk="StyleID" />
+			</fk>
+		</table>
+		<table name="pStyleHeader" >
+			<column name="StyleID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StyleMasterID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleType" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="WorkflowType" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="RefNo" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="StyleNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempID" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="CustomerNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="DevelopmentID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DevelopmentNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="ConceptID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ConceptNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="SpecNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Description" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCategory" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeClass" type="nvarchar" length="400" decimal="0" jt="12" />
+			<column name="SizeRange" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="StyleSet" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="TechPackId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TechPackDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="DueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="RecDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Customer" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Buyer" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Designer" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="SampleMaker" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="PatternMaker" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ProductionManager" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="TechnicalDesigner" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleStatus" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleLocation" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="WashType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pitch" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialImageVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="MaterialNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="POMTempGroupID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempGroupID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempGroupID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempGroupID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion1" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMTempID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion2" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMTempID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion3" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="POMTempID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="POMTempVersion4" type="int" length="10" decimal="0" jt="4" />
+			<column name="POMTempSizeClass4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StyleMaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="TechSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ConceptSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="TechSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ConceptSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ColorSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DetailSketchVersion1" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchVersion2" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchVersion3" type="int" length="10" decimal="0" jt="4" />
+			<column name="DetailSketchVersion4" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchID1" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchID2" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchID3" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchID4" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SpecSketchVersion1" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchVersion2" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchVersion3" type="int" length="10" decimal="0" jt="4" />
+			<column name="SpecSketchVersion4" type="int" length="10" decimal="0" jt="4" />
+			<column name="Markup" type="numeric" length="18" decimal="0" jt="2" />
+			<column name="TargetPrice" type="money" length="19" decimal="4" jt="3" />
+			<column name="SellingPrice" type="money" length="19" decimal="4" jt="3" />
+			<column name="CustomField1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField11" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField12" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField13" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField14" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField15" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Pc1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pc2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pc3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Pc4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Change" type="int" length="10" decimal="0" jt="4" />
+			<column name="Action" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="NoColorCombo" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleDetail" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="StyleDetail1" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="StyleAttribute" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="StyleDetail2" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="LinePlanSketchID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanSketchVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="LinePlanID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CustomField16" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField17" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField18" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField19" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField20" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField21" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField22" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField23" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField24" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField25" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField26" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField27" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField28" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField29" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField30" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="PackagingNo" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="StyleCopyID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="LinePlanItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleStatusID" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="BodyID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleLinkID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialCoreID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ProdDev" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="HeaderLocked" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="CustomField31" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField32" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField33" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField34" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField35" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField36" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField37" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField38" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField39" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomField40" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Distribution" type="int" length="10" decimal="0" jt="4" />
+			<column name="IntroSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="UserCID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="UserMID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DesignSketchBackID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="DesignSketchBackVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="OwnerGroup" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="StartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="PlannedDueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="PlannedStartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ScheduleBy" type="char" length="1" decimal="0" jt="1" />
+			<column name="EnforceDependency" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="WorkflowTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DivisionID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="StyleThemeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SubCategoryId" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="EnableProductPages" type="int" length="10" decimal="0" jt="4" />
+			<column name="SizeClassId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SizeRangeId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK__pStyleHeader__371114F6" unique="PRIMARY_KEY" >
+				<column name="StyleID" />
+			</index>
+			<index name="IX_pStyleHeader_DesignSketchBackID" unique="NORMAL" >
+				<column name="DesignSketchBackID" />
+			</index>
+			<index name="IX_pStyleHeader_DesignSketchID" unique="NORMAL" >
+				<column name="DesignSketchID" />
+			</index>
+			<index name="IX_pStyleHeader_DevelopmentID" unique="NORMAL" >
+				<column name="DevelopmentID" />
+			</index>
+			<index name="IX_pStyleHeader_DivisionID" unique="NORMAL" >
+				<column name="DivisionID" />
+				<column name="StyleType" />
+				<column name="StyleCategory" />
+			</index>
+			<index name="IX_pStyleHeader_StyleNo" unique="NORMAL" >
+				<column name="StyleNo" />
+			</index>
+			<index name="IX_pStyleHeader_StyleType" unique="NORMAL" >
+				<column name="StyleType" />
+			</index>
+		</table>
+		<table name="pTemplateCare" >
+			<column name="TemplateCareID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="TemplateCareName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="TemplateCareDescription" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="StyleCareWash" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCycle" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareBleach" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareDry" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareIron" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareDryClean" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareSpecial" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom5" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom6" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom7" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom8" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom9" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareCustom10" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="StyleCareInstruction" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<index name="PK_pTemplateCare" unique="PRIMARY_KEY" >
+				<column name="TemplateCareID" />
+			</index>
+			<index name="Pk_pTemplateCare_0" unique="UNIQUE" >
+				<column name="StyleCareDry" />
+			</index>
+			<index name="Pk_pTemplateCare_1" unique="UNIQUE" >
+				<column name="StyleCareCycle" />
+			</index>
+			<index name="Pk_pTemplateCare_2" unique="UNIQUE" >
+				<column name="StyleCareSpecial" />
+			</index>
+			<index name="Pk_pTemplateCare_3" unique="UNIQUE" >
+				<column name="StyleCareDryClean" />
+			</index>
+			<index name="Pk_pTemplateCare_4" unique="UNIQUE" >
+				<column name="StyleCareBleach" />
+			</index>
+			<index name="Pk_pTemplateCare_5" unique="UNIQUE" >
+				<column name="StyleCareIron" />
+			</index>
+			<index name="idx_pTemplateCare" unique="NORMAL" >
+				<column name="StyleCareWash" />
+			</index>
+			<fk name="Fk_pTemplateCare" to_schema="dbo" to_table="pStyleCareDry" >
+				<fk_column name="StyleCareDry" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pTemplateCare_0" to_schema="dbo" to_table="pStyleCareCycle" >
+				<fk_column name="StyleCareCycle" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pTemplateCare_1" to_schema="dbo" to_table="pStyleCareBleach" >
+				<fk_column name="StyleCareBleach" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pTemplateCare_2" to_schema="dbo" to_table="pStyleCareIron" >
+				<fk_column name="StyleCareIron" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pTemplateCare_3" to_schema="dbo" to_table="pStyleCareDryClean" >
+				<fk_column name="StyleCareDryClean" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pTemplateCare_4" to_schema="dbo" to_table="pStyleCareSpecial" >
+				<fk_column name="StyleCareSpecial" pk="CustomKey" />
+			</fk>
+			<fk name="Fk_pTemplateCare_5" to_schema="dbo" to_table="pStyleCareWash" >
+				<fk_column name="StyleCareWash" pk="CustomKey" />
+			</fk>
+		</table>
+	</schema>
+	<layout id="Layout_145bf1de" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="pStyleCareDry" color="bfd4f5" x="300" y="45" />
+		<entity schema="dbo" name="pStyleCareCycle" color="bfd4f5" x="420" y="45" />
+		<entity schema="dbo" name="pStyleCareIron" color="bfd4f5" x="540" y="45" />
+		<entity schema="dbo" name="pStyleCareSpecial" color="bfd4f5" x="300" y="390" />
+		<entity schema="dbo" name="pStyleCareDryClean" color="bfd4f5" x="660" y="45" />
+		<entity schema="dbo" name="pStyleCareBleach" color="bfd4f5" x="420" y="390" />
+		<entity schema="dbo" name="pStyleCareWash" color="c8f5bf" x="540" y="390" />
+		<entity schema="dbo" name="pStyleHeader" color="c8f5bf" x="1110" y="90" >
+			<column name="StyleID" />
+		</entity>
+		<entity schema="dbo" name="pStyleDevelopmentItem" color="c0d4f3" x="1290" y="45" />
+		<entity schema="dbo" name="pStyleCareXML" color="c8f5bf" x="1110" y="240" />
+		<entity schema="dbo" name="pStyleCareTemplateItem" color="c8f5bf" x="1290" y="300" />
+		<entity schema="dbo" name="pActive" color="c0d4f3" x="1110" y="405" />
+		<entity schema="dbo" name="pStyleCare" color="c8f5bf" x="900" y="45" />
+		<entity schema="dbo" name="pTemplateCare" color="c0d4f3" x="45" y="45" />
+		<group name="Style - Care" color="c4e0f9" >
+			<entity schema="dbo" name="pStyleCareDry" />
+			<entity schema="dbo" name="pStyleCareCycle" />
+			<entity schema="dbo" name="pStyleCareIron" />
+			<entity schema="dbo" name="pStyleCareSpecial" />
+			<entity schema="dbo" name="pStyleCareDryClean" />
+			<entity schema="dbo" name="pStyleCareBleach" />
+			<entity schema="dbo" name="pStyleCareWash" />
+			<entity schema="dbo" name="pStyleHeader" />
+			<entity schema="dbo" name="pStyleDevelopmentItem" />
+			<entity schema="dbo" name="pStyleCareXML" />
+			<entity schema="dbo" name="pStyleCareTemplateItem" />
+			<entity schema="dbo" name="pActive" />
+			<entity schema="dbo" name="pStyleCare" />
+			<entity schema="dbo" name="pTemplateCare" />
+		</group>
+	</layout>
+</project>

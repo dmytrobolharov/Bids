@@ -1,0 +1,1721 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer" id="Project_a514962" html="y" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="plmOn610" schemaname="dbo" >
+		<table name="Users" >
+			<column name="UserId" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
+			<column name="UserCode" type="nvarchar" length="6" decimal="0" jt="12" />
+			<column name="TeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="FirstName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MiddleName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="LastName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Title" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Birthday" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Company" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Street1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Street2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="City" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="State" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Zip" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Country" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Phone" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Fax" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Mobile" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="UserName" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="PassWord" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Email" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContactName1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle1" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle2" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle3" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactName4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="ContactTitle4" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ContactEmail4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Admin" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="PublicAccess" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TradePartner" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="LastUpdate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSION" type="int" length="10" decimal="0" jt="4" />
+			<column name="SESSIONDATE" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSIONOS" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="SCREENWIDTH" type="int" length="10" decimal="0" jt="4" />
+			<column name="SCREENHEIGHT" type="int" length="10" decimal="0" jt="4" />
+			<column name="FULLNAME" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="USERDIR" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="MAILADDR" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="MAXSIZE" type="int" length="10" decimal="0" jt="4" />
+			<column name="MAXMSGS" type="int" length="10" decimal="0" jt="4" />
+			<column name="FLAGS" type="int" length="10" decimal="0" jt="4" />
+			<column name="TYPE" type="int" length="10" decimal="0" jt="4" />
+			<column name="IP" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Picture" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="A_CompanyFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TeamFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TradingFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ColorFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ImageFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_TemplateFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_DesignFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_CatalogFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_WorkflowFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ExternalAccess" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleFolder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleHeader" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleMaterial" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleArtwork" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleLicensee" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleColorway" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleDesignDetail" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleDevelopmentSpec" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_StyleGradeMeasurment" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="A_ProductionRequest" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="D_Desktop" type="nvarchar" length="255" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CalendarTemplateID" type="int" length="10" decimal="0" jt="4" />
+			<column name="ActivationID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ReadOnly" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SystemClientID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="ServerLocationID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="Division" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="JobRole" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Location" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Floor" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MachineType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContractType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ContractEnd" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Menswear" type="int" length="10" decimal="0" jt="4" />
+			<column name="Womenswear" type="int" length="10" decimal="0" jt="4" />
+			<column name="Accessories" type="int" length="10" decimal="0" jt="4" />
+			<column name="Divisionless" type="int" length="10" decimal="0" jt="4" />
+			<column name="Prorsum" type="int" length="10" decimal="0" jt="4" />
+			<column name="UnLockHeader" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="PreferredLang" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="UserProductAttributeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="AvatarImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DashFolderItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Intellimas" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="AdobePluginAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="evmOnAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Gerber" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="DeskTopID" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK__Users__6D0DFE4B" unique="PRIMARY_KEY" >
+				<column name="UserId" />
+			</index>
+			<index name="IX_Users_TeamID" unique="UNIQUE" >
+				<column name="TeamID" />
+			</index>
+			<index name="IX_Users_05" unique="NORMAL" >
+				<column name="Active" />
+				<column name="Title" />
+				<column name="FULLNAME" />
+			</index>
+			<index name="IX_Users_06" unique="NORMAL" >
+				<column name="UserId" />
+				<column name="FirstName" />
+				<column name="LastName" />
+				<column name="Email" />
+			</index>
+		</table>
+		<table name="pMaterial" >
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="TempID" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="TempNo" type="nvarchar" length="20" decimal="0" jt="12" />
+			<column name="MaterialImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialImageVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="MaterialImageDetailID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialImageDetailVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="NoColorMatch" type="int" length="10" decimal="0" jt="4" />
+			<column name="SupplierID" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialType" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="A" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="B" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="C" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="D" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="E" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="F" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="G" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="H" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="I" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="J" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="K" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="L" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="M" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="N" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="O" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="P" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Q" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="R" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="S" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="T" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="U" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="V" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="W" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="X" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Y" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Z" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Source" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Notes" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="VendorPrice" type="money" length="19" decimal="4" jt="3" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="VolumePrice" type="money" length="19" decimal="4" jt="3" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="VolumePriceMinimum" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="VendorProductionMin" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="VendorProductionLeadTime" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialPlacement" type="bit" length="1" decimal="0" jt="-7" >
+				<defo>0</defo>
+			</column>
+			<column name="DetailYesNo" type="int" length="10" decimal="0" jt="4" />
+			<column name="ImageType1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="height" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="width" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MChange" type="int" length="10" decimal="0" jt="4" />
+			<column name="DChange" type="int" length="10" decimal="0" jt="4" />
+			<column name="Action" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Status" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="MultiDimension" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="UOM" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialCode" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialCodeNo" type="int" length="10" decimal="0" jt="4" />
+			<column name="SAPCode" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="SAPControl" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialColorRequired" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="FactorySourced" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="HeaderLocked" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="MaterialTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DutyCategoryID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="DueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrencyType" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="IntroSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TACalTemplateId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="EnableProductPages" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK__pMaterial__53F76C67" unique="PRIMARY_KEY" >
+				<column name="MaterialID" />
+			</index>
+			<index name="IX_pMaterial_MaterialImageID" unique="NORMAL" >
+				<column name="MaterialImageID" />
+			</index>
+			<index name="IX_pMaterial_TempID" unique="NORMAL" >
+				<column name="TempID" />
+			</index>
+		</table>
+		<table name="pMaterialColor" >
+			<column name="MaterialColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialColorImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialColorImageVersion" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorName" type="nvarchar" length="150" decimal="0" jt="12" />
+			<column name="ColorSource" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="VendorColorNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="VendorColorName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialColorNote" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ColorHex" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="Hex" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="R" type="int" length="10" decimal="0" jt="4" />
+			<column name="G" type="int" length="10" decimal="0" jt="4" />
+			<column name="B" type="int" length="10" decimal="0" jt="4" />
+			<column name="C" type="int" length="10" decimal="0" jt="4" />
+			<column name="M" type="int" length="10" decimal="0" jt="4" />
+			<column name="Y" type="int" length="10" decimal="0" jt="4" />
+			<column name="K" type="int" length="10" decimal="0" jt="4" />
+			<column name="H" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="S" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="L" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="LAB_L" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_A" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_B" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="ColorHexCode" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialColorVersion" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="ColorVersion" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Action" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Sort" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="VendorColorCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CopyMaterialColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialColorImageIDBak" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Status" type="nvarchar" length="100" decimal="0" jt="12" >
+				<defo>&#039;In Progress&#039;</defo>
+			</column>
+			<index name="PK__pMaterialColor__2E7BCEF5" unique="PRIMARY_KEY" >
+				<column name="MaterialColorID" />
+			</index>
+			<index name="IX_pMaterialColor_ColorPaletteID" unique="NORMAL" >
+				<column name="ColorPaletteID" />
+			</index>
+			<index name="IX_pMaterialColor_MaterialID" unique="NORMAL" >
+				<column name="MaterialID" />
+				<column name="ColorPaletteID" />
+			</index>
+			<index name="idx_pMaterialColor" unique="NORMAL" >
+				<column name="MaterialID" />
+			</index>
+			<fk name="Fk_pMaterialColor" to_schema="dbo" to_table="pMaterial" >
+				<fk_column name="MaterialID" pk="MaterialID" />
+			</fk>
+		</table>
+		<table name="pMaterialColorSeasonYear" >
+			<column name="MaterialColorSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialSeason" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialYear" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrentSeason" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_pMaterialColorSeasonYear" unique="PRIMARY_KEY" >
+				<column name="MaterialColorSeasonYearID" />
+			</index>
+			<index name="IX_pMaterialColorSeasonYear_MaterialColorID" unique="NORMAL" >
+				<column name="MaterialColorID" />
+			</index>
+			<index name="IX_pMaterialColorSeasonYear_SeasonYearID" unique="NORMAL" >
+				<column name="SeasonYearID" />
+				<column name="MaterialID" />
+				<column name="MaterialColorID" />
+			</index>
+			<index name="idx_pMaterialColorSeasonYear" unique="NORMAL" >
+				<column name="SeasonYearID" />
+			</index>
+			<fk name="Fk_pMaterialColorSeasonYear" to_schema="dbo" to_table="pSeasonYear" >
+				<fk_column name="SeasonYearID" pk="SeasonYearID" />
+			</fk>
+			<fk name="Fk_pMaterialColorSeasonYear_0" to_schema="dbo" to_table="pMaterialColor" >
+				<fk_column name="MaterialColorID" pk="MaterialColorID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestAgentVendorTemp" >
+			<column name="MaterialRequestAgentVendorTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="TradePartnerRelationshipLevelID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pMaterialRequestAgentVendorTemp" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestAgentVendorTempID" />
+			</index>
+			<fk name="Fk_pMaterialRequestAgentVendorTemp" virtual="y" to_schema="dbo" to_table="vwx_TradePartnerRelationshipLevels_SEL" >
+				<fk_column name="TradePartnerRelationshipLevelID" pk="TradePartnerRelationshipLevelID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestContent" >
+			<column name="MaterialContentID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialTradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialContentCode" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="MaterialContentPerc" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="MaterialContentName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pMaterialRequestContent" unique="PRIMARY_KEY" >
+				<column name="MaterialContentID" />
+			</index>
+			<index name="idx_pMaterialRequestContent" unique="NORMAL" >
+				<column name="MaterialTradePartnerID" />
+			</index>
+			<fk name="Fk_pMaterialRequestContent" to_schema="dbo" to_table="pMaterialTradePartner" >
+				<fk_column name="MaterialTradePartnerID" pk="MaterialTradePartnerId" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestDocument" >
+			<column name="MaterialRequestDocumentID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialTradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialTradePartnerColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestSubmitWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialDocumentName" type="nvarchar" length="500" decimal="0" jt="12" />
+			<column name="MaterialDocumentDescription" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="MaterialDocumentExt" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="MaterialDocumentSize" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="MaterialDocumentShared" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MChange" type="int" length="10" decimal="0" jt="4" />
+			<column name="SystemServerStorageID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<index name="PK_pMaterialRequestDocument" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestDocumentID" />
+			</index>
+			<index name="IX_pMaterialRequestDocument_MaterialID" unique="NORMAL" >
+				<column name="MaterialID" />
+				<column name="MaterialRequestSubmitWorkflowID" />
+			</index>
+			<index name="idx_pMaterialRequestDocument" unique="NORMAL" >
+				<column name="MaterialTradePartnerID" />
+			</index>
+			<index name="idx_pMaterialRequestDocument_0" unique="NORMAL" >
+				<column name="MaterialTradePartnerColorID" />
+			</index>
+			<fk name="Fk_pMaterialRequestDocument" to_schema="dbo" to_table="pMaterialTradePartner" >
+				<fk_column name="MaterialTradePartnerID" pk="MaterialTradePartnerId" />
+			</fk>
+			<fk name="Fk_pMaterialRequestDocument_0" to_schema="dbo" to_table="pMaterialTradePartnerColor" >
+				<fk_column name="MaterialTradePartnerColorID" pk="MaterialTradePartnerColorID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestSeasonColorTemp" >
+			<column name="MaterialRequestSeasonColorTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="MaterialColorSeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialSizeID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<index name="PK_pMaterialRequestSeasonColorTemp" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestSeasonColorTempID" />
+			</index>
+			<index name="IX_pMaterialRequestSeasonColorTemp_MaterialRequestGroupID" unique="NORMAL" >
+				<column name="MaterialRequestGroupID" />
+			</index>
+			<index name="idx_pMaterialRequestSeasonColorTemp" unique="NORMAL" >
+				<column name="SeasonYearID" />
+			</index>
+			<index name="idx_pMaterialRequestSeasonColorTemp_0" unique="NORMAL" >
+				<column name="MaterialID" />
+			</index>
+			<index name="idx_pMaterialRequestSeasonColorTemp_1" unique="NORMAL" >
+				<column name="MaterialColorSeasonYearID" />
+			</index>
+			<fk name="Fk_pMaterialRequestSeasonColorTemp_1" to_schema="dbo" to_table="pMaterialColorSeasonYear" >
+				<fk_column name="MaterialColorSeasonYearID" pk="MaterialColorSeasonYearID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestSubmit" >
+			<column name="MaterialRequestSubmitID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestSubmitWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialTradePartnerColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialTradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Submit" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Status" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="AssignedTo" type="int" length="10" decimal="0" jt="4" />
+			<column name="StartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="RecDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="RecBy" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="RecCarrier" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="RecTrackNo" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="RecWeight" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="VendorWeight" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="VendorDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="VendorName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SubmitDays" type="int" length="10" decimal="0" jt="4" />
+			<column name="ResubmitDays" type="int" length="10" decimal="0" jt="4" />
+			<column name="DueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="RevDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="RevBy" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="EndDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="EndBy" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="TUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="TDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="AgentView" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SubmitComment" type="ntext" length="1073741823" decimal="0" jt="-1" />
+			<column name="VendorComment" type="ntext" length="1073741823" decimal="0" jt="-1" />
+			<column name="InternalComment" type="ntext" length="1073741823" decimal="0" jt="-1" />
+			<column name="MaterialRequestSubmitGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pMaterialRequestSubmit" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestSubmitID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmit_AssignedTo" unique="NORMAL" >
+				<column name="AssignedTo" />
+				<column name="Submit" />
+			</index>
+			<index name="IX_pMaterialRequestSubmit_MaterialRequestSubmitWorkflowID" unique="NORMAL" >
+				<column name="MaterialRequestSubmitWorkflowID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmit_MaterialTradePartnerColorID" unique="NORMAL" >
+				<column name="MaterialTradePartnerColorID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmit_MaterialTradePartnerID" unique="NORMAL" >
+				<column name="MaterialTradePartnerID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmit_Status" unique="NORMAL" >
+				<column name="Status" />
+				<column name="DueDate" />
+			</index>
+			<index name="idx_pMaterialRequestSubmit" unique="NORMAL" >
+				<column name="Status" />
+			</index>
+			<fk name="Fk_pMaterialRequestSubmit" to_schema="dbo" to_table="pMaterialTradePartnerColor" >
+				<fk_column name="MaterialTradePartnerColorID" pk="MaterialTradePartnerColorID" />
+			</fk>
+			<fk name="Fk_pMaterialRequestSubmit_0" to_schema="dbo" to_table="pMaterialTradePartner" >
+				<fk_column name="MaterialTradePartnerID" pk="MaterialTradePartnerId" />
+			</fk>
+			<fk name="Fk_pMaterialRequestSubmit_1" to_schema="dbo" to_table="pMaterialRequestSubmitWorkflow" >
+				<fk_column name="MaterialRequestSubmitWorkflowID" pk="MaterialRequestSubmitWorkflowID" />
+			</fk>
+			<fk name="Fk_pMaterialRequestSubmit_2" to_schema="dbo" to_table="pMaterialRequestSubmitStatus" >
+				<fk_column name="Status" pk="StatusID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestSubmitComment" >
+			<column name="MaterialRequestSubmitCommentID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestTradeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestSubmitID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestSubmit" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialRequestSubmitCommentType" type="varchar" length="1" decimal="0" jt="12" >
+				<defo>&#039;I&#039;</defo>
+			</column>
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CTeamID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MChange" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialRequestSubmitComment" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<index name="PK_pMaterialRequestSubmitComment" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestSubmitCommentID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmitComment_MaterialRequestSubmitID" unique="NORMAL" >
+				<column name="MaterialRequestSubmitID" />
+				<column name="MDate" />
+			</index>
+			<index name="idx_pMaterialRequestSubmitComment" unique="NORMAL" >
+				<column name="MaterialRequestSubmitID" />
+			</index>
+			<fk name="Fk_pMaterialRequestSubmitComment" to_schema="dbo" to_table="pMaterialRequestSubmit" >
+				<fk_column name="MaterialRequestSubmitID" pk="MaterialRequestSubmitID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestSubmitDocument" >
+			<column name="MaterialRequestSubmitDocumentID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestSubmitID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Description" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="DocumentName" type="nvarchar" length="500" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pMaterialRequestSubmitDocument" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestSubmitDocumentID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmitDocument_MaterialRequestSubmitID" unique="NORMAL" >
+				<column name="MaterialRequestSubmitID" />
+				<column name="CDate" />
+			</index>
+			<index name="idx_pMaterialRequestSubmitDocument" unique="NORMAL" >
+				<column name="MaterialRequestSubmitID" />
+			</index>
+			<fk name="Fk_pMaterialRequestSubmitDocument" to_schema="dbo" to_table="pMaterialRequestSubmit" >
+				<fk_column name="MaterialRequestSubmitID" pk="MaterialRequestSubmitID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestSubmitGroup" >
+			<column name="MaterialRequestSubmitGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="MaterialTradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowID" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pMaterialRequestSubmitGroup" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestSubmitGroupID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmitGroup_MaterialTradePartnerID" unique="NORMAL" >
+				<column name="MaterialTradePartnerID" />
+				<column name="MaterialRequestWorkflowID" />
+			</index>
+		</table>
+		<table name="pMaterialRequestSubmitItem" >
+			<column name="MaterialRequestSubmitItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestSubmitID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestSubmitItemStatus" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="MaterialRequestSubmitItemCustom1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemCustom2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemCustom3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemCustom4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemCustom5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemCustom6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemCustom7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemCustom8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemCustom9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemCustom10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitItemSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestSubmitGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pMaterialRequestSubmitItem" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestSubmitItemID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmitItem_MaterialRequestSubmitID" unique="NORMAL" >
+				<column name="MaterialRequestSubmitID" />
+			</index>
+			<index name="idx_pMaterialRequestSubmitItem" unique="NORMAL" >
+				<column name="MaterialRequestSubmitItemStatus" />
+			</index>
+			<index name="idx_pMaterialRequestSubmitItem_0" unique="NORMAL" >
+				<column name="MaterialRequestSubmitGroupID" />
+			</index>
+			<fk name="Fk_pMaterialRequestSubmitItem" to_schema="dbo" to_table="pMaterialRequestSubmit" >
+				<fk_column name="MaterialRequestSubmitID" pk="MaterialRequestSubmitID" />
+			</fk>
+			<fk name="Fk_pMaterialRequestSubmitItem_0" to_schema="dbo" to_table="pMaterialRequestSubmitItemStatus" >
+				<fk_column name="MaterialRequestSubmitItemStatus" pk="StatusID" />
+			</fk>
+			<fk name="Fk_pMaterialRequestSubmitItem_1" to_schema="dbo" to_table="pMaterialRequestSubmitGroup" >
+				<fk_column name="MaterialRequestSubmitGroupID" pk="MaterialRequestSubmitGroupID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestSubmitItemStatus" >
+			<column name="MaterialRequestSubmitItemStatusID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="StatusID" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Status" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomKey" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Active" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ApprovedType" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<index name="PK_pMaterialRequestSubmitItemStatus" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestSubmitItemStatusID" />
+			</index>
+			<index name="Pk_pMaterialRequestSubmitItemStatus_0" unique="UNIQUE" >
+				<column name="StatusID" />
+			</index>
+		</table>
+		<table name="pMaterialRequestSubmitStatus" >
+			<column name="StatusID" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="Status" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomKey" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="Active" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="ApprovedType" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="StatusIcon" type="varchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitStatusId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<index name="PK_pMaterialRequestSubmitStatus" unique="PRIMARY_KEY" >
+				<column name="StatusID" />
+			</index>
+		</table>
+		<table name="pMaterialRequestSubmitWorkflow" >
+			<column name="MaterialRequestSubmitWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialTradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialTradePartnerColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowTempItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowID" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Status" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Submit" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="SubmitDays" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="ResubmitDays" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="AssignedTo" type="int" length="10" decimal="0" jt="4" />
+			<column name="StartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="DueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="EndDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="TUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="TDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="FinalDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SampleWorkflowFinalDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="AgentView" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="MaterialRequestSubmitGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestSubmitAllColors" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="MaterialRequestPartnerTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="RevisedStart" type="date" length="10" decimal="0" jt="91" />
+			<column name="RevisedEnd" type="date" length="10" decimal="0" jt="91" />
+			<index name="PK_pMaterialRequestSubmitWorkflow" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestSubmitWorkflowID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmitWorkflow_MaterialID" unique="NORMAL" >
+				<column name="MaterialID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmitWorkflow_MaterialTradePartnerColorID" unique="NORMAL" >
+				<column name="MaterialTradePartnerColorID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmitWorkflow_MaterialTradePartnerID" unique="NORMAL" >
+				<column name="MaterialTradePartnerID" />
+			</index>
+			<index name="IX_pMaterialRequestSubmitWorkflow_Status" unique="NORMAL" >
+				<column name="Status" />
+				<column name="DueDate" />
+			</index>
+			<index name="IX_pMaterialRequestSubmitWorkflow_TradePartnerID" unique="NORMAL" >
+				<column name="TradePartnerID" />
+			</index>
+		</table>
+		<table name="pMaterialRequestSubmitWorkflowShare" >
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="MaterialRequestSubmitWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pMaterialRequestSubmitWorkflowShare" unique="PRIMARY_KEY" >
+				<column name="TradePartnerID" />
+				<column name="MaterialRequestSubmitWorkflowID" />
+			</index>
+			<index name="idx_pMaterialRequestSubmitWorkflowShare" unique="NORMAL" >
+				<column name="MaterialRequestSubmitWorkflowID" />
+			</index>
+			<index name="idx_pMaterialRequestSubmitWorkflowShare_0" unique="NORMAL" >
+				<column name="TradePartnerID" />
+			</index>
+			<fk name="Fk_pMaterialRequestSubmitWorkflowShare" to_schema="dbo" to_table="pMaterialRequestSubmitWorkflow" >
+				<fk_column name="MaterialRequestSubmitWorkflowID" pk="MaterialRequestSubmitWorkflowID" />
+			</fk>
+			<fk name="Fk_pMaterialRequestSubmitWorkflowShare_0" to_schema="dbo" to_table="uTradePartner" >
+				<fk_column name="TradePartnerID" pk="TradePartnerID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestTemp" >
+			<column name="MaterialRequestTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestWorkflowTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowStartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestWorkflowDueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pMaterialRequestTemp" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestTempID" />
+			</index>
+			<index name="IX_pMaterialRequestTemp_MaterialRequestGroupID" unique="NORMAL" >
+				<column name="MaterialRequestGroupID" />
+			</index>
+			<index name="idx_pMaterialRequestTemp" unique="NORMAL" >
+				<column name="SeasonYearID" />
+			</index>
+			<index name="idx_pMaterialRequestTemp_0" unique="NORMAL" >
+				<column name="MaterialID" />
+			</index>
+			<index name="idx_pMaterialRequestTemp_1" unique="NORMAL" >
+				<column name="MaterialRequestWorkflowTempID" />
+			</index>
+			<fk name="Fk_pMaterialRequestTemp" to_schema="dbo" to_table="pSeasonYear" >
+				<fk_column name="SeasonYearID" pk="SeasonYearID" />
+			</fk>
+			<fk name="Fk_pMaterialRequestTemp_0" to_schema="dbo" to_table="pMaterial" >
+				<fk_column name="MaterialID" pk="MaterialID" />
+			</fk>
+			<fk name="Fk_pMaterialRequestTemp_1" to_schema="dbo" to_table="pMaterialRequestWorkflowTemplate" >
+				<fk_column name="MaterialRequestWorkflowTempID" pk="MaterialRequestWorkflowTempID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestTempWorkflow" >
+			<column name="MaterialRequestTempWorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowTemplateItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowID" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="AssignedTo" type="int" length="10" decimal="0" jt="4" />
+			<column name="Days" type="int" length="10" decimal="0" jt="4" />
+			<column name="RDays" type="int" length="10" decimal="0" jt="4" />
+			<column name="DueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Alerts" type="int" length="10" decimal="0" jt="4" />
+			<column name="Status" type="int" length="10" decimal="0" jt="4" />
+			<column name="PartnerTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pMaterialRequestTempWorkflow" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestTempWorkflowID" />
+			</index>
+			<index name="idx_pMaterialRequestTempWorkflow" unique="NORMAL" >
+				<column name="MaterialRequestWorkflowTemplateItemID" />
+			</index>
+			<fk name="Fk_pMaterialRequestTempWorkflow" to_schema="dbo" to_table="pMaterialRequestWorkflowTemplateItem" >
+				<fk_column name="MaterialRequestWorkflowTemplateItemID" pk="MaterialRequestWorkflowTempItemID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestWorkflow" >
+			<column name="MaterialRequestWorkflowID" type="varchar" length="5" decimal="0" jt="12" mandatory="y" />
+			<column name="MaterialRequestWorkflow" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowSort" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="WorkflowID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="GroupID" type="char" length="1" decimal="0" jt="1" />
+			<column name="GroupName" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Days" type="int" length="10" decimal="0" jt="4" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestWorkflowItemSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowControlSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowColor" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="MaterialRequestSubmitHeaderPrintSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestSubmitBodyPrintSchema" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowRepId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestWorkflowGUIDID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<index name="PK_pMaterialRequestWorkflow" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestWorkflowID" />
+			</index>
+		</table>
+		<table name="pMaterialRequestWorkflowGroup" >
+			<column name="MaterialRequestWorkflowGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="MaterialRequestWorkflowID" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowGroup" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowGroupSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pMaterialRequestWorkflowGroup" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestWorkflowGroupID" />
+			</index>
+			<index name="idx_pMaterialRequestWorkflowGroup" unique="NORMAL" >
+				<column name="MaterialRequestWorkflowID" />
+			</index>
+			<fk name="Fk_pMaterialRequestWorkflowGroup" to_schema="dbo" to_table="pMaterialRequestWorkflow" >
+				<fk_column name="MaterialRequestWorkflowID" pk="MaterialRequestWorkflowID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestWorkflowItem" >
+			<column name="MaterialRequestWorkflowItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newsequentialid()</defo>
+			</column>
+			<column name="MaterialRequestWorkflowID" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemCustom10" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowItemSort" type="varchar" length="4" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestWorkflowGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pMaterialRequestWorkflowItem" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestWorkflowItemID" />
+			</index>
+			<index name="idx_pMaterialRequestWorkflowItem" unique="NORMAL" >
+				<column name="MaterialRequestWorkflowID" />
+			</index>
+			<index name="idx_pMaterialRequestWorkflowItem_0" unique="NORMAL" >
+				<column name="MaterialRequestWorkflowGroupID" />
+			</index>
+			<fk name="Fk_pMaterialRequestWorkflowItem" to_schema="dbo" to_table="pMaterialRequestWorkflow" >
+				<fk_column name="MaterialRequestWorkflowID" pk="MaterialRequestWorkflowID" />
+			</fk>
+			<fk name="Fk_pMaterialRequestWorkflowItem_0" to_schema="dbo" to_table="pMaterialRequestWorkflowGroup" >
+				<fk_column name="MaterialRequestWorkflowGroupID" pk="MaterialRequestWorkflowGroupID" />
+			</fk>
+		</table>
+		<table name="pMaterialRequestWorkflowTemplate" >
+			<column name="MaterialRequestWorkflowTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestWorkflowTempName" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowTempDesc" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestWorkflowTempStartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestWorkflowTempDueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pMaterialRequestWorkflowTemplate" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestWorkflowTempID" />
+			</index>
+		</table>
+		<table name="pMaterialRequestWorkflowTemplateItem" >
+			<column name="MaterialRequestWorkflowTempItemID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialRequestWorkflowTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowID" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflow" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MaterialRequestWorkflowAssignedTo" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="MaterialRequestWorkflowDays" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialRequestWorkflowRDays" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialRequestWorkflowFinalDate" type="datetime" length="23" decimal="3" jt="93" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="MaterialRequestWorkflowAlerts" type="int" length="10" decimal="0" jt="4" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestWorkflowSort" type="varchar" length="4" decimal="0" jt="12" >
+				<defo>0</defo>
+			</column>
+			<column name="MaterialRequestWorkflowGroupID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestPartnerTypeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pMaterialRequestWorkflowTemplateItem" unique="PRIMARY_KEY" >
+				<column name="MaterialRequestWorkflowTempItemID" />
+			</index>
+			<index name="IX_pMaterialRequestWorkflowTemplateItem_MaterialRequestWorkflowTempID" unique="NORMAL" >
+				<column name="MaterialRequestWorkflowTempID" />
+				<column name="MaterialRequestWorkflowID" />
+			</index>
+			<index name="idx_pMaterialRequestWorkflowTemplateItem" unique="NORMAL" >
+				<column name="MaterialRequestWorkflowTempID" />
+			</index>
+			<index name="idx_pMaterialRequestWorkflowTemplateItem_0" unique="NORMAL" >
+				<column name="MaterialRequestWorkflowID" />
+			</index>
+			<fk name="Fk_pMaterialRequestWorkflowTemplateItem" to_schema="dbo" to_table="pMaterialRequestWorkflowTemplate" >
+				<fk_column name="MaterialRequestWorkflowTempID" pk="MaterialRequestWorkflowTempID" />
+			</fk>
+			<fk name="Fk_pMaterialRequestWorkflowTemplateItem_0" to_schema="dbo" to_table="pMaterialRequestWorkflow" >
+				<fk_column name="MaterialRequestWorkflowID" pk="MaterialRequestWorkflowID" />
+			</fk>
+		</table>
+		<table name="pMaterialSampleWorkflowViewAgent" >
+			<column name="MaterialSampleWorkflowViewAgentId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="TradePartnerId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TeamId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<index name="PK_pMaterialSampleWorkflowViewAgent" unique="PRIMARY_KEY" >
+				<column name="MaterialSampleWorkflowViewAgentId" />
+			</index>
+			<index name="IX_pMaterialSampleWorkflowViewAgent_TeamID" unique="NORMAL" >
+				<column name="TeamId" />
+			</index>
+			<index name="idx_pMaterialSampleWorkflowViewAgent" unique="NORMAL" >
+				<column name="TradePartnerId" />
+			</index>
+			<fk name="Fk_pMaterialSampleWorkflowViewAgent" to_schema="dbo" to_table="uTradePartner" >
+				<fk_column name="TradePartnerId" pk="TradePartnerID" />
+			</fk>
+			<fk name="Fk_pMaterialSampleWorkflowViewAgent_0" to_schema="dbo" to_table="Users" >
+				<fk_column name="TeamId" pk="TeamID" />
+			</fk>
+		</table>
+		<table name="pMaterialTradePartner" >
+			<column name="MaterialTradePartnerId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradepartnerId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradepartnerVendorId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialTradePartnerCustom1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom5" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom6" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom7" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom8" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom9" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom10" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom11" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom12" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom13" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom14" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom15" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom16" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom17" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom18" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom19" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom20" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom21" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom22" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom23" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom24" type="nvarchar" length="500" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom25" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MChange" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialRequestWorkflowTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialRequestWorkflowStartDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MaterialRequestWorkflowDueDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerRelationshipLevelID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="CurrencyType" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="EnableMaterialRequestPages" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_pMaterialVendor" unique="PRIMARY_KEY" >
+				<column name="MaterialTradePartnerId" />
+			</index>
+			<index name="IX_pMaterialTradePartner_MaterialID" unique="NORMAL" >
+				<column name="MaterialId" />
+				<column name="TradePartnerRelationshipLevelID" />
+			</index>
+			<index name="IX_pMaterialTradePartner_SeasonYearID" unique="NORMAL" >
+				<column name="SeasonYearID" />
+			</index>
+			<index name="IX_pMaterialTradePartner_TradePartnerID" unique="NORMAL" >
+				<column name="TradepartnerId" />
+			</index>
+			<index name="idx_pMaterialTradePartner" unique="NORMAL" >
+				<column name="MaterialId" />
+			</index>
+			<index name="idx_pMaterialTradePartner_0" unique="NORMAL" >
+				<column name="TradepartnerVendorId" />
+			</index>
+			<index name="Pk_pMaterialTradePartner" unique="UNIQUE" >
+				<column name="MaterialRequestWorkflowTempID" />
+			</index>
+			<fk name="Fk_pMaterialTradePartner" to_schema="dbo" to_table="uTradePartner" >
+				<fk_column name="TradepartnerId" pk="TradePartnerID" />
+			</fk>
+			<fk name="Fk_pMaterialTradePartner_0" to_schema="dbo" to_table="pMaterial" >
+				<fk_column name="MaterialId" pk="MaterialID" />
+			</fk>
+			<fk name="Fk_pMaterialTradePartner_1" to_schema="dbo" to_table="uTradePartnerVendor" >
+				<fk_column name="TradepartnerVendorId" pk="TradePartnerVendorID" />
+			</fk>
+			<fk name="Fk_pMaterialTradePartner_2" to_schema="dbo" to_table="pMaterialRequestWorkflowTemplate" >
+				<fk_column name="MaterialRequestWorkflowTempID" pk="MaterialRequestWorkflowTempID" />
+			</fk>
+			<fk name="Fk_pMaterialTradePartner_3" virtual="y" to_schema="dbo" to_table="vwx_TradePartnerRelationshipLevels_SEL" >
+				<fk_column name="TradePartnerRelationshipLevelID" pk="TradePartnerRelationshipLevelID" />
+			</fk>
+		</table>
+		<table name="pMaterialTradePartnerColor" >
+			<column name="MaterialTradePartnerColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialTradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialColorImageID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialColorImageVersion" type="int" length="10" decimal="0" jt="4" />
+			<column name="ColorFolderID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorPaletteID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="ColorCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="ColorName" type="nvarchar" length="150" decimal="0" jt="12" />
+			<column name="ColorSource" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="VendorColorCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="VendorColorNo" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="VendorColorName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialColorNote" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="ColorHex" type="bit" length="1" decimal="0" jt="-7" />
+			<column name="Hex" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="R" type="int" length="10" decimal="0" jt="4" />
+			<column name="G" type="int" length="10" decimal="0" jt="4" />
+			<column name="B" type="int" length="10" decimal="0" jt="4" />
+			<column name="C" type="int" length="10" decimal="0" jt="4" />
+			<column name="M" type="int" length="10" decimal="0" jt="4" />
+			<column name="Y" type="int" length="10" decimal="0" jt="4" />
+			<column name="K" type="int" length="10" decimal="0" jt="4" />
+			<column name="H" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="S" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="L" type="decimal" length="18" decimal="0" jt="3" />
+			<column name="LAB_L" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_A" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="LAB_B" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="ColorHexCode" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MaterialColorVersion" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="ColorVersion" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Action" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Sort" type="nvarchar" length="10" decimal="0" jt="12" />
+			<column name="MaterialTradeColor1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor3" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor4" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor5" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor6" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor7" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor8" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor9" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor10" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="MaterialTradeColor11" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="MaterialTradeColor12" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="MaterialTradeColor13" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="MaterialTradeColor14" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor15" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor16" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor17" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor18" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor19" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor20" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor21" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor22" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor23" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor24" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradeColor25" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialSizeID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialPrice" type="money" length="19" decimal="4" jt="3" >
+				<defo>0</defo>
+			</column>
+			<column name="AgentView" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="Comments" type="nvarchar(max)" decimal="0" jt="12" />
+			<column name="MaterialRequestShare" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="Status" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>40</defo>
+			</column>
+			<index name="PK_pMaterialTradePartnerColor" unique="PRIMARY_KEY" >
+				<column name="MaterialTradePartnerColorID" />
+			</index>
+			<index name="IX_pMaterialTradePartnerColor_MaterialColorID" unique="NORMAL" >
+				<column name="MaterialColorID" />
+			</index>
+			<index name="IX_pMaterialTradePartnerColor_MaterialID" unique="NORMAL" >
+				<column name="MaterialID" />
+				<column name="MaterialTradePartnerID" />
+				<column name="MaterialColorID" />
+				<column name="MaterialSizeID" />
+			</index>
+			<index name="IX_pMaterialTradePartnerColor_MaterialSizeID" unique="NORMAL" >
+				<column name="MaterialSizeID" />
+			</index>
+			<index name="IX_pMaterialTradePartnerColor_MaterialTradePartnerID" unique="NORMAL" >
+				<column name="MaterialTradePartnerID" />
+			</index>
+			<fk name="Fk_pMaterialTradePartnerColor" to_schema="dbo" to_table="pMaterialTradePartner" >
+				<fk_column name="MaterialTradePartnerID" pk="MaterialTradePartnerId" />
+			</fk>
+			<fk name="Fk_pMaterialTradePartnerColor_0" to_schema="dbo" to_table="pMaterialColor" >
+				<fk_column name="MaterialColorID" pk="MaterialColorID" />
+			</fk>
+		</table>
+		<table name="pMaterialTradePartnerColorFGVendor" >
+			<column name="MaterialTradePartnerColorFGVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialTradePartnerFGVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialTradePartnerColorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Quantity" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="ExMill" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK__pMateria__A55B0CBE30BAB3D0" unique="PRIMARY_KEY" >
+				<column name="MaterialTradePartnerColorFGVendorID" />
+			</index>
+			<index name="idx_pMaterialTradePartnerColorFGVendor" unique="NORMAL" >
+				<column name="MaterialTradePartnerFGVendorID" />
+			</index>
+			<fk name="Fk_pMaterialTradePartnerColorFGVendor" to_schema="dbo" to_table="pMaterialTradePartnerFGVendor" >
+				<fk_column name="MaterialTradePartnerFGVendorID" pk="MaterialTradePartnerFGVendorID" />
+			</fk>
+		</table>
+		<table name="pMaterialTradePartnerFGVendor" >
+			<column name="MaterialTradePartnerFGVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="MaterialTradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Sort" type="nvarchar" length="5" decimal="0" jt="12" />
+			<index name="PK__pMateria__DAEA463E348B44B4" unique="PRIMARY_KEY" >
+				<column name="MaterialTradePartnerFGVendorID" />
+			</index>
+			<index name="idx_pMaterialTradePartnerFGVendor" unique="NORMAL" >
+				<column name="MaterialTradePartnerID" />
+			</index>
+			<fk name="Fk_pMaterialTradePartnerFGVendor" to_schema="dbo" to_table="pMaterialTradePartner" >
+				<fk_column name="MaterialTradePartnerID" pk="MaterialTradePartnerId" />
+			</fk>
+		</table>
+		<table name="pMaterialTradePartnerShare" >
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="MaterialTradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<index name="PK_pMaterialTradePartnerShare" unique="PRIMARY_KEY" >
+				<column name="TradePartnerID" />
+				<column name="MaterialTradePartnerID" />
+			</index>
+			<index name="idx_pMaterialTradePartnerShare" unique="NORMAL" >
+				<column name="MaterialTradePartnerID" />
+			</index>
+			<index name="idx_pMaterialTradePartnerShare_0" unique="NORMAL" >
+				<column name="TradePartnerID" />
+			</index>
+			<fk name="Fk_pMaterialTradePartnerShare" to_schema="dbo" to_table="pMaterialTradePartner" >
+				<fk_column name="MaterialTradePartnerID" pk="MaterialTradePartnerId" />
+			</fk>
+			<fk name="Fk_pMaterialTradePartnerShare_0" to_schema="dbo" to_table="uTradePartner" >
+				<fk_column name="TradePartnerID" pk="TradePartnerID" />
+			</fk>
+		</table>
+		<table name="pMaterialTradePartnerTemp" >
+			<column name="MaterialTradePartnerTempId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialTradePartnerId" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="MaterialId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradepartnerId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradepartnerVendorId" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="MaterialTradePartnerCustom1" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom2" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom3" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom4" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom5" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom6" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom7" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom8" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom9" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom10" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom11" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom12" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom13" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom14" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom15" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom16" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom17" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom18" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom19" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom20" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom21" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom22" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom23" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom24" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MaterialTradePartnerCustom25" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MChange" type="int" length="10" decimal="0" jt="4" />
+			<column name="MaterialRequestWorkflowTempID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<index name="PK_pMaterialTradePartnerTemp" unique="PRIMARY_KEY" >
+				<column name="MaterialTradePartnerTempId" />
+			</index>
+			<index name="idx_pMaterialTradePartnerTemp" unique="NORMAL" >
+				<column name="MaterialTradePartnerId" />
+			</index>
+			<fk name="Fk_pMaterialTradePartnerTemp" to_schema="dbo" to_table="pMaterialTradePartner" >
+				<fk_column name="MaterialTradePartnerId" pk="MaterialTradePartnerId" />
+			</fk>
+		</table>
+		<table name="pSeasonYear" >
+			<column name="SeasonYearID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="Season" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="Year" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="Sort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="CurrentSeason" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="SAPCode" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="CustomID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="CustomKey" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="CustomSort" type="varchar" length="5" decimal="0" jt="12" />
+			<column name="CUSTOM" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="SeasonOrder" type="int" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="PK_pSeasonYear" unique="PRIMARY_KEY" >
+				<column name="SeasonYearID" />
+			</index>
+		</table>
+		<table name="uTradePartner" >
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="TradePartnerCode" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="TradePartnerName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Address1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Address2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="City" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="State" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="PostalCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Country" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="PhoneNumber" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="FaxNumber" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Username" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="Password" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Comments" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="CostingTypeID" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="TradePartnerType" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="TradePartnerClass" type="nvarchar" length="5" decimal="0" jt="12" />
+			<column name="TradePartnerCommision" type="decimal" length="18" decimal="4" jt="3" />
+			<column name="TradePartnerLCRequired" type="int" length="10" decimal="0" jt="4" />
+			<column name="IPADDRESS" type="varchar" length="25" decimal="0" jt="12" />
+			<column name="SESSION" type="int" length="10" decimal="0" jt="4" />
+			<column name="SESSIONDATE" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="SESSIONOS" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="SrmOnAccess" type="int" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="ActivationID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Custom1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="SystemServerID" type="uniqueidentifier" length="36" decimal="0" jt="1" >
+				<defo>&#039;00000000-0000-0000-0000-000000000000&#039;</defo>
+			</column>
+			<column name="Fabric" type="int" length="10" decimal="0" jt="4" />
+			<column name="Trim" type="int" length="10" decimal="0" jt="4" />
+			<column name="FG" type="int" length="10" decimal="0" jt="4" />
+			<column name="Mill" type="int" length="10" decimal="0" jt="4" />
+			<column name="CurrencyType" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Freight" type="decimal" length="18" decimal="6" jt="3" >
+				<defo>0</defo>
+			</column>
+			<column name="Duty" type="decimal" length="18" decimal="6" jt="3" >
+				<defo>0</defo>
+			</column>
+			<column name="HKFreight" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="HKDuty" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="USFreight" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="USDuty" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="TradePartnerRelationshipType" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="TradePartnerTemplateID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="Direct" type="int" length="10" decimal="0" jt="4" />
+			<column name="Laboratory" type="int" length="10" decimal="0" jt="4" />
+			<column name="TradePartnerStatusID" type="int" length="10" decimal="0" jt="4" />
+			<column name="DefaultCurrency" type="nvarchar" length="5" decimal="0" jt="12" />
+			<index name="PK_uTradePartner" unique="PRIMARY_KEY" >
+				<column name="TradePartnerID" />
+			</index>
+			<index name="IX_uTradePartner_05" unique="NORMAL" >
+				<column name="TradePartnerRelationshipType" />
+				<column name="Active" />
+				<column name="TradePartnerName" />
+			</index>
+		</table>
+		<table name="uTradePartnerVendor" >
+			<column name="TradePartnerVendorID" type="uniqueidentifier" length="36" decimal="0" jt="1" mandatory="y" >
+				<defo>newid()</defo>
+			</column>
+			<column name="TradePartnerID" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="VendorCode" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="VendorName" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Address1" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="Address2" type="nvarchar" length="200" decimal="0" jt="12" />
+			<column name="City" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="State" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="PostalCode" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Country" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="PhoneNumber" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="FaxNumber" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="Username" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="Password" type="nvarchar" length="25" decimal="0" jt="12" />
+			<column name="Active" type="int" length="10" decimal="0" jt="4" />
+			<column name="CUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="CDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="MUser" type="nvarchar" length="50" decimal="0" jt="12" />
+			<column name="MDate" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="Comments" type="nvarchar" length="4000" decimal="0" jt="12" />
+			<column name="Agent" type="int" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="Freight" type="decimal" length="18" decimal="3" jt="3" />
+			<column name="Duty" type="decimal" length="18" decimal="3" jt="3" />
+			<column name="Commission" type="decimal" length="18" decimal="3" jt="3" />
+			<column name="Fabric" type="int" length="10" decimal="0" jt="4" />
+			<column name="Trim" type="int" length="10" decimal="0" jt="4" />
+			<column name="FG" type="int" length="10" decimal="0" jt="4" />
+			<column name="Mill" type="int" length="10" decimal="0" jt="4" />
+			<column name="CurrencyType" type="uniqueidentifier" length="36" decimal="0" jt="1" />
+			<column name="HKFreight" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="HKDuty" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="USFreight" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="USDuty" type="decimal" length="18" decimal="2" jt="3" />
+			<column name="Laboratory" type="int" length="10" decimal="0" jt="4" />
+			<index name="PK_uTradePartnerVendor" unique="PRIMARY_KEY" >
+				<column name="TradePartnerVendorID" />
+			</index>
+		</table>
+		<view name="vwx_TradePartnerRelationshipLevels_SEL" >
+			<view_script><![CDATA[
+
+CREATE VIEW [dbo].[vwx_TradePartnerRelationshipLevels_SEL]
+AS
+WITH tree as (
+	SELECT 
+		rl.TradePartnerRelationshipLevelID, rl.TradePartnerRelationshipParentLevelID,
+		rl.TradePartnerID, rl.TradePartnerMasterID,
+		CASE WHEN tprt.TradePartnerLevel = 1 THEN tp.TradePartnerID ELSE NULL END as AgentID,
+		CASE WHEN tprt.TradePartnerLevel = 2 THEN tp.TradePartnerID ELSE NULL END as VendorID,
+		CASE WHEN tprt.TradePartnerLevel = 3 THEN tp.TradePartnerID ELSE NULL END as FactoryID
+	FROM uTradePartnerRelationshipLevel rl
+	LEFT JOIN uTradePartner tp ON tp.TradePartnerID = rl.TradePartnerID
+	LEFT JOIN uTradePartnerRelationshipType tprt ON tp.TradePartnerRelationshipType = tprt.TradePartnerRelationshipTypeID
+	
+	UNION ALL 
+	
+	SELECT 
+		tree.TradePartnerRelationshipLevelID, rl.TradePartnerRelationshipParentLevelID,
+		tree.TradePartnerID, rl.TradePartnerMasterID,
+		CASE WHEN tprt.TradePartnerLevel = 1 THEN tp.TradePartnerID ELSE tree.AgentID END as AgentID,
+		CASE WHEN tprt.TradePartnerLevel = 2 THEN tp.TradePartnerID ELSE tree.VendorID END as VendorID,
+		CASE WHEN tprt.TradePartnerLevel = 3 THEN tp.TradePartnerID ELSE tree.FactoryID END as FactoryID
+	FROM uTradePartnerRelationshipLevel rl
+	INNER JOIN uTradePartner tp ON tp.TradePartnerID = rl.TradePartnerID
+	INNER JOIN uTradePartnerRelationshipType tprt ON tp.TradePartnerRelationshipType = tprt.TradePartnerRelationshipTypeID
+	INNER JOIN tree ON tree.TradePartnerRelationshipParentLevelID = rl.TradePartnerRelationshipLevelID	
+),
+ComplianceCount as (
+	SELECT TradePartnerId
+		, SUM(CASE WHEN StatusId = '00000000-0000-0000-0000-000000000001' THEN 1 ELSE 0 END) AS StatusCount
+	FROM dbo.uTradePartnerCompliance
+	GROUP BY TradePartnerId
+), Compliances AS (
+	SELECT tp.TradePartnerID
+		, CASE WHEN cc.StatusCount IS NULL THEN '00000000-0000-0000-0000-000000000000'
+			   WHEN cc.StatusCount = 0 THEN '00000000-0000-0000-0000-000000000002'
+			   ELSE '00000000-0000-0000-0000-000000000001'
+		  END AS CStatusID
+		, tpcs.StatusDesc
+	FROM uTradePartner tp
+	LEFT JOIN ComplianceCount cc ON tp.TradePartnerID = cc.TradePartnerId
+	INNER JOIN uTradePartnerComplianceStatus tpcs ON CASE
+		WHEN cc.StatusCount IS NULL THEN '00000000-0000-0000-0000-000000000000'
+		WHEN cc.StatusCount = 0 THEN '00000000-0000-0000-0000-000000000002'
+		ELSE '00000000-0000-0000-0000-000000000001' END = tpcs.StatusId
+)
+SELECT 
+	tree.*,
+	tpa.TradePartnerName as AgentName,	tpv.TradePartnerName as VendorName, tpf.TradePartnerName as FactoryName,
+	tpa.TradePartnerCode as AgentCode,  tpv.TradePartnerCode as VendorCode, tpf.TradePartnerCode as FactoryCode,
+	tpa.Active as AgentActive,			tpv.Active as VendorActive,			tpf.Active as FactoryActive,
+	ac.CountryName as AgentCountry,		vc.CountryName as VendorCountry,	fc.CountryName as FactoryCountry,
+	SUBSTRING(ISNULL('/' + tpa.TradePartnerName, '') + ISNULL('/' + tpv.TradePartnerName, '') + ISNULL('/' + tpf.TradePartnerName, ''), 2, 2000) AS TradePartnerFullName,
+	cca.CStatusID as AgentCStatusID, cca.StatusDesc AS AgentCStatus,
+	ccv.CStatusID as VendorCStatusID, ccv.StatusDesc AS VendorCStatus,
+	ccf.CStatusID AS FactoryCStatusID, ccf.StatusDesc AS FactoryCStatus,
+	STUFF((
+		SELECT DISTINCT ', ' + sc.StyleCategory
+		FROM uTradePartnerProductType tppt INNER JOIN pStyleCategory sc ON tppt.StyleCategoryId = sc.StyleCategoryId
+		WHERE tppt.TradePartnerId = COALESCE(FactoryID, VendorID, AgentID) FOR xml path('')
+	), 1, 2, '') as ProductType
+FROM tree
+LEFT JOIN uTradePartner tpa ON tpa.TradePartnerID = tree.AgentID
+LEFT JOIN uTradePartner tpv ON tpv.TradePartnerID = tree.VendorID
+LEFT JOIN uTradePartner tpf ON tpf.TradePartnerID = tree.FactoryID
+LEFT JOIN uCountry ac ON ac.CountryCode = tpa.Country
+LEFT JOIN uCountry vc ON vc.CountryCode = tpv.Country
+LEFT JOIN uCountry fc ON fc.CountryCode = tpf.Country
+LEFT JOIN Compliances cca ON cca.TradePartnerId = tree.AgentID 
+LEFT JOIN Compliances ccv ON ccv.TradePartnerId = tree.VendorID
+LEFT JOIN Compliances ccf ON ccf.TradePartnerId = tree.FactoryID
+WHERE tree.TradePartnerRelationshipParentLevelID IS NULL]]></view_script>
+			<column name="AgentActive" type="int" />
+			<column name="AgentCStatus" type="nvarchar" />
+			<column name="AgentCStatusID" type="varchar" />
+			<column name="AgentCode" type="nvarchar" />
+			<column name="AgentCountry" type="nvarchar" />
+			<column name="AgentID" type="uniqueidentifier" />
+			<column name="AgentName" type="nvarchar" />
+			<column name="FactoryActive" type="int" />
+			<column name="FactoryCStatus" type="nvarchar" />
+			<column name="FactoryCStatusID" type="varchar" />
+			<column name="FactoryCode" type="nvarchar" />
+			<column name="FactoryCountry" type="nvarchar" />
+			<column name="FactoryID" type="uniqueidentifier" />
+			<column name="FactoryName" type="nvarchar" />
+			<column name="ProductType" type="nvarchar(max)" />
+			<column name="TradePartnerFullName" type="nvarchar" />
+			<column name="TradePartnerID" type="uniqueidentifier" />
+			<column name="TradePartnerMasterID" type="uniqueidentifier" />
+			<column name="TradePartnerRelationshipLevelID" type="uniqueidentifier" />
+			<column name="TradePartnerRelationshipParentLevelID" type="uniqueidentifier" />
+			<column name="VendorActive" type="int" />
+			<column name="VendorCStatus" type="nvarchar" />
+			<column name="VendorCStatusID" type="varchar" />
+			<column name="VendorCode" type="nvarchar" />
+			<column name="VendorCountry" type="nvarchar" />
+			<column name="VendorID" type="uniqueidentifier" />
+			<column name="VendorName" type="nvarchar" />
+		</view>
+	</schema>
+	<layout id="Layout_c7f47a7" name="dbo" show_relation_columns="y" >
+		<entity schema="dbo" name="uTradePartnerVendor" color="bfd4f5" x="840" y="2115" />
+		<entity schema="dbo" name="pMaterial" color="d2bff5" x="705" y="2115" >
+			<column name="MaterialID" />
+		</entity>
+		<entity schema="dbo" name="pMaterialRequestWorkflow" color="f5ddbf" x="1050" y="2115" />
+		<entity schema="dbo" name="pMaterialRequestWorkflowTemplateItem" color="bfd4f5" x="840" y="1755" />
+		<entity schema="dbo" name="pMaterialRequestWorkflowItem" color="f5ddbf" x="1050" y="2730" />
+		<entity schema="dbo" name="pMaterialRequestWorkflowGroup" color="f5ddbf" x="570" y="1890" />
+		<entity schema="dbo" name="vwx_TradePartnerRelationshipLevels_SEL" color="bfd4f5" x="555" y="2730" />
+		<entity schema="dbo" name="pMaterialRequestSubmitWorkflow" color="f5ddbf" x="435" y="2115" />
+		<entity schema="dbo" name="pMaterialRequestSubmitGroup" color="bfbff5" x="1350" y="2115" />
+		<entity schema="dbo" name="pMaterialTradePartnerTemp" color="c8f5bf" x="1350" y="2535" />
+		<entity schema="dbo" name="pMaterialRequestSubmitItemStatus" color="bfbff5" x="1350" y="2280" />
+		<entity schema="dbo" name="pMaterialTradePartnerColorFGVendor" color="bfd4f5" x="840" y="1530" />
+		<entity schema="dbo" name="pMaterialTradePartnerFGVendor" color="bfd4f5" x="585" y="1560" />
+		<entity schema="dbo" name="pMaterialRequestContent" color="c8f5bf" x="1125" y="1755" />
+		<entity schema="dbo" name="pMaterialRequestSubmitWorkflowShare" color="bfbff5" x="1050" y="2565" />
+		<entity schema="dbo" name="pMaterialRequestTempWorkflow" color="bfd4f5" x="1050" y="3105" />
+		<entity schema="dbo" name="pMaterialRequestAgentVendorTemp" color="c8f5bf" x="300" y="1890" />
+		<entity schema="dbo" name="pMaterialRequestSubmitDocument" color="c8f5bf" x="315" y="1665" />
+		<entity schema="dbo" name="pMaterialRequestSubmitComment" color="c8f5bf" x="285" y="2730" />
+		<entity schema="dbo" name="pMaterialTradePartner" color="c8f5bf" x="555" y="3240" />
+		<entity schema="dbo" name="pMaterialRequestWorkflowTemplate" color="f5ddbf" x="270" y="3240" />
+		<entity schema="dbo" name="uTradePartner" color="bfd4f5" x="1620" y="1710" />
+		<entity schema="dbo" name="Users" color="bfd4f5" x="1350" y="45" />
+		<entity schema="dbo" name="pMaterialTradePartnerShare" color="bfd4f5" x="1620" y="1545" />
+		<entity schema="dbo" name="pMaterialRequestDocument" color="bfbff5" x="1605" y="2835" />
+		<entity schema="dbo" name="pMaterialSampleWorkflowViewAgent" color="bfd4f5" x="1605" y="3180" />
+		<entity schema="dbo" name="pMaterialRequestSubmitStatus" color="bfbff5" x="1350" y="3180" />
+		<entity schema="dbo" name="pSeasonYear" color="d2bff5" x="840" y="1185" />
+		<entity schema="dbo" name="pMaterialRequestTemp" color="f5ddbf" x="570" y="1290" />
+		<entity schema="dbo" name="pMaterialColorSeasonYear" color="d2bff5" x="1125" y="1260" />
+		<entity schema="dbo" name="pMaterialRequestSeasonColorTemp" color="d2bff5" x="1050" y="3390" />
+		<entity schema="dbo" name="pMaterialRequestSubmit" color="d2bff5" x="45" y="1890" />
+		<entity schema="dbo" name="pMaterialColor" color="d2bff5" x="75" y="1155" />
+		<entity schema="dbo" name="pMaterialTradePartnerColor" color="bfd4f5" x="570" y="1770" >
+			<column name="MaterialTradePartnerColorID" />
+			<column name="MaterialTradePartnerID" />
+			<column name="MaterialColorID" />
+		</entity>
+		<entity schema="dbo" name="pMaterialRequestSubmitItem" color="bfbff5" x="1350" y="1710" />
+		<group name="Material_Request" color="c4e0f9" >
+			<entity schema="dbo" name="uTradePartnerVendor" />
+			<entity schema="dbo" name="pMaterial" />
+			<entity schema="dbo" name="pMaterialRequestWorkflow" />
+			<entity schema="dbo" name="pMaterialRequestWorkflowTemplateItem" />
+			<entity schema="dbo" name="pMaterialRequestWorkflowItem" />
+			<entity schema="dbo" name="pMaterialRequestWorkflowGroup" />
+			<entity schema="dbo" name="vwx_TradePartnerRelationshipLevels_SEL" />
+			<entity schema="dbo" name="pMaterialRequestSubmitWorkflow" />
+			<entity schema="dbo" name="pMaterialRequestSubmitGroup" />
+			<entity schema="dbo" name="pMaterialRequestSubmitItem" />
+			<entity schema="dbo" name="pMaterialTradePartnerTemp" />
+			<entity schema="dbo" name="pMaterialRequestSubmitItemStatus" />
+			<entity schema="dbo" name="pMaterialTradePartnerColorFGVendor" />
+			<entity schema="dbo" name="pMaterialTradePartnerFGVendor" />
+			<entity schema="dbo" name="pMaterialRequestContent" />
+			<entity schema="dbo" name="pMaterialRequestSubmitWorkflowShare" />
+			<entity schema="dbo" name="pMaterialRequestTempWorkflow" />
+			<entity schema="dbo" name="pMaterialRequestAgentVendorTemp" />
+			<entity schema="dbo" name="pMaterialRequestSubmitDocument" />
+			<entity schema="dbo" name="pMaterialRequestSubmitComment" />
+			<entity schema="dbo" name="pMaterialTradePartner" />
+			<entity schema="dbo" name="pMaterialRequestWorkflowTemplate" />
+			<entity schema="dbo" name="uTradePartner" />
+			<entity schema="dbo" name="Users" />
+			<entity schema="dbo" name="pMaterialTradePartnerShare" />
+			<entity schema="dbo" name="pMaterialRequestDocument" />
+			<entity schema="dbo" name="pMaterialSampleWorkflowViewAgent" />
+			<entity schema="dbo" name="pMaterialRequestSubmitStatus" />
+			<entity schema="dbo" name="pSeasonYear" />
+			<entity schema="dbo" name="pMaterialRequestTemp" />
+			<entity schema="dbo" name="pMaterialColorSeasonYear" />
+			<entity schema="dbo" name="pMaterialRequestSeasonColorTemp" />
+			<entity schema="dbo" name="pMaterialRequestSubmit" />
+			<entity schema="dbo" name="pMaterialColor" />
+			<entity schema="dbo" name="pMaterialTradePartnerColor" />
+		</group>
+	</layout>
+</project>

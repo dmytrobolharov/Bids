@@ -55,6 +55,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -92,6 +93,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -129,6 +131,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -166,6 +169,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -203,6 +207,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -240,6 +245,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -278,6 +284,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -315,6 +322,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -352,6 +360,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -389,6 +398,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -426,6 +436,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -463,6 +474,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -500,6 +512,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
               <TablixCornerCell>
@@ -537,6 +550,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixCornerCell>
             </TablixCornerRow>
@@ -595,6 +609,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -649,6 +664,7 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -710,6 +726,7 @@
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
+                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                       <TablixMembers>
@@ -746,6 +763,7 @@
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
@@ -782,6 +800,7 @@
                                       <PaddingBottom>2pt</PaddingBottom>
                                     </Style>
                                   </Textbox>
+                                  <rd:Selected>true</rd:Selected>
                                 </CellContents>
                               </TablixHeader>
                               <TablixMembers>
@@ -820,6 +839,7 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixHeader>
                                   <TablixMembers>
@@ -863,6 +883,7 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixHeader>
                                       <TablixMembers>
@@ -906,6 +927,7 @@
                                                   <PaddingBottom>2pt</PaddingBottom>
                                                 </Style>
                                               </Textbox>
+                                              <rd:Selected>true</rd:Selected>
                                             </CellContents>
                                           </TablixHeader>
                                           <TablixMembers>
@@ -955,6 +977,7 @@
                                                           <PaddingBottom>2pt</PaddingBottom>
                                                         </Style>
                                                       </Textbox>
+                                                      <rd:Selected>true</rd:Selected>
                                                     </CellContents>
                                                   </TablixHeader>
                                                   <TablixMembers>
@@ -1034,6 +1057,7 @@
                                                                   <PaddingBottom>2pt</PaddingBottom>
                                                                 </Style>
                                                               </Textbox>
+                                                              <rd:Selected>true</rd:Selected>
                                                             </CellContents>
                                                           </TablixHeader>
                                                           <TablixMembers>
@@ -1073,6 +1097,7 @@
                                                                       <PaddingBottom>2pt</PaddingBottom>
                                                                     </Style>
                                                                   </Textbox>
+                                                                  <rd:Selected>true</rd:Selected>
                                                                 </CellContents>
                                                               </TablixHeader>
                                                               <TablixMembers>
@@ -1112,6 +1137,7 @@
                                                                           <PaddingBottom>2pt</PaddingBottom>
                                                                         </Style>
                                                                       </Textbox>
+                                                                      <rd:Selected>true</rd:Selected>
                                                                     </CellContents>
                                                                   </TablixHeader>
                                                                   <TablixMembers>
@@ -1151,6 +1177,7 @@
                                                                               <PaddingBottom>2pt</PaddingBottom>
                                                                             </Style>
                                                                           </Textbox>
+                                                                          <rd:Selected>true</rd:Selected>
                                                                         </CellContents>
                                                                       </TablixHeader>
                                                                       <TablixMembers>
@@ -1190,6 +1217,7 @@
                                                                                   <PaddingBottom>2pt</PaddingBottom>
                                                                                 </Style>
                                                                               </Textbox>
+                                                                              <rd:Selected>true</rd:Selected>
                                                                             </CellContents>
                                                                           </TablixHeader>
                                                                           <TablixMembers>
@@ -1229,6 +1257,7 @@
                                                                                       <PaddingBottom>2pt</PaddingBottom>
                                                                                     </Style>
                                                                                   </Textbox>
+                                                                                  <rd:Selected>true</rd:Selected>
                                                                                 </CellContents>
                                                                               </TablixHeader>
                                                                               <TablixMembers>
@@ -2080,7 +2109,11 @@
     <DataSet Name="ParamQuery_StyleCategoryID">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT  DISTINCT StyleCategoryID, StyleCategory FROM pStyleCategory WHERE Active = 1 ORDER BY StyleCategory ASC</CommandText>
+        <CommandText>SELECT DISTINCT StyleCategoryID, StyleCategory
+FROM pStyleCategory
+WHERE Active = 1
+ORDER BY StyleCategory ASC
+</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -2104,17 +2137,41 @@
           <QueryParameter Name="@DateTo">
             <Value>=Parameters!DateTo.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Seasons">
+          <QueryParameter Name="@Season">
             <Value>=Parameters!Season.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@Years">
+          <QueryParameter Name="@Year">
             <Value>=Parameters!Year.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@UserGroup">
-            <Value>=Parameters!UserGroup.Value</Value>
+          <QueryParameter Name="@DivisionID">
+            <Value>=Parameters!DivisionID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleTypeID">
+            <Value>=Parameters!StyleType.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StyleCategoryID">
+            <Value>=Parameters!StyleCategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SizeClassID">
+            <Value>=Parameters!SizeClass.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SizeRangeID">
+            <Value>=Parameters!SizeRange.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TradePartnerID">
+            <Value>=Parameters!TradePartner.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@NoofSubmits">
             <Value>=Parameters!NoofSubmits.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SubmitStatus">
+            <Value>=Parameters!SubmitStatus.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SampleWorkflowID">
+            <Value>=Parameters!Workflow.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@UserGroup">
+            <Value>=Parameters!UserGroup.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
@@ -2153,10 +2210,6 @@
           <DataField>SeasonYear</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Variation">
-          <DataField>Variation</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="SampleRequestTradeID">
           <DataField>SampleRequestTradeID</DataField>
           <rd:TypeName>System.Guid</rd:TypeName>
@@ -2168,6 +2221,10 @@
         <Field Name="DivisionID">
           <DataField>DivisionID</DataField>
           <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="StyleTypeID">
+          <DataField>StyleTypeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="ItemDim2Name">
           <DataField>ItemDim2Name</DataField>
@@ -2202,16 +2259,12 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="StyleStatusId">
-          <DataField>StyleStatusId</DataField>
+          <DataField>StyleStatusID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FactoryName">
           <DataField>FactoryName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StyleType">
-          <DataField>StyleType</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="SampleWorkflow">
           <DataField>SampleWorkflow</DataField>
@@ -2221,120 +2274,36 @@
           <DataField>DueDate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Status">
-          <DataField>Status</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="StyleCategoryID">
           <DataField>StyleCategoryID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="AgentID">
-          <DataField>AgentID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="VendorID">
-          <DataField>VendorID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="SampleWorkflowID">
-          <DataField>SampleWorkflowID</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FactoryID">
-          <DataField>FactoryID</DataField>
           <rd:TypeName>System.Guid</rd:TypeName>
         </Field>
         <Field Name="StyleID">
           <DataField>StyleID</DataField>
           <rd:TypeName>System.Guid</rd:TypeName>
         </Field>
-        <Field Name="SeasonYearID">
-          <DataField>SeasonYearID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
+        <Field Name="SampleWorkflowID">
+          <DataField>SampleWorkflowID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Submit">
           <DataField>Submit</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="SeasonYearID">
+          <DataField>SeasonYearID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
       </Fields>
-      <Filters>
-        <Filter>
-          <FilterExpression>=Fields!StyleCategoryID.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!StyleCategoryID.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-        <Filter>
-          <FilterExpression>=Fields!SizeClass.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!SizeClass.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-        <Filter>
-          <FilterExpression>=Fields!SizeRange.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!SizeRange.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-        <Filter>
-          <FilterExpression>=Fields!StyleType.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!StyleType.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-        <Filter>
-          <FilterExpression>=Fields!Status.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!SubmitStatus.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-        <Filter>
-          <FilterExpression>=Fields!AgentID.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!Agent.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-        <Filter>
-          <FilterExpression>=Fields!VendorID.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!Vendor.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-        <Filter>
-          <FilterExpression>=Fields!FactoryID.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!Factory.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-        <Filter>
-          <FilterExpression>=Fields!SampleWorkflowID.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!Workflow.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-        <Filter>
-          <FilterExpression>=Fields!DivisionID.Value</FilterExpression>
-          <Operator>In</Operator>
-          <FilterValues>
-            <FilterValue>=Parameters!DivisionID.Value</FilterValue>
-          </FilterValues>
-        </Filter>
-      </Filters>
     </DataSet>
     <DataSet Name="ParamQuery_StyleType">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT StyleTypeID, StyleTypeDescription FROM pStyleType</CommandText>
+        <CommandText>SELECT StyleTypeID, StyleTypeDescription
+FROM pStyleType
+WHERE Active = 1
+ORDER BY StyleType ASC
+</CommandText>
       </Query>
       <Fields>
         <Field Name="StyleTypeID">
@@ -2350,31 +2319,48 @@
     <DataSet Name="ParamQuery_SizeClass">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT Custom FROM pSizeClass WHERE Active = 1</CommandText>
+        <CommandText>SELECT Custom, CustomID
+FROM pSizeClass
+WHERE Active = 1
+</CommandText>
       </Query>
       <Fields>
         <Field Name="Custom">
           <DataField>Custom</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CustomID">
+          <DataField>CustomID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="ParamQuery_SizeRange">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT SizeRangeCode FROM pSizeRange WHERE Active = 1</CommandText>
+        <CommandText>SELECT SizeRangeCode, CustomId
+FROM pSizeRange
+WHERE Active = 1
+</CommandText>
       </Query>
       <Fields>
         <Field Name="SizeRangeCode">
           <DataField>SizeRangeCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CustomId">
+          <DataField>CustomId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="ParamQuery_SubmitStatus">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>select StatusID, Status from pSampleRequestSubmitStatus WHERE Active = 1</CommandText>
+        <CommandText>SELECT StatusID, Status
+FROM pSampleRequestSubmitStatus
+WHERE Active = 1
+</CommandText>
       </Query>
       <Fields>
         <Field Name="StatusID">
@@ -2420,82 +2406,33 @@
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="ParamQuery_Agent">
+    <DataSet Name="ParamQuery_TradePartner">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT tp.TradePartnerName, tp.TradePartnerID, 1 AS Sort
-FROM uTradePartner tp INNER JOIN uTradePartnerRelationshipType tprt ON tp.TradePartnerRelationshipType = tprt.TradePartnerRelationshipTypeID
-WHERE tp.Active = 1 AND tprt.TradePartnerLevel = 1
-UNION SELECT 'N/A', '00000000-0000-0000-0000-000000000000', 0 AS Sort
-ORDER BY Sort, tp.TradePartnerName</CommandText>
+        <CommandText>SELECT TradePartnerFullName, TradePartnerRelationshipLevelID
+FROM vwx_TradePartnerRelationshipLevels_SEL
+ORDER BY TradePartnerFullName
+</CommandText>
       </Query>
       <Fields>
-        <Field Name="TradePartnerName">
-          <DataField>TradePartnerName</DataField>
+        <Field Name="TradePartnerFullName">
+          <DataField>TradePartnerFullName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TradePartnerID">
-          <DataField>TradePartnerID</DataField>
+        <Field Name="TradePartnerRelationshipLevelID">
+          <DataField>TradePartnerRelationshipLevelID</DataField>
           <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="Sort">
-          <DataField>Sort</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="ParamQuery_Vendor">
-      <Query>
-        <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT tp.TradePartnerName, tp.TradePartnerID, 1 AS Sort
-FROM uTradePartner tp INNER JOIN uTradePartnerRelationshipType tprt ON tp.TradePartnerRelationshipType = tprt.TradePartnerRelationshipTypeID
-WHERE tp.Active = 1 AND tprt.TradePartnerLevel = 2
-UNION SELECT 'N/A', '00000000-0000-0000-0000-000000000000', 0 AS Sort
-ORDER BY Sort, tp.TradePartnerName</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="TradePartnerName">
-          <DataField>TradePartnerName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TradePartnerID">
-          <DataField>TradePartnerID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="Sort">
-          <DataField>Sort</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="ParamQuery_Factory">
-      <Query>
-        <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT tp.TradePartnerName, tp.TradePartnerID, 1 AS Sort
-FROM uTradePartner tp INNER JOIN uTradePartnerRelationshipType tprt ON tp.TradePartnerRelationshipType = tprt.TradePartnerRelationshipTypeID
-WHERE tp.Active = 1 AND tprt.TradePartnerLevel = 1
-UNION SELECT 'N/A', '00000000-0000-0000-0000-000000000000', 0 AS Sort
-ORDER BY Sort, tp.TradePartnerName</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="TradePartnerName">
-          <DataField>TradePartnerName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TradePartnerID">
-          <DataField>TradePartnerID</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="Sort">
-          <DataField>Sort</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
     <DataSet Name="ParamQuery_Workflow">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT SampleWorkflowID, SampleWorkflow FROM pSampleWorkflow WHERE LOWER(Active) = 'yes' ORDER BY SampleWorkflowSort, SampleWorkflow</CommandText>
+        <CommandText>SELECT SampleWorkflowID, SampleWorkflow
+FROM pSampleWorkflow
+WHERE LOWER(Active) = 'yes'
+ORDER BY SampleWorkflowSort, SampleWorkflow
+</CommandText>
       </Query>
       <Fields>
         <Field Name="SampleWorkflowID">
@@ -2511,7 +2448,11 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
     <DataSet Name="ParamQuery_DivisionID">
       <Query>
         <DataSourceName>plmOn</DataSourceName>
-        <CommandText>SELECT CustomID AS DivisionID, Custom AS Division FROM iCustom1 WHERE Active = 1 ORDER BY CustomSort, Custom</CommandText>
+        <CommandText>SELECT CustomID AS DivisionID, Custom AS Division
+FROM iCustom1
+WHERE Active = 1
+ORDER BY CustomSort, Custom
+</CommandText>
       </Query>
       <Fields>
         <Field Name="DivisionID">
@@ -2565,20 +2506,20 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
       <MultiValue>true</MultiValue>
       <UsedInQuery>True</UsedInQuery>
     </ReportParameter>
-    <ReportParameter Name="Agent">
+    <ReportParameter Name="TradePartner">
       <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>ParamQuery_Agent</DataSetName>
-          <ValueField>TradePartnerID</ValueField>
+          <DataSetName>ParamQuery_TradePartner</DataSetName>
+          <ValueField>TradePartnerRelationshipLevelID</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Agent</Prompt>
+      <Prompt>Trade Partner</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>ParamQuery_Agent</DataSetName>
-          <ValueField>TradePartnerID</ValueField>
-          <LabelField>TradePartnerName</LabelField>
+          <DataSetName>ParamQuery_TradePartner</DataSetName>
+          <ValueField>TradePartnerRelationshipLevelID</ValueField>
+          <LabelField>TradePartnerFullName</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
@@ -2602,24 +2543,6 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
       <MultiValue>true</MultiValue>
       <UsedInQuery>True</UsedInQuery>
     </ReportParameter>
-    <ReportParameter Name="Vendor">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <DataSetReference>
-          <DataSetName>ParamQuery_Vendor</DataSetName>
-          <ValueField>TradePartnerID</ValueField>
-        </DataSetReference>
-      </DefaultValue>
-      <Prompt>Vendor</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>ParamQuery_Vendor</DataSetName>
-          <ValueField>TradePartnerID</ValueField>
-          <LabelField>TradePartnerName</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
     <ReportParameter Name="DivisionID">
       <DataType>String</DataType>
       <DefaultValue>
@@ -2634,24 +2557,6 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
           <DataSetName>ParamQuery_DivisionID</DataSetName>
           <ValueField>DivisionID</ValueField>
           <LabelField>Division</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="Factory">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <DataSetReference>
-          <DataSetName>ParamQuery_Factory</DataSetName>
-          <ValueField>TradePartnerID</ValueField>
-        </DataSetReference>
-      </DefaultValue>
-      <Prompt>Factory</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>ParamQuery_Factory</DataSetName>
-          <ValueField>TradePartnerID</ValueField>
-          <LabelField>TradePartnerName</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
@@ -2736,14 +2641,14 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
       <DefaultValue>
         <DataSetReference>
           <DataSetName>ParamQuery_SizeClass</DataSetName>
-          <ValueField>Custom</ValueField>
+          <ValueField>CustomID</ValueField>
         </DataSetReference>
       </DefaultValue>
       <Prompt>Size Class</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>ParamQuery_SizeClass</DataSetName>
-          <ValueField>Custom</ValueField>
+          <ValueField>CustomID</ValueField>
           <LabelField>Custom</LabelField>
         </DataSetReference>
       </ValidValues>
@@ -2760,14 +2665,14 @@ ORDER BY Sort, tp.TradePartnerName</CommandText>
       <DefaultValue>
         <DataSetReference>
           <DataSetName>ParamQuery_SizeRange</DataSetName>
-          <ValueField>SizeRangeCode</ValueField>
+          <ValueField>CustomId</ValueField>
         </DataSetReference>
       </DefaultValue>
       <Prompt>Size Range</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>ParamQuery_SizeRange</DataSetName>
-          <ValueField>SizeRangeCode</ValueField>
+          <ValueField>CustomId</ValueField>
           <LabelField>SizeRangeCode</LabelField>
         </DataSetReference>
       </ValidValues>

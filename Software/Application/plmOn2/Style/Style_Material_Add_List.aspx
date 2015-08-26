@@ -4,16 +4,23 @@
 <html>
 	<head>
 		<title>Material Add</title>
-		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet">
-		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet">
+		<link href="../System/CSS/Style.css" type="text/css" rel="stylesheet" />
+		<link href="../System/CSS/Grid.css" type="text/css" rel="stylesheet" />
         <link href="../System/CSS/Help.css" rel="stylesheet" type="text/css" />
         <link href="../System/CSS/waitControl.css" rel="stylesheet" type="text/css" />
-		<script language="javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
+		<script language="javascript" type="text/javascript" SRC="../System/Jscript/YSCalendarFunctions.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/jquery-1.8.3.min.js"></script>
 	    <script language="javascript" type="text/javascript" src="../System/Jscript/jqueryZoom.js"></script>
 	    <script language="javascript" type="text/javascript" src="../system/jscript/FillDRL.js"></script>
     	<script language="javascript" type="text/javascript" src="../system/jscript/floatButtonBar.js"></script>
         <script language="javascript" type="text/javascript" src="../system/jscript/waitControl.js"></script>
+        <style type="text/css">        
+              #DataGrid1 td span {	           	            
+                white-space: nowrap;
+                text-overflow: ellipsis !important;
+                overflow: hidden !important;
+                }        
+        </style>
 	</head>
 	<body MS_POSITIONING="GridLayout">
     <div id="fixed_icons"><a href="../Help/Help_Folder.aspx?Folder=<%= Folder %>&HID=<%= HelpID %>" title="Help" target="_blank" id="yHelp"></a></div>

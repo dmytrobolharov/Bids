@@ -4,7 +4,7 @@
   <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
     <commandLine file="YuniquePLM.Toolkit.Portable.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -211,14 +211,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="plmOnBizObj.dll" size="1200128">
-      <assemblyIdentity name="plmOnBizObj" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="plmOnBizObj.dll" size="1199616">
+      <assemblyIdentity name="plmOnBizObj" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Mj5Q/r4YYlE70+Owd1AzdKxPhjg=</dsig:DigestValue>
+        <dsig:DigestValue>3ozNFBJlSgDcIySrnjuCvYbIY+c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -248,109 +248,109 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="YSWebControls.dll" size="86016">
-      <assemblyIdentity name="YSWebControls" version="6.1.0.47930" publicKeyToken="2091C8D306170FAC" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="YSWebControls" version="6.1.0.49952" publicKeyToken="2091C8D306170FAC" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>cC6wzMrRpCP0vibWhVP/suZJJjM=</dsig:DigestValue>
+        <dsig:DigestValue>T8xyTj8/wrmDAd/uxGwDggRU8cM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.API.Common.dll" size="26112">
-      <assemblyIdentity name="Yunique.API.Common" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.API.Common" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>hucrxsaGQwM5YCRJ9PALbi1TaKA=</dsig:DigestValue>
+        <dsig:DigestValue>mJRBXcyPi2LuCXUTa2xDslNT7vE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.dll" size="1164800">
-      <assemblyIdentity name="Yunique.Core" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.dll" size="1167872">
+      <assemblyIdentity name="Yunique.Core" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ilLzaKoSmbPfA2rZI+oavaHXBN8=</dsig:DigestValue>
+        <dsig:DigestValue>6E/to2BuxMMtviIBbEH8gTErkYk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.Extensions.dll" size="249344">
-      <assemblyIdentity name="Yunique.Core.Extensions" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.Extensions" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+luI9LDkQv6xg8/fd1YP8PbrcH4=</dsig:DigestValue>
+        <dsig:DigestValue>6knRkNbCG/dIoew+f5w9VtogBJY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.License.dll" size="21504">
-      <assemblyIdentity name="Yunique.Core.License" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.License" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>e6O4R1CNAdiZzBCseytXbfFlsY4=</dsig:DigestValue>
+        <dsig:DigestValue>Ws1URqGJh886CnydI0ZvdSjx3AA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.Logger.dll" size="59392">
-      <assemblyIdentity name="Yunique.Core.Logger" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.Logger" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>yCqbLZKAmab3tM0LMfN3m3IxGNQ=</dsig:DigestValue>
+        <dsig:DigestValue>kog5bEqdbpTnXQMGez4r02mNT1s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Core.Utilities.dll" size="23552">
-      <assemblyIdentity name="Yunique.Core.Utilities" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Core.Utilities" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Yb00t9NWRnbCa9A7GF6STJ7v6hU=</dsig:DigestValue>
+        <dsig:DigestValue>Qte7TnVXiW0zvJ8ZFBplg2dCVHY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Yunique.Toolkit.API.DTO.dll" size="143360">
-      <assemblyIdentity name="Yunique.Toolkit.API.DTO" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Yunique.Toolkit.API.DTO" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>nWN2JTwnQvRC3QPDTCemdvpgvX0=</dsig:DigestValue>
+        <dsig:DigestValue>l2rPEY94RXZXhVEP0wdsPlPhwIA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="YuniquePLM.Toolkit.Portable.exe" size="3398656">
-      <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.1.0.47930" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="YuniquePLM.Toolkit.Portable" version="6.1.0.49952" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>w4+zjo+5cLfUYYLvk1IoVWAs5lY=</dsig:DigestValue>
+        <dsig:DigestValue>gsw8fgXAo9qPPl8ujX7vYPKWHZs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -559,4 +559,4 @@
       <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
     </application>
   </compatibility>
-<publisherIdentity name="CN=Gerber Technology" issuerKeyHash="1fc86df2a5e0c3a824b50dec47e5ba42a7e6e3b9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>GWqZrDPMkwVqUhwOYkuoMhnxFfo=</DigestValue></Reference></SignedInfo><SignatureValue>X3DSvO9PhejHjdQE6n4CSBs2PFmCtxcuhdL+qUu7Y6v0cYhIxpE8dX8vXc56LQNytWokHqzgYyyquz+5AaNOcWaFjFU5SIudBVAwcgZBAK7MqaJWQMtctbtZXd2ZcqcrPJ4EbmgxBiDUDajbc7wqy/V7eL2SQLlQsSLtmBtcq7s=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>7W/OJCWkHGLY3NmQjINNzKuhvVzQqYiR0HwE24TatdLwcEzz6wGN7spMjpwzkhFYhK7fmthY9G97WSiMy0AfdRb71J3Vh/IUzp7R8B8E1UVXyZG695Fy9Pbrr5gnz9QDqT570Uwhfx0ksOLL/dZQCYMZMWuevT/mIHucnpzJ+Ls=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="fa15f11932a84b620e1c526a0593cc33ac996a19" Description="" Url=""><as:assemblyIdentity name="YuniquePLM.Toolkit.Portable.exe" version="2.1.5155.1629" publicKeyToken="c5b4c233df151136" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Gerber Technology</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>ZIEcZIcBYG9BjCCybJMa+34bp2I=</DigestValue></Reference></SignedInfo><SignatureValue>swyucUVU3r4/+VTDFsFkCE2J9y0gtIfv9W78w5NT+dgphfLF47QO7XKvTPIjHyHXjWkZOFNJykkMv2ygUnJWaZZdgFwnkBKhdazVR6ZgPPIAoKf+MMLPpC8QGI6kmU8caryT+RQkn+fqArkJzNcA/aqVWBOwIFuA6iEeKr1kZ0c=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>7W/OJCWkHGLY3NmQjINNzKuhvVzQqYiR0HwE24TatdLwcEzz6wGN7spMjpwzkhFYhK7fmthY9G97WSiMy0AfdRb71J3Vh/IUzp7R8B8E1UVXyZG695Fy9Pbrr5gnz9QDqT570Uwhfx0ksOLL/dZQCYMZMWuevT/mIHucnpzJ+Ls=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICCDCCAXWgAwIBAgIQHsL/QC58SJ1My2m7Idd/4zAJBgUrDgMCHQUAMBwxGjAYBgNVBAMTEUdlcmJlciBUZWNobm9sb2d5MCAXDTE1MDIwODA2MDAwMFoYDzIwNTAwMTAxMDYwMDAwWjAcMRowGAYDVQQDExFHZXJiZXIgVGVjaG5vbG9neTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA7W/OJCWkHGLY3NmQjINNzKuhvVzQqYiR0HwE24TatdLwcEzz6wGN7spMjpwzkhFYhK7fmthY9G97WSiMy0AfdRb71J3Vh/IUzp7R8B8E1UVXyZG695Fy9Pbrr5gnz9QDqT570Uwhfx0ksOLL/dZQCYMZMWuevT/mIHucnpzJ+LsCAwEAAaNRME8wTQYDVR0BBEYwRIAQDWr6C2qz9ZOhUFxVAVdNBqEeMBwxGjAYBgNVBAMTEUdlcmJlciBUZWNobm9sb2d5ghAewv9ALnxInUzLabsh13/jMAkGBSsOAwIdBQADgYEA3+psgFjXNJf8fS+bzQCnPYC/N/p0KzebVFEJCWDdUTDv/36F5LWs0HbR4Ae8fBnlaCgaZqRE2sAjQ03oG/0gki4Dmo8QtHOd7gDPp+UYhx4pawb1ARRkVHTiWjB9bIu4Lwq4wznnm74ptO5ALlV1imsxkb3FNglIfQevl+WzL84=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=Gerber Technology" issuerKeyHash="1fc86df2a5e0c3a824b50dec47e5ba42a7e6e3b9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>yRLOOXU1if6lPkwEmN1Cbs5n3K8=</DigestValue></Reference></SignedInfo><SignatureValue>C/p4oX8Mj/gy9c6QPu0y20bzVr4SnkkqdZPO4VZhn8Q6LDuWpzI0wE5QQhodL9AsTb7Pn9fbiIUbA5wd3woIpCsXybslQAdu/vdKkwxtfzY6raxNvs+D68A+CiilmNrofcZdpJsqH5tH9ifb34cRMvuaW3kjLN86wEN02r8UQBE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>7W/OJCWkHGLY3NmQjINNzKuhvVzQqYiR0HwE24TatdLwcEzz6wGN7spMjpwzkhFYhK7fmthY9G97WSiMy0AfdRb71J3Vh/IUzp7R8B8E1UVXyZG695Fy9Pbrr5gnz9QDqT570Uwhfx0ksOLL/dZQCYMZMWuevT/mIHucnpzJ+Ls=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="afdc67ce6e42dd98044c3ea5fe89357539ce12c9" Description="" Url=""><as:assemblyIdentity name="YuniquePLM.Toolkit.Portable.exe" version="2.1.5155.1629" publicKeyToken="c5b4c233df151136" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Gerber Technology</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>nfw323c1uQ6PaF2IA/xMl+vE2jQ=</DigestValue></Reference></SignedInfo><SignatureValue>qauve0krsvU2wI0vherWCtLn2FDaZuLO8QKZSjNO7tdsniyeux+/1rfvG/vThQwIC8U3BqeElNsv32f78fAzUI/QCpiEC63MNTcCl7HO7VolMpjykx82/P+zctj2k2RPLgIEQ+TMbskgRJLwYNpx9tWbgcjGc6K8G3xROC5U5Ok=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>7W/OJCWkHGLY3NmQjINNzKuhvVzQqYiR0HwE24TatdLwcEzz6wGN7spMjpwzkhFYhK7fmthY9G97WSiMy0AfdRb71J3Vh/IUzp7R8B8E1UVXyZG695Fy9Pbrr5gnz9QDqT570Uwhfx0ksOLL/dZQCYMZMWuevT/mIHucnpzJ+Ls=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICCDCCAXWgAwIBAgIQHsL/QC58SJ1My2m7Idd/4zAJBgUrDgMCHQUAMBwxGjAYBgNVBAMTEUdlcmJlciBUZWNobm9sb2d5MCAXDTE1MDIwODA2MDAwMFoYDzIwNTAwMTAxMDYwMDAwWjAcMRowGAYDVQQDExFHZXJiZXIgVGVjaG5vbG9neTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA7W/OJCWkHGLY3NmQjINNzKuhvVzQqYiR0HwE24TatdLwcEzz6wGN7spMjpwzkhFYhK7fmthY9G97WSiMy0AfdRb71J3Vh/IUzp7R8B8E1UVXyZG695Fy9Pbrr5gnz9QDqT570Uwhfx0ksOLL/dZQCYMZMWuevT/mIHucnpzJ+LsCAwEAAaNRME8wTQYDVR0BBEYwRIAQDWr6C2qz9ZOhUFxVAVdNBqEeMBwxGjAYBgNVBAMTEUdlcmJlciBUZWNobm9sb2d5ghAewv9ALnxInUzLabsh13/jMAkGBSsOAwIdBQADgYEA3+psgFjXNJf8fS+bzQCnPYC/N/p0KzebVFEJCWDdUTDv/36F5LWs0HbR4Ae8fBnlaCgaZqRE2sAjQ03oG/0gki4Dmo8QtHOd7gDPp+UYhx4pawb1ARRkVHTiWjB9bIu4Lwq4wznnm74ptO5ALlV1imsxkb3FNglIfQevl+WzL84=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
